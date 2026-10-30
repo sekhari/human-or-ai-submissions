@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and large artifacts (keep on Kaggle / local only)
+data/
+*.csv
+!**/sample_submission.csv
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
+*.h5
+checkpoints/
+models/
+wandb/
+mlruns/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets
+**/credentials*
+**/secrets*
+**/kaggle.json
