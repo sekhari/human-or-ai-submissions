@@ -10,23 +10,30 @@ Teams submit **one pull request** against this repository with runnable code, se
 
 **https://github.com/sekhari/human-or-ai-submissions**
 
+This repository is **public**. You do not need a collaborator invite. Fork it, work in your fork, and open a PR back here.
+
 ## How to submit (one PR per team)
 
-### 1. Get access
+### 1. Fork this repository
 
-Staff will add enrolled students as collaborators on this private repository. Accept the GitHub invitation (check your email / [github.com/notifications](https://github.com/notifications)).
+On GitHub, click **Fork** (top right) to create a copy under your own account. One fork per team is enough — add teammates as collaborators on *your* fork if you want shared push access.
 
-If you cannot see the repo after accepting, email the course staff with your GitHub username.
-
-### 2. Clone and create a team branch
+### 2. Clone *your fork* and create a team branch
 
 ```bash
-git clone git@github.com:sekhari/human-or-ai-submissions.git
+git clone git@github.com:<your-github-username>/human-or-ai-submissions.git
 cd human-or-ai-submissions
 git checkout -b submission/<kaggle-team-name>
 ```
 
 Use your exact Kaggle team name (lowercase, hyphens instead of spaces). Example: `submission/cornell-detectives`.
+
+Optional but recommended — keep the course repo as `upstream`:
+
+```bash
+git remote add upstream git@github.com:sekhari/human-or-ai-submissions.git
+git fetch upstream
+```
 
 ### 3. Add your code under `submissions/`
 
@@ -61,7 +68,7 @@ Your team `README.md` must include:
 5. Random seeds and any important config  
 6. AI-tool disclosure summary (Claude / ChatGPT / Copilot / etc.), matching Q6.3 in the report  
 
-### 5. Open the pull request
+### 5. Push to your fork and open the pull request
 
 ```bash
 git add submissions/<kaggle-team-name>
@@ -69,12 +76,16 @@ git commit -m "Add <kaggle-team-name> competition code"
 git push -u origin submission/<kaggle-team-name>
 ```
 
-Then open a PR on GitHub:
+Then on GitHub, open a PR **from your fork** into this course repository:
 
-- **Base:** `main`
-- **Compare:** `submission/<kaggle-team-name>`
+- **Base repository:** `sekhari/human-or-ai-submissions`
+- **Base branch:** `main`
+- **Head repository:** your fork
+- **Compare branch:** `submission/<kaggle-team-name>`
 - **Title:** `[Submission] <kaggle-team-name> — <NetID1>, <NetID2>, ...`
 - **Body:** short summary of the final approach + confirmation that `submission.csv` can be regenerated from the listed commands
+
+GitHub’s “Contribute → Open pull request” button on your branch usually fills this in.
 
 Copy the PR URL into:
 
@@ -102,4 +113,4 @@ We inspect the **final code and its development history**, not only the last sna
 
 ## Questions
 
-Post on the course Ed / Canvas channel, or email course staff. For access issues, include your GitHub username.
+Post on the course Ed / Canvas channel, or email course staff.

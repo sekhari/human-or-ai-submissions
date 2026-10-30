@@ -1,15 +1,16 @@
 # Staff notes (not for grading students)
 
-## Access
+## Access model
 
-1. Keep this repository **private**.
-2. Add enrolled students (or a GitHub Team) as **Write** collaborators so they can push branches and open PRs.
-3. Optionally protect `main`: require a PR; do not require approvals if you want students to simply open PRs for grading without merges.
-4. Graders can review PRs in place; merging is optional.
+1. Keep this repository **public** so students can fork without invites.
+2. Students work on their forks and open PRs into `sekhari/human-or-ai-submissions` `main`.
+3. Do **not** grant the class Write access on this repo; that avoids accidental pushes to `main` and removes invite overhead.
+4. Optionally protect `main`: require a pull request; approvals optional if you only need PRs open for grading.
+5. Graders review PRs in place; merging is optional.
 
 ## After the deadline
 
-- Freeze by removing Write access or archiving the repo.
+- Optionally archive the repo or disable new PRs.
 - Grade using the PR URL on each report (rubric Q6.1–Q6.3).
 
 ## Never commit here
