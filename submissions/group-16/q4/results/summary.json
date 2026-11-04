@@ -1,0 +1,73 @@
+{
+  "model": "A_word_tfidf_lr",
+  "train_rows": 8000,
+  "validation_rows": 2000,
+  "train_auroc": 1.0,
+  "validation_auroc": 0.9662459999999999,
+  "auroc_gap": 0.03375400000000006,
+  "threshold": 0.5,
+  "confusion_matrix_rows_true_columns_predicted_0_1": [
+    [
+      936,
+      64
+    ],
+    [
+      145,
+      855
+    ]
+  ],
+  "split_source": "reconstructed using Q1 common.py procedure; original row order required",
+  "seed": 42,
+  "train_csv_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "q1_model_code_sha256": "bff80cfd46f51c98b008ecb1b71e33370aa9297ece12efe93536bf377edcc868",
+  "validation_ids_sha256": "59b5ffdcc2211524ac69b4bd77ef616ca902b0cefe2466ee1958822c398cefa5",
+  "validation_texts_matching_training_after_case_whitespace_normalization": 0,
+  "selected_error_rule": "Five most confidently wrong predictions per type, ties ordered by ID.",
+  "word_count_rule": "Python str.split(): whitespace-separated tokens",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.9.1"
+  },
+  "model_settings": {
+    "vec__analyzer": "word",
+    "vec__binary": "False",
+    "vec__decode_error": "strict",
+    "vec__dtype": "<class 'numpy.float64'>",
+    "vec__encoding": "utf-8",
+    "vec__input": "content",
+    "vec__lowercase": "True",
+    "vec__max_df": "1.0",
+    "vec__max_features": "None",
+    "vec__min_df": "5",
+    "vec__ngram_range": "(1, 2)",
+    "vec__norm": "l2",
+    "vec__preprocessor": "None",
+    "vec__smooth_idf": "True",
+    "vec__stop_words": "None",
+    "vec__strip_accents": "None",
+    "vec__sublinear_tf": "True",
+    "vec__token_pattern": "(?u)\\b\\w+\\b|[^\\w\\s]",
+    "vec__tokenizer": "None",
+    "vec__use_idf": "True",
+    "vec__vocabulary": "None",
+    "clf__C": "30",
+    "clf__class_weight": "None",
+    "clf__dual": "False",
+    "clf__fit_intercept": "True",
+    "clf__intercept_scaling": "1",
+    "clf__l1_ratio": "0.0",
+    "clf__max_iter": "3000",
+    "clf__n_jobs": "None",
+    "clf__penalty": "deprecated",
+    "clf__random_state": "None",
+    "clf__solver": "liblinear",
+    "clf__tol": "0.0001",
+    "clf__verbose": "0",
+    "clf__warm_start": "False"
+  },
+  "notes": [
+    "Original validation IDs unavailable; same CSV row order is required to reproduce Q1's holdout."
+  ]
+}
