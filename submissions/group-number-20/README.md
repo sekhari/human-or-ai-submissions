@@ -1,7 +1,7 @@
 # Human or AI? — Team code
 
 **Team members:** Zhijie Wang (zw892), Simin Xu (sx333), Yangchen Jin (yj645)
-**Kaggle team name:** TODO
+**Kaggle team name:** Group number 20 (`group-number-20`)
 
 ## Setup
 
