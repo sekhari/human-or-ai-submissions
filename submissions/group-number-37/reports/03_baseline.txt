@@ -1,0 +1,11 @@
+lex fit 33
+style fit 18
+train auc lex 1.0 style 1.0
+as is                  lex 0.9780 style 0.9975 blend 0.9987
+no double newline      lex 0.9658 style 0.9932 blend 0.9966
+all whitespace flat    lex 0.9585 style 0.8316 blend 0.8937
+--- retrained with double newlines removed everywhere
+lex 0.9876 style 0.9956 blend 0.9977
+--- retrained flat
+lex 0.9683 style 0.9696 blend 0.9818
+style score on test with dnl mean 4.8958299657681055 without -1.9012913816642718
