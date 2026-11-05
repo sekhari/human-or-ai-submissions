@@ -21,7 +21,7 @@ def flatten(t):
 
 
 @torch.no_grad()
-def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=24, device=None, log_every=50, checkpoint=None):
+def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=8, device=None, log_every=50, checkpoint=None):
     device = device or ("mps" if torch.backends.mps.is_available() else "cpu")
     tok = AutoTokenizer.from_pretrained(model_name)
     tok.pad_token = tok.eos_token
@@ -59,6 +59,7 @@ def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=24, device=Non
                       a[:h].mean(), a[h:].mean(), np.corrcoef(a[:-1], a[1:])[0, 1], len(a)]
         if b % log_every == 0:
             print(f"{start}/{len(texts)}", flush=True)
+            torch.mps.empty_cache() if device == "mps" else None
             if checkpoint:
                 np.savez(checkpoint, out=out, next=start + batch)
     return np.nan_to_num(out)
