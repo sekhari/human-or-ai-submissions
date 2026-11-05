@@ -56,8 +56,8 @@ def fit_lexical(tr, y):
     return lambda t: clf.decision_function(hstack((word.transform(t), char.transform(t)), format="csr"))
 
 
-def fit_style(tr, y, iterations=850, threads=8):
-    clf = CatBoostClassifier(iterations=iterations, depth=6, learning_rate=.06, verbose=False, thread_count=threads,
+def fit_style(tr, y, iterations=850, depth=6, threads=8):
+    clf = CatBoostClassifier(iterations=iterations, depth=depth, learning_rate=.06, verbose=False, thread_count=threads,
                              random_seed=SEED, allow_writing_files=False)
     clf.fit(style_matrix(tr), y)
     return lambda t: clf.predict(style_matrix(t), prediction_type="RawFormulaVal")
