@@ -13,4 +13,5 @@ model = sys.argv[1] if len(sys.argv) > 1 else "gpt2"
 OUT.mkdir(exist_ok=True)
 tr, un, te = load_all()
 texts = pd.concat([tr.text, un.text, te.text], ignore_index=True).tolist()
-np.save(OUT / f"surprisal_{model.replace('/', '_')}.npy", surprisal_matrix(texts, model))
+tag = model.replace("/", "_")
+np.save(OUT / f"surprisal_{tag}.npy", surprisal_matrix(texts, model, log_every=20, checkpoint=OUT / f"surprisal_{tag}_ckpt.npz"))

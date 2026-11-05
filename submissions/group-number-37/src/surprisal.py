@@ -21,7 +21,7 @@ def flatten(t):
 
 
 @torch.no_grad()
-def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=24, device=None, log_every=50):
+def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=24, device=None, log_every=50, checkpoint=None):
     device = device or ("mps" if torch.backends.mps.is_available() else "cpu")
     tok = AutoTokenizer.from_pretrained(model_name)
     tok.pad_token = tok.eos_token
@@ -29,7 +29,12 @@ def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=24, device=Non
     model = AutoModelForCausalLM.from_pretrained(model_name, use_safetensors=True).to(device).eval()
     out = np.zeros((len(texts), len(NAMES)), dtype=np.float32)
     order = np.argsort([len(t) for t in texts])
-    for b, start in enumerate(range(0, len(texts), batch)):
+    first = 0
+    if checkpoint and Path(checkpoint).exists():
+        saved = np.load(checkpoint)
+        out, first = saved["out"], int(saved["next"])
+        print("resuming at", first, flush=True)
+    for b, start in enumerate(range(first, len(texts), batch)):
         ids = order[start:start + batch]
         enc = tok([flatten(texts[i]) for i in ids], return_tensors="pt", padding=True, truncation=True,
                   max_length=max_len).to(device)
@@ -54,4 +59,6 @@ def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=24, device=Non
                       a[:h].mean(), a[h:].mean(), np.corrcoef(a[:-1], a[1:])[0, 1], len(a)]
         if b % log_every == 0:
             print(f"{start}/{len(texts)}", flush=True)
+            if checkpoint:
+                np.savez(checkpoint, out=out, next=start + batch)
     return np.nan_to_num(out)
