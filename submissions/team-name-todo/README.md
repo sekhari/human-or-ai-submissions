@@ -1,6 +1,6 @@
 # Human or AI? — Team code
 
-**Team members:** TODO (names + NetIDs)
+**Team members:** Zhijie Wang (zw892), Simin Xu (sx333), Yangchen Jin (yj645)
 **Kaggle team name:** TODO
 
 ## Setup
