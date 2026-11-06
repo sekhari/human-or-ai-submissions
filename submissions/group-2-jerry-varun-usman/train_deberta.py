@@ -12,6 +12,10 @@ Modes
   all     main -> lc -> pseudo -> final
 
 Usage:  python train_deberta.py --mode all
+        # stronger variant for the Q5 improvement / Kaggle (main + final only):
+        python train_deberta.py --mode main --tag base512 --model-name microsoft/deberta-v3-base \
+            --max-len 512 --batch-size 8 --grad-accum 2
+        python train_deberta.py --mode final --tag base512 ...same flags...
 """
 from __future__ import annotations
 
@@ -29,7 +33,12 @@ from src.common import SEED, Data, auc, load_preds, save_preds, update_results
 
 CFG = dict(model_name="microsoft/deberta-v3-small", max_len=384, batch_size=16, epochs=2,
            lr=3e-5, weight_decay=0.01, warmup_frac=0.1, pseudo_thresh=0.95,
-           lc_sizes=[500, 1000, 2000, 5000, 8000])
+           lc_sizes=[500, 1000, 2000, 5000, 8000], grad_accum=1, seed=SEED, tag="")
+
+
+def pname(cfg: dict, what: str) -> str:
+    """Cache name: deberta_<what> for the default run, <tag>_<what> for tagged variants."""
+    return f"{cfg['tag'] or 'deberta'}_{what}"
 
 
 def set_seed(s: int):
@@ -77,9 +86,10 @@ class Trainer:
                 out.append(torch.softmax(logits.float(), -1)[:, 1].cpu().numpy())
         return np.concatenate(out)
 
-    def train(self, texts, labels, seed: int = SEED):
+    def train(self, texts, labels, seed: int | None = None):
         from transformers import AutoModelForSequenceClassification, get_linear_schedule_with_warmup
         c = self.cfg
+        seed = c["seed"] if seed is None else seed
         set_seed(seed)
         model = AutoModelForSequenceClassification.from_pretrained(c["model_name"], num_labels=2)
         model = model.float().to(self.device)  # checkpoint is fp16; newer transformers keep it, GradScaler needs fp32 master weights
@@ -87,19 +97,23 @@ class Trainer:
         dl = DataLoader(self._ds(texts, labels), batch_size=c["batch_size"], shuffle=True,
                         collate_fn=self.collate, generator=g)
         opt = torch.optim.AdamW(model.parameters(), lr=c["lr"], weight_decay=c["weight_decay"])
-        total = len(dl) * c["epochs"]
+        acc = c["grad_accum"]
+        total = -(-len(dl) // acc) * c["epochs"]
         sch = get_linear_schedule_with_warmup(opt, int(c["warmup_frac"] * total), total)
         scaler = torch.amp.GradScaler("cuda", enabled=self.amp)
         t0 = time.time()
         for ep in range(c["epochs"]):
             model.train(); tot = 0.0
-            for b in dl:
+            opt.zero_grad()
+            for i, b in enumerate(dl):
                 b = {k: v.to(self.device) for k, v in b.items()}
                 with torch.autocast("cuda", dtype=torch.float16, enabled=self.amp):
                     loss = model(**b).loss
-                opt.zero_grad(); scaler.scale(loss).backward(); scaler.unscale_(opt)
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-                scaler.step(opt); scaler.update(); sch.step(); tot += loss.item()
+                scaler.scale(loss / acc).backward(); tot += loss.item()
+                if (i + 1) % acc == 0 or i + 1 == len(dl):
+                    scaler.unscale_(opt)
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                    scaler.step(opt); scaler.update(); sch.step(); opt.zero_grad()
             print(f"  epoch {ep + 1}/{c['epochs']} n={len(texts)} loss={tot / len(dl):.4f} ({time.time() - t0:.0f}s)")
         return model, time.time() - t0
 
@@ -111,16 +125,16 @@ def cleanup():
 
 
 def mode_main(T: Trainer, d: Data):
-    p = load_preds("deberta_main")
+    p = load_preds(pname(T.cfg, "main"))
     if p is None:
         model, tt = T.train(d.X_tr, d.y_tr)
         p = dict(p_tr=T.predict(model, d.X_tr), p_va=T.predict(model, d.X_va),
                  p_unl=T.predict(model, d.X_unl) if d.X_unl is not None else np.array([]),
                  train_time=np.array(tt))
-        save_preds("deberta_main", **p); del model; cleanup()
+        save_preds(pname(T.cfg, "main"), **p); del model; cleanup()
     out = dict(train_auc=auc(d.y_tr, p["p_tr"]), val_auc=auc(d.y_va, p["p_va"]),
                train_time_s=float(p["train_time"]), device=T.device, config=T.cfg)
-    update_results("model:deberta_v3_small", out); print("deberta main:", out)
+    update_results(f"model:{T.cfg['tag'] or 'deberta_v3_small'}", out); print("deberta main:", out)
     return p
 
 
@@ -170,13 +184,13 @@ def mode_pseudo(T: Trainer, d: Data):
 def mode_final(T: Trainer, d: Data):
     if d.X_test is None:
         raise FileNotFoundError("test.csv missing")
-    p = load_preds("deberta_final_test")
+    p = load_preds(pname(T.cfg, "final_test"))
     if p is None:
         X, y = d.full[d.text].values, d.full[d.label].values
         model, tt = T.train(X, y)
         p = dict(p_test=T.predict(model, d.X_test), train_time=np.array(tt))
-        save_preds("deberta_final_test", **p); del model; cleanup()
-    update_results("deberta_final", dict(n_train=len(d.full), train_time_s=float(p["train_time"])))
+        save_preds(pname(T.cfg, "final_test"), **p); del model; cleanup()
+    update_results(pname(T.cfg, "final"), dict(n_train=len(d.full), train_time_s=float(p["train_time"])))
     print("final test preds cached:", p["p_test"].shape)
 
 
@@ -185,10 +199,20 @@ def main():
     ap.add_argument("--mode", choices=["main", "lc", "pseudo", "final", "all"], default="all")
     ap.add_argument("--no-amp", action="store_true", help="disable fp16 (use if loss becomes nan)")
     ap.add_argument("--epochs", type=int, default=CFG["epochs"])
+    ap.add_argument("--tag", default="", help="cache/results prefix for a variant (main/final modes only)")
+    ap.add_argument("--model-name", default=CFG["model_name"])
+    ap.add_argument("--max-len", type=int, default=CFG["max_len"])
+    ap.add_argument("--batch-size", type=int, default=CFG["batch_size"])
+    ap.add_argument("--grad-accum", type=int, default=1)
+    ap.add_argument("--lr", type=float, default=CFG["lr"])
+    ap.add_argument("--seed", type=int, default=SEED)
     args = ap.parse_args()
-    cfg = dict(CFG, epochs=args.epochs)
-    d = Data(); T = Trainer(cfg, use_amp=not args.no_amp)
+    cfg = dict(CFG, epochs=args.epochs, tag=args.tag, model_name=args.model_name, max_len=args.max_len,
+               batch_size=args.batch_size, grad_accum=args.grad_accum, lr=args.lr, seed=args.seed)
     modes = ["main", "lc", "pseudo", "final"] if args.mode == "all" else [args.mode]
+    if args.tag and set(modes) - {"main", "final"}:
+        raise SystemExit("--tag variants support only --mode main / final")
+    d = Data(); T = Trainer(cfg, use_amp=not args.no_amp)
     for m in modes:
         print(f"===== {m} ====="); globals()[f"mode_{m}"](T, d)
 
