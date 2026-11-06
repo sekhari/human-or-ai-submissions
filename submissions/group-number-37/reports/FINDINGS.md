@@ -79,3 +79,26 @@ typos raised auroc to 0.98. noise should not do that, so i stopped the queue and
 
 so the model learned that clean text means ai while dropout was noising its inputs, then saw clean inputs at prediction.
 the encoder is still well below surprisal on these subsets and has not been retrained on all rows.
+
+## 9. encoder after the dropout fix (06, 18)
+
+distilroberta on cleaned text, 2 epochs, dropout off: train 0.9983, validation 0.9898, up from 0.9462. no formatting used.
+trained without the book and poetry domain it scores 0.9967 on that domain (143 rows, 41 human, no human poems).
+text edits now lower its score as expected: typos 0.9773, char noise 0.9740, case noise 0.9704.
+
+| reference | surprisal | encoder | val | held book and poetry |
+| --- | --- | --- | --- | --- |
+| 1.0 | 0 | 0 | 0.99868 | 0.99833 |
+| 0.7 | 0.3 | 0 | 0.99900 | 1.00000 |
+| 0.8 | 0.1 | 0.1 | 0.99957 | 0.99976 |
+| 0.7 | 0.2 | 0.1 | 0.99952 | 1.00000 |
+| 0 | 0.5 | 0.5 | 0.99353 | 0.99821 |
+
+weights here were read off validation, so these are optimistic. experiment 19 repeats this with each domain held out.
+
+## 10. audit of the first notebook (17)
+
+the first notebook's numbers are accurate. its audit score reproduces exactly at 0.998243 on its own split, and its submission has
+rank correlation 1.0 with a rerun of the recipe. ids do not leak labels (id auc 0.4946). near duplicates do not carry validation:
+137 of 2000 audit rows have a neighbor above 0.5 cosine, nearest neighbor label agreement is 0.518, and the less similar half still
+scores 0.9962. gaps are coverage, not honesty: it does not test poetry and leans on formatting.
