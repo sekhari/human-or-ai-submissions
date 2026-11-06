@@ -1,0 +1,8 @@
+{
+  "repeats": 2000,
+  "method": "paired class-stratified percentile bootstrap, seed 42",
+  "delta_auroc_ci95_low": -0.002589025000000064,
+  "delta_auroc_ci95_high": 0.0010442000000000413,
+  "interpretation": "Descriptive uncertainty; same validation set motivated Q4/Q5 development.",
+  "comparison": "normalize_quotes minus baseline"
+}

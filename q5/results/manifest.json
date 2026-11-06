@@ -1,0 +1,30 @@
+{
+  "source_commit": "db769ff154a6fb5c49d9cc7be355d887af7c9d63",
+  "train_csv_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "q1_model_code_sha256": "bff80cfd46f51c98b008ecb1b71e33370aa9297ece12efe93536bf377edcc868",
+  "validation_ids_sha256": "59b5ffdcc2211524ac69b4bd77ef616ca902b0cefe2466ee1958822c398cefa5",
+  "seed": 42,
+  "train_rows": 8000,
+  "validation_rows": 2000,
+  "candidates": {
+    "baseline": "Selected Q1 Model A, unchanged",
+    "normalize_quotes": "Map U+2018/U+2019 to ASCII apostrophe and U+201C/U+201D to ASCII double quote before unchanged vectorizer",
+    "word_only": "Original text; token_pattern=(?u)\\b\\w+\\b; drop standalone punctuation, retain 1-character words"
+  },
+  "selection_rule": "Best proposed variant by mean training-only five-fold CV AUROC. Adopt only if it exceeds baseline mean CV AUROC; ties favor baseline.",
+  "timing": "Median of 3 TF-IDF + classifier fits per candidate; candidate order rotates; excludes stateless quote mapping, scoring, CV and bootstrap; threadpool limit 2",
+  "caution": "Q4 inspected this validation set; Q5 is exploratory follow-up, not independent confirmation.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "host": {
+    "machine": "arm64",
+    "system": "Darwin",
+    "processor": "arm"
+  }
+}
