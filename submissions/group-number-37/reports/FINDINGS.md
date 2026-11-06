@@ -41,3 +41,41 @@ gpt2 log probabilities on flattened text, so formatting cannot leak in.
 
 - best single feature: std of token log prob, auc 0.81, at least 0.80 inside every inferred domain.
 - the strongest features keep the same direction across all domains. that stability is why they are worth blending.
+
+## 5. robustness, training size, unlabeled data, tuning (07, 08, 09, 10)
+
+- attacks on the reference blend: flat whitespace 0.8937, added blank lines 0.9768, everything else at least 0.9966.
+- learning curve: style features already reach 0.9905 with 500 rows and 0.9975 with 8000. cleaned lexical goes 0.8698 to 0.9611, so it still wants data.
+- self-training on unlabeled or test text did not help: validation 0.9611 to about 0.9605, held out book and poetry 0.9194 to 0.9216 at best.
+- grid search: about 0.001 or less between the settings near what we use, so tuning is not where the gain is.
+
+## 6. surprisal changes the picture (05, 14, 15)
+
+| model | train | val | lodo mean | lodo worst |
+| --- | --- | --- | --- | --- |
+| surprisal gbm, no formatting | 0.9856 | 0.9774 | 0.9716 | 0.9560 |
+| reference blend | 1.0000 | 0.9987 | 0.9927 | 0.9657 |
+| reference + 0.3 surprisal, rank blend | | 0.9990 | 0.9966 | 0.9862 |
+
+- with the weight picked from the other domains: mean 0.9964, worst 0.9862. picked 0.3 for nine domains and 0.4 for one.
+- bootstrap of the mean gain at 0.3: +0.0039, 95% interval +0.0030 to +0.0049.
+- it helps most where the reference is weakest (domain 9, 0.9657 to 0.9862) and costs a little where it is near perfect (domain 7, 0.9999 to 0.9967).
+- on the fixed split the best weight is 0.1 (0.9994). lodo prefers 0.3. we use 0.3 because transfer is what the test set asks for.
+- limit: every domain here is prose. none of this measures human poetry.
+
+## 7. evidence from test without labels (12)
+
+spearman agreement between the reference and surprisal on test is lowest on the book and poetry domain: 0.59, against 0.61 to 0.81 elsewhere.
+the reference is using different information where test differs most from train. this does not say which model is right.
+
+## 8. encoder problem and what caused it (06, 13)
+
+distilroberta on cleaned text scored 0.9462, with 27% of human training rows confidently called ai and almost no errors the other way.
+typos raised auroc to 0.98. noise should not do that, so i stopped the queue and tested:
+
+- ruled out: mps vs cpu, sdpa vs eager attention, batch size and order. all gave the same scores.
+- train mode vs eval mode on the same weights (1600 fit rows, 500 val rows): human rows above zero 8.5% with dropout on, 39% with it off.
+- removing dropout: human rows above zero 39% to 9%, ai rows below zero 3% to 8%, val 0.9605 to 0.9687, typo gain almost gone (+0.001).
+
+so the model learned that clean text means ai while dropout was noising its inputs, then saw clean inputs at prediction.
+the encoder is still well below surprisal on these subsets and has not been retrained on all rows.
