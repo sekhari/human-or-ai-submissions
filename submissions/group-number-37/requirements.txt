@@ -9,3 +9,4 @@ transformers
 sentencepiece
 protobuf
 accelerate
+joblib
