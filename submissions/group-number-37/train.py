@@ -22,18 +22,23 @@ def main() -> None:
     p.add_argument("--seed", type=int, default=3737)
     p.add_argument("--model-out", type=Path, default=Path("model.joblib"))
     p.add_argument("--validate", action="store_true")
+    p.add_argument("--weights", type=float, nargs=3, default=None, metavar=("REF", "SURPRISAL", "ENCODER"))
+    p.add_argument("--encoder-dir", type=Path, default=Path("encoder"))
     a = p.parse_args()
     train = pd.read_csv(a.train, keep_default_na=False)
     texts, y = train.text.values, train.label.values
     S = get_surprisal(texts)
+    kw = dict(seed=a.seed, encoder_dir=str(a.encoder_dir))
+    if a.weights:
+        kw["weights"] = tuple(a.weights)
     if a.validate:
         fit, val = fixed_split(train)
-        m = Blend(seed=a.seed).fit(list(texts[fit]), y[fit], S[fit])
+        m = Blend(**kw).fit(list(texts[fit]), y[fit], S[fit])
         print("train auroc", round(auc(y[fit], m.score(list(texts[fit]), S[fit])), 4))
         print("validation auroc", round(auc(y[val], m.score(list(texts[val]), S[val])), 4))
         parts = m.parts(list(texts[val]), S[val])
         print({k: round(auc(y[val], v), 4) for k, v in parts.items()})
-    m = Blend(seed=a.seed).fit(list(texts), y, S)
+    m = Blend(**kw).fit(list(texts), y, S)
     joblib.dump(m, a.model_out)
     print("wrote", a.model_out)
 

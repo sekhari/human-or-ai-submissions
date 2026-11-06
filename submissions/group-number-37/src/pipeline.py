@@ -8,12 +8,12 @@ from sklearn.linear_model import LogisticRegression
 
 from .baseline import style_matrix
 
-SURPRISAL_WEIGHT = .3
+WEIGHTS = (.7, .3, 0.)  # reference, surprisal, encoder
 
 
 class Blend:
-    def __init__(self, seed=3737, surprisal_weight=SURPRISAL_WEIGHT, threads=8):
-        self.seed, self.w, self.threads = seed, surprisal_weight, threads
+    def __init__(self, seed=3737, weights=WEIGHTS, threads=8, encoder_dir=None):
+        self.seed, self.weights, self.threads, self.encoder_dir = seed, weights, threads, encoder_dir
 
     def _catboost(self, **kw):
         return CatBoostClassifier(verbose=False, random_seed=self.seed, allow_writing_files=False, thread_count=self.threads, **kw)
@@ -27,16 +27,31 @@ class Blend:
         self.lexical = LogisticRegression(C=8, solver="liblinear", max_iter=500, random_state=self.seed).fit(x, y)
         self.style = self._catboost(iterations=850, depth=6, learning_rate=.06).fit(style_matrix(texts), y)
         self.surprisal = self._catboost(iterations=500, depth=4, learning_rate=.04).fit(surprisal, y)
+        if self.weights[2] > 0:
+            from .encoder import train_encoder
+            model, tok = train_encoder(list(texts), y, seed=self.seed)
+            model.save_pretrained(self.encoder_dir)
+            tok.save_pretrained(self.encoder_dir)
         return self
+
+    def _encoder_scores(self, texts):
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer
+        from .encoder import DEVICE, predict
+        model = AutoModelForSequenceClassification.from_pretrained(self.encoder_dir, attn_implementation="eager").to(DEVICE)
+        return predict(model, AutoTokenizer.from_pretrained(self.encoder_dir), list(texts))
 
     def parts(self, texts, surprisal):
         x = hstack((self.word.transform(texts), self.char.transform(texts)), format="csr")
         lex = self.lexical.decision_function(x)
         sty = self.style.predict(style_matrix(texts), prediction_type="RawFormulaVal")
         sur = self.surprisal.predict(surprisal, prediction_type="RawFormulaVal")
-        return dict(reference=.35 * lex + .65 * sty, surprisal=sur)
+        out = dict(reference=.35 * lex + .65 * sty, surprisal=sur)
+        if self.weights[2] > 0:
+            out["encoder"] = self._encoder_scores(texts)
+        return out
 
     def score(self, texts, surprisal):
         """values in (0, 1]. ranks within this batch, which is all auroc needs."""
         p = self.parts(texts, surprisal)
-        return (1 - self.w) * rankdata(p["reference"]) / len(texts) + self.w * rankdata(p["surprisal"]) / len(texts)
+        names = ("reference", "surprisal", "encoder")
+        return sum(w * rankdata(p[n]) / len(texts) for w, n in zip(self.weights, names) if w > 0)
