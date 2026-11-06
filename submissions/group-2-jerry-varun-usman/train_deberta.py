@@ -81,7 +81,8 @@ class Trainer:
         from transformers import AutoModelForSequenceClassification, get_linear_schedule_with_warmup
         c = self.cfg
         set_seed(seed)
-        model = AutoModelForSequenceClassification.from_pretrained(c["model_name"], num_labels=2).to(self.device)
+        model = AutoModelForSequenceClassification.from_pretrained(c["model_name"], num_labels=2)
+        model = model.float().to(self.device)  # checkpoint is fp16; newer transformers keep it, GradScaler needs fp32 master weights
         g = torch.Generator(); g.manual_seed(seed)
         dl = DataLoader(self._ds(texts, labels), batch_size=c["batch_size"], shuffle=True,
                         collate_fn=self.collate, generator=g)
