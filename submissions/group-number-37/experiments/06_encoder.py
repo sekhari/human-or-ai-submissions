@@ -25,6 +25,7 @@ p.add_argument("--name", default="distilroberta-base")
 p.add_argument("--holdout", default="fixed", choices=["fixed", "big", "none"])
 p.add_argument("--aug", type=float, default=0.)
 p.add_argument("--epochs", type=int, default=2)
+p.add_argument("--dropout", type=float, default=0.)
 p.add_argument("--lr", type=float, default=2e-5)
 p.add_argument("--max-len", type=int, default=256)
 p.add_argument("--batch", type=int, default=16)
@@ -47,10 +48,10 @@ else:
 
 t0 = time.time()
 model, tok = train_encoder(list(texts[use]), y[use], name=a.name, epochs=a.epochs, lr=a.lr, batch=a.batch, max_len=a.max_len,
-                           aug_rate=a.aug, seed=a.seed)
+                           aug_rate=a.aug, seed=a.seed, dropout=a.dropout)
 train_s = round(time.time() - t0)
 scores = predict(model, tok, list(texts), max_len=a.max_len)
-tag = f"{a.name.split('/')[-1]}_{a.holdout}_aug{a.aug}_s{a.seed}_ep{a.epochs}"
+tag = f"{a.name.split('/')[-1]}_{a.holdout}_aug{a.aug}_s{a.seed}_ep{a.epochs}_drop{a.dropout}"
 OUT.mkdir(exist_ok=True)
 np.save(OUT / f"enc_{tag}.npy", scores)
 res = dict(tag=tag, rows=len(use), train_seconds=train_s, train_auc=auc(y[use], scores[use]))
