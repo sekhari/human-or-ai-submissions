@@ -130,7 +130,14 @@ reference +0.0050 (ci +0.0039 to +0.0063). 0.55/0.25/0.2 was not in this bootstr
 
 the cost: domains the reference already handles lose a little, for example domain 7 from 0.9999 to 0.9985 and domain 6 from 1.0000
 to 0.9992. we accept this because test leans away from train-like text. the 0.8/0.1/0.1 blend that wins on the fixed validation
-set is among the weakest on unseen domains, which is why validation alone did not choose the weights.
+set trails the chosen blend on unseen domains (mean 0.9965, worst 0.9829), which is why validation alone did not choose the weights.
 
 known gap: no held out score here covers human poems, because train has none in that cluster. a large part of test is poem-like, so
 this remains the main unmeasured risk.
+
+## 12. final pipeline run (train.py, predict.py)
+
+`train.py --validate` with the default weights: train 0.9999, validation 0.9991. parts on validation: reference 0.9984, surprisal 0.9774,
+encoder 0.9895. this is a real fit of all three parts on the fixed 8000 rows and matches the 0.9992 read from cached scores in 21.
+`predict.py` wrote 3000 rows with matching ids and format. rank correlation with the first notebook's submission is 0.9475, and with
+the two way blend 0.9896, so the encoder and surprisal do reorder test rows. not yet scored on kaggle.
