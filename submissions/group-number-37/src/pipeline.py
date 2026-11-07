@@ -8,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 
 from .baseline import style_matrix
 
-WEIGHTS = (.7, .3, 0.)  # reference, surprisal, encoder
+WEIGHTS = (.55, .25, .2)  # reference, surprisal, encoder. picked by experiment 21
 
 
 class Blend:
