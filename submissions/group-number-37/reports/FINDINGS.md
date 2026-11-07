@@ -102,3 +102,35 @@ the first notebook's numbers are accurate. its audit score reproduces exactly at
 rank correlation 1.0 with a rerun of the recipe. ids do not leak labels (id auc 0.4946). near duplicates do not carry validation:
 137 of 2000 audit rows have a neighbor above 0.5 cosine, nearest neighbor label agreement is 0.518, and the less similar half still
 scores 0.9962. gaps are coverage, not honesty: it does not test poetry and leans on formatting.
+
+## 11. encoder with every domain held out, and the final weights (19, 21)
+
+each of the 10 inferred domains was held out in turn and the encoder retrained without it, about 20 minutes per domain on an m4.
+reference and surprisal scores come from the same held out setup (14).
+
+| reference | surprisal | encoder | held out mean | worst domain | test mix | fixed val |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1.0 | 0 | 0 | 0.9927 | 0.9657 | 0.9945 | 0.9987 |
+| 0.7 | 0.3 | 0 | 0.9966 | 0.9862 | 0.9978 | 0.9990 |
+| 0.8 | 0.1 | 0.1 | 0.9965 | 0.9829 | 0.9976 | 0.9996 |
+| 0.6 | 0.2 | 0.2 | 0.9977 | 0.9918 | 0.9983 | 0.9994 |
+| **0.55** | **0.25** | **0.2** | **0.9977** | **0.9930** | **0.9984** | **0.9992** |
+| 0.5 | 0.3 | 0.2 | 0.9977 | 0.9937 | 0.9983 | 0.9989 |
+| 0.4 | 0.3 | 0.3 | 0.9973 | 0.9948 | 0.9979 | 0.9985 |
+
+test mix weights each domain's auroc by its share of test. it is an average of within domain scores, not an estimate of the full
+test auroc, and 36% of its weight rests on domain 5, which has 143 train rows and 41 humans. treat it as a direction only.
+
+choosing weights on nine domains and scoring the tenth gives mean 0.9976, worst 0.9918, against 0.9966 and 0.9862 for the two way
+blend. the rule picked 0.55/0.25/0.2 on nine folds and 0.6/0.2/0.2 on the fold holding out domain 9, so the choice is stable.
+choosing by worst domain instead does worse on nearly everything (mean 0.9965), so we kept the mean rule.
+
+bootstrap gain inside domains, 500 draws: 0.6/0.2/0.2 against the two way blend +0.0011 (ci +0.0008 to +0.0015), against the
+reference +0.0050 (ci +0.0039 to +0.0063). 0.55/0.25/0.2 was not in this bootstrap, its neighbors were.
+
+the cost: domains the reference already handles lose a little, for example domain 7 from 0.9999 to 0.9985 and domain 6 from 1.0000
+to 0.9992. we accept this because test leans away from train-like text. the 0.8/0.1/0.1 blend that wins on the fixed validation
+set is among the weakest on unseen domains, which is why validation alone did not choose the weights.
+
+known gap: no held out score here covers human poems, because train has none in that cluster. a large part of test is poem-like, so
+this remains the main unmeasured risk.
