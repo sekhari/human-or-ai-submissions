@@ -26,12 +26,19 @@ python submissions/group-number-37/train.py --train data/train.csv --validate --
 ```
 
 `--validate` fits on the fixed 8000 rows, prints train and validation auroc, then refits on all 10000 rows for the saved model.
+the model is a rank blend of the reference model, surprisal features and a distilroberta encoder, weighted 0.55, 0.25, 0.2
+(`src/pipeline.py`, chosen in `experiments/21_nested_three_way.py`). the encoder is saved to `--encoder-dir`, default `encoder/`.
+
+each encoder training takes about 20 minutes on an m4. `--validate` trains it twice, so skip the flag to train once. keep the
+machine awake during long runs.
 
 ## write submission.csv
 
 ```bash
 python submissions/group-number-37/predict.py --test data/test.csv --model model.joblib --out submission.csv
 ```
+
+run this from the same folder as training. the saved model finds its encoder through the relative `--encoder-dir` path.
 
 ## seeds
 
