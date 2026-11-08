@@ -14,7 +14,7 @@ from sklearn.svm import LinearSVC
 from sklearn.calibration import CalibratedClassifierCV
 
 from sklearn.metrics import roc_auc_score
-from sklearn.pipeline import make_pipeline
+from sklearn.pipeline import make_pipeline, make_union
 
 from src.data import SEED, TEAM_FOLDER, get_train_val, load_data
 
@@ -59,11 +59,31 @@ def build_tfidf_svm(seed, C=4.0):
   classifier = CalibratedClassifierCV(svm, cv=3)
   return make_pipeline(vectorizer, classifier)
 
+# word + char TF-IDF stacked side by side into one logistic regression
+def build_word_char_lr(seed, C=16.0):
+  word_vectorizer = TfidfVectorizer(
+    ngram_range=(1, 2),
+    min_df=2,
+    sublinear_tf=True,
+    max_features=200_000,
+  )
+  char_vectorizer = TfidfVectorizer(
+    analyzer="char_wb",
+    ngram_range=(3, 5),
+    min_df=3,
+    sublinear_tf=True,
+    max_features=300_000,
+  )
+  features = make_union(word_vectorizer, char_vectorizer)
+  classifier = LogisticRegression(C=C, max_iter=2000, random_state=seed)
+  return make_pipeline(features, classifier)
+
 # dict of all our models (add to this)
 MODELS = {
   "tfidf_lr": build_tfidf_lr,
   "char_lr": build_char_lr,
   "tfidf_svm": build_tfidf_svm,
+  "word_char_lr": build_word_char_lr,
 }
 
 
