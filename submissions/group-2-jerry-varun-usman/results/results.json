@@ -328,10 +328,61 @@
   "blend_val_auc": {
     "base512": 0.9942815,
     "deberta": 0.992747,
-    "base512+deberta": 0.9946484999999999
+    "lm": 0.8585969999999999,
+    "base512+deberta": 0.9946484999999999,
+    "base512+lm": 0.9637045000000001,
+    "deberta+lm": 0.971786,
+    "base512+deberta+lm": 0.988078
   },
   "blend_submission": {
     "config": "base512",
     "out": "/content/drive/MyDrive/aml-human-or-ai/results/submission_base512.csv"
+  },
+  "model:lm_binoculars_lr": {
+    "train_auc": 0.8667734375,
+    "val_auc": 0.8585969999999999,
+    "train_time_s": 0.05947685241699219,
+    "feature_time_s": 0.003695249557495117,
+    "best_params": {
+      "clf__C": 10
+    },
+    "cv_table": [
+      {
+        "params": {
+          "clf__C": "0.01"
+        },
+        "cv_auc": 0.7430474091887941
+      },
+      {
+        "params": {
+          "clf__C": "0.1"
+        },
+        "cv_auc": 0.8011051391196791
+      },
+      {
+        "params": {
+          "clf__C": "1"
+        },
+        "cv_auc": 0.8572842951827653
+      },
+      {
+        "params": {
+          "clf__C": "10"
+        },
+        "cv_auc": 0.8656280400907067
+      }
+    ],
+    "zero_shot_val_auc_negated": {
+      "nll_obs": 0.723742,
+      "nll_perf": 0.721877,
+      "xent": 0.6809419999999999,
+      "bino": 0.6998530000000001,
+      "logrank_obs": 0.743304,
+      "ent_obs": 0.683277,
+      "log_ntok": 0.513439
+    },
+    "observer": "Qwen/Qwen2.5-1.5B",
+    "performer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "max_len": 512
   }
 }
