@@ -1,0 +1,6 @@
+{
+ "note": "Kaggle public leaderboard AUROC (900 of 3,000 test rows), as reported by the team on 2026-11-08. Not used for model selection.",
+ "submission.csv": 0.92046,
+ "submission_no_format.csv": 0.91850,
+ "submission_v2.csv": 0.91427
+}
