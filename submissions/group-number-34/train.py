@@ -19,7 +19,7 @@ from sklearn.pipeline import make_pipeline
 from src.data import SEED, TEAM_FOLDER, get_train_val, load_data
 
 # TF-IDF/LR baseline
-def build_tfidf_lr(seed):
+def build_tfidf_lr(seed, C=4.0):
   vectorizer = TfidfVectorizer(
     ngram_range=(1, 2),
     min_df=2,
@@ -28,7 +28,7 @@ def build_tfidf_lr(seed):
   )
   
   classifier = LogisticRegression(
-    C=4.0, 
+    C=C, 
     max_iter=2000, 
     random_state=seed
   )
@@ -36,7 +36,7 @@ def build_tfidf_lr(seed):
   return make_pipeline(vectorizer, classifier)
 
 # character n-gram TF-IDF/LR: captures writing style rather than topic
-def build_char_lr(seed):
+def build_char_lr(seed, C=4.0):
   vectorizer = TfidfVectorizer(
     analyzer="char_wb",
     ngram_range=(3, 5),
@@ -44,7 +44,7 @@ def build_char_lr(seed):
     sublinear_tf=True,
     max_features=300_000,
   )
-  classifier = LogisticRegression(C=4.0, max_iter=2000, random_state=seed)
+  classifier = LogisticRegression(C=C, max_iter=2000, random_state=seed)
   return make_pipeline(vectorizer, classifier)
 
 # word TF-IDF/linear SVM
