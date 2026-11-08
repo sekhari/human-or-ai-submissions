@@ -1,0 +1,46 @@
+{
+ "train_human": {
+  "zero_width_or_format": 0.0004,
+  "mixed_script_word": 0.0004,
+  "odd_space": 0.0108,
+  "case_swap_word": 0.0048,
+  "multi_space": 0.1508,
+  "curly_quote": 0.0974,
+  "oov_rate": 0.0367,
+  "article_rate": 0.0815,
+  "oov_p90": 0.0765
+ },
+ "train_ai": {
+  "zero_width_or_format": 0.0064,
+  "mixed_script_word": 0.0016,
+  "odd_space": 0.002,
+  "case_swap_word": 0.0096,
+  "multi_space": 0.0372,
+  "curly_quote": 0.0678,
+  "oov_rate": 0.0293,
+  "article_rate": 0.0693,
+  "oov_p90": 0.0637
+ },
+ "unlabeled": {
+  "zero_width_or_format": 0.002,
+  "mixed_script_word": 0.0007,
+  "odd_space": 0.0053,
+  "case_swap_word": 0.0053,
+  "multi_space": 0.0883,
+  "curly_quote": 0.0837,
+  "oov_rate": 0.0453,
+  "article_rate": 0.0803,
+  "oov_p90": 0.1021
+ },
+ "test": {
+  "zero_width_or_format": 0.0023,
+  "mixed_script_word": 0.0007,
+  "odd_space": 0.005,
+  "case_swap_word": 0.0013,
+  "multi_space": 0.0893,
+  "curly_quote": 0.1217,
+  "oov_rate": 0.0608,
+  "article_rate": 0.0878,
+  "oov_p90": 0.1265
+ }
+}
