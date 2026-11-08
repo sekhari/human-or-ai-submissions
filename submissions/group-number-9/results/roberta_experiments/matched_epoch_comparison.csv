@@ -1,0 +1,10 @@
+context,arm,epoch,evaluation_rows,neural_auroc,delta_supervised_epoch2,paired_95ci_low,paired_95ci_high,note
+inner,supervised,2,1600,0.9984859375,0.0,0.0,0.0,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+inner,pseudo,2,1600,0.999203125,0.0007171874999999384,7.34374999999926e-05,0.0017173828125000446,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+inner,tapt,2,1600,0.9989171875,0.00043124999999999414,-0.0003016015625000229,0.0014000781249999534,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+domain,supervised,2,148,0.9993877551020408,0.0,0.0,0.0,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+domain,pseudo,2,148,0.9975510204081633,-0.001836734693877462,-0.00673469387755099,0.00040816326530623837,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+domain,tapt,2,148,0.9991836734693877,-0.00020408163265306367,-0.001224489795918382,1.1102230246251565e-16,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+fit,supervised,2,2000,0.998899,0.0,0.0,0.0,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+fit,pseudo,2,2000,0.998415,-0.00048399999999992893,-0.001739000000000046,0.00022105000000002234,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."
+fit,tapt,2,2000,0.997733,-0.0011660000000000004,-0.0028884250000001084,0.00010722499999985968,"Supplementary equal-epoch comparison; does not change primary checkpoint, weight or arm selection."

@@ -1,0 +1,8 @@
+{
+  "path": "submissions/curvature_roberta_single_10000.csv",
+  "sha256": "1f6ca85aaa66f73084db013958a6ab406d737b61e08795d3772873d9175a90a8",
+  "validated": true,
+  "ensemble_continues": true,
+  "validation_auroc": 0.999911,
+  "uploaded_to_kaggle": false
+}

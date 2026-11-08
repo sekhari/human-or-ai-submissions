@@ -1,0 +1,8 @@
+{
+  "model_id": "microsoft/deberta-v3-base",
+  "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+  "license": "MIT",
+  "weights_sha256": "691d48a2800b926a19e3051def466fc2cca4f59a15e42ce4a0cf7f1b380b5e33",
+  "tokenizer_sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+  "source": "https://huggingface.co/microsoft/deberta-v3-base"
+}

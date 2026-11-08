@@ -1,0 +1,17 @@
+{
+  "reported_date": "2026-11-06",
+  "source": "User-reported public Kaggle AUROC in chat; not independently retrieved",
+  "candidate": "submissions/curvature_roberta_single_10000.csv",
+  "csv_sha256": "1f6ca85aaa66f73084db013958a6ab406d737b61e08795d3772873d9175a90a8",
+  "fixed_validation_auroc": 0.999911,
+  "public_kaggle_auroc": 0.98660,
+  "previous_team_best_user_reported": 0.98544,
+  "improvement_over_previous_team_best": 0.00116,
+  "gap_to_0_99": 0.00340,
+  "private_kaggle_auroc": null,
+  "user_reports_new_team_best": true,
+  "kaggle_submission_page": "https://www.kaggle.com/competitions/cornell-tech-cs-5785-combined-2026-ai-vs-human-text/submissions#",
+  "upload_performed_by_agent": false,
+  "ensemble_status_at_report": "Running seed 43, inner training context, epoch 1",
+  "note": "This records the later user upload; original export and verification manifests preserve their historical state. The running ensemble's frozen settings are unchanged by this public result."
+}

@@ -1,0 +1,79 @@
+{
+  "results": [
+    {
+      "model": "previous_blend",
+      "validation_auroc": 0.999485,
+      "delta_previous_blend": 0.0,
+      "paired_95ci_low": 0.0,
+      "paired_95ci_high": 0.0
+    },
+    {
+      "model": "supervised_neural",
+      "validation_auroc": 0.9988530000000001,
+      "delta_previous_blend": -0.0006319999999998549,
+      "paired_95ci_low": -0.001967175000000157,
+      "paired_95ci_high": 0.0006020250000000975,
+      "errors_at_0_5": 39,
+      "epoch": 1,
+      "neural_weight": 0.2
+    },
+    {
+      "model": "supervised_blend",
+      "validation_auroc": 0.9998210000000001,
+      "delta_previous_blend": 0.000336000000000114,
+      "paired_95ci_low": -9.99999999995449e-06,
+      "paired_95ci_high": 0.001043074999999904,
+      "errors_at_0_5": 9,
+      "epoch": 1,
+      "neural_weight": 0.2
+    },
+    {
+      "model": "pseudo_neural",
+      "validation_auroc": 0.998415,
+      "delta_previous_blend": -0.0010699999999999044,
+      "paired_95ci_low": -0.003129149999999939,
+      "paired_95ci_high": 0.0004990999999999157,
+      "errors_at_0_5": 28,
+      "epoch": 2,
+      "neural_weight": 0.2
+    },
+    {
+      "model": "pseudo_blend",
+      "validation_auroc": 0.9998170000000001,
+      "delta_previous_blend": 0.00033200000000011,
+      "paired_95ci_low": -3.4999999999899004e-05,
+      "paired_95ci_high": 0.0010532500000000765,
+      "errors_at_0_5": 9,
+      "epoch": 2,
+      "neural_weight": 0.2
+    },
+    {
+      "model": "tapt_neural",
+      "validation_auroc": 0.997733,
+      "delta_previous_blend": -0.0017519999999999758,
+      "paired_95ci_low": -0.004066100000000017,
+      "paired_95ci_high": 9.52750000001708e-05,
+      "errors_at_0_5": 26,
+      "epoch": 2,
+      "neural_weight": 0.2
+    },
+    {
+      "model": "tapt_blend",
+      "validation_auroc": 0.9998370000000001,
+      "delta_previous_blend": 0.00035200000000013,
+      "paired_95ci_low": -2.2999999999995246e-05,
+      "paired_95ci_high": 0.001103025000000074,
+      "errors_at_0_5": 8,
+      "epoch": 2,
+      "neural_weight": 0.2
+    }
+  ],
+  "chosen_arm_before_validation": "tapt",
+  "selected_blend_validation_auroc": 0.9998370000000001,
+  "selection_sha256": "886f44247fa5602996c84abde5bf3275d3c8ae7c3d6a787b007e683334138725",
+  "candidate_eligible": true,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "fixed_validation_reused": true,
+  "uploaded_to_kaggle": false
+}

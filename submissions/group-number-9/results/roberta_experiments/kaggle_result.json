@@ -1,0 +1,19 @@
+{
+  "reported_date": "2026-11-05",
+  "source": "User-reported Kaggle score in chat; not independently retrieved from Kaggle",
+  "candidate": "submissions/roberta_tapt_blend_8000.csv",
+  "candidate_association": "The CSV recommended immediately before the user reported this result",
+  "csv_sha256": "8c7e00f747a8284fa9065c6acfee964f34a5698f4b6d16689502813255bb55f0",
+  "metric": "AUROC",
+  "fixed_validation_auroc": 0.999837,
+  "public_kaggle_auroc": 0.98256,
+  "previous_deberta_blend_public_auroc": 0.98267,
+  "difference_from_previous_deberta_blend": -0.00011,
+  "previously_reported_team_best_public_auroc": 0.98544,
+  "difference_from_previously_reported_team_best": -0.00288,
+  "private_kaggle_auroc": null,
+  "kaggle_submission_page": "https://www.kaggle.com/competitions/cornell-tech-cs-5785-combined-2026-ai-vs-human-text/submissions#",
+  "interpretation": "No public-score improvement in this trial, despite the higher fixed-validation AUROC. The small difference from the old blend does not establish a reliable population difference or that all RoBERTa models are harmful. The blend uses the older booster, not the teammate's newer GPT-2/curvature model.",
+  "upload_performed_by_agent": false,
+  "note": "The export manifest, original verification and candidate provenance retain their state at creation. This file records the later user-reported submission outcome."
+}

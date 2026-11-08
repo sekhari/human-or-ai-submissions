@@ -1,0 +1,24 @@
+{
+  "option": "single",
+  "neural_seeds": [
+    42
+  ],
+  "epoch": 1,
+  "neural_weight": 0.35,
+  "validation_auroc": 0.999911,
+  "reference_auroc": 0.999775,
+  "gain": 0.000136000000000025,
+  "paired_95_ci": [
+    3.100000000000325e-05,
+    0.0002840249999999515
+  ],
+  "neural_auroc": 0.9988530000000001,
+  "no_blank_auroc": 0.999733071257841,
+  "reference_no_blank_auroc": 0.9993235783011198,
+  "errors_at_half": 12,
+  "reference_errors_at_half": 12,
+  "export_eligible": true,
+  "training_rows_per_neural_member": 8000,
+  "validation_previously_reused": true,
+  "selection_sha256": "6a480045013ec965ed6627cb79166c30d1e7dde4a46d004255fde2cabbd331ea"
+}

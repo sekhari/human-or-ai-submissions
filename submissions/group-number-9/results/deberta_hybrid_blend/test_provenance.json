@@ -1,0 +1,19 @@
+{
+  "signature": {
+    "encoder_sha256": "8ac1de0d869e02a28ac6351742b9b4557089ad26c10a27eef73421dfd12e14d3",
+    "scalers_sha256": "3bf4f4bae5860776530808480e5aea90cb17e7eed019c86836fd4d5dc6e3b9d8",
+    "heads_sha256": {
+      "42": "0ea63bc9f6f9cfd0b4f5ab310ce6f5f7977ca4744cbbf141c2d7bf6e0148c43a",
+      "43": "4cab3f2e37c202fd69506476546c3b78f83f162828d9a8bdfdbeb4a554031d08",
+      "44": "b388754f17c399974bfc248b04e05b4020ef27188d00ca3a09bb28332b55e68a"
+    },
+    "test_csv_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "extraction_source_sha256": "81595b5a2763493fd1d9ab73ee1e44308068c9cb9e4d5489739e986b13fb6c70",
+    "selection_sha256": "ccc4a3bc1b7bed9a038e42fcd9a2926881792c16883b6b5fc3e9da0135c967f7"
+  },
+  "rows": 3000,
+  "training_rows": 8000,
+  "encoder_precision": "fp32",
+  "device": "mps",
+  "head_device": "cpu"
+}

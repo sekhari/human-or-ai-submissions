@@ -1,0 +1,202 @@
+{
+  "hypothesis": "Nonlinear combinations of word-topic and style signals can improve on LR and the existing gradient booster.",
+  "representations": [
+    "combined"
+  ],
+  "svd_components": 128,
+  "profile": "refined",
+  "folds": 5,
+  "seed": 42,
+  "candidates": [
+    [
+      "lr",
+      {
+        "C": 0.01
+      }
+    ],
+    [
+      "lr",
+      {
+        "C": 0.1
+      }
+    ],
+    [
+      "lr",
+      {
+        "C": 1.0
+      }
+    ],
+    [
+      "lr",
+      {
+        "C": 10.0
+      }
+    ],
+    [
+      "lr",
+      {
+        "C": 100.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "alpha": 0.1
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "alpha": 1.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "alpha": 10.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 0.1
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 1.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 10.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          256,
+          128
+        ],
+        "alpha": 0.1
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          256,
+          128
+        ],
+        "alpha": 1.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          256,
+          128
+        ],
+        "alpha": 10.0
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "alpha": 1.0,
+        "ensemble_seeds": [
+          42,
+          43,
+          44
+        ]
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "alpha": 10.0,
+        "ensemble_seeds": [
+          42,
+          43,
+          44
+        ]
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 1.0,
+        "ensemble_seeds": [
+          42,
+          43,
+          44
+        ]
+      }
+    ],
+    [
+      "mlp",
+      {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 10.0,
+        "ensemble_seeds": [
+          42,
+          43,
+          44
+        ]
+      }
+    ]
+  ],
+  "selection_metric": "mean training-partition CV AUROC, separately for each representation/classifier",
+  "mlp_early_stopping": "Accuracy on an internal 15% of each fitting partition; never the official validation set.",
+  "train_rows": 8000,
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "training_ids_sha256": "efeaa6fcdb3cb2fd3be7b268ab1dffa2404d7d2cc6cfa3007fbad46d273a1d8d",
+  "python": "3.11.17",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "threadpoolctl": "3.7.0",
+    "tabulate": "0.10.0"
+  }
+}

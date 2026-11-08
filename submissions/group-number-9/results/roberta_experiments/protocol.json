@@ -1,0 +1,80 @@
+{
+  "model_id": "FacebookAI/roberta-base",
+  "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "license": "MIT",
+  "configuration": {
+    "seed": 42,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "batch_size": 4,
+    "gradient_accumulation": 4,
+    "eval_batch_size": 8,
+    "max_length": 512,
+    "epochs": 2,
+    "precision": "fp32",
+    "pseudo_weight": 0.25
+  },
+  "mlm_configuration": {
+    "seed": 42,
+    "encoder_lr": 5e-06,
+    "head_lr": 5e-06,
+    "weight_decay": 0.01,
+    "batch_size": 4,
+    "gradient_accumulation": 4,
+    "eval_batch_size": 8,
+    "max_length": 512,
+    "epochs": 1,
+    "precision": "fp32",
+    "pseudo_weight": 0.25
+  },
+  "arms": [
+    "supervised",
+    "pseudo",
+    "tapt"
+  ],
+  "blend_weights": [
+    0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    1
+  ],
+  "input_sha256": {
+    "Data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "Data/unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+    "splits/val_ids.csv": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+    "results/eda/cluster_assignments.csv": "4591b12f53702681fefa398d4a1b56bf37b6ea9587fa7124fa01253e36aadba9",
+    "results/eda/near_duplicates.csv": "f222e10804610675e51073345f9708bc33be95ecee8999ab6a7fe6550baed3f0"
+  },
+  "source_sha256": {
+    "src/roberta_experiment.py": "8e4f606694bf55e19b9096a22c5ef46a54598e071164ae8bfed755173dfc9ccd",
+    "experiments/roberta_experiments.py": "ec0b7e8b9a5dce4b04b4b9b5d6e281bcb2e65a88817bf8687ff3196e14797304",
+    "src/features.py": "e7404985568169a7a32b7bafa5c51dbdcb8c79bc7a6a3f5c23ad25ad296bbc5c",
+    "src/models.py": "db9dd5554b2e259a5c7f13f34d77a80aab6ff3f87a852c7734f950063e7b7a6c",
+    "src/blend_selection.py": "98566651738a94444cc20fa1004707316b2e42ca30212b2778dab7104440a123"
+  },
+  "selection": "Original 6,400/1,600 inner split within 8,000 fitting rows. Each arm chooses epoch 1/2 and mixture weight by inner blend AUROC; ties prefer higher neural AUROC, earlier epoch, smaller weight. Reference mixture is existing DeBERTa/style/boost blend, reconstructed for the inner holdout. The original holdout has been used before; it is not independent.",
+  "pseudo": "Teachers are supervised RoBERTa (epoch with highest inner neural AUROC) and the original OOF-feature booster, independently fit to the fitting partition. Require agreement, boosting confidence >=0.99 and neural confidence >=0.90. Targets are mean teacher probabilities. Add one pseudo microbatch at weight 0.25 per supervised optimizer update. Same real-row exposure and optimizer update count as control. No pseudo threshold tuning; quality measured on mock-unlabeled inner holdout.",
+  "tapt": "One masked-language-model epoch on fitting-partition text plus allowed unlabeled.csv rows; labels discarded. 15% dynamic masking with 80/10/10 replacement, encoder and MLM head LR 5e-6. Vocabulary logits computed only at masked positions. Fresh classification head identical to the supervised control, then same supervised schedule.",
+  "domain_holdout": "Remove story/poetry-like clusters 0/2 from original 8,000 training rows. Also exclude fitting near-duplicates of held-out rows using committed EDA pairs. Predict the 148 held-out labeled rows; fixed validation remains excluded. Unlabeled passages from these styles are allowed, except exact/recorded near-copies of evaluation text. Hyperparameters/durations are frozen from inner selection. This is one small, noisy topic holdout, not full leave-one-domain-out CV or an unseen-generator test.",
+  "unlabeled_protection": "For every context exclude exact text and recorded near-duplicate neighbors of its heldout rows and the fixed validation rows. Test passages are not pseudo-labeled or used for teacher/gradient training. Existing unsupervised EDA clusters (which included test text, never test labels) inform the topic stress-test choice. Test predictions do not select checkpoints or methods.",
+  "arm_selection": "Highest inner blend AUROC; ties prefer higher domain neural AUROC, then higher inner neural AUROC. Domain results are a training-only selection signal, not an untouched final test. Retain one preselected arm before fixed validation evaluation; refit all three frozen arm settings to report the comparison.",
+  "final": "Refit all three arms on 8,000 fitting rows, using inner-selected adaptation durations and the same two-epoch LR horizon. Evaluate all frozen choices once on the reused fixed 2,000 validation rows. No sweep or arm switch based on fixed validation.",
+  "export_gate": "Only preselected arm: positive neural weight, fixed-validation blend exceeds previous 0.999485, domain blend no worse than its domain boosting reference. No Kaggle upload or Git push.",
+  "packages": {
+    "torch": "2.15.0",
+    "transformers": "4.57.6",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1"
+  },
+  "sources": [
+    "https://huggingface.co/FacebookAI/roberta-base",
+    "https://aclanthology.org/2020.acl-main.740/"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "models": [
+    {
+      "name": "combined_mlp",
+      "representation": "combined",
+      "classifier": "mlp",
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 1.0,
+        "ensemble_seeds": [
+          42,
+          43,
+          44
+        ]
+      },
+      "mean_cv_auroc": 0.99700125,
+      "std_cv_auroc": 0.000997359428730758
+    },
+    {
+      "name": "combined_lr",
+      "representation": "combined",
+      "classifier": "lr",
+      "params": {
+        "C": 1.0
+      },
+      "mean_cv_auroc": 0.99056421875,
+      "std_cv_auroc": 0.0028584052317245446
+    }
+  ],
+  "components": 128,
+  "seed": 42,
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "tuning_elapsed_s": 74.95479950029403
+}

@@ -1,0 +1,30 @@
+{
+  "boosting_reversed_human_ai_pairs": 712,
+  "hybrid_blend_reversed_human_ai_pairs": 515,
+  "total_human_ai_pairs": 1000000,
+  "boosting_wrong_pairs_corrected": 390,
+  "boosting_correct_pairs_reversed": 193,
+  "threshold": 0.5,
+  "boosting_accuracy": 0.988,
+  "hybrid_blend_accuracy": 0.995,
+  "boosting_confusion_true_human_ai_pred_human_ai": [
+    [
+      991,
+      9
+    ],
+    [
+      15,
+      985
+    ]
+  ],
+  "hybrid_blend_confusion_true_human_ai_pred_human_ai": [
+    [
+      997,
+      3
+    ],
+    [
+      7,
+      993
+    ]
+  ]
+}

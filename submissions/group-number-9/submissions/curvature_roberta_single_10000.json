@@ -1,0 +1,41 @@
+{
+  "csv_sha256": "1f6ca85aaa66f73084db013958a6ab406d737b61e08795d3772873d9175a90a8",
+  "training_rows_per_component": 10000,
+  "test_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "validation_from_separate_8000_row_fits": {
+    "option": "single",
+    "neural_seeds": [
+      42
+    ],
+    "epoch": 1,
+    "neural_weight": 0.35,
+    "validation_auroc": 0.999911,
+    "reference_auroc": 0.999775,
+    "gain": 0.000136000000000025,
+    "paired_95_ci": [
+      3.100000000000325e-05,
+      0.0002840249999999515
+    ],
+    "neural_auroc": 0.9988530000000001,
+    "no_blank_auroc": 0.999733071257841,
+    "reference_no_blank_auroc": 0.9993235783011198,
+    "errors_at_half": 12,
+    "reference_errors_at_half": 12,
+    "export_eligible": true,
+    "training_rows_per_neural_member": 8000,
+    "validation_previously_reused": true,
+    "selection_sha256": "6a480045013ec965ed6627cb79166c30d1e7dde4a46d004255fde2cabbd331ea"
+  },
+  "protocol_sha256": "357ad93357f41482b4e62bfb45d8c29fc070a93b99633160a90badd8ea6debe5",
+  "reference_test_sha256": "ae6733d63bf7193e0638aba7f5e4e617897bbb51906ea2eaaefd8450d63592f7",
+  "neural_checkpoints": [
+    {
+      "seed": 42,
+      "epoch": 1,
+      "sha256": "b9b23738027f59612027fd285193365933df69a926e532171c8fb7f5b632bcd0"
+    }
+  ],
+  "uploaded_to_kaggle": false,
+  "no_new_model_downloads": true,
+  "unlabeled_examples_added": false
+}

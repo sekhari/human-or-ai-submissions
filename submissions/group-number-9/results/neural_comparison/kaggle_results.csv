@@ -1,0 +1,2 @@
+submission_file,public_auroc_approx,score_precision,source,notes
+neural_combined_mlp.csv,0.95,rounded,user-reported,"Exact Kaggle score pending; below previously reported team best of 0.96397."

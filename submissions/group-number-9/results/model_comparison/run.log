@@ -1,0 +1,22 @@
+--- word_lr_default
+    val AUROC 0.9010  params {}  (3s tuning)
+--- word_nb
+    val AUROC 0.8949  params {'clf__alpha': 0.03, 'vect__min_df': 5, 'vect__ngram_range': (1, 2)}  (11s tuning)
+--- word_lr
+    val AUROC 0.9494  params {'clf__C': 100, 'tfidf__min_df': 2, 'tfidf__ngram_range': (1, 2)}  (22s tuning)
+--- char_lr
+    val AUROC 0.9446  params {'clf__C': 10, 'tfidf__ngram_range': (2, 4)}  (83s tuning)
+--- char_svm
+    val AUROC 0.9441  params {'clf__C': 0.3, 'tfidf__ngram_range': (2, 4)}  (51s tuning)
+--- style_hgb
+    val AUROC 0.9966  params {'l2_regularization': 0.0, 'learning_rate': 0.2, 'max_leaf_nodes': 63}  (6s tuning)
+--- style_hgb_nolayout
+    val AUROC 0.9570  params {'l2_regularization': 10.0, 'learning_rate': 0.2, 'max_leaf_nodes': 63}  (6s tuning)
+             model  cv_auroc  cv_std  train_auroc  val_auroc  val_ci_low  val_ci_high  val_auroc_layout_stripped  fit_time_s  predict_val_time_s  tune_time_s  candidates
+         style_hgb    0.9972  0.0009       1.0000     0.9966      0.9939       0.9987                     0.8111      1.0627              0.4198       5.6308          27
+style_hgb_nolayout    0.9558  0.0050       1.0000     0.9570      0.9484       0.9654                     0.9562      1.4130              0.4389       5.6074          27
+           word_lr    0.9395  0.0044       1.0000     0.9494      0.9399       0.9576                     0.9494      1.2692              0.1747      22.0434          28
+           char_lr    0.9395  0.0081       0.9999     0.9446      0.9348       0.9538                     0.9446      5.3540              1.0948      82.6015          15
+          char_svm    0.9386  0.0082       0.9967     0.9441      0.9341       0.9533                     0.9441      4.2667              1.0788      50.8976          12
+   word_lr_default    0.8942  0.0082       0.9768     0.9010      0.8873       0.9134                     0.9010      0.3965              0.0952       3.1510           1
+           word_nb    0.8842  0.0064       0.9885     0.8949      0.8811       0.9090                     0.8949      0.8496              0.1493      11.0386          16

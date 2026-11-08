@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checked_rows": 3000,
+  "exact_test_and_sample_ID_order": true,
+  "finite_scores_in_unit_interval": true,
+  "model_and_score_hashes_verified": true,
+  "test_labels_accessed": false,
+  "offline_validation_available": false,
+  "protocol_sha256": "028882b8bb86113ff24936e7612534035bc25ba5d575853f6775e55a46705a4e",
+  "csv_sha256": "c398ae317ba46233e5a90e8867cbff6c242e9bf49274001bf757cef39255700a",
+  "candidate": "submissions/all_blend_roberta_rank10_10000.csv",
+  "uploaded_to_kaggle": false
+}

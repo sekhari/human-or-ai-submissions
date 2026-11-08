@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "model": "hybrid_blend_maximum",
+      "neural_weight": 0.5,
+      "validation_auroc": 0.999485,
+      "difference_from_boosting": 0.0001969999999998917,
+      "paired_95ci_low": -3.002499999997521e-05,
+      "paired_95ci_high": 0.0004400749999999977,
+      "beats_reference_numerically": true
+    }
+  ],
+  "selection_sha256": "ccc4a3bc1b7bed9a038e42fcd9a2926881792c16883b6b5fc3e9da0135c967f7",
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "kaggle_uploaded": false
+}

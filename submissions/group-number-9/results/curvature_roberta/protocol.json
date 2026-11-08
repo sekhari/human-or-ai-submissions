@@ -1,0 +1,74 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "configuration": {
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "batch_size": 4,
+    "gradient_accumulation": 4,
+    "eval_batch_size": 8,
+    "max_length": 512,
+    "epochs": 2,
+    "precision": "fp32",
+    "pseudo_weight": 0.25
+  },
+  "epochs_considered": [
+    1,
+    2
+  ],
+  "model": "FacebookAI/roberta-base",
+  "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "no_downloads": true,
+  "no_additional_unlabeled_examples": true,
+  "option1": "Reuse supervised seed-42 inner/domain/fit predictions, verify frame/configuration hashes, select epoch and log-odds blend weight on training holdouts.",
+  "option2": "Add independent pretrained-initialized seeds 43 and 44 in each context. Average the three probabilities at a common epoch, then blend with curvature. This is a seed ensemble, not a learned stack or five-fold OOF experiment.",
+  "selection": "Weights [0,.01,.025,.05,.1,.2,.35,.5]; maximize .75 inner AUROC + .25 rare-topic AUROC. Rare-topic AUROC must be >= curvature-.0005. Ties: higher inner, smaller weight, earlier epoch. Both rules registered before option1 validation.",
+  "validation": "Frozen choices only, same reused fixed 2000 rows. Option2 settings never depend on option1 validation. Paired 2000-resample stratified bootstrap; no validation tuning. Earlier topic clustering used all competition text, so topic holdout is a diagnostic rather than a fully inductive unseen-domain test.",
+  "export_gate": "Positive preselected neural weight, training-only composite gain >= .000001, fixed validation no more than .0002 below curvature. Same gate for both options. This is a practical guardrail, not proof of a public-score gain.",
+  "final_fit": "Only eligible methods. Refit needed neural seeds on all 10000 labels from cached pretrained weights, selected epoch with unchanged two-epoch scheduler horizon. Use teammate's already-generated 10000-row curv_bag test predictions from pinned remote commit. Never evaluate full-fit models on validation.",
+  "checkpointing": "Fresh process per epoch/inference. Full optimizer/scheduler/RNG recovery state at completed epochs. Retry an interrupted epoch once, then stop visibly. Remove only newly-created optimizer states after required final epoch succeeds; preserve both weights for selection. No existing checkpoints modified.",
+  "time_budget_seconds": 28800,
+  "sources": {
+    "src/curvature_roberta.py": "7113d32c55066a9d9320db3ddffecdcaf228da53fa93a8ef7bd7936415aa78d8",
+    "experiments/curvature_roberta.py": "56bd785daa1df66afbbd607cc8252a0db2964206ed6d99251eb86fee2f4b8b65",
+    "src/roberta_experiment.py": "8e4f606694bf55e19b9096a22c5ef46a54598e071164ae8bfed755173dfc9ccd",
+    "src/deberta.py": "e270f0341e04866f9fb902b21d943c08a1eb7771ae3881f0ab9ec9e878388192",
+    "src/blend_selection.py": "98566651738a94444cc20fa1004707316b2e42ca30212b2778dab7104440a123",
+    "experiments/robust_boost.py": "5f22c3328a809c50376ace35dbbf391d4762c4ed45dc53d1787bd44fcff90cd6",
+    "src/features.py": "e7404985568169a7a32b7bafa5c51dbdcb8c79bc7a6a3f5c23ad25ad296bbc5c",
+    "src/models.py": "db9dd5554b2e259a5c7f13f34d77a80aab6ff3f87a852c7734f950063e7b7a6c"
+  },
+  "inputs": {
+    "Data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "Data/test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "splits/val_ids.csv": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+    "results/robust_boost/protocol.json": "1d3073624fb9e46c4a8deb92ef201a045d5e8109d76d0681f1edd43cbf0ef2ad",
+    "results/eda/cluster_assignments.csv": "4591b12f53702681fefa398d4a1b56bf37b6ea9587fa7124fa01253e36aadba9",
+    ".cache/robust_boost/selection_inner_curv_bag.csv": "413ded652f88bc5acc8f0e5ef8d15210a1eb5d227ab3f83d78395cd1a6a3f8ce",
+    ".cache/robust_boost/selection_rare_topics_curv_bag.csv": "4b7b3c7a929221381eafb7c3ad525db2be1287b52e6ccd22e2dd37fd719ae104",
+    "results/robust_boost/validation_curv_bag.csv": "94e27c1d20016c734102998f658bcd5e9409c6284942fbec143e7d16b8d4b43f",
+    ".cache/roberta_experiments/inner/supervised/epoch_1/model.safetensors": "78a427f1f67e2ed726b594e244148c45de2a31bd95deafa8812cca2c6b44f8ec",
+    ".cache/roberta_experiments/inner_supervised_epoch_1_scores.npz": "0706f1f6a96664cf4d18f8aec2f9b5020aa90bb1447d2d92a428708ee9d3923d",
+    ".cache/roberta_experiments/inner/supervised/epoch_2/model.safetensors": "d01b2bbc28f0a4c4faa8073d0509bea5bce37a0652c59ca0dd3b2c9d982040bd",
+    ".cache/roberta_experiments/inner_supervised_epoch_2_scores.npz": "fc8f74fd4e21b61cc12ce978a9cf732ba8fcc3c0e403d481859626de4072b1f9",
+    ".cache/roberta_experiments/domain/supervised/epoch_1/model.safetensors": "71a44fb8392e4b3538e5d6e78254606f1855fc27a6bdeb4c8d5795b221a3d9c8",
+    ".cache/roberta_experiments/domain_supervised_epoch_1_scores.npz": "fbc23d8a3108c4447727d986aab10217b3f10a93171c011cd36196f34f429a01",
+    ".cache/roberta_experiments/domain/supervised/epoch_2/model.safetensors": "c0ba3e0afdc1baae4e083f6bc36fa5affb06bb1953da0585a585dc33e56eb0dc",
+    ".cache/roberta_experiments/domain_supervised_epoch_2_scores.npz": "35464865c05762ef74b4b56a3497b93cb9605c5ee8545516454e50212bb46a1e",
+    ".cache/roberta_experiments/fit/supervised/epoch_1/model.safetensors": "a9f7a020b283a76c0c356ab1a5352ab4a2724610cd51fe962632bc470bbbbea8",
+    ".cache/roberta_experiments/fit_supervised_epoch_1_scores.npz": "e9da66899c70087465b5ce313b7c83496a7d76bb1ed29a20335d4819e365163a",
+    ".cache/roberta_experiments/fit/supervised/epoch_2/model.safetensors": "721cbca3f59081091403c02ae7b284bb3b1fecf6ee3b33bc41db02fcce79f5a2",
+    ".cache/roberta_experiments/fit_supervised_epoch_2_scores.npz": "eab8b0ddd2e67929ce5312c84405d348cc955d3e39253d5949234d9d98957405"
+  },
+  "versions": {
+    "torch": "2.15.0",
+    "transformers": "4.57.6",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1"
+  }
+}

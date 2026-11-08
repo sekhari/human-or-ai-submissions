@@ -1,0 +1,28 @@
+{
+  "epoch": 1,
+  "updates": 491,
+  "training_rows": 7852,
+  "loss": 0.19089825788501824,
+  "pseudo_rows_available": 0,
+  "pseudo_batches_used": 0,
+  "elapsed_s": 390.822645334003,
+  "signature": {
+    "frame": "15f8804a24d22fd9b388009cc42619cc6a549a6ba789b057bd0dd80c3f73092c",
+    "pseudo": null,
+    "configuration": {
+      "seed": 42,
+      "encoder_lr": 2e-05,
+      "head_lr": 0.0001,
+      "weight_decay": 0.01,
+      "batch_size": 4,
+      "gradient_accumulation": 4,
+      "eval_batch_size": 8,
+      "max_length": 512,
+      "epochs": 2,
+      "precision": "fp32",
+      "pseudo_weight": 0.25
+    },
+    "task": "classification",
+    "adapted": "/Users/kenny/Documents/Cornell/Fall26/AML/Kaggle Comp Project/cs5785-kaggle-group9/.cache/roberta_experiments/domain/mlm/epoch_1"
+  }
+}

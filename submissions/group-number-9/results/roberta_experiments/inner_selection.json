@@ -1,0 +1,28 @@
+{
+  "arms": {
+    "supervised": {
+      "arm": "supervised",
+      "epoch": 1,
+      "weight": 0.2,
+      "inner_blend_auroc": 0.999825,
+      "inner_neural_auroc": 0.9979125000000001
+    },
+    "pseudo": {
+      "arm": "pseudo",
+      "epoch": 2,
+      "weight": 0.2,
+      "inner_blend_auroc": 0.9998484375000001,
+      "inner_neural_auroc": 0.999203125
+    },
+    "tapt": {
+      "arm": "tapt",
+      "epoch": 2,
+      "weight": 0.2,
+      "inner_blend_auroc": 0.99985,
+      "inner_neural_auroc": 0.9989171875
+    }
+  },
+  "teacher_epoch": 2,
+  "reference_inner_auroc": 0.9997484375000001,
+  "protocol_sha256": "81ce18f3720ea533c11eb797f502775084358f3686d1c55e0293c3ac724528ae"
+}

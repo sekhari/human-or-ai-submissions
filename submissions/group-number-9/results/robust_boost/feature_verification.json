@@ -1,0 +1,10 @@
+{
+  "documents": 4,
+  "statistics_per_document": 19,
+  "passed": true,
+  "rtol": 0.002,
+  "atol": 0.002,
+  "maximum_absolute_difference": 0.0006880382995602119,
+  "reference": "Actual frozen GPT-2 CPU full-vocabulary dense reductions; GPU cache uses token-chunked reductions. Synthetic padding/moment tests checked separately.",
+  "model_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+}

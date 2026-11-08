@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "updates": 4,
+  "masked_position_only_logits": true,
+  "losses": [
+    2.003178358078003,
+    1.9266659021377563,
+    1.7936867475509644,
+    1.5896621942520142
+  ],
+  "driver_gb": 5.418860544,
+  "elapsed_s": 1.9957429579953896,
+  "weights_discarded": true
+}

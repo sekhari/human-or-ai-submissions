@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "csv_sha256": "8c7e00f747a8284fa9065c6acfee964f34a5698f4b6d16689502813255bb55f0",
+  "test_csv_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "test_data_matches_original_baseline_provenance": true,
+  "roberta_checkpoint_sha256": "cc11a738e75ffc6b6352611b21288e8036bc118e70ba997c2f9473645a8dcf94",
+  "protocol_sha256": "81ce18f3720ea533c11eb797f502775084358f3686d1c55e0293c3ac724528ae",
+  "selection_sha256": "886f44247fa5602996c84abde5bf3275d3c8ae7c3d6a787b007e683334138725",
+  "candidate_rows": 3000,
+  "validation_auroc": 0.9998370000000001,
+  "uploaded_to_kaggle": false,
+  "wall_time_hours_from_protocol_to_checks": 2.9534803191158505
+}

@@ -1,0 +1,5 @@
+split,auroc
+"train (in-sample, 8000)",0.99999953125
+"train (5-fold out-of-fold, 8000)",0.9995226875
+validation (2000),0.9998655
+"validation, boosting component P(AI)",0.999844

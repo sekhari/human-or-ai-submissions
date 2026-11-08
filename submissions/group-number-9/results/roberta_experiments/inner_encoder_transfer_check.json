@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "same_fresh_classification_head_as_control": true,
+  "adapted_encoder_differs_from_original": true,
+  "check": "CPU reload of actual inner MLM checkpoint; no training or model changes"
+}

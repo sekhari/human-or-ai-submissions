@@ -1,0 +1,49 @@
+{
+  "protocol": {
+    "reference_commit": "771aaf34e132e8e29b617b295098e19b03c93710",
+    "reference_path": "submissions/improve_all_blend.csv",
+    "reference_csv_sha256": "b1d2351351eded878f345fd36d6083f5884935e38bc7e0d47621efcd1ff71fc2",
+    "neural": "Existing supervised RoBERTa-base, seed 42, epoch 1; final fit on all 10000 labels",
+    "neural_weight": 0.1,
+    "formula": ".9 * existing all_blend score + .1 * average_rank(RoBERTa probability)/N",
+    "effective_weights": {
+      "column_subsampled_HGB_rank": 0.45,
+      "ExtraTrees_rank": 0.45,
+      "supervised_RoBERTa_rank": 0.1
+    },
+    "weight_selection": "Single predeclared conservative weight; not tuned on training, validation, test labels or Kaggle results",
+    "neural_choice": "Reuse the seed-42/epoch-1 component from the user-tested 0.98660 blend; no new neural selection",
+    "offline_validation_auroc": null,
+    "offline_validation_status": "Unavailable: new reference has no committed per-example held-out scores; summary AUROCs cannot validate this blend",
+    "kaggle_auroc": null,
+    "reference_public_auroc_user_reported_approximately": 0.991,
+    "target_public_auroc": 0.99166,
+    "no_new_training": true,
+    "no_model_downloads": true,
+    "unlabeled_data": "No new use; existing reference already includes its original n-gram model fitted on unlabeled text",
+    "sources": {
+      "src/rank_blend.py": "576bdf051f4dec5b5ccb3105c7f2fdfee379228c2e47bc65a947e52764536729",
+      "src/curvature_roberta.py": "7113d32c55066a9d9320db3ddffecdcaf228da53fa93a8ef7bd7936415aa78d8",
+      "experiments/all_blend_roberta_rank.py": "178cdac51049a84b881c0be53459f5df31155509f9796b799e072e0be98715f3"
+    },
+    "inputs": {
+      "test_csv_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+      "sample_submission_sha256": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+      "neural_scores_sha256": "a8710f2289c3194d7011c67042f452c7b19f67be55ee928b77b4f92a90a03eeb",
+      "neural_checkpoint_sha256": "b9b23738027f59612027fd285193365933df69a926e532171c8fb7f5b632bcd0"
+    }
+  },
+  "verification": {
+    "passed": true,
+    "checked_rows": 3000,
+    "exact_test_and_sample_ID_order": true,
+    "finite_scores_in_unit_interval": true,
+    "model_and_score_hashes_verified": true,
+    "test_labels_accessed": false,
+    "offline_validation_available": false,
+    "protocol_sha256": "028882b8bb86113ff24936e7612534035bc25ba5d575853f6775e55a46705a4e",
+    "csv_sha256": "c398ae317ba46233e5a90e8867cbff6c242e9bf49274001bf757cef39255700a",
+    "candidate": "submissions/all_blend_roberta_rank10_10000.csv",
+    "uploaded_to_kaggle": false
+  }
+}

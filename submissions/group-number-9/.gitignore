@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.cache/
+
+# Kaggle data and locally computed caches are never committed.
+Data/
+data/
+cache/
+submission.csv
+
+# Separate environment for the original RoBERTa dependency versions.
+.venv-rank10/

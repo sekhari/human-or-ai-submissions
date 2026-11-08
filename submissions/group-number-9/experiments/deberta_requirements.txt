@@ -1,0 +1,4 @@
+# In addition to the repository requirements.txt; Python 3.11 used for this run.
+torch==2.15.0
+transformers==4.57.6
+sentencepiece==0.2.2

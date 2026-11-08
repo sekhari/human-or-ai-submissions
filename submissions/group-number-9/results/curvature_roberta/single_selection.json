@@ -1,0 +1,148 @@
+{
+  "chosen": {
+    "epoch": 1,
+    "weight": 0.35,
+    "inner_auroc": 0.9998703124999999,
+    "domain_auroc": 1.0,
+    "selection_score": 0.999902734375,
+    "eligible": true
+  },
+  "training_only_gain": 0.00011015624999999307,
+  "reference_inner_auroc": 0.9997234375,
+  "reference_domain_auroc": 1.0,
+  "fixed_validation_used": false,
+  "candidates": [
+    {
+      "epoch": 1,
+      "weight": 0.0,
+      "inner_auroc": 0.9997234375,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999792578125,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.01,
+      "inner_auroc": 0.9997265625,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999794921875,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.025,
+      "inner_auroc": 0.9997468749999999,
+      "domain_auroc": 1.0,
+      "selection_score": 0.9998101562499999,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.05,
+      "inner_auroc": 0.9997578125,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999818359375,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.1,
+      "inner_auroc": 0.9997906249999999,
+      "domain_auroc": 1.0,
+      "selection_score": 0.9998429687499999,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.2,
+      "inner_auroc": 0.9998421875,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999881640625,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.35,
+      "inner_auroc": 0.9998703124999999,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999902734375,
+      "eligible": true
+    },
+    {
+      "epoch": 1,
+      "weight": 0.5,
+      "inner_auroc": 0.9998140624999999,
+      "domain_auroc": 1.0,
+      "selection_score": 0.9998605468749999,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.0,
+      "inner_auroc": 0.9997234375,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999792578125,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.01,
+      "inner_auroc": 0.9997328125,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999799609375,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.025,
+      "inner_auroc": 0.9997468749999999,
+      "domain_auroc": 1.0,
+      "selection_score": 0.9998101562499999,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.05,
+      "inner_auroc": 0.9997671875,
+      "domain_auroc": 1.0,
+      "selection_score": 0.9998253906250001,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.1,
+      "inner_auroc": 0.9997984375,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999848828125,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.2,
+      "inner_auroc": 0.999853125,
+      "domain_auroc": 1.0,
+      "selection_score": 0.99988984375,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.35,
+      "inner_auroc": 0.9998671875,
+      "domain_auroc": 1.0,
+      "selection_score": 0.999900390625,
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "weight": 0.5,
+      "inner_auroc": 0.9998234374999999,
+      "domain_auroc": 0.9997959183673469,
+      "selection_score": 0.9998165577168366,
+      "eligible": true
+    }
+  ],
+  "seeds": [
+    42
+  ],
+  "protocol_sha256": "357ad93357f41482b4e62bfb45d8c29fc070a93b99633160a90badd8ea6debe5"
+}

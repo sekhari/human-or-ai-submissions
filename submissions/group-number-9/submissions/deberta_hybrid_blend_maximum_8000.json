@@ -1,0 +1,12 @@
+{
+  "model": "hybrid_blend_maximum",
+  "neural_weight": 0.5,
+  "training_rows": 8000,
+  "prediction_rows": 3000,
+  "validation_auroc": 0.999485,
+  "selection_sha256": "ccc4a3bc1b7bed9a038e42fcd9a2926881792c16883b6b5fc3e9da0135c967f7",
+  "test_provenance_sha256": "7e3124c28616a19062c751c0c0d85f772878a94c96c9f4798fb9b0bf796426f4",
+  "csv_sha256": "c0ce2e00ac3aff00f7e5afb78a92d311d912e650d674592b4e1dcb42feb1f40a",
+  "uploaded_to_kaggle": false,
+  "note": "Three-seed text/style neural head plus original booster. Frozen fine-tuned encoder; not a 10,000-row refit."
+}

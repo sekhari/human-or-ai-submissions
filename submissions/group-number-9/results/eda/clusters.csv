@@ -1,0 +1,13 @@
+cluster,n_train,n_unlabeled,n_test,test_over_train,ai_rate_train,top_terms
+0,164,57,620,12.6,0.676829268292683,"story, life, novel, man, young, family, world, named"
+1,827,240,186,0.75,0.524788391777509,"said, company, year, mr, government, new, market, people"
+2,25,10,486,64.8,0.72,"love, heart, night, day, life, like, light, eyes"
+3,1094,353,216,0.66,0.5045703839122486,"pepper, cup, salt, oil, add, minutes, heat, chopped"
+4,1001,288,185,0.62,0.5064935064935064,"results, study, quantum, paper, theory, properties, model, using"
+5,1184,368,214,0.6,0.49493243243243246,"segmentation, image, images, method, learning, proposed, methods, approach"
+6,692,224,118,0.57,0.4797687861271676,"film, movie, br, story, films, characters, great, movies"
+7,512,144,109,0.71,0.50390625,"located, city, area, war, century, history, known, north"
+8,1170,328,229,0.65,0.4888888888888889,"born, university, american, career, school, music, known, including"
+9,555,174,89,0.53,0.4486486486486487,"team, league, game, year, said, club, won, season"
+10,1929,584,410,0.71,0.5038880248833593,"just, like, ve, know, don, feel, really, want"
+11,847,230,138,0.54,0.48288075560802834,"sugar, cup, flour, butter, bowl, minutes, baking, vanilla"

@@ -1,0 +1,33 @@
+{
+  "model": "FacebookAI/roberta-base",
+  "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "epoch_used": 1,
+  "scheduler_horizon_epochs": 2,
+  "training_rows": 10000,
+  "optimizer_updates": 625,
+  "training": {
+    "seed": 42,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "batch_size": 4,
+    "gradient_accumulation": 4,
+    "eval_batch_size": 8,
+    "max_length": 512,
+    "epochs": 2,
+    "precision": "fp32",
+    "pseudo_weight": 0.25
+  },
+  "original_training_frame_sha256": "c34fd5cc4d941e1993fda8a08c99c8e314776f96b0db4543de38d6e3f8d3e63a",
+  "neural_weight": 0.1,
+  "formula": ".9 * improve_all_blend + .1 * average_rank(RoBERTa_probability)/N",
+  "tie_method": "average",
+  "reference_csv_sha256": "b1d2351351eded878f345fd36d6083f5884935e38bc7e0d47621efcd1ff71fc2",
+  "expected_submission_sha256": "c398ae317ba46233e5a90e8867cbff6c242e9bf49274001bf757cef39255700a",
+  "component_predictions_sha256": "bb753a93d4a3f937a9a65d9ac5960d1af4a7b4182e72bb8063f9ef0cf3a46db7",
+  "blend_offline_validation_auroc": null,
+  "blend_public_kaggle_auroc": 0.99132,
+  "component_neural_validation_auroc": 0.998853,
+  "component_validation_note": "RoBERTa alone, seed42/epoch1 fit on8000 and evaluated on2000; NOT the .99132 final blend AUROC",
+  "weight_selection": "10% predeclared before Kaggle feedback, no weight search"
+}

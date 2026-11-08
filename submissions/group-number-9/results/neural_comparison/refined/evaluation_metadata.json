@@ -1,0 +1,10 @@
+{
+  "selected_json_sha256": "ebb05d10f66065c2a83bcc57e4f821ded0de44e16e8fb8c9ed6037dfcd6d09ed",
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "note": "Bootstrap intervals condition on this fixed split and fitted models; they do not capture training or model-selection uncertainty. Formatting removal is a diagnostic, not the actual test distribution. No settings were selected on these validation metrics.",
+  "reproduction_check": "Every validation probability reproduced within 1e-14 after refitting the frozen configurations. Baseline fit timing now includes feature extraction in the pipeline, consistently with the neural models.",
+  "source_sha256": {
+    "src/neural_models.py": "a3fa664cea0b4fded349cc9225a2ebc2769c94f15ed8f7cf9aad5755d82dc841",
+    "experiments/neural_comparison.py": "c4dcbc8ddaa6e3dc135b62c94245a0ff2173676b5c5f79b6a674154f63254e09"
+  }
+}

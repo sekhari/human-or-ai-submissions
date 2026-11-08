@@ -1,0 +1,22 @@
+                variant features                 text_models  lodo_mean  lodo_min  rare_domain    val  val_ci_low  val_ci_high  val_no_blank_lines
+             gpt2_style  v2_gpt2                           -     0.9990    0.9971       0.9990 0.9994      0.9988       0.9998              0.9981
+       gpt2_word_masked  v2_gpt2           word_lr+masked_lr     0.9989    0.9967       1.0000 0.9997      0.9994       0.9999              0.9990
+gpt2_word_masked_minilm  v2_gpt2 word_lr+masked_lr+minilm_lr     0.9989    0.9963       0.9996 0.9997      0.9994       0.9999              0.9990
+  v2_word_masked_minilm       v2 word_lr+masked_lr+minilm_lr     0.9963    0.9919       0.9990 0.9992      0.9982       0.9998              0.9977
+         v2_word_masked       v2           word_lr+masked_lr     0.9962    0.9909       0.9992 0.9993      0.9984       0.9998              0.9979
+    v2_word_masked_char       v2   word_lr+masked_lr+char_lr     0.9961    0.9899       0.9971 0.9993      0.9983       0.9998              0.9978
+              v2_masked       v2                   masked_lr     0.9961    0.9875       0.9973 0.9989      0.9980       0.9996              0.9968
+         v1_word_masked       v1           word_lr+masked_lr     0.9952    0.9847       0.9982 0.9984      0.9960       0.9996              0.9953
+               style_v2       v2                           -     0.9952    0.9870       0.9935 0.9989      0.9982       0.9994              0.9966
+               style_v1       v1                           -     0.9943    0.9850       0.9929 0.9967      0.9941       0.9987              0.9902
+                variant                                                                                   params
+             gpt2_style  {"learning_rate": 0.2, "max_iter": 100, "max_leaf_nodes": 15, "l2_regularization": 0.0}
+       gpt2_word_masked  {"learning_rate": 0.1, "max_iter": 200, "max_leaf_nodes": 15, "l2_regularization": 0.0}
+gpt2_word_masked_minilm  {"learning_rate": 0.2, "max_iter": 100, "max_leaf_nodes": 31, "l2_regularization": 0.0}
+  v2_word_masked_minilm {"learning_rate": 0.2, "max_iter": 100, "max_leaf_nodes": 31, "l2_regularization": 10.0}
+         v2_word_masked {"learning_rate": 0.1, "max_iter": 200, "max_leaf_nodes": 63, "l2_regularization": 10.0}
+    v2_word_masked_char  {"learning_rate": 0.2, "max_iter": 100, "max_leaf_nodes": 15, "l2_regularization": 0.0}
+              v2_masked  {"learning_rate": 0.2, "max_iter": 100, "max_leaf_nodes": 15, "l2_regularization": 0.0}
+         v1_word_masked  {"learning_rate": 0.2, "max_iter": 100, "max_leaf_nodes": 31, "l2_regularization": 0.0}
+               style_v2 {"learning_rate": 0.03, "max_iter": 400, "max_leaf_nodes": 63, "l2_regularization": 0.0}
+               style_v1  {"learning_rate": 0.1, "max_iter": 200, "max_leaf_nodes": 63, "l2_regularization": 0.0}

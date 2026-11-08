@@ -1,0 +1,18 @@
+{
+  "method": {
+    "arm": "tapt",
+    "epoch": 2,
+    "weight": 0.2,
+    "inner_blend_auroc": 0.99985,
+    "inner_neural_auroc": 0.9989171875,
+    "domain_neural_auroc": 0.9991836734693877,
+    "domain_blend_auroc": 0.9995918367346939,
+    "domain_boosting_auroc": 0.9991836734693877,
+    "domain_rows": 148
+  },
+  "validation_auroc": 0.9998370000000001,
+  "training_rows": 8000,
+  "csv_sha256": "8c7e00f747a8284fa9065c6acfee964f34a5698f4b6d16689502813255bb55f0",
+  "selection_sha256": "886f44247fa5602996c84abde5bf3275d3c8ae7c3d6a787b007e683334138725",
+  "uploaded_to_kaggle": false
+}

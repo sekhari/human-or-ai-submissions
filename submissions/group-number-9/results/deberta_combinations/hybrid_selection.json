@@ -1,0 +1,53 @@
+{
+  "hybrid": {
+    "configuration": {
+      "width": 128,
+      "weight_decay": 0.01,
+      "lr": 0.001,
+      "dropout": 0.2,
+      "text_dim": 768,
+      "mode": "hybrid"
+    },
+    "epochs": 10,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "inner_auroc": 0.9994734375
+  },
+  "text_only": {
+    "configuration": {
+      "width": 64,
+      "weight_decay": 0.001,
+      "lr": 0.001,
+      "dropout": 0.2,
+      "text_dim": 768,
+      "mode": "text_only"
+    },
+    "epochs": 5,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "inner_auroc": 0.9919
+  },
+  "style_only": {
+    "configuration": {
+      "width": 64,
+      "weight_decay": 0.01,
+      "lr": 0.001,
+      "dropout": 0.2,
+      "text_dim": 0,
+      "mode": "style_only"
+    },
+    "epochs": 20,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "inner_auroc": 0.9973609375
+  }
+}

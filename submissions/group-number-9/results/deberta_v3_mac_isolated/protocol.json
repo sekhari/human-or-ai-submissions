@@ -1,0 +1,47 @@
+{
+  "configuration": {
+    "model_id": "microsoft/deberta-v3-base",
+    "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+    "seed": 42,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "batch_size": 4,
+    "gradient_accumulation": 4,
+    "eval_batch_size": 8,
+    "epochs": 3,
+    "max_length": 512,
+    "precision": "fp32",
+    "resume": true,
+    "one_epoch_per_process": true
+  },
+  "device": "mps",
+  "python": "3.11.17",
+  "runtime_settings": {
+    "mps_padding_multiple": 128,
+    "other_padding_multiple": 8,
+    "mps_memory_fraction": 0.65,
+    "clear_unused_mps_buffers_every_batches": 25,
+    "optimizer_implementation": "fused AdamW on MPS; default AdamW elsewhere",
+    "one_epoch_per_process": true,
+    "save_complete_epoch_state": true
+  },
+  "packages": {
+    "torch": "2.15.0",
+    "transformers": "4.57.6",
+    "sentencepiece": "0.2.2",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1"
+  },
+  "selection": "Highest AUROC on 1,600 inner holdout rows drawn only from the 8,000 training rows. Encoder/head learning rates fixed in advance. Official validation does not choose epochs.",
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "train_csv_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "kaggle_public_target_approx": 0.976,
+  "gradient_boosting_reference": "v2_word_masked; recorded fixed-validation AUROC 0.999288",
+  "sources": [
+    "https://huggingface.co/microsoft/deberta-v3-base",
+    "https://huggingface.co/docs/transformers/model_doc/deberta-v2"
+  ]
+}

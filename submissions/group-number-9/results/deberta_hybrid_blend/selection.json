@@ -1,0 +1,73 @@
+{
+  "best_weight": 0.5,
+  "conservative_weight": 0.5,
+  "resamples": 400,
+  "seed": 20261105,
+  "candidates": [
+    {
+      "weight": 0,
+      "inner_auroc": 0.998821875,
+      "loss_from_best": 0.0009265625000001165,
+      "paired_difference_bootstrap_se": 0.0004503716105087607,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.01,
+      "inner_auroc": 0.9988906249999999,
+      "loss_from_best": 0.0008578125000001657,
+      "paired_difference_bootstrap_se": 0.00041943892258625056,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.025,
+      "inner_auroc": 0.9989859375000001,
+      "loss_from_best": 0.0007624999999999993,
+      "paired_difference_bootstrap_se": 0.00038065084400264453,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.05,
+      "inner_auroc": 0.9991062500000001,
+      "loss_from_best": 0.0006421875000000021,
+      "paired_difference_bootstrap_se": 0.0003184337338155176,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.1,
+      "inner_auroc": 0.9993296875000001,
+      "loss_from_best": 0.00041875000000002327,
+      "paired_difference_bootstrap_se": 0.0002166964947312411,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.2,
+      "inner_auroc": 0.9995671875,
+      "loss_from_best": 0.0001812500000001327,
+      "paired_difference_bootstrap_se": 0.00010714400372063498,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.35,
+      "inner_auroc": 0.9997078125,
+      "loss_from_best": 4.0625000000127365e-05,
+      "paired_difference_bootstrap_se": 3.610297842666587e-05,
+      "eligible_for_conservative_rule": false
+    },
+    {
+      "weight": 0.5,
+      "inner_auroc": 0.9997484375000001,
+      "loss_from_best": 0.0,
+      "paired_difference_bootstrap_se": 0.0,
+      "eligible_for_conservative_rule": true
+    },
+    {
+      "weight": 1,
+      "inner_auroc": 0.9994734375,
+      "loss_from_best": 0.00027500000000013625,
+      "paired_difference_bootstrap_se": 0.00012578688526222054,
+      "eligible_for_conservative_rule": false
+    }
+  ],
+  "reconstructed_hybrid_inner_auroc": 0.9994734375,
+  "protocol_sha256": "fdae1125440b53b18bb5872b85499ae59a3f880cad97180c2449cc3fd175ca36"
+}

@@ -1,0 +1,5 @@
+model,group,rows,human_rows,ai_rows,auroc
+boosting_reference,no_blank_lines,1327,996,331,0.9978615367815673
+boosting_reference,has_blank_lines,673,4,669,1.0
+hybrid_blend_maximum,no_blank_lines,1327,996,331,0.9984560598891032
+hybrid_blend_maximum,has_blank_lines,673,4,669,1.0

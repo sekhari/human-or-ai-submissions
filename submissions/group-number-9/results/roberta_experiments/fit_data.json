@@ -1,0 +1,8 @@
+{
+  "fitting_rows": 8000,
+  "heldout_rows": 2000,
+  "unlabeled_rows": 3000,
+  "excluded_unlabeled_rows": 0,
+  "fit_heldout_disjoint": true,
+  "fraction_fitting_over_512_tokens": 0.006125
+}

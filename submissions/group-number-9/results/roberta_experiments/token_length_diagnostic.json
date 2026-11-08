@@ -1,0 +1,25 @@
+{
+  "descriptive_only": true,
+  "teammate_distil_max_length": 256,
+  "current_roberta_max_length": 512,
+  "rows": [
+    {
+      "split": "fitting",
+      "rows": 8000,
+      "mean_tokens": 286.2435,
+      "median_tokens": 277.0,
+      "p95_tokens": 469.0,
+      "fraction_over_256": 0.57475,
+      "fraction_over_512": 0.006125
+    },
+    {
+      "split": "unlabeled",
+      "rows": 3000,
+      "mean_tokens": 285.4313333333333,
+      "median_tokens": 277.0,
+      "p95_tokens": 454.0,
+      "fraction_over_256": 0.5766666666666667,
+      "fraction_over_512": 0.005333333333333333
+    }
+  ]
+}

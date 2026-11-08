@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "partial": true,
+  "options_checked": [
+    "single"
+  ],
+  "checked_submissions": [
+    "submissions/curvature_roberta_single_10000.csv"
+  ],
+  "source_and_dependency_hashes_match": true,
+  "training_and_scoring_ids_verified": true,
+  "all_refits_and_optimizer_budgets_checked": true,
+  "unit_tests_passed": 4,
+  "real_mps_smoke_passed": true,
+  "no_new_model_downloads": true,
+  "no_unlabeled_examples_fitted": true,
+  "kaggle_uploaded": false,
+  "protocol_sha256": "357ad93357f41482b4e62bfb45d8c29fc070a93b99633160a90badd8ea6debe5"
+}

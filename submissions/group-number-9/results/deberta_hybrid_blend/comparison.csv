@@ -1,0 +1,2 @@
+model,neural_weight,validation_auroc,difference_from_boosting,paired_95ci_low,paired_95ci_high,beats_reference_numerically
+hybrid_blend_maximum,0.5,0.999485,0.0001969999999998917,-3.002499999997521e-05,0.0004400749999999977,True

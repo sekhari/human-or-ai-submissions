@@ -1,0 +1,29 @@
+{
+  "configuration": {
+    "name": "combined_mlp",
+    "representation": "combined",
+    "classifier": "mlp",
+    "params": {
+      "hidden_layer_sizes": [
+        128,
+        64
+      ],
+      "alpha": 1.0,
+      "ensemble_seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "mean_cv_auroc": 0.99700125,
+    "std_cv_auroc": 0.000997359428730758
+  },
+  "svd_components": 128,
+  "seed": 42,
+  "training_rows": 10000,
+  "prediction_rows": 3000,
+  "selection_path": "results/neural_comparison/refined/selected.json",
+  "selection_sha256": "ebb05d10f66065c2a83bcc57e4f821ded0de44e16e8fb8c9ed6037dfcd6d09ed",
+  "csv_sha256": "6abf3bd66146cd8b1c4a61b5546fe9c081d130579015c85f22206876f1b7451f",
+  "uploaded": false
+}

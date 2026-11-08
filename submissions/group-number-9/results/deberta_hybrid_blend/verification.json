@@ -1,0 +1,40 @@
+{
+  "validation_auroc": 0.999485,
+  "reference_auroc": 0.9992880000000001,
+  "numerical_gain": 0.0001969999999998917,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "training_validation_disjoint": true,
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "reloaded_neural_heads_reproduce_validation_component": true,
+  "frozen_selected_weight": 0.5,
+  "submission_rows": 3000,
+  "test_id_order_correct": true,
+  "unique_ids": true,
+  "all_submission_probabilities_finite_in_unit_interval": true,
+  "probability_min": 3.1444766691236093e-06,
+  "probability_max": 0.9999987840609129,
+  "submission_reconstructs_from_saved_components": true,
+  "csv_sha256": "c0ce2e00ac3aff00f7e5afb78a92d311d912e650d674592b4e1dcb42feb1f40a",
+  "matched_schedule_optimizer_updates": 800,
+  "matched_schedule_skipped_updates": 0,
+  "new_unit_tests_passed": 5,
+  "source_sha256": {
+    "src/blend_selection.py": "98566651738a94444cc20fa1004707316b2e42ca30212b2778dab7104440a123",
+    "experiments/deberta_matched_blend.py": "aa8a80d2b239bedf9e78051c7430ee105d7aa0cb1d962a49e49dd982341e2207",
+    "experiments/deberta_feature_boost.py": "278246e3e91ddac64ba7add0377dbc06263e21466e49ff5349500ef08fae51cd",
+    "experiments/deberta_bagged_blend.py": "19c2476056d924518213b4f60701af0c977ece4e78616c038fcc1b24c4515131",
+    "experiments/deberta_hybrid_blend.py": "ce050586eefe74135932b8de4968c727fed0354158b9d1150755118945afed7a",
+    "tests/test_blend_selection.py": "62b3757274bf3cee8e7dfed7bdb70f4be155188dfc6a16ccd3a718eb5e94a91e",
+    "tests/test_bagged_sampling.py": "9baa47bb5cccde0eedf69ded4ddd70b9be8ee8ed2c783dfb140813a208a7c606"
+  },
+  "packages": {
+    "torch": "2.15.0",
+    "transformers": "4.57.6",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0"
+  },
+  "kaggle_uploaded": false,
+  "git_pushed": false
+}

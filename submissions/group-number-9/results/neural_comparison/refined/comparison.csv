@@ -1,0 +1,5 @@
+model,train_auroc,val_auroc,layout_stripped_val_auroc,fit_time_s,warnings,params
+combined_mlp,0.9999596875000001,0.997156,0.877494,6.087507667019963,[],"{""name"": ""combined_mlp"", ""representation"": ""combined"", ""classifier"": ""mlp"", ""params"": {""hidden_layer_sizes"": [128, 64], ""alpha"": 1.0, ""ensemble_seeds"": [42, 43, 44]}, ""mean_cv_auroc"": 0.99700125, ""std_cv_auroc"": 0.000997359428730758}"
+style_hgb,1.0,0.996604,0.811113,1.7759935832582414,[],"{""source"": ""existing tuned baseline"", ""params"": {""l2_regularization"": 0.0, ""learning_rate"": 0.2, ""max_leaf_nodes"": 63}}"
+combined_lr,0.9947817499999999,0.992586,0.873544,4.407681000418961,[],"{""name"": ""combined_lr"", ""representation"": ""combined"", ""classifier"": ""lr"", ""params"": {""C"": 1.0}, ""mean_cv_auroc"": 0.99056421875, ""std_cv_auroc"": 0.0028584052317245446}"
+word_lr,1.0,0.9494029999999999,0.9494029999999999,1.4722510832361877,[],"{""source"": ""existing tuned baseline"", ""params"": {""clf__C"": 100, ""tfidf__min_df"": 2, ""tfidf__ngram_range"": [1, 2]}}"

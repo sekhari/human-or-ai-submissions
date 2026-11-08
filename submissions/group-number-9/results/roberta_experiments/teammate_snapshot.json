@@ -1,0 +1,17 @@
+{
+  "commit": "768828d6bfe9f3594333c7033ca4db44af94bd2a",
+  "source_sha256": {
+    "results/improve/comparison.csv": "ff96a7d1ef53c22d269951a2d33a097ce04e86a97e0eb02181729ba6de8f889a",
+    "results/stacking/transformer_comparison.csv": "163b9e4bce1aacb22ff7b85c306180e531435e2a2fa4b299038997b0f89c7db5"
+  },
+  "same_training_data_and_validation_id_git_blobs": {
+    "Data/train.csv": "52e445b1c15c5d8d22b7677a7316076708806dd6",
+    "splits/val_ids.csv": "5af55fdeee9a3487fbc90fda3bcf7df6eb08fb62"
+  },
+  "metrics_independently_reproduced": false,
+  "merged_into_working_tree": false,
+  "curv_bag_validation_auroc": 0.999775,
+  "gpt2_style_distil_stack_validation_auroc": 0.999884,
+  "curv_bag_public_score_user_reported": 0.98544,
+  "new_transformer_stack_public_score_known": false
+}

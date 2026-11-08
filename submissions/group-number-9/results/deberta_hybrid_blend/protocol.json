@@ -1,0 +1,19 @@
+{
+  "weight_grid": [
+    0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    1
+  ],
+  "selection": "Maximum inner AUROC and conservative paired-bootstrap-one-SE weight, selected on training-only 1,600-row holdout; evaluate only these frozen choices, deduplicated.",
+  "neural_model": "Previously selected hybrid text/style MLP, three seeds, frozen fine-tuned encoder; reconstruct fitting-only heads to obtain true held-out neural scores.",
+  "hybrid_selection_sha256": "c659d81dd265f3d025a9f4c632ac7ec386c49e905590c234c2a2a8f4f012935b",
+  "train_csv_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "caution": "Inner holdout previously selected the head and encoder. Fixed validation reused across project experiments. No independent public-score claim or automatic upload."
+}

@@ -1,0 +1,7 @@
+{
+  "fitting_rows": 6400,
+  "heldout_rows": 1600,
+  "unlabeled_rows": 3000,
+  "fit_ids_sha256": "af55f29dae4c4a0cd991703ccf10e539035b5c9204e1e0d21302d554bd9664ff",
+  "cache_sha256": "470515f4e710effb7ab2c57aff850cc7390ea399c28c8f91eeb9e31a29b0bbc5"
+}

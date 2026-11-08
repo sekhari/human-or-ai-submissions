@@ -1,0 +1,14 @@
+{
+  "model": "v2_word_masked",
+  "validation_auroc": 0.9992880000000001,
+  "input_sha256": {
+    "Data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "splits/val_ids.csv": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+    "src/features.py": "e7404985568169a7a32b7bafa5c51dbdcb8c79bc7a6a3f5c23ad25ad296bbc5c",
+    "src/models.py": "db9dd5554b2e259a5c7f13f34d77a80aab6ff3f87a852c7734f950063e7b7a6c",
+    "results/stacking/comparison.csv": "d87e42b6179003a91f9088a1dd2040289b8c0d228d3cd16ead0fa064aa1edf43",
+    "results/model_comparison/best_params.json": "8410dc94cf3dd321be653ae4e278082523e9e421bc2a6f361f37aeca4ec34295"
+  },
+  "training_rows": 8000,
+  "validation_rows": 2000
+}

@@ -1,0 +1,29 @@
+{
+  "validation_rows": 2000,
+  "neural_weight": 0.1,
+  "improve_all_blend": {
+    "auroc": 0.9998655,
+    "ci95": [
+      0.99973,
+      0.99996
+    ],
+    "auroc_no_blank": 0.9996072
+  },
+  "roberta_alone": {
+    "auroc": 0.998853,
+    "ci95": [
+      0.99754,
+      0.99969
+    ],
+    "auroc_no_blank": 0.9967696
+  },
+  "rank10_blend": {
+    "auroc": 0.999941,
+    "ci95": [
+      0.99987,
+      0.99999
+    ],
+    "auroc_no_blank": 0.9998241
+  },
+  "note": "Validation was reused across many experiments, so these scores are optimistic. No LODO score: RoBERTa per-domain held-out predictions for this recipe do not exist."
+}

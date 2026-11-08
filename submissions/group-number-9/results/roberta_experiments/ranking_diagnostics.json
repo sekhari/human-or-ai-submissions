@@ -1,0 +1,83 @@
+[
+  {
+    "context": "inner",
+    "arm": "supervised",
+    "reference_reversed_pairs": 161,
+    "blend_reversed_pairs": 112,
+    "corrected_by_blend": 81,
+    "introduced_by_blend": 32,
+    "reference_neural_shared_reversed_pairs": 49
+  },
+  {
+    "context": "inner",
+    "arm": "pseudo",
+    "reference_reversed_pairs": 161,
+    "blend_reversed_pairs": 97,
+    "corrected_by_blend": 89,
+    "introduced_by_blend": 25,
+    "reference_neural_shared_reversed_pairs": 26
+  },
+  {
+    "context": "inner",
+    "arm": "tapt",
+    "reference_reversed_pairs": 161,
+    "blend_reversed_pairs": 96,
+    "corrected_by_blend": 90,
+    "introduced_by_blend": 25,
+    "reference_neural_shared_reversed_pairs": 27
+  },
+  {
+    "context": "domain",
+    "arm": "supervised",
+    "reference_reversed_pairs": 4,
+    "blend_reversed_pairs": 2,
+    "corrected_by_blend": 3,
+    "introduced_by_blend": 1,
+    "reference_neural_shared_reversed_pairs": 0
+  },
+  {
+    "context": "domain",
+    "arm": "pseudo",
+    "reference_reversed_pairs": 4,
+    "blend_reversed_pairs": 2,
+    "corrected_by_blend": 3,
+    "introduced_by_blend": 1,
+    "reference_neural_shared_reversed_pairs": 0
+  },
+  {
+    "context": "domain",
+    "arm": "tapt",
+    "reference_reversed_pairs": 4,
+    "blend_reversed_pairs": 2,
+    "corrected_by_blend": 3,
+    "introduced_by_blend": 1,
+    "reference_neural_shared_reversed_pairs": 0
+  },
+  {
+    "context": "fit",
+    "arm": "supervised",
+    "reference_reversed_pairs": 515,
+    "blend_reversed_pairs": 179,
+    "corrected_by_blend": 353,
+    "introduced_by_blend": 17,
+    "reference_neural_shared_reversed_pairs": 44
+  },
+  {
+    "context": "fit",
+    "arm": "pseudo",
+    "reference_reversed_pairs": 515,
+    "blend_reversed_pairs": 183,
+    "corrected_by_blend": 364,
+    "introduced_by_blend": 32,
+    "reference_neural_shared_reversed_pairs": 70
+  },
+  {
+    "context": "fit",
+    "arm": "tapt",
+    "reference_reversed_pairs": 515,
+    "blend_reversed_pairs": 163,
+    "corrected_by_blend": 376,
+    "introduced_by_blend": 24,
+    "reference_neural_shared_reversed_pairs": 65
+  }
+]

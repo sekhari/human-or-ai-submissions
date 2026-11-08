@@ -1,0 +1,16 @@
+{
+  "recorded_at_stage": "inner pseudo epoch 1; core protocol source/data hashes were frozen before training",
+  "sha256": {
+    "src/deberta.py": "e270f0341e04866f9fb902b21d943c08a1eb7771ae3881f0ab9ec9e878388192",
+    "src/split.py": "9aa2470174f46b0e6b726785f22bae9cdd69258f0bdb0b121b5e9d99a7a08ad1",
+    "src/data.py": "da332988182da092fde58d75e3c40c3d8742a20a78d4fcb60f9469cac3d6df2c",
+    "experiments/deberta_combinations.py": "bbfea16aec8988a1fe328a1ec576a45b059bd322a74d1b4b1309e3bbf32daf1c",
+    "experiments/deberta_finetune.py": "3165151eb2d4aaa6657ad42b6ca73bdc5ee01458588faeb1eeaeae997d2962b7",
+    "experiments/stacking.py": "5fe6e19e259993566827d27704e2b444f54542d197fdd627bd81acb92f8d38b3",
+    "experiments/neural_comparison.py": "c4dcbc8ddaa6e3dc135b62c94245a0ff2173676b5c5f79b6a674154f63254e09",
+    "results/stacking/comparison.csv": "d87e42b6179003a91f9088a1dd2040289b8c0d228d3cd16ead0fa064aa1edf43",
+    "results/model_comparison/best_params.json": "8410dc94cf3dd321be653ae4e278082523e9e421bc2a6f361f37aeca4ec34295",
+    "results/deberta_hybrid_blend/val_predictions.csv": "6a0d1cab4b5d4ad9c10707eacc3d94aec45c4c903724d422239b5fb378da9855",
+    ".cache/deberta_hybrid_blend/inner_probabilities.npz": "f4711a915670db1c38a611c53ee53a9712e3eec7b955cdc6c545bacb082245c4"
+  }
+}

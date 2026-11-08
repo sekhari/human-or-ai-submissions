@@ -1,0 +1,116 @@
+{
+  "candidates": {
+    "curv_bag": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      "bags": 10,
+      "topic_power": 0.0,
+      "flat_share": 0.0
+    },
+    "curv": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      "bags": 1,
+      "topic_power": 0.0,
+      "flat_share": 0.0
+    },
+    "regularized_bag": {
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 400,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0
+      },
+      "bags": 10,
+      "topic_power": 0.0,
+      "flat_share": 0.0
+    },
+    "topic_bag": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      "bags": 10,
+      "topic_power": 0.5,
+      "flat_share": 0.0
+    },
+    "augment25_bag": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      "bags": 10,
+      "topic_power": 0.0,
+      "flat_share": 0.25
+    },
+    "augment50_bag": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      "bags": 10,
+      "topic_power": 0.0,
+      "flat_share": 0.5
+    },
+    "topic_augment25_bag": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      "bags": 10,
+      "topic_power": 0.5,
+      "flat_share": 0.25
+    },
+    "regularized_augment25_bag": {
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 400,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0
+      },
+      "bags": 10,
+      "topic_power": 0.0,
+      "flat_share": 0.25
+    }
+  },
+  "development": "Five splits within the original 8000: existing 6400/1600 inner split; leave out topics 0+2, 1, 3, and 10 separately.",
+  "selection": "Mean across five splits of .5 original AUROC + .25 original-no-blank AUROC + .25 flattened AUROC. Select best eligible candidate only if gain >= .00001 over curv_bag; otherwise retain curv_bag. Eligibility: original mean >= baseline-.0001, original minimum >= baseline-.001. Ties by candidate name.",
+  "validation": "Score selected method and frozen curv_bag / curv controls only after selection. Fixed validation has been repeatedly viewed earlier; it is not a fresh test.",
+  "export_gate": "Selected method differs from baseline, passes train-only selection gate, and fixed-validation AUROC >= reproduced curv_bag-.0001. A file is provisional; no guarantee of Kaggle improvement.",
+  "topics": "Existing frozen EDA cluster assignments; the original unsupervised EDA used all competition text including test. No new topic model, test weighting or test-dependent selection. Topic weights use fitting rows only and do not use test/unlabeled frequencies.",
+  "augmentation": "Original and genuinely flattened GPT-2/style features; shares .25/.5, paired original-ID bootstrap; total original mass preserved. All views of an ID stay within its original fold. Text OOF fits original texts, transformed scoring reused only after analyzer-equivalence check.",
+  "inference": "Frozen GPT-2 125M FP32, first 512 tokens, same 19 statistics as origin/main src.neural; one pass for surprisal and curvature.",
+  "no_unlabeled_data": true,
+  "final_fit": "All 10000 labeled rows, text scores five-fold OOF. Test original text only.",
+  "reference_remote_commit": "768828d6bfe9f3594333c7033ca4db44af94bd2a",
+  "reference_public_auroc_user_reported": 0.98544,
+  "reference_recorded_curv_bag_validation": 0.999775,
+  "reference_recorded_other_stack_validation": 0.999884,
+  "files": {
+    "Data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "splits/val_ids.csv": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+    "src/features.py": "e7404985568169a7a32b7bafa5c51dbdcb8c79bc7a6a3f5c23ad25ad296bbc5c",
+    "src/models.py": "db9dd5554b2e259a5c7f13f34d77a80aab6ff3f87a852c7734f950063e7b7a6c",
+    "src/robust_boost.py": "11280a47e244649ada4b7df62e17768c49abb72ecffc5b0999a940d5021309c0",
+    "src/gpt2_robust_features.py": "272b12fcc90b8cc87de954c59daa407452aa24ae40ef7f2de16a7c266ded6dc2",
+    "experiments/robust_boost.py": "5f22c3328a809c50376ace35dbbf391d4762c4ed45dc53d1787bd44fcff90cd6",
+    "results/model_comparison/best_params.json": "8410dc94cf3dd321be653ae4e278082523e9e421bc2a6f361f37aeca4ec34295",
+    "results/eda/cluster_assignments.csv": "4591b12f53702681fefa398d4a1b56bf37b6ea9587fa7124fa01253e36aadba9"
+  }
+}

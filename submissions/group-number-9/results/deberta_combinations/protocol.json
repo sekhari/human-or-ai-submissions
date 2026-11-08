@@ -1,0 +1,61 @@
+{
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "train_csv_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "inner_split_sha256": "c96236b06a1429cc3ca0b9ced8ee471e68ba8d401b4dbe97f6830007951569ab",
+  "reference": "v2_word_masked",
+  "reference_validation_auroc": 0.999288,
+  "head_grid": [
+    {
+      "width": 64,
+      "weight_decay": 0.001,
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    {
+      "width": 64,
+      "weight_decay": 0.01,
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    {
+      "width": 128,
+      "weight_decay": 0.001,
+      "lr": 0.001,
+      "dropout": 0.2
+    },
+    {
+      "width": 128,
+      "weight_decay": 0.01,
+      "lr": 0.001,
+      "dropout": 0.2
+    }
+  ],
+  "head_epoch_grid": [
+    5,
+    10,
+    20,
+    30
+  ],
+  "head_seeds": [
+    42,
+    43,
+    44
+  ],
+  "blend_weights": [
+    0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    1
+  ],
+  "stack_models": "probability/logit blends; 2-score logistic C=0.01,0.1,1,10; style+score HGB depth=2,3 and L2=1,10",
+  "selection": "Only original 8,000 training rows. Base models fit 6,400; their held-out scores on 1,600 select blends and train/select combiners (4-fold CV). The original encoder epoch selection also used these 1,600 labels, so combiner CV is conditional on that earlier selection, not an independent estimate.",
+  "hybrid": "Frozen, already fine-tuned DeBERTa pooled vector (768) plus 58 engineered features. Separate train-only normalizers and learned projections feed a fusion MLP. Text/style ablations receive the same search. This stage does not jointly fine-tune the encoder.",
+  "final_fit": "Reused 8,000-row encoder and boosting reference. Selected fusion heads refit on 8,000 rows. Stack learned from held-out 1,600 scores is applied after refitting the base models on 8,000, as in holdout blending; score-distribution changes remain a limitation.",
+  "evaluation": "Fixed 2,000-row validation used after selection, with paired bootstrap differences. This split has been viewed in earlier experiments; it is not a fresh final test.",
+  "submission_gate": "Generate candidate files only for methods whose fixed-validation AUROC exceeds the frozen boosting reference. No Kaggle upload or Git push."
+}

@@ -1,0 +1,50 @@
+{
+  "chosen": {
+    "arm": "tapt",
+    "epoch": 2,
+    "weight": 0.2,
+    "inner_blend_auroc": 0.99985,
+    "inner_neural_auroc": 0.9989171875,
+    "domain_neural_auroc": 0.9991836734693877,
+    "domain_blend_auroc": 0.9995918367346939,
+    "domain_boosting_auroc": 0.9991836734693877,
+    "domain_rows": 148
+  },
+  "all_arms": [
+    {
+      "arm": "supervised",
+      "epoch": 1,
+      "weight": 0.2,
+      "inner_blend_auroc": 0.999825,
+      "inner_neural_auroc": 0.9979125000000001,
+      "domain_neural_auroc": 0.9981632653061224,
+      "domain_blend_auroc": 0.9995918367346939,
+      "domain_boosting_auroc": 0.9991836734693877,
+      "domain_rows": 148
+    },
+    {
+      "arm": "pseudo",
+      "epoch": 2,
+      "weight": 0.2,
+      "inner_blend_auroc": 0.9998484375000001,
+      "inner_neural_auroc": 0.999203125,
+      "domain_neural_auroc": 0.9975510204081633,
+      "domain_blend_auroc": 0.9995918367346939,
+      "domain_boosting_auroc": 0.9991836734693877,
+      "domain_rows": 148
+    },
+    {
+      "arm": "tapt",
+      "epoch": 2,
+      "weight": 0.2,
+      "inner_blend_auroc": 0.99985,
+      "inner_neural_auroc": 0.9989171875,
+      "domain_neural_auroc": 0.9991836734693877,
+      "domain_blend_auroc": 0.9995918367346939,
+      "domain_boosting_auroc": 0.9991836734693877,
+      "domain_rows": 148
+    }
+  ],
+  "inner_selection_sha256": "64df5db72142953b6b922f1bf23759fd839686b1fc91fc2da27c9bd65bd11368",
+  "fixed_validation_used_for_selection": false
+}

@@ -1,0 +1,23 @@
+{
+  "configuration": {
+    "model_id": "microsoft/deberta-v3-base",
+    "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+    "seed": 42,
+    "encoder_lr": 2e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "batch_size": 4,
+    "gradient_accumulation": 4,
+    "eval_batch_size": 8,
+    "epochs": 2,
+    "max_length": 512,
+    "precision": "fp32",
+    "resume": true,
+    "one_epoch_per_process": true
+  },
+  "selected_epoch": 2,
+  "inner_auroc": 0.989075,
+  "validation_ids_sha256": "72e7c7b8840b41beca47b73fabeba8db8039b5e4c562d849d218ab5d35da603a",
+  "selection_source": "inner holdout only; fixed official validation untouched"
+}

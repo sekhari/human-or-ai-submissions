@@ -1,0 +1,17 @@
+{
+  "reported_date": "2026-11-05",
+  "source": "User-reported Kaggle score in chat; not independently retrieved from Kaggle",
+  "candidate": "submissions/deberta_hybrid_blend_maximum_8000.csv",
+  "candidate_association": "The CSV recommended immediately before the user reported this result",
+  "csv_sha256": "c0ce2e00ac3aff00f7e5afb78a92d311d912e650d674592b4e1dcb42feb1f40a",
+  "metric": "AUROC",
+  "fixed_validation_auroc": 0.999485,
+  "public_kaggle_auroc": 0.98267,
+  "previously_reported_team_best_public_auroc": 0.98544,
+  "difference_from_previously_reported_team_best": -0.00277,
+  "private_kaggle_auroc": null,
+  "kaggle_submission_page": "https://www.kaggle.com/competitions/cornell-tech-cs-5785-combined-2026-ai-vs-human-text/submissions#",
+  "interpretation": "This candidate did not beat the previously reported team public best. This comparison does not isolate the neural component's contribution because the teammate's newer model and its predictions are not yet available locally.",
+  "upload_performed_by_agent": false,
+  "note": "The existing export manifest and verification record describe the state at candidate creation. This file records the later user-reported submission outcome."
+}

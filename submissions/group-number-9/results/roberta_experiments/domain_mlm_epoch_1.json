@@ -1,0 +1,28 @@
+{
+  "epoch": 1,
+  "updates": 679,
+  "training_rows": 10852,
+  "loss": 1.3975428150142202,
+  "pseudo_rows_available": 0,
+  "pseudo_batches_used": 0,
+  "elapsed_s": 733.7137592090003,
+  "signature": {
+    "frame": "e4aeb8befe4e97e69cfa5d56bbd6a864fe7f1d9d6fd699f6f87bd21eba0f2f27",
+    "pseudo": null,
+    "configuration": {
+      "seed": 42,
+      "encoder_lr": 5e-06,
+      "head_lr": 5e-06,
+      "weight_decay": 0.01,
+      "batch_size": 4,
+      "gradient_accumulation": 4,
+      "eval_batch_size": 8,
+      "max_length": 512,
+      "epochs": 1,
+      "precision": "fp32",
+      "pseudo_weight": 0.25
+    },
+    "task": "mlm",
+    "adapted": "None"
+  }
+}

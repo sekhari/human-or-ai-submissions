@@ -1,0 +1,20 @@
+{
+  "reported_date": "2026-11-06",
+  "source": "User-reported public Kaggle scores in chat; not independently retrieved",
+  "candidate": "submissions/all_blend_roberta_rank10_10000.csv",
+  "candidate_csv_sha256": "c398ae317ba46233e5a90e8867cbff6c242e9bf49274001bf757cef39255700a",
+  "candidate_public_auroc": 0.99132,
+  "reference": "improve_all_blend.csv",
+  "reference_public_auroc_exact_user_reported": 0.99134,
+  "difference_from_reference": -0.00002,
+  "competitor_target_public_auroc_user_reported": 0.99166,
+  "candidate_gap_to_target": 0.00034,
+  "reference_gap_to_target": 0.00032,
+  "offline_validation_auroc": null,
+  "private_kaggle_auroc": null,
+  "predeclared_neural_rank_weight": 0.1,
+  "interpretation": "The fixed 10% RoBERTa rank blend scored 0.00002 below the exact teammate reference on the public subset. This is a near tie and supplies no observed improvement for this candidate; it does not establish a reliable population difference or that every neural combination would hurt. The teammate reference remains the reported best.",
+  "kaggle_submission_page": "https://www.kaggle.com/competitions/cornell-tech-cs-5785-combined-2026-ai-vs-human-text/submissions#",
+  "upload_performed_by_agent": false,
+  "note": "The creation-time protocol, export manifest and verification remain unchanged; this file records the subsequent user submission and the later exact baseline-score clarification."
+}

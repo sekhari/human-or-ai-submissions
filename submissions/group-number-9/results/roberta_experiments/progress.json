@@ -1,0 +1,13 @@
+{
+  "context": "fit",
+  "arm": "tapt",
+  "epoch": 2,
+  "batch": 2000,
+  "batches": 2000,
+  "updates": 1000,
+  "loss": 0.04471977113421417,
+  "pseudo_loss": 0.0,
+  "elapsed_s": 396.36994570800744,
+  "driver_gb": 1.54107904,
+  "gradient_norm": 0.38881993293762207
+}
