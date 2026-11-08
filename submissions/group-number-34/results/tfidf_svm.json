@@ -1,7 +1,8 @@
 {
   "model": "tfidf_svm",
+  "C": 4.0,
   "seed": 20261107,
   "train_auroc": 1.0,
   "val_auroc": 0.9436,
-  "train_seconds": 1.7
+  "train_seconds": 1.8
 }

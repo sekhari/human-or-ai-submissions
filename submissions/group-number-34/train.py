@@ -73,12 +73,13 @@ def main() -> None:
   parser.add_argument("--seed", type=int, default=SEED)
   parser.add_argument("--model-out", type=Path, default=Path("model.joblib"))
   parser.add_argument("--model", default="tfidf_lr", choices=MODELS.keys(), help="which model to train")
+  parser.add_argument("--C", type=float, default=4.0, help="regularization strength")
   parser.add_argument("--full", action="store_true", help="train on all labeled rows and save the model") 
   args = parser.parse_args()
 
   # load data and build untrained model
   full_df = load_data(args.train)
-  model = MODELS[args.model](args.seed)
+  model = MODELS[args.model](args.seed, C=args.C)
 
   # final mode: train on all 10,000 rows and save
   if args.full:
@@ -100,6 +101,7 @@ def main() -> None:
   # compute AUROC on train and val
   results = {
     "model": args.model,
+    "C": args.C,
     "seed": args.seed,
     "train_auroc": round(roc_auc_score(train_df["label"], train_probs), 4),
     "val_auroc": round(roc_auc_score(val_df["label"], val_probs), 4),
