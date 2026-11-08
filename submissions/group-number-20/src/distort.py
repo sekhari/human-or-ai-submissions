@@ -13,7 +13,8 @@ def top_words(texts, k):
     df = Counter()
     for t in texts:
         df.update(set(w.lower() for w in re.findall(r"[A-Za-z]+", t)))
-    return {w for w, _ in df.most_common(k)}
+    ranked = sorted(df.items(), key=lambda x: (-x[1], x[0]))  # break ties alphabetically for reproducibility
+    return {w for w, _ in (ranked if k is None else ranked[:k])}
 
 def distort(t, keep):
     out = []

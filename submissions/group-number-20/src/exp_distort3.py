@@ -10,7 +10,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer as V
 from sklearn.metrics import roc_auc_score as auc
 from common import SEED, load_train, split
-from exp_distort import fit_word, fit_char, fit_gb, fit_dist, NOFMT
+from components import NOFMT, fit_char, fit_dist, fit_gb, fit_word
 from features import perturb_format
 
 tr, va = split(load_train("data/train.csv")); y, yv = tr.label.values, va.label.values
