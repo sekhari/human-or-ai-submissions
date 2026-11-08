@@ -6,8 +6,13 @@ from pathlib import Path
 import json
 import time
 import joblib
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+
+from sklearn.svm import LinearSVC
+from sklearn.calibration import CalibratedClassifierCV
+
 from sklearn.metrics import roc_auc_score
 from sklearn.pipeline import make_pipeline
 
@@ -30,9 +35,35 @@ def build_tfidf_lr(seed):
 
   return make_pipeline(vectorizer, classifier)
 
+# character n-gram TF-IDF/LR: captures writing style rather than topic
+def build_char_lr(seed):
+  vectorizer = TfidfVectorizer(
+    analyzer="char_wb",
+    ngram_range=(3, 5),
+    min_df=3,
+    sublinear_tf=True,
+    max_features=300_000,
+  )
+  classifier = LogisticRegression(C=4.0, max_iter=2000, random_state=seed)
+  return make_pipeline(vectorizer, classifier)
+
+# word TF-IDF/linear SVM
+def build_tfidf_svm(seed, C=4.0):
+  vectorizer = TfidfVectorizer(
+    ngram_range=(1, 2),
+    min_df=2,
+    sublinear_tf=True,
+    max_features=200_000,
+  )
+  svm = LinearSVC(C=C, random_state=seed)
+  classifier = CalibratedClassifierCV(svm, cv=3)
+  return make_pipeline(vectorizer, classifier)
+
 # dict of all our models (add to this)
 MODELS = {
   "tfidf_lr": build_tfidf_lr,
+  "char_lr": build_char_lr,
+  "tfidf_svm": build_tfidf_svm,
 }
 
 
