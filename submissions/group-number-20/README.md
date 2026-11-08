@@ -36,6 +36,15 @@ python src/train.py --no-format --model-out model_nofmt.joblib --metrics-out res
 python src/predict.py --model model_nofmt.joblib --out submission_no_format.csv
 ```
 
+Masked-word blend (`submission_v2.csv`, added after the public-score check):
+
+```bash
+python src/train.py --no-format --dist-weight 0.5 --model-out model_v2.joblib --metrics-out results/final_v2.json
+python src/predict.py --model model_v2.joblib --out submission_v2.csv
+```
+
+This adds a punctuation-aware word 1-3-gram model with rare words masked (keep the 10,000 most frequent words, C=30) to the format-free blend with weight 0.5. It was chosen by leave-one-pseudo-domain-out AUROC inside the training partition, not by Kaggle scores.
+
 ## Report experiments
 
 Run from this folder in this order:
@@ -49,6 +58,10 @@ python src/exp_format.py      # Q5 blank-line follow-up
 python src/train.py           # final model
 python src/exp_errors.py      # Q4
 python src/exp_final_lodo.py  # final pseudo-domain scores
+python src/inspect_attacks.py # label-free test-shift diagnostics
+python src/exp_distort.py     # masked-word model, first grid
+python src/exp_distort2.py    # extended grid and blends
+python src/exp_distort3.py    # no-masking control
 ```
 
 Use `python src/train.py --no-format --model-out model_nofmt.joblib --metrics-out results/final_nofmt.json` before `exp_final_lodo.py`.
