@@ -1,0 +1,14 @@
+{
+  "original": {
+    "auc": 0.999603,
+    "maximum_refactor_difference": 0.0
+  },
+  "flat": {
+    "auc": 0.994209,
+    "maximum_refactor_difference": 0.0
+  },
+  "short_lines": {
+    "auc": 0.99697,
+    "maximum_refactor_difference": 0.0
+  }
+}

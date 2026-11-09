@@ -22,11 +22,11 @@ def flatten(t):
 
 @torch.no_grad()
 def surprisal_matrix(texts, model_name="gpt2", max_len=384, batch=8, device=None, log_every=50, checkpoint=None):
-    device = device or ("mps" if torch.backends.mps.is_available() else "cpu")
-    tok = AutoTokenizer.from_pretrained(model_name)
+    device = device or ("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
+    tok = AutoTokenizer.from_pretrained(model_name, token=False)
     tok.pad_token = tok.eos_token
     tok.padding_side = "right"
-    model = AutoModelForCausalLM.from_pretrained(model_name, use_safetensors=True).to(device).eval()
+    model = AutoModelForCausalLM.from_pretrained(model_name, use_safetensors=True, token=False).to(device).eval()
     out = np.zeros((len(texts), len(NAMES)), dtype=np.float32)
     order = np.argsort([len(t) for t in texts])
     first = 0

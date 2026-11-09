@@ -44,11 +44,11 @@ def predict(model, tok, texts, max_len=256, batch=48):
 def train_encoder(texts, y, name="distilroberta-base", epochs=2, lr=2e-5, batch=16, max_len=256, aug_rate=0., weights=None,
                   seed=3737, log_every=100, smoothing=0.05, dropout=0.):
     _seed(seed)
-    tok = AutoTokenizer.from_pretrained(name)
+    tok = AutoTokenizer.from_pretrained(name, token=False)
     # dropout off: with it on the model learns clean text means ai, see reports/FINDINGS.md section 8
-    cfg = AutoConfig.from_pretrained(name, num_labels=2, hidden_dropout_prob=dropout, attention_probs_dropout_prob=dropout,
+    cfg = AutoConfig.from_pretrained(name, token=False, num_labels=2, hidden_dropout_prob=dropout, attention_probs_dropout_prob=dropout,
                                      classifier_dropout=dropout, attn_implementation="eager")
-    model = AutoModelForSequenceClassification.from_pretrained(name, config=cfg, use_safetensors=True).to(DEVICE)
+    model = AutoModelForSequenceClassification.from_pretrained(name, config=cfg, use_safetensors=True, token=False).to(DEVICE)
     w = np.ones(len(texts)) if weights is None else np.asarray(weights, dtype=float)
     steps = epochs * (len(texts) // batch)
     opt = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=.01)

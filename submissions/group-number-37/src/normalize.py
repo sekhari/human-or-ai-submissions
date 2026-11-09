@@ -18,5 +18,7 @@ def clean(text):
     """nfkc, strip zero width, fix mixed script tokens, flatten all whitespace."""
     t = ZERO.sub("", unicodedata.normalize("NFKC", text))
     t = LATIN_MIX.sub(lambda m: _fix_token(m.group(0)), t)
+    # A line wrap inside <br /> must not alter the encoder's token stream.
+    t = re.sub(r"\s+", " ", t)
     t = t.replace("<br />", " ").replace("<br/>", " ")
     return re.sub(r"\s+", " ", t).strip()

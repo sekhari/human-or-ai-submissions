@@ -1,0 +1,23 @@
+{
+  "original": {
+    "auc_difference": 0.0003910000000000302,
+    "paired_bootstrap_95_percent_interval": [
+      1.5974999999909813e-05,
+      0.0007650250000000219
+    ]
+  },
+  "flat": {
+    "auc_difference": 0.013840999999999881,
+    "paired_bootstrap_95_percent_interval": [
+      0.010746350000000066,
+      0.01695423750000024
+    ]
+  },
+  "short_lines": {
+    "auc_difference": 0.009617999999999904,
+    "paired_bootstrap_95_percent_interval": [
+      0.00678453750000004,
+      0.012950775000000086
+    ]
+  }
+}

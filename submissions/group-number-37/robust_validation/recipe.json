@@ -1,0 +1,52 @@
+{
+  "score_mode": "quantile",
+  "lm_mode": "both",
+  "weights": [
+    0.375,
+    0.225,
+    0.15,
+    0.25
+  ],
+  "lm_feature_layout": "small, large, large-minus-small",
+  "lm_models": [
+    "gpt2",
+    "openai-community/gpt2-large"
+  ],
+  "development": {
+    "selection/original": 0.9996,
+    "selection/flat": 0.99363125,
+    "selection/short_lines": 0.99555625,
+    "conversational/original": 0.9979745245180281,
+    "conversational/flat": 0.9906049345325942,
+    "conversational/short_lines": 0.9947520314846062,
+    "recipes/original": 0.9978032524660091,
+    "recipes/flat": 0.993822980538523,
+    "recipes/short_lines": 0.9927805918421754
+  },
+  "development_control": {
+    "selection/original": 0.99918125,
+    "selection/flat": 0.978209375,
+    "selection/short_lines": 0.98476875,
+    "conversational/original": 0.9964666349384906,
+    "conversational/flat": 0.9671685487243831,
+    "conversational/short_lines": 0.9733579467062788,
+    "recipes/original": 0.9946654225539856,
+    "recipes/flat": 0.9581111703545722,
+    "recipes/short_lines": 0.9621007731271661
+  },
+  "audit": {
+    "original": 0.999603,
+    "flat": 0.994209,
+    "short_lines": 0.99697
+  },
+  "control_audit": {
+    "original": 0.999212,
+    "flat": 0.980368,
+    "short_lines": 0.987352
+  },
+  "audit_passed": true,
+  "training_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "selection_rule": "No regression on any development scenario; maximize mean native content-holdout AUC, then worst formatting AUC.",
+  "eligible_candidates": 80,
+  "searched_candidates": 243
+}

@@ -5,6 +5,13 @@ human or ai, cornell tech cs 5785. predicts the probability that a passage was w
 **team:** cris nicoglu (netid: TODO), derrick cardenas (netid: TODO), alexander siladie (netid: TODO)
 **kaggle team name:** Group Number 37
 
+## four-method robustness candidate
+
+A separate T4-compatible candidate and validation report are available in [ROBUST_ENSEMBLE.md](ROBUST_ENSEMBLE.md).
+Open [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb) in Colab and upload the original competition ZIP.
+It combines the original reference, dual GPT-2 feature models, DistilRoBERTa, and DeBERTa with frozen training-fitted calibration.
+The original commands below remain the team control. No Kaggle submission is performed by the new notebook.
+
 ## setup
 
 python 3.12.
