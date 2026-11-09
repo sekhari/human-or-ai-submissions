@@ -27,6 +27,7 @@ Colab:
   !python extract_features.py --model-size 1.5B --out features
 """
 import argparse
+import json
 import os
 import random
 import time
@@ -67,8 +68,11 @@ def pick_device(name=None):
     return torch.device("cpu")
 
 
-def load_models(size, device):
-    """Return (tokenizer, base_model, instr_model). bf16 on CUDA, float32 on CPU/MPS."""
+DTYPES = {"float32": torch.float32, "float16": torch.float16, "bfloat16": torch.bfloat16}
+
+
+def load_models(size, device, dtype="float32"):
+    """Return (tokenizer, base_model, instr_model) in the given dtype (name from DTYPES)."""
     base_name, instr_name = f"Qwen/Qwen2.5-{size}", f"Qwen/Qwen2.5-{size}-Instruct"
     tok = AutoTokenizer.from_pretrained(base_name)
     tok_instr = AutoTokenizer.from_pretrained(instr_name)
@@ -77,9 +81,8 @@ def load_models(size, device):
     tok.padding_side = "right"  # keeps position ids of real tokens identical to the unpadded run
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    dtype = torch.bfloat16 if device.type == "cuda" else torch.float32
     models = [
-        AutoModelForCausalLM.from_pretrained(n, dtype=dtype).to(device).eval()
+        AutoModelForCausalLM.from_pretrained(n, dtype=DTYPES[dtype]).to(device).eval()
         for n in (base_name, instr_name)
     ]
     if models[0].config.vocab_size != models[1].config.vocab_size:
@@ -169,6 +172,23 @@ def _atomic_parquet(df, path):
     os.replace(tmp, path)
 
 
+def check_meta(part_dir, args, n_rows):
+    """Record the settings that change feature values next to the chunk files. On resume,
+    refuse to continue if any differ, so chunks with different cutoffs / dtypes never mix."""
+    meta = {"model_size": args.model_size, "max_length": args.max_length,
+            "dtype": args.dtype, "chunk_size": args.chunk_size, "n_rows": n_rows}
+    path = os.path.join(part_dir, "meta.json")
+    if os.path.exists(path):
+        with open(path) as f:
+            old = json.load(f)
+        if old != meta:
+            raise RuntimeError(f"{part_dir} was started with {old}, now {meta}. "
+                               "Use a different --out or delete that folder.")
+    else:
+        with open(path, "w") as f:
+            json.dump(meta, f)
+
+
 def extract_split(split, args, tok, base, instr):
     df = pd.read_csv(os.path.join(args.data_dir, f"{split}.csv"))
     if args.limit:
@@ -176,6 +196,7 @@ def extract_split(split, args, tok, base, instr):
     tag = f"qwen{args.model_size}"
     part_dir = os.path.join(args.out, "parts", tag, split)
     os.makedirs(part_dir, exist_ok=True)
+    check_meta(part_dir, args, len(df))
     n_chunks = (len(df) + args.chunk_size - 1) // args.chunk_size
     t0 = time.time()
     for c in range(n_chunks):
@@ -187,7 +208,8 @@ def extract_split(split, args, tok, base, instr):
                 raise RuntimeError(f"{path} does not match current data/chunk size; delete {part_dir}")
             continue
         texts = [normalize(t) for t in chunk["text"].astype(str)]
-        feats = pd.DataFrame(featurize(texts, tok, base, instr, args.batch_size), columns=FEATURE_COLS)
+        feats = pd.DataFrame(
+            featurize(texts, tok, base, instr, args.batch_size, args.max_length), columns=FEATURE_COLS)
         feats.insert(0, "id", chunk["id"].to_numpy())
         _atomic_parquet(feats, path)
         print(f"[{tag} {split}] chunk {c + 1}/{n_chunks} done ({time.time() - t0:.0f}s)", flush=True)
@@ -197,6 +219,7 @@ def extract_split(split, args, tok, base, instr):
     full = pd.concat(parts, ignore_index=True)
     assert full["id"].tolist() == df["id"].tolist(), "id order mismatch"
     assert np.isfinite(full[FEATURE_COLS].to_numpy(dtype=float)).all(), "non-finite features"
+    full["max_length"] = args.max_length  # recorded in the output; not a model feature
     out_path = os.path.join(args.out, f"{split}_{tag}.parquet")
     _atomic_parquet(full, out_path)
     print(f"[{tag} {split}] wrote {out_path} ({len(full)} rows)", flush=True)
@@ -207,8 +230,11 @@ def main():
     ap.add_argument("--model-size", choices=["0.5B", "1.5B"], required=True)
     ap.add_argument("--out", default=os.path.join(HERE, "features"))
     ap.add_argument("--data-dir", default=os.path.join(HERE, "data"))
-    ap.add_argument("--splits", nargs="+", choices=SPLITS, default=list(SPLITS))
-    ap.add_argument("--batch-size", type=int, default=None, help="default: 16 on cuda, 4 otherwise")
+    ap.add_argument("--splits", nargs="+", choices=SPLITS, default=list(SPLITS),
+                    help="any of train unlabeled test, processed in the order given")
+    ap.add_argument("--dtype", choices=list(DTYPES), default="float32")
+    ap.add_argument("--max-length", type=int, default=MAX_TOKENS, help="token cutoff per passage")
+    ap.add_argument("--batch-size", type=int, default=4)
     ap.add_argument("--chunk-size", type=int, default=256, help="rows per resumable part file")
     ap.add_argument("--device", default=None, help="cuda / mps / cpu (default: auto)")
     ap.add_argument("--limit", type=int, default=None, help="only first N rows per split (smoke test)")
@@ -216,10 +242,9 @@ def main():
 
     set_seeds()
     device = pick_device(args.device)
-    if args.batch_size is None:
-        args.batch_size = 16 if device.type == "cuda" else 4
-    print(f"device={device} model-size={args.model_size} batch={args.batch_size}", flush=True)
-    tok, base, instr = load_models(args.model_size, device)
+    print(f"device={device} model-size={args.model_size} dtype={args.dtype} "
+          f"batch={args.batch_size} max-length={args.max_length} splits={args.splits}", flush=True)
+    tok, base, instr = load_models(args.model_size, device, args.dtype)
     for split in args.splits:
         extract_split(split, args, tok, base, instr)
 

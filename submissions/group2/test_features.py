@@ -22,7 +22,8 @@ ATOL = 1e-3
 def models():
     ef.set_seeds()
     device = ef.pick_device(os.environ.get("FEATURE_TEST_DEVICE"))
-    return ef.load_models(os.environ.get("FEATURE_TEST_SIZE", "0.5B"), device)
+    return ef.load_models(os.environ.get("FEATURE_TEST_SIZE", "0.5B"), device,
+                          os.environ.get("FEATURE_TEST_DTYPE", "float32"))
 
 
 @pytest.fixture(scope="module")
