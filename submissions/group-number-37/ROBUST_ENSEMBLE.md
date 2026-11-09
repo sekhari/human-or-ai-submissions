@@ -17,7 +17,7 @@ Both neural classifiers use two epochs and cleaned text. DeBERTa freezes vocabul
 
 Component scales use quantiles fitted on 800 held-out **training** rows, pooling original, flattened, and short-line views. They are frozen at inference: a new file does not redefine ranks or ensemble weights. Quantiles are scores, not calibrated authorship probabilities.
 
-Final fitting uses 9,200 supplied labeled rows, reserving 800 for calibration. No external labeled text, pseudo-labels, or competition test labels are used. Pretrained general-purpose model weights are downloaded publicly. The supplied unlabeled CSV is unused. Confirm any course-specific pretrained-weight restrictions with the course staff if needed.
+Final fitting uses 9,200 supplied labeled rows, reserving 800 for calibration. No external labeled text, pseudo-labels, or competition test labels are used. Pretrained general-purpose model weights are downloaded publicly. The supplied unlabeled CSV is unused.
 
 ## Local evidence
 
@@ -67,4 +67,4 @@ Do not audit a final model trained on 9,200 rows; that includes the old audit la
 
 Keep the fitted bundle intact, including both fine-tuned neural folders, `model.joblib`, and source. Then run `predict_robust.py --model final_model --input new_test.csv --output predictions.csv`. Input needs unique `id` values and nonempty `text`; output contains `id,label` in the same order. No training, threshold selection, or recalibration is performed on the new file. GPU is recommended.
 
-Public pretrained GPT-2 weights download automatically. For disconnected inference, cache the original model/tokenizer files under `gpt2/` and `gpt2-large/`, then pass `--offline-root`. GPT-2 Large is pinned to revision `32b71b12589c2f8d625668d2335a01cac3249519`. The fitted bundle is about 0.8 GiB before optional offline pretrained weights; share it in team storage rather than committing it to GitHub. Load only trusted joblib bundles.
+Public pretrained GPT-2 weights download automatically. For disconnected inference, cache the original model/tokenizer files under `gpt2/` and `gpt2-large/`, then pass `--offline-root`. GPT-2 Large is pinned to revision `32b71b12589c2f8d625668d2335a01cac3249519`. The fitted bundle is about 0.8 GiB before optional offline pretrained weights; share it in team storage rather than committing it to GitHub. Load only trusted joblib bundles. The notebook uses `package_robust.py` to verify the export includes model/tokenizer files and package metadata, while excluding data and feature caches.
