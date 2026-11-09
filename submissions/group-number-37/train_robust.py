@@ -13,8 +13,9 @@ import torch
 from sklearn.model_selection import train_test_split
 from src.encoder import train_encoder,predict as legacy_predict,DEVICE
 from src.encoder_v2 import fit_encoder,predict_encoder
-from src.robust_ensemble import RobustEnsemble,WEIGHTS
+from src.robust_ensemble import RobustEnsemble
 from src.lm_features import MODELS,LARGE_REVISION,extract,combine
+from src.recipes import BASELINE_WEIGHTS,CURRENT_WEIGHTS
 
 TRAINING_SHA256='325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e'
 
@@ -37,7 +38,11 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--small-features',type=Path);p.add_argument('--large-features',type=Path)
     p.add_argument('--validation',action='store_true',help='Fit 6400 rows and reserve the frozen 2000-row audit instead of final refit')
+    p.add_argument('--recipe',choices=('current','baseline'),default=None,
+                   help='Defaults to current for final fitting, baseline for reproducing the original validation audit')
     a=p.parse_args();started=time.perf_counter()
+    recipe=a.recipe or ('baseline' if a.validation else 'current')
+    inference_weights=CURRENT_WEIGHTS if recipe=='current' else BASELINE_WEIGHTS
     tr=pd.read_csv(a.data/'train.csv',keep_default_na=False)
     digest=hashlib.sha256(tr[['id','text','label']].to_csv(index=False).encode()).hexdigest()
     if digest!=TRAINING_SHA256:raise ValueError('Use the original competition train.csv to reproduce this validated recipe.')
@@ -46,7 +51,7 @@ def main():
     stage='validation' if a.validation else 'final'
     source=Path(__file__).parent
     signature=hashlib.sha256(Path(__file__).read_bytes()+b''.join(path.read_bytes() for path in sorted((source/'src').glob('*.py')))).hexdigest()
-    config={'training_sha256':digest,'source_sha256':signature,'weights':WEIGHTS.tolist(),
+    config={'training_sha256':digest,'source_sha256':signature,'weights':inference_weights.tolist(),'inference_recipe':recipe,
             'fit_rows':len(fit),'calibration_rows':len(cal),'encoder_epochs':2,'recipe':'four-method-robustness-v1','stage':stage}
     a.output.mkdir(parents=True,exist_ok=True);manifest=a.output/'training_config.json'
     if manifest.exists() and json.loads(manifest.read_text())!=config:
@@ -93,10 +98,10 @@ def main():
     distil=legacy_predict(model,AutoTokenizer.from_pretrained(distil_dir,token=False),list(t[cal]))
     del model;gc.collect()
     if torch.cuda.is_available():torch.cuda.empty_cache()
-    ensemble=RobustEnsemble(classical).fit_calibration(t[cal],y[cal],features[cal],distil,deberta)
+    ensemble=RobustEnsemble(classical,weights=inference_weights).fit_calibration(t[cal],y[cal],features[cal],distil,deberta)
     joblib.dump({'ensemble':ensemble,'deberta_dir':deb_dir.name,'distil_dir':distil_dir.name,
                  'training_sha256':digest,'stage':stage,'fit_rows':len(fit),'calibration_rows':len(cal),
-                 'lm_models':list(MODELS),'lm_feature_layout':'small,large,large-minus-small'},
+                 'lm_models':list(MODELS),'lm_feature_layout':'small,large,large-minus-small','inference_recipe':recipe},
                 a.output/'model.joblib')
     config['elapsed_minutes']=(time.perf_counter()-started)/60
     config['python']=sys.version

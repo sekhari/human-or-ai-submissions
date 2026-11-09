@@ -1,4 +1,6 @@
-# Four-method robustness candidate
+> **Current accepted recipe:** use [TEAM_HANDOFF.md](TEAM_HANDOFF.md) and `robust_validation/current_recipe.json`. The default inference weights are now `[0.35, 0.234, 0.156, 0.26]`, reported at public AUROC 0.97960. The report below records the earlier `[0.375, 0.225, 0.15, 0.25]` recipe, its fitted artifact, and its validation results. Historical hashes and checks describe that original artifact, not a new training run.
+
+# Recorded four-method baseline validation
 
 Open **Four_Method_Robust_Colab.ipynb** in Colab, select a **T4 GPU**, and Run all. Upload the original competition ZIP when prompted. The notebook is self-contained and needs no repository checkout. Save its prediction CSV and fitted model bundle before the runtime expires. Nothing is submitted to Kaggle.
 
@@ -13,7 +15,7 @@ This adds a tested candidate alongside the committed pipeline. It does not repla
 | DistilRoBERTa | 0.150 | Existing fine-tuned semantic classifier |
 | DeBERTa-v3-base | 0.250 | A different fine-tuned architecture, with head/tail passage coverage |
 
-Both neural classifiers use two epochs and cleaned text. DeBERTa freezes vocabulary embeddings and uses gradient accumulation in full precision. GPT-2 Large feature extraction ran successfully on a T4 in full precision: 10,000 passages in 33.7 minutes, peak allocated GPU memory 6.32 GiB. This is not the rejected quantized Falcon/Binoculars model.
+Both neural classifiers use two epochs and cleaned text. DeBERTa freezes vocabulary embeddings and uses gradient accumulation in full precision. GPT-2 Large feature extraction ran successfully on a T4 in full precision: 10,000 passages in 33.7 minutes, peak allocated GPU memory 6.32 GiB.
 
 Component scales use quantiles fitted on 800 held-out **training** rows, pooling original, flattened, and short-line views. They are frozen at inference: a new file does not redefine ranks or ensemble weights. Quantiles are scores, not calibrated authorship probabilities.
 
@@ -46,11 +48,11 @@ Use Python 3.11+ and an existing CUDA PyTorch installation (tested locally with 
 ```bash
 python -m pip install -r requirements-robust.txt
 USE_TF=0 USE_FLAX=0 python train_robust.py --data data --output final_model
-USE_TF=0 USE_FLAX=0 python check_robust.py --model final_model --input data/test.csv
-USE_TF=0 USE_FLAX=0 python predict_robust.py --model final_model --input data/test.csv --output submission_four_methods.csv
+USE_TF=0 USE_FLAX=0 python check_robust.py --model final_model --input data/test.csv --recipe baseline
+USE_TF=0 USE_FLAX=0 python predict_robust.py --model final_model --input data/test.csv --output submission_four_methods.csv --recipe baseline
 ```
 
-`data/` should contain the original train/test CSVs. Fresh training takes approximately 1–2 hours on T4 including feature extraction and prediction, plus downloads. CPU/Mac execution is supported by device selection but can be substantially slower. A T4 is the practical default. Existing feature caches can be supplied with `--small-features` and `--large-features`; dataset digest, model metadata, and matrix shape are checked. Completed encoder checkpoints resume only within the same source/configuration manifest. Changing code requires a fresh output folder.
+`data/` should contain the original train/test CSVs. Fresh training takes approximately 1–2 hours on T4 including feature extraction and prediction, plus downloads. CPU/Mac device fallback is available, but full training needs sufficient RAM and can be substantially slower. Use the tested T4 route for this project; the full recipe has not been verified to fit an 8 GB Mac. Existing feature caches can be supplied with `--small-features` and `--large-features`; dataset digest, model metadata, and matrix shape are checked. Completed encoder checkpoints resume only within the same source/configuration manifest. Changing code requires a fresh output folder.
 
 To reproduce the frozen global audit without training on its labels:
 
@@ -68,3 +70,13 @@ Do not audit a final model trained on 9,200 rows; that includes the old audit la
 Keep the fitted bundle intact, including both fine-tuned neural folders, `model.joblib`, and source. Then run `predict_robust.py --model final_model --input new_test.csv --output predictions.csv`. Input needs unique `id` values and nonempty `text`; output contains `id,label` in the same order. No training, threshold selection, or recalibration is performed on the new file. GPU is recommended.
 
 Public pretrained GPT-2 weights download automatically. For disconnected inference, cache the original model/tokenizer files under `gpt2/` and `gpt2-large/`, then pass `--offline-root`. GPT-2 Large is pinned to revision `32b71b12589c2f8d625668d2335a01cac3249519`. The fitted bundle is about 0.8 GiB before optional offline pretrained weights; share it in team storage rather than committing it to GitHub. Load only trusted joblib bundles. The notebook uses `package_robust.py` to verify the export includes model/tokenizer files and package metadata, while excluding data and feature caches.
+
+## Completed final run
+
+The final 9,200-row fit and separate 800-row calibration completed on Tesla T4. Both neural classifiers trained for two epochs. The fit took **33.46 minutes** using the already completed language-feature caches, with **4.62 GiB** peak allocated GPU memory during fitting. This timing excludes initial feature extraction, final checks, test inference, and archive creation.
+
+The fitted final detector passed the full inference batch-size and row-order check: maximum score difference **4.21e-7** on eight passages. It then generated all **3,000** test predictions. Independent local verification confirmed the original test IDs and sample row order, finite scores in [0,1], and the downloaded CSV checksum. The model ZIP also passed SHA-256 and ZIP CRC checks; its serialized classifier, both fine-tuned checkpoints/tokenizers, 45-feature LM classifier, and fixed weights were verified locally.
+
+The ZIP contains 49 files and is 860,134,885 bytes (0.80 GiB), including code and fitted models. Competition CSVs and feature caches are excluded. Its SHA-256 is `4bd236a9432666055408a15307de62a296adc867876d03a926d1a5f138c1dce8`. See `final_training_complete.json`, `final_inference_check.json`, and `local_verification.json` under `robust_validation/` for provenance.
+
+The AUC results above belong to the separate validation fits. The final 9,200-row model has no measured Kaggle/private-test score. Prediction-file integrity checks do not measure classification accuracy.

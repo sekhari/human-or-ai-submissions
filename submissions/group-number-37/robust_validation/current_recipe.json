@@ -1,0 +1,63 @@
+{
+  "name": "reference-035",
+  "component_order": [
+    "reference",
+    "dual_lm",
+    "distilroberta",
+    "deberta"
+  ],
+  "weights": [
+    0.35,
+    0.234,
+    0.156,
+    0.26
+  ],
+  "baseline_weights": [
+    0.375,
+    0.225,
+    0.15,
+    0.25
+  ],
+  "score_mode": "quantile",
+  "lm_mode": "both",
+  "lm_models": [
+    "gpt2",
+    "openai-community/gpt2-large"
+  ],
+  "training_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "public_score_reported_by_user": 0.9796,
+  "baseline_public_score_reported_by_user": 0.97956,
+  "private_score_known": false,
+  "neural_retraining_required_for_reblend": false,
+  "paired_validation": {
+    "audit": {
+      "original": {
+        "baseline": 0.999603,
+        "candidate": 0.999558
+      },
+      "flat": {
+        "baseline": 0.994209,
+        "candidate": 0.994925
+      },
+      "short_lines": {
+        "baseline": 0.99697,
+        "candidate": 0.997057
+      }
+    },
+    "news_local_reproduction": {
+      "original": {
+        "baseline": 0.9965375503675056,
+        "candidate": 0.996686037486248
+      },
+      "flat": {
+        "baseline": 0.9800622296015821,
+        "candidate": 0.981054393531361
+      },
+      "short_lines": {
+        "baseline": 0.9826675035940632,
+        "candidate": 0.9831669602661969
+      }
+    }
+  },
+  "tradeoff": "Original audit AUC decreased from 0.999603 to 0.999558; formatting audit and all paired news checks improved. Not a guaranteed private-score improvement."
+}

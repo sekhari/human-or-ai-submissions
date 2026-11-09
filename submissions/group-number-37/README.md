@@ -5,12 +5,14 @@ human or ai, cornell tech cs 5785. predicts the probability that a passage was w
 **team:** cris nicoglu (netid: TODO), derrick cardenas (netid: TODO), alexander siladie (netid: TODO)
 **kaggle team name:** Group Number 37
 
-## four-method robustness candidate
+## current four-method pipeline
 
-A separate T4-compatible candidate and validation report are available in [ROBUST_ENSEMBLE.md](ROBUST_ENSEMBLE.md).
-Open [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb) in Colab and upload the original competition ZIP.
-It combines the original reference, dual GPT-2 feature models, DistilRoBERTa, and DeBERTa with frozen training-fitted calibration.
-The original commands below remain the team control. No Kaggle submission is performed by the new notebook.
+**Current public best reported by Alex: 0.97960**, using reference-035. Start with [TEAM_HANDOFF.md](TEAM_HANDOFF.md).
+The accepted file is [predictions/submission_current_best.csv](predictions/submission_current_best.csv).
+Use [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb) for fresh T4 training, or `predict_robust.py --recipe current` with an existing bundle.
+`reblend_robust.py` converts the same model's earlier baseline CSV without GPU inference.
+
+The commands below describe the original three-way team control. The four-method pipeline uses the `*_robust.py` scripts documented in the handoff.
 
 ## setup
 

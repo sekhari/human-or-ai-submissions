@@ -7,20 +7,23 @@ import joblib
 import numpy as np
 import pandas as pd
 from predict_robust import predict_rows
+from src.recipes import recipe_weights
 
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--model',type=Path,required=True)
-    p.add_argument('--input',type=Path,required=True);a=p.parse_args()
+    p.add_argument('--input',type=Path,required=True)
+    p.add_argument('--recipe',choices=('current','baseline','saved'),default='current');a=p.parse_args()
     texts=pd.read_csv(a.input,keep_default_na=False).text.head(8).tolist()
     bundle=joblib.load(a.model/'model.joblib')
-    singular=predict_rows(bundle,a.model,texts,batch=1)
-    together=predict_rows(bundle,a.model,texts,batch=8)
-    reversed_scores=predict_rows(bundle,a.model,texts[::-1],batch=8)[::-1]
+    singular=predict_rows(bundle,a.model,texts,batch=1,recipe=a.recipe)
+    together=predict_rows(bundle,a.model,texts,batch=8,recipe=a.recipe)
+    reversed_scores=predict_rows(bundle,a.model,texts[::-1],batch=8,recipe=a.recipe)[::-1]
     difference=max(float(np.max(np.abs(singular-together))),float(np.max(np.abs(together-reversed_scores))))
     if not np.allclose(singular,together,atol=1e-4,rtol=1e-4) or not np.allclose(together,reversed_scores,atol=1e-4,rtol=1e-4):
         raise AssertionError(f'Inference depends on batch/order beyond numerical tolerance: {difference}')
     result={'passed':True,'rows':len(texts),'maximum_score_difference':difference,
+            'recipe':a.recipe,'weights':recipe_weights(bundle,a.recipe).tolist(),
             'model_sha256':hashlib.sha256((a.model/'model.joblib').read_bytes()).hexdigest()}
     (a.model/'inference_check.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2),flush=True)
