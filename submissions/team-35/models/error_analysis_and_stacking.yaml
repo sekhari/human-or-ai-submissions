@@ -1,0 +1,169 @@
+# Configuration and Model Hyperparameters for error_analysis_and_stacking.ipynb
+# Edit this file directly to tweak Level-1 specialist models, Level-2 meta-learner, vectorizers, or SSL thresholds.
+
+random_seed: 42
+
+stage2_baseline:
+  # Stage 2 reference model parameters for error analysis
+  model_b:
+    C: 5.0
+    max_iter: 1000
+  model_c:
+    linear_svc:
+      C: 1.0
+    calibration:
+      cv: 5
+      method: "sigmoid"
+  model_d:
+    n_estimators: 300
+    learning_rate: 0.05
+    num_leaves: 31
+    min_child_samples: 50
+    colsample_bytree: 0.7
+    subsample: 0.8
+    n_jobs: -1
+    verbose: -1
+  ensemble_weights:
+    model_b: 0.20
+    model_c: 0.20
+    model_d: 0.60
+  vectorizers:
+    vec_w13:
+      ngram_range: [1, 3]
+      min_df: 3
+      max_features: 75000
+      sublinear_tf: true
+    vec_c35:
+      ngram_range: [3, 5]
+      analyzer: "char_wb"
+      min_df: 5
+      max_features: 75000
+      sublinear_tf: true
+  svd_components: 48
+  stylo_scale: 0.15
+
+vectorizers:
+  # Multi-view N-gram representations for Level-1 stacking
+  word_tfidf:
+    ngram_range: [1, 3]
+    min_df: 3
+    max_features: 85000
+    sublinear_tf: true
+  char_wb_tfidf:
+    ngram_range: [3, 5]
+    analyzer: "char_wb"
+    min_df: 5
+    max_features: 85000
+    sublinear_tf: true
+  char_cross_tfidf:
+    ngram_range: [3, 5]
+    analyzer: "char"
+    min_df: 5
+    max_features: 85000
+    sublinear_tf: true
+
+stacking_cv:
+  n_splits: 5
+  shuffle: true
+
+level1_specialists:
+  # Specialist 1: Word (1,3) Logistic Regression
+  l1_word_logreg:
+    C: 4.0
+    max_iter: 1000
+
+  # Specialist 2: Word (1,3) Calibrated LinearSVC
+  l1_word_linearsvc:
+    C: 0.8
+    cv: 3
+
+  # Specialist 3: Char_wb (3,5) Logistic Regression
+  l1_char_wb_logreg:
+    C: 4.0
+    max_iter: 1000
+
+  # Specialist 4: Cross-Word Char (3,5) Logistic Regression
+  l1_char_cross_logreg:
+    C: 4.0
+    max_iter: 1000
+
+  # Specialist 5: All-NGram (Word + CharWB + CharCross) Calibrated LinearSVC
+  l1_all_ngram_linearsvc:
+    C: 0.8
+    cv: 3
+
+  # Specialist 6: All-NGram Complement Naive Bayes
+  l1_all_ngram_comp_nb:
+    alpha: 0.3
+
+  # Specialist 7: 96-Feature Pure + Genre-Z Stylometric LightGBM
+  l1_pure_genre_z_lgbm:
+    n_estimators: 350
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.7
+    subsample: 0.8
+    n_jobs: -1
+    verbose: -1
+
+level2_meta_learner:
+  # Level-2 Stacking Logistic Meta-Learner
+  logistic_regression:
+    C: 0.5
+
+learning_curve:
+  sample_sizes: [500, 1000, 2000, 5000, 8000]
+
+semi_supervised:
+  # Pseudo-label confidence thresholds on unlabeled.csv
+  high_conf_threshold_hi: 0.95
+  high_conf_threshold_lo: 0.05
+  vectorizers:
+    word_tfidf:
+      ngram_range: [1, 3]
+      min_df: 3
+      max_features: 90000
+      sublinear_tf: true
+    char_wb_tfidf:
+      ngram_range: [3, 5]
+      analyzer: "char_wb"
+      min_df: 5
+      max_features: 90000
+      sublinear_tf: true
+    char_cross_tfidf:
+      ngram_range: [3, 5]
+      analyzer: "char"
+      min_df: 5
+      max_features: 90000
+      sublinear_tf: true
+  lgbm:
+    n_estimators: 350
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.7
+    subsample: 0.8
+    n_jobs: -1
+    verbose: -1
+
+full_retrain:
+  # 10,000-row full dataset transductive vectorizers
+  vectorizers:
+    word_tfidf:
+      ngram_range: [1, 3]
+      min_df: 3
+      max_features: 95000
+      sublinear_tf: true
+    char_wb_tfidf:
+      ngram_range: [3, 5]
+      analyzer: "char_wb"
+      min_df: 5
+      max_features: 95000
+      sublinear_tf: true
+    char_cross_tfidf:
+      ngram_range: [3, 5]
+      analyzer: "char"
+      min_df: 5
+      max_features: 95000
+      sublinear_tf: true

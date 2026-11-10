@@ -1,0 +1,766 @@
+selection:
+  kind: historical
+  names:
+  - F_char_lm_dense
+  - cat_pure
+  - linear_tuned
+  - cat_struct
+  weights:
+  - 0.3339281050113021
+  - 0.03777307597681852
+  - 0.12829881901187934
+  - 0.5
+  method: logit
+  reference: B2_v3_corrected
+  reason:
+    development_gain: -3.4127025625219076e-05
+    task_deltas:
+    - -4.5812500000019796e-05
+    - -0.00027056277056281
+    - 8.787828857026447e-05
+    - 0.00028238074481901076
+    - -0.0002710852166805111
+    - 1.2439300102751183e-05
+    stress_guardrail: true
+    promoted: false
+active_blend:
+  nofmt_weights:
+    lr_4v: 0.22
+    svc_4v: 0.22
+    mask_lr: 0.14
+    gbdt_pure: 0.42
+  struct_weights:
+    lgb_struct: 0.3
+    cat_struct: 0.4
+    xgb_struct: 0.3
+  fusion_weights:
+    nofmt: 0.62
+    struct: 0.38
+ssl:
+  enabled: false
+  setting:
+    weight: 0.1
+    threshold: 0.95
+    agreement: false
+  contribution: 0.0
+  reason: No confirmed gain beyond tolerance.
+pool_specs:
+  F_char_lm_dense:
+    family: lgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: none
+    prune: false
+    word_lm: true
+    char_lm: true
+    params:
+      n_estimators: 450
+      learning_rate: 0.04
+      num_leaves: 31
+      min_child_samples: 40
+      colsample_bytree: 0.65
+      subsample: 0.8
+      n_jobs: -1
+      verbose: -1
+    lm_settings:
+      char:
+        order: 3
+        alpha: 0.1
+        min_count: 1
+        interpolation:
+        - 0.5
+        - 0.5
+        chunk_size: 50
+  cat_pure:
+    family: cat
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: none
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      iterations: 850
+      learning_rate: 0.05
+      depth: 6
+      l2_leaf_reg: 4.0
+      task_type: GPU
+      verbose: 0
+  linear_tuned:
+    family: lr
+    views:
+    - word
+    - char_wb
+    - char
+    - mask
+    params:
+      C: 10.0
+      max_iter: 2000
+    view_weights:
+      char: 2.0
+      mask: 2.0
+  cat_struct:
+    family: cat
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: full
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      iterations: 850
+      learning_rate: 0.05
+      depth: 6
+      l2_leaf_reg: 5.0
+      task_type: GPU
+      verbose: 0
+ssl_student_spec:
+  family: lr
+  views:
+  - word
+  - char_wb
+  - char
+  - mask
+  params:
+    C: 10.0
+    max_iter: 2000
+  view_weights:
+    char: 2.0
+    mask: 2.0
+ssl_dense_teacher_spec:
+  family: lgb
+  canonical: false
+  improved: false
+  shrink: 0
+  genre: true
+  info: true
+  structural: none
+  prune: false
+  word_lm: true
+  char_lm: false
+  params:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.65
+    subsample: 0.8
+    n_jobs: -1
+    verbose: -1
+baseline_specs:
+  B0_word_lr:
+    family: lr
+    views:
+    - baseline
+    params:
+      C: 1.0
+      max_iter: 1000
+  lr_4v:
+    family: lr
+    views:
+    - word
+    - char_wb
+    - char
+    - mask
+    params:
+      C: 2.0
+      max_iter: 1000
+  svc_4v:
+    family: svc
+    views:
+    - word
+    - char_wb
+    - char
+    - mask
+    params:
+      C: 0.5
+  mask_lr:
+    family: lr
+    views:
+    - mask
+    params:
+      C: 2.0
+      max_iter: 1000
+  lgb_pure:
+    family: lgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: none
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      n_estimators: 450
+      learning_rate: 0.04
+      num_leaves: 31
+      min_child_samples: 40
+      colsample_bytree: 0.65
+      subsample: 0.8
+      n_jobs: -1
+      verbose: -1
+  lgb_struct:
+    family: lgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: full
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      n_estimators: 450
+      learning_rate: 0.04
+      num_leaves: 31
+      min_child_samples: 50
+      colsample_bytree: 0.45
+      subsample: 0.8
+      reg_alpha: 1.0
+      reg_lambda: 2.0
+      n_jobs: -1
+      verbose: -1
+  cat_pure:
+    family: cat
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: none
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      iterations: 850
+      learning_rate: 0.05
+      depth: 6
+      l2_leaf_reg: 4.0
+      task_type: GPU
+      verbose: 0
+  cat_struct:
+    family: cat
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: full
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      iterations: 850
+      learning_rate: 0.05
+      depth: 6
+      l2_leaf_reg: 5.0
+      task_type: GPU
+      verbose: 0
+  xgb_pure:
+    family: xgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: none
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      n_estimators: 450
+      learning_rate: 0.04
+      max_depth: 6
+      colsample_bytree: 0.65
+      subsample: 0.8
+      tree_method: hist
+      device: cuda
+  xgb_struct:
+    family: xgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: true
+    structural: full
+    prune: false
+    word_lm: true
+    char_lm: false
+    params:
+      n_estimators: 450
+      learning_rate: 0.04
+      max_depth: 6
+      colsample_bytree: 0.5
+      subsample: 0.8
+      reg_alpha: 1.0
+      reg_lambda: 2.0
+      tree_method: hist
+      device: cuda
+  v2_lgb_pure:
+    family: lgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: false
+    structural: none
+    prune: false
+    word_lm: false
+    char_lm: false
+    params:
+      n_estimators: 400
+      learning_rate: 0.04
+      num_leaves: 31
+      min_child_samples: 40
+      colsample_bytree: 0.7
+      subsample: 0.8
+      n_jobs: -1
+      verbose: -1
+  v2_lgb_struct:
+    family: lgb
+    canonical: false
+    improved: false
+    shrink: 0
+    genre: true
+    info: false
+    structural: v2
+    prune: false
+    word_lm: false
+    char_lm: false
+    params:
+      n_estimators: 400
+      learning_rate: 0.04
+      num_leaves: 31
+      min_child_samples: 50
+      colsample_bytree: 0.45
+      subsample: 0.8
+      reg_alpha: 1.0
+      reg_lambda: 2.0
+      n_jobs: -1
+      verbose: -1
+effective_dense_params:
+  lgb_pure:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.65
+    subsample: 0.8
+    n_jobs: 6
+    verbose: -1
+    random_state: 42
+    verbosity: -1
+  lgb_struct:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 50
+    colsample_bytree: 0.45
+    subsample: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    n_jobs: 6
+    verbose: -1
+    random_state: 42
+    verbosity: -1
+  cat_pure:
+    iterations: 850
+    learning_rate: 0.05
+    depth: 6
+    l2_leaf_reg: 4.0
+    task_type: CPU
+    verbose: 0
+    thread_count: 6
+    random_seed: 42
+    allow_writing_files: false
+  cat_struct:
+    iterations: 850
+    learning_rate: 0.05
+    depth: 6
+    l2_leaf_reg: 5.0
+    task_type: CPU
+    verbose: 0
+    thread_count: 6
+    random_seed: 42
+    allow_writing_files: false
+  xgb_pure:
+    n_estimators: 450
+    learning_rate: 0.04
+    max_depth: 6
+    colsample_bytree: 0.65
+    subsample: 0.8
+    tree_method: hist
+    device: cpu
+    n_jobs: 6
+    random_state: 42
+    verbosity: 0
+  xgb_struct:
+    n_estimators: 450
+    learning_rate: 0.04
+    max_depth: 6
+    colsample_bytree: 0.5
+    subsample: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    tree_method: hist
+    device: cpu
+    n_jobs: 6
+    random_state: 42
+    verbosity: 0
+  v2_lgb_pure:
+    n_estimators: 400
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.7
+    subsample: 0.8
+    n_jobs: 6
+    verbose: -1
+    random_state: 42
+    verbosity: -1
+  v2_lgb_struct:
+    n_estimators: 400
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 50
+    colsample_bytree: 0.45
+    subsample: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    n_jobs: 6
+    verbose: -1
+    random_state: 42
+    verbosity: -1
+  F_char_lm_dense:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.65
+    subsample: 0.8
+    n_jobs: 6
+    verbose: -1
+    random_state: 42
+    verbosity: -1
+resolved_main:
+  paths:
+    data_dir: null
+    artifacts: artifacts/final_model_improvements
+  runtime:
+    mode: full
+    threads: 6
+    device: cpu
+    cache: true
+    smoke_rows: 400
+    smoke_trials: 2
+    cache_limit_gb: 8.0
+    analyzer_cache_entries: 120000
+    analyzer_benchmark_rows: 400
+  validation:
+    seed: 42
+    secondary_seed: 43
+    holdout_size: 2000
+    folds: 5
+    screen_folds: 3
+    outer_folds: 3
+    lm_inner_folds: 3
+    min_domain_class: 20
+    duplicate_threshold: 0.85
+    duplicate_features: 30000
+    duplicate_chunk: 256
+    stress:
+    - original
+    - canonical
+    - typography
+    - lowercase
+    - wrap60
+    - wrap90
+    ood_domains:
+    - - 4. Book / Novel Summary
+      - 5. Film / TV / Review
+    - - 2. Academic / ArXiv Abstract
+    - - 1. Recipe / Cooking
+    - - 7. First-Person / Social
+    - - 8. General / News / Other
+  baseline_sources:
+    v0: models/model_selection.yaml
+    v2: models/leaderboard_boost.yaml
+    v3: models/model_selection_v3_high_score.yaml
+    nb: models/final_nb_logreg.yaml
+    lm: models/final_ngram_lm.yaml
+  features:
+    reference_columns:
+    - ttr
+    - log_ttr
+    - root_ttr
+    - avg_sent_len
+    - word_count
+    - char_count
+    - avg_word_len
+    genre_columns:
+    - log_ttr
+    - ttr
+    - root_ttr
+    - yules_k
+    - rep_3gram
+    - rep_2gram
+    - avg_sent_len
+    - std_sent_len
+    - cv_sent_len
+    - avg_word_len
+    - coleman_liau
+    - comma_rate
+    - period_rate
+    - colon_rate
+    - hyphen_rate
+    - punct_char_ratio
+    - stop_ratio
+    - prep_ratio
+    - det_ratio
+    - pron1_ratio
+    - pron3_ratio
+    - digit_char_ratio
+    shrinkages:
+    - 0
+    - 20
+    - 50
+    reference_min_support: 10
+    std_floor_fraction: 0.05
+    epsilon: 1.0e-06
+    correlation_threshold: 0.98
+    mattr_window: 50
+    permutation_repeats: 3
+  models:
+    lr_max_iter: 2000
+    lr_solver: lbfgs
+    svc_max_iter: 10000
+    calibration_folds: 3
+    calibration_method: sigmoid
+  search:
+    trials: 8
+    lr_C:
+    - 0.25
+    - 0.5
+    - 1.0
+    - 2.0
+    - 5.0
+    - 10.0
+    svc_C:
+    - 0.1
+    - 0.25
+    - 0.5
+    - 1.0
+    - 2.0
+    view_weights:
+    - 0.5
+    - 1.0
+    - 2.0
+    lgb_space:
+      n_estimators:
+      - 350
+      - 600
+      - 1000
+      learning_rate:
+      - 0.025
+      - 0.04
+      - 0.06
+      num_leaves:
+      - 7
+      - 15
+      - 31
+      min_child_samples:
+      - 20
+      - 40
+      - 80
+      - 120
+      colsample_bytree:
+      - 0.45
+      - 0.65
+      - 0.85
+      subsample:
+      - 0.7
+      - 0.9
+      - 1.0
+      reg_alpha:
+      - 0.0
+      - 0.5
+      - 2.0
+      reg_lambda:
+      - 1.0
+      - 5.0
+      - 15.0
+    cat_space:
+      iterations:
+      - 500
+      - 850
+      learning_rate:
+      - 0.025
+      - 0.05
+      depth:
+      - 4
+      - 5
+      - 6
+      l2_leaf_reg:
+      - 3.0
+      - 10.0
+      - 30.0
+    xgb_space:
+      n_estimators:
+      - 350
+      - 600
+      learning_rate:
+      - 0.025
+      - 0.05
+      max_depth:
+      - 3
+      - 4
+      - 6
+      min_child_weight:
+      - 1
+      - 5
+      - 15
+      colsample_bytree:
+      - 0.5
+      - 0.8
+      subsample:
+      - 0.7
+      - 0.9
+      reg_lambda:
+      - 1.0
+      - 5.0
+      - 15.0
+  augmentation:
+    weights:
+    - 0.25
+    - 0.5
+    fraction: 1.0
+    transform: canonical
+  ensemble:
+    weight_trials: 70
+    structural_weights:
+    - 0.0
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+    gain_tolerance: 0.0005
+    regression_tolerance: 0.003
+    bootstrap_repeats: 1000
+    clip: 1.0e-07
+    calibration_C: 1.0
+  semi_supervised:
+    thresholds:
+    - 0.95
+    - 0.98
+    - 0.99
+    weights:
+    - 0.1
+    - 0.25
+    - 0.5
+    contributions:
+    - 0.0
+    - 0.1
+    - 0.2
+    - 0.3
+    trials: 12
+    max_weight_fraction: 0.25
+    probe_fraction: 0.2
+    test_vocabulary: false
+    test_pseudo_labels: false
+  final_fit:
+    strategy: full_refit
+    learning_sizes:
+    - 500
+    - 1000
+    - 2000
+    - 5000
+    - 8000
+    reproducibility_tolerance: 1.0e-10
+    learning_curve_weights:
+    - 0.5
+    - 0.5
+  outputs:
+    submission: submission_final_model_improvements.csv
+    conventional: submission.csv
+    selected_config: models/final_model_improvements_selected.yaml
+nb:
+  vectorizer:
+    ngram_range:
+    - 1
+    - 2
+    binary: true
+    min_df: 2
+    max_features: 100000
+    dtype: float32
+  alpha: 1.0
+  C: 1.0
+  max_iter: 2000
+  search:
+    alpha:
+    - 0.1
+    - 1.0
+    - 10.0
+    C:
+    - 0.1
+    - 0.5
+    - 1.0
+    - 2.0
+    - 5.0
+    ngram_range:
+    - - 1
+      - 2
+    - - 1
+      - 3
+    min_df:
+    - 2
+    - 3
+    max_features:
+    - 100000
+    - 150000
+    trials: 8
+lm:
+  word:
+    order: 3
+    alpha: 0.5
+    min_count: 2
+    interpolation:
+    - 0.72
+    - 0.62
+    extended: false
+  char:
+    order: 4
+    alpha: 0.5
+    min_count: 1
+    interpolation:
+    - 0.8
+    - 0.8
+    - 0.8
+    chunk_size: 50
+  search:
+    char_orders:
+    - 3
+    - 4
+    alphas:
+    - 0.1
+    - 0.5
+    interpolation:
+    - 0.5
+    - 0.8
+    trials: 4
+  external_policy: full
+  dtype: float32
+implementation_hash: ab1ae69c6278f88292c37a0aba28d4ca8c8d651f680566012f868af2a842ee9e
+config_hash: 0c790fa7c7e8aebd44887927a8874f12

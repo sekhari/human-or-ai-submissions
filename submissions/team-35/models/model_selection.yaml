@@ -1,0 +1,113 @@
+# Configuration and Model Hyperparameters for model_selection.ipynb
+# Edit this file directly to tweak model parameters, vectorizers, or ensemble weights without modifying the notebook.
+
+random_seed: 42
+
+vectorizers:
+  # Baseline Word (1,2) TF-IDF for Model A and A2
+  vec_w12:
+    ngram_range: [1, 2]
+    min_df: 3
+    max_features: 50000
+    sublinear_tf: true
+  # Normalized Word (1,3) TF-IDF for Multi-View representation
+  vec_w13:
+    ngram_range: [1, 3]
+    min_df: 3
+    max_features: 75000
+    sublinear_tf: true
+  # Character char_wb (3,5) TF-IDF for Multi-View representation
+  vec_c35:
+    ngram_range: [3, 5]
+    analyzer: "char_wb"
+    min_df: 5
+    max_features: 75000
+    sublinear_tf: true
+
+stylometric:
+  # Scale factor balancing dense stylometric features against unit-norm sparse TF-IDF vectors
+  scale_factor: 0.15
+
+svd:
+  # Number of TruncatedSVD components for dense tree models
+  n_components: 48
+
+ablation:
+  # Logistic Regression regularization parameter for representation ablation check
+  logreg_c: 2.0
+  max_iter: 1000
+
+tuning:
+  # Hyperparameter search grids for 5-fold inner CV
+  c_grid_lr: [0.5, 1.0, 2.0, 3.0, 5.0, 8.0]
+  c_grid_svc: [0.2, 0.5, 1.0, 1.5, 2.0]
+  lgb_configs:
+    - num_leaves: 15
+      min_child_samples: 30
+      learning_rate: 0.05
+    - num_leaves: 31
+      min_child_samples: 30
+      learning_rate: 0.05
+    - num_leaves: 31
+      min_child_samples: 50
+      learning_rate: 0.05
+    - num_leaves: 63
+      min_child_samples: 50
+      learning_rate: 0.04
+
+models:
+  # Model A: Reference Baseline Word (1,2) TF-IDF + Logistic Regression
+  model_a:
+    params:
+      C: 1.0
+      max_iter: 1000
+
+  # Model A2: Generative Complement Naive Bayes
+  model_a2:
+    params:
+      alpha: 0.5
+
+  # Model B: Tuned Multi-View L2 Logistic Regression
+  model_b:
+    params:
+      C: 5.0
+      max_iter: 1000
+
+  # Model C: Tuned Multi-View Calibrated LinearSVC
+  model_c:
+    linear_svc_params:
+      C: 1.0
+    calibration_params:
+      cv: 5
+      method: "sigmoid"
+
+  # Model D0 (Diagnostic): LightGBM with raw newline/formatting features
+  model_d0:
+    params:
+      n_estimators: 300
+      learning_rate: 0.05
+      num_leaves: 31
+      min_child_samples: 50
+      colsample_bytree: 0.7
+      subsample: 0.8
+      n_jobs: -1
+      verbose: -1
+
+  # Model D: Tuned Formatting-Free LightGBM (Pure Stylo + SVD)
+  model_d:
+    params:
+      n_estimators: 300
+      learning_rate: 0.05
+      num_leaves: 31
+      min_child_samples: 50
+      colsample_bytree: 0.7
+      subsample: 0.8
+      n_jobs: -1
+      verbose: -1
+
+ensemble:
+  # Model E: Hybrid Multi-Family Ensemble blend weights
+  weights:
+    model_b: 0.20
+    model_c: 0.20
+    model_d: 0.60

@@ -1,0 +1,37 @@
+# Configuration and Model Hyperparameters for feature_analysis.ipynb
+# Edit this file directly to tweak feature evaluation models, adversarial validation, vectorizers, and CV settings.
+
+random_seed: 42
+
+cv:
+  n_splits: 5
+  shuffle: true
+
+feature_evaluation:
+  lightgbm:
+    n_estimators: 250
+    learning_rate: 0.05
+    num_leaves: 31
+    subsample_for_bin: 5000
+    verbose: -1
+  logreg:
+    C: 1.0
+    max_iter: 1000
+  decision_tree:
+    max_depth: 4
+    min_samples_leaf: 50
+
+adversarial_validation:
+  lgb_classifier:
+    n_estimators: 150
+    learning_rate: 0.05
+    num_leaves: 31
+    verbose: -1
+  word_tfidf:
+    ngram_range: [1, 2]
+    min_df: 3
+    max_features: 40000
+    sublinear_tf: true
+  logreg:
+    C: 1.0
+    max_iter: 1000

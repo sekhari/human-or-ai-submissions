@@ -1,0 +1,241 @@
+paths:
+  data_dir: null
+  artifacts: artifacts/final_model_improvements
+runtime:
+  mode: full
+  threads: 6
+  device: cpu
+  cache: true
+  smoke_rows: 400
+  smoke_trials: 2
+  cache_limit_gb: 8.0
+  analyzer_cache_entries: 120000
+  analyzer_benchmark_rows: 400
+validation:
+  seed: 42
+  secondary_seed: 43
+  holdout_size: 2000
+  folds: 5
+  screen_folds: 3
+  outer_folds: 3
+  lm_inner_folds: 3
+  min_domain_class: 20
+  duplicate_threshold: 0.85
+  duplicate_features: 30000
+  duplicate_chunk: 256
+  stress:
+  - original
+  - canonical
+  - typography
+  - lowercase
+  - wrap60
+  - wrap90
+  ood_domains:
+  - - 4. Book / Novel Summary
+    - 5. Film / TV / Review
+  - - 2. Academic / ArXiv Abstract
+  - - 1. Recipe / Cooking
+  - - 7. First-Person / Social
+  - - 8. General / News / Other
+baseline_sources:
+  v0: models/model_selection.yaml
+  v2: models/leaderboard_boost.yaml
+  v3: models/model_selection_v3_high_score.yaml
+  nb: models/final_nb_logreg.yaml
+  lm: models/final_ngram_lm.yaml
+features:
+  reference_columns:
+  - ttr
+  - log_ttr
+  - root_ttr
+  - avg_sent_len
+  - word_count
+  - char_count
+  - avg_word_len
+  genre_columns:
+  - log_ttr
+  - ttr
+  - root_ttr
+  - yules_k
+  - rep_3gram
+  - rep_2gram
+  - avg_sent_len
+  - std_sent_len
+  - cv_sent_len
+  - avg_word_len
+  - coleman_liau
+  - comma_rate
+  - period_rate
+  - colon_rate
+  - hyphen_rate
+  - punct_char_ratio
+  - stop_ratio
+  - prep_ratio
+  - det_ratio
+  - pron1_ratio
+  - pron3_ratio
+  - digit_char_ratio
+  shrinkages:
+  - 0
+  - 20
+  - 50
+  reference_min_support: 10
+  std_floor_fraction: 0.05
+  epsilon: 1.0e-06
+  correlation_threshold: 0.98
+  mattr_window: 50
+  permutation_repeats: 3
+models:
+  lr_max_iter: 2000
+  lr_solver: lbfgs
+  svc_max_iter: 10000
+  calibration_folds: 3
+  calibration_method: sigmoid
+search:
+  trials: 8
+  lr_C:
+  - 0.25
+  - 0.5
+  - 1.0
+  - 2.0
+  - 5.0
+  - 10.0
+  svc_C:
+  - 0.1
+  - 0.25
+  - 0.5
+  - 1.0
+  - 2.0
+  view_weights:
+  - 0.5
+  - 1.0
+  - 2.0
+  lgb_space:
+    n_estimators:
+    - 350
+    - 600
+    - 1000
+    learning_rate:
+    - 0.025
+    - 0.04
+    - 0.06
+    num_leaves:
+    - 7
+    - 15
+    - 31
+    min_child_samples:
+    - 20
+    - 40
+    - 80
+    - 120
+    colsample_bytree:
+    - 0.45
+    - 0.65
+    - 0.85
+    subsample:
+    - 0.7
+    - 0.9
+    - 1.0
+    reg_alpha:
+    - 0.0
+    - 0.5
+    - 2.0
+    reg_lambda:
+    - 1.0
+    - 5.0
+    - 15.0
+  cat_space:
+    iterations:
+    - 500
+    - 850
+    learning_rate:
+    - 0.025
+    - 0.05
+    depth:
+    - 4
+    - 5
+    - 6
+    l2_leaf_reg:
+    - 3.0
+    - 10.0
+    - 30.0
+  xgb_space:
+    n_estimators:
+    - 350
+    - 600
+    learning_rate:
+    - 0.025
+    - 0.05
+    max_depth:
+    - 3
+    - 4
+    - 6
+    min_child_weight:
+    - 1
+    - 5
+    - 15
+    colsample_bytree:
+    - 0.5
+    - 0.8
+    subsample:
+    - 0.7
+    - 0.9
+    reg_lambda:
+    - 1.0
+    - 5.0
+    - 15.0
+augmentation:
+  weights:
+  - 0.25
+  - 0.5
+  fraction: 1.0
+  transform: canonical
+ensemble:
+  weight_trials: 70
+  structural_weights:
+  - 0.0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  gain_tolerance: 0.0005
+  regression_tolerance: 0.003
+  bootstrap_repeats: 1000
+  clip: 1.0e-07
+  calibration_C: 1.0
+semi_supervised:
+  thresholds:
+  - 0.95
+  - 0.98
+  - 0.99
+  weights:
+  - 0.1
+  - 0.25
+  - 0.5
+  contributions:
+  - 0.0
+  - 0.1
+  - 0.2
+  - 0.3
+  trials: 12
+  max_weight_fraction: 0.25
+  probe_fraction: 0.2
+  test_vocabulary: false
+  test_pseudo_labels: false
+final_fit:
+  strategy: full_refit
+  learning_sizes:
+  - 500
+  - 1000
+  - 2000
+  - 5000
+  - 8000
+  reproducibility_tolerance: 1.0e-10
+  learning_curve_weights:
+  - 0.5
+  - 0.5
+outputs:
+  submission: submission_final_model_improvements.csv
+  conventional: submission.csv
+  selected_config: models/final_model_improvements_selected.yaml

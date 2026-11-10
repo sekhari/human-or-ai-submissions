@@ -1,0 +1,116 @@
+{
+  "description": "Measured Team 35 character-model results on the seed-42 split; no source passages or hidden labels.",
+  "regenerate": [
+    "py train.py",
+    "py style_experiment.py"
+  ],
+  "q1_summary": {
+    "seed": 42,
+    "train_rows": 8000,
+    "validation_rows": 2000,
+    "train_class_counts": [
+      4000,
+      4000
+    ],
+    "validation_class_counts": [
+      1000,
+      1000
+    ],
+    "exact_text_overlap": 0,
+    "selection_rule": "Highest AUROC on the fixed validation partition within the character logistic model",
+    "selected_setting": {
+      "model": "char_logreg",
+      "C": 10.0,
+      "train_auc": 0.9998971875,
+      "validation_auc": 0.968976,
+      "train_errors_at_0.5": 31,
+      "validation_errors_at_0.5": 180,
+      "train_seconds": 8.388
+    },
+    "note": "Validation was used to select C; this is not a Kaggle test score."
+  },
+  "q1_search": [
+    {
+      "model": "char_logreg",
+      "C": 0.1,
+      "train_auc": 0.9634559375000001,
+      "validation_auc": 0.933322,
+      "train_errors_at_0.5": 835,
+      "validation_errors_at_0.5": 261,
+      "train_seconds": 8.022
+    },
+    {
+      "model": "char_logreg",
+      "C": 1.0,
+      "train_auc": 0.994939625,
+      "validation_auc": 0.9614459999999998,
+      "train_errors_at_0.5": 294,
+      "validation_errors_at_0.5": 198,
+      "train_seconds": 8.684
+    },
+    {
+      "model": "char_logreg",
+      "C": 10.0,
+      "train_auc": 0.9998971875,
+      "validation_auc": 0.968976,
+      "train_errors_at_0.5": 31,
+      "validation_errors_at_0.5": 180,
+      "train_seconds": 8.388
+    }
+  ],
+  "style_ablation": {
+    "seed": 42,
+    "train_rows": 8000,
+    "validation_rows": 2000,
+    "C": 10.0,
+    "style_weight": 0.1,
+    "cue_names": [
+      "not_but",
+      "rather_than",
+      "three_item_list"
+    ],
+    "cue_definition": "Approximate regex counts per 100 words; three_item_list is not a full grammatical parser.",
+    "cue_prevalence_on_training_partition": {
+      "not_but": {
+        "human_fraction_with_cue": 0.061,
+        "ai_fraction_with_cue": 0.0775
+      },
+      "rather_than": {
+        "human_fraction_with_cue": 0.01525,
+        "ai_fraction_with_cue": 0.02925
+      },
+      "three_item_list": {
+        "human_fraction_with_cue": 0.52975,
+        "ai_fraction_with_cue": 0.45875
+      }
+    },
+    "baseline": {
+      "train": {
+        "auc": 0.9998971875,
+        "errors_at_0.5": 31,
+        "error_rate_at_0.5": 0.003875
+      },
+      "validation": {
+        "auc": 0.968976,
+        "errors_at_0.5": 180,
+        "error_rate_at_0.5": 0.09
+      },
+      "fit_seconds": 8.066
+    },
+    "augmented": {
+      "train": {
+        "auc": 0.9999998125,
+        "errors_at_0.5": 4,
+        "error_rate_at_0.5": 0.0005
+      },
+      "validation": {
+        "auc": 0.9687790000000001,
+        "errors_at_0.5": 181,
+        "error_rate_at_0.5": 0.0905
+      },
+      "fit_seconds": 10.419
+    },
+    "delta_validation_auc": -0.0001969999999998917,
+    "note": "The same fixed holdout is used for both; no Kaggle test labels or external text labels were used."
+  }
+}

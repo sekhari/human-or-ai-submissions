@@ -1,0 +1,190 @@
+# Configuration and Model Hyperparameters for model_selection_v3_high_score.ipynb
+# Edit this file directly to tweak the 9 specialists, cross-validation, LM smoothing, self-training, and final ensemble weights.
+
+random_seed: 42
+
+cv:
+  n_splits: 5
+  shuffle: true
+
+language_model:
+  alpha: 0.5  # Interpolation smoothing weight for trigram LM
+
+vectorizers:
+  word_tfidf:
+    ngram_range: [1, 3]
+    min_df: 3
+    max_features: 95000
+    sublinear_tf: true
+  char_wb_tfidf:
+    ngram_range: [3, 5]
+    analyzer: "char_wb"
+    min_df: 5
+    max_features: 95000
+    sublinear_tf: true
+  char_cross_tfidf:
+    ngram_range: [3, 5]
+    analyzer: "char"
+    min_df: 5
+    max_features: 95000
+    sublinear_tf: true
+  mask_tfidf:
+    ngram_range: [1, 4]
+    token_pattern: '\S+'
+    min_df: 5
+    max_features: 85000
+    sublinear_tf: true
+
+stage1_specialists:
+  # 1. Sparse N-Gram Specialists
+  lr_4v:
+    C: 2.0
+    max_iter: 1000
+
+  svc_4v:
+    C: 0.5
+    cv: 3
+
+  mask_lr:
+    C: 2.0
+    max_iter: 1000
+
+  # 2. Formatting-Free Pure + Info + LM + GenreZ GBDT Triad (116 features)
+  lgb_pure:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.65
+    subsample: 0.8
+    n_jobs: -1
+    verbose: -1
+
+  cat_pure:
+    iterations: 850
+    learning_rate: 0.05
+    depth: 6
+    l2_leaf_reg: 4.0
+    task_type: "GPU"
+    verbose: 0
+
+  xgb_pure:
+    n_estimators: 450
+    learning_rate: 0.04
+    max_depth: 6
+    colsample_bytree: 0.65
+    subsample: 0.8
+    tree_method: "hist"
+    device: "cuda"
+
+  # 3. Damped-Structural + Info + LM + Stylo GBDT Triad (132 features)
+  lgb_struct:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 50
+    colsample_bytree: 0.45
+    subsample: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    n_jobs: -1
+    verbose: -1
+
+  cat_struct:
+    iterations: 850
+    learning_rate: 0.05
+    depth: 6
+    l2_leaf_reg: 5.0
+    task_type: "GPU"
+    verbose: 0
+
+  xgb_struct:
+    n_estimators: 450
+    learning_rate: 0.04
+    max_depth: 6
+    colsample_bytree: 0.50
+    subsample: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    tree_method: "hist"
+    device: "cuda"
+
+stage1_blend:
+  nofmt_weights:
+    lr_4v: 0.22
+    svc_4v: 0.22
+    mask_lr: 0.14
+    gbdt_pure: 0.42
+  struct_weights:
+    lgb_struct: 0.30
+    cat_struct: 0.40
+    xgb_struct: 0.30
+  fusion_weights:
+    nofmt: 0.62
+    struct: 0.38
+
+stage2_transductive_self_training:
+  # Pseudo-label selection thresholds
+  unlabeled_threshold_hi: 0.96
+  unlabeled_threshold_lo: 0.04
+  test_domain_threshold_ai: 0.93
+  test_domain_threshold_hu: 0.07
+  min_balanced_k: 5
+  pseudo_weight_unlabeled: 0.50
+  pseudo_weight_test: 0.35
+
+  # Stage 2 Models
+  lr_trans:
+    C: 2.0
+    max_iter: 1000
+
+  svc_trans:
+    C: 0.5
+    cv: 3
+
+  lgb_p_trans:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 40
+    colsample_bytree: 0.65
+    subsample: 0.8
+    n_jobs: -1
+    verbose: -1
+
+  cat_s_trans:
+    iterations: 950
+    learning_rate: 0.04
+    depth: 6
+    l2_leaf_reg: 5.0
+    task_type: "GPU"
+    verbose: 0
+
+  lgb_s_trans:
+    n_estimators: 450
+    learning_rate: 0.04
+    num_leaves: 31
+    min_child_samples: 50
+    colsample_bytree: 0.45
+    subsample: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    n_jobs: -1
+    verbose: -1
+
+  blend_weights:
+    nofmt:
+      lr_trans: 0.30
+      svc_trans: 0.30
+      lgb_p_trans: 0.40
+    struct:
+      cat_s_trans: 0.55
+      lgb_s_trans: 0.45
+    fusion:
+      nofmt: 0.62
+      struct: 0.38
+
+final_fusion:
+  # Logit fusion of Stage 1 9-specialist blend + Stage 2 transductive refinement
+  stage1_weight: 0.70
+  stage2_trans_weight: 0.30

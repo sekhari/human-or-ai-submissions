@@ -1,0 +1,17 @@
+# Core numerical and ML stack
+numpy>=1.26.0,<3.0.0
+pandas>=2.2.0,<4.0.0
+scipy>=1.13.0
+scikit-learn>=1.5.0
+joblib>=1.4.0
+matplotlib>=3.8.0
+pyyaml>=6.0.0
+
+# Tree ensemble specialists
+lightgbm>=4.3.0
+catboost>=1.2.5
+xgboost>=2.0.0
+
+# Contextual LM testing (Optional / PyTorch & Transformers)
+torch>=2.4.0
+transformers>=4.45.0
