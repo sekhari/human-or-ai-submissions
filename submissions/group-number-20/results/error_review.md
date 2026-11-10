@@ -16,7 +16,8 @@ Script: `src/check_blank_lines.py`.
 | also count lines with only spaces/tabs (`\n[ \t]*\n`) | 3,322 | 17 | 3,305 |
 
 - Seen: the report number (3,301, all AI) is right for the rule the pipeline uses.
-- Seen: 17 rows write blank lines as `\r\n\r\n` (14 AI, 3 human), so the raw rule misses them.
+- Seen: 17 rows write blank lines as `\r\n\r\n` (14 AI, 3 human). 4 of them also have a plain `\n\n`,
+  so the raw rule misses 13 rows (10 AI, 3 human), which gives 3,314 - 3,301 = 13.
   The 3 human ones (3919, 7376, 8838) are all recipes: an ingredient list, then a blank line
   before the steps or before "Bon Appetit!". None of them is in the validation set.
 - So "blank line = AI" is almost true in train, but not fully. Human recipe writers do use blank lines.
