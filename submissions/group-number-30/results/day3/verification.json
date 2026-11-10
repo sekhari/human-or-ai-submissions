@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-08",
+  "workspace_base": "aa6357e44ec1031a3387e6d31d695616339f3f9b",
+  "day2_head": "9485ee8357c5a7ae7656451618a6fda288bf4eab",
+  "selected_config": {
+    "kind": "char_style_blend",
+    "char_C": 3.0,
+    "word_style_C": 1.0,
+    "weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "independent_validation": {
+    "name": "selected",
+    "config": {
+      "kind": "char_style_blend",
+      "char_C": 3.0,
+      "word_style_C": 1.0,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 8000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [],
+    "implementation_sha256": "9504096e81b9ee1a1119b6d131b2acffb75adb1d73c6d31847f468ccac53b049",
+    "sklearn_version": "1.8.0",
+    "runtime": {
+      "python": "3.12.14",
+      "versions": {
+        "numpy": "2.3.5",
+        "pandas": "2.2.3",
+        "scipy": "1.17.0",
+        "scikit-learn": "1.8.0",
+        "matplotlib": "3.10.8",
+        "joblib": "1.5.3",
+        "nltk": "3.9.2"
+      },
+      "nltk_tagger_resource": {
+        "resource": "averaged_perceptron_tagger_eng",
+        "sha256": "0189b5b3824b9c61b131d017c86749201a8e3962e089a67a811548aefcd195a3",
+        "files": {
+          "averaged_perceptron_tagger_eng.classes.json": "d152ffa69d45b8357276341a3d592c6c025911d52ec0d9068d4f382560dd48b6",
+          "averaged_perceptron_tagger_eng.tagdict.json": "4c713731cb06727736962bc8cd94ad919217a040e76691059af99bc0c2c9c246",
+          "averaged_perceptron_tagger_eng.weights.json": "789e8e35f6fac656d9b7eccea29ba4e8a137cbb5b525dd31f39e4291a9e80832"
+        }
+      }
+    },
+    "train_auroc": 0.9989261875000001,
+    "validation_auroc": 0.978174,
+    "validation_log_loss": 0.29782009922786257,
+    "fit_seconds": 83.67734129200016,
+    "predict_seconds": 41.45122455499995,
+    "warnings": [],
+    "predictions_sha256": "b850200b2cd1662f26ff3c8d5d0bdccd19567c71523e3e72ea69e5e959de6dd2",
+    "model_sha256": "55dad995d9b569cb6660d49f281b61984a88d2b8d0248e40727589d94e056576",
+    "predictions_path": "results/day3/validation.predictions.tsv"
+  },
+  "day1_reference_comparison": {
+    "ordered_ids_identical": true,
+    "labels_identical": true,
+    "maximum_probability_difference": 0.015874481215245373,
+    "original_auroc": 0.978162,
+    "interpretation": "Close AUROC under a different recorded environment, not identical probabilities."
+  },
+  "unit_tests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "full_training": {
+    "config": {
+      "kind": "char_style_blend",
+      "char_C": 3.0,
+      "word_style_C": 1.0,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "seed": 20261023,
+    "train_rows": 10000,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "fit_scope": "all_labeled",
+    "fit_seconds": 100.70668931799992,
+    "warnings": []
+  },
+  "submission": {
+    "rows": 3000,
+    "columns": [
+      "id",
+      "label"
+    ],
+    "unique_ids": 3000,
+    "ordered_ids_match_sample": true,
+    "finite_and_in_range": true,
+    "minimum_probability": 0.0049093642784052,
+    "maximum_probability": 0.997459754992138,
+    "sha256": "2712188a571ee0c232d87c051b3ff0ac50c69cbce2d84f31169633a9144cf942",
+    "uploaded_to_kaggle": false
+  },
+  "human_review": "Pending; assistant execution does not establish independent human verification.",
+  "course_pr": "Pending; workspace review PR is https://github.com/Divyesh-Thirukonda/kagglecomp/pull/2",
+  "serialization_check": {
+    "second_refit_artifact": "A secondary full-data artifact had an incomplete zlib stream on readback; it was rejected and never used for submission.",
+    "recovery": "A sequential full-data refit loaded successfully and regenerated all 3,000 probabilities exactly; the failed artifact was never used.",
+    "guard": "train.py now loads a temporary serialized artifact before atomically promoting it to the final model path."
+  },
+  "fresh_full_data_reproduction": {
+    "rows": 3000,
+    "ordered_ids_identical": true,
+    "maximum_probability_difference": 0.0,
+    "byte_identical_csv": true,
+    "metadata": {
+      "config": {
+        "kind": "char_style_blend",
+        "char_C": 3.0,
+        "word_style_C": 1.0,
+        "weights": [
+          0.5,
+          0.5
+        ]
+      },
+      "seed": 20261023,
+      "train_rows": 10000,
+      "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+      "fit_scope": "all_labeled",
+      "fit_seconds": 95.78089568899986,
+      "warnings": []
+    }
+  }
+}

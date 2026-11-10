@@ -1,0 +1,3 @@
+method,validation_auroc,validation_log_loss,fit_seconds
+Supervised character TF-IDF LR C=3,0.970822,0.2816674770941574,36.91094779968262
+Character LR + confidence pseudo-labels,0.9707629999999999,0.28155210390531443,46.489524602890015

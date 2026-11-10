@@ -1,0 +1,172 @@
+[
+  {
+    "name": "n500",
+    "config": {
+      "kind": "char_lr",
+      "C": 3.0
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "8869adbe3ad0dc308c3fdf56e6feee9e88fa1d7643487b32a627a64f7549b302",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 500,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+    "sklearn_version": "1.9.1",
+    "train_auroc": 1.0,
+    "validation_auroc": 0.87565,
+    "validation_log_loss": 0.5436706542527656,
+    "fit_seconds": 0.577681707974989,
+    "predict_seconds": 1.7810717079555616,
+    "warnings": [],
+    "sensitivity_rows": 1992,
+    "sensitivity_auroc": 0.8753230807691842,
+    "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+  },
+  {
+    "name": "n1000",
+    "config": {
+      "kind": "char_lr",
+      "C": 3.0
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "6dc227aa9c02c6b4e2e25cae9917378d173b992cfd4d4cd3588bd86ca8c7ca14",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 1000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+    "sklearn_version": "1.9.1",
+    "train_auroc": 1.0,
+    "validation_auroc": 0.9230339999999999,
+    "validation_log_loss": 0.47881817305502156,
+    "fit_seconds": 1.1109735840000212,
+    "predict_seconds": 2.202600624994375,
+    "warnings": [],
+    "sensitivity_rows": 1992,
+    "sensitivity_auroc": 0.9226077910347859,
+    "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+  },
+  {
+    "name": "n2000",
+    "config": {
+      "kind": "char_lr",
+      "C": 3.0
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "5b60d01bd3ae9a534e94d8177b1901a504a4195c419135325d38b19e48e9f146",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 2000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+    "sklearn_version": "1.9.1",
+    "train_auroc": 0.999998,
+    "validation_auroc": 0.9487180000000001,
+    "validation_log_loss": 0.40282643897939513,
+    "fit_seconds": 2.193346499989275,
+    "predict_seconds": 3.027007374970708,
+    "warnings": [],
+    "sensitivity_rows": 1992,
+    "sensitivity_auroc": 0.9484643330927449,
+    "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+  },
+  {
+    "name": "n5000",
+    "config": {
+      "kind": "char_lr",
+      "C": 3.0
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "8aa46eadc761ef16d173a56546522bc95f778fb4d102f1ee2e4fa62e2b18a589",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 5000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+    "sklearn_version": "1.9.1",
+    "train_auroc": 0.99960752,
+    "validation_auroc": 0.9650880000000001,
+    "validation_log_loss": 0.31723251146829035,
+    "fit_seconds": 5.607225667044986,
+    "predict_seconds": 5.36295095901005,
+    "warnings": [],
+    "sensitivity_rows": 1992,
+    "sensitivity_auroc": 0.9649439724519463,
+    "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+  },
+  {
+    "name": "n8000",
+    "config": {
+      "kind": "char_lr",
+      "C": 3.0
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "46129cc42d97458cc21f61a471e29ee6a67a5c6c6a982da88f708fb750625ab0",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 8000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+    "sklearn_version": "1.9.1",
+    "train_auroc": 0.9991475624999999,
+    "validation_auroc": 0.970755,
+    "validation_log_loss": 0.28173930201184944,
+    "fit_seconds": 9.224458250042517,
+    "predict_seconds": 7.747987334034406,
+    "warnings": [],
+    "sensitivity_rows": 1992,
+    "sensitivity_auroc": 0.9706263633907654,
+    "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+  }
+]

@@ -1,0 +1,184 @@
+{
+  "runs": [
+    {
+      "name": "style_lr",
+      "config": {
+        "kind": "style_lr",
+        "C": 1.0
+      },
+      "seed": 20261023,
+      "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+      "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+      "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+      "train_rows": 8000,
+      "validation_rows": 2000,
+      "sensitivity_excluded_validation_ids": [
+        "1018",
+        "137",
+        "4033",
+        "4919",
+        "6062",
+        "7151",
+        "7591",
+        "8470"
+      ],
+      "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+      "sklearn_version": "1.9.1",
+      "train_auroc": 0.90118325,
+      "validation_auroc": 0.906037,
+      "validation_log_loss": 0.397687462273972,
+      "fit_seconds": 30.046060166030657,
+      "predict_seconds": 13.346357917005662,
+      "warnings": [],
+      "sensitivity_rows": 1992,
+      "sensitivity_auroc": 0.9056533590319471,
+      "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+    },
+    {
+      "name": "pos_lr",
+      "config": {
+        "kind": "pos_lr",
+        "C": 1.0
+      },
+      "seed": 20261023,
+      "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+      "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+      "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+      "train_rows": 8000,
+      "validation_rows": 2000,
+      "sensitivity_excluded_validation_ids": [
+        "1018",
+        "137",
+        "4033",
+        "4919",
+        "6062",
+        "7151",
+        "7591",
+        "8470"
+      ],
+      "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+      "sklearn_version": "1.9.1",
+      "train_auroc": 0.9710166874999999,
+      "validation_auroc": 0.9471550000000001,
+      "validation_log_loss": 0.3627274880534004,
+      "fit_seconds": 1.1038228339748457,
+      "predict_seconds": 1.2530114579712972,
+      "warnings": [],
+      "sensitivity_rows": 1992,
+      "sensitivity_auroc": 0.9469784639701939,
+      "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+    },
+    {
+      "name": "surprisal_lr",
+      "config": {
+        "kind": "surprisal_lr",
+        "C": 1.0
+      },
+      "seed": 20261023,
+      "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+      "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+      "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+      "train_rows": 8000,
+      "validation_rows": 2000,
+      "sensitivity_excluded_validation_ids": [
+        "1018",
+        "137",
+        "4033",
+        "4919",
+        "6062",
+        "7151",
+        "7591",
+        "8470"
+      ],
+      "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+      "sklearn_version": "1.9.1",
+      "train_auroc": 0.9772689375000001,
+      "validation_auroc": 0.926211,
+      "validation_log_loss": 0.3552395901219313,
+      "fit_seconds": 3.400159167009406,
+      "predict_seconds": 2.0720402079750784,
+      "warnings": [],
+      "sensitivity_rows": 1992,
+      "sensitivity_auroc": 0.9258658161393208,
+      "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric.",
+      "training_score_note": "Classifier fit uses out-of-fold surprisal; reported training AUROC uses final tag models fit on all training rows, so it is optimistic resubstitution performance."
+    },
+    {
+      "name": "word_style_lr",
+      "config": {
+        "kind": "word_style_lr",
+        "C": 1.0
+      },
+      "seed": 20261023,
+      "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+      "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+      "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+      "train_rows": 8000,
+      "validation_rows": 2000,
+      "sensitivity_excluded_validation_ids": [
+        "1018",
+        "137",
+        "4033",
+        "4919",
+        "6062",
+        "7151",
+        "7591",
+        "8470"
+      ],
+      "implementation_sha256": "4e0916a5758e589d28672343c32d49ceacf3bf87d08ba5ed32c76943e519496b",
+      "sklearn_version": "1.9.1",
+      "train_auroc": 0.9884119375,
+      "validation_auroc": 0.955052,
+      "validation_log_loss": 0.3376932039468065,
+      "fit_seconds": 7.984013624954969,
+      "predict_seconds": 8.487576042010915,
+      "warnings": [],
+      "sensitivity_rows": 1992,
+      "sensitivity_auroc": 0.9547938936222546,
+      "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric."
+    }
+  ],
+  "failures": [],
+  "effects_vs_word_C1": {
+    "style_lr": {
+      "delta_auroc": -0.029649000000000036,
+      "ci_95_percentile": [
+        -0.04416544999999988,
+        -0.014655250000000033
+      ],
+      "bootstrap_repeats": 1000,
+      "seed": 20261023,
+      "caution": "Exploratory paired stratified percentile interval, conditional on fitted models; does not include training variability or correct for selection/multiple comparisons."
+    },
+    "pos_lr": {
+      "delta_auroc": 0.011469000000000062,
+      "ci_95_percentile": [
+        0.0015194999999999653,
+        0.021889599999999988
+      ],
+      "bootstrap_repeats": 1000,
+      "seed": 20261023,
+      "caution": "Exploratory paired stratified percentile interval, conditional on fitted models; does not include training variability or correct for selection/multiple comparisons."
+    },
+    "surprisal_lr": {
+      "delta_auroc": -0.009475000000000011,
+      "ci_95_percentile": [
+        -0.02202957499999972,
+        0.0030935249999999048
+      ],
+      "bootstrap_repeats": 1000,
+      "seed": 20261023,
+      "caution": "Exploratory paired stratified percentile interval, conditional on fitted models; does not include training variability or correct for selection/multiple comparisons."
+    },
+    "word_style_lr": {
+      "delta_auroc": 0.019365999999999994,
+      "ci_95_percentile": [
+        0.010549950000000058,
+        0.02802709999999996
+      ],
+      "bootstrap_repeats": 1000,
+      "seed": 20261023,
+      "caution": "Exploratory paired stratified percentile interval, conditional on fitted models; does not include training variability or correct for selection/multiple comparisons."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "nltk": "3.10.4"
+  },
+  "seed": 20261023,
+  "threads": 2,
+  "schema": {
+    "id": "id",
+    "text": "text",
+    "label": "label"
+  },
+  "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "NLTK_DATA": "/Users/divy/Downloads/kagglecomp/data/nltk_data",
+  "calibration": "Three seeded stratified inner folds; sigmoid; training-only shared vocabulary/IDF"
+}

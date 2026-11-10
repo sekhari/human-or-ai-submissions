@@ -1,0 +1,88 @@
+{
+  "run": {
+    "name": "equal_blend",
+    "config": {
+      "kind": "char_style_blend",
+      "char_C": 3.0,
+      "word_style_C": 1.0,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 8000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "implementation_sha256": "9504096e81b9ee1a1119b6d131b2acffb75adb1d73c6d31847f468ccac53b049",
+    "sklearn_version": "1.9.1",
+    "runtime": {
+      "python": "3.12.14",
+      "versions": {
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "scipy": "1.18.1",
+        "scikit-learn": "1.9.1",
+        "matplotlib": "3.11.2",
+        "joblib": "1.6.0",
+        "nltk": "3.10.4"
+      },
+      "nltk_tagger_resource": {
+        "resource": "averaged_perceptron_tagger_eng",
+        "sha256": "0189b5b3824b9c61b131d017c86749201a8e3962e089a67a811548aefcd195a3",
+        "files": {
+          "averaged_perceptron_tagger_eng.classes.json": "d152ffa69d45b8357276341a3d592c6c025911d52ec0d9068d4f382560dd48b6",
+          "averaged_perceptron_tagger_eng.tagdict.json": "4c713731cb06727736962bc8cd94ad919217a040e76691059af99bc0c2c9c246",
+          "averaged_perceptron_tagger_eng.weights.json": "789e8e35f6fac656d9b7eccea29ba4e8a137cbb5b525dd31f39e4291a9e80832"
+        }
+      }
+    },
+    "train_auroc": 0.998927125,
+    "validation_auroc": 0.978162,
+    "validation_log_loss": 0.2978264935492946,
+    "fit_seconds": 40.53557791700587,
+    "predict_seconds": 22.30166245799046,
+    "warnings": [],
+    "sensitivity_rows": 1992,
+    "sensitivity_auroc": 0.9780405882186908,
+    "sensitivity_note": "Excluded validation IDs flagged by the fixed full-training source-overlap audit; this is a diagnostic only, not the tuning metric.",
+    "predictions_sha256": "e57a00d3397be46703bec0a918fe110854a28bc082e0bb99635b70cb5fa39dea",
+    "model_sha256": "7d2aea3548e986dc13ea6262d9a98b95c89f7727b9cf2e1f3e3408ddcb65a2b1"
+  },
+  "baseline_name": "char_lr_C3",
+  "effect_vs_core": {
+    "delta_auroc": 0.007405999999999913,
+    "ci_95_percentile": [
+      0.003950849999999881,
+      0.01116347500000003
+    ],
+    "bootstrap_repeats": 1000,
+    "seed": 20261023,
+    "caution": "Exploratory paired stratified percentile interval, conditional on fitted models; does not include training variability or correct for selection/multiple comparisons."
+  },
+  "promoted_for_day1_handoff": true,
+  "recommended_config": {
+    "kind": "char_style_blend",
+    "char_C": 3.0,
+    "word_style_C": 1.0,
+    "weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "selection_rule": "Recommend blend for Day 1 handoff only if full-holdout AUROC improves and the exploratory paired 95% interval lower bound exceeds zero; otherwise retain character core. This is a conservative selection heuristic, not confirmatory inference.",
+  "component_prediction_max_abs_difference": 0.0,
+  "caution": "Adaptive exploratory extension selected after earlier comparisons; bootstrap is not confirmatory. Day 2 should review generalization and complexity."
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "char_style_blend",
+  "char_C": 3.0,
+  "word_style_C": 1.0,
+  "weights": [
+    0.5,
+    0.5
+  ]
+}

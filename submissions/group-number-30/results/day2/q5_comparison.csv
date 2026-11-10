@@ -1,0 +1,3 @@
+method,validation_auroc,validation_log_loss,fit_seconds
+Baseline: character TF-IDF LR C=3,0.970822,0.2816674770941574,36.91094779968262
+Improvement: 50/50 character + word/style blend,0.971276,0.3294468067707871,37.77857446670532

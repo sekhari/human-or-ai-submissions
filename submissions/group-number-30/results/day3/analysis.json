@@ -1,0 +1,55 @@
+{
+  "threshold": 0.5,
+  "positive_class": "1=AI",
+  "train_rows": 8000,
+  "validation_rows": 2000,
+  "validation_auroc": 0.978174,
+  "validation_log_loss": 0.29782009922786257,
+  "confusion_matrix_order": "rows true [human,AI], columns predicted [human,AI]",
+  "confusion_matrix": [
+    [
+      961,
+      39
+    ],
+    [
+      111,
+      889
+    ]
+  ],
+  "length_definition": "len(text.split()), whitespace-separated words",
+  "length_bins": [
+    {
+      "bin": "<150 words",
+      "count": 380,
+      "human_count": 146,
+      "ai_count": 234,
+      "validation_auroc": 0.9687390235335441,
+      "error_rate_at_0_5": 0.09473684210526316
+    },
+    {
+      "bin": "150-249 words",
+      "count": 1049,
+      "human_count": 605,
+      "ai_count": 444,
+      "validation_auroc": 0.9781699054426327,
+      "error_rate_at_0_5": 0.06959008579599618
+    },
+    {
+      "bin": ">=250 words",
+      "count": 571,
+      "human_count": 249,
+      "ai_count": 322,
+      "validation_auroc": 0.9866297488089002,
+      "error_rate_at_0_5": 0.07180385288966724
+    }
+  ],
+  "case_selection": "Five highest-P(AI) false positives and five lowest-P(AI) false negatives; illustrative, not representative.",
+  "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "split_sha256": "baf1c089caad1f2ed43a2a2b4c3786fc7021fe71244e1ba0b0b1a994b19e1336",
+  "predictions_sha256": "b850200b2cd1662f26ff3c8d5d0bdccd19567c71523e3e72ea69e5e959de6dd2",
+  "day2_split_audit": {
+    "training_ids_identical_order": true,
+    "validation_ids_identical_order": true,
+    "training_file_hash_matches": true
+  }
+}

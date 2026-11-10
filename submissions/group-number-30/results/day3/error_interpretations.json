@@ -1,0 +1,16 @@
+{
+  "selection": "Five highest-probability false positives and five lowest-probability false negatives at fixed threshold 0.5, using the independently refitted validation model.",
+  "review_status": "AI-assisted close reading of supplied labeled validation passages; Shenye's independent review is still required before submission. Hypotheses are not causal feature attributions.",
+  "cases": [
+    {"id": "5908", "observation": "An explanatory passage repeats corporate behaviour and lists general business benefits.", "hypothesis": "Generic explanatory wording and repeated topic phrases may resemble AI training examples."},
+    {"id": "483", "observation": "A recipe combines quantities and instructions with first-person comments and emphatic capitalization.", "hypothesis": "Recipe templates and formatting may outweigh informal personal comments; first-person writing is not a reliable authorship rule."},
+    {"id": "3519", "observation": "A cake recipe contains two ingredient lists, repeated preparation instructions, temperatures and timing tips.", "hypothesis": "Formulaic recipe structure may overlap with generated recipes despite informal spelling and a video link."},
+    {"id": "6921", "observation": "A short board-game question asks several related rhetorical questions and repeats game terminology.", "hypothesis": "Question-heavy wording and limited context may be ambiguous under lexical and style features."},
+    {"id": "2349", "observation": "A general support/advice passage repeatedly contrasts attention with support.", "hypothesis": "Broad advice and repeated abstract vocabulary may resemble AI advice passages."},
+    {"id": "8309", "observation": "A bank-history passage contains many institution names, dates, acronyms and a citation marker.", "hypothesis": "Encyclopedia-like surface cues may resemble human reference prose; the model does not verify historical claims."},
+    {"id": "4110", "observation": "A first-person account of losing a dog uses short emotional sentences and repeated expressions of grief.", "hypothesis": "Personal narrative cues may resemble human posts; emotional repetition does not uniquely identify AI."},
+    {"id": "5603", "observation": "A long first-person gaming proposal uses colloquial phrasing and repeated mission/mech terminology.", "hypothesis": "Informal specialized discussion may resemble human forum prose even when labeled AI."},
+    {"id": "1036", "observation": "A swimmer biography lists dates, named institutions, competitions and results in reference-style paragraphs.", "hypothesis": "Biographical structure and proper nouns may resemble human encyclopedia passages; factual accuracy was not externally checked."},
+    {"id": "1602", "observation": "An author biography includes an article-disambiguation opening, citation markers and a citation-needed marker.", "hypothesis": "Reference formatting may act as a human-source shortcut even in AI-labeled text."}
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-09",
+  "validation": {
+    "name": "selected",
+    "config": {
+      "kind": "char_style_blend",
+      "char_C": 3.0,
+      "word_style_C": 1.0,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "seed": 20261023,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_ids_sha256": "0551eef90619722af6551bceaad5c8d6c72f7bbe99084894db17002e1f836219",
+    "validation_ids_sha256": "4febd99980ee6eaed4fd64d37f8acbea575292d7c22d0d36a30e9cfb8337e800",
+    "train_rows": 8000,
+    "validation_rows": 2000,
+    "sensitivity_excluded_validation_ids": [],
+    "implementation_sha256": "9504096e81b9ee1a1119b6d131b2acffb75adb1d73c6d31847f468ccac53b049",
+    "sklearn_version": "1.8.0",
+    "runtime": {
+      "python": "3.12.14",
+      "versions": {
+        "numpy": "2.3.5",
+        "pandas": "2.2.3",
+        "scipy": "1.17.0",
+        "scikit-learn": "1.8.0",
+        "matplotlib": "3.10.8",
+        "joblib": "1.5.3",
+        "nltk": "3.9.2"
+      },
+      "nltk_tagger_resource": {
+        "resource": "averaged_perceptron_tagger_eng",
+        "sha256": "0189b5b3824b9c61b131d017c86749201a8e3962e089a67a811548aefcd195a3",
+        "files": {
+          "averaged_perceptron_tagger_eng.classes.json": "d152ffa69d45b8357276341a3d592c6c025911d52ec0d9068d4f382560dd48b6",
+          "averaged_perceptron_tagger_eng.tagdict.json": "4c713731cb06727736962bc8cd94ad919217a040e76691059af99bc0c2c9c246",
+          "averaged_perceptron_tagger_eng.weights.json": "789e8e35f6fac656d9b7eccea29ba4e8a137cbb5b525dd31f39e4291a9e80832"
+        }
+      }
+    },
+    "train_auroc": 0.998927125,
+    "validation_auroc": 0.978162,
+    "validation_log_loss": 0.2978264935492946,
+    "fit_seconds": 40.752714958041906,
+    "predict_seconds": 23.4156729580136,
+    "warnings": [],
+    "predictions_sha256": "e57a00d3397be46703bec0a918fe110854a28bc082e0bb99635b70cb5fa39dea",
+    "model_sha256": "f6631f2c070e36dc9e89b5a9879645a18867b83be42b8c1fdb274ffcff15e617"
+  },
+  "unit_tests_passed": 20,
+  "submission": {
+    "rows": 3000,
+    "columns": [
+      "id",
+      "label"
+    ],
+    "sample_order_matches": true,
+    "probabilities_finite_in_range": true,
+    "sha256": "66d9af8c246718332ff9f4e7dbffbca083d9bb0a371f8a554838f2438b03b61e",
+    "max_difference_vs_day1": 0.0,
+    "byte_identical_to_day3": false,
+    "uploaded_to_kaggle": true,
+    "public_auroc": 0.91312,
+    "selected_for_final_score": true
+  },
+  "course_pr": "https://github.com/sekhari/human-or-ai-submissions/pull/4",
+  "gradescope": {
+    "course_id": 1402161,
+    "assignment_id": 8956862,
+    "submission_id": 446515197,
+    "status": "submitted_ungraded",
+    "members": [
+      "dt579",
+      "ar2664",
+      "sw2486"
+    ],
+    "question_page_assignments_verified": 21,
+    "report_course_pr": 4
+  }
+}

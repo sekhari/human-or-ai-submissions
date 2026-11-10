@@ -1,0 +1,442 @@
+{
+  "labeled": {
+    "rows": 10000,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "words": {
+      "min": 75,
+      "mean": 208.7087,
+      "median": 206.0,
+      "max": 350
+    },
+    "duplicates": {
+      "raw": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      },
+      "whitespace": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      },
+      "casefold": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      }
+    },
+    "class_counts": {
+      "0": 5000,
+      "1": 5000
+    },
+    "mean_words_by_label": {
+      "0": 209.0452,
+      "1": 208.3722
+    }
+  },
+  "train": {
+    "rows": 8000,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "words": {
+      "min": 75,
+      "mean": 208.3115,
+      "median": 205.0,
+      "max": 350
+    },
+    "duplicates": {
+      "raw": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      },
+      "whitespace": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      },
+      "casefold": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      }
+    },
+    "class_counts": {
+      "0": 4000,
+      "1": 4000
+    },
+    "mean_words_by_label": {
+      "0": 208.98425,
+      "1": 207.63875
+    }
+  },
+  "validation": {
+    "rows": 2000,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "words": {
+      "min": 76,
+      "mean": 210.2975,
+      "median": 207.0,
+      "max": 350
+    },
+    "duplicates": {
+      "raw": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      },
+      "whitespace": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      },
+      "casefold": {
+        "groups": 0,
+        "extra_rows": 0,
+        "conflicting_label_groups": 0
+      }
+    },
+    "class_counts": {
+      "0": 1000,
+      "1": 1000
+    },
+    "mean_words_by_label": {
+      "0": 209.289,
+      "1": 211.306
+    }
+  },
+  "train_validation_overlap": {
+    "shared_ids": 0,
+    "normalized_texts": 0,
+    "left_rows": 0,
+    "right_rows": 0
+  },
+  "lexical": {
+    "method": "Exact lowercase word-trigram set Jaccard across all supplied labeled rows; audit only",
+    "vocabulary_size": 1441963,
+    "pair_counts": {
+      "0.5": 21,
+      "0.7": 0,
+      "0.9": 0,
+      "0.95": 0
+    },
+    "cross_split_pair_counts": {
+      "0.5": 7,
+      "0.7": 0,
+      "0.9": 0,
+      "0.95": 0
+    },
+    "top_pairs": [
+      {
+        "id_a": "1018",
+        "id_b": "4050",
+        "jaccard": 0.6857143044471741,
+        "cross_split": true
+      },
+      {
+        "id_a": "4933",
+        "id_b": "9103",
+        "jaccard": 0.644859790802002,
+        "cross_split": false
+      },
+      {
+        "id_a": "1018",
+        "id_b": "4933",
+        "jaccard": 0.6384615302085876,
+        "cross_split": true
+      },
+      {
+        "id_a": "4050",
+        "id_b": "9103",
+        "jaccard": 0.6048387289047241,
+        "cross_split": false
+      },
+      {
+        "id_a": "1633",
+        "id_b": "4033",
+        "jaccard": 0.6000000238418579,
+        "cross_split": true
+      },
+      {
+        "id_a": "4072",
+        "id_b": "9103",
+        "jaccard": 0.5894736647605896,
+        "cross_split": false
+      },
+      {
+        "id_a": "4050",
+        "id_b": "4933",
+        "jaccard": 0.5891472697257996,
+        "cross_split": false
+      },
+      {
+        "id_a": "1018",
+        "id_b": "9103",
+        "jaccard": 0.5681818127632141,
+        "cross_split": true
+      },
+      {
+        "id_a": "2318",
+        "id_b": "7151",
+        "jaccard": 0.562841534614563,
+        "cross_split": true
+      },
+      {
+        "id_a": "2261",
+        "id_b": "2961",
+        "jaccard": 0.5535714030265808,
+        "cross_split": false
+      },
+      {
+        "id_a": "8363",
+        "id_b": "8914",
+        "jaccard": 0.5412541031837463,
+        "cross_split": false
+      },
+      {
+        "id_a": "4933",
+        "id_b": "5787",
+        "jaccard": 0.5378151535987854,
+        "cross_split": false
+      },
+      {
+        "id_a": "1396",
+        "id_b": "4050",
+        "jaccard": 0.5375000238418579,
+        "cross_split": false
+      },
+      {
+        "id_a": "4050",
+        "id_b": "5787",
+        "jaccard": 0.5259259343147278,
+        "cross_split": false
+      },
+      {
+        "id_a": "4072",
+        "id_b": "5787",
+        "jaccard": 0.5192307829856873,
+        "cross_split": false
+      },
+      {
+        "id_a": "4033",
+        "id_b": "5403",
+        "jaccard": 0.5180723071098328,
+        "cross_split": true
+      },
+      {
+        "id_a": "7134",
+        "id_b": "9739",
+        "jaccard": 0.5114942789077759,
+        "cross_split": false
+      },
+      {
+        "id_a": "5787",
+        "id_b": "9103",
+        "jaccard": 0.5,
+        "cross_split": false
+      },
+      {
+        "id_a": "1550",
+        "id_b": "4919",
+        "jaccard": 0.5,
+        "cross_split": true
+      },
+      {
+        "id_a": "1550",
+        "id_b": "4072",
+        "jaccard": 0.5,
+        "cross_split": false
+      },
+      {
+        "id_a": "140",
+        "id_b": "4072",
+        "jaccard": 0.5,
+        "cross_split": false
+      }
+    ],
+    "shared_80_character_prefix": {
+      "groups": 12,
+      "rows": 26,
+      "cross_split_groups": 5,
+      "id_groups": [
+        [
+          "2318",
+          "7151"
+        ],
+        [
+          "6062",
+          "7267"
+        ],
+        [
+          "2168",
+          "9034"
+        ],
+        [
+          "8170",
+          "8991"
+        ],
+        [
+          "2235",
+          "4496"
+        ],
+        [
+          "8470",
+          "9410"
+        ],
+        [
+          "241",
+          "3039",
+          "6505"
+        ],
+        [
+          "5953",
+          "6914"
+        ],
+        [
+          "2619",
+          "2995"
+        ],
+        [
+          "8044",
+          "9848"
+        ],
+        [
+          "137",
+          "8024",
+          "8985"
+        ],
+        [
+          "6177",
+          "7591"
+        ]
+      ]
+    },
+    "sensitivity_excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "limitations": "Shared openings/lexical overlap are observable proxies, not known source or domain identities. Paraphrases and shared prompts can remain undetected."
+  },
+  "source_overlap_sensitivity": {
+    "excluded_validation_ids": [
+      "1018",
+      "137",
+      "4033",
+      "4919",
+      "6062",
+      "7151",
+      "7591",
+      "8470"
+    ],
+    "excluded_rows": 8,
+    "retained_rows": 1992,
+    "retained_class_counts": {
+      "0": 998,
+      "1": 994
+    },
+    "rule": "Exclude validation rows sharing a whitespace-normalized first-80-character prefix OR word-trigram Jaccard >=0.50 with a training row.",
+    "interpretation": "Related-text sensitivity only. Recipe templates may trigger overlap without common source; source identity is unavailable.",
+    "selection_policy": "Use the complete fixed 2000-row validation AUROC for selection; never tune on the sensitivity score."
+  },
+  "unlabeled": {
+    "rows": 3000,
+    "source_sha256": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+    "words": {
+      "min": 75,
+      "mean": 210.25133333333332,
+      "median": 206.5,
+      "max": 350
+    },
+    "duplicates": {
+      "raw": {
+        "groups": 0,
+        "extra_rows": 0
+      },
+      "whitespace": {
+        "groups": 0,
+        "extra_rows": 0
+      },
+      "casefold": {
+        "groups": 0,
+        "extra_rows": 0
+      }
+    }
+  },
+  "labeled_unlabeled_overlap": {
+    "shared_ids": 0,
+    "normalized_texts": 0,
+    "left_rows": 0,
+    "right_rows": 0
+  },
+  "validation_unlabeled_overlap": {
+    "shared_ids": 0,
+    "normalized_texts": 0,
+    "left_rows": 0,
+    "right_rows": 0
+  },
+  "test": {
+    "rows": 3000,
+    "source_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "words": {
+      "min": 75,
+      "mean": 216.97233333333332,
+      "median": 213.0,
+      "max": 350
+    },
+    "duplicates": {
+      "raw": {
+        "groups": 0,
+        "extra_rows": 0
+      },
+      "whitespace": {
+        "groups": 0,
+        "extra_rows": 0
+      },
+      "casefold": {
+        "groups": 0,
+        "extra_rows": 0
+      }
+    }
+  },
+  "labeled_test_overlap": {
+    "shared_ids": 0,
+    "normalized_texts": 0,
+    "left_rows": 0,
+    "right_rows": 0
+  },
+  "validation_test_overlap": {
+    "shared_ids": 0,
+    "normalized_texts": 0,
+    "left_rows": 0,
+    "right_rows": 0
+  },
+  "unlabeled_test_overlap": {
+    "shared_ids": 0,
+    "normalized_texts": 0,
+    "left_rows": 0,
+    "right_rows": 0
+  },
+  "starter": {
+    "rows": 2000,
+    "source_sha256": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "class_counts": {
+      "0": 1000,
+      "1": 1000
+    },
+    "exact_labeled_subset": true
+  },
+  "sample_submission": {
+    "rows": 3000,
+    "columns": [
+      "id",
+      "label"
+    ],
+    "source_sha256": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "columns_and_test_id_order_match": true
+  }
+}

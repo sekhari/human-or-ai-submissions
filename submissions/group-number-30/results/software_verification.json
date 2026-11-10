@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-05",
+  "source_revision": "70c8a612c52b2e2c83a044e492e1404b95542505",
+  "implementation_sha256": "9504096e81b9ee1a1119b6d131b2acffb75adb1d73c6d31847f468ccac53b049",
+  "unit_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "fresh_source_check": {
+    "source": "git archive 70c8a61 into isolated directory",
+    "environment": "New Python 3.12.14 venv; pip install pinned requirements; pip check passed",
+    "data": "Official local Kaggle files; existing disclosed POS resource",
+    "commands": [
+      "train.py --full-data using recommended_config.json",
+      "predict.py using official sample_submission.csv"
+    ],
+    "reproduced_rows": 3000,
+    "ordered_ids_identical": true,
+    "maximum_absolute_probability_difference": 0.0,
+    "tolerance": 1e-12
+  },
+  "submission": {
+    "path": "artifacts/submission_day1_recommended.csv",
+    "columns": [
+      "id",
+      "label"
+    ],
+    "rows": 3000,
+    "unique_ids": 3000,
+    "minimum_probability": 0.004906149863671865,
+    "maximum_probability": 0.9974627697012658,
+    "sha256": "66d9af8c246718332ff9f4e7dbffbca083d9bb0a371f8a554838f2438b03b61e",
+    "uploaded_to_kaggle": false
+  },
+  "full_training": {
+    "config": {
+      "kind": "char_style_blend",
+      "char_C": 3.0,
+      "word_style_C": 1.0,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "seed": 20261023,
+    "train_rows": 10000,
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "fit_scope": "all_labeled",
+    "fit_seconds": 51.946977209008764,
+    "warnings": []
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "versions": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "joblib": "1.6.0",
+      "nltk": "3.10.4"
+    },
+    "nltk_tagger_resource": {
+      "resource": "averaged_perceptron_tagger_eng",
+      "sha256": "0189b5b3824b9c61b131d017c86749201a8e3962e089a67a811548aefcd195a3",
+      "files": {
+        "averaged_perceptron_tagger_eng.classes.json": "d152ffa69d45b8357276341a3d592c6c025911d52ec0d9068d4f382560dd48b6",
+        "averaged_perceptron_tagger_eng.tagdict.json": "4c713731cb06727736962bc8cd94ad919217a040e76691059af99bc0c2c9c246",
+        "averaged_perceptron_tagger_eng.weights.json": "789e8e35f6fac656d9b7eccea29ba4e8a137cbb5b525dd31f39e4291a9e80832"
+      }
+    }
+  },
+  "reports": {
+    "course_template_from_team_directory": "../../report/main.tex",
+    "course_template_pdf_from_team_directory": "../../report/output/pdf/course-report-day1.pdf",
+    "course_template_pages": 10,
+    "course_template_q1_q2_pages": [
+      4,
+      5,
+      6
+    ],
+    "verification": "Original prompts preserved and filled inline; PDF previously rendered and visually checked; source, figure and PDF bytes unchanged by cleanup. Canonical project compiled successfully again after duplicate removal.",
+    "duplicate_standalone_report": "Removed from active workspace; original report/prose and prior verification preserved in recovery backup and small evidence archive respectively."
+  },
+  "cleanup_verification": {
+    "evidence_files_verified": 65,
+    "unit_tests": 18,
+    "merged_blend_auroc": 0.978162,
+    "recommendation_unchanged": true,
+    "bootstrap_unchanged": true,
+    "submission_rows": 3000,
+    "submission_byte_identical": true,
+    "date": "2026-11-05",
+    "validation_predictions_byte_identical": true,
+    "archive": "results/day1-evidence.zip",
+    "archive_sha256": "5c0a0e45747c5ea4b46c8fc806898a3c78399b4487b8e1a0f645bd969cba8305",
+    "recovery_archive_from_repository_root": "../kagglecomp-cleanup-backup-2026-11-05.tar.gz",
+    "recovery_files_verified": 13685,
+    "report_and_final_model_files_unchanged": true,
+    "scoring_implementation_unchanged": true,
+    "working_files_removed": 13641,
+    "visible_result_files": 14
+  }
+}

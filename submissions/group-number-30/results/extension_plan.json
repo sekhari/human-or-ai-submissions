@@ -1,0 +1,20 @@
+{
+  "config": {
+    "kind": "char_style_blend",
+    "char_C": 3.0,
+    "word_style_C": 1.0,
+    "weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "baseline": {
+    "kind": "char_lr",
+    "C": 3.0
+  },
+  "selection_timing": "Declared after core and four structural-ablation results, before scoring the blend",
+  "hypothesis": "The best structural ablation may complement character TF-IDF",
+  "design": "One equal-weight soft average; no weight search; same frozen 8000/2000 split and sensitivity IDs",
+  "status": "Exploratory adaptive extension; interval does not correct for earlier selection",
+  "promotion_rule": "Recommend blend for Day 1 handoff only if full-holdout AUROC improves and the exploratory paired 95% interval lower bound exceeds zero; otherwise retain character core. This is a conservative selection heuristic, not confirmatory inference."
+}

@@ -1,0 +1,30 @@
+{
+  "seed": 20261023,
+  "split": "results/split.json",
+  "pseudo_human": 12,
+  "pseudo_ai": 83,
+  "results": [
+    {
+      "method": "supervised_character",
+      "train_auroc": 0.999146875,
+      "validation_auroc": 0.9708380000000001,
+      "validation_log_loss": 0.2816605240179805,
+      "fit_seconds": 20.22405661799985
+    },
+    {
+      "method": "pseudo_character",
+      "train_auroc": 0.9991401875000001,
+      "validation_auroc": 0.970816,
+      "validation_log_loss": 0.281454635737758,
+      "fit_seconds": 22.663538425999832
+    },
+    {
+      "method": "compact_blend",
+      "train_auroc": 0.9993259999999999,
+      "validation_auroc": 0.9712449999999999,
+      "validation_log_loss": 0.3294587147285512,
+      "fit_seconds": 26.875950955000008
+    }
+  ],
+  "timing_note": "Replay times feature extraction and fitting; original Day 2 second-component timer excluded preprocessing."
+}
