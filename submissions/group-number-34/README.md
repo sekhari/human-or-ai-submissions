@@ -23,11 +23,13 @@ python train.py --train data/train.csv --seed 20261023
 python predict.py --test data/test.csv --out submission.csv
 ```
 
-## Seeds and notes
+## TF-IDF seeds and notes
 
 - Global seed: `20261023`
-- Validation: stratified 2,000-row holdout from `train.csv`, fixed across comparisons
+- Validation: stratified 2,000-row holdout from `train.csv`, fixed across the TF-IDF comparisons
 
-## AI assistance
+## GPT-2
 
-Briefly describe tools used and what you verified manually (required for Q6.3).
+The GPT-2 implementation, training commands, prediction command, and measured results are in [gpt2/README.md](gpt2/README.md).
+
+GPT-2 uses seed `42` and the validation IDs in `gpt2/code/val_ids.csv`. The TF-IDF workflow uses its existing split in `splits/val_ids.json`.
