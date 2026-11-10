@@ -1,0 +1,8 @@
+results/
+__pycache__/
+*.csv
+*.npz
+*.pt
+*.cbm
+*.joblib
+nltk_data/

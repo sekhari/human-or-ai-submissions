@@ -1,0 +1,37 @@
+{
+  "chosen": "old35_cnn35_tree30_bert0.2",
+  "weights": {
+    "old": 0.27999999999999997,
+    "cnn": 0.27999999999999997,
+    "tree": 0.24,
+    "bert": 0.2
+  },
+  "tree_components": [
+    "xgb_rich3",
+    "xgb_rich5",
+    "cat_rich6"
+  ],
+  "validation_auc": 0.999393,
+  "testlike_validation_auc": 0.999477797992049,
+  "selection_rule": "Equal weight of fixed validation AUROC and most-test-like quartile AUROC",
+  "pseudo_included": false,
+  "pseudo_improved_both_checks": false,
+  "new_kaggle_score": 0.97,
+  "prior_public_score_user_reported_rounded": 0.96,
+  "heldout_authorship_labels_accessed": false,
+  "sha256": "ce5ad51331883b22add000923e606a6cee1abdd87fc5fc112045a77060b05753",
+  "rows": 3000,
+  "validation_seed": 42,
+  "external_pretrained_tool": "NLTK English POS tagger and base prajjwal1/bert-mini pretrained weights; only supplied competition labels used for authorship training",
+  "caveat": "Repeated model selection on fixed validation and test-like subset causes optimistic estimates. Test text is used without authorship labels only for auxiliary test-likeness grouping; no final feature extractor uses test labels.",
+  "new_kaggle_score_source": "user_reported_approximate_not_exact",
+  "recommendation_status": "team_selected_final_model",
+  "exact_kaggle_public_auc": null,
+  "date": "2026-11-09",
+  "submission": "submission_recommended.csv",
+  "kaggle_public_auc_approximately": 0.97,
+  "source": "User confirmed the final recommended CSV including BERT, reported score around 0.97, and selected this model for the team.",
+  "status": "team_selected_final_model",
+  "private_auc": null,
+  "correction": "The earlier 0.956 report was superseded by the user clarification; it must not be attributed to this selected final CSV."
+}

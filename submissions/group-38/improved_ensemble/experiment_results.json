@@ -1,0 +1,38 @@
+{
+  "selected": "style75_mlp15_lexical10",
+  "selected_validation_auroc": 0.997763,
+  "neural_mlp_validation_auroc": 0.994286,
+  "prior_character_svm_validation_auroc": 0.969563,
+  "prior_public_auroc_user_reported": 0.85,
+  "new_kaggle_score": {
+    "public_auroc_rounded": 0.95,
+    "source": "User reported Kaggle result in chat after uploading submission_improved.csv; not independently checked in Kaggle UI",
+    "recorded_date": "2026-11-06",
+    "private_auroc": null
+  },
+  "validation_rows": 2000,
+  "split_seed": 42,
+  "train_rows_available_for_refit": 10000,
+  "style_features": 99,
+  "neural_architecture": {
+    "hidden": [
+      64,
+      32
+    ],
+    "alpha": 1.0,
+    "epochs": 75,
+    "stopped_epoch": 90,
+    "inner_auroc": 0.9912125000000002,
+    "validation_auc": 0.993879,
+    "train_auc": 0.9990388124999999,
+    "seconds": 2.535623332951218
+  },
+  "mlp_ensemble_seeds": [
+    42,
+    43
+  ],
+  "submission_rows": 3000,
+  "submission_sha256": "4c30c17cab17e3a5705f6636ed171a0df280ea765a23d2bdd0858be63aaf10eb",
+  "selection_caveat": "Same fixed validation set used for comparing hyperparameters and ensemble weights; not an independent test estimate. Hidden test distribution may differ.",
+  "transformer_pilot": "DistilBERT loaded and top two layers began fine-tuning; stopped after pilot due to about 2 seconds per batch. No completed transformer validation score or transformer predictions are claimed."
+}
