@@ -1,0 +1,6 @@
+!code/val_ids.csv
+results/
+format_sensitivity/
+work/
+*.zip
+*.safetensors
