@@ -76,4 +76,10 @@ Use `python src/train.py --no-format --model-out model_nofmt.joblib --metrics-ou
 
 ## AI assistance
 
-TODO: match Q6.3 in the report. Claude drafted the code and ran the experiments; describe what the team verified or changed.
+This summary matches Q6.3 in the report.
+
+- **Zhijie Wang:** used Claude (Claude Code in a cloud workspace) as the main developer. Claude wrote the code, ran the experiments, drafted the report and pushed commits under Zhijie's account, with Claude listed as co-author. Zhijie set the direction, made the key decisions, submitted to Kaggle, and reran both pipelines on his own laptop.
+- **Yangchen Jin:** used Claude (chat) to write two check scripts, add options to `exp_errors.py`, and draft the error review and the Q4–Q5 wording. He ran every script on his own laptop, confirmed that `q4_errors.json` was unchanged, read the full texts of the reviewed errors, and edited the wording.
+- **Simin Xu:** used Claude to explain the reproduction steps, run the comparisons, write `check_repro.py`, and draft `results/reproduction_simin.md`. She ran the setup, training and prediction commands herself and confirmed that the results match, with predictions within about 1e-9 of the submitted files and an identical ranking.
+
+No AI tool was used to label test data or to predict test labels directly; all Kaggle predictions come from the local scikit-learn pipeline in `src/`.
