@@ -1,0 +1,49 @@
+% ---------------------------------------------------------------------------
+% Section 4: Generalization and error analysis (Hazel)
+% Numbers from:
+%   python -m src.q4_analysis --preds results/03/03_qwen2.5-0.5b_fixed_split.csv --name qwen05b_lora
+%   python -m src.q4_analysis --model masked_lr        (comparison model)
+% Outputs: results/q4/qwen05b_lora/ and results/q4/masked_lr/
+% ---------------------------------------------------------------------------
+
+\smallnote{Model analyzed in this section: Qwen2.5-0.5B fine-tuned with LoRA on the 8{,}000-row training partition of the fixed split (Notebook 03), scored on the same 2{,}000 validation rows as every other section. Our final Kaggle submission uses the same recipe retrained on all 10{,}000 labeled rows with the larger 1.5B backbone, so it has no held-out labeled rows of its own; the fixed-split run is the closest model we can evaluate honestly. The masked n-gram logistic regression from Sections 2 and 3 is used as a comparison.}
+
+% ===== Q4.1 =====
+\question{Q4.1 [5 points].}{Compare training and validation AUROC for your final selected model. Is there a gap? What explanations are plausible?}
+Training AUROC is 0.9998 and validation AUROC is 0.9986, a gap of 0.001. At a 0.5 threshold the error rate is 0.36\% on training rows (29 of 8{,}000) and 0.80\% on validation rows (16 of 2{,}000). The gap is small because the model is hard to overfit in this setup: only the LoRA adapters ($r=16$) are trained, for a single epoch, on top of a pretrained language model. For comparison, the masked n-gram model has the same training AUROC but a validation AUROC of 0.9949 (52 errors), a gap about four times larger. The validation gap understates the real one, however. Validation rows come from the same sources as training rows, while the test set contains unseen domains, unseen generators and adversarially modified passages: the 0.5B LoRA models scored 0.973--0.979 on the public leaderboard, about 0.02 below validation, and the masked model dropped from 0.9949 to 0.943.
+
+% ===== Q4.2 =====
+\question{Q4.2 [5 points].}{Evaluate performance over at least three text-length bins (define the bins), or another observable subgroup available in your data. Explain why you chose the grouping.}
+\begin{tabularx}{\linewidth}{@{}Yrr@{}}\toprule Subgroup / bin & Count & Validation AUROC \\ \midrule
+Short: $<150$ words & 404 & 0.9986 \\
+Medium: 150--249 words & 1{,}055 & 0.9991 \\
+Long: $\geq 250$ words & 541 & 0.9978 \\
+\midrule
+Format: blank lines between paragraphs & 689 & 0.9976 \\
+Format: single line breaks only & 709 & 0.9849 \\
+Format: no line breaks & 602 & 0.9974 \\
+\bottomrule\end{tabularx}
+\par\noindent
+We binned by word count because a short passage gives a classifier less evidence, and by line-break format because Notebook 02 found formatting to be the strongest single cue in this data. Length barely matters for Qwen: the error rate is 1.2\% for short passages and 0.7\% for medium and long ones, whereas the masked n-gram model made 5.9\% errors on short passages. Format still matters. Passages with only single line breaks have the lowest AUROC (0.9849); this group is 93\% human, so it contains the AI passages that copy human formatting. The blank-line group is 99.6\% AI (only 3 human rows), so its AUROC is not reliable. By topic cluster (results/q4/qwen05b\_lora/q42\_by\_topic.csv) no cluster is below 0.994, and the fiction cluster has no errors, but with only 41 validation rows that says little about the 36\% of test passages in that cluster.
+
+% ===== Q4.3 =====
+\question{Q4.3 [5 points].}{Analyze at least \textbf{five false positives and five false negatives} from your held-out validation set. Provide example IDs, predicted probabilities, and short failure hypotheses. Do not paste full passages unless essential.}
+\begin{tabularx}{\linewidth}{@{}p{0.64in}p{0.70in}p{0.98in}Y@{}}\toprule ID & Error type & P(AI) & Possible reason \\ \midrule
+\mbox{7376} & FP & 1.000 & Human recipe: a clean ingredient list followed by tidy imperative steps. Recipes are the topic where human and AI passages share the same template. \\
+\mbox{6728} & FP & 1.000 & Human recipe with labelled ``Ingredients:'' and ``Directions:'' blocks, the structure AI recipes use; the truncated first word (``ngredients'') did not help. \\
+\mbox{5715} & FP & 1.000 & Human recipe with Title-Case ingredient names and very regular quantities; uniform formatting reads as machine-made. \\
+\mbox{9651} & FP & 0.929 & Human personal post built from repeated ``I want someone who \ldots'' sentences; parallel, repetitive structure is typical of LLM text. \\
+\mbox{3326} & FP & 0.918 & Human film review in a polished promotional tone with connectives such as ``Additionally''; stylistically close to an AI summary. \\
+\mbox{5498} & FN & 0.000 & AI recipe written as one ingredient per line with no blank lines, the layout of the human recipes in training. Also missed by the masked model. \\
+\mbox{7995} & FN & 0.000 & AI biography that opens with a section heading and dense dates and place names, like a fragment copied from Wikipedia. Also missed by the masked model. \\
+\mbox{5010} & FN & 0.000 & AI biography with leftover footnote digits (``California1'', ``miniseries.2''), an artifact that normally marks scraped human text. Also missed by the masked model. \\
+\mbox{8486} & FN & 0.000 & Short (84 words) forum-style question ending ``Has anyone else had this experience?''; casual first-person text is mostly human in training. Also missed by the masked model. \\
+\mbox{5929} & FN & 0.005 & AI recipe with missing line breaks, a typo (``yollk'') and zero-width characters; the noise makes it look hand-typed. Also missed by the masked model. \\
+\bottomrule\end{tabularx}
+\smallnote{Decision threshold 0.5. These are the five most confident errors of each type; all 16 validation errors (7 FP, 9 FN) are in results/q4/qwen05b\_lora/q43\_all\_errors.csv.}
+
+% ===== Q4.4 =====
+\question{Q4.4 [5 points].}{What recurring failure patterns did you identify, and how might you address one of them? Distinguish observed patterns from speculation.}
+\textbf{Observed.} (1) The errors are few but confident: 10 of the 16 have a predicted probability within 0.01 of the wrong label. AUROC depends only on ranking, so each of these is ranked on the wrong side of almost the entire other class. (2) The false negatives are AI passages that imitate a human source format. None of the 9 has blank lines between paragraphs, and 7 of the 9 are also false negatives of the masked n-gram model, a very different model trained on the same rows. (3) Recipes fail in both directions: 5 of the 16 errors are in the two recipe clusters, where human and AI passages follow the same ingredient-list template. (4) Two weaknesses of the masked model, short passages and the fiction cluster, do not appear for Qwen on validation.
+\textbf{Speculation.} Passages that two unrelated models miss with full confidence may be the adversarially modified kind (ID 5929 has typos and zero-width characters), or simply AI text that is indistinguishable from its human source. If the test set has more of them, that would explain part of the 0.02 drop from validation to the public leaderboard; we cannot check this without test labels.
+\textbf{Addressing it.} We tested one fix, rank-averaging Qwen with the masked model so that their non-overlapping errors cancel; it lowered the public score from 0.973 to 0.967, because the masked model degrades more under the test shift. A larger backbone helped instead (0.979 to 0.985 with the 1.5B model). An untested option aimed directly at pattern (2) is to augment the AI training passages with human-style formatting noise (collapsed paragraph breaks, typos), so that formatting stops being a shortcut.

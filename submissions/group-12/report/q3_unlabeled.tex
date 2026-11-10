@@ -1,0 +1,25 @@
+% ---------------------------------------------------------------------------
+% Section 3: Learning from unlabeled data (Hazel)
+% Numbers from: python -m src.q3_unlabeled --model masked_lr   (results/q3/masked_lr/)
+%               python -m src.q3_unlabeled --model tfidf_lr    (results/q3/tfidf_lr/)
+% Paste each answer over the matching \placeholder{...} / table in the template.
+% ---------------------------------------------------------------------------
+
+% ===== Q3.1 =====
+\question{Q3.1 [2 points].}{Describe one method that uses \texttt{unlabeled.csv} (e.g., self-training, confidence-based pseudo-labeling, clustering, or feature learning). How did you prevent validation-label leakage?}
+We used confidence-based self-training. A teacher model (the masked n-gram logistic regression) is fit on the 8{,}000-row training partition only and scores the 3{,}000 unlabeled passages. Passages with $P(\text{AI}) \geq t$ or $\leq 1-t$ receive the corresponding pseudo-label, the student is refit on the 8{,}000 labeled rows plus the pseudo-labeled rows, and the student becomes the teacher for a second round. We tried $t \in \{0.6, 0.8, 0.9, 0.95\}$, which adds between 1{,}637 and 2{,}927 pseudo-labeled rows. The fixed 2{,}000-row validation set (seed 42, same as every other section) is never touched before scoring: it is not used to fit the teacher, to pick pseudo-labels, or to fit the student, and the thresholds were fixed in advance rather than tuned on it. Because unlabeled passages have no labels, we estimated pseudo-label noise by applying the same confidence filter to validation rows and measuring the accuracy of the rows the filter keeps.
+
+% ===== Q3.2 =====
+\question{Q3.2 [2 points].}{Compare against a supervised baseline under the same held-out validation protocol.}
+\begin{tabularx}{\linewidth}{@{}Yp{1.5in}@{}}\toprule Method & Validation AUROC \\ \midrule
+Supervised only (masked n-grams + LR, 8{,}000 rows) & 0.9949 \\
+With unlabeled data (self-training, best of 8 settings: $t=0.6$, 1 round, +2{,}906 rows) & 0.9948 \\
+\midrule
+Supervised only (word+char TF-IDF + LR baseline) & 0.9511 \\
+With unlabeled data (self-training, best setting: $t=0.6$, 1 round, +2{,}683 rows) & 0.9510 \\
+\bottomrule\end{tabularx}
+\smallnote{All eight threshold/round settings are in results/q3/\textless model\textgreater/q32\_results.csv. For the masked model every setting lands between 0.9947 and 0.9948; for the TF-IDF baseline between 0.9502 and 0.9510.}
+
+% ===== Q3.3 =====
+\question{Q3.3 [1 point].}{Did it help? Give a concrete, evidence-based explanation (including possible noise in pseudo-labels).}
+No. Self-training changed validation AUROC by at most $-0.0002$ for the masked model and $-0.0009$ for the TF-IDF baseline, in every setting slightly below the supervised result, and the fiction-cluster AUROC moved by less than 0.01 in either direction. Pseudo-label noise is not the explanation for the masked model: on validation rows passing the $t=0.9$ filter the teacher is 99.7\% accurate, so roughly 7 of the 2{,}152 added rows are mislabeled. The more likely reason is that the unlabeled set carries no new information. Notebook 01 found that \texttt{unlabeled.csv} matches the training distribution (adversarial-validation AUROC near 0.5) while the test set does not, and the confident pseudo-labels are by construction the passages the model already handles, so adding them reinforces what the model knows without covering the fiction and poetry passages where it is weak. For the weaker TF-IDF baseline the noise proxy is worse (92.1\% at $t=0.6$), and the extra rows still do not help, which is consistent with the same explanation.

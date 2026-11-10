@@ -1,0 +1,38 @@
+\question{Q5.1 [3 points].}{What specific question or hypothesis motivated your improvement? What weakness or opportunity did you observe?}
+While our masked n-gram model did well in cross-validation, it leaned heavily on linebreaks, since many of the AI passages in our training data have blank lines between paragraphs that don't show up frequently in human passages.
+This became apparent when looking at its mistakes, as 43 of its 52 validation errors were AI passages it called human, and 39 of those had no blank lines.
+We tried removing linebreaks entirely, but this significantly worsened performance, as the flattened version of our masked model dropped from 0.988 to 0.901 AUROC on held-out topics.
+Instead, we wanted to see how much a pretrained language model could improve on this start, given that it has been trained on significantly more human writing.
+This led to our experiment, where we fine-tuned Qwen on the same labels, and then checked whether a bigger version of the same model would help even more.
+
+\question{Q5.2 [4 points].}{What exactly did you change? Describe the baseline, the new approach and what you held fixed for a fair comparison.}
+Our baseline was our masked n-gram model, with $C=4$, 1--3-grams.
+For the new approach, we took Qwen2.5~\cite{qwen2024qwen25}, an open-source language model, and added a classification layer on top of it to output the probability that a given passage is AI.
+Instead of retraining all of its weights, we used LoRA~\cite{hu2022lora} to train a small set of extra weights, only 1--2\% of the model's size, which allowed us to run it on a Kaggle GPU.
+We started with the 0.5B-parameter version of the model, then ran the 1.5B version.
+Both models and the baseline were trained on the same 8{,}000 rows and scored on the same 2{,}000 validation rows.
+Both Qwen runs also used the same settings, with LoRA rank 16, learning rate $10^{-4}$, batch size 8, one epoch, and passages cut to 512 tokens.
+The only other difference was that for the 1.5B model, we had to use gradient checkpointing to fit in memory, which recalculates some values during training, but ultimately leads to the same training approach.
+
+\question{Q5.3 [4 points].}{What were the measured results?}
+\begin{tabularx}{\linewidth}{@{}p{1.6in}rp{0.95in}Y@{}}\toprule Configuration & Val.\ AUROC & Runtime & Relevant difference \\ \midrule
+Baseline: masked n-grams + LR & 0.9949 & 2\,s, laptop CPU & 52 errors (9 FP, 43 FN); public 0.943 \\
+Qwen2.5-0.5B + LoRA & 0.9986 & 14\,min, T4 GPU & 16 errors (7 FP, 9 FN); public 0.979 \\
+Qwen2.5-1.5B + LoRA & 0.9998 & 44\,min, T4 GPU & 11 errors (3 FP, 8 FN); public 0.985 \\
+\bottomrule\end{tabularx}
+\par\noindent
+For the validation scores, this came from the 8{,}000 training rows, with errors counted at a 0.5 cutoff. For the leaderboard, we retrained on all 10{,}000 rows.
+Qwen produced significantly fewer errors, particularly in AI passages that were called human, which dropped from 43 to 9 to 8.
+The biggest improvement was on validation passages with only single linebreaks, as AUROC went from 0.962 to 0.985 to 0.998.
+
+\question{Q5.4 [4 points].}{What did you learn? Did the results support the hypothesis? What limits the conclusion, and what would you try next?}
+Overall, the results fit our expectation but reinforced the value in simpler methods like the n-gram model.
+Qwen 0.5B cut the AI passages mistaken for human from 43 to 9, and did much better on passages without blank lines, so it was able to extend beyond the formatting that masked n-grams focused on.
+This improvement carried over to the leaderboard (0.943 to 0.979), implying it generalizes well to the test set.
+Going to 1.5B helped again on both validation and the leaderboard (0.985), but each Qwen model took about 15 to 45 minutes to run on a GPU, compared to seconds on a laptop for the masked model.
+The masked model was still able to come within 0.005 validation AUROC of Qwen, and its features are clearly explainable, as we were able to easily see the linebreak patterns it uncovered.
+In a situation where a lighter model or explainability is required, or the training and test set match more closely, one could argue that masked n-grams would remain a better approach.
+That said, Qwen's performance was strong enough that we chose it for our final submission, since its gain on the shifted test set (0.943 to 0.985 on the public leaderboard) was worth the extra compute for this competition.
+To continue experimenting, we tried pseudo-labeling the test set with the 0.5B model, but this modification didn't help (0.978 vs 0.979).
+To maximize our score, we would try an even larger model and average several training runs, or even create an ensemble across other models.
+Ultimately though, in our view, generating more training data would be the most useful next step, particularly AI passages from more models that follow human-style formatting, so that neither approach could rely on learning formatting differences.

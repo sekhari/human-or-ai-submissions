@@ -1,0 +1,2 @@
+model,train rows,val rows,train AUROC,val AUROC,train error@0.5,val error@0.5,fit seconds
+tfidf_lr,8000,2000,0.9999956249999999,0.95108,0.00125,0.1125,15.640969276428223

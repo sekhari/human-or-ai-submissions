@@ -1,0 +1,2 @@
+model,train rows,val rows,train AUROC,val AUROC,train error@0.5,val error@0.5,fit seconds
+masked_lr,8000,2000,0.9998185625,0.994916,0.006375,0.026,4.265892267227173

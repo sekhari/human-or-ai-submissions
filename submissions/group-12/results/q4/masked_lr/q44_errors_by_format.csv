@@ -1,0 +1,4 @@
+format,FN,FP,correct
+blank lines,0.006,0.0,0.994
+no linebreaks,0.043,0.012,0.945
+single linebreaks,0.018,0.003,0.979

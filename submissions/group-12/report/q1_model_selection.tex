@@ -1,0 +1,41 @@
+\question{Q1.1 [3 points].}{How did you preprocess and represent the text? Specify tokenization, normalization, word/character features or embeddings, and any feature extraction choices. Why?}
+We decided to keep the raw text, but use a few different techniques to represent it.
+The first we tried was word and character TF-IDF, which we used via scikit-learn's word tokens with 1--3-grams and character tokens with 3--5-grams. 
+We chose to start with this because it could serve as a baseline, and it scored fairly well in our initial EDA notebook, hitting 0.950 AUROC on 5-fold cross-validation over the training set.
+That said, we quickly saw that the strongest features were based on the topic of the passage, such as recipe ingredients, which were less common in our test data and wouldn't generalize well.
+Therefore, to focus more on sentence structure and formatting, we experimented with masking any words related to the subject of the passage.
+We did this by replacing every word except for structure words like \emph{the}, \emph{of} and \emph{was} with \texttt{*}, numbers with \texttt{\#} and linebreaks with \texttt{\^{}}, using NLTK's English stopwords~\cite{bird2009nltk}.
+For example, a sentence like ``Mix the batter for 20 minutes'' becomes \texttt{* the * for \# *}. We then used TF-IDF on the n-grams of those tokens, and explored the patterns found.
+Finally, we also explored 24 style features in our EDA, including word and sentence length and linebreak and punctuation rates per 100 words. 
+While each of these were weak on their own, they didn't appear to rely on topic-specific words, so we were hopeful a model could combine them.
+
+\question{Q1.2 [5 points].}{Which three or more modeling approaches did you try? Keep the labeled validation partition fixed across models.}
+\begin{tabularx}{\linewidth}{@{}p{1.25in}Yrrr@{}}\toprule Model & Text representation & Train AUROC & Val.\ AUROC & Train time \\ \midrule
+Logistic regression & Word + character TF-IDF & 1.0000 & 0.9544 & 9.5\,s \\
+Logistic regression & Masked n-gram TF-IDF & 0.9998 & 0.9947 & 4.1\,s \\
+Gradient boosting & 24 style features & 1.0000 & 0.9924 & 2.8\,s \\
+\bottomrule\end{tabularx}
+
+\question{Q1.3 [4 points].}{For at least two approaches, which hyperparameters and candidate values did you try? How did you select the final settings without using Kaggle test labels?}
+\begin{tabularx}{\linewidth}{@{}p{1.35in}Yp{1.45in}@{}}\toprule Model & Parameters/values searched & Chosen setting \\ \midrule
+Word + char TF-IDF + LR & $C \in \{0.25, 1, 4, 16, 64, 256\}$; word n-grams up to 1, 2 or 3 & $C=16$, word 1--3-grams \\
+Masked n-grams + LR & $C \in \{0.25, 1, 4, 16, 64, 256\}$; n-grams up to 2, 3, 4 or 5 & $C=64$, 1--5-grams \\
+Style features + gradient boosting & learning rate $\in \{0.03, 0.1, 0.3, 0.6\}$; max leaf nodes $\in \{15, 31, 63, 127\}$ & learning rate 0.3, 63 leaves \\
+\bottomrule\end{tabularx}
+\par\noindent
+For logistic regression we tuned $C$, which affects regularization, and the n-gram range, which is how many tokens in a row the model considers.
+For gradient boosting we tuned the learning rate and how big each tree could get. 
+To pick these settings, we ran 5-fold cross-validation inside the 8{,}000 training rows and kept the setting with the best average AUROC.
+After this, we scored each approach once on the 2{,}000 validation rows, so neither the validation rows nor Kaggle were used to pick settings.
+For both logistic regression models, the longest n-grams we tried performed best.
+However, the masked model wasn't very sensitive to its settings, as half of the 24 combinations we tried scored within 0.001 of the best, so the exact choice barely mattered.
+
+\question{Q1.4 [3 points].}{Which approach did you choose for your final submission? Explain using validation performance, computational cost and/or stability. If you later changed the model, explain why.}
+Out of the three approaches, we chose masked n-grams, as it produced the best validation AUROC and remained strong even when we excluded topic clusters from training.
+In Notebook 02, when we left each topic cluster out of training and scored on it, masked n-grams reached 0.988 AUROC, versus 0.970 for style features and 0.908 for TF-IDF.
+Since its top settings all scored about the same, we kept the setting from Notebook 02 ($C=4$, 1--3-grams, 0.9949 validation AUROC). 
+This model scored 0.943 on the public leaderboard, which is a reasonably strong result but below what our cross-validation suggested.
+After exploring further, we found that our approach relied on linebreaks, which may differ significantly depending on the source generating the text.
+This led us to try fine-tuning a pretrained language model (Q5), since we expected this heavier approach to be able to generalize better.
+Our final submission is from tuning Qwen2.5-1.5B, which scored 0.9998 on validation and 0.985 on the public leaderboard.
+Despite this improvement, it takes nearly an hour to run on a GPU, while the masked n-grams approach can run in seconds on a laptop, so we traded a lot more compute for a model that's more accurate and less tied to formatting.

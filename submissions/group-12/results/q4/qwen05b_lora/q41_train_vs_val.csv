@@ -1,0 +1,2 @@
+model,train rows,val rows,train AUROC,val AUROC,train error@0.5,val error@0.5,fit seconds
+qwen05b_lora,8000,2000,0.9997703124999999,0.9985724999999999,0.003625,0.008,

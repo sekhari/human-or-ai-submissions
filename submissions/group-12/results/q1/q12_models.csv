@@ -1,0 +1,4 @@
+model,text representation,chosen setting,CV AUROC,train AUROC,val AUROC,fit seconds
+tfidf_lr,Word n-gram + char 3-5gram TF-IDF,"ngram_range=(1, 3), C=16",0.9486140625000001,1.0,0.9543679999999999,9.488874197006226
+masked_lr,Masked function-word n-gram TF-IDF,"C=64, ngram_range=(1, 5)",0.9956196875000002,0.9997630625,0.99473,4.141704082489014
+style_gb,24 style features,"learning_rate=0.3, max_leaf_nodes=63",0.99111125,1.0,0.992362,2.776834726333618

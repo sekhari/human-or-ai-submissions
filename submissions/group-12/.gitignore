@@ -1,0 +1,10 @@
+data/
+submissions/
+.ipynb_checkpoints/
+.DS_Store
+__pycache__/
+.venv/
+
+# the course repo ignores *.csv
+!results/**/*.csv
+!splits/*.csv
