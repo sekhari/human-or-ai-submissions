@@ -1,0 +1,3 @@
+character_ngrams,training_examples,validation_examples,features,train_auroc,validation_auroc,runtime_seconds
+"(3, 5)",320,80,5000,1.0,0.8542839274546591,2.03
+"(2, 8)",320,80,5000,1.0,0.8480300187617261,9.9

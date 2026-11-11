@@ -1,0 +1,9 @@
+split,seed,style_weight,train_auc,validation_auc
+stratified,42,0.0,1.0,0.965759
+stratified,42,0.1,1.0,0.994339
+stratified,13,0.0,1.0,0.970133
+stratified,13,0.1,1.0,0.990865
+stratified,123,0.0,1.0,0.967541
+stratified,123,0.1,1.0,0.99196
+group-aware,42,0.0,1.0,0.9388889193301224
+group-aware,42,0.1,1.0,0.986150760817749
