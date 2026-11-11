@@ -1,25 +1,31 @@
-"""Example prediction entrypoint (replace with your pipeline)."""
-
-from __future__ import annotations
-
+"""Write Kaggle probabilities using a saved detector."""
 import argparse
 from pathlib import Path
+import joblib
+import numpy as np
+import pandas as pd
+from model import predict_probabilities
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Write Kaggle submission.csv")
-    parser.add_argument("--test", type=Path, required=True, help="Path to test.csv")
-    parser.add_argument("--model", type=Path, default=Path("model.joblib"))
-    parser.add_argument("--out", type=Path, default=Path("submission.csv"))
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--test', type=Path, required=True)
+    parser.add_argument('--model', type=Path, default=Path('model.joblib'))
+    parser.add_argument('--sample', type=Path, default=Path('data/sample_submission.csv'))
+    parser.add_argument('--out', type=Path, default=Path('submission.csv'))
     args = parser.parse_args()
+    test = pd.read_csv(args.test)
+    bundle = joblib.load(args.model)
+    probabilities = predict_probabilities(bundle, test.text.fillna('').astype(str))
+    output = pd.DataFrame({'id': test.id, 'label': probabilities})
+    sample = pd.read_csv(args.sample)
+    assert output.id.equals(sample.id)
+    assert np.isfinite(probabilities).all()
+    assert ((probabilities >= 0) & (probabilities <= 1)).all()
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    output.to_csv(args.out, index=False, float_format='%.12g')
+    print('saved', args.out)
 
-    # TODO: load model, predict P(AI) for each test id, write submission.csv
-    print(f"[example] would predict on {args.test} using {args.model}")
-    print(f"[example] would write {args.out}")
-    raise SystemExit(
-        "Replace this example script with your real prediction code before submitting."
-    )
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
