@@ -1,0 +1,90 @@
+{
+  "model": "distilbert",
+  "seed": 44,
+  "train_auc": 0.9999995,
+  "val_auc": 0.9980249999999999,
+  "train_time_seconds": 574.046,
+  "hyperparameters": {
+    "model_name": "distilbert-base-uncased",
+    "max_length": 512,
+    "learning_rate": 3e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 44,
+    "newline_marker": "[NL]",
+    "space_marker": "[DS]",
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/distilbert/distilbert_nl_ds_lr3e-05_ep4_bs16_len512_seed44"
+  },
+  "train_metrics": {
+    "auc": 0.9999995,
+    "accuracy": 0.999625,
+    "precision": 0.9997499374843711,
+    "recall": 0.9995,
+    "f1": 0.9996249531191399,
+    "confusion_matrix": {
+      "tn": 3999,
+      "fp": 1,
+      "fn": 2,
+      "tp": 3998
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9980249999999999,
+    "accuracy": 0.986,
+    "precision": 0.986,
+    "recall": 0.986,
+    "f1": 0.986,
+    "confusion_matrix": {
+      "tn": 986,
+      "fp": 14,
+      "fn": 14,
+      "tp": 986
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1463114288728684,
+      "train_seconds": 115.9,
+      "lr_end": 2.25e-05,
+      "val_loss": 0.06237398799881339,
+      "val_auc": 0.99761
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.04279636920185294,
+      "train_seconds": 115.91,
+      "lr_end": 1.5e-05,
+      "val_loss": 0.06250819741934538,
+      "val_auc": 0.997358
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.010135750973509857,
+      "train_seconds": 115.92,
+      "lr_end": 7.5e-06,
+      "val_loss": 0.07066777468734654,
+      "val_auc": 0.9980249999999999
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.005009714000596432,
+      "train_seconds": 116.73,
+      "lr_end": 0.0,
+      "val_loss": 0.0826582817962626,
+      "val_auc": 0.997954
+    }
+  ],
+  "run_name": "distilbert_nl_ds_lr3e-05_ep4_bs16_len512_seed44",
+  "timestamp": "2026-11-04T05:41:47+00:00",
+  "git_commit": null,
+  "notes": "phaseA"
+}

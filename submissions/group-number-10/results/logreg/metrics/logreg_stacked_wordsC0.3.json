@@ -1,0 +1,59 @@
+{
+  "model": "logreg_stacked",
+  "seed": 42,
+  "train_auc": 0.998392625,
+  "val_auc": 0.9934689999999999,
+  "train_time_seconds": 24.968,
+  "hyperparameters": {
+    "block_C": {
+      "words": 0.3,
+      "chars": 10.0,
+      "style": 300.0,
+      "lm": 1.0
+    },
+    "meta_C": 1.0,
+    "seed": 42,
+    "vocab_extra_texts": 6000,
+    "meta_weights": {
+      "words": 6.599205795053977,
+      "chars": -0.4117877816637063,
+      "style": 1.380357097057239,
+      "lm": 1.8760274709375446
+    },
+    "testlike_auc": 0.9916736189494691,
+    "testlike_n": 500
+  },
+  "train_metrics": {
+    "auc": 0.998392625,
+    "accuracy": 0.98425,
+    "precision": 0.9941326530612244,
+    "recall": 0.97425,
+    "f1": 0.9840909090909091,
+    "confusion_matrix": {
+      "tn": 3977,
+      "fp": 23,
+      "fn": 103,
+      "tp": 3897
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9934689999999999,
+    "accuracy": 0.9655,
+    "precision": 0.9784172661870504,
+    "recall": 0.952,
+    "f1": 0.9650278763304613,
+    "confusion_matrix": {
+      "tn": 979,
+      "fp": 21,
+      "fn": 48,
+      "tp": 952
+    },
+    "threshold": 0.5
+  },
+  "history": [],
+  "run_name": "logreg_stacked_wordsC0.3",
+  "timestamp": "2026-11-08T21:04:28+00:00",
+  "git_commit": "305e2c1",
+  "notes": "stacked: per-block logreg (out-of-fold logits) -> meta logreg; tf-idf vocabulary fit on train + unlabeled.csv + test.csv text (no labels); words C chosen by AUROC on the 500 most test-like val passages, so the chosen run's val AUROC is optimistic"
+}

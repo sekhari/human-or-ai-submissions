@@ -1,0 +1,87 @@
+{
+  "model": "electra-large-discriminator",
+  "seed": 42,
+  "train_auc": 0.9994488750000001,
+  "val_auc": 0.997887,
+  "train_time_seconds": 3133.122,
+  "hyperparameters": {
+    "model_name": "models/electra-large-discriminator",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/electra/electra-large-discriminator_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9994488750000001,
+    "accuracy": 0.9945,
+    "precision": 0.9927752864972595,
+    "recall": 0.99625,
+    "f1": 0.994509608185675,
+    "confusion_matrix": {
+      "tn": 3971,
+      "fp": 29,
+      "fn": 15,
+      "tp": 3985
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.997887,
+    "accuracy": 0.985,
+    "precision": 0.9830677290836654,
+    "recall": 0.987,
+    "f1": 0.9850299401197605,
+    "confusion_matrix": {
+      "tn": 983,
+      "fp": 17,
+      "fn": 13,
+      "tp": 987
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5184753845334054,
+      "train_seconds": 989.25,
+      "lr_end": 7.4074074074074075e-06,
+      "peak_mem_gb": 33.4,
+      "val_loss": 0.443017293214798,
+      "val_auc": 0.8587
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.27345478467456996,
+      "train_seconds": 986.51,
+      "lr_end": 3.7037037037037037e-06,
+      "peak_mem_gb": 33.4,
+      "val_loss": 0.08398221307992935,
+      "val_auc": 0.9961885
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0471474346416071,
+      "train_seconds": 991.42,
+      "lr_end": 0.0,
+      "peak_mem_gb": 33.4,
+      "val_loss": 0.06679928961023689,
+      "val_auc": 0.997887
+    }
+  ],
+  "run_name": "electra-large-discriminator_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-05T21:31:04+00:00",
+  "git_commit": null,
+  "notes": "ELECTRA-large: blend partner for DeBERTa-large?"
+}

@@ -1,0 +1,41 @@
+{
+  "run": "deberta-v3-base_nl_wu0.1_lr2e-05_ep3_bs16_len512_seed42_full",
+  "config": {
+    "model_name": "microsoft/deberta-v3-base",
+    "max_length": 512,
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null
+  },
+  "n_train": 10000,
+  "train_auc": 0.99989364,
+  "train_time_seconds": 1956.4,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1744900168311782,
+      "train_seconds": 653.49,
+      "lr_end": 1.4810426540284362e-05
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.033492941359896215,
+      "train_seconds": 648.14,
+      "lr_end": 7.405213270142181e-06
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.013473099685017951,
+      "train_seconds": 646.05,
+      "lr_end": 0.0
+    }
+  ],
+  "test_predictions": "deberta-v3-base_nl_wu0.1_lr2e-05_ep3_bs16_len512_seed42_full.csv"
+}

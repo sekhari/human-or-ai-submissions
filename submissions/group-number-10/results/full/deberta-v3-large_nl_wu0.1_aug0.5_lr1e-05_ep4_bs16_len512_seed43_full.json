@@ -1,0 +1,54 @@
+{
+  "run": "deberta-v3-large_nl_wu0.1_aug0.5_lr1e-05_ep4_bs16_len512_seed43_full",
+  "config": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 43,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "layout_aug": 0.5
+  },
+  "n_train": 10000,
+  "train_auc": 0.9999998,
+  "train_time_seconds": 7302.6,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.25831257025990634,
+      "train_seconds": 1826.33,
+      "lr_end": 8.333333333333334e-06,
+      "peak_mem_gb": 50.8
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.06391491197468713,
+      "train_seconds": 1831.6,
+      "lr_end": 5.555555555555557e-06,
+      "peak_mem_gb": 50.9
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.02828189025640022,
+      "train_seconds": 1814.56,
+      "lr_end": 2.7777777777777783e-06,
+      "peak_mem_gb": 50.9
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.01168209235254908,
+      "train_seconds": 1811.59,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.9
+    }
+  ],
+  "test_predictions": "deberta-v3-large_nl_wu0.1_aug0.5_lr1e-05_ep4_bs16_len512_seed43_full.csv"
+}

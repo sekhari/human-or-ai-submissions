@@ -1,0 +1,90 @@
+{
+  "model": "distilbert",
+  "seed": 42,
+  "train_auc": 0.9998958125,
+  "val_auc": 0.9984299999999999,
+  "train_time_seconds": 575.357,
+  "hyperparameters": {
+    "model_name": "distilbert-base-uncased",
+    "max_length": 512,
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/distilbert/distilbert_nl_lr2e-05_ep4_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9998958125,
+    "accuracy": 0.99925,
+    "precision": 0.9994997498749375,
+    "recall": 0.999,
+    "f1": 0.9992498124531133,
+    "confusion_matrix": {
+      "tn": 3998,
+      "fp": 2,
+      "fn": 4,
+      "tp": 3996
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9984299999999999,
+    "accuracy": 0.9885,
+    "precision": 0.988988988988989,
+    "recall": 0.988,
+    "f1": 0.9884942471235618,
+    "confusion_matrix": {
+      "tn": 989,
+      "fp": 11,
+      "fn": 12,
+      "tp": 988
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.15430467243725435,
+      "train_seconds": 115.84,
+      "lr_end": 1.5000000000000002e-05,
+      "val_loss": 0.06303978450875729,
+      "val_auc": 0.9968140000000001
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.042340155799640344,
+      "train_seconds": 115.74,
+      "lr_end": 1e-05,
+      "val_loss": 0.07693237644806504,
+      "val_auc": 0.9980610000000001
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.01756975300668273,
+      "train_seconds": 116.3,
+      "lr_end": 5e-06,
+      "val_loss": 0.05844047043588944,
+      "val_auc": 0.9984299999999999
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.006193272605218226,
+      "train_seconds": 115.95,
+      "lr_end": 0.0,
+      "val_loss": 0.07165641393221449,
+      "val_auc": 0.9982994999999999
+    }
+  ],
+  "run_name": "distilbert_nl_lr2e-05_ep4_bs16_len512_seed42",
+  "timestamp": "2026-11-04T06:15:04+00:00",
+  "git_commit": null,
+  "notes": "phaseA"
+}

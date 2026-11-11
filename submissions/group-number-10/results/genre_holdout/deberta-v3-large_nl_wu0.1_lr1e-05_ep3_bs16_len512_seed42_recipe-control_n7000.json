@@ -1,0 +1,52 @@
+{
+  "run": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_recipe-control_n7000",
+  "condition": "control",
+  "config": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false
+  },
+  "n_train": 7000,
+  "n_train_recipes": 856,
+  "train_time_seconds": 3799.7,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.17904913978438292,
+      "train_seconds": 1268.93,
+      "lr_end": 7.404902789518175e-06,
+      "peak_mem_gb": 50.8
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.026336523925320113,
+      "train_seconds": 1270.96,
+      "lr_end": 3.7024513947590874e-06,
+      "peak_mem_gb": 50.8
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.007435435148804182,
+      "train_seconds": 1258.09,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.9
+    }
+  ],
+  "recipe_auc": 0.9995958965495167,
+  "recipe_errors": 5,
+  "recipe_n": 1000,
+  "non_recipe_auc": 0.9999319466461707,
+  "non_recipe_errors": 3,
+  "non_recipe_n": 1000
+}

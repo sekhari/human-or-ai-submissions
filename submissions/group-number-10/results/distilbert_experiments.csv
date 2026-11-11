@@ -1,0 +1,43 @@
+run_name,learning_rate,epochs,batch_size,max_length,seed,best_epoch,device,train_time_seconds,train_auc,val_auc,val_accuracy,notes
+distilbert_lr2e-05_ep3_bs16_len512_seed42,2e-05,3,16,512,42,3,mps,929.285,0.998374,0.986879,0.925,grid
+distilbert_lr3e-05_ep3_bs16_len512_seed42,3e-05,3,16,512,42,3,cuda,441.401,0.99892,0.989778,0.9225,grid
+distilbert_lr5e-05_ep3_bs16_len512_seed42,5e-05,3,16,512,42,3,cuda,440.165,0.999374,0.986822,0.923,grid
+distilbert_lr3e-05_ep2_bs16_len512_seed42,3e-05,2,16,512,42,2,cuda,322.066,0.997405,0.987636,0.9155,grid
+distilbert_lr3e-05_ep4_bs16_len512_seed42,3e-05,4,16,512,42,3,cuda,559.355,0.999351,0.991136,0.941,grid
+distilbert_cased_nl_lr3e-05_ep4_bs16_len512_seed42,3e-05,4,16,512,42,4,cuda,585.488,1.0,0.997016,0.9875,ablation
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed42,3e-05,4,16,512,42,3,cuda,575.35,0.999995,0.998891,0.9895,ablation
+distilbert_cased_lr3e-05_ep4_bs16_len512_seed42,3e-05,4,16,512,42,4,cuda,577.365,0.999698,0.990906,0.936,ablation
+distilbert_nl_ds_lr3e-05_ep4_bs16_len512_seed42,3e-05,4,16,512,42,4,cuda,573.848,0.999979,0.998585,0.9875,phaseA
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed43,3e-05,4,16,512,43,4,cuda,581.722,1.0,0.998045,0.987,phaseA
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed44,3e-05,4,16,512,44,3,cuda,577.0,0.999959,0.998794,0.989,phaseA
+distilbert_nl_ds_lr3e-05_ep4_bs16_len512_seed43,3e-05,4,16,512,43,4,cuda,613.982,0.99998,0.998117,0.9885,phaseA
+distilbert_nl_ds_lr3e-05_ep4_bs16_len512_seed44,3e-05,4,16,512,44,3,cuda,574.046,1.0,0.998025,0.986,phaseA
+distilbert_dapt-split-nl_nl_lr3e-05_ep4_bs16_len512_seed42,3e-05,4,16,512,42,2,cuda,496.631,0.999903,0.998536,0.983,phaseA
+distilbert_nl_lr2e-05_ep4_bs16_len512_seed42,2e-05,4,16,512,42,3,cuda,575.357,0.999896,0.99843,0.9885,phaseA
+distilbert_nl_lr5e-05_ep4_bs16_len512_seed42,5e-05,4,16,512,42,2,cuda,574.79,0.999957,0.998695,0.9865,phaseA
+deberta-v3-base_nl_wu0.1_lr2e-05_ep3_bs16_len512_seed42,2e-05,3,16,512,42,3,cuda,1663.351,0.999811,0.998639,0.9875,overnight
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,3,cuda,4650.799,0.999998,0.999816,0.9935,overnight
+roberta-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,3,cuda,2369.785,0.999982,0.999034,0.987,roberta
+roberta-large_wu0.1_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,3,cuda,2308.511,0.999914,0.998896,0.9905,roberta
+deberta-v2-xlarge_nl_wu0.1_bf16_lr5e-06_ep3_bs16_len512_seed42,5e-06,3,16,512,42,3,cuda,4253.36,0.999878,0.998623,0.991,xlarge
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_pl-large8k,1e-05,3,16,512,42,2,cuda,6216.498,0.999996,0.999897,0.995,"self-training: + confident unlabeled.csv pseudo-labels (8k large seed42, t=0.02)"
+deberta-v3-large_nl_wu0.1_bf16_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,1,cuda,2712.885,0.999446,0.999318,0.992,bf16 vs fp32 baseline
+deberta-v3-large_nl_wu0.1_lr5e-06_ep3_bs16_len512_seed42,5e-06,3,16,512,42,2,cuda,4608.192,0.999891,0.999541,0.993,lr sweep
+deberta-v3-large_nl_wu0.1_lr2e-05_ep3_bs16_len512_seed42,2e-05,3,16,512,42,3,cuda,4623.425,0.999998,0.999893,0.995,lr sweep
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed42_n1000,3e-05,4,16,512,42,3,cuda,87.414,0.99856,0.993768,0.9665,learning curve
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed42_n2000,3e-05,4,16,512,42,4,cuda,147.416,0.999796,0.993954,0.9755,learning curve
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed42_n4000,3e-05,4,16,512,42,3,cuda,263.015,1.0,0.996708,0.984,learning curve
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n1000,1e-05,3,16,512,42,3,cuda,782.857,0.999988,0.998135,0.986,learning curve
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n2000,1e-05,3,16,512,42,3,cuda,1329.053,0.999912,0.997231,0.987,learning curve
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n4000,1e-05,3,16,512,42,3,cuda,2424.815,0.99999,0.999661,0.992,learning curve
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed42_pl-large8k,3e-05,4,16,512,42,3,cuda,667.697,1.0,0.999065,0.9915,pseudo-labels from DeBERTa-large 8k
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed43_pl-large8k,3e-05,4,16,512,43,4,cuda,670.774,1.0,0.998823,0.9915,pseudo-labels from DeBERTa-large 8k
+distilbert_nl_lr3e-05_ep4_bs16_len512_seed44_pl-large8k,3e-05,4,16,512,44,2,cuda,669.69,0.999912,0.999024,0.99,pseudo-labels from DeBERTa-large 8k
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed43,1e-05,3,16,512,43,3,cuda,4609.497,0.999996,0.999352,0.994,seed-43 baseline for pseudo-label comparison
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed43_pl-large8k,1e-05,3,16,512,43,3,cuda,6246.311,0.999999,0.999456,0.9935,"self-training: + confident unlabeled.csv pseudo-labels (8k large seed42, t=0.02)"
+electra-large-discriminator_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,3,cuda,3133.122,0.999449,0.997887,0.985,ELECTRA-large: blend partner for DeBERTa-large?
+deberta-v3-large_nl_wu0.1_aug0.5_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,3,cuda,4665.168,0.999952,0.999422,0.9895,layout augmentation 0.5
+deberta-v3-large_nl_wu0.1_aug0.5_lr1e-05_ep8_bs16_len512_seed42,1e-05,8,16,512,42,5,cuda,12336.436,0.999994,0.999584,0.974,training length: 8 epochs
+deberta-v3-large_wu0.1_lr1e-05_ep3_bs16_len512_seed42,1e-05,3,16,512,42,3,cuda,4380.622,0.999788,0.997632,0.98,DeBERTa-large without [NL]
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n500,1e-05,3,16,512,42,3,cuda,513.151,0.999952,0.996041,0.9775,learning curve
+deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n5000,1e-05,3,16,512,42,1,cuda,2928.169,0.999216,0.999185,0.99,learning curve

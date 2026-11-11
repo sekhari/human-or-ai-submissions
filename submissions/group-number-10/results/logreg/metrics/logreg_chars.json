@@ -1,0 +1,56 @@
+{
+  "model": "logreg_chars",
+  "seed": 42,
+  "train_auc": 0.9998876875,
+  "val_auc": 0.9523620000000002,
+  "train_time_seconds": 16.834,
+  "hyperparameters": {
+    "blocks": [
+      "chars"
+    ],
+    "C": 10.0,
+    "C_grid": [
+      1.0,
+      10.0,
+      30.0,
+      100.0,
+      300.0
+    ],
+    "cv_auc": 0.9413121875,
+    "cv_std": 0.0039089150159043705,
+    "n_cols": 140069
+  },
+  "train_metrics": {
+    "auc": 0.9998876875,
+    "accuracy": 0.997125,
+    "precision": 0.9989962358845671,
+    "recall": 0.99525,
+    "f1": 0.9971195992485911,
+    "confusion_matrix": {
+      "tn": 3996,
+      "fp": 4,
+      "fn": 19,
+      "tp": 3981
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9523620000000002,
+    "accuracy": 0.892,
+    "precision": 0.9126315789473685,
+    "recall": 0.867,
+    "f1": 0.8892307692307693,
+    "confusion_matrix": {
+      "tn": 917,
+      "fp": 83,
+      "fn": 133,
+      "tp": 867
+    },
+    "threshold": 0.5
+  },
+  "history": [],
+  "run_name": "logreg_chars",
+  "timestamp": "2026-11-08T21:09:45+00:00",
+  "git_commit": "305e2c1",
+  "notes": "tf-idf vocabulary fit on train + unlabeled.csv + test.csv text (no labels); C picked by 5-fold CV on the 8,000 train rows, val untouched until scoring"
+}

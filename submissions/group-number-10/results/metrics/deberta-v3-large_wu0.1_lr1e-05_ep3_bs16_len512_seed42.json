@@ -1,0 +1,88 @@
+{
+  "model": "deberta-v3-large",
+  "seed": 42,
+  "train_auc": 0.999788,
+  "val_auc": 0.9976324999999999,
+  "train_time_seconds": 4380.622,
+  "hyperparameters": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": null,
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "layout_aug": 0.0,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/deberta/deberta-v3-large_wu0.1_lr1e-05_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.999788,
+    "accuracy": 0.99575,
+    "precision": 0.9937749003984063,
+    "recall": 0.99775,
+    "f1": 0.9957584830339321,
+    "confusion_matrix": {
+      "tn": 3975,
+      "fp": 25,
+      "fn": 9,
+      "tp": 3991
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9976324999999999,
+    "accuracy": 0.98,
+    "precision": 0.9715127701375246,
+    "recall": 0.989,
+    "f1": 0.9801783944499505,
+    "confusion_matrix": {
+      "tn": 971,
+      "fp": 29,
+      "fn": 11,
+      "tp": 989
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2476686877310276,
+      "train_seconds": 1373.57,
+      "lr_end": 7.4074074074074075e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.16415648041665554,
+      "val_auc": 0.9936285
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.06687196040037088,
+      "train_seconds": 1375.8,
+      "lr_end": 3.7037037037037037e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.1904220245303586,
+      "val_auc": 0.9965415
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.020679150722688062,
+      "train_seconds": 1375.39,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.09237675148667768,
+      "val_auc": 0.9976324999999999
+    }
+  ],
+  "run_name": "deberta-v3-large_wu0.1_lr1e-05_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-06T23:45:02+00:00",
+  "git_commit": null,
+  "notes": "DeBERTa-large without [NL]"
+}

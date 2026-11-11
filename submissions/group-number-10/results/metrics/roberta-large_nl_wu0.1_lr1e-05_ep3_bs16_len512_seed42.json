@@ -1,0 +1,82 @@
+{
+  "model": "roberta-large",
+  "seed": 42,
+  "train_auc": 0.9999823124999999,
+  "val_auc": 0.999034,
+  "train_time_seconds": 2369.785,
+  "hyperparameters": {
+    "model_name": "models/roberta-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/roberta/roberta-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9999823124999999,
+    "accuracy": 0.998625,
+    "precision": 0.9982513115163627,
+    "recall": 0.999,
+    "f1": 0.9986255154317131,
+    "confusion_matrix": {
+      "tn": 3993,
+      "fp": 7,
+      "fn": 4,
+      "tp": 3996
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.999034,
+    "accuracy": 0.987,
+    "precision": 0.987,
+    "recall": 0.987,
+    "f1": 0.987,
+    "confusion_matrix": {
+      "tn": 987,
+      "fp": 13,
+      "fn": 13,
+      "tp": 987
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.19159226056656917,
+      "train_seconds": 740.25,
+      "lr_end": 7.4074074074074075e-06,
+      "val_loss": 0.11150203318498098,
+      "val_auc": 0.9986305
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.029935982019582297,
+      "train_seconds": 738.25,
+      "lr_end": 3.7037037037037037e-06,
+      "val_loss": 0.07271013242343906,
+      "val_auc": 0.9988090000000001
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.010432498706399201,
+      "train_seconds": 742.91,
+      "lr_end": 0.0,
+      "val_loss": 0.0882965408507007,
+      "val_auc": 0.999034
+    }
+  ],
+  "run_name": "roberta-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-04T18:49:20+00:00",
+  "git_commit": null,
+  "notes": "roberta"
+}

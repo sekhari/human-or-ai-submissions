@@ -1,0 +1,82 @@
+{
+  "model": "deberta-v3-large",
+  "seed": 42,
+  "train_auc": 0.9999981875,
+  "val_auc": 0.9998159999999999,
+  "train_time_seconds": 4650.799,
+  "hyperparameters": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/deberta/deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9999981875,
+    "accuracy": 0.999375,
+    "precision": 0.9997498123592694,
+    "recall": 0.999,
+    "f1": 0.9993747655370764,
+    "confusion_matrix": {
+      "tn": 3999,
+      "fp": 1,
+      "fn": 4,
+      "tp": 3996
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9998159999999999,
+    "accuracy": 0.9935,
+    "precision": 0.9949849548645938,
+    "recall": 0.992,
+    "f1": 0.9934902353530295,
+    "confusion_matrix": {
+      "tn": 995,
+      "fp": 5,
+      "fn": 8,
+      "tp": 992
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1709063122534426,
+      "train_seconds": 1464.01,
+      "lr_end": 7.4074074074074075e-06,
+      "val_loss": 0.05223175601195544,
+      "val_auc": 0.998191
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.025588728029251797,
+      "train_seconds": 1457.2,
+      "lr_end": 3.7037037037037037e-06,
+      "val_loss": 0.042209222625766415,
+      "val_auc": 0.999733
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.005136003565552528,
+      "train_seconds": 1462.59,
+      "lr_end": 0.0,
+      "val_loss": 0.03643552488146815,
+      "val_auc": 0.9998159999999999
+    }
+  ],
+  "run_name": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-04T08:18:42+00:00",
+  "git_commit": null,
+  "notes": "overnight"
+}

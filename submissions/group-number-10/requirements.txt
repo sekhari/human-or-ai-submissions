@@ -1,0 +1,12 @@
+# Python 3.12 (used for all results).
+numpy>=1.26,<3
+pandas>=2.1,<3
+scikit-learn>=1.4,<2
+matplotlib>=3.8,<4
+torch>=2.2,<3
+transformers>=4.40,<5
+sentencepiece>=0.2,<1   # DeBERTa-v3 tokenizer
+protobuf>=4,<7
+pytest>=8,<9
+ipython
+nbformat

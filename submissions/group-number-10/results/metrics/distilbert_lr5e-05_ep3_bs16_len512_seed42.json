@@ -1,0 +1,80 @@
+{
+  "model": "distilbert",
+  "seed": 42,
+  "train_auc": 0.9993743125000001,
+  "val_auc": 0.9868220000000001,
+  "train_time_seconds": 440.165,
+  "hyperparameters": {
+    "model_name": "distilbert-base-uncased",
+    "max_length": 512,
+    "learning_rate": 5e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/distilbert/distilbert_lr5e-05_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9993743125000001,
+    "accuracy": 0.9855,
+    "precision": 0.9750489236790607,
+    "recall": 0.9965,
+    "f1": 0.9856577645895154,
+    "confusion_matrix": {
+      "tn": 3898,
+      "fp": 102,
+      "fn": 14,
+      "tp": 3986
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9868220000000001,
+    "accuracy": 0.923,
+    "precision": 0.875,
+    "recall": 0.987,
+    "f1": 0.9276315789473685,
+    "confusion_matrix": {
+      "tn": 859,
+      "fp": 141,
+      "fn": 13,
+      "tp": 987
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.27889971687458454,
+      "train_seconds": 111.51,
+      "lr_end": 3.3333333333333335e-05,
+      "val_loss": 0.28203893375396727,
+      "val_auc": 0.986463
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.09396122917206957,
+      "train_seconds": 111.82,
+      "lr_end": 1.6666666666666667e-05,
+      "val_loss": 0.4183116314411163,
+      "val_auc": 0.9855580000000002
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.030288869437528773,
+      "train_seconds": 111.94,
+      "lr_end": 0.0,
+      "val_loss": 0.4023510179519653,
+      "val_auc": 0.9868220000000001
+    }
+  ],
+  "run_name": "distilbert_lr5e-05_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-04T03:26:13+00:00",
+  "git_commit": null,
+  "notes": "grid"
+}

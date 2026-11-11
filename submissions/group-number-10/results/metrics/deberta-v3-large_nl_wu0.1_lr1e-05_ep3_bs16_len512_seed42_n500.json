@@ -1,0 +1,88 @@
+{
+  "model": "deberta-v3-large",
+  "seed": 42,
+  "train_auc": 0.999952,
+  "val_auc": 0.996041,
+  "train_time_seconds": 513.151,
+  "hyperparameters": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "layout_aug": 0.0,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": null
+  },
+  "train_metrics": {
+    "auc": 0.999952,
+    "accuracy": 0.998,
+    "precision": 1.0,
+    "recall": 0.996,
+    "f1": 0.9979959919839679,
+    "confusion_matrix": {
+      "tn": 250,
+      "fp": 0,
+      "fn": 1,
+      "tp": 249
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.996041,
+    "accuracy": 0.9775,
+    "precision": 0.9907502569373073,
+    "recall": 0.964,
+    "f1": 0.9771920932589965,
+    "confusion_matrix": {
+      "tn": 991,
+      "fp": 9,
+      "fn": 36,
+      "tp": 964
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6818165082931519,
+      "train_seconds": 91.72,
+      "lr_end": 7.35632183908046e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.5520903205871582,
+      "val_auc": 0.9847389999999999
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.26889903980493546,
+      "train_seconds": 91.6,
+      "lr_end": 3.67816091954023e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.11240173465013505,
+      "val_auc": 0.995497
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.054279723048210146,
+      "train_seconds": 90.9,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.0773616509437561,
+      "val_auc": 0.996041
+    }
+  ],
+  "run_name": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n500",
+  "timestamp": "2026-11-09T21:04:51+00:00",
+  "git_commit": null,
+  "notes": "learning curve"
+}

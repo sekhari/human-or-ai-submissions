@@ -1,0 +1,96 @@
+{
+  "model": "distilbert",
+  "seed": 42,
+  "train_auc": 1.0,
+  "val_auc": 0.9967075000000001,
+  "train_time_seconds": 263.015,
+  "hyperparameters": {
+    "model_name": "distilbert-base-uncased",
+    "max_length": 512,
+    "learning_rate": 3e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": null
+  },
+  "train_metrics": {
+    "auc": 1.0,
+    "accuracy": 0.9995,
+    "precision": 0.999000999000999,
+    "recall": 1.0,
+    "f1": 0.9995002498750625,
+    "confusion_matrix": {
+      "tn": 1998,
+      "fp": 2,
+      "fn": 0,
+      "tp": 2000
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9967075000000001,
+    "accuracy": 0.984,
+    "precision": 0.9849699398797596,
+    "recall": 0.983,
+    "f1": 0.983983983983984,
+    "confusion_matrix": {
+      "tn": 985,
+      "fp": 15,
+      "fn": 17,
+      "tp": 983
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.20263726385775954,
+      "train_seconds": 58.23,
+      "lr_end": 2.25e-05,
+      "peak_mem_gb": 3.8,
+      "val_loss": 0.0983628976047039,
+      "val_auc": 0.9934590000000001
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.040251321077113975,
+      "train_seconds": 57.93,
+      "lr_end": 1.5e-05,
+      "peak_mem_gb": 3.8,
+      "val_loss": 0.11004457222111523,
+      "val_auc": 0.9944275
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.013126231969334184,
+      "train_seconds": 58.31,
+      "lr_end": 7.5e-06,
+      "peak_mem_gb": 3.8,
+      "val_loss": 0.0870960497232154,
+      "val_auc": 0.9967075000000001
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.001383093191194348,
+      "train_seconds": 58.31,
+      "lr_end": 0.0,
+      "peak_mem_gb": 3.8,
+      "val_loss": 0.08848474583774806,
+      "val_auc": 0.9961995
+    }
+  ],
+  "run_name": "distilbert_nl_lr3e-05_ep4_bs16_len512_seed42_n4000",
+  "timestamp": "2026-11-05T08:58:46+00:00",
+  "git_commit": null,
+  "notes": "learning curve"
+}

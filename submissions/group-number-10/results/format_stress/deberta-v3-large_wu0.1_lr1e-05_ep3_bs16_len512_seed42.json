@@ -1,0 +1,52 @@
+{
+  "checkpoints": [
+    "checkpoints/deberta/deberta-v3-large_wu0.1_lr1e-05_ep3_bs16_len512_seed42"
+  ],
+  "results": {
+    "none": {
+      "auroc": 0.99763,
+      "errors": 40,
+      "human_called_ai": 29,
+      "ai_called_human": 11,
+      "mean_p_human": 0.0328,
+      "mean_p_ai": 0.9878,
+      "n_changed": 0
+    },
+    "no_newlines": {
+      "auroc": 0.99763,
+      "errors": 40,
+      "human_called_ai": 29,
+      "ai_called_human": 11,
+      "mean_p_human": 0.0328,
+      "mean_p_ai": 0.9878,
+      "n_changed": 1398
+    },
+    "unwrap": {
+      "auroc": 0.99763,
+      "errors": 40,
+      "human_called_ai": 29,
+      "ai_called_human": 11,
+      "mean_p_human": 0.0328,
+      "mean_p_ai": 0.9878,
+      "n_changed": 889
+    },
+    "hard_wrap": {
+      "auroc": 0.99765,
+      "errors": 40,
+      "human_called_ai": 29,
+      "ai_called_human": 11,
+      "mean_p_human": 0.0318,
+      "mean_p_ai": 0.9877,
+      "n_changed": 1987
+    },
+    "short_lines": {
+      "auroc": 0.99763,
+      "errors": 40,
+      "human_called_ai": 29,
+      "ai_called_human": 11,
+      "mean_p_human": 0.0328,
+      "mean_p_ai": 0.9878,
+      "n_changed": 2000
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# The course root .gitignore already excludes data/, *.csv, .venv/, models/,
+# *.pt/*.pth/*.pkl/*.joblib, checkpoints/, and caches. Extra rules for this team:
+
+# Model weights / training artifacts
+*.safetensors
+*.bin
+*.ckpt
+runs/
+lightning_logs/
+hf_cache/
+
+# Test / tool caches
+.pytest_cache/
+
+# Generated data report (may contain passage IDs; regenerate locally)
+results/data_report.json
+
+# Smoke-test outputs
+results/smoke/
+
+# Keep the small experiment summary CSV reviewable (course root ignores *.csv)
+!results/distilbert_experiments.csv
+
+# Scratch
+tmp/
+*.tmp
+*.log

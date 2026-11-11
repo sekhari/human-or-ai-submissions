@@ -1,0 +1,88 @@
+{
+  "model": "deberta-v3-large",
+  "seed": 42,
+  "train_auc": 0.99921616,
+  "val_auc": 0.999185,
+  "train_time_seconds": 2928.169,
+  "hyperparameters": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "layout_aug": 0.0,
+    "best_epoch": 1,
+    "device": "cuda",
+    "checkpoint": null
+  },
+  "train_metrics": {
+    "auc": 0.99921616,
+    "accuracy": 0.9944,
+    "precision": 0.9940047961630696,
+    "recall": 0.9948,
+    "f1": 0.9944022391043582,
+    "confusion_matrix": {
+      "tn": 2485,
+      "fp": 15,
+      "fn": 13,
+      "tp": 2487
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.999185,
+    "accuracy": 0.99,
+    "precision": 0.9919678714859438,
+    "recall": 0.988,
+    "f1": 0.9899799599198397,
+    "confusion_matrix": {
+      "tn": 992,
+      "fp": 8,
+      "fn": 12,
+      "tp": 988
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.20863677677586676,
+      "train_seconds": 907.35,
+      "lr_end": 7.3995271867612296e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.04786002135602757,
+      "val_auc": 0.999185
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.027372351465187968,
+      "train_seconds": 900.15,
+      "lr_end": 3.6997635933806148e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.05493505489116069,
+      "val_auc": 0.9981730000000001
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.005557479260349646,
+      "train_seconds": 905.23,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.044708217756589876,
+      "val_auc": 0.998937
+    }
+  ],
+  "run_name": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42_n5000",
+  "timestamp": "2026-11-09T21:57:49+00:00",
+  "git_commit": null,
+  "notes": "learning curve"
+}

@@ -1,0 +1,87 @@
+{
+  "model": "deberta-v3-large",
+  "seed": 43,
+  "train_auc": 0.9999989375,
+  "val_auc": 0.9994555,
+  "train_time_seconds": 6246.311,
+  "hyperparameters": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 43,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/deberta/deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed43_pl-large8k"
+  },
+  "train_metrics": {
+    "auc": 0.9999989375,
+    "accuracy": 0.999375,
+    "precision": 0.9992501874531368,
+    "recall": 0.9995,
+    "f1": 0.9993750781152356,
+    "confusion_matrix": {
+      "tn": 3997,
+      "fp": 3,
+      "fn": 2,
+      "tp": 3998
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9994555,
+    "accuracy": 0.9935,
+    "precision": 0.9949849548645938,
+    "recall": 0.992,
+    "f1": 0.9934902353530295,
+    "confusion_matrix": {
+      "tn": 995,
+      "fp": 5,
+      "fn": 8,
+      "tp": 992
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1515917317641443,
+      "train_seconds": 1992.8,
+      "lr_end": 7.40420939017809e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.15721757558896207,
+      "val_auc": 0.9980835
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.023844911624066528,
+      "train_seconds": 1985.95,
+      "lr_end": 3.702104695089045e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.051377512897743144,
+      "val_auc": 0.999325
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.007436126517669234,
+      "train_seconds": 1991.28,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.04525303152488777,
+      "val_auc": 0.9994555
+    }
+  ],
+  "run_name": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed43_pl-large8k",
+  "timestamp": "2026-11-05T18:24:56+00:00",
+  "git_commit": null,
+  "notes": "self-training: + confident unlabeled.csv pseudo-labels (8k large seed42, t=0.02)"
+}

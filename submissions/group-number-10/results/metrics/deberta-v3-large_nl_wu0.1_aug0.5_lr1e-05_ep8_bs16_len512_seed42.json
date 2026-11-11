@@ -1,0 +1,133 @@
+{
+  "model": "deberta-v3-large",
+  "seed": 42,
+  "train_auc": 0.9999940625000001,
+  "val_auc": 0.999584,
+  "train_time_seconds": 12336.436,
+  "hyperparameters": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 8,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false,
+    "layout_aug": 0.5,
+    "best_epoch": 5,
+    "device": "cuda",
+    "checkpoint": "checkpoints/deberta/deberta-v3-large_nl_wu0.1_aug0.5_lr1e-05_ep8_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9999940625000001,
+    "accuracy": 0.99075,
+    "precision": 0.9818360333824251,
+    "recall": 1.0,
+    "f1": 0.9908347783007183,
+    "confusion_matrix": {
+      "tn": 3926,
+      "fp": 74,
+      "fn": 0,
+      "tp": 4000
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.999584,
+    "accuracy": 0.974,
+    "precision": 0.9514285714285714,
+    "recall": 0.999,
+    "f1": 0.9746341463414634,
+    "confusion_matrix": {
+      "tn": 949,
+      "fp": 51,
+      "fn": 1,
+      "tp": 999
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2801397375841625,
+      "train_seconds": 1467.24,
+      "lr_end": 9.722222222222223e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.03813499234989286,
+      "val_auc": 0.997929
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.07803855158761144,
+      "train_seconds": 1459.37,
+      "lr_end": 8.333333333333334e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.04053895262349397,
+      "val_auc": 0.999503
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.03301609108041157,
+      "train_seconds": 1466.14,
+      "lr_end": 6.944444444444445e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.049032110577914866,
+      "val_auc": 0.9991840000000001
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.02167299331045069,
+      "train_seconds": 1469.94,
+      "lr_end": 5.555555555555557e-06,
+      "peak_mem_gb": 50.8,
+      "val_loss": 0.04119878087565303,
+      "val_auc": 0.999097
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.016946683530833978,
+      "train_seconds": 1465.86,
+      "lr_end": 4.166666666666667e-06,
+      "peak_mem_gb": 50.9,
+      "val_loss": 0.13644920880906283,
+      "val_auc": 0.999584
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.009838163916676421,
+      "train_seconds": 1458.36,
+      "lr_end": 2.7777777777777783e-06,
+      "peak_mem_gb": 50.9,
+      "val_loss": 0.06187054554873612,
+      "val_auc": 0.999583
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.004283742394338333,
+      "train_seconds": 1472.11,
+      "lr_end": 1.3888888888888892e-06,
+      "peak_mem_gb": 50.9,
+      "val_loss": 0.061625412475899796,
+      "val_auc": 0.9994705
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.00575795996233137,
+      "train_seconds": 1464.91,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.9,
+      "val_loss": 0.05245909408520674,
+      "val_auc": 0.999497
+    }
+  ],
+  "run_name": "deberta-v3-large_nl_wu0.1_aug0.5_lr1e-05_ep8_bs16_len512_seed42",
+  "timestamp": "2026-11-06T22:19:49+00:00",
+  "git_commit": null,
+  "notes": "training length: 8 epochs"
+}

@@ -1,0 +1,87 @@
+{
+  "model": "deberta-v2-xlarge",
+  "seed": 42,
+  "train_auc": 0.999877625,
+  "val_auc": 0.9986235,
+  "train_time_seconds": 4253.36,
+  "hyperparameters": {
+    "model_name": "models/deberta-v2-xlarge",
+    "max_length": 512,
+    "learning_rate": 5e-06,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": true,
+    "gradient_checkpointing": false,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/deberta/deberta-v2-xlarge_nl_wu0.1_bf16_lr5e-06_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.999877625,
+    "accuracy": 0.99725,
+    "precision": 0.99725,
+    "recall": 0.99725,
+    "f1": 0.99725,
+    "confusion_matrix": {
+      "tn": 3989,
+      "fp": 11,
+      "fn": 11,
+      "tp": 3989
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.9986235,
+    "accuracy": 0.991,
+    "precision": 0.9919839679358717,
+    "recall": 0.99,
+    "f1": 0.990990990990991,
+    "confusion_matrix": {
+      "tn": 992,
+      "fp": 8,
+      "fn": 10,
+      "tp": 990
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2537020600454416,
+      "train_seconds": 1340.83,
+      "lr_end": 3.7037037037037037e-06,
+      "peak_mem_gb": 58.9,
+      "val_loss": 0.11357758883852512,
+      "val_auc": 0.9972114999999999
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.05217566914740018,
+      "train_seconds": 1338.99,
+      "lr_end": 1.8518518518518519e-06,
+      "peak_mem_gb": 58.9,
+      "val_loss": 0.04516254882406793,
+      "val_auc": 0.9981994999999999
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.02365867512053228,
+      "train_seconds": 1341.79,
+      "lr_end": 0.0,
+      "peak_mem_gb": 58.9,
+      "val_loss": 0.053146416026429506,
+      "val_auc": 0.9986235
+    }
+  ],
+  "run_name": "deberta-v2-xlarge_nl_wu0.1_bf16_lr5e-06_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-05T00:57:54+00:00",
+  "git_commit": null,
+  "notes": "xlarge"
+}

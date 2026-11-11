@@ -1,0 +1,46 @@
+{
+  "run": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed45_full",
+  "config": {
+    "model_name": "models/deberta-v3-large",
+    "max_length": 512,
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 45,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "bf16": false,
+    "gradient_checkpointing": false
+  },
+  "n_train": 10000,
+  "train_auc": 0.99998604,
+  "train_time_seconds": 5448.8,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1598527747826185,
+      "train_seconds": 1806.81,
+      "lr_end": 7.405213270142181e-06,
+      "peak_mem_gb": 50.9
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.021774885033559985,
+      "train_seconds": 1810.11,
+      "lr_end": 3.7026066350710906e-06,
+      "peak_mem_gb": 50.9
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.004885729253938189,
+      "train_seconds": 1813.55,
+      "lr_end": 0.0,
+      "peak_mem_gb": 50.9
+    }
+  ],
+  "test_predictions": "deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed45_full.csv"
+}

@@ -1,0 +1,89 @@
+{
+  "model": "distilbert",
+  "seed": 42,
+  "train_auc": 0.9996979375,
+  "val_auc": 0.990906,
+  "train_time_seconds": 577.365,
+  "hyperparameters": {
+    "model_name": "distilbert-base-cased",
+    "max_length": 512,
+    "learning_rate": 3e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": null,
+    "best_epoch": 4,
+    "device": "cuda",
+    "checkpoint": "checkpoints/distilbert/distilbert_cased_lr3e-05_ep4_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9996979375,
+    "accuracy": 0.992875,
+    "precision": 0.9885997521685254,
+    "recall": 0.99725,
+    "f1": 0.992906036092097,
+    "confusion_matrix": {
+      "tn": 3954,
+      "fp": 46,
+      "fn": 11,
+      "tp": 3989
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.990906,
+    "accuracy": 0.936,
+    "precision": 0.894927536231884,
+    "recall": 0.988,
+    "f1": 0.9391634980988594,
+    "confusion_matrix": {
+      "tn": 884,
+      "fp": 116,
+      "fn": 12,
+      "tp": 988
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.320274637632072,
+      "train_seconds": 115.53,
+      "lr_end": 2.25e-05,
+      "val_loss": 0.34892017658799884,
+      "val_auc": 0.980002
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.1326211927055847,
+      "train_seconds": 115.48,
+      "lr_end": 1.5e-05,
+      "val_loss": 0.5314657873567193,
+      "val_auc": 0.9831865
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0525851905036252,
+      "train_seconds": 115.59,
+      "lr_end": 7.5e-06,
+      "val_loss": 0.246875861575827,
+      "val_auc": 0.9908929999999999
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.019443070605921094,
+      "train_seconds": 115.41,
+      "lr_end": 0.0,
+      "val_loss": 0.33631761836470103,
+      "val_auc": 0.990906
+    }
+  ],
+  "run_name": "distilbert_cased_lr3e-05_ep4_bs16_len512_seed42",
+  "timestamp": "2026-11-04T04:18:07+00:00",
+  "git_commit": null,
+  "notes": "ablation"
+}

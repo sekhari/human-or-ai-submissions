@@ -1,0 +1,82 @@
+{
+  "model": "deberta-v3-base",
+  "seed": 42,
+  "train_auc": 0.9998107500000001,
+  "val_auc": 0.998639,
+  "train_time_seconds": 1663.351,
+  "hyperparameters": {
+    "model_name": "microsoft/deberta-v3-base",
+    "max_length": 512,
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "newline_marker": "[NL]",
+    "space_marker": null,
+    "best_epoch": 3,
+    "device": "cuda",
+    "checkpoint": "checkpoints/deberta/deberta-v3-base_nl_wu0.1_lr2e-05_ep3_bs16_len512_seed42"
+  },
+  "train_metrics": {
+    "auc": 0.9998107500000001,
+    "accuracy": 0.996875,
+    "precision": 0.9950186799501868,
+    "recall": 0.99875,
+    "f1": 0.9968808484092326,
+    "confusion_matrix": {
+      "tn": 3980,
+      "fp": 20,
+      "fn": 5,
+      "tp": 3995
+    },
+    "threshold": 0.5
+  },
+  "val_metrics": {
+    "auc": 0.998639,
+    "accuracy": 0.9875,
+    "precision": 0.9850746268656716,
+    "recall": 0.99,
+    "f1": 0.9875311720698254,
+    "confusion_matrix": {
+      "tn": 985,
+      "fp": 15,
+      "fn": 10,
+      "tp": 990
+    },
+    "threshold": 0.5
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.19217937916750089,
+      "train_seconds": 523.82,
+      "lr_end": 1.4814814814814815e-05,
+      "val_loss": 0.06353453578613698,
+      "val_auc": 0.997321
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.03679338574304711,
+      "train_seconds": 520.96,
+      "lr_end": 7.4074074074074075e-06,
+      "val_loss": 0.0508702221410349,
+      "val_auc": 0.998299
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.015572709310072241,
+      "train_seconds": 522.68,
+      "lr_end": 0.0,
+      "val_loss": 0.053754058753605935,
+      "val_auc": 0.998639
+    }
+  ],
+  "run_name": "deberta-v3-base_nl_wu0.1_lr2e-05_ep3_bs16_len512_seed42",
+  "timestamp": "2026-11-04T06:55:18+00:00",
+  "git_commit": null,
+  "notes": "overnight"
+}

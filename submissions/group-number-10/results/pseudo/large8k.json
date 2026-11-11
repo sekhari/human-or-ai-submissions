@@ -1,0 +1,11 @@
+{
+  "name": "large8k",
+  "checkpoints": [
+    "checkpoints/deberta/deberta-v3-large_nl_wu0.1_lr1e-05_ep3_bs16_len512_seed42"
+  ],
+  "threshold": 0.02,
+  "n_unlabeled": 3000,
+  "n_kept": 2974,
+  "n_ai": 1473,
+  "n_human": 1501
+}
