@@ -1,0 +1,4 @@
+representation,word_features,char_features,actual_features,solver,regularization,split_seed,train_auc,val_auc,fit_seconds,n_iter
+full_explicit,26000,35000,61000,lbfgs,none,42,1.0,0.965875,1.889958,15
+reduced_explicit,4000,4096,8096,lbfgs,none,42,0.999993125,0.945089,1.360163,35
+reduced_hashed,4000,4096,8096,lbfgs,none,42,0.9999995625,0.946974,1.955622,33
