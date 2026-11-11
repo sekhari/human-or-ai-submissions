@@ -1,0 +1,20 @@
+{
+  "training_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "source_sha256": "a2a52b6d243409e0630783fb3d0518f13a8dc3486b06ff92c0f8002bf62b06e5",
+  "weights": [
+    0.375,
+    0.225,
+    0.15,
+    0.25
+  ],
+  "fit_rows": 9200,
+  "calibration_rows": 800,
+  "encoder_epochs": 2,
+  "recipe": "four-method-robustness-v1",
+  "stage": "final",
+  "elapsed_minutes": 33.45975911918334,
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "torch": "2.14.1+cu130",
+  "device": "Tesla T4",
+  "peak_gpu_gib": 4.62431526184082
+}

@@ -1,0 +1,58 @@
+{
+  "weights_locked_before_testing": [
+    0.375,
+    0.225,
+    0.15,
+    0.25
+  ],
+  "score_mode": "quantile",
+  "lm_mode": "both",
+  "topics": [
+    {
+      "topic": "news",
+      "terms": [
+        "financial",
+        "bbc",
+        "country",
+        "added",
+        "told",
+        "market",
+        "years",
+        "uk",
+        "government",
+        "world",
+        "new",
+        "mr",
+        "company",
+        "year",
+        "said"
+      ],
+      "fit_rows": 4830,
+      "calibration_rows": 800,
+      "held_rows": 770,
+      "held_human": 377,
+      "held_ai": 393,
+      "candidate": {
+        "original": 0.9965038032950642,
+        "flat": 0.9795965200018898,
+        "short_lines": 0.9838284028860497
+      },
+      "control": {
+        "original": 0.9944654801195997,
+        "flat": 0.9529025857006904,
+        "short_lines": 0.9300558176578182
+      }
+    }
+  ],
+  "pooled_candidate": {
+    "original": 0.9965038032950642,
+    "flat": 0.9795965200018898,
+    "short_lines": 0.9838284028860497
+  },
+  "pooled_control": {
+    "original": 0.9944654801195997,
+    "flat": 0.9529025857006904,
+    "short_lines": 0.9300558176578182
+  },
+  "scope": "Additional content group with frozen recipe; from the original fitting partition only, not a human-poetry benchmark."
+}

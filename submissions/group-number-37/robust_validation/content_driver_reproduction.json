@@ -1,0 +1,59 @@
+{
+  "weights_locked_before_testing": [
+    0.375,
+    0.225,
+    0.15,
+    0.25
+  ],
+  "score_mode": "quantile",
+  "lm_mode": "both",
+  "topics": [
+    {
+      "topic": "news",
+      "terms": [
+        "financial",
+        "bbc",
+        "country",
+        "added",
+        "told",
+        "market",
+        "years",
+        "uk",
+        "government",
+        "world",
+        "new",
+        "mr",
+        "company",
+        "year",
+        "said"
+      ],
+      "fit_rows": 4830,
+      "calibration_rows": 800,
+      "held_rows": 770,
+      "held_human": 377,
+      "held_ai": 393,
+      "candidate": {
+        "original": 0.9965375503675056,
+        "flat": 0.9800622296015821,
+        "short_lines": 0.9826675035940632
+      },
+      "control": {
+        "original": 0.9943169930008572,
+        "flat": 0.952224269544617,
+        "short_lines": 0.927035454674307
+      }
+    }
+  ],
+  "pooled_candidate": {
+    "original": 0.9965375503675056,
+    "flat": 0.9800622296015821,
+    "short_lines": 0.9826675035940632
+  },
+  "pooled_control": {
+    "original": 0.9943169930008572,
+    "flat": 0.952224269544617,
+    "short_lines": 0.927035454674307
+  },
+  "scope": "Additional content group with frozen recipe; from the original fitting partition only, not a human-poetry benchmark.",
+  "verification_note": "Production content-check driver; local CPU refit of classical components with the original Colab neural score cache. Platform-dependent classical scores differ slightly; candidate retains gains on every view. Not an independent test."
+}

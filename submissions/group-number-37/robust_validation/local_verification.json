@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "archive_crc_passed": true,
+  "bundle_sha256": "4bd236a9432666055408a15307de62a296adc867876d03a926d1a5f138c1dce8",
+  "model_sha256": "704879462f00a1837e28bba57e8180fb24c54538a333888a167d5507ba5b0b88",
+  "bundle_files": 49,
+  "bundle_bytes": 860134885,
+  "dataset_files_in_bundle": false,
+  "lm_classifier_features": 45,
+  "fit_rows": 9200,
+  "calibration_rows": 800,
+  "prediction_rows": 3000
+}
