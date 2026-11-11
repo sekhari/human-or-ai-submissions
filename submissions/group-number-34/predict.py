@@ -25,6 +25,7 @@ def main() -> None:
   # format for kaggle submission
   submission = test_df[["id"]].copy()
   submission["label"] = probabilities
+  args.out.parent.mkdir(parents=True, exist_ok=True)
   submission.to_csv(args.out, index=False)
 
   print(f"Wrote {args.out}: {len(submission)} rows")

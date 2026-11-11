@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Reproduce the team's classical models on the existing fixed 2,000 IDs.
+"""Run classical model comparisons, regularization search, and learning curves.
 
-Run with --train PATH --output-dir PACKAGE_DIR --seed 42. Original team
-sources must be in PACKAGE_DIR/code, or supplied with --code-dir.
-The original model builders are retained. No models are downloaded or saved.
+The experiments use the validation IDs recorded in splits/val_ids.json.
 """
 from __future__ import annotations
 
@@ -99,10 +97,10 @@ def main():
     if args.seed != 42:
         parser.error("This predeclared experiment requires --seed 42.")
     output = args.output_dir.resolve()
-    code = (args.code_dir or output / "code").resolve()
+    code = (args.code_dir or Path(__file__).resolve().parent).resolve()
     train_path = args.train.resolve()
     if not (code / "train.py").is_file():
-        raise FileNotFoundError(f"Original team sources not found: {code / 'train.py'}")
+        raise FileNotFoundError(f"Model definitions are missing: {code / 'train.py'}")
     sys.path.insert(0, str(code))
     import numpy as np
     import pandas as pd
@@ -171,10 +169,10 @@ def main():
     if manifest_path.exists():
         old = json.loads(manifest_path.read_text())
         if old != protocol:
-            raise RuntimeError("Existing protocol differs in source, runner, data, split, configuration, or runtime. Use a new output directory; cache reuse refused.")
+            raise RuntimeError("The experiment configuration differs from this output directory. Choose a new output directory.")
     else:
         if any((output / "runs").glob("*/result.json")):
-            raise RuntimeError("Run results exist without a protocol; cache reuse refused.")
+            raise RuntimeError("Run results are missing protocol.json. Choose a new output directory.")
         write_json(manifest_path, protocol)
     output.mkdir(parents=True, exist_ok=True)
     progress_path = output / "progress.json"
@@ -313,7 +311,7 @@ def main():
                    "tuning": tuning, "learning_curve": curve,
                    "total_fit_seconds": sum(item["fit_seconds"] for item in all_results.values()),
                    "total_predict_seconds": sum(item["predict_seconds"] for item in all_results.values()),
-                   "interpretation": "Selected scores reuse the hyperparameter-selection validation set and are not an independent final test estimate."}
+                   "evaluation_protocol": "C is selected and evaluated on the same fixed validation partition."}
         if len(all_results) != EXPECTED_UNIQUE_FITS:
             raise RuntimeError(f"Expected {EXPECTED_UNIQUE_FITS} unique fits, found {len(all_results)}")
         write_json(output / "summary.json", summary)

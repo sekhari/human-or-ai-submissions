@@ -18,7 +18,7 @@ from sklearn.pipeline import make_pipeline, make_union
 
 from src.data import SEED, TEAM_FOLDER, get_train_val, load_data
 
-# TF-IDF/LR baseline
+# Word TF-IDF with logistic regression.
 def build_tfidf_lr(seed, C=4.0):
   vectorizer = TfidfVectorizer(
     ngram_range=(1, 2),
@@ -35,7 +35,7 @@ def build_tfidf_lr(seed, C=4.0):
 
   return make_pipeline(vectorizer, classifier)
 
-# character n-gram TF-IDF/LR: captures writing style rather than topic
+# Character n-gram TF-IDF with logistic regression.
 def build_char_lr(seed, C=4.0):
   vectorizer = TfidfVectorizer(
     analyzer="char_wb",
@@ -47,7 +47,7 @@ def build_char_lr(seed, C=4.0):
   classifier = LogisticRegression(C=C, max_iter=2000, random_state=seed)
   return make_pipeline(vectorizer, classifier)
 
-# word TF-IDF/linear SVM
+# Word TF-IDF with a calibrated linear SVM.
 def build_tfidf_svm(seed, C=4.0):
   vectorizer = TfidfVectorizer(
     ngram_range=(1, 2),
@@ -59,7 +59,7 @@ def build_tfidf_svm(seed, C=4.0):
   classifier = CalibratedClassifierCV(svm, cv=3)
   return make_pipeline(vectorizer, classifier)
 
-# word + char TF-IDF stacked side by side into one logistic regression
+# Combined word and character TF-IDF with logistic regression.
 def build_word_char_lr(seed, C=16.0):
   word_vectorizer = TfidfVectorizer(
     ngram_range=(1, 2),
@@ -78,7 +78,7 @@ def build_word_char_lr(seed, C=16.0):
   classifier = LogisticRegression(C=C, max_iter=2000, random_state=seed)
   return make_pipeline(features, classifier)
 
-# dict of all our models (add to this)
+# Model constructors.
 MODELS = {
   "tfidf_lr": build_tfidf_lr,
   "char_lr": build_char_lr,
@@ -93,7 +93,7 @@ def main() -> None:
   parser.add_argument("--seed", type=int, default=SEED)
   parser.add_argument("--model-out", type=Path, default=Path("model.joblib"))
   parser.add_argument("--model", default="tfidf_lr", choices=MODELS.keys(), help="which model to train")
-  parser.add_argument("--C", type=float, default=4.0, help="regularization strength")
+  parser.add_argument("--C", type=float, default=4.0, help="Inverse regularization strength")
   parser.add_argument("--full", action="store_true", help="train on all labeled rows and save the model") 
   args = parser.parse_args()
 
@@ -104,6 +104,7 @@ def main() -> None:
   # final mode: train on all 10,000 rows and save
   if args.full:
     model.fit(full_df["text"], full_df["label"])
+    args.model_out.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(model, args.model_out)
     print(f"Trained {args.model} on {len(full_df)} rows, saved {args.model_out}")
     return
@@ -114,7 +115,7 @@ def main() -> None:
   model.fit(train_df["text"], train_df["label"])
   train_seconds = time.time() - start
 
-  # predicated probabilites
+  # Predict class probabilities.
   train_probs = model.predict_proba(train_df["text"])[:,1]
   val_probs = model.predict_proba(val_df["text"])[:,1]
 
@@ -123,15 +124,15 @@ def main() -> None:
     "model": args.model,
     "C": args.C,
     "seed": args.seed,
-    "train_auroc": round(roc_auc_score(train_df["label"], train_probs), 4),
-    "val_auroc": round(roc_auc_score(val_df["label"], val_probs), 4),
-    "train_seconds": round(train_seconds, 1),
+    "train_auroc": float(roc_auc_score(train_df["label"], train_probs)),
+    "val_auroc": float(roc_auc_score(val_df["label"], val_probs)),
+    "train_seconds": train_seconds,
   }
   print(results)
 
   # save results to respective json file in results/ 
-  results_file = TEAM_FOLDER / "results" / f"{args.model}.json"
-  results_file.parent.mkdir(exist_ok=True)
+  results_file = TEAM_FOLDER / "runs" / "validation" / f"{args.model}.json"
+  results_file.parent.mkdir(parents=True, exist_ok=True)
 
   with open(results_file, "w") as f:
     json.dump(results, f, indent=2)

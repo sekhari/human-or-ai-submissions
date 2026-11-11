@@ -46,7 +46,7 @@ def create_val_split(train_df, seed=SEED):
 def get_train_val(full_df):
   # split labeled data into (train_df, val_df) using the saved validation IDs 
   if not SPLIT_FILE.exists():
-    raise FileNotFoundError("splits/val_ids.json is missing. Run make_split.py first.")
+    raise FileNotFoundError("Place the recorded validation IDs in splits/val_ids.json.")
 
   with open(SPLIT_FILE) as f:
     val_ids = set(json.load(f)["val_ids"])
