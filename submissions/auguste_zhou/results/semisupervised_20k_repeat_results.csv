@@ -1,0 +1,5 @@
+method,threshold,pseudo_weight,pseudo_total,pseudo_human,pseudo_ai,train_auc,validation_auc,iterations,seconds
+supervised,,1.0,0,0,0,0.9999229375,0.9534600000000001,17,31.23
+pseudo_label,0.99,1.0,1227,589,638,0.9997576875,0.950206,16,31.84
+pseudo_label,0.95,1.0,1860,966,894,0.9997311875,0.953815,17,32.77
+pseudo_label_downweighted,0.95,0.25,1860,966,894,0.9997847499999999,0.954278,17,33.46
