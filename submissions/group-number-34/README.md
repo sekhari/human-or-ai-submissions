@@ -99,4 +99,4 @@ Its columns are `id` and `label`; `label` is the predicted probability of AI aut
 
 ## AI Disclosure
 
-I used ChatGPT to help modify the code, plot the experimental results, and organize the documentation.
+We used ChatGPT to help modify the code, plot the experimental results, and organize the documentation.
