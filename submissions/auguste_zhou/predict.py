@@ -1,10 +1,10 @@
 """Write Kaggle probabilities using a saved detector."""
 import argparse
 from pathlib import Path
+from model import predict_probabilities
 import joblib
 import numpy as np
 import pandas as pd
-from model import predict_probabilities
 
 
 def main():

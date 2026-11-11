@@ -1,11 +1,11 @@
 """Train the detector or evaluate a stratified holdout."""
 import argparse
 from pathlib import Path
+from model import fit_model, predict_probabilities
 import joblib
 import pandas as pd
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import train_test_split
-from model import fit_model, predict_probabilities
 
 
 def main():
