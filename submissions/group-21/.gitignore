@@ -1,0 +1,5 @@
+outputs/
+.venv-baselines/
+*.safetensors
+*.npy
+*.csv.gz
