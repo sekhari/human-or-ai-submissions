@@ -1,6 +1,6 @@
 # Group 16
 
-**Team members:** Brandon She (qs249), Youzi Ouyang (yo267), Ved Rajesh (vr382)
+**Team members:** Youzi Ouyang (yo267), Ved Rajesh (vr382), Brandon She (qs249)
 **Kaggle team name:** `Group 16`
 
 ## Setup
