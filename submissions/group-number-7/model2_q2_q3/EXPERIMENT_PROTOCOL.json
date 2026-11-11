@@ -1,0 +1,35 @@
+{
+  "status": "fixed_before_new_experiments",
+  "model": "Teammate selected Model 2: char TF-IDF 2-4 grams + LinearSVC C=1; 3-fold sigmoid teacher calibration",
+  "q2": {
+    "sizes": [
+      500,
+      1000,
+      2000,
+      5000,
+      8000
+    ],
+    "subsets": "Nested equal-class subsets, numpy default_rng(42), preserved Model 2 partition row order",
+    "metric": "Training/validation AUROC from calibrated probability; margin AUROC also checked"
+  },
+  "q3": {
+    "method": "One-round confidence-based pseudo-labeling",
+    "confidence_threshold": 0.95,
+    "iterations": 1,
+    "pseudo_weight": 1.0,
+    "baseline": "Q2 8000-row supervised model",
+    "teacher": "3-fold sigmoid calibration using training rows only",
+    "student": "Fresh unchanged TF-IDF + LinearSVC pipeline on 8000 true labels plus selected pseudo-labels",
+    "metric": "Compare raw SVM margin AUROC; no student calibration on pseudo-labels and no student probability submission",
+    "exclusion": "Unlabeled normalized exact duplicate of train/validation, or hashed word-trigram cosine >=0.9 to validation, excluded using texts only"
+  },
+  "common": {
+    "validation": "Canonical teammate 2000-row stratified holdout, same membership as original seed42 split",
+    "labels": "Human0 AI1",
+    "sensitivity": "Secondary evaluation excludes existing training-near-duplicate validation IDs with hashed word-trigram cosine >=0.9; main holdout is unchanged",
+    "threads": 1,
+    "no_test_data": true,
+    "no_overleaf_edits": true,
+    "single_seed_limit": true
+  }
+}

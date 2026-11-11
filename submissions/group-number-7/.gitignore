@@ -1,0 +1,11 @@
+# Local artifacts and downloaded competition data never belong in the public PR.
+/outputs/
+/data/
+/.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.joblib
+*.pkl
+*.pt
+*.zip

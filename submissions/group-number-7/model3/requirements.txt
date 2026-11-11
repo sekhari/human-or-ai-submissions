@@ -1,0 +1,10 @@
+# Model 3 Colab notebook additionally installs these packages itself.
+# Requires a separately installed spaCy English pipeline: en_core_web_sm.
+convokit
+spacy
+nltk
+scikit-learn
+numpy
+pandas
+matplotlib
+tqdm

@@ -1,0 +1,8 @@
+# Core dependencies for Model 1, Model 2, ensemble, Q1 and Q4.
+# Reproduction runs were recorded with Python 3.11 / 3.12 and differing
+# numerical-library versions; use each module's pinned requirements when
+# reproducing teammate-specific experiments exactly.
+numpy>=2.0,<3
+pandas>=2.2,<4
+scipy>=1.16,<2
+scikit-learn>=1.8,<2
