@@ -1,66 +1,49 @@
-# group number 37
+# Human or AI? · Group Number 37
 
-human or ai, cornell tech cs 5785. predicts the probability that a passage was written by ai.
+**Kaggle team:** Group Number 37
 
-**team:** cris nicoglu (netid: TODO), derrick cardenas (netid: TODO), alexander siladie (netid: TODO)
-**kaggle team name:** Group Number 37
+| Team member | NetID |
+| --- | --- |
+| Alexander Siladie | `aps335` |
+| Cris Nicoglu | `cs2644` |
+| Derrick Cardenas | `djc486` |
 
-## current four-method pipeline
+Our final submission combines a lexical and style reference, CatBoost on GPT-2 and GPT-2 Large features, DistilRoBERTa, and DeBERTa-v3-base. We normalize each component using quantiles fitted on a separate calibration set and blend them with weights 0.350, 0.234, 0.156, and 0.260. The public Kaggle AUROC was 0.97960.
 
-**Current public best reported by Alex: 0.97960**, using reference-035. Start with [TEAM_HANDOFF.md](TEAM_HANDOFF.md).
-The accepted file is [predictions/submission_current_best.csv](predictions/submission_current_best.csv).
-Use [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb) for fresh T4 training, or `predict_robust.py --recipe current` with an existing bundle.
-`reblend_robust.py` converts the same model's earlier baseline CSV without GPU inference.
+## Setup
 
-The commands below describe the original three-way team control. The four-method pipeline uses the `*_robust.py` scripts documented in the handoff.
+The full workflow was run on a Colab T4 with Python 3.13.16 and CUDA PyTorch 2.14.1. For Colab, open [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb), select a T4 runtime, run all cells, and provide the competition ZIP when prompted. The notebook trains the current recipe and generates `submission.csv`.
 
-## setup
-
-python 3.12.
+For the command line, use a Python 3.13 environment with CUDA-enabled PyTorch installed. Download the supplied CSVs from Kaggle into `data/` at the repository root. From that root, run:
 
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+cd submissions/group-number-37
+python -m pip install -r requirements-robust.txt
+export USE_TF=0 USE_FLAX=0
 ```
 
-download the competition files into `data/` at the repo root (`train.csv`, `unlabeled.csv`, `test.csv`, `train_starter_2000.csv`,
-`sample_submission.csv`). they are not committed. gpt2 and distilroberta-base weights download from hugging face on first use.
+The pretrained weights download on first use. Keep data, generated predictions, feature caches, and fitted weights outside Git.
 
-## train and validate
+## Evaluate on labeled validation data
 
 ```bash
-python submissions/group-number-37/experiments/04_surprisal_cache.py      # optional cache, about 40 minutes on an m4
-python submissions/group-number-37/train.py --train data/train.csv --validate --model-out model.joblib
+python train_robust.py --data ../../data --output validation_model --validation --recipe current
+python validate_robust.py --data ../../data --model validation_model
 ```
 
-`--validate` fits on the fixed 8000 rows, prints train and validation auroc, then refits on all 10000 rows for the saved model.
-the model is a rank blend of the reference model, surprisal features and a distilroberta encoder, weighted 0.55, 0.25, 0.2
-(`src/pipeline.py`, chosen in `experiments/21_nested_three_way.py`). the encoder is saved to `--encoder-dir`, default `encoder/`.
+Seed 3737 sets the stratified 8,000/2,000 split and the model seeds. Seeds 9407 and 9413 divide the 8,000 development rows into 6,400 fitting rows, 800 calibration rows, and 800 selection rows. The evaluation script reports AUROC on the fixed 2,000-row audit for original text and formatting stress tests. Its output is `validation_model/audit_report.json`.
 
-each encoder training takes about 20 minutes on an m4. `--validate` trains it twice, so skip the flag to train once. keep the
-machine awake during long runs.
+The earlier model comparisons and learning-curve and pseudo-labeling studies are in `experiments/`. Their findings are in [reports/FINDINGS.md](reports/FINDINGS.md). The older `train.py` and `predict.py` reproduce the three-method control. Its separate environment uses Python 3.12 and `requirements.txt`.
 
-## write submission.csv
+## Generate the Kaggle CSV
 
 ```bash
-python submissions/group-number-37/predict.py --test data/test.csv --model model.joblib --out submission.csv
+python train_robust.py --data ../../data --output final_model --recipe current
+python predict_robust.py --model final_model --input ../../data/test.csv --output submission.csv --recipe current
 ```
 
-run this from the same folder as training. the saved model finds its encoder through the relative `--encoder-dir` path.
+Final fitting uses 9,200 labeled rows and reserves 800 for calibration. Prediction writes the original IDs and AI scores to `submission.csv`. The submitted CSV was generated using the fast reblend from the same fitted components. Full prediction implements the same four-component weights and can also score a new CSV with `id,text` columns. See [TEAM_HANDOFF.md](TEAM_HANDOFF.md) for the reblend workflow.
 
-## seeds
+## AI assistance
 
-global seed 3737, which also fixes the 8000/2000 stratified split. the first notebook's recipe in `src/baseline.py` keeps its seed 5785.
-
-## layout
-
-- `src/` data, features, models, validation helpers, final pipeline
-- `experiments/` one numbered script per question, each writes to `reports/`
-- `reports/FINDINGS.md` what we tried and what we learned
-- `legacy/` the first notebook and its predictions
-- `results/` caches and model files, not committed
-
-## ai assistance
-
-TODO: team to write before submission. required by the course, see report q6.3.
+We used OpenAI Codex for coding, debugging, running experiments, explanations, and drafting and editing the report. Alex directed the final ensemble workflow and robustness comparisons and tested the exported Kaggle submissions. Automated checks covered data splits, prediction IDs and order, score ranges, and agreement between full scoring and the fast reblend. We used the checks and reported results to guide the final recipe. This matches Q6.3 in the report.

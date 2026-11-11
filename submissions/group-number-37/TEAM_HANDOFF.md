@@ -1,5 +1,7 @@
 # Current team handoff
 
+Start with the [course README](README.md) for setup and reproduction commands.
+
 The current accepted submission is **reference-035**, reported by Alex at **0.97960** on the public leaderboard. The earlier four-method submission scored 0.97956. The private score is unknown.
 
 ## Current recipe
@@ -17,7 +19,6 @@ The models and quantile calibration are shared with the earlier submission; only
 
 ## Files to start with
 
-- `predictions/submission_current_best.csv`: the actual accepted 3,000-row file reported at 0.97960. Its IDs/order match the supplied sample. Do not edit rows based on leaderboard feedback.
 - `Four_Method_Robust_Colab.ipynb`: self-contained fresh T4 training, prediction, checks, and model export; upload the original competition ZIP.
 - `train_robust.py`, `predict_robust.py`, `reblend_robust.py`: training, full inference, and a fast CPU-only reblend.
 - `robust_validation/current_recipe.json`: current weights, paired checks, and reported public scores.
