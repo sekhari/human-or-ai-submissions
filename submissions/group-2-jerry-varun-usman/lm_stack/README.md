@@ -32,7 +32,8 @@ python ensemble.py --npz-dir preds/usman
 ```
 
 `preds/usman/` needs `base512_main.npz`, `base512_final_test.npz`
-and `deberta_main.npz`, made by `../train_deberta.py` (command: TODO).
+and `deberta_main.npz`, made by `../train_deberta.py` (see the usage
+lines in its docstring; base512 uses `--tag base512`).
 Output: `blend/submission_w0.2.csv`.
 
 Seed 42 everywhere. Plain `train.py` defaults to the older seed
