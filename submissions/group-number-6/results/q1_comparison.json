@@ -1,0 +1,57 @@
+{
+ "A_word_lr": {
+  "params": {
+   "ngram": [
+    1,
+    3
+   ],
+   "C": 256
+  },
+  "train_auc": 1.0,
+  "val_auc": 0.9699869999999999,
+  "fit_seconds": 11.255574226379395
+ },
+ "B_char_lr": {
+  "params": {
+   "analyzer": "char",
+   "ngram": [
+    2,
+    5
+   ],
+   "C": 256
+  },
+  "train_auc": 1.0,
+  "val_auc": 0.9757669999999998,
+  "fit_seconds": 35.65766739845276
+ },
+ "C_style_gbm": {
+  "params": {
+   "lr": 0.1,
+   "max_leaf_nodes": 63,
+   "max_iter": 500
+  },
+  "train_auc": 1.0,
+  "val_auc": 0.99684,
+  "fit_seconds": 7.775689601898193
+ },
+ "D_word_nb": {
+  "params": {
+   "ngram": [
+    1,
+    2
+   ],
+   "alpha": 1.0
+  },
+  "train_auc": 0.995629625,
+  "val_auc": 0.9193004999999999,
+  "fit_seconds": 3.0444159507751465
+ },
+ "E_wordchar_svm": {
+  "params": {
+   "C": 2
+  },
+  "train_auc": 1.0,
+  "val_auc": 0.9642270000000001,
+  "fit_seconds": 20.385266304016113
+ }
+}

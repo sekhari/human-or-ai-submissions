@@ -1,0 +1,36 @@
+{
+ "description": "Final model: equal-weight logit average of word TF-IDF LR, char TF-IDF LR and stylometric GBM on Unicode-normalised text. Member hyperparameters chosen by 5-fold CV on the 8,000-row training partition (results/q1_cv_grid.json).",
+ "normalize": true,
+ "seed": 20261102,
+ "members": [
+  {
+   "name": "A_word_lr",
+   "params": {
+    "ngram": [
+     1,
+     3
+    ],
+    "C": 256
+   }
+  },
+  {
+   "name": "B_char_lr",
+   "params": {
+    "analyzer": "char",
+    "ngram": [
+     2,
+     5
+    ],
+    "C": 256
+   }
+  },
+  {
+   "name": "C_style_gbm",
+   "params": {
+    "lr": 0.1,
+    "max_leaf_nodes": 63,
+    "max_iter": 500
+   }
+  }
+ ]
+}

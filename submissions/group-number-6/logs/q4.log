@@ -1,0 +1,150 @@
+{
+ "config": "ensemble+norm",
+ "train_auc": 1.0,
+ "val_auc": 0.998416,
+ "val_accuracy@0.5": 0.987,
+ "members": {
+  "A_word_lr": {
+   "train_auc": 1.0,
+   "val_auc": 0.9700620000000001
+  },
+  "B_char_lr": {
+   "train_auc": 1.0,
+   "val_auc": 0.9757530000000001
+  },
+  "C_style_gbm": {
+   "train_auc": 1.0,
+   "val_auc": 0.9967630000000001
+  }
+ }
+}
+{
+ "length_bins": [
+  {
+   "bin": "<=160 words",
+   "n": 509,
+   "ai_frac": 0.5776031434184676,
+   "val_auc": 0.9955861414333175
+  },
+  {
+   "bin": "161-240 words",
+   "n": 836,
+   "ai_frac": 0.4246411483253589,
+   "val_auc": 0.9992621006705514
+  },
+  {
+   "bin": ">240 words",
+   "n": 655,
+   "ai_frac": 0.5358778625954198,
+   "val_auc": 0.9995126705653021
+  }
+ ],
+ "clusters": [
+  {
+   "cluster": 0,
+   "top_terms": [
+    "said",
+    "born",
+    "year",
+    "new",
+    "world",
+    "american",
+    "including",
+    "years"
+   ],
+   "n": 665,
+   "ai_frac": 0.49774436090225566,
+   "val_auc": 0.9972863939794128
+  },
+  {
+   "cluster": 1,
+   "top_terms": [
+    "like",
+    "just",
+    "ve",
+    "know",
+    "don",
+    "really",
+    "feel",
+    "people"
+   ],
+   "n": 506,
+   "ai_frac": 0.48616600790513836,
+   "val_auc": 0.9979831144465291
+  },
+  {
+   "cluster": 2,
+   "top_terms": [
+    "cup",
+    "minutes",
+    "salt",
+    "add",
+    "teaspoon",
+    "heat",
+    "sugar",
+    "chopped"
+   ],
+   "n": 403,
+   "ai_frac": 0.5359801488833746,
+   "val_auc": 0.9999257278669044
+  },
+  {
+   "cluster": 3,
+   "top_terms": [
+    "study",
+    "results",
+    "properties",
+    "paper",
+    "theory",
+    "quantum",
+    "systems",
+    "using"
+   ],
+   "n": 192,
+   "ai_frac": 0.4947916666666667,
+   "val_auc": 0.9946825827455236
+  },
+  {
+   "cluster": 4,
+   "top_terms": [
+    "segmentation",
+    "image",
+    "images",
+    "method",
+    "learning",
+    "methods",
+    "approach",
+    "proposed"
+   ],
+   "n": 234,
+   "ai_frac": 0.47863247863247865,
+   "val_auc": 0.9999268149882904
+  }
+ ],
+ "structure": [
+  {
+   "group": "has line breaks",
+   "n": 1384,
+   "ai_frac": 0.5289017341040463,
+   "val_auc": 0.9990068389821986
+  },
+  {
+   "group": "single block of prose",
+   "n": 616,
+   "ai_frac": 0.43506493506493504,
+   "val_auc": 0.9969763252702006
+  },
+  {
+   "group": "has blank line",
+   "n": 666,
+   "ai_frac": 1.0,
+   "val_auc": null
+  },
+  {
+   "group": "no blank line",
+   "n": 1334,
+   "ai_frac": 0.25037481259370314,
+   "val_auc": 0.995311377245509
+  }
+ ]
+}

@@ -1,0 +1,194 @@
+{
+ "configs": {
+  "B_char_lr": {
+   "fit_seconds": 36.977450370788574,
+   "predict_seconds_2000": 4.4142022132873535,
+   "clean_val": 0.9757669999999998,
+   "format_stripped": 0.951863,
+   "attack_ai_only": 0.9751139999999999,
+   "attack_both": 0.974331,
+   "per_attack_ai_only": {
+    "article_deletion": 0.9753562499999999,
+    "homoglyph": 0.9778531073446328,
+    "typo": 0.973485380116959,
+    "upper_lower": 0.9648633540372671,
+    "whitespace": 0.977012987012987,
+    "zero_width": 0.9814011299435029
+   },
+   "mean_p_ai_on_attacked_ai": 0.8636704703928467,
+   "mean_p_ai_on_clean_ai": 0.8734296174946798,
+   "topic_shift_per_cluster": {
+    "0": 0.8289262062578546,
+    "1": 0.8811793701070618,
+    "2": 0.9092412863568369,
+    "3": 0.9836184320499247,
+    "4": 0.9967207326492331
+   },
+   "topic_shift_mean": 0.9199372054841822,
+   "topic_shift_seconds": 160.65341424942017
+  },
+  "C_style_gbm": {
+   "fit_seconds": 7.352557897567749,
+   "predict_seconds_2000": 1.121809959411621,
+   "clean_val": 0.99684,
+   "format_stripped": 0.960018,
+   "attack_ai_only": 0.995938,
+   "attack_both": 0.99229,
+   "per_attack_ai_only": {
+    "article_deletion": 0.99919375,
+    "homoglyph": 0.9944802259887006,
+    "typo": 0.9981812865497076,
+    "upper_lower": 0.9977329192546582,
+    "whitespace": 0.9886883116883116,
+    "zero_width": 0.9969604519774011
+   },
+   "mean_p_ai_on_attacked_ai": 0.9527764309641484,
+   "mean_p_ai_on_clean_ai": 0.9697823201256096,
+   "topic_shift_per_cluster": {
+    "0": 0.98131188745571,
+    "1": 0.9823331216806932,
+    "2": 0.9886864313757523,
+    "3": 0.9923911764887973,
+    "4": 0.99958071278826
+   },
+   "topic_shift_mean": 0.9888606659578427,
+   "topic_shift_seconds": 34.736220836639404
+  },
+  "ensemble": {
+   "fit_seconds": 55.10095953941345,
+   "predict_seconds_2000": 7.441588401794434,
+   "clean_val": 0.9984,
+   "format_stripped": 0.987021,
+   "attack_ai_only": 0.998295,
+   "attack_both": 0.997359,
+   "per_attack_ai_only": {
+    "article_deletion": 0.99926875,
+    "homoglyph": 0.997593220338983,
+    "typo": 0.9996140350877193,
+    "upper_lower": 0.9973850931677019,
+    "whitespace": 0.9966688311688311,
+    "zero_width": 0.9990847457627118
+   },
+   "mean_p_ai_on_attacked_ai": 0.9535237788354056,
+   "mean_p_ai_on_clean_ai": 0.9647194020823701,
+   "member_clean_val": {
+    "A_word_lr": 0.9699869999999999,
+    "B_char_lr": 0.9757669999999998,
+    "C_style_gbm": 0.99684
+   },
+   "topic_shift_per_cluster": {
+    "0": 0.9895653915131929,
+    "1": 0.9874779324595626,
+    "2": 0.9922806336823726,
+    "3": 0.9979817115828705,
+    "4": 0.9994703740483284
+   },
+   "topic_shift_mean": 0.9933552086572653,
+   "topic_shift_seconds": 245.7844099998474
+  },
+  "ensemble+norm": {
+   "fit_seconds": 55.54308080673218,
+   "predict_seconds_2000": 7.0772881507873535,
+   "clean_val": 0.998416,
+   "format_stripped": 0.9867670000000001,
+   "attack_ai_only": 0.9985280000000001,
+   "attack_both": 0.998113,
+   "per_attack_ai_only": {
+    "article_deletion": 0.9994124999999999,
+    "homoglyph": 0.9978813559322035,
+    "typo": 0.9996081871345028,
+    "upper_lower": 0.9973416149068324,
+    "whitespace": 0.9977727272727273,
+    "zero_width": 0.9990677966101695
+   },
+   "mean_p_ai_on_attacked_ai": 0.964128519644476,
+   "mean_p_ai_on_clean_ai": 0.9645448999639573,
+   "member_clean_val": {
+    "A_word_lr": 0.9700620000000001,
+    "B_char_lr": 0.9757530000000001,
+    "C_style_gbm": 0.9967630000000001
+   },
+   "topic_shift_per_cluster": {
+    "0": 0.9884891005898354,
+    "1": 0.9871090696214844,
+    "2": 0.992682258561332,
+    "3": 0.9973254582938653,
+    "4": 0.9993821030563831
+   },
+   "topic_shift_mean": 0.99299759802458,
+   "topic_shift_seconds": 252.73446559906006
+  }
+ },
+ "clusters": {
+  "0": {
+   "n": 2622,
+   "ai_frac": 0.5106788710907704,
+   "top_terms": [
+    "said",
+    "born",
+    "year",
+    "new",
+    "world",
+    "american",
+    "including",
+    "years"
+   ]
+  },
+  "1": {
+   "n": 2088,
+   "ai_frac": 0.4952107279693487,
+   "top_terms": [
+    "like",
+    "just",
+    "ve",
+    "know",
+    "don",
+    "really",
+    "feel",
+    "people"
+   ]
+  },
+  "2": {
+   "n": 1534,
+   "ai_frac": 0.4830508474576271,
+   "top_terms": [
+    "cup",
+    "minutes",
+    "salt",
+    "add",
+    "teaspoon",
+    "heat",
+    "sugar",
+    "chopped"
+   ]
+  },
+  "3": {
+   "n": 804,
+   "ai_frac": 0.5111940298507462,
+   "top_terms": [
+    "study",
+    "results",
+    "properties",
+    "paper",
+    "theory",
+    "quantum",
+    "systems",
+    "using"
+   ]
+  },
+  "4": {
+   "n": 952,
+   "ai_frac": 0.4989495798319328,
+   "top_terms": [
+    "segmentation",
+    "image",
+    "images",
+    "method",
+    "learning",
+    "methods",
+    "approach",
+    "proposed"
+   ]
+  }
+ }
+}

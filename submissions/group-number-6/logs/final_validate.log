@@ -1,0 +1,1 @@
+config=final.json fit=95s train AUROC=1.0000 val AUROC=0.9984

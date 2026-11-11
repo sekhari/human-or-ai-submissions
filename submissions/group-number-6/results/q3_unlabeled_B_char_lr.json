@@ -1,0 +1,62 @@
+{
+ "model": "B_char_lr",
+ "params": {
+  "analyzer": "char",
+  "ngram": [
+   2,
+   5
+  ],
+  "C": 256
+ },
+ "thresholds": [
+  0.1,
+  0.9
+ ],
+ "rounds": 2,
+ "supervised": {
+  "val_auc": 0.9757669999999998,
+  "seconds": 41.67667317390442
+ },
+ "tfidf_unlab": {
+  "val_auc": 0.9755099999999999,
+  "seconds": 66.4285318851471
+ },
+ "self_train": {
+  "val_auc": 0.976858,
+  "seconds": 159.24998998641968,
+  "rounds": [
+   {
+    "round": 1,
+    "n_pseudo": 2261,
+    "frac_ai": 0.465280849181778
+   },
+   {
+    "round": 2,
+    "n_pseudo": 2347,
+    "frac_ai": 0.4635705155517682
+   }
+  ]
+ },
+ "unlabeled_score_hist": [
+  1259,
+  146,
+  79,
+  64,
+  72,
+  57,
+  57,
+  90,
+  88,
+  1088
+ ],
+ "pseudo_label_noise_sim": {
+  "n_pool": 3000,
+  "n_selected": 2276,
+  "coverage": 0.7586666666666667,
+  "error_rate": 0.031195079086115993,
+  "error_rate_on_AI_pseudo": 0.012003693444136657,
+  "error_rate_on_human_pseudo": 0.04861693210393965,
+  "auc_on_pool": 0.9696062222222221,
+  "true_ai_frac_among_unselected": 0.5138121546961326
+ }
+}

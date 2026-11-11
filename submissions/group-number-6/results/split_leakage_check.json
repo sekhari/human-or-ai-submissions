@@ -1,0 +1,23 @@
+{
+  "val": {
+    "n": 2000,
+    "max_sim_to_train_p50": 0.10420376404909672,
+    "max_sim_to_train_p99": 0.543923968741792,
+    "n_above_0.8": 2,
+    "n_above_0.5": 27
+  },
+  "test": {
+    "n": 3000,
+    "max_sim_to_train_p50": 0.06268879595415197,
+    "max_sim_to_train_p99": 0.33075150056769215,
+    "n_above_0.8": 0,
+    "n_above_0.5": 7
+  },
+  "unlabeled": {
+    "n": 3000,
+    "max_sim_to_train_p50": 0.08876844091752763,
+    "max_sim_to_train_p99": 0.43467577848976646,
+    "n_above_0.8": 0,
+    "n_above_0.5": 25
+  }
+}
