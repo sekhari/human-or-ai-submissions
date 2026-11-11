@@ -1,0 +1,11 @@
+# GPT-2 (124M) token log-prob / rank / entropy features ONLY (no stylometric features) -> LightGBM.
+# The "LM features only" member of final_A (run 20261031_var__lm_gpt2_nostyle, which was launched as
+# `train.py --model lm_gpt2 --set model.params.add_stylometric=false`). Shares lm_gpt2's feature cache.
+model:
+  name: lm_perplexity
+  params:
+    lm_name: openai-community/gpt2
+    max_length: 512
+    batch_size: 16
+    head: lightgbm
+    add_stylometric: false

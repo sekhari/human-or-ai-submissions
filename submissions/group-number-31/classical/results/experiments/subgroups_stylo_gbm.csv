@@ -1,0 +1,7 @@
+group,count,n_ai,auroc,grouping,model
+<150 words,380,234,0.999268,word count,stylo_gbm
+150-250 words,1049,444,0.999159,word count,stylo_gbm
+>250 words,571,322,0.996745,word count,stylo_gbm
+prose,1400,804,0.998445,line structure,stylo_gbm
+"short lines (lists, recipes)",575,192,0.997403,line structure,stylo_gbm
+verse,25,4,1,line structure,stylo_gbm

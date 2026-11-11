@@ -1,0 +1,27 @@
+# Course protocol: every model behind the final submissions (plus two baselines), trained on the
+# fixed 8,000 rows and scored on the fixed 2,000 validation rows (../common/val_ids.csv), the same
+# split as the classical track. Results feed report Q1.2:
+#   python run_all.py --profile fixed
+#   python scripts/report_experiments.py collect --session outputs/sessions/<session>
+# Seed 20261023 (the original research runs used 42). LM features come from outputs/cache/ if present.
+description: Fixed 8k/2k split, every model of final_A/B/C + tfidf_logreg / stylometric_gbm_ext baselines.
+log_results: false   # keep experiments/results.csv as the record of the original 5-fold runs
+
+defaults:
+  cv.scheme: fixed
+  seed: 20261023
+
+jobs:
+  - {name: tfidf_logreg,        config: tfidf_logreg,        resource: cpu, cost: 3}
+  - {name: stylometric_gbm_ext, config: stylometric_gbm_ext, resource: cpu, cost: 1}
+  - {name: lm_gpt2,             config: lm_gpt2,             resource: gpu, cost: 1}
+  - {name: lm_gpt2_nostyle,     config: lm_gpt2_nostyle,     resource: gpu, cost: 1}
+  - {name: lm_gpt2_medium,      config: lm_gpt2_medium,      resource: gpu, cost: 1}
+  - {name: binoculars_qwen05b,  config: binoculars_qwen05b,  resource: gpu, cost: 2}
+  - {name: binoculars_qwen15b,  config: binoculars_qwen15b,  resource: gpu, cost: 3}
+  - {name: ft_roberta_base,          config: ft_roberta_base,          resource: gpu, cost: 4}
+  - {name: ft_deberta_v3_large,      config: ft_deberta_v3_large,      resource: gpu, cost: 20}
+  - {name: ft_openai_detector_large, config: ft_openai_detector_large, resource: gpu, cost: 25}
+
+report:
+  ensemble_groups: [main]

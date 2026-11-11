@@ -1,0 +1,7 @@
+model,variant,train_auroc,val_auroc,val_tpr_at_1fpr,fit_time_s,feature_time_s
+stylometric_gbm_ext,as is,1,0.99836,0.979,6,
+stylometric_gbm_ext,debiased,1,0.996328,0.955,5.9,
+stylometric_gbm_ext,join_lines,1,0.979041,0.79,6,
+lm_gpt2,as is,1,0.999718,0.995,3.8,1.1
+lm_gpt2,debiased,1,0.998834,0.981,3.9,1.1
+lm_gpt2,join_lines,0.999999,0.994853,0.933,4.3,98.7

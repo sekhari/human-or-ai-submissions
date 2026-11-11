@@ -1,0 +1,35 @@
+{
+  "model": "tfidf_lr",
+  "registry_name": "tfidf_lr",
+  "params": {
+    "C": 4.0,
+    "word_ngrams": [
+      1,
+      2
+    ],
+    "char_ngrams": [
+      1,
+      5
+    ],
+    "word_min_df": 2,
+    "char_min_df": 3,
+    "max_features": 300000,
+    "lowercase": true,
+    "char_analyzer": "char",
+    "distort_k": 100,
+    "distort_ngrams": 3
+  },
+  "seed": 20261023,
+  "train_auroc": 1.0,
+  "val_auroc": 0.996702,
+  "val_tpr_at_1fpr": 0.964,
+  "n_train": 8000,
+  "n_val": 2000,
+  "fit_time_s": 25.1,
+  "val_predict_time_s": 4.2,
+  "hardware": "CPU (AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD)",
+  "searched": false,
+  "cv": "stratified",
+  "timestamp": "2026-11-10T17:36:33",
+  "git_commit": "81ce51fc85e2cce5e14ab6f03a2b2a7cf1fe89a9"
+}

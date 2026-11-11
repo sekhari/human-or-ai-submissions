@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------- data
+# Nothing under data/ is uploaded (competition CSVs, external/generated data).
+# Only the README and the empty-folder placeholders are kept so the layout exists after cloning.
+# To share extra datasets through git later, delete the "data/external/*" line below.
+data/*
+!data/README.md
+!data/external/
+data/external/*
+!data/external/.gitkeep
+
+# ---------------------------------------------------------------- generated outputs
+# runs/ (saved models, OOF preds), submissions/, cache/ (LM features)
+outputs/
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.ckpt
+
+# experiment trackers / framework logs
+wandb/
+mlruns/
+lightning_logs/
+catboost_info/
+runs/
+logs/
+*.log
+
+# Pretrained weights saved by scripts/download_models.py --local
+pretrained/
+
+# Hugging Face / torch caches if pointed inside the repo
+.cache/
+hf_cache/
+
+# Kaggle API credentials
+kaggle.json
+.kaggle/
+
+# ---------------------------------------------------------------- python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------- environments / secrets
+.env
+.env.*
+.venv/
+venv/
+env/
+
+# ---------------------------------------------------------------- jupyter
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------- editors / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db

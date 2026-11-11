@@ -1,0 +1,21 @@
+{
+  "model": "rf_stylo",
+  "registry_name": "rf_stylo",
+  "params": {
+    "n_estimators": 500,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1
+  },
+  "seed": 20261023,
+  "train_auroc": 1.0,
+  "val_auroc": 0.996915,
+  "val_tpr_at_1fpr": 0.977,
+  "n_train": 8000,
+  "n_val": 2000,
+  "fit_time_s": 7.3,
+  "val_predict_time_s": 1.6,
+  "hardware": "CPU (AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD)",
+  "searched": true,
+  "timestamp": "2026-11-01T17:31:24",
+  "git_commit": "f55543e976e781ddbcd225c6526447a7bee9e358"
+}

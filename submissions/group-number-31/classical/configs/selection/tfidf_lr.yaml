@@ -1,0 +1,40 @@
+# Pre-registered design selection for C1 tfidf_lr (committed before select_design.py was run).
+#
+# Rule: highest mean topic-held-out inner-CV AUROC on the 8,000 training rows (train.py --cv topic: k-means
+# k=10 on word TF-IDF of those rows, seed 20261023, GroupKFold(5) holding out whole clusters). Ties, i.e.
+# every candidate whose mean is >= best mean - (s.d. of the best candidate's 5 fold AUROCs, numpy std, ddof 0),
+# go to the simpler config. "Simpler" compares the axes in the order below, and each axis lists its options
+# simplest first: fewer feature views, then fewer unmasked words in the distorted view, then a smaller C (more
+# regularisation), then lowercase (a smaller word vocabulary).
+#
+# Reported, never used to select: stratified 5-fold inner CV on the same 8,000 rows, and the fixed 2,000-row
+# validation AUROC. The Kaggle leaderboard plays no part.
+#
+# "v1 + raw char 1-5" means v1 with its char_wb 2-5 view replaced by raw char 1-5 (the model has one char view;
+# the current v2 has no char_wb view).
+model: tfidf_lr
+select_on: topic
+also_report: [stratified, val]
+base:
+  word_ngrams: [1, 2]
+  word_min_df: 2
+  char_min_df: 3
+  max_features: 300000
+  distort_ngrams: 3
+axes:
+  - name: view
+    options:
+      - {name: v1,        params: {char_analyzer: char_wb, char_ngrams: [2, 5], distort_k: 0}}
+      - {name: raw,       params: {char_analyzer: char,    char_ngrams: [1, 5], distort_k: 0}}
+      - {name: raw_d100,  params: {char_analyzer: char,    char_ngrams: [1, 5], distort_k: 100}}
+      - {name: raw_d300,  params: {char_analyzer: char,    char_ngrams: [1, 5], distort_k: 300}}
+      - {name: raw_d1000, params: {char_analyzer: char,    char_ngrams: [1, 5], distort_k: 1000}}
+  - name: C
+    options:
+      - {name: C4,  params: {C: 4.0}}
+      - {name: C16, params: {C: 16.0}}
+      - {name: C64, params: {C: 64.0}}
+  - name: lowercase
+    options:
+      - {name: lc,   params: {lowercase: true}}
+      - {name: case, params: {lowercase: false}}

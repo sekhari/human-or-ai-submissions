@@ -1,0 +1,7 @@
+model,method,train_auroc,val_auroc,val_tpr_at_1fpr,fit_time_s,unlabeled_texts_identical_to_a_val_text
+lm_gpt2,supervised,1,0.999718,0.995,4.1,0
+tfidf_logreg,supervised,1,0.960932,0.725,21.2,0
+lm_gpt2,pseudo_label_unlabeled_r1,1,0.999717,0.995,9.8,0
+tfidf_logreg,pseudo_label_unlabeled_r1,1,0.960312,0.729,48,0
+lm_gpt2,pseudo_label_unlabeled_r3,1,0.999736,0.996,20.2,0
+tfidf_logreg,pseudo_label_unlabeled_r3,1,0.960312,0.729,98.1,0

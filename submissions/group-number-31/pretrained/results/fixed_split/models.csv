@@ -1,0 +1,16 @@
+model,kind,train_auroc,val_auroc,val_tpr_at_1fpr,fit_time_s,feature_time_s,hardware,cv5_auroc_seed42,cv5_run_time_s_seed42,run
+tfidf_logreg,single,1,0.960932,0.725,21.2,,CPU,0.95764,170.9,20261101-165341_fixed__tfidf_logreg
+stylometric_gbm_ext,single,1,0.99836,0.979,6.6,,CPU,0.99836,65.5,20261101-165341_fixed__stylometric_gbm_ext
+lm_gpt2,single,1,0.999718,0.995,4,1.2,NVIDIA GeForce RTX 5070,0.99935,76.1,20261101-165341_fixed__lm_gpt2
+lm_gpt2_nostyle,single,0.998797,0.985915,0.889,1.3,1.2,NVIDIA GeForce RTX 5070,0.9848,11.1,20261101-165341_fixed__lm_gpt2_nostyle
+lm_gpt2_medium,single,1,0.999695,0.994,3.9,0.7,NVIDIA GeForce RTX 5070,0.99924,104.1,20261101-165341_fixed__lm_gpt2_medium
+binoculars_qwen05b,single,1,0.999781,0.995,3.9,0.7,NVIDIA GeForce RTX 5070,0.99924,1347.6,20261101-165341_fixed__binoculars_qwen05b
+binoculars_qwen15b,single,1,0.999703,0.996,3.8,0.7,NVIDIA GeForce RTX 5070,0.9992,1783.3,20261101-165341_fixed__binoculars_qwen15b
+ft_roberta_base,single,0.999975,0.998119,0.988,244.4,,NVIDIA GeForce RTX 5070,0.99851,3041.4,20261101-165341_fixed__ft_roberta_base
+ft_distilroberta,single,0.999906,0.999325,0.991,140,,NVIDIA GeForce RTX 5070,0.9988,1645.8,20261101-165341_fixed__ft_distilroberta
+ft_modernbert_base,single,0.999998,0.998679,0.993,362.7,,NVIDIA GeForce RTX 5070,0.99871,4793.8,20261101-165341_fixed__ft_modernbert_base
+ft_deberta_v3_large,single,0.998773,0.996134,0.97,2408.3,,NVIDIA GeForce RTX 3060,0.99511,5298.6,20261101-165341_fixed__ft_deberta_v3_large
+ft_openai_detector_large,single,0.999348,0.998363,0.981,551.7,,NVIDIA GeForce RTX 5070,0.99276,3066,20261101-165341_fixed__ft_openai_detector_large
+final_A_topic_greedy,blend,1,0.999873,0.999,760.2,,sum of members,,,binoculars_qwen05bx4 + ft_distilrobertax2 + ft_modernbert_basex2 + lm_gpt2_mediumx1 + lm_gpt2_nostylex1 + ft_roberta_basex1 + lm_gpt2x1
+final_B_lm4,blend,1,0.999849,0.999,15.6,,sum of members,,,lm_gpt2x1 + lm_gpt2_mediumx1 + binoculars_qwen05bx1 + binoculars_qwen15bx1
+final_C_lm4_distil,blend,1,0.999939,1,155.6,,sum of members,,,lm_gpt2x1 + lm_gpt2_mediumx1 + binoculars_qwen05bx1 + binoculars_qwen15bx1 + ft_distilrobertax1

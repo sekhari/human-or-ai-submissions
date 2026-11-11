@@ -1,0 +1,26 @@
+{
+  "model": "transformer_scratch",
+  "params": {
+    "vocab_size": 12000,
+    "max_len": 512,
+    "d_model": 256,
+    "n_heads": 4,
+    "n_layers": 4,
+    "d_ff": 1024,
+    "dropout": 0.1,
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "batch_size": 32,
+    "max_epochs": 20,
+    "patience": 3,
+    "warmup_frac": 0.06,
+    "inner_val_frac": 0.1,
+    "join_lines": true
+  },
+  "seed": 20261023,
+  "n_train": 10000,
+  "fit_time_s": 37.0,
+  "hardware": "NVIDIA GeForce RTX 5070",
+  "file": "classical/kaggle_submissions/final_F_transformer_scratch.csv",
+  "timestamp": "2026-11-10T20:01:32"
+}

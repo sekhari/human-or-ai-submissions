@@ -1,0 +1,20 @@
+# The course repo's root .gitignore ignores every *.csv and every models/ folder.
+# Re-include only what this team folder needs; competition data stays out.
+
+# model code (classical/models/, pretrained/src/models/)
+!models/
+
+# small generated files that the reports are built from
+!common/val_ids.csv
+!submission_log.csv
+!**/results/**/*.csv
+!**/experiments/**/*.csv
+!**/kaggle_submissions/*.csv
+
+# never: data, weights, caches, run outputs
+data/
+outputs/
+**/data/*.csv
+*.safetensors
+*.bin
+*.ckpt

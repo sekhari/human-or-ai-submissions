@@ -1,0 +1,28 @@
+{
+  "model": "stylo_gbm@topic_cv",
+  "registry_name": "stylo_gbm",
+  "params": {
+    "n_estimators": 800,
+    "learning_rate": 0.1,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "colsample_bytree": 0.7,
+    "subsample": 0.8,
+    "reg_lambda": 1.0,
+    "extended": true,
+    "added": true
+  },
+  "seed": 20261023,
+  "train_auroc": 1.0,
+  "val_auroc": 0.9980330000000001,
+  "val_tpr_at_1fpr": 0.984,
+  "n_train": 8000,
+  "n_val": 2000,
+  "fit_time_s": 7.1,
+  "val_predict_time_s": 1.5,
+  "hardware": "CPU (AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD)",
+  "searched": true,
+  "cv": "topic",
+  "timestamp": "2026-11-11T07:58:44",
+  "git_commit": "cca5166a4c755cb3ddb8c31f4b5373d455c38693"
+}

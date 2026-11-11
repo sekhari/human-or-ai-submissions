@@ -1,0 +1,6 @@
+method,auroc,tpr@1%fpr,rows_evaluated,members
+stack_logreg,0.99990144,0.9982,10000,lm_gpt2:-0.07 + lm_gpt2_medium:+0.22 + binoculars_qwen05b:+0.37 + binoculars_qwen15b:+0.05 + ft_distilroberta:+0.13 + ft_modernbert_base:+0.07 + ft_roberta_base:+0.12 + stylometric_gbm_ext:+0.30 + stylometric_gbm:-0.38 + ft_openai_detector_large:+0.00 + ft_deberta_v3_large:+0.29 + ft_deberta_v3_base:-0.06 + ft_deberta_v3_small:-0.04 + ft_openai_detector:+0.20 + ft_electra_base:-0.11 + tfidf_svm:+0.09 + tfidf_logreg:+0.10 + tfidf_nb:+0.27 + embed_e5_base:-0.21 + embed_bge_base:-0.14 + binoculars_qwen15b_zeroshot:-0.43
+greedy_selection,0.99972828,0.9972,10000,lm_gpt2:0.27 + stylometric_gbm_ext:0.17 + ft_distilroberta:0.10 + ft_openai_detector:0.10 + ft_deberta_v3_large:0.10 + binoculars_qwen05b:0.07 + ft_modernbert_base:0.07 + ft_openai_detector_large:0.07 + binoculars_qwen15b:0.03 + ft_deberta_v3_base:0.03
+rank_mean_top5,0.9996097199999999,0.9972,10000,lm_gpt2 + lm_gpt2_medium + binoculars_qwen05b + binoculars_qwen15b + ft_distilroberta
+rank_mean_all,0.9993770000000001,0.9908,10000,21 models
+single_best (lm_gpt2),0.9993489999999999,0.9936,10000,lm_gpt2

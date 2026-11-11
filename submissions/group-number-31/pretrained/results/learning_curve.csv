@@ -1,0 +1,11 @@
+model,train_rows,train_auroc,val_auroc,fit_time_s
+lm_gpt2,500,1,0.997222,1.3
+lm_gpt2,1000,1,0.998643,1.5
+lm_gpt2,2000,1,0.99878,1.9
+lm_gpt2,5000,1,0.999506,2.9
+lm_gpt2,8000,1,0.999718,4
+tfidf_logreg,500,1,0.899387,1.1
+tfidf_logreg,1000,1,0.924157,2.4
+tfidf_logreg,2000,1,0.937847,5.2
+tfidf_logreg,5000,1,0.951062,13.2
+tfidf_logreg,8000,1,0.960932,20.7

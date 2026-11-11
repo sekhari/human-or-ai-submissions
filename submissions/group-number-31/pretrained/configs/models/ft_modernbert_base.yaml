@@ -1,0 +1,21 @@
+# Fine-tune ModernBERT-base (149M, needs transformers>=4.48). [GPU | Mac: possible, ~40 min/epoch]
+model:
+  name: transformer
+  params:
+    model_name: answerdotai/ModernBERT-base
+    max_length: 512
+    batch_size: 16
+    grad_accum: 2
+    eval_batch_size: 128
+    lr: 3.0e-5
+    epochs: 3
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    precision: auto              # bf16 on RTX 30/40/50, fp32 on Mac
+    gradient_checkpointing: false
+    keep_best_epoch: false       # fixed epochs keep OOF scores honest
+    checkpoint_every_epoch: true # resume after a crash: outputs/checkpoints/<run>/fold_<k>/last.pt
+
+# Test predictions = average of the CV fold models (no extra refit).
+final:
+  strategy: fold_average

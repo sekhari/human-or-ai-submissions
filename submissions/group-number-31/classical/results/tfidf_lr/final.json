@@ -1,0 +1,27 @@
+{
+  "model": "tfidf_lr",
+  "params": {
+    "C": 4.0,
+    "word_ngrams": [
+      1,
+      2
+    ],
+    "char_ngrams": [
+      1,
+      5
+    ],
+    "word_min_df": 2,
+    "char_min_df": 3,
+    "max_features": 300000,
+    "lowercase": true,
+    "char_analyzer": "char",
+    "distort_k": 100,
+    "distort_ngrams": 3
+  },
+  "seed": 20261023,
+  "n_train": 10000,
+  "fit_time_s": 29.9,
+  "hardware": "CPU (AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD)",
+  "file": "classical/kaggle_submissions/final_E_tfidf_lr.csv",
+  "timestamp": "2026-11-10T17:37:17"
+}

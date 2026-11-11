@@ -1,0 +1,12 @@
+# Hand-written after reading each validation passage (results/experiments/fp_fn_stylo_gbm.csv has the numbers).
+# Observations about the text are facts; "why the model erred" is a hypothesis.
+9403: "Encyclopedic physics abstract (semiconductor luminescence equations): long, uniform, formal sentences and no first person; hypothesis: formal expository register looks like AI style."
+961: "Polished, upbeat movie review in clean paragraphs with few errors (one typo, 'throughly'); hypothesis: fluent and tidy, so few human-style irregularities."
+921: "Wikipedia-style definition of interactionism with parentheticals and long sentences; same pattern as 9403."
+2696: "Run-on, repetitive predictive-text-style ramble ('I hope to hear from you soon' twice); hypothesis: high repetition matches small-model AI text in train."
+6067: "Formal student essay on information overload; tidy argument structure, moderate score (0.65); hypothesis: essay register."
+5498: "AI lasagna recipe with an ingredient list one item per line and no blank lines; hypothesis: matches the line layout of human-scraped recipes, so line-structure features vote human."
+5316: "Fluent biography of Hideki Tojo with invented facts (PM until 1997); hypothesis: wiki-bio register with no AI formatting cues - style features cannot check facts."
+7049: "Spelt-dough recipe with bullet glyphs and 'o' sub-bullets, scraped-web layout; hypothesis: formatting mimics human scraped text."
+1602: "Wiki-bio with a hatnote ('This article is about...') and [1] citation markers; hypothesis: copies human Wikipedia scraping artefacts that the model treats as human."
+5603: "Casual first-person forum post about a game; hypothesis: informal register and few formatting cues read as human."

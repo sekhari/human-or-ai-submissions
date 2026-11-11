@@ -1,0 +1,11 @@
+model,train_rows,train_auroc,val_auroc,fit_time_s
+stylo_gbm,500,1,0.990957,0.5
+stylo_gbm,1000,1,0.994451,1
+stylo_gbm,2000,1,0.996006,2
+stylo_gbm,5000,1,0.997696,4.5
+stylo_gbm,8000,1,0.998311,7.3
+tfidf_lr,500,1,0.986338,1.7
+tfidf_lr,1000,1,0.990751,3.4
+tfidf_lr,2000,1,0.993401,6.1
+tfidf_lr,5000,1,0.995651,14.6
+tfidf_lr,8000,1,0.996702,23.7

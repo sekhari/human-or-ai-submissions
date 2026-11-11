@@ -1,0 +1,24 @@
+# Topic-held-out 5-fold CV of the candidate blend members, to choose blends A and C from train.csv only
+# (configs/selection/blends.yaml). K-means (k=10) on TF-IDF of the 10,000 train.csv rows; whole clusters are held
+# out (StratifiedGroupKFold). Seed 42 as the uploaded runs. LM features come from outputs/cache/.
+#   python run_all.py --profile topic_cv
+#   python scripts/select_blend.py --session outputs/sessions/<session>
+description: Topic-held-out CV of the blend candidates (train.csv only), for blend selection.
+log_results: false   # selection inputs only; results/blend_selection/ keeps the record
+
+defaults:
+  cv.scheme: cluster
+  cv.n_clusters: 10
+  cv.n_folds: 5
+  output.save_fold_models: false
+
+jobs:
+  - {name: stylometric_gbm_ext, config: stylometric_gbm_ext, resource: cpu, cost: 1}
+  - {name: lm_gpt2,             config: lm_gpt2,             resource: gpu, cost: 2}
+  - {name: lm_gpt2_medium,      config: lm_gpt2_medium,      resource: gpu, cost: 2}
+  - {name: binoculars_qwen05b,  config: binoculars_qwen05b,  resource: gpu, cost: 2}
+  - {name: binoculars_qwen15b,  config: binoculars_qwen15b,  resource: gpu, cost: 2}
+  - {name: lm_gpt2_nostyle,     config: lm_gpt2_nostyle,     resource: gpu, cost: 2}
+  - {name: ft_distilroberta,    config: ft_distilroberta,    resource: gpu, cost: 12}
+  - {name: ft_roberta_base,     config: ft_roberta_base,     resource: gpu, cost: 15}
+  - {name: ft_modernbert_base,  config: ft_modernbert_base,  resource: gpu, cost: 33}

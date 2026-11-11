@@ -1,0 +1,21 @@
+# Fine-tune the RoBERTa-large OpenAI detector (355M), the model Ma et al. fine-tuned. [GPU 12 GB only]
+model:
+  name: transformer
+  params:
+    model_name: openai-community/roberta-large-openai-detector
+    max_length: 512
+    batch_size: 8
+    grad_accum: 4
+    eval_batch_size: 64
+    lr: 8.0e-6
+    epochs: 2
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    precision: auto              # bf16 on RTX 30/40/50, fp32 on Mac
+    gradient_checkpointing: true
+    keep_best_epoch: false       # fixed epochs keep OOF scores honest
+    checkpoint_every_epoch: true # resume after a crash: outputs/checkpoints/<run>/fold_<k>/last.pt
+
+# Test predictions = average of the CV fold models (no extra refit).
+final:
+  strategy: fold_average

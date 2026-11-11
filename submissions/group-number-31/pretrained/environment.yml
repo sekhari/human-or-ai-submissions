@@ -1,0 +1,12 @@
+# Creates the cs-aml conda env (macOS or Windows/Linux).
+#   conda env create -f environment.yml
+# If cs-aml already exists:  conda activate cs-aml && pip install -r requirements.txt
+# NVIDIA PC: after creating the env, install the CUDA build of torch (README "Setup")
+# BEFORE `pip install -r requirements.txt`, or reinstall it afterwards with --force-reinstall.
+name: cs-aml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - lightgbm          # conda-forge build bundles OpenMP (libomp) on macOS

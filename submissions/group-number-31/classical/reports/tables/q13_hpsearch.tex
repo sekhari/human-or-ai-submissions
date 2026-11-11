@@ -1,0 +1,5 @@
+\texttt{tfidf\_lr} & views \{word + char\_wb 2--5; raw char 1--5; raw char + distorted word 1--3, k $\in$ \{100, 300, 1000\}\} $\times$ C \{4, 16, 64\} $\times$ lowercase \{True, False\} (30 settings, topic-held-out CV) & raw char + distorted, k=100, C=4, lowercase=True; topic CV 0.9869 $\pm$ 0.0095 (best 0.9879; 18 tied, simplest chosen) \\
+\texttt{stylo\_gbm} & num\_leaves \{15, 31, 63\} $\times$ learning\_rate \{0.1, 0.03\} $\times$ n\_estimators \{300, 800\} (12 settings) & num\_leaves=63, learning\_rate=0.03, n\_estimators=800; inner CV 0.9981 $\pm$ 0.0005 \\
+\texttt{linear\_svm} & C \{0.1, 1.0, 10.0\} (3 settings) & C=1.0; inner CV 0.9574 $\pm$ 0.0038 \\
+\texttt{nbsvm} & C \{0.1, 1.0, 4.0\} (3 settings) & C=0.1; inner CV 0.9627 $\pm$ 0.0023 \\
+\texttt{rf\_stylo} & min\_samples\_leaf \{1, 5\} $\times$ max\_features \{0.3, "sqrt"\} (4 settings) & min\_samples\_leaf=1, max\_features="sqrt"; inner CV 0.9972 $\pm$ 0.0010 \\

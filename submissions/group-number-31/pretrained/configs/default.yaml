@@ -1,0 +1,78 @@
+# Shared defaults. Each file in configs/models/ is merged on top of this,
+# and any value can be overridden from the command line, e.g.
+#   python train.py --model tfidf_logreg --set model.params.C=8 cv.n_folds=3
+
+seed: 42
+
+# Torch device for neural models (lm_perplexity, transformer):
+#   auto (cuda -> mps -> cpu) | cuda | cuda:0 | mps | cpu
+# Override per run with --device, or per machine with `export AIVH_DEVICE=cuda`.
+# The sklearn / LightGBM models always run on CPU and ignore this.
+device: auto
+
+data:
+  train_file: data/train.csv
+  test_file: data/test.csv
+  unlabeled_file: data/unlabeled.csv
+  sample_submission_file: data/sample_submission.csv
+  # Must stay empty: competition rule 4(b) forbids externally sourced labelled data
+  # (src/data.load_external refuses a non-empty list). Kept so older run configs still load.
+  external_files: []
+  # Fraction of each fold's training data to keep (learning-curve experiments).
+  train_frac: 1.0
+  # Or an absolute number of training rows, nested across sizes (500 < 1000 < ...; see src/data.subsample_n).
+  train_n: null
+
+# Text cleaning applied to train / val / test / unlabeled alike.
+# See src/preprocessing.py for what each step does. Formatting carries signal
+# in this dataset (see notebooks/01_eda.ipynb), so cleaning is off by default.
+preprocessing:
+  unicode_nfkc: false
+  remove_zero_width: false
+  map_homoglyphs: false
+  normalize_quotes: false
+  collapse_blank_lines: false
+  join_lines: false            # all line breaks -> spaces (removes the line-structure shortcut, see preprocessing.py)
+  collapse_spaces: false
+  lowercase: false
+  strip: true
+
+cv:
+  # stratified : StratifiedKFold over train
+  # cluster    : clusters train by topic (KMeans on TF-IDF) and holds whole
+  #              clusters out -> estimates performance on unseen domains
+  # holdout    : single stratified split (val_size), good for slow models
+  # fixed      : the course protocol - train on 8,000 rows, validate on the 2,000 ids in val_ids_file
+  #              (shared with the classical track). Also records train AUROC on the 8,000 rows.
+  scheme: stratified
+  val_ids_file: ../common/val_ids.csv
+  n_folds: 5
+  val_size: 0.2
+  n_clusters: 8
+
+# Pseudo-labelling / self-training with unlabeled.csv (and optionally test.csv).
+semi_supervised:
+  enabled: false
+  pool: [unlabeled]        # any of: unlabeled, test
+  confident_frac: 0.4      # fraction of the pool to pseudo-label each round (half per class)
+  rounds: 1
+
+# How test predictions are produced after CV:
+#   refit        - refit on all labeled data, predict test (cheap models)
+#   fold_average - average the CV fold models' test predictions (no extra training; used for fine-tuning)
+final:
+  strategy: refit
+
+output:
+  save_models: true          # save the refit model (outputs/runs/<run>/)
+  save_fold_models: true     # fold_average runs (fine-tunes): keep every fold model in <run>/fold_<k>/ so
+                             # make_submission.py / predict.py can re-predict (0.3-1.7 GB per fold)
+  # Resuming a run with the same run name (run_all --resume): folds whose predictions are in
+  # outputs/runs/<run>/folds/ are skipped, and fine-tunes with model.params.checkpoint_every_epoch
+  # continue from outputs/checkpoints/<run>/fold_<k>/last.pt (latest epoch only).
+  resume_folds: true
+  checkpoints_dir: outputs/checkpoints
+  keep_checkpoints: false    # false: delete a fold's checkpoint once its predictions are saved, and the run's at the end
+  runs_dir: outputs/runs
+  submissions_dir: outputs/submissions
+  results_file: experiments/results.csv

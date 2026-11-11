@@ -1,0 +1,42 @@
+# Pre-registered design selection for C3 transformer_scratch (committed before select_design.py was run).
+# Candidates: the 11 design variants tried during development (input distortion, line joining, cropping, capacity).
+#
+# Rule: the same as configs/selection/tfidf_lr.yaml. Highest mean topic-held-out inner-CV AUROC on the 8,000
+# training rows; ties (mean >= best mean - s.d. of the best candidate's 5 fold AUROCs) go to the simpler variant.
+# The list order below is the simplicity order, simplest first: fewest changed settings from v1; among equal
+# counts, line joining before distortion before cropping, and a smaller distort_k first.
+#
+# Reported, never used to select: the fixed 2,000-row validation AUROC. No stratified CV (GPU time).
+# Fold f trains with seed 20261023 + f, as train.py's inner CV does. GPU runs are not bit-for-bit deterministic.
+model: transformer_scratch
+select_on: topic
+also_report: [val]
+base:
+  vocab_size: 12000
+  max_len: 512
+  d_model: 256
+  n_heads: 4
+  n_layers: 4
+  d_ff: 1024
+  dropout: 0.1
+  lr: 3.0e-4
+  weight_decay: 0.01
+  batch_size: 32
+  max_epochs: 20
+  patience: 3
+  warmup_frac: 0.06
+  inner_val_frac: 0.1
+axes:
+  - name: variant
+    options:
+      - {name: v1,              params: {}}
+      - {name: join,            params: {join_lines: true}}
+      - {name: d300,            params: {distort_k: 300}}
+      - {name: c128,            params: {crop_len: 128}}
+      - {name: d100_join,       params: {distort_k: 100, join_lines: true}}
+      - {name: d300_join,       params: {distort_k: 300, join_lines: true}}
+      - {name: d1000_join,      params: {distort_k: 1000, join_lines: true}}
+      - {name: d300_c128,       params: {distort_k: 300, crop_len: 128}}
+      - {name: d300_join_do2,   params: {distort_k: 300, join_lines: true, dropout: 0.2}}
+      - {name: d300_join_c256,  params: {distort_k: 300, join_lines: true, crop_len: 256}}
+      - {name: d300_c128_small, params: {distort_k: 300, crop_len: 128, n_layers: 2, dropout: 0.2}}

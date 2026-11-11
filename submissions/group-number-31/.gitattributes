@@ -1,0 +1,3 @@
+# Both track branches append rows to the log; union-merge keeps all of them.
+# SUBMISSIONS.md is regenerated after a merge: python common/update_submission_log.py --render
+submission_log.csv merge=union

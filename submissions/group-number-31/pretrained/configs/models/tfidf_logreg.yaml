@@ -1,0 +1,20 @@
+# TF-IDF word + char n-grams -> logistic regression. Fast (~1 min per fold on a laptop).
+model:
+  name: tfidf_logreg
+  params:
+    C: 4.0                       # inverse regularisation strength
+    class_weight: null
+    fit_vocab_on_unlabeled: false  # also fit the TF-IDF vocabulary/IDF on unlabeled + test text
+    tfidf:
+      sublinear_tf: true
+      lowercase: true
+      tokenizer_name: null       # e.g. "roberta-base" to use a subword tokenizer for the word part
+      word:
+        ngram_range: [1, 2]
+        min_df: 2
+        max_features: 200000
+      char:
+        analyzer: char_wb        # char_wb (within word boundaries) or char
+        ngram_range: [3, 5]
+        min_df: 3
+        max_features: 300000

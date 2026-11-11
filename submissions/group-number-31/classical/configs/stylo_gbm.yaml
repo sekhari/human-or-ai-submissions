@@ -1,0 +1,16 @@
+# C2: stylometric features (features/stylometry.py) -> LightGBM.
+model: stylo_gbm
+params:
+  n_estimators: 600
+  learning_rate: 0.03
+  num_leaves: 31
+  min_child_samples: 20
+  colsample_bytree: 0.7
+  subsample: 0.8
+  reg_lambda: 1.0
+  extended: true
+  added: true
+search:                 # 5-fold CV inside the 8,000 training rows
+  num_leaves: [15, 31, 63]
+  learning_rate: [0.03, 0.1]
+  n_estimators: [300, 800]

@@ -1,0 +1,7 @@
+# Extra row: blend of C1-C3. Weights come from greedy selection on 5-fold out-of-fold predictions inside the
+# training rows (see models/ensemble_c123.py); members use the params their own runs chose. No grid.
+model: ensemble_c123
+params:
+  members: [tfidf_lr, stylo_gbm, transformer_scratch]
+  folds: 5
+  greedy_iters: 20

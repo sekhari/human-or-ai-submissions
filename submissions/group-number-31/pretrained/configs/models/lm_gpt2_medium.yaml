@@ -1,0 +1,9 @@
+# GPT-2 medium (355M) perplexity features + stylometric -> LightGBM.  [GPU | Mac: yes, slower (~30-45 min features)]
+model:
+  name: lm_perplexity
+  params:
+    lm_name: openai-community/gpt2-medium
+    max_length: 512
+    batch_size: 16
+    head: lightgbm
+    add_stylometric: true

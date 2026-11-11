@@ -1,0 +1,15 @@
+# Stylometric GBM + extended features from Ma et al. (2023): function words, pronoun /
+# conjunction / adverb rates, readability, sentence-to-sentence coherence.  [CPU | Mac: yes]
+model:
+  name: stylometric_gbm
+  params:
+    estimator: lightgbm
+    extended_features: true
+    svd_components: 0
+    lgbm:
+      n_estimators: 800
+      learning_rate: 0.03
+      num_leaves: 31
+      min_child_samples: 20
+      colsample_bytree: 0.7
+      reg_lambda: 1.0

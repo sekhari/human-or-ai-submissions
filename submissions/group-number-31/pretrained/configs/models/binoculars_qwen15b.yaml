@@ -1,0 +1,11 @@
+# Binoculars with Qwen2.5-1.5B + Qwen2.5-1.5B-Instruct (bf16 on CUDA, ~6 GB for both).
+# [GPU 12 GB | Mac: not recommended (needs ~12 GB in fp32, very slow)]
+model:
+  name: lm_perplexity
+  params:
+    lm_name: Qwen/Qwen2.5-1.5B
+    performer_name: Qwen/Qwen2.5-1.5B-Instruct
+    max_length: 512
+    batch_size: 4
+    head: lightgbm
+    add_stylometric: true

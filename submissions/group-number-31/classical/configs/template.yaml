@@ -1,0 +1,7 @@
+# Example config. `params` go to the model's __init__; `search` (optional) is a grid tried with
+# 5-fold CV inside the 8,000 training rows before the final fit - the best mean AUROC wins.
+model: template
+params:
+  C: 1.0
+search:
+  C: [0.1, 1.0]

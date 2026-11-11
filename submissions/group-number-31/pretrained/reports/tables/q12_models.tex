@@ -1,0 +1,16 @@
+\texttt{tfidf\_logreg} & word 1--2 + char\_wb 3--5 TF-IDF $\to$ LR & 1.00000 & 0.96093 & 21 s \\
+\texttt{stylometric\_gbm\_ext} & 92 stylometric features $\to$ LightGBM & 1.00000 & 0.99836 & 7 s \\
+\texttt{lm\_gpt2} & GPT-2 token log-prob/rank/entropy stats + style $\to$ LightGBM & 1.00000 & 0.99972 & 4 s \\
+\texttt{lm\_gpt2\_nostyle} & GPT-2 token stats only $\to$ LightGBM & 0.99880 & 0.98591 & 1 s \\
+\texttt{lm\_gpt2\_medium} & GPT-2-medium token stats + style $\to$ LightGBM & 1.00000 & 0.99970 & 4 s \\
+\texttt{binoculars\_qwen05b} & Qwen2.5-0.5B Binoculars + token stats + style $\to$ LightGBM & 1.00000 & 0.99978 & 4 s \\
+\texttt{binoculars\_qwen15b} & Qwen2.5-1.5B Binoculars + token stats + style $\to$ LightGBM & 1.00000 & 0.99970 & 4 s \\
+\texttt{ft\_roberta\_base} & fine-tuned RoBERTa-base (512 tokens) & 0.99997 & 0.99812 & 4.1 min \\
+\texttt{ft\_distilroberta} & fine-tuned DistilRoBERTa (512 tokens) & 0.99991 & 0.99933 & 2.3 min \\
+\texttt{ft\_modernbert\_base} & fine-tuned ModernBERT-base (512 tokens) & 1.00000 & 0.99868 & 6.0 min \\
+\texttt{ft\_deberta\_v3\_large} & fine-tuned DeBERTa-v3-large (512 tokens) & 0.99877 & 0.99613 & 40.1 min \\
+\texttt{ft\_openai\_detector\_large} & fine-tuned OpenAI GPT-2-output detector (RoBERTa-large) & 0.99935 & 0.99836 & 9.2 min \\
+\midrule
+Blend A & blend A: 7 models, weights 4,2,2,1,1,1,1 by greedy selection on topic-held-out CV & 1.00000 & 0.99987 & 12.7 min \\
+Blend B & blend B: 4 LM-feature models, equal weights & 1.00000 & 0.99985 & 16 s \\
+Blend C & blend C: B + DistilRoBERTa, equal weights & 1.00000 & 0.99994 & 2.6 min \\

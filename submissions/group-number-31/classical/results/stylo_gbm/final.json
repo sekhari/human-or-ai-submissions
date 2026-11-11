@@ -1,0 +1,20 @@
+{
+  "model": "stylo_gbm",
+  "params": {
+    "n_estimators": 800,
+    "learning_rate": 0.03,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "colsample_bytree": 0.7,
+    "subsample": 0.8,
+    "reg_lambda": 1.0,
+    "extended": true,
+    "added": true
+  },
+  "seed": 20261023,
+  "n_train": 10000,
+  "fit_time_s": 9.1,
+  "hardware": "CPU (AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD)",
+  "file": "classical/kaggle_submissions/final_D_stylo_gbm.csv",
+  "timestamp": "2026-11-01T17:15:18"
+}

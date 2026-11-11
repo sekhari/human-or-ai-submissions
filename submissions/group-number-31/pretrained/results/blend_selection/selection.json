@@ -1,0 +1,31 @@
+{
+  "session": "20261110-173530_topic_cv",
+  "blend_a_weights": {
+    "binoculars_qwen05b": 4,
+    "ft_distilroberta": 2,
+    "ft_modernbert_base": 2,
+    "lm_gpt2_medium": 1,
+    "lm_gpt2_nostyle": 1,
+    "ft_roberta_base": 1,
+    "lm_gpt2": 1
+  },
+  "blend_c_members": [
+    "lm_gpt2",
+    "lm_gpt2_medium",
+    "binoculars_qwen05b",
+    "binoculars_qwen15b",
+    "ft_distilroberta"
+  ],
+  "fine_tune_stratified_cv": {
+    "ft_distilroberta": 0.9988,
+    "ft_roberta_base": 0.99851,
+    "ft_modernbert_base": 0.99871
+  },
+  "blend_c_added": "ft_distilroberta",
+  "topic_oof_auroc": {
+    "blend_a": 0.999373,
+    "blend_b": 0.99886648,
+    "blend_c": 0.99920814,
+    "best_single": 0.9985668000000001
+  }
+}

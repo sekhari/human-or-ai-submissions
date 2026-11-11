@@ -1,0 +1,7 @@
+# Extra row: NB-SVM (naive-Bayes log-count-ratio scaled binary n-grams -> logistic regression).
+model: nbsvm
+params:
+  C: 4.0
+  alpha: 1.0
+search:
+  C: [0.1, 1.0, 4.0]

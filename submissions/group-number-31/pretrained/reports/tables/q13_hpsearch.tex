@@ -1,0 +1,2 @@
+\texttt{tfidf\_logreg} & C $\in$ \{0.5, 2, 4, 16, 64\} $\times$ word n-grams \{(1,1), (1,2)\}; 10 settings & C = 64, word [1,2]; inner CV 0.9562 \\
+\texttt{lm\_gpt2} & num\_leaves \{7, 15, 31, 63\} $\times$ learning\_rate \{0.03, 0.1\} $\times$ n\_estimators \{200, 500, 1000\}; 24 settings & best in grid: 63 leaves, lr 0.03, 500 trees (inner CV 0.99925); the submitted blends keep the default 15 leaves, lr 0.03, 500 trees (0.99915) \\

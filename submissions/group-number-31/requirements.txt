@@ -1,0 +1,4 @@
+# Both tracks. For the classical track only (laptop, no pretrained weights): pip install -r classical/requirements.txt
+# NVIDIA GPU: install the CUDA 12.8+ build of PyTorch first (pretrained/README.md), then this file.
+-r classical/requirements.txt
+-r pretrained/requirements.txt

@@ -1,0 +1,26 @@
+track,model,train_auroc,val_auroc,val_tpr_at_1fpr,fit_time_s,approx_full_cost_s,hardware,kaggle_public
+pretrained,tfidf_logreg,1,0.960932,0.725,21.2,34.18,CPU,not submitted
+pretrained,stylometric_gbm_ext,1,0.99836,0.979,6.6,13.1,CPU,not submitted
+pretrained,lm_gpt2,1,0.999718,0.995,4,15.22,RTX 5070,not submitted
+pretrained,lm_gpt2_nostyle,0.998797,0.985915,0.889,1.3,2.22,RTX 5070,not submitted
+pretrained,lm_gpt2_medium,1,0.999695,0.994,3.9,20.82,RTX 5070,not submitted
+pretrained,binoculars_qwen05b,1,0.999781,0.995,3.9,269.52,RTX 5070,not submitted
+pretrained,binoculars_qwen15b,1,0.999703,0.996,3.8,356.66,RTX 5070,not submitted
+pretrained,ft_roberta_base,0.999975,0.998119,0.988,244.4,608.28,RTX 5070,not submitted
+pretrained,ft_distilroberta,0.999906,0.999325,0.991,140,329.16,RTX 5070,
+pretrained,ft_modernbert_base,0.999998,0.998679,0.993,362.7,958.76,RTX 5070,
+pretrained,ft_deberta_v3_large,0.998773,0.996134,0.97,2408.3,2408.3,RTX 3060,not submitted
+pretrained,ft_openai_detector_large,0.999348,0.998363,0.981,551.7,613.2,RTX 5070,not submitted
+pretrained,final_A_topic_greedy,1,0.999873,0.999,760.2,2203.98,RTX 5070 + RTX 3060,0.98810
+pretrained,final_B_lm4,1,0.999849,0.999,15.6,662.22,RTX 5070 + RTX 3060,0.98848
+pretrained,final_C_lm4_distil,1,0.999939,1,155.6,991.38,RTX 5070 + RTX 3060,0.98724
+classical,ensemble_c123,1,0.998766,0.987,312.1,312.1,RTX 5070,not submitted
+classical,linear_svm,1,0.962346,0.72,13.6,13.6,CPU,not submitted
+classical,nbsvm,1,0.969865,0.769,15.3,15.3,CPU,not submitted
+classical,rf_stylo,1,0.996915,0.977,7.3,7.3,CPU,not submitted
+classical,stylo_gbm,1,0.998311,0.983,7.3,7.3,CPU,0.95995
+classical,stylo_gbm@no_added,1,0.998248,0.98,8.7,8.7,CPU,not submitted
+classical,stylo_gbm@no_layout,1,0.987245,0.865,9.4,9.4,CPU,not submitted
+classical,stylo_gbm@topic_cv,1,0.998033,0.984,7.1,7.1,CPU,
+classical,tfidf_lr,1,0.996702,0.964,25.1,25.1,CPU,0.95849
+classical,transformer_scratch,0.998491,0.985901,0.914,33.9,33.9,RTX 5070,0.90826

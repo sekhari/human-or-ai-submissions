@@ -1,0 +1,5 @@
+min_samples_leaf,max_features,cv_auroc_mean,cv_auroc_std,cv_auroc_pooled,time_s,chosen
+1,"""sqrt""",0.997178,0.00103761,0.997145,11.4,True
+1,0.3,0.99658,0.00120755,0.996539,14.1,False
+5,"""sqrt""",0.996732,0.00113223,0.996702,5.1,False
+5,0.3,0.996314,0.00138416,0.996305,12.3,False

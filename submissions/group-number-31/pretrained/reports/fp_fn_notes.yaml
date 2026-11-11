@@ -1,0 +1,13 @@
+# Hand-written after reading each validation passage (numbers: results/error_analysis/fp_fn.csv, blend A).
+# Observations about the text are facts; "why the blend erred" is a hypothesis.
+# Notes for earlier blends are in this file's git history.
+2696: "Run-on, repetitive predictive-text-style ramble with no punctuation, whole phrases repeated; the GPT-2 token-stats-only member ranks it 0.93, the others 0.49-0.56 - repetitive low-perplexity text looks like small-model AI output."
+6067: "Near miss (P=0.497, below 0.5): student essay on information overload with a tidy argument structure (also a stylo_gbm FP); hypothesis: essay register is predictable."
+9388: "Near miss (P=0.495): Wikipedia bio of composer Bright Sheng with a long list of orchestras; list-like encyclopedic prose is predictable."
+961: "Near miss (P=0.495): polished, upbeat movie review in clean paragraphs (also a stylo_gbm FP); hypothesis: fluent and tidy, so few human-style irregularities."
+7384: "Near miss (P=0.491): short, informal movie review with run-on sentences; hypothesis: generic review phrasing is low-surprise for the LMs."
+5498: "AI lasagna recipe with one ingredient per line and no blank lines (also a stylo_gbm FN); ModernBERT ranks it 0.03 - hypothesis: the layout of human-scraped recipes reads as human."
+5603: "AI casual first-person forum post about a game (also a stylo_gbm FN); RoBERTa ranks it 0.20 - hypothesis: informal register and few formatting cues read as human."
+6331: "AI bread recipe with ingredient lines and self-correcting notes ('it was my error to add...'); the token-stats-only member ranks it 0.17 - hypothesis: messy, human-like asides and recipe layout."
+3938: "AI wiki-style article (View Askew universe) with long lists of film titles; every member near 0.5 - proper-noun lists look human to token statistics."
+3340: "AI first-person forum post about feeding a cat, with curly apostrophes and cut off mid-question; RoBERTa ranks it 0.33 - hypothesis: informal advice-seeking register reads as human."

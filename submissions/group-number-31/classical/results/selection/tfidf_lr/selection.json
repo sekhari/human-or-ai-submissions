@@ -1,0 +1,66 @@
+{
+  "model": "tfidf_lr",
+  "rule": "max mean topic inner-CV AUROC; ties within 1 fold s.d. of the best -> simplest",
+  "best": "raw_d100+C64+case",
+  "best_mean": 0.9878908000000001,
+  "best_std": 0.008675461702987346,
+  "tied": [
+    "raw_d100+C4+lc",
+    "raw_d100+C4+case",
+    "raw_d100+C16+lc",
+    "raw_d100+C16+case",
+    "raw_d100+C64+lc",
+    "raw_d100+C64+case",
+    "raw_d300+C4+lc",
+    "raw_d300+C4+case",
+    "raw_d300+C16+lc",
+    "raw_d300+C16+case",
+    "raw_d300+C64+lc",
+    "raw_d300+C64+case",
+    "raw_d1000+C4+lc",
+    "raw_d1000+C4+case",
+    "raw_d1000+C16+lc",
+    "raw_d1000+C16+case",
+    "raw_d1000+C64+lc",
+    "raw_d1000+C64+case"
+  ],
+  "winner": "raw_d100+C4+lc",
+  "winner_params": {
+    "C": 4.0,
+    "char_analyzer": "char",
+    "char_min_df": 3,
+    "char_ngrams": [
+      1,
+      5
+    ],
+    "distort_k": 100,
+    "distort_ngrams": 3,
+    "lowercase": true,
+    "max_features": 300000,
+    "word_min_df": 2,
+    "word_ngrams": [
+      1,
+      2
+    ]
+  },
+  "current_params": {
+    "C": 4.0,
+    "word_ngrams": [
+      1,
+      2
+    ],
+    "char_ngrams": [
+      1,
+      5
+    ],
+    "word_min_df": 2,
+    "char_min_df": 3,
+    "max_features": 300000,
+    "lowercase": true,
+    "char_analyzer": "char",
+    "distort_k": 100,
+    "distort_ngrams": 3
+  },
+  "winner_equals_current": true,
+  "n_candidates": 30
+}

@@ -1,0 +1,21 @@
+# Fine-tune DeBERTa-v3-large (435M). bf16 + gradient checkpointing to fit 12 GB. [GPU 12 GB only, ~15 min/epoch on RTX 5070]
+model:
+  name: transformer
+  params:
+    model_name: microsoft/deberta-v3-large
+    max_length: 512
+    batch_size: 4
+    grad_accum: 8
+    eval_batch_size: 32
+    lr: 8.0e-6
+    epochs: 2
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    precision: auto              # bf16 on RTX 30/40/50, fp32 on Mac
+    gradient_checkpointing: true
+    keep_best_epoch: false       # fixed epochs keep OOF scores honest
+    checkpoint_every_epoch: true # resume after a crash: outputs/checkpoints/<run>/fold_<k>/last.pt
+
+# Test predictions = average of the CV fold models (no extra refit).
+final:
+  strategy: fold_average

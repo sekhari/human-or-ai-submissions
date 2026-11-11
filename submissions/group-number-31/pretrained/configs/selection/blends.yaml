@@ -1,0 +1,32 @@
+# Pre-registered selection of blends A and C (committed before scripts/select_blend.py ran and
+# before any topic-CV run of configs/experiments/topic_cv.yaml). Uses only train.csv labels.
+#
+# Candidate members: runs that already exist with saved test predictions, made with configs fixed on 2026-10-28
+# (before this selection). Test predictions keep coming from these original 5-fold stratified runs
+# (seed 42), each mapped through its own OOF-score CDF, exactly like the uploaded blends. Only the CHOICE changes.
+# DeBERTa-v3-large and the OpenAI detector (large) are left out of A's pool: a topic-CV run of each takes
+# 1-1.5 h of GPU time, which would push this step over the team's 2-hour limit. Decided before any result.
+candidates:
+  lm_gpt2: 20261030-135404_ood__lm_gpt2
+  lm_gpt2_medium: 20261030-135404_ood__lm_gpt2_medium
+  binoculars_qwen05b: 20261030-135404_ood__binoculars_qwen05b
+  binoculars_qwen15b: 20261030-135404_ood__binoculars_qwen15b
+  lm_gpt2_nostyle: 20261031_var__lm_gpt2_nostyle
+  stylometric_gbm_ext: 20261030-135404_ood__stylometric_gbm_ext
+  ft_distilroberta: 20261030-135404_ood__ft_distilroberta
+  ft_roberta_base: 20261030-135404_ood__ft_roberta_base
+  ft_modernbert_base: 20261030-135404_ood__ft_modernbert_base
+
+# Blend A: greedy forward selection with replacement (Caruana et al. 2004; src/ensemble.greedy_weights, the
+# algorithm that built the uploaded A), 12 picks (the uploaded A's total weight), maximising the pooled AUROC of
+# the rank-mean of the candidates' TOPIC-HELD-OUT out-of-fold predictions (topic_cv profile: k-means k=10 on
+# train TF-IDF, whole clusters held out, 5 folds, seed 42). Weights = pick counts.
+blend_a:
+  objective: topic_cv_oof_auroc
+  n_iter: 12
+
+# Blend C: blend B's four members + the fine-tuned encoder with the highest 5-fold stratified CV AUROC among the
+# candidates' fine-tunes (experiments/results.csv, the same runs), equal weights.
+blend_c:
+  base: [lm_gpt2, lm_gpt2_medium, binoculars_qwen05b, binoculars_qwen15b]
+  add_best_cv_of: [ft_distilroberta, ft_roberta_base, ft_modernbert_base]

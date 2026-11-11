@@ -1,0 +1,24 @@
+# C3 v3: 4-layer Transformer encoder (d=256, 4 heads), byte-level BPE (12k) trained on train + unlabeled text,
+# random init. Early stopping on a stratified 10% inner split of the training rows (never the 2k val).
+# Input: single line breaks joined into spaces (blank lines kept); no text distortion. Chosen among 11 variants by
+# the pre-registered topic-held-out CV rule (configs/selection/transformer_scratch.yaml; select_design.py;
+# results/selection/transformer_scratch/), train.csv labels only. Earlier versions: v1 (raw text; public 0.83201)
+# and v2 (+ distortion k=300; public 0.91502).
+# No hyperparameter grid (one GPU run is ~minutes, a 5-fold grid would be hours); the architecture is fixed.
+model: transformer_scratch
+params:
+  vocab_size: 12000
+  max_len: 512
+  d_model: 256
+  n_heads: 4
+  n_layers: 4
+  d_ff: 1024
+  dropout: 0.1
+  lr: 3.0e-4
+  weight_decay: 0.01
+  batch_size: 32
+  max_epochs: 20
+  patience: 3
+  warmup_frac: 0.06
+  inner_val_frac: 0.1
+  join_lines: true

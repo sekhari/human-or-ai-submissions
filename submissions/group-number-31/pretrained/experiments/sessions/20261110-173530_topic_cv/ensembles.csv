@@ -1,0 +1,6 @@
+method,auroc,tpr@1%fpr,rows_evaluated,members
+stack_logreg,0.99948284,0.995,10000,lm_gpt2_medium:-0.02 + binoculars_qwen05b:+0.22 + lm_gpt2:+0.11 + binoculars_qwen15b:+0.17 + ft_modernbert_base:+0.23 + ft_distilroberta:+0.13 + ft_roberta_base:-0.02 + stylometric_gbm_ext:-0.13 + lm_gpt2_nostyle:+0.32
+rank_mean_all,0.9993215599999999,0.9924,10000,9 models
+greedy_selection,0.99921832,0.9928,10000,binoculars_qwen05b:0.30 + ft_distilroberta:0.20 + ft_modernbert_base:0.13 + lm_gpt2_nostyle:0.13 + lm_gpt2_medium:0.07 + ft_roberta_base:0.07 + binoculars_qwen15b:0.07 + lm_gpt2:0.03
+rank_mean_top5,0.9991256399999999,0.993,10000,lm_gpt2_medium + binoculars_qwen05b + lm_gpt2 + binoculars_qwen15b + ft_modernbert_base
+single_best (lm_gpt2_medium),0.9985668000000001,0.9848,10000,lm_gpt2_medium

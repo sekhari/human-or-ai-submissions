@@ -1,0 +1,318 @@
+scope,check,result,detail
+data,train labels are 0/1 and roughly balanced,PASS,AI share 0.500
+data,test ids unique and identical to sample_submission ids,PASS,3000 test rows
+data,no exact text overlap between train and test,PASS,0 overlaps
+tfidf_logreg,OOF predictions finite,PASS,
+tfidf_logreg,CV AUROC > 0.5 (labels not flipped),PASS,0.9576
+tfidf_logreg,CV AUROC > 0.75 (model learned something),PASS,0.9576
+tfidf_logreg,fold AUROC spread small (std < 0.03),PASS,std 0.0049
+tfidf_logreg,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+tfidf_logreg,test predictions not constant,PASS,std 0.3191
+tfidf_logreg,mean test prediction plausible (0.15-0.85),PASS,0.441
+tfidf_logreg,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.117 - large values mean distribution shift or a preprocessing mismatch
+tfidf_nb,OOF predictions finite,PASS,
+tfidf_nb,CV AUROC > 0.5 (labels not flipped),PASS,0.9464
+tfidf_nb,CV AUROC > 0.75 (model learned something),PASS,0.9464
+tfidf_nb,fold AUROC spread small (std < 0.03),PASS,std 0.0054
+tfidf_nb,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+tfidf_nb,test predictions not constant,PASS,std 0.2505
+tfidf_nb,mean test prediction plausible (0.15-0.85),PASS,0.453
+tfidf_nb,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.117 - large values mean distribution shift or a preprocessing mismatch
+tfidf_svm,OOF predictions finite,PASS,
+tfidf_svm,CV AUROC > 0.5 (labels not flipped),PASS,0.9591
+tfidf_svm,CV AUROC > 0.75 (model learned something),PASS,0.9591
+tfidf_svm,fold AUROC spread small (std < 0.03),PASS,std 0.0046
+tfidf_svm,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+tfidf_svm,test predictions not constant,PASS,std 0.1584
+tfidf_svm,mean test prediction plausible (0.15-0.85),PASS,0.476
+tfidf_svm,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.118 - large values mean distribution shift or a preprocessing mismatch
+stylometric_gbm,OOF predictions finite,PASS,
+stylometric_gbm,CV AUROC > 0.5 (labels not flipped),PASS,0.9976
+stylometric_gbm,CV AUROC > 0.75 (model learned something),PASS,0.9976
+stylometric_gbm,fold AUROC spread small (std < 0.03),PASS,std 0.0009
+stylometric_gbm,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+stylometric_gbm,test predictions not constant,PASS,std 0.4675
+stylometric_gbm,mean test prediction plausible (0.15-0.85),PASS,0.473
+stylometric_gbm,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.108 - large values mean distribution shift or a preprocessing mismatch
+stylometric_gbm_ext,OOF predictions finite,PASS,
+stylometric_gbm_ext,CV AUROC > 0.5 (labels not flipped),PASS,0.9984
+stylometric_gbm_ext,CV AUROC > 0.75 (model learned something),PASS,0.9984
+stylometric_gbm_ext,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+stylometric_gbm_ext,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+stylometric_gbm_ext,test predictions not constant,PASS,std 0.4738
+stylometric_gbm_ext,mean test prediction plausible (0.15-0.85),PASS,0.458
+stylometric_gbm_ext,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.109 - large values mean distribution shift or a preprocessing mismatch
+lm_gpt2,OOF predictions finite,PASS,
+lm_gpt2,CV AUROC > 0.5 (labels not flipped),PASS,0.9993
+lm_gpt2,CV AUROC > 0.75 (model learned something),PASS,0.9993
+lm_gpt2,fold AUROC spread small (std < 0.03),PASS,std 0.0004
+lm_gpt2,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lm_gpt2,test predictions not constant,PASS,std 0.4890
+lm_gpt2,mean test prediction plausible (0.15-0.85),PASS,0.460
+lm_gpt2,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.148 - large values mean distribution shift or a preprocessing mismatch
+lm_gpt2_medium,OOF predictions finite,PASS,
+lm_gpt2_medium,CV AUROC > 0.5 (labels not flipped),PASS,0.9992
+lm_gpt2_medium,CV AUROC > 0.75 (model learned something),PASS,0.9992
+lm_gpt2_medium,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+lm_gpt2_medium,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lm_gpt2_medium,test predictions not constant,PASS,std 0.4899
+lm_gpt2_medium,mean test prediction plausible (0.15-0.85),PASS,0.461
+lm_gpt2_medium,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.150 - large values mean distribution shift or a preprocessing mismatch
+binoculars_qwen05b,OOF predictions finite,PASS,
+binoculars_qwen05b,CV AUROC > 0.5 (labels not flipped),PASS,0.9992
+binoculars_qwen05b,CV AUROC > 0.75 (model learned something),PASS,0.9992
+binoculars_qwen05b,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+binoculars_qwen05b,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+binoculars_qwen05b,test predictions not constant,PASS,std 0.4890
+binoculars_qwen05b,mean test prediction plausible (0.15-0.85),PASS,0.454
+binoculars_qwen05b,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.158 - large values mean distribution shift or a preprocessing mismatch
+binoculars_qwen15b,OOF predictions finite,PASS,
+binoculars_qwen15b,CV AUROC > 0.5 (labels not flipped),PASS,0.9992
+binoculars_qwen15b,CV AUROC > 0.75 (model learned something),PASS,0.9992
+binoculars_qwen15b,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+binoculars_qwen15b,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+binoculars_qwen15b,test predictions not constant,PASS,std 0.4898
+binoculars_qwen15b,mean test prediction plausible (0.15-0.85),PASS,0.453
+binoculars_qwen15b,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.171 - large values mean distribution shift or a preprocessing mismatch
+binoculars_qwen15b_zeroshot,OOF predictions finite,PASS,
+binoculars_qwen15b_zeroshot,CV AUROC > 0.5 (labels not flipped),PASS,0.7138
+binoculars_qwen15b_zeroshot,CV AUROC > 0.75 (model learned something),WARN,0.7138
+binoculars_qwen15b_zeroshot,fold AUROC spread small (std < 0.03),PASS,std 0.0148
+binoculars_qwen15b_zeroshot,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+binoculars_qwen15b_zeroshot,test predictions not constant,PASS,std 0.1948
+binoculars_qwen15b_zeroshot,mean test prediction plausible (0.15-0.85),PASS,0.527
+binoculars_qwen15b_zeroshot,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.022 - large values mean distribution shift or a preprocessing mismatch
+embed_bge_base,OOF predictions finite,PASS,
+embed_bge_base,CV AUROC > 0.5 (labels not flipped),PASS,0.8684
+embed_bge_base,CV AUROC > 0.75 (model learned something),PASS,0.8684
+embed_bge_base,fold AUROC spread small (std < 0.03),PASS,std 0.0040
+embed_bge_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+embed_bge_base,test predictions not constant,PASS,std 0.3576
+embed_bge_base,mean test prediction plausible (0.15-0.85),PASS,0.521
+embed_bge_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.055 - large values mean distribution shift or a preprocessing mismatch
+embed_e5_base,OOF predictions finite,PASS,
+embed_e5_base,CV AUROC > 0.5 (labels not flipped),PASS,0.9215
+embed_e5_base,CV AUROC > 0.75 (model learned something),PASS,0.9215
+embed_e5_base,fold AUROC spread small (std < 0.03),PASS,std 0.0027
+embed_e5_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+embed_e5_base,test predictions not constant,PASS,std 0.4013
+embed_e5_base,mean test prediction plausible (0.15-0.85),PASS,0.511
+embed_e5_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.058 - large values mean distribution shift or a preprocessing mismatch
+ft_distilroberta,OOF predictions finite,PASS,
+ft_distilroberta,CV AUROC > 0.5 (labels not flipped),PASS,0.9991
+ft_distilroberta,CV AUROC > 0.75 (model learned something),PASS,0.9991
+ft_distilroberta,fold AUROC spread small (std < 0.03),PASS,std 0.0006
+ft_distilroberta,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_distilroberta,test predictions not constant,PASS,std 0.4756
+ft_distilroberta,mean test prediction plausible (0.15-0.85),PASS,0.539
+ft_distilroberta,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.174 - large values mean distribution shift or a preprocessing mismatch
+ft_roberta_base,OOF predictions finite,PASS,
+ft_roberta_base,CV AUROC > 0.5 (labels not flipped),PASS,0.9987
+ft_roberta_base,CV AUROC > 0.75 (model learned something),PASS,0.9987
+ft_roberta_base,fold AUROC spread small (std < 0.03),PASS,std 0.0006
+ft_roberta_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_roberta_base,test predictions not constant,PASS,std 0.4779
+ft_roberta_base,mean test prediction plausible (0.15-0.85),PASS,0.506
+ft_roberta_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.175 - large values mean distribution shift or a preprocessing mismatch
+ft_openai_detector,OOF predictions finite,PASS,
+ft_openai_detector,CV AUROC > 0.5 (labels not flipped),PASS,0.9900
+ft_openai_detector,CV AUROC > 0.75 (model learned something),PASS,0.9900
+ft_openai_detector,fold AUROC spread small (std < 0.03),PASS,std 0.0038
+ft_openai_detector,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_openai_detector,test predictions not constant,PASS,std 0.4837
+ft_openai_detector,mean test prediction plausible (0.15-0.85),PASS,0.535
+ft_openai_detector,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.103 - large values mean distribution shift or a preprocessing mismatch
+ft_electra_base,OOF predictions finite,PASS,
+ft_electra_base,CV AUROC > 0.5 (labels not flipped),PASS,0.9899
+ft_electra_base,CV AUROC > 0.75 (model learned something),PASS,0.9899
+ft_electra_base,fold AUROC spread small (std < 0.03),PASS,std 0.0032
+ft_electra_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_electra_base,test predictions not constant,PASS,std 0.4624
+ft_electra_base,mean test prediction plausible (0.15-0.85),PASS,0.535
+ft_electra_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.109 - large values mean distribution shift or a preprocessing mismatch
+ft_modernbert_base,OOF predictions finite,PASS,
+ft_modernbert_base,CV AUROC > 0.5 (labels not flipped),PASS,0.9990
+ft_modernbert_base,CV AUROC > 0.75 (model learned something),PASS,0.9990
+ft_modernbert_base,fold AUROC spread small (std < 0.03),PASS,std 0.0004
+ft_modernbert_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_modernbert_base,test predictions not constant,PASS,std 0.4845
+ft_modernbert_base,mean test prediction plausible (0.15-0.85),PASS,0.468
+ft_modernbert_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.169 - large values mean distribution shift or a preprocessing mismatch
+ft_deberta_v3_small,OOF predictions finite,PASS,
+ft_deberta_v3_small,CV AUROC > 0.5 (labels not flipped),PASS,0.9901
+ft_deberta_v3_small,CV AUROC > 0.75 (model learned something),PASS,0.9901
+ft_deberta_v3_small,fold AUROC spread small (std < 0.03),PASS,std 0.0010
+ft_deberta_v3_small,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_deberta_v3_small,test predictions not constant,PASS,std 0.4601
+ft_deberta_v3_small,mean test prediction plausible (0.15-0.85),PASS,0.554
+ft_deberta_v3_small,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.174 - large values mean distribution shift or a preprocessing mismatch
+ft_deberta_v3_base,OOF predictions finite,PASS,
+ft_deberta_v3_base,CV AUROC > 0.5 (labels not flipped),PASS,0.9919
+ft_deberta_v3_base,CV AUROC > 0.75 (model learned something),PASS,0.9919
+ft_deberta_v3_base,fold AUROC spread small (std < 0.03),PASS,std 0.0017
+ft_deberta_v3_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_deberta_v3_base,test predictions not constant,PASS,std 0.4600
+ft_deberta_v3_base,mean test prediction plausible (0.15-0.85),PASS,0.528
+ft_deberta_v3_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.171 - large values mean distribution shift or a preprocessing mismatch
+ft_deberta_v3_large,OOF predictions finite,PASS,
+ft_deberta_v3_large,CV AUROC > 0.5 (labels not flipped),PASS,0.9950
+ft_deberta_v3_large,CV AUROC > 0.75 (model learned something),PASS,0.9950
+ft_deberta_v3_large,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+ft_deberta_v3_large,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_deberta_v3_large,test predictions not constant,PASS,std 0.4650
+ft_deberta_v3_large,mean test prediction plausible (0.15-0.85),PASS,0.482
+ft_deberta_v3_large,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.114 - large values mean distribution shift or a preprocessing mismatch
+ft_openai_detector_large,OOF predictions finite,PASS,
+ft_openai_detector_large,CV AUROC > 0.5 (labels not flipped),PASS,0.9956
+ft_openai_detector_large,CV AUROC > 0.75 (model learned something),PASS,0.9956
+ft_openai_detector_large,fold AUROC spread small (std < 0.03),PASS,std 0.0015
+ft_openai_detector_large,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ft_openai_detector_large,test predictions not constant,PASS,std 0.4756
+ft_openai_detector_large,mean test prediction plausible (0.15-0.85),PASS,0.550
+ft_openai_detector_large,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.207 - large values mean distribution shift or a preprocessing mismatch
+lc_tfidf_logreg_f010,OOF predictions finite,PASS,
+lc_tfidf_logreg_f010,CV AUROC > 0.5 (labels not flipped),PASS,0.9056
+lc_tfidf_logreg_f010,CV AUROC > 0.75 (model learned something),PASS,0.9056
+lc_tfidf_logreg_f010,fold AUROC spread small (std < 0.03),PASS,std 0.0040
+lc_tfidf_logreg_f010,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_tfidf_logreg_f010,test predictions not constant,PASS,std 0.3191
+lc_tfidf_logreg_f010,mean test prediction plausible (0.15-0.85),PASS,0.441
+lc_tfidf_logreg_f010,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.217 - large values mean distribution shift or a preprocessing mismatch
+lc_tfidf_logreg_f025,OOF predictions finite,PASS,
+lc_tfidf_logreg_f025,CV AUROC > 0.5 (labels not flipped),PASS,0.9323
+lc_tfidf_logreg_f025,CV AUROC > 0.75 (model learned something),PASS,0.9323
+lc_tfidf_logreg_f025,fold AUROC spread small (std < 0.03),PASS,std 0.0047
+lc_tfidf_logreg_f025,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_tfidf_logreg_f025,test predictions not constant,PASS,std 0.3191
+lc_tfidf_logreg_f025,mean test prediction plausible (0.15-0.85),PASS,0.441
+lc_tfidf_logreg_f025,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.123 - large values mean distribution shift or a preprocessing mismatch
+lc_tfidf_logreg_f050,OOF predictions finite,PASS,
+lc_tfidf_logreg_f050,CV AUROC > 0.5 (labels not flipped),PASS,0.9474
+lc_tfidf_logreg_f050,CV AUROC > 0.75 (model learned something),PASS,0.9474
+lc_tfidf_logreg_f050,fold AUROC spread small (std < 0.03),PASS,std 0.0050
+lc_tfidf_logreg_f050,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_tfidf_logreg_f050,test predictions not constant,PASS,std 0.3191
+lc_tfidf_logreg_f050,mean test prediction plausible (0.15-0.85),PASS,0.441
+lc_tfidf_logreg_f050,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.081 - large values mean distribution shift or a preprocessing mismatch
+lc_stylo_ext_f010,OOF predictions finite,PASS,
+lc_stylo_ext_f010,CV AUROC > 0.5 (labels not flipped),PASS,0.9944
+lc_stylo_ext_f010,CV AUROC > 0.75 (model learned something),PASS,0.9944
+lc_stylo_ext_f010,fold AUROC spread small (std < 0.03),PASS,std 0.0017
+lc_stylo_ext_f010,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_stylo_ext_f010,test predictions not constant,PASS,std 0.4738
+lc_stylo_ext_f010,mean test prediction plausible (0.15-0.85),PASS,0.458
+lc_stylo_ext_f010,test score distribution close to OOF distribution (KS < 0.25),WARN,KS 0.258 - large values mean distribution shift or a preprocessing mismatch
+lc_stylo_ext_f025,OOF predictions finite,PASS,
+lc_stylo_ext_f025,CV AUROC > 0.5 (labels not flipped),PASS,0.9965
+lc_stylo_ext_f025,CV AUROC > 0.75 (model learned something),PASS,0.9965
+lc_stylo_ext_f025,fold AUROC spread small (std < 0.03),PASS,std 0.0009
+lc_stylo_ext_f025,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_stylo_ext_f025,test predictions not constant,PASS,std 0.4738
+lc_stylo_ext_f025,mean test prediction plausible (0.15-0.85),PASS,0.458
+lc_stylo_ext_f025,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.155 - large values mean distribution shift or a preprocessing mismatch
+lc_stylo_ext_f050,OOF predictions finite,PASS,
+lc_stylo_ext_f050,CV AUROC > 0.5 (labels not flipped),PASS,0.9977
+lc_stylo_ext_f050,CV AUROC > 0.75 (model learned something),PASS,0.9977
+lc_stylo_ext_f050,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+lc_stylo_ext_f050,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_stylo_ext_f050,test predictions not constant,PASS,std 0.4738
+lc_stylo_ext_f050,mean test prediction plausible (0.15-0.85),PASS,0.458
+lc_stylo_ext_f050,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.096 - large values mean distribution shift or a preprocessing mismatch
+lc_deberta_v3_small_f025,OOF predictions finite,PASS,
+lc_deberta_v3_small_f025,CV AUROC > 0.5 (labels not flipped),PASS,0.9820
+lc_deberta_v3_small_f025,CV AUROC > 0.75 (model learned something),PASS,0.9820
+lc_deberta_v3_small_f025,fold AUROC spread small (std < 0.03),PASS,std 0.0029
+lc_deberta_v3_small_f025,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+lc_deberta_v3_small_f025,test predictions not constant,PASS,std 0.4419
+lc_deberta_v3_small_f025,mean test prediction plausible (0.15-0.85),PASS,0.527
+lc_deberta_v3_small_f025,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.132 - large values mean distribution shift or a preprocessing mismatch
+ss_tfidf_logreg,OOF predictions finite,PASS,
+ss_tfidf_logreg,CV AUROC > 0.5 (labels not flipped),PASS,0.9569
+ss_tfidf_logreg,CV AUROC > 0.75 (model learned something),PASS,0.9569
+ss_tfidf_logreg,fold AUROC spread small (std < 0.03),PASS,std 0.0049
+ss_tfidf_logreg,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ss_tfidf_logreg,test predictions not constant,PASS,std 0.3240
+ss_tfidf_logreg,mean test prediction plausible (0.15-0.85),PASS,0.438
+ss_tfidf_logreg,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.118 - large values mean distribution shift or a preprocessing mismatch
+ss_stylo_ext,OOF predictions finite,PASS,
+ss_stylo_ext,CV AUROC > 0.5 (labels not flipped),PASS,0.9983
+ss_stylo_ext,CV AUROC > 0.75 (model learned something),PASS,0.9983
+ss_stylo_ext,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+ss_stylo_ext,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ss_stylo_ext,test predictions not constant,PASS,std 0.4739
+ss_stylo_ext,mean test prediction plausible (0.15-0.85),PASS,0.458
+ss_stylo_ext,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.110 - large values mean distribution shift or a preprocessing mismatch
+ss_stylo_ext_with_test,OOF predictions finite,PASS,
+ss_stylo_ext_with_test,CV AUROC > 0.5 (labels not flipped),PASS,0.9984
+ss_stylo_ext_with_test,CV AUROC > 0.75 (model learned something),PASS,0.9984
+ss_stylo_ext_with_test,fold AUROC spread small (std < 0.03),PASS,std 0.0005
+ss_stylo_ext_with_test,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+ss_stylo_ext_with_test,test predictions not constant,PASS,std 0.4732
+ss_stylo_ext_with_test,mean test prediction plausible (0.15-0.85),PASS,0.461
+ss_stylo_ext_with_test,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.110 - large values mean distribution shift or a preprocessing mismatch
+cluster_tfidf_logreg,OOF predictions finite,PASS,
+cluster_tfidf_logreg,CV AUROC > 0.5 (labels not flipped),PASS,0.9136
+cluster_tfidf_logreg,CV AUROC > 0.75 (model learned something),PASS,0.9136
+cluster_tfidf_logreg,fold AUROC spread small (std < 0.03),WARN,std 0.0333
+cluster_tfidf_logreg,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+cluster_tfidf_logreg,test predictions not constant,PASS,std 0.3191
+cluster_tfidf_logreg,mean test prediction plausible (0.15-0.85),PASS,0.441
+cluster_tfidf_logreg,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.104 - large values mean distribution shift or a preprocessing mismatch
+cluster_stylo_ext,OOF predictions finite,PASS,
+cluster_stylo_ext,CV AUROC > 0.5 (labels not flipped),PASS,0.9946
+cluster_stylo_ext,CV AUROC > 0.75 (model learned something),PASS,0.9946
+cluster_stylo_ext,fold AUROC spread small (std < 0.03),PASS,std 0.0014
+cluster_stylo_ext,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+cluster_stylo_ext,test predictions not constant,PASS,std 0.4738
+cluster_stylo_ext,mean test prediction plausible (0.15-0.85),PASS,0.458
+cluster_stylo_ext,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.059 - large values mean distribution shift or a preprocessing mismatch
+debiased_stylo_ext,OOF predictions finite,PASS,
+debiased_stylo_ext,CV AUROC > 0.5 (labels not flipped),PASS,0.9961
+debiased_stylo_ext,CV AUROC > 0.75 (model learned something),PASS,0.9961
+debiased_stylo_ext,fold AUROC spread small (std < 0.03),PASS,std 0.0007
+debiased_stylo_ext,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+debiased_stylo_ext,test predictions not constant,PASS,std 0.4670
+debiased_stylo_ext,mean test prediction plausible (0.15-0.85),PASS,0.522
+debiased_stylo_ext,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.132 - large values mean distribution shift or a preprocessing mismatch
+debiased_deberta_v3_base,OOF predictions finite,PASS,
+debiased_deberta_v3_base,CV AUROC > 0.5 (labels not flipped),PASS,0.9925
+debiased_deberta_v3_base,CV AUROC > 0.75 (model learned something),PASS,0.9925
+debiased_deberta_v3_base,fold AUROC spread small (std < 0.03),PASS,std 0.0017
+debiased_deberta_v3_base,"test predictions: 3000 rows, ids match sample, in [0,1], no NaN",PASS,
+debiased_deberta_v3_base,test predictions not constant,PASS,std 0.4584
+debiased_deberta_v3_base,mean test prediction plausible (0.15-0.85),PASS,0.537
+debiased_deberta_v3_base,test score distribution close to OOF distribution (KS < 0.25),PASS,KS 0.114 - large values mean distribution shift or a preprocessing mismatch
+tfidf_logreg,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.687
+tfidf_nb,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.638
+tfidf_svm,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.691
+stylometric_gbm,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.917
+stylometric_gbm_ext,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.923
+lm_gpt2_medium,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.982
+binoculars_qwen05b,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.949
+binoculars_qwen15b,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.944
+binoculars_qwen15b_zeroshot,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.476
+embed_bge_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.544
+embed_e5_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.666
+ft_distilroberta,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.901
+ft_roberta_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.878
+ft_openai_detector,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.767
+ft_electra_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.726
+ft_modernbert_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.902
+ft_deberta_v3_small,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.739
+ft_deberta_v3_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.763
+ft_deberta_v3_large,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.827
+ft_openai_detector_large,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.849
+lc_tfidf_logreg_f010,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.687
+lc_tfidf_logreg_f025,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.687
+lc_tfidf_logreg_f050,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.687
+lc_stylo_ext_f010,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.923
+lc_stylo_ext_f025,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.923
+lc_stylo_ext_f050,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.923
+lc_deberta_v3_small_f025,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.712
+ss_tfidf_logreg,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.687
+ss_stylo_ext,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.924
+ss_stylo_ext_with_test,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.923
+cluster_tfidf_logreg,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.687
+cluster_stylo_ext,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.923
+debiased_stylo_ext,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.876
+debiased_deberta_v3_base,test predictions agree with best model (lm_gpt2) - Spearman > 0.2,PASS,rho 0.772

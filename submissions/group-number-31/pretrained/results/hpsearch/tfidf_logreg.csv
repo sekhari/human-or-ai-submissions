@@ -1,0 +1,11 @@
+model,C,ngram_range,inner_cv_auroc,inner_cv_std,n_rows_scored,run,chosen,chosen_val_auroc
+tfidf_logreg,0.5,"[1,1]",0.934809,0.0060168,8000,rep__hp_tfidf_logreg_00,False,
+tfidf_logreg,0.5,"[1,2]",0.94283,0.00521849,8000,rep__hp_tfidf_logreg_01,False,
+tfidf_logreg,2,"[1,1]",0.942349,0.00482417,8000,rep__hp_tfidf_logreg_02,False,
+tfidf_logreg,2,"[1,2]",0.952393,0.00410712,8000,rep__hp_tfidf_logreg_03,False,
+tfidf_logreg,4,"[1,1]",0.943144,0.00462236,8000,rep__hp_tfidf_logreg_04,False,
+tfidf_logreg,4,"[1,2]",0.954395,0.00388014,8000,rep__hp_tfidf_logreg_05,False,
+tfidf_logreg,16,"[1,1]",0.942413,0.00462762,8000,rep__hp_tfidf_logreg_06,False,
+tfidf_logreg,16,"[1,2]",0.955882,0.00367462,8000,rep__hp_tfidf_logreg_07,False,
+tfidf_logreg,64,"[1,1]",0.941186,0.00472947,8000,rep__hp_tfidf_logreg_08,False,
+tfidf_logreg,64,"[1,2]",0.956213,0.00360136,8000,rep__hp_tfidf_logreg_09,True,0.961066

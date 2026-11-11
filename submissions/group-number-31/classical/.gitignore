@@ -1,0 +1,4 @@
+# fitted models written by train.py --final (re-create them; never commit weights)
+artifacts/
+# local scratch output of predict.py
+submission.csv

@@ -1,0 +1,2 @@
+submission,ids_identical,max_abs_diff,spearman,how
+final_B_lm4,True,0.0,0.9999999999999999,"make_submission.py in this repo re-predicting test with the saved research-repo runs (outputs/runs, not in git)"

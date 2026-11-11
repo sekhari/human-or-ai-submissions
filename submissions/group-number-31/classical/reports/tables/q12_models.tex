@@ -1,0 +1,8 @@
+C1 \texttt{tfidf\_lr} & word 1--2 + raw char 1--5 + distorted-text word 1--3 TF-IDF $\to$ logistic regression & 1.0000 & 0.9967 & 25 s (CPU) \\
+C2 \texttt{stylo\_gbm} & 101 hand-crafted stylometric features $\to$ LightGBM & 1.0000 & 0.9983 & 7 s (CPU) \\
+C3 \texttt{transformer\_scratch} & single line breaks joined, 12k byte-level BPE $\to$ 4-layer Transformer encoder, random init & 0.9985 & 0.9859 & 34 s (RTX 5070) \\
+\midrule
+\texttt{linear\_svm} & C1 v1 features (word + char\_wb) $\to$ linear SVM & 1.0000 & 0.9623 & 14 s (CPU) \\
+\texttt{nbsvm} & binary n-grams scaled by NB log-count ratio $\to$ LR & 1.0000 & 0.9699 & 15 s (CPU) \\
+\texttt{rf\_stylo} & C2 features $\to$ random forest & 1.0000 & 0.9969 & 7 s (CPU) \\
+\texttt{ensemble\_c123} & C1+C2+C3 CDF blend, weights from inner-CV OOF & 1.0000 & 0.9988 & 5.2 min (RTX 5070) \\

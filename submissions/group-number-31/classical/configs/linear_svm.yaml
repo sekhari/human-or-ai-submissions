@@ -1,0 +1,12 @@
+# Extra row: C1's TF-IDF features -> linear SVM.
+model: linear_svm
+params:
+  C: 1.0
+  word_ngrams: [1, 2]
+  char_ngrams: [2, 5]
+  word_min_df: 2
+  char_min_df: 3
+  max_features: 300000
+  lowercase: false
+search:
+  C: [0.1, 1.0, 10.0]

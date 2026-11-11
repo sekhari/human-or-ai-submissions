@@ -1,0 +1,27 @@
+{
+  "model": "stylo_gbm@no_added",
+  "registry_name": "stylo_gbm",
+  "params": {
+    "n_estimators": 800,
+    "learning_rate": 0.03,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "colsample_bytree": 0.7,
+    "subsample": 0.8,
+    "reg_lambda": 1.0,
+    "extended": true,
+    "added": false
+  },
+  "seed": 20261023,
+  "train_auroc": 1.0,
+  "val_auroc": 0.998248,
+  "val_tpr_at_1fpr": 0.98,
+  "n_train": 8000,
+  "n_val": 2000,
+  "fit_time_s": 8.7,
+  "val_predict_time_s": 2.0,
+  "hardware": "CPU (AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD)",
+  "searched": false,
+  "timestamp": "2026-11-01T17:44:48",
+  "git_commit": "7f9337d15dac14bceda39a5845d5a797d1a7e998"
+}

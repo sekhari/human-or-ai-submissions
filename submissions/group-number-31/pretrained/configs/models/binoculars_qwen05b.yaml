@@ -1,0 +1,12 @@
+# Binoculars (Hans et al., 2024) with Qwen2.5-0.5B (observer) + Qwen2.5-0.5B-Instruct (performer),
+# plus per-token stats and stylometric features -> LightGBM.  [GPU | Mac: yes (~2 GB weights, fp32 on MPS)]
+# Set head: zero_shot to score with the raw Binoculars statistic (no training).
+model:
+  name: lm_perplexity
+  params:
+    lm_name: Qwen/Qwen2.5-0.5B
+    performer_name: Qwen/Qwen2.5-0.5B-Instruct
+    max_length: 512
+    batch_size: 8
+    head: lightgbm
+    add_stylometric: true

@@ -1,0 +1,11 @@
+id,label,p_ai,error,words,blank_lines,lines,model
+9403,0,0.954019,FP,159,0,1,stylo_gbm
+961,0,0.874548,FP,95,0,1,stylo_gbm
+921,0,0.85874,FP,153,0,1,stylo_gbm
+2696,0,0.833306,FP,239,0,1,stylo_gbm
+6067,0,0.646575,FP,118,0,1,stylo_gbm
+5498,1,6.76183e-05,FN,272,0,22,stylo_gbm
+5316,1,0.000645561,FN,234,0,1,stylo_gbm
+7049,1,0.00205919,FN,306,0,6,stylo_gbm
+1602,1,0.00211252,FN,264,0,1,stylo_gbm
+5603,1,0.00628753,FN,339,0,1,stylo_gbm

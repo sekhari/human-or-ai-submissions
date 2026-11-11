@@ -1,0 +1,10 @@
+# GPT-2 (124M) token log-prob / rank / entropy features + stylometric features -> LightGBM.
+# [GPU or Mac MPS | Mac: yes, ~10-15 min to compute features once, then cached]
+model:
+  name: lm_perplexity
+  params:
+    lm_name: openai-community/gpt2
+    max_length: 512
+    batch_size: 16
+    head: lightgbm
+    add_stylometric: true

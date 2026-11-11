@@ -1,0 +1,7 @@
+model,method,rounds,pseudo_labels,train_auroc,val_auroc,fit_time_s,pseudo_label_p_min_ai,pseudo_label_p_max_human,unlabeled_texts_identical_to_a_val_text
+tfidf_lr,supervised,0,0,1,0.996702,22.5,,,0
+tfidf_lr,self-training (40% of unlabeled per round),1,1200,1,0.996593,26.1,0.97401,0.0330345,0
+tfidf_lr,self-training (40% of unlabeled per round),3,1200,1,0.996574,83.6,0.977608,0.0288061,0
+stylo_gbm,supervised,0,0,1,0.998311,6.8,,,0
+stylo_gbm,self-training (40% of unlabeled per round),1,1200,1,0.99829,7.6,0.999956,9.08205e-05,0
+stylo_gbm,self-training (40% of unlabeled per round),3,1200,1,0.998349,22.8,0.999962,7.65778e-05,0

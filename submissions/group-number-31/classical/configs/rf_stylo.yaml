@@ -1,0 +1,9 @@
+# Extra row: stylometric features -> random forest.
+model: rf_stylo
+params:
+  n_estimators: 500
+  max_features: sqrt
+  min_samples_leaf: 1
+search:
+  min_samples_leaf: [1, 5]
+  max_features: [sqrt, 0.3]
