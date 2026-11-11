@@ -96,3 +96,7 @@ Its columns are `id` and `label`; `label` is the predicted probability of AI aut
 - `classical_fixed2000_v001` records the experiments on the fixed validation IDs with seed 42.
 - `classical_fixed2000_v002` adds the combined model's C search and selects C=4. Its validation AUROC is 0.950644, compared with 0.950553 at C=16.
 - The submission package uses one experiment command and one dependency file, and includes the required learning-curve plotting command.
+
+## AI Disclosure
+
+I used ChatGPT to help modify the code, plot the experimental results, and organize the documentation.
