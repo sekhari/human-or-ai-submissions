@@ -1,0 +1,6 @@
+# The course repo ignores all *.csv files. Re-include the small, data-free CSVs
+# that the report relies on (validation ids and derived result tables).
+# Raw Kaggle data and submission.csv stay ignored.
+!splits/val_ids.csv
+!q4/results/*.csv
+!q5/results/*.csv

@@ -1,0 +1,10 @@
+{
+  "best_proposed_variant": "normalize_quotes",
+  "selected_configuration": "baseline",
+  "cv_mean_auroc": {
+    "baseline": 0.9618771875000001,
+    "normalize_quotes": 0.9609053124999999,
+    "word_only": 0.9454978125
+  },
+  "selected_before_validation_scoring": true
+}

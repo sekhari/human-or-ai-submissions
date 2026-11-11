@@ -1,0 +1,732 @@
+[
+  {
+    "id": "5234",
+    "error_type": "FP",
+    "p_ai": 0.9319235927882952,
+    "toward_ai": [
+      {
+        "feature": "it '",
+        "log_odds_contribution": 0.5362726403784792
+      },
+      {
+        "feature": ", with",
+        "log_odds_contribution": 0.48440542040137297
+      },
+      {
+        "feature": "overall",
+        "log_odds_contribution": 0.25840756246170493
+      },
+      {
+        "feature": "'",
+        "log_odds_contribution": 0.24164261067689308
+      },
+      {
+        "feature": ". it",
+        "log_odds_contribution": 0.23764247003568753
+      },
+      {
+        "feature": ". .",
+        "log_odds_contribution": 0.22718551645756488
+      },
+      {
+        "feature": "had been",
+        "log_odds_contribution": 0.20915224573446695
+      },
+      {
+        "feature": ", which",
+        "log_odds_contribution": 0.20235938155029892
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.4020071722181553
+      },
+      {
+        "feature": ".",
+        "log_odds_contribution": -0.29143858703570413
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.2662378944000198
+      },
+      {
+        "feature": "my",
+        "log_odds_contribution": -0.26517345433680434
+      },
+      {
+        "feature": ". a",
+        "log_odds_contribution": -0.2567804019802021
+      },
+      {
+        "feature": "a",
+        "log_odds_contribution": -0.25266267355985256
+      },
+      {
+        "feature": ",",
+        "log_odds_contribution": -0.24733080497830884
+      },
+      {
+        "feature": "i",
+        "log_odds_contribution": -0.23130817412087992
+      }
+    ]
+  },
+  {
+    "id": "4947",
+    "error_type": "FP",
+    "p_ai": 0.9051944967113126,
+    "toward_ai": [
+      {
+        "feature": "#",
+        "log_odds_contribution": 0.9926605513299483
+      },
+      {
+        "feature": ":",
+        "log_odds_contribution": 0.988416790389245
+      },
+      {
+        "feature": "\u2014",
+        "log_odds_contribution": 0.45748014217764493
+      },
+      {
+        "feature": "\" (",
+        "log_odds_contribution": 0.39304765288739624
+      },
+      {
+        "feature": ", including",
+        "log_odds_contribution": 0.2436574797565668
+      },
+      {
+        "feature": "'",
+        "log_odds_contribution": 0.1909110461103223
+      },
+      {
+        "feature": "la",
+        "log_odds_contribution": 0.17933480352061215
+      },
+      {
+        "feature": ". it",
+        "log_odds_contribution": 0.1779262793535289
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "jacques",
+        "log_odds_contribution": -0.2774154650912202
+      },
+      {
+        "feature": "and",
+        "log_odds_contribution": -0.2769278891592352
+      },
+      {
+        "feature": "album",
+        "log_odds_contribution": -0.2539976663377104
+      },
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.24206671944988276
+      },
+      {
+        "feature": "\"",
+        "log_odds_contribution": -0.2400109248245462
+      },
+      {
+        "feature": ",",
+        "log_odds_contribution": -0.21776127098183942
+      },
+      {
+        "feature": "jean",
+        "log_odds_contribution": -0.2093412930611246
+      },
+      {
+        "feature": ": \"",
+        "log_odds_contribution": -0.2046527995149356
+      }
+    ]
+  },
+  {
+    "id": "3671",
+    "error_type": "FP",
+    "p_ai": 0.8983279050017614,
+    "toward_ai": [
+      {
+        "feature": ", including",
+        "log_odds_contribution": 0.29296485851984067
+      },
+      {
+        "feature": ". \"",
+        "log_odds_contribution": 0.2522041943302549
+      },
+      {
+        "feature": "including the",
+        "log_odds_contribution": 0.20757721522115188
+      },
+      {
+        "feature": "including",
+        "log_odds_contribution": 0.207004453848558
+      },
+      {
+        "feature": "show",
+        "log_odds_contribution": 0.20292568556645527
+      },
+      {
+        "feature": "york city",
+        "log_odds_contribution": 0.1958449755618287
+      },
+      {
+        "feature": ", which",
+        "log_odds_contribution": 0.1821692894911677
+      },
+      {
+        "feature": "known for",
+        "log_odds_contribution": 0.17778031649449919
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.44341644651183637
+      },
+      {
+        "feature": "and",
+        "log_odds_contribution": -0.39294111489793804
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.29707026987810276
+      },
+      {
+        "feature": "in",
+        "log_odds_contribution": -0.2836843300951401
+      },
+      {
+        "feature": "and in",
+        "log_odds_contribution": -0.26780105474460303
+      },
+      {
+        "feature": ",",
+        "log_odds_contribution": -0.23845637647535184
+      },
+      {
+        "feature": "is",
+        "log_odds_contribution": -0.23202686408950934
+      },
+      {
+        "feature": "have",
+        "log_odds_contribution": -0.2234066999429597
+      }
+    ]
+  },
+  {
+    "id": "7767",
+    "error_type": "FP",
+    "p_ai": 0.8828659045787252,
+    "toward_ai": [
+      {
+        "feature": "is a",
+        "log_odds_contribution": 0.31183129732862114
+      },
+      {
+        "feature": "the university",
+        "log_odds_contribution": 0.2858788459394113
+      },
+      {
+        "feature": ", including",
+        "log_odds_contribution": 0.28345472054069365
+      },
+      {
+        "feature": "the american",
+        "log_odds_contribution": 0.26935734853328397
+      },
+      {
+        "feature": "a member",
+        "log_odds_contribution": 0.25917638707175183
+      },
+      {
+        "feature": "work",
+        "log_odds_contribution": 0.24977903083241118
+      },
+      {
+        "feature": "university",
+        "log_odds_contribution": 0.2010360461245054
+      },
+      {
+        "feature": "including the",
+        "log_odds_contribution": 0.2008389054864826
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.477294349463655
+      },
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.4676252659851417
+      },
+      {
+        "feature": "and",
+        "log_odds_contribution": -0.344668561353362
+      },
+      {
+        "feature": "of the",
+        "log_odds_contribution": -0.32754209962723163
+      },
+      {
+        "feature": "is",
+        "log_odds_contribution": -0.31639946341317826
+      },
+      {
+        "feature": "in",
+        "log_odds_contribution": -0.24312576389304255
+      },
+      {
+        "feature": ".",
+        "log_odds_contribution": -0.23516229493660104
+      },
+      {
+        "feature": "a",
+        "log_odds_contribution": -0.22007011629809084
+      }
+    ]
+  },
+  {
+    "id": "8238",
+    "error_type": "FP",
+    "p_ai": 0.8713653247203119,
+    "toward_ai": [
+      {
+        "feature": "such as",
+        "log_odds_contribution": 0.3328804486665605
+      },
+      {
+        "feature": ". the",
+        "log_odds_contribution": 0.27767378964372724
+      },
+      {
+        "feature": ":",
+        "log_odds_contribution": 0.2700521525174452
+      },
+      {
+        "feature": ". ,",
+        "log_odds_contribution": 0.2355007389397491
+      },
+      {
+        "feature": "such",
+        "log_odds_contribution": 0.22976023637022486
+      },
+      {
+        "feature": "significant",
+        "log_odds_contribution": 0.22492802234190296
+      },
+      {
+        "feature": "work",
+        "log_odds_contribution": 0.21752298998842035
+      },
+      {
+        "feature": "a significant",
+        "log_odds_contribution": 0.16665942388539015
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.4252505702822107
+      },
+      {
+        "feature": "and",
+        "log_odds_contribution": -0.3832888859703579
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.3813444890759097
+      },
+      {
+        "feature": "of the",
+        "log_odds_contribution": -0.3535524218879676
+      },
+      {
+        "feature": "segmentation",
+        "log_odds_contribution": -0.252733003184416
+      },
+      {
+        "feature": "are",
+        "log_odds_contribution": -0.24812450900068814
+      },
+      {
+        "feature": ",",
+        "log_odds_contribution": -0.2371838837753501
+      },
+      {
+        "feature": ".",
+        "log_odds_contribution": -0.2299367913906317
+      }
+    ]
+  },
+  {
+    "id": "3062",
+    "error_type": "FN",
+    "p_ai": 0.01068866125891764,
+    "toward_ai": [
+      {
+        "feature": "\u2026",
+        "log_odds_contribution": 0.659901599154224
+      },
+      {
+        "feature": "m not",
+        "log_odds_contribution": 0.2085949062013178
+      },
+      {
+        "feature": "could",
+        "log_odds_contribution": 0.1712752671781185
+      },
+      {
+        "feature": "t know",
+        "log_odds_contribution": 0.16762326400258992
+      },
+      {
+        "feature": "that the",
+        "log_odds_contribution": 0.16269457407407883
+      },
+      {
+        "feature": "today",
+        "log_odds_contribution": 0.15502212867362966
+      },
+      {
+        "feature": "any",
+        "log_odds_contribution": 0.15448551556949708
+      },
+      {
+        "feature": "that",
+        "log_odds_contribution": 0.14409312127891025
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.4193617697106774
+      },
+      {
+        "feature": "\u2019",
+        "log_odds_contribution": -0.40229792156727473
+      },
+      {
+        "feature": "my",
+        "log_odds_contribution": -0.36887726527550185
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.3627038494452989
+      },
+      {
+        "feature": "of the",
+        "log_odds_contribution": -0.332412373851872
+      },
+      {
+        "feature": "is",
+        "log_odds_contribution": -0.32110405605365094
+      },
+      {
+        "feature": "i",
+        "log_odds_contribution": -0.3115027968495422
+      },
+      {
+        "feature": "\u2019 t",
+        "log_odds_contribution": -0.30005148411990684
+      }
+    ]
+  },
+  {
+    "id": "9490",
+    "error_type": "FN",
+    "p_ai": 0.0133202864032364,
+    "toward_ai": [
+      {
+        "feature": "!",
+        "log_odds_contribution": 0.3697657241308201
+      },
+      {
+        "feature": ":",
+        "log_odds_contribution": 0.22970404984171175
+      },
+      {
+        "feature": ", making",
+        "log_odds_contribution": 0.1271944310612392
+      },
+      {
+        "feature": "1",
+        "log_odds_contribution": 0.12206017108237324
+      },
+      {
+        "feature": "sure",
+        "log_odds_contribution": 0.1083373313466696
+      },
+      {
+        "feature": "about",
+        "log_odds_contribution": 0.09542833242048789
+      },
+      {
+        "feature": "cook for",
+        "log_odds_contribution": 0.09302424280600728
+      },
+      {
+        "feature": "about two",
+        "log_odds_contribution": 0.0882003443922307
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "and",
+        "log_odds_contribution": -0.32602224624379444
+      },
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.30608988640336676
+      },
+      {
+        "feature": "a",
+        "log_odds_contribution": -0.2485971540194054
+      },
+      {
+        "feature": ".",
+        "log_odds_contribution": -0.22252592417867584
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.21291073165062638
+      },
+      {
+        "feature": "in",
+        "log_odds_contribution": -0.21253290400519767
+      },
+      {
+        "feature": ". set",
+        "log_odds_contribution": -0.20843878013605546
+      },
+      {
+        "feature": ",",
+        "log_odds_contribution": -0.18524378502448235
+      }
+    ]
+  },
+  {
+    "id": "1524",
+    "error_type": "FN",
+    "p_ai": 0.018598937626987735,
+    "toward_ai": [
+      {
+        "feature": ". the",
+        "log_odds_contribution": 0.3970981554570091
+      },
+      {
+        "feature": "paper ,",
+        "log_odds_contribution": 0.19395209846753983
+      },
+      {
+        "feature": "the degree",
+        "log_odds_contribution": 0.17731669041223738
+      },
+      {
+        "feature": "extract",
+        "log_odds_contribution": 0.1768140888946012
+      },
+      {
+        "feature": "allows",
+        "log_odds_contribution": 0.1607523643716194
+      },
+      {
+        "feature": "paper",
+        "log_odds_contribution": 0.15669429889221564
+      },
+      {
+        "feature": "to extract",
+        "log_odds_contribution": 0.12693805064214506
+      },
+      {
+        "feature": "could",
+        "log_odds_contribution": 0.12413723252291808
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.6081460453389315
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.579585221868776
+      },
+      {
+        "feature": "of the",
+        "log_odds_contribution": -0.5056113318048698
+      },
+      {
+        "feature": "is",
+        "log_odds_contribution": -0.3465421817257123
+      },
+      {
+        "feature": "a",
+        "log_odds_contribution": -0.3383519820818146
+      },
+      {
+        "feature": "state",
+        "log_odds_contribution": -0.28054826510520925
+      },
+      {
+        "feature": ". a",
+        "log_odds_contribution": -0.27854414266345906
+      },
+      {
+        "feature": ".",
+        "log_odds_contribution": -0.24757332061622087
+      }
+    ]
+  },
+  {
+    "id": "4600",
+    "error_type": "FN",
+    "p_ai": 0.023578415975007688,
+    "toward_ai": [
+      {
+        "feature": ", including",
+        "log_odds_contribution": 0.22676871394078488
+      },
+      {
+        "feature": "also",
+        "log_odds_contribution": 0.17433396261598816
+      },
+      {
+        "feature": "'",
+        "log_odds_contribution": 0.16838094706689993
+      },
+      {
+        "feature": "4 .",
+        "log_odds_contribution": 0.16207709194354863
+      },
+      {
+        "feature": "including the",
+        "log_odds_contribution": 0.160674622809487
+      },
+      {
+        "feature": "including",
+        "log_odds_contribution": 0.1602312783055957
+      },
+      {
+        "feature": "is also",
+        "log_odds_contribution": 0.1379570427840375
+      },
+      {
+        "feature": ". he",
+        "log_odds_contribution": 0.1260070624680266
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.43418369604214363
+      },
+      {
+        "feature": "and",
+        "log_odds_contribution": -0.3356086191649808
+      },
+      {
+        "feature": "at the",
+        "log_odds_contribution": -0.31362754624347217
+      },
+      {
+        "feature": "is",
+        "log_odds_contribution": -0.3124860706631551
+      },
+      {
+        "feature": "of",
+        "log_odds_contribution": -0.28591803790577625
+      },
+      {
+        "feature": "from",
+        "log_odds_contribution": -0.2677973996411387
+      },
+      {
+        "feature": "in",
+        "log_odds_contribution": -0.20809490940930925
+      },
+      {
+        "feature": "in the",
+        "log_odds_contribution": -0.20556324125605802
+      }
+    ]
+  },
+  {
+    "id": "473",
+    "error_type": "FN",
+    "p_ai": 0.02843618588664327,
+    "toward_ai": [
+      {
+        "feature": ". the",
+        "log_odds_contribution": 0.2663927831067544
+      },
+      {
+        "feature": "is a",
+        "log_odds_contribution": 0.2605292308065244
+      },
+      {
+        "feature": ":",
+        "log_odds_contribution": 0.2590807889552534
+      },
+      {
+        "feature": "here",
+        "log_odds_contribution": 0.22528653233404505
+      },
+      {
+        "feature": "so ,",
+        "log_odds_contribution": 0.1499202417154456
+      },
+      {
+        "feature": "english",
+        "log_odds_contribution": 0.14917335409838578
+      },
+      {
+        "feature": "full text",
+        "log_odds_contribution": 0.14557895859040354
+      },
+      {
+        "feature": "( i",
+        "log_odds_contribution": 0.1429551671816315
+      }
+    ],
+    "toward_human": [
+      {
+        "feature": "the",
+        "log_odds_contribution": -0.4079739865997529
+      },
+      {
+        "feature": "is",
+        "log_odds_contribution": -0.34113041542796096
+      },
+      {
+        "feature": "a",
+        "log_odds_contribution": -0.2746800883833541
+      },
+      {
+        "feature": "from",
+        "log_odds_contribution": -0.255752987365119
+      },
+      {
+        "feature": "have",
+        "log_odds_contribution": -0.25452498292612746
+      },
+      {
+        "feature": "i",
+        "log_odds_contribution": -0.246994609002058
+      },
+      {
+        "feature": ".",
+        "log_odds_contribution": -0.23144165864322958
+      },
+      {
+        "feature": "a job",
+        "log_odds_contribution": -0.20604418364530597
+      }
+    ]
+  }
+]

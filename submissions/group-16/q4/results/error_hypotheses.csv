@@ -1,0 +1,11 @@
+id,error_type,p_ai,possible_reason
+5234,FP,0.9319235927882952,"Keyboard complaint: ""it"" + apostrophe, "", with"", and ""overall"" push toward AI. Local phrasing may outweigh its informal style."
+4947,FP,0.9051944967113126,"Album track list: ""#"" and "":"" each add about +0.99 log-odds toward AI. List punctuation may dominate factual details."
+3671,FP,0.8983279050017614,"Biography: ""including"" and related phrases contribute toward AI. Conventional explanatory wording may be mistaken for AI style."
+7767,FP,0.8828659045787252,"Botanist biography: ""the university"", ""a member"", and "", including"" favor AI. Topic-related phrases may mislead the model."
+8238,FP,0.8713653247203119,"Technical abstract: ""such as"", "":"", and ""significant"" favor AI. Enumerating examples may resemble learned AI phrasing."
+3062,FN,0.01068866125891764,"Personal question: curly apostrophes, ""my"", and ""i"" favor human. Informal surface cues may obscure awkward or inconsistent statements."
+9490,FN,0.0133202864032364,"Recipe repeats ""buttered, buttered"" and has disconnected steps. Common words and "". set"" favor human; local n-grams miss coherence."
+1524,FN,0.018598937626987735,"Technical passage ends with a personal question. ""of the"", ""state"", and common words favor human, potentially masking mixed structure."
+4600,FN,0.023578415975007688,"Boxer biography includes dates and malformed ""sisters,108"". ""at the"" and ""from"" favor human; lexical features do not assess factual consistency."
+473,FN,0.02843618588664327,"Quoted question and answer: ""have"", ""i"", and ""a job"" favor human. Conversational phrasing may outweigh other signals."
