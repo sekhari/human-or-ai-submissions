@@ -49,7 +49,4 @@ Seed 42 everywhere. Plain `train.py` defaults to the older seed
 
 ## AI assistance
 
-Claude (planning) and Claude Code (wrote these files). I read the
-code, ran the tests, extraction, training and Kaggle submissions
-myself, and checked Usman's predictions against his published AUROCs
-before blending.
+Used Claude Code to write majority of the code, but did most of the architecture planning using Claude to help generate different model ideas. I picked the final model choice and mapped out the curation pipeline. I reviewed the code, ran the tests, extraction, and training myself, and checked Usman's predictions against his published AUROCs before blending.
