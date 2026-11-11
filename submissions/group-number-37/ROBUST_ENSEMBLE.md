@@ -1,3 +1,5 @@
+> Historical record of the earlier four-method recipe. Use README.md for the current submission and commands.
+
 > **Current accepted recipe:** use [TEAM_HANDOFF.md](TEAM_HANDOFF.md) and `robust_validation/current_recipe.json`. The default inference weights are now `[0.35, 0.234, 0.156, 0.26]`, reported at public AUROC 0.97960. The report below records the earlier `[0.375, 0.225, 0.15, 0.25]` recipe, its fitted artifact, and its validation results. Historical hashes and checks describe that original artifact, not a new training run.
 
 # Recorded four-method baseline validation

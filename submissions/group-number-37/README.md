@@ -12,7 +12,7 @@ Our final submission combines a lexical and style reference, CatBoost on GPT-2 a
 
 ## Setup
 
-The full workflow was run on a Colab T4 with Python 3.13.16 and CUDA PyTorch 2.14.1. For Colab, open [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb), select a T4 runtime, run all cells, and provide the competition ZIP when prompted. The notebook trains the current recipe and generates `submission.csv`.
+The full workflow was run on a Colab T4 with Python 3.13.16 and CUDA PyTorch 2.14.1. For Colab, open [Four_Method_Robust_Colab.ipynb](Four_Method_Robust_Colab.ipynb), select a T4 runtime, run all cells, and provide the competition ZIP when prompted. The notebook trains the current recipe and generates `submission_four_methods.csv`. The command-line prediction command below writes `submission.csv`.
 
 For the command line, use a Python 3.13 environment with CUDA-enabled PyTorch installed. Download the supplied CSVs from Kaggle into `data/` at the repository root. From that root, run:
 
@@ -43,6 +43,12 @@ python predict_robust.py --model final_model --input ../../data/test.csv --outpu
 ```
 
 Final fitting uses 9,200 labeled rows and reserves 800 for calibration. Prediction writes the original IDs and AI scores to `submission.csv`. The submitted CSV was generated using the fast reblend from the same fitted components. Full prediction implements the same four-component weights and can also score a new CSV with `id,text` columns. See [TEAM_HANDOFF.md](TEAM_HANDOFF.md) for the reblend workflow.
+
+## Team contributions
+
+- Alex developed the initial notebook and led the final four-component ensemble, expanded LM features, DeBERTa integration, calibration and robustness checks, T4 workflow, and accepted reblend with Codex assistance. His development commits are preserved in this branch.
+- Cris developed the controlled experiments, learning curves, pseudo-labeling studies, dropout fix, domain checks, and earlier three-way blend.
+- Derrick explored poetry-specific ranking methods and tested three Kaggle variants. Those experiments are documented in the report and Kaggle submission descriptions.
 
 ## AI assistance
 
