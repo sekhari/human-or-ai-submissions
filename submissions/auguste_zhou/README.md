@@ -1,7 +1,7 @@
-# Example team (template — do not submit this folder)
+# Team "Auguste Zhou" Kaggle Competition Submission
 
-**Team members:** Alice Example (ae123), Bob Example (be456)  
-**Kaggle team name:** `example-team`
+**Team members:** Auguste Zhou (zz285), Nishant Ray (nr487), Chenghao Guan (cg777)  
+**Kaggle team name:** `auguste-zhou`
 
 ## Setup
 
