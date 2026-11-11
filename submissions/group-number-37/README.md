@@ -52,4 +52,4 @@ Final fitting uses 9,200 labeled rows and reserves 800 for calibration. Predicti
 
 ## AI assistance
 
-We used OpenAI Codex for coding, debugging, running experiments, explanations, and drafting and editing the report. Alex directed the final ensemble workflow and robustness comparisons and tested the exported Kaggle submissions. Automated checks covered data splits, prediction IDs and order, score ranges, and agreement between full scoring and the fast reblend. We used the checks and reported results to guide the final recipe. This matches Q6.3 in the report.
+OpenAI Codex assisted with coding, debugging, running experiments, explanations, and drafting and editing the report. As a team, we guided the modeling decisions, discussed compute constraints and robustness comparisons, and evaluated the Kaggle submission results. Automated checks covered data splits, prediction IDs and order, score ranges, and agreement between full scoring and the fast reblend. We used the checks and reported results to guide the final recipe. This matches Q6.3 in the report.
