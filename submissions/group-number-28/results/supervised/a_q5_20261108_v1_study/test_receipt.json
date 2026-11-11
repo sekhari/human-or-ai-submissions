@@ -1,0 +1,22 @@
+{
+  "commands_executed": [
+    {
+      "command": "/opt/anaconda3/bin/python -m unittest discover -s tests -v",
+      "failed": 0,
+      "passed": 10
+    },
+    {
+      "command": "/opt/anaconda3/bin/python -m unittest experiments.supervised.test_q5 -v",
+      "failed": 0,
+      "passed": 4
+    },
+    {
+      "command": "/opt/anaconda3/bin/python -m experiments.supervised.run_q5 --prefix a_q5_20261108_v1 --resume",
+      "exit_code": 0,
+      "output": "Study already complete; no fits or artifact overwrites performed"
+    }
+  ],
+  "fresh_full_size_model_refits_performed_by_verifier": false,
+  "full_size_training_performed_by_tests": false,
+  "recorded_at_utc": "2026-11-08T07:35:20.355903+00:00"
+}

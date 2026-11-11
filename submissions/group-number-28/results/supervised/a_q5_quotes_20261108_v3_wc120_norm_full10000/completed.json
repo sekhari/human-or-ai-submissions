@@ -1,0 +1,11 @@
+{
+  "artifact_sha256": {
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm_full10000/config.json": "f855d3957171b7d25f7105d9eab90fb86709aa7f6540129d34141608892ef4ea",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm_full10000/metrics.json": "3656ec525d339586aa407ad2cca2c91460b71f4e680f48473e0e78126fda82c6",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm_full10000/model.joblib": "03899a696efe1800bec296004081d9309fff690fe9756b4e62286f01a8dcbd58",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm_full10000/model_fit.json": "21442b391331ee67e332d141c40eca74c8d1b5c6dd23e4d8384367b89b17e9ad",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm_full10000/train_ids.csv": "114ec875864fd8679d7e5191c94fbe941f986abafae6e0687036ee13992fae93",
+    "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.csv": "67c97db099987366538d5b3bc35213dcdb3c9a0ed13ab5d115ed161b9b9849cb",
+    "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.metadata.json": "a30f171083691a9c229506cdb03015eec6160a3391da736e3edc97ce1706bd26"
+  }
+}

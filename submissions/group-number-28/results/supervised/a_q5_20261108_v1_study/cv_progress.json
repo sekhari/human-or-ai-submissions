@@ -1,0 +1,134 @@
+[
+  {
+    "auroc": 0.935384895699187,
+    "fit_ids_sha256": "b54e64755886c4472e1fd1efe9d7fb8d75f2061090d4068b91860a509fc40638",
+    "fit_seconds": 1.0564168342389166,
+    "fold": 0,
+    "held_ids_sha256": "9d41fe74833527b7696087b20eb5832c640de14e246db998198bbb28342c9e1a",
+    "model": "w60",
+    "n_features": 60000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.939249992408147,
+    "fit_ids_sha256": "bb7bfba84d9b6a03db3696f0b06ffcedf4009d50887a1dcc168e9f8cbbad656b",
+    "fit_seconds": 0.9888661252334714,
+    "fold": 1,
+    "held_ids_sha256": "b0ead8be1acb680225855390fa7120a75b06139057b8901177e864ae0249b5ad",
+    "model": "w60",
+    "n_features": 60000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.933492750531969,
+    "fit_ids_sha256": "1090aa341a85e52dec44666e64c9cbb15dde19c8d64c203f7ce6d51fbf257f24",
+    "fit_seconds": 1.01213554199785,
+    "fold": 2,
+    "held_ids_sha256": "6fc9ed06b25d2a1f76c857e57775ba6701cba3028147de8857d32b55d686d62b",
+    "model": "w60",
+    "n_features": 60000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9646928223810075,
+    "fit_ids_sha256": "b54e64755886c4472e1fd1efe9d7fb8d75f2061090d4068b91860a509fc40638",
+    "fit_seconds": 4.9003598326817155,
+    "fold": 0,
+    "held_ids_sha256": "9d41fe74833527b7696087b20eb5832c640de14e246db998198bbb28342c9e1a",
+    "model": "c60",
+    "n_features": 60000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9640275511156648,
+    "fit_ids_sha256": "bb7bfba84d9b6a03db3696f0b06ffcedf4009d50887a1dcc168e9f8cbbad656b",
+    "fit_seconds": 4.797654916997999,
+    "fold": 1,
+    "held_ids_sha256": "b0ead8be1acb680225855390fa7120a75b06139057b8901177e864ae0249b5ad",
+    "model": "c60",
+    "n_features": 60000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9615817307665252,
+    "fit_ids_sha256": "1090aa341a85e52dec44666e64c9cbb15dde19c8d64c203f7ce6d51fbf257f24",
+    "fit_seconds": 4.818905958905816,
+    "fold": 2,
+    "held_ids_sha256": "6fc9ed06b25d2a1f76c857e57775ba6701cba3028147de8857d32b55d686d62b",
+    "model": "c60",
+    "n_features": 60000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9643779010719696,
+    "fit_ids_sha256": "b54e64755886c4472e1fd1efe9d7fb8d75f2061090d4068b91860a509fc40638",
+    "fit_seconds": 5.919049249961972,
+    "fold": 0,
+    "held_ids_sha256": "9d41fe74833527b7696087b20eb5832c640de14e246db998198bbb28342c9e1a",
+    "model": "wc120",
+    "n_features": 120000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9659980587350735,
+    "fit_ids_sha256": "bb7bfba84d9b6a03db3696f0b06ffcedf4009d50887a1dcc168e9f8cbbad656b",
+    "fit_seconds": 5.954133500345051,
+    "fold": 1,
+    "held_ids_sha256": "b0ead8be1acb680225855390fa7120a75b06139057b8901177e864ae0249b5ad",
+    "model": "wc120",
+    "n_features": 120000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9627675110825717,
+    "fit_ids_sha256": "1090aa341a85e52dec44666e64c9cbb15dde19c8d64c203f7ce6d51fbf257f24",
+    "fit_seconds": 6.122385332826525,
+    "fold": 2,
+    "held_ids_sha256": "6fc9ed06b25d2a1f76c857e57775ba6701cba3028147de8857d32b55d686d62b",
+    "model": "wc120",
+    "n_features": 120000,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9363251607504575,
+    "fit_ids_sha256": "b54e64755886c4472e1fd1efe9d7fb8d75f2061090d4068b91860a509fc40638",
+    "fit_seconds": 1.0130865829996765,
+    "fold": 0,
+    "held_ids_sha256": "9d41fe74833527b7696087b20eb5832c640de14e246db998198bbb28342c9e1a",
+    "model": "w120",
+    "n_features": 118754,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.9404528793367757,
+    "fit_ids_sha256": "bb7bfba84d9b6a03db3696f0b06ffcedf4009d50887a1dcc168e9f8cbbad656b",
+    "fit_seconds": 1.0114562078379095,
+    "fold": 1,
+    "held_ids_sha256": "b0ead8be1acb680225855390fa7120a75b06139057b8901177e864ae0249b5ad",
+    "model": "w120",
+    "n_features": 119206,
+    "warning_count": 0,
+    "warnings": []
+  },
+  {
+    "auroc": 0.933850116692714,
+    "fit_ids_sha256": "1090aa341a85e52dec44666e64c9cbb15dde19c8d64c203f7ce6d51fbf257f24",
+    "fit_seconds": 1.0272439583204687,
+    "fold": 2,
+    "held_ids_sha256": "6fc9ed06b25d2a1f76c857e57775ba6701cba3028147de8857d32b55d686d62b",
+    "model": "w120",
+    "n_features": 118490,
+    "warning_count": 0,
+    "warnings": []
+  }
+]

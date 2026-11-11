@@ -1,0 +1,17 @@
+{
+  "all_checks_passed": true,
+  "all_primary_model_refits_exact_match": true,
+  "candidate_identical_to_v1": true,
+  "candidate_n_test": 3000,
+  "candidate_sha256": "0af001abe49b88a4184b5a3318ca6915832747ff858bc9d397de8b891aab6e1a",
+  "candidate_source_train_rows": 10000,
+  "n_candidate_fold_fits": 192,
+  "n_candidates": 64,
+  "n_models": 8,
+  "pdf_sha256": "52b28d9e775efefc3aac68cf2517f9a7e6da08068ec935b86d851ffca5672a22",
+  "secondary_seed_csvs_checked": [
+    7,
+    142
+  ],
+  "uploaded_to_kaggle": false
+}

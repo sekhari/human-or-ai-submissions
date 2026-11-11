@@ -1,0 +1,22 @@
+{
+  "fit_seconds": 1.6884067500941455,
+  "memory_note": "cumulative process high-water mark, not isolated per model",
+  "n_features": 60000,
+  "prediction_seconds_train_plus_validation": 0.909635666757822,
+  "process_peak_rss_bytes": 572211200,
+  "timing_definition": "wall seconds; fit includes full TF-IDF and any probability calibration, excludes inner tuning",
+  "train": {
+    "accuracy_at_0_5": 0.960625,
+    "auroc": 0.9921151875000002,
+    "brier": 0.039984722073836326,
+    "log_loss": 0.15897138849784742,
+    "n": 8000
+  },
+  "validation": {
+    "accuracy_at_0_5": 0.833,
+    "auroc": 0.9060509999999999,
+    "brier": 0.1210268100542828,
+    "log_loss": 0.38061956388016605,
+    "n": 2000
+  }
+}

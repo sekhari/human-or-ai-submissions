@@ -1,0 +1,25 @@
+{
+  "fit_seconds": 6.077365125063807,
+  "memory_note": "cumulative process high-water mark, not per-model memory",
+  "mlp_gradient_training_fraction": null,
+  "n_features": 60000,
+  "n_iter": 41,
+  "process_peak_rss_bytes": 966000640,
+  "svd_explained_variance_ratio_sum": null,
+  "timing_definition": "single CPU thread; full feature extraction and calibration included; search excluded",
+  "train": {
+    "accuracy_at_0_5": 0.999875,
+    "auroc": 1.0,
+    "brier": 0.0014905621531532385,
+    "log_loss": 0.027174405710416145,
+    "n": 8000
+  },
+  "validation": {
+    "accuracy_at_0_5": 0.871,
+    "auroc": 0.9438759999999999,
+    "brier": 0.0912328044193824,
+    "log_loss": 0.2978213382983031,
+    "n": 2000
+  },
+  "warnings": []
+}

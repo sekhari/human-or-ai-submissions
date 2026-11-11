@@ -1,0 +1,22 @@
+[
+  {
+    "epoch": 1,
+    "loop_seconds": 824.3889495003968,
+    "mean_loss": 0.14722186275806742,
+    "order_sha256": "21cdb0add9870cd6eefd804206ef7b5749f7a80267e92c69429c513ae34c4ef3",
+    "originals": 10000,
+    "test_used_for_fitting": false,
+    "unique_originals": 10000,
+    "updates": 625
+  },
+  {
+    "epoch": 2,
+    "loop_seconds": 834.4197782501578,
+    "mean_loss": 0.05275664706075622,
+    "order_sha256": "c47634b6eecce80e3e3fd4dcd13b5bc748ce3d142912242fdd95a9d47925f9f5",
+    "originals": 10000,
+    "test_used_for_fitting": false,
+    "unique_originals": 10000,
+    "updates": 625
+  }
+]

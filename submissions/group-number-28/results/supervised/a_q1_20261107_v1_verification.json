@@ -1,0 +1,38 @@
+{
+  "all_checks_passed": true,
+  "inner_folds_match_training_only_split": true,
+  "models": {
+    "lr": {
+      "fresh_refit_plus_prediction_seconds": 1.9991915840655565,
+      "fresh_refit_prediction_max_error": 0.0,
+      "n_predictions": 2000,
+      "saved_model_prediction_max_error": 0.0,
+      "selected_by_inner_cv": true,
+      "validation_auroc": 0.9434359999999999,
+      "vocabulary_features_present_in_training": true
+    },
+    "nb": {
+      "fresh_refit_plus_prediction_seconds": 1.8061505421064794,
+      "fresh_refit_prediction_max_error": 0.0,
+      "n_predictions": 2000,
+      "saved_model_prediction_max_error": 0.0,
+      "selected_by_inner_cv": true,
+      "validation_auroc": 0.9060509999999999,
+      "vocabulary_features_present_in_training": true
+    },
+    "svm": {
+      "fresh_refit_plus_prediction_seconds": 6.861772249918431,
+      "fresh_refit_prediction_max_error": 0.0,
+      "n_predictions": 2000,
+      "saved_model_prediction_max_error": 0.0,
+      "selected_by_inner_cv": true,
+      "validation_auroc": 0.9438759999999999,
+      "vocabulary_features_present_in_training": true
+    }
+  },
+  "reference_sizes": {
+    "train": 8000,
+    "validation": 2000
+  },
+  "source_hashes_match": true
+}

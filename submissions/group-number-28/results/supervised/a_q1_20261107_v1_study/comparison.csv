@@ -1,0 +1,4 @@
+model,name,run_id,train_auroc,validation_auroc,fit_seconds,chosen_value,n_features
+lr,Logistic regression,a_q1_20261107_v1_lr,1.0,0.9434359999999999,1.7776770419441164,10.0,60000
+nb,Multinomial Naive Bayes,a_q1_20261107_v1_nb,0.9921151875000002,0.9060509999999999,1.6884067500941455,0.1,60000
+svm,Calibrated linear SVM,a_q1_20261107_v1_svm,1.0,0.9438759999999999,5.835211083292961,1.0,60000

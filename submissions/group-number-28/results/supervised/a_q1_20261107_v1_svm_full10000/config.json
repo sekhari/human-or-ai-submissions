@@ -1,0 +1,148 @@
+{
+  "chosen_value": 1.0,
+  "family": "svm",
+  "held_out_evaluation": null,
+  "n_train": 10000,
+  "plan": {
+    "excluded": [
+      "validation fitting",
+      "test fitting",
+      "unlabeled data",
+      "starter duplication",
+      "Kaggle feedback for tuning"
+    ],
+    "hypotheses": [
+      "Discriminative linear classifiers may rank better than multinomial NB with identical TF-IDF features.",
+      "Inner CV can reveal when weaker or stronger regularization hurts; retain unsuccessful candidate results.",
+      "Small held-out differences may not resolve which classifier generalizes better."
+    ],
+    "models": {
+      "lr": {
+        "candidates": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "parameter": "C"
+      },
+      "nb": {
+        "candidates": [
+          0.01,
+          0.1,
+          1.0
+        ],
+        "parameter": "alpha"
+      },
+      "svm": {
+        "candidates": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "parameter": "C"
+      }
+    },
+    "purpose": "Q1 controlled comparison; defined before observing model validation scores",
+    "representation": {
+      "analyzer": "word",
+      "dtype": "float64",
+      "lowercase": true,
+      "max_df": 1.0,
+      "max_features": 60000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "smooth_idf": true,
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b",
+      "use_idf": true
+    },
+    "resources": {
+      "external_weights": false,
+      "gpu": false,
+      "threads": 1
+    },
+    "seeds": {
+      "bootstrap": 342,
+      "calibration": 242,
+      "inner_cv": 142,
+      "model": 42
+    },
+    "selection": {
+      "criterion": "highest mean inner-fold AUROC; exact ties choose first listed candidate",
+      "family_selection": "highest canonical 2000-row held-out AUROC after one refit per family",
+      "inner_cv": "3-fold stratified shuffled on the canonical 8000 training rows only",
+      "inner_seed": 142,
+      "no_adaptive_grid_expansion": true,
+      "representation_refit": "vocabulary and IDF fit only on each inner training fold",
+      "scope": "Q1 candidate only; team final selection can change after Q3/Q5"
+    },
+    "svm_probability": {
+      "method": "sigmoid calibration, 3 stratified shuffled folds, ensemble=false",
+      "pipeline": "entire TF-IDF + LinearSVC pipeline inside CalibratedClassifierCV",
+      "reason": "full-training SVM plus sigmoid fitted to out-of-fold training margins; no held-out calibration",
+      "tuning": "raw decision-function AUROC; calibration only after C selection"
+    },
+    "uncertainty": "1000 stratified paired validation bootstraps; exploratory intervals conditional on fitted models, not adjusted for family selection"
+  },
+  "predict_source_sha256": "c128ef022db72d681905d1feb9b81c362dcd61ace82e598999b332f5c76df833",
+  "provenance": {
+    "cpu_count": 14,
+    "dependencies": {
+      "joblib": "1.4.2",
+      "matplotlib": "3.9.2",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.5.1",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.5.0"
+    },
+    "git_commit": "17aba0e1f0c7b87fa597b4afb53e0cf8db61b2f9",
+    "git_dirty": true,
+    "git_status": "?? experiments/supervised/predict.py\n?? experiments/supervised/q1_plan.json\n?? experiments/supervised/requirements.txt\n?? experiments/supervised/run_q1.py\n?? experiments/supervised/test_q1.py\n?? experiments/supervised/verify_q1.py\n?? old_rubric.tex.zip\n?? results/supervised/a_q1_20261107_v1_lr/\n?? results/supervised/a_q1_20261107_v1_nb/\n?? results/supervised/a_q1_20261107_v1_study/\n?? results/supervised/a_q1_20261107_v1_svm/",
+    "machine": "arm64",
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "processor": "arm",
+    "python": "3.12.7",
+    "source_sha256": {
+      "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+      "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+      "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+      "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    },
+    "started_at_utc": "2026-11-08T04:46:27.280536+00:00",
+    "thread_limit": 1,
+    "threadpools": [
+      {
+        "architecture": "armv8",
+        "filepath": "/opt/anaconda3/lib/libopenblasp-r0.3.21.dylib",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "pthreads",
+        "user_api": "blas",
+        "version": "0.3.21"
+      },
+      {
+        "filepath": "/opt/anaconda3/lib/libomp.dylib",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libomp",
+        "user_api": "openmp",
+        "version": null
+      }
+    ]
+  },
+  "run_id": "a_q1_20261107_v1_svm_full10000",
+  "selected_from": "a_q1_20261107_v1_svm",
+  "selection_source": "../a_q1_20261107_v1_study/selection.json",
+  "status": "Q1 candidate; team final choice remains open",
+  "supervised_labels": "supplied train.csv only; no new labels",
+  "test_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "training_order": "canonical train IDs followed by canonical validation IDs"
+}

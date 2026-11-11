@@ -1,0 +1,189 @@
+{
+  "canonical_8000": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/canonical_8000.csv",
+      "sha256": "3414c1ebc09e0c0a70cbd3632d01625b174578768d1d2ac2662f89aebc53ecef"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/canonical_8000_held.csv",
+      "sha256": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/canonical_8000/held_metadata.csv",
+      "sha256": "976ccc39685c83f85a1db6c6b50edde6560291c077816156bfa8fade4f97248d"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/canonical_8000/predictions.csv",
+      "sha256": "2ce1adfe677f85a5f87d96b6a44f1e8c8d6e83dd4ffc5a9c25787fb679c0bd49"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/canonical_8000_train.csv",
+      "sha256": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/canonical_8000/train_metadata.csv",
+      "sha256": "0dac9b4d82b53e63090f34f5d07c005251fcf5155cfc2062999dc6a4d13d5842"
+    }
+  },
+  "plan.json": "3dba5bad02626a008b7b8f6b200f70ece8cc4a8b544d90bb63ee515174bc5e67",
+  "random_0": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/random_0.csv",
+      "sha256": "d7ce539c3d31f7e790cfe70268360aabcef6b4759428c7983899e432ff60bc5d"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/random_0_held.csv",
+      "sha256": "a42337201f04130440a0b3606e664cdb66a9a31c2358f3cf858bdf6e39fa54a1"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_0/held_metadata.csv",
+      "sha256": "553f562593127a711f0a62eb5fc2ae645f6080de4fec2b3b7c8bb18613583520"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_0/predictions.csv",
+      "sha256": "0bd6a714ecb31c414e85550993a984fe62b51dff4a8d97311b7322a51a38fe13"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/random_0_train.csv",
+      "sha256": "60f5b6108256d87ee630d1225cee39a81a920dc9f46635c441a55d6177f293c1"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_0/train_metadata.csv",
+      "sha256": "0903728814f87811cbdc5a81f9e02f9d59312daa161b12cc5d1f8ea514365e19"
+    }
+  },
+  "random_1": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/random_1.csv",
+      "sha256": "92d3dd1149975227c8605f78b10421c00bda8305b5d2f7fecd2064fb79c58db9"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/random_1_held.csv",
+      "sha256": "942b7f871c2b8eab55d838c04ef7370abacef745e667c2cdd32f5880bfa47167"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_1/held_metadata.csv",
+      "sha256": "2c535b48f8570eccac3aefda893b9d570b2f0d4adda3efd639c68d2797b3ef8d"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_1/predictions.csv",
+      "sha256": "e66a5915ce88ca9f50602cd08e3956a8daf76f77a10d75c14d44388fae14db65"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/random_1_train.csv",
+      "sha256": "064918a7947c674b45b6807af6df0593e745c01df88d57b82e38277f362be80e"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_1/train_metadata.csv",
+      "sha256": "9a878bf4940bfccb3748384a85eaf097e81499259432b8739310948d95b7827c"
+    }
+  },
+  "random_2": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/random_2.csv",
+      "sha256": "09b9e517b218a5800d5d50089463b4386db311844254532f6ff7f2da6c589eed"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/random_2_held.csv",
+      "sha256": "d3761f8aa31860fed7a9309c26d9eb83b041f6b14a97c0e7e655c0a865a19eb9"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_2/held_metadata.csv",
+      "sha256": "9d19f2939259b227954c4dd90d67877083b8d399eea07384cf4e46a203db63ee"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_2/predictions.csv",
+      "sha256": "d67a4bf34fe3bbaf1e874fbaa4315b9c26b058d700e406df13b8b04c7405ef4f"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/random_2_train.csv",
+      "sha256": "b8e3d6f88c48ba67d20d909fc2987cb38f232fd0d62982591d8bc43e36ef68db"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/random_2/train_metadata.csv",
+      "sha256": "1fa7e9282ce3ed40d1c164b46b94d3549997c3a691db17c89328e54fc74c5d63"
+    }
+  },
+  "topic_0": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/topic_0.csv",
+      "sha256": "5de99186f272580b834f916e52c614be16a856d2236eaf8c6549c1d208301aaf"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/topic_0_held.csv",
+      "sha256": "d770e6c6cd17643f2956c13c7f639dfeb612d08fdaba3f143defa327fbdd3f9c"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_0/held_metadata.csv",
+      "sha256": "44c430f0dd226c5dffedbf2a3b3813387994346b9695e61948b0a89406bf65f1"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_0/predictions.csv",
+      "sha256": "3dd594b1da5e6091b395654d713ed3098e5ecd1a0ae0972428e9a11a96787a8a"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/topic_0_train.csv",
+      "sha256": "8b2785794eebbb73d29be94084e01be7e1c789dde63e3d40b10e53e4b9b10261"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_0/train_metadata.csv",
+      "sha256": "a0f65ad2a8c5eb1908a44db0c60e801d6a9c02d2a6bdc2194b69758434876312"
+    }
+  },
+  "topic_1": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/topic_1.csv",
+      "sha256": "a75988786b6b1cd0c655a15059da48624a1e86c7f78e8f8180423864786cfbf0"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/topic_1_held.csv",
+      "sha256": "fc073b4868ff513e486dde3071d9d9d1a8844731751e35f96008180c31c2caae"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_1/held_metadata.csv",
+      "sha256": "7aa280a425f4fa6d13f2fe29847e33b333fa618c051a258c184fa3fe087d9b51"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_1/predictions.csv",
+      "sha256": "bd63a54ed6d235ab234de8c67c5a43c23b13e5e6288637069800f0ffe6cff79d"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/topic_1_train.csv",
+      "sha256": "8c9a07f354e0a670e338c8080fa99ed27a8c33177efdf03cacbf8b32a2f09a55"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_1/train_metadata.csv",
+      "sha256": "32f9d7f8b72603a062b46371f2137b31b1f9f518dbdfe741aa8a14462db0935d"
+    }
+  },
+  "topic_2": {
+    "baseline": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/baselines/topic_2.csv",
+      "sha256": "40aa1782db558ae384f97e2b88cca6287dffd72ad1ecfb7be4b86ada8de1d73a"
+    },
+    "held_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/topic_2_held.csv",
+      "sha256": "6642c2447554bd26da0098e1eec6243b0267afcb24a5e1ebf14994df67c554cb"
+    },
+    "held_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_2/held_metadata.csv",
+      "sha256": "7bf867da2f37d2c231ecc5613b12d4b32539e5c49b90be83a1aa74e25a9f03d5"
+    },
+    "predictions": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_2/predictions.csv",
+      "sha256": "9155b09d861ae7e8d84095bfedfbc474505824f8b1d54f1aad22757cda37d00a"
+    },
+    "train_ids": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/ids/topic_2_train.csv",
+      "sha256": "424b61d73c14f26fb847c11b9f5118045a41ec0e0a166737bcaf711ba5ef0b1f"
+    },
+    "train_metadata": {
+      "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/fits/topic_2/train_metadata.csv",
+      "sha256": "7780fbc1116d00ab78290f2bd10fbdf7762c85d8e05defa0fffd9a5230625124"
+    }
+  },
+  "topic_assignments": {
+    "path": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_q5_crop_revised_20261109_v6_study/topic_assignments.csv",
+    "sha256": "676010ceab9622328da687e01d3b07c4901cdd1f5271c22373780ced7d02da39"
+  }
+}

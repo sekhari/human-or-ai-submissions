@@ -1,0 +1,51 @@
+{
+  "all_training": {
+    "mps_current_allocated_bytes": {
+      "maximum": 6328907008,
+      "minimum": 498614016
+    },
+    "mps_driver_allocated_bytes": {
+      "maximum": 7884111872,
+      "minimum": 1152139264
+    },
+    "process_rss_bytes": {
+      "maximum": 1072889856,
+      "minimum": 661340160
+    },
+    "system_available_bytes": {
+      "maximum": 14731706368,
+      "minimum": 7891025920
+    },
+    "system_swap_used_bytes": {
+      "maximum": 799801344,
+      "minimum": 799801344
+    }
+  },
+  "n_samples": 337,
+  "peak_kind": "Observed samples, not guaranteed exact peaks",
+  "sample_errors": [],
+  "sample_interval_seconds": 0.1,
+  "timed": {
+    "mps_current_allocated_bytes": {
+      "maximum": 6328907008,
+      "minimum": 2327800832
+    },
+    "mps_driver_allocated_bytes": {
+      "maximum": 7833780224,
+      "minimum": 7827456000
+    },
+    "process_rss_bytes": {
+      "maximum": 1072889856,
+      "minimum": 1064583168
+    },
+    "system_available_bytes": {
+      "maximum": 8371929088,
+      "minimum": 7972880384
+    },
+    "system_swap_used_bytes": {
+      "maximum": 799801344,
+      "minimum": 799801344
+    }
+  },
+  "unified_memory_note": "RSS and MPS driver allocation overlap; do not sum them."
+}

@@ -1,0 +1,47 @@
+{
+  "all_bootstrap_intervals_reconstructed": true,
+  "all_checks_passed": true,
+  "all_sensitivity_predictions_and_metrics_reconstructed": true,
+  "canonical_split_and_fold_ids_match": true,
+  "export_eligibility_and_selection_reconstructed": true,
+  "export_eligible": false,
+  "finalists_selected_from_training_cv": {
+    "c60": 1,
+    "wc120": 1
+  },
+  "full_model_refits_performed_by_verifier": false,
+  "models": {
+    "c60_c1": {
+      "C": 1.0,
+      "complete_pipeline_inside_calibration": true,
+      "feature_block_dimensions": {
+        "char": 60000
+      },
+      "n_features": 60000,
+      "n_predictions": 2000,
+      "saved_model_prediction_max_error": 0.0,
+      "unit_norm_nonempty_rows_checked": 32,
+      "validation_auroc": 0.96955
+    },
+    "wc120_c1": {
+      "C": 1.0,
+      "complete_pipeline_inside_calibration": true,
+      "feature_block_dimensions": {
+        "char": 60000,
+        "word": 60000
+      },
+      "n_features": 120000,
+      "n_predictions": 2000,
+      "saved_model_prediction_max_error": 0.0,
+      "unit_norm_nonempty_rows_checked": 32,
+      "validation_auroc": 0.970006
+    }
+  },
+  "n_cv_fits": 18,
+  "n_feature_fit_boundaries": 6,
+  "n_validation": 2000,
+  "original_evidence_unchanged": true,
+  "source_hashes_match": true,
+  "uncertainty_limitations": "Conditional development intervals omit training variation and selection adjustment; no hidden-test gain is established.",
+  "verifier_source_sha256": "68cae97cd18b533d2a2d56c23d8718804751713b0a2c59e82ce370c967a7b92a"
+}

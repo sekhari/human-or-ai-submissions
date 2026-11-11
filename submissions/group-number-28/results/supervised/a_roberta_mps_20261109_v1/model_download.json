@@ -1,0 +1,40 @@
+{
+  "repo_id": "FacebookAI/roberta-base",
+  "resolved_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "started_at_utc": "2026-11-09T23:01:08.575443+00:00",
+  "python": "/opt/anaconda3/envs/python_course/bin/python",
+  "huggingface_hub": "1.8.0",
+  "cache_dir": "/Users/lin/Desktop/Cornell_tech_kaggle/tmp/huggingface/hub",
+  "selected_files": {
+    "config.json": 481,
+    "model.safetensors": 498818054,
+    "tokenizer_config.json": 25,
+    "tokenizer.json": 1355863,
+    "vocab.json": 898823,
+    "merges.txt": 456318,
+    "README.md": 9079
+  },
+  "expected_selected_bytes": 501538643,
+  "status": "complete",
+  "remote_training_text_sent": false,
+  "snapshot_path": "/Users/lin/Desktop/Cornell_tech_kaggle/tmp/huggingface/hub/models--FacebookAI--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "completed_at_utc": "2026-11-09T23:01:40.406541+00:00",
+  "actual_file_bytes": {
+    "config.json": 481,
+    "model.safetensors": 498818054,
+    "tokenizer_config.json": 25,
+    "tokenizer.json": 1355863,
+    "vocab.json": 898823,
+    "merges.txt": 456318,
+    "README.md": 9079
+  },
+  "file_sha256": {
+    "config.json": "ef0185e2aae6e06c5f105a285006952c340e20c7dbf43c86ec82601b13fc45e9",
+    "model.safetensors": "5bde1d28afb363d0103324efeb5afc8b2b397fe5e04beabb9b1ef355255ade81",
+    "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce",
+    "tokenizer.json": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+    "vocab.json": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+    "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "README.md": "139c5c5c8d734a8841928308cf7f083018aa5cc49f903c5199e3f1563b3ded51"
+  }
+}

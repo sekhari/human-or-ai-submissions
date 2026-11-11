@@ -1,0 +1,240 @@
+{
+  "canonical_8000": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 88.0,
+        "0.25": 214.0,
+        "0.5": 279.5,
+        "0.75": 357.25,
+        "0.9": 416.0,
+        "0.95": 465.04999999999995,
+        "1": 793.0
+      },
+      "kept_token_fraction_of_total": 0.9993455645070295,
+      "n": 2000,
+      "truncated_fraction": 0.0025,
+      "truncated_n": 5
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 212.0,
+        "0.5": 278.0,
+        "0.75": 355.0,
+        "0.9": 417.10000000000036,
+        "0.95": 470.0,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.9986591652081306,
+      "n": 8000,
+      "truncated_fraction": 0.007375,
+      "truncated_n": 59
+    }
+  },
+  "random_0": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 90.0,
+        "0.25": 212.0,
+        "0.5": 273.0,
+        "0.75": 354.0,
+        "0.9": 419.0,
+        "0.95": 469.75,
+        "1": 701.0
+      },
+      "kept_token_fraction_of_total": 0.9991428206180573,
+      "n": 2606,
+      "truncated_fraction": 0.007674597083653108,
+      "truncated_n": 20
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 212.0,
+        "0.5": 280.0,
+        "0.75": 356.0,
+        "0.9": 416.0,
+        "0.95": 469.34999999999945,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.9984269771798641,
+      "n": 5394,
+      "truncated_fraction": 0.007230255839822024,
+      "truncated_n": 39
+    }
+  },
+  "random_1": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 213.0,
+        "0.5": 280.0,
+        "0.75": 357.0,
+        "0.9": 417.0,
+        "0.95": 473.0,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.9981976905579701,
+      "n": 3354,
+      "truncated_fraction": 0.007751937984496124,
+      "truncated_n": 26
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 90.0,
+        "0.25": 211.0,
+        "0.5": 276.0,
+        "0.75": 354.75,
+        "0.9": 417.5,
+        "0.95": 466.75,
+        "1": 701.0
+      },
+      "kept_token_fraction_of_total": 0.9989952341511765,
+      "n": 4646,
+      "truncated_fraction": 0.007102884201463625,
+      "truncated_n": 33
+    }
+  },
+  "random_2": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 94.0,
+        "0.25": 209.0,
+        "0.5": 280.0,
+        "0.75": 355.0,
+        "0.9": 415.0,
+        "0.95": 464.04999999999995,
+        "1": 701.0
+      },
+      "kept_token_fraction_of_total": 0.9988069632149852,
+      "n": 2040,
+      "truncated_fraction": 0.006372549019607843,
+      "truncated_n": 13
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 213.0,
+        "0.5": 277.0,
+        "0.75": 356.0,
+        "0.9": 418.0,
+        "0.95": 471.0500000000002,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.9986087724011348,
+      "n": 5960,
+      "truncated_fraction": 0.0077181208053691275,
+      "truncated_n": 46
+    }
+  },
+  "topic_0": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 92.0,
+        "0.25": 203.0,
+        "0.5": 265.0,
+        "0.75": 339.75,
+        "0.9": 416.0,
+        "0.95": 456.75,
+        "1": 701.0
+      },
+      "kept_token_fraction_of_total": 0.9983139664835301,
+      "n": 2606,
+      "truncated_fraction": 0.011511895625479662,
+      "truncated_n": 30
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 215.25,
+        "0.5": 284.5,
+        "0.75": 361.0,
+        "0.9": 419.0,
+        "0.95": 473.0,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.998818896632387,
+      "n": 5394,
+      "truncated_fraction": 0.005376344086021506,
+      "truncated_n": 29
+    }
+  },
+  "topic_1": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 194.0,
+        "0.5": 259.0,
+        "0.75": 343.0,
+        "0.9": 406.7000000000003,
+        "0.95": 460.3499999999999,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.9981836572897017,
+      "n": 3354,
+      "truncated_fraction": 0.005366726296958855,
+      "truncated_n": 18
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 92.0,
+        "0.25": 227.0,
+        "0.5": 289.0,
+        "0.75": 363.0,
+        "0.9": 422.0,
+        "0.95": 474.0,
+        "1": 701.0
+      },
+      "kept_token_fraction_of_total": 0.9989750369560559,
+      "n": 4646,
+      "truncated_fraction": 0.008824795523030563,
+      "truncated_n": 41
+    }
+  },
+  "topic_2": {
+    "held": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 107.0,
+        "0.25": 255.0,
+        "0.5": 316.0,
+        "0.75": 382.0,
+        "0.9": 433.10000000000014,
+        "0.95": 479.0,
+        "1": 579.0
+      },
+      "kept_token_fraction_of_total": 0.9997100591080559,
+      "n": 2040,
+      "truncated_fraction": 0.005392156862745098,
+      "truncated_n": 11
+    },
+    "training": {
+      "definition": "Tokenizer counts include special tokens; kept=min(full,max_length), not whitespace words.",
+      "full_token_count_quantiles": {
+        "0": 87.0,
+        "0.25": 198.0,
+        "0.5": 262.0,
+        "0.75": 342.0,
+        "0.9": 411.10000000000036,
+        "0.95": 460.0500000000002,
+        "1": 1250.0
+      },
+      "kept_token_fraction_of_total": 0.9982412720916174,
+      "n": 5960,
+      "truncated_fraction": 0.008053691275167786,
+      "truncated_n": 48
+    }
+  }
+}

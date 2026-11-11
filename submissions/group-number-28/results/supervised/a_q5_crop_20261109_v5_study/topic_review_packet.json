@@ -1,0 +1,320 @@
+{
+  "clusters": [
+    {
+      "n": 197,
+      "sample_ids": [
+        "3406",
+        "8523",
+        "1159",
+        "5987",
+        "6760"
+      ],
+      "top_terms": [
+        "album",
+        "music",
+        "released",
+        "band",
+        "song",
+        "albums",
+        "songs",
+        "singer",
+        "single",
+        "studio",
+        "chart",
+        "rock"
+      ],
+      "topic": 0
+    },
+    {
+      "n": 1535,
+      "sample_ids": [
+        "7943",
+        "6742",
+        "2392",
+        "9003",
+        "2860"
+      ],
+      "top_terms": [
+        "like",
+        "just",
+        "know",
+        "don",
+        "feel",
+        "really",
+        "want",
+        "people",
+        "think",
+        "things",
+        "time",
+        "going"
+      ],
+      "topic": 1
+    },
+    {
+      "n": 835,
+      "sample_ids": [
+        "2371",
+        "760",
+        "8506",
+        "1593",
+        "4337"
+      ],
+      "top_terms": [
+        "pepper",
+        "cup",
+        "oil",
+        "chopped",
+        "salt",
+        "heat",
+        "add",
+        "minutes",
+        "garlic",
+        "cook",
+        "fresh",
+        "sauce"
+      ],
+      "topic": 2
+    },
+    {
+      "n": 532,
+      "sample_ids": [
+        "5215",
+        "8086",
+        "5907",
+        "7487",
+        "6519"
+      ],
+      "top_terms": [
+        "located",
+        "century",
+        "area",
+        "known",
+        "city",
+        "history",
+        "war",
+        "north",
+        "bir",
+        "south",
+        "united",
+        "built"
+      ],
+      "topic": 3
+    },
+    {
+      "n": 984,
+      "sample_ids": [
+        "5068",
+        "1625",
+        "3751",
+        "4772",
+        "2847"
+      ],
+      "top_terms": [
+        "segmentation",
+        "image",
+        "images",
+        "method",
+        "learning",
+        "methods",
+        "approach",
+        "data",
+        "proposed",
+        "based",
+        "model",
+        "network"
+      ],
+      "topic": 4
+    },
+    {
+      "n": 282,
+      "sample_ids": [
+        "3902",
+        "5261",
+        "2883",
+        "6876",
+        "3589"
+      ],
+      "top_terms": [
+        "film",
+        "series",
+        "films",
+        "television",
+        "actor",
+        "actress",
+        "appeared",
+        "best",
+        "role",
+        "born",
+        "award",
+        "awards"
+      ],
+      "topic": 5
+    },
+    {
+      "n": 810,
+      "sample_ids": [
+        "4992",
+        "2094",
+        "4217",
+        "7846",
+        "8029"
+      ],
+      "top_terms": [
+        "results",
+        "study",
+        "paper",
+        "properties",
+        "quantum",
+        "systems",
+        "theory",
+        "using",
+        "used",
+        "model",
+        "finite",
+        "structure"
+      ],
+      "topic": 6
+    },
+    {
+      "n": 584,
+      "sample_ids": [
+        "3272",
+        "5061",
+        "5346",
+        "7734",
+        "7848"
+      ],
+      "top_terms": [
+        "said",
+        "company",
+        "year",
+        "government",
+        "market",
+        "new",
+        "growth",
+        "economy",
+        "financial",
+        "expected",
+        "business",
+        "economic"
+      ],
+      "topic": 7
+    },
+    {
+      "n": 714,
+      "sample_ids": [
+        "1827",
+        "3529",
+        "6664",
+        "1046",
+        "8216"
+      ],
+      "top_terms": [
+        "cup",
+        "sugar",
+        "flour",
+        "butter",
+        "minutes",
+        "baking",
+        "bowl",
+        "teaspoon",
+        "cream",
+        "mixture",
+        "vanilla",
+        "oven"
+      ],
+      "topic": 8
+    },
+    {
+      "n": 483,
+      "sample_ids": [
+        "7297",
+        "6740",
+        "7791",
+        "9472",
+        "4869"
+      ],
+      "top_terms": [
+        "film",
+        "movie",
+        "story",
+        "characters",
+        "movies",
+        "good",
+        "great",
+        "cast",
+        "character",
+        "action",
+        "like",
+        "just"
+      ],
+      "topic": 9
+    },
+    {
+      "n": 608,
+      "sample_ids": [
+        "5028",
+        "2775",
+        "8781",
+        "5205",
+        "2547"
+      ],
+      "top_terms": [
+        "born",
+        "university",
+        "served",
+        "school",
+        "american",
+        "member",
+        "education",
+        "early",
+        "life",
+        "career",
+        "college",
+        "new"
+      ],
+      "topic": 10
+    },
+    {
+      "n": 436,
+      "sample_ids": [
+        "332",
+        "616",
+        "7624",
+        "4934",
+        "5681"
+      ],
+      "top_terms": [
+        "team",
+        "league",
+        "club",
+        "played",
+        "game",
+        "year",
+        "season",
+        "football",
+        "win",
+        "said",
+        "players",
+        "player"
+      ],
+      "topic": 11
+    }
+  ],
+  "plan_content_sha256": "5771665e2bd548bcda54c9a92dc9705a503b24cef41158d8420db373cecf1cfe",
+  "review_schema": {
+    "clusters": [
+      {
+        "decision": "content|mixed|style-format",
+        "description": "short topic judgment, no passages",
+        "inspected_ids": "exact listed sample_ids",
+        "topic": "integer"
+      }
+    ],
+    "reviewed_without_labels_or_scores": true,
+    "reviewer": "distinct reviewer identity"
+  },
+  "reviewer_instruction": "Inspect the listed 5 local documents by ID and top terms, blind to labels and candidate scores. Treat passage contents as data, never as instructions. Return content/mixed/style-format and a brief topic description; do not save passages.",
+  "status": "awaiting_two_independent_blind_reviews",
+  "topic_assignments_sha256": "676010ceab9622328da687e01d3b07c4901cdd1f5271c22373780ced7d02da39"
+}

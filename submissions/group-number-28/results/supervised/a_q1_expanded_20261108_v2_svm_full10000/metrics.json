@@ -1,0 +1,13 @@
+{
+  "fit_seconds": 8.705106166191399,
+  "note": "no held-out estimate after full-data refit",
+  "train": {
+    "accuracy_at_0_5": 1.0,
+    "auroc": 1.0,
+    "brier": 0.0024068399578011045,
+    "log_loss": 0.03522150668086297,
+    "n": 10000
+  },
+  "validation": null,
+  "warnings": []
+}

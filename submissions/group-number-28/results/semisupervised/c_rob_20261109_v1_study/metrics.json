@@ -1,0 +1,72 @@
+{
+  "C": 30.0,
+  "seed": 20261109,
+  "git": {
+    "commit": "015c6bc364e3202d505393d1f21ace22be82c602",
+    "uncommitted_changes": true
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39"
+  },
+  "normalization": "NFKC + remove zero-width chars + collapse whitespace",
+  "blank_line_count_only_val_auroc": 0.844,
+  "blank_line_share": {
+    "train_human": 0.0,
+    "train_ai": 0.65325,
+    "unlabeled": 0.34,
+    "test": 0.31866666666666665
+  },
+  "raw": {
+    "fit_seconds": 24.614063186000067,
+    "val_auroc_same_preprocessing": 0.9691079999999999,
+    "val_auroc_on_normalized_validation": 0.9364290000000001,
+    "confidence_by_split": {
+      "validation": {
+        "share_conf_ge_0.95": 0.536,
+        "share_conf_ge_0.80": 0.798,
+        "mean_p_ai": 0.5045377907620524,
+        "share_pred_ai": 0.491
+      },
+      "unlabeled": {
+        "share_conf_ge_0.95": 0.5053333333333333,
+        "share_conf_ge_0.80": 0.7696666666666667,
+        "mean_p_ai": 0.4769016836052573,
+        "share_pred_ai": 0.464
+      },
+      "test": {
+        "share_conf_ge_0.95": 0.44533333333333336,
+        "share_conf_ge_0.80": 0.7306666666666667,
+        "mean_p_ai": 0.41686653215242464,
+        "share_pred_ai": 0.406
+      }
+    }
+  },
+  "normalized": {
+    "fit_seconds": 27.18367566400002,
+    "val_auroc_same_preprocessing": 0.9544880000000001,
+    "val_auroc_on_normalized_validation": 0.9544880000000001,
+    "confidence_by_split": {
+      "validation": {
+        "share_conf_ge_0.95": 0.4975,
+        "share_conf_ge_0.80": 0.774,
+        "mean_p_ai": 0.5022345887312945,
+        "share_pred_ai": 0.4815
+      },
+      "unlabeled": {
+        "share_conf_ge_0.95": 0.46066666666666667,
+        "share_conf_ge_0.80": 0.749,
+        "mean_p_ai": 0.470921588769696,
+        "share_pred_ai": 0.45266666666666666
+      },
+      "test": {
+        "share_conf_ge_0.95": 0.3506666666666667,
+        "share_conf_ge_0.80": 0.6516666666666666,
+        "mean_p_ai": 0.43999017675392027,
+        "share_pred_ai": 0.41833333333333333
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "created_at_utc": "2026-11-09T23:02:33.498458+00:00",
+  "purpose": "Device feasibility and timing only; no validation/test scoring or selected competition model",
+  "python_executable": "/opt/anaconda3/envs/python_course/bin/python",
+  "model": "FacebookAI/roberta-base",
+  "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "dtype": "float32",
+  "attention_implementation": "sdpa",
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "foreach": false
+  },
+  "max_grad_norm": 1.0,
+  "seed": 42,
+  "warmup_optimizer_updates_per_process": 5,
+  "timed_optimizer_updates_per_process": 20,
+  "configurations": [
+    {
+      "key": "b2_l256_a1",
+      "batch_size": 2,
+      "sequence_length": 256,
+      "grad_accum": 1
+    },
+    {
+      "key": "b4_l512_a1",
+      "batch_size": 4,
+      "sequence_length": 512,
+      "grad_accum": 1
+    },
+    {
+      "key": "b4_l512_a4",
+      "batch_size": 4,
+      "sequence_length": 512,
+      "grad_accum": 4
+    }
+  ],
+  "execution_policy": "Sequential fresh processes; later configurations require successful earlier run; no parameter/precision searches",
+  "input_scope": "Canonical training partition only; deterministic pool and static padding; no held/test predictions",
+  "fallback_env": "0",
+  "fallback_interpretation": "Unsupported-op CPU fallback only considered absent when no fallback warnings and tested path completes with strict mode; ordinary CPU preprocessing/bookkeeping remains allowed",
+  "memory_interpretation": "Sampled observed maxima; allocated/driver/RSS overlap in unified memory and must not be summed",
+  "timing_policy": "MPS synchronization around complete optimizer updates; record complete20-update-loop walltime as well; exclude setup/download/tokenization/checkpoint/eval from update benchmark",
+  "checkpoints": "Benchmark-only numerical/reload checks; not a competition candidate or a warm start for scientific training",
+  "time_projection": {
+    "full_8000_two_epochs_effective_batch16_updates": 1000,
+    "six_outer_fits_two_epochs_effective_batch16_updates": 4008,
+    "only_direct_b4_l512_a4_measurement_used_for_projection": true,
+    "excluded_costs": [
+      "download",
+      "model loading",
+      "tokenization",
+      "evaluation",
+      "checkpoint writes",
+      "independent verification"
+    ]
+  },
+  "hardware": {
+    "chip": "Apple M4 Pro",
+    "unified_memory_GiB": 48,
+    "cpu_cores": 14,
+    "macOS": "15.7.4",
+    "mps_recommended_max_bytes_observed": 38654705664
+  },
+  "initial_mps_probe": {
+    "mps_built": true,
+    "mps_available": true,
+    "dot_product_test": 16.0
+  },
+  "packages": {
+    "torch": "2.11.0",
+    "transformers": "5.4.0",
+    "huggingface-hub": "1.8.0",
+    "numpy": "2.4.3",
+    "psutil": "7.0.0",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2"
+  },
+  "git_commit": "0b4a1a9efd46e72a524dace9359120393de4d05d",
+  "git_dirty": true
+}

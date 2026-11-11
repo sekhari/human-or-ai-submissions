@@ -1,0 +1,9 @@
+{
+  "completed_without_interruption": true,
+  "cv_warning_count": 0,
+  "final_fit_warning_count": 0,
+  "job_including_verification_and_plotting_seconds": 159.261173,
+  "n_cv_fits": 12,
+  "process_execution": "Detached local process, no model API calls; per-fold and per-model atomic checkpoints.",
+  "training_evaluation_bootstrap_seconds": 146.04785237507895
+}

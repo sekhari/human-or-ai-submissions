@@ -1,0 +1,84 @@
+{
+  "created_at_utc": "2026-11-09T17:24:34.840989+00:00",
+  "execution_contract": {
+    "input_id_text_sha256": "64f0750cf2e1998386cb2f0e89929af9a85e96396e71dbff26d08a4d0e413fb0",
+    "n_originals": 8000,
+    "parent_artifact_sha256": {
+      "blind_review_a.json": "5f8648cfc249e91830acd61c45edb8d79bd23eeee905abf10a9814914f1aba23",
+      "blind_review_b.json": "6995d2a5e92ed91a0e25a16d813e391187e7e953cdc60b088ce7b19612b976bb",
+      "completion.json": "ee58837cc881adef45e8676c08a7c8a8b1bc01e7702fad663767e0252b434f10",
+      "plan.json": "445a8dfa014ff3374cc08817822c2d0e2c24f1ba859b3a2bedc2bf06c771e517",
+      "provenance.json": "a625a72bbe33c9b6a079c5965e6b30e4f772b319878ef5bc00ba074fcadd2197",
+      "topic_assignments.csv": "676010ceab9622328da687e01d3b07c4901cdd1f5271c22373780ced7d02da39",
+      "topic_finalization.json": "57152df13050bbb0bc1c9dfac4416ca876a795af1cc91693557b40552e43cf65",
+      "topic_folds.csv": "f6101671657cb9fe509ae4779d1b2f95a2924819484b6b0c6717c8e8a26a5788",
+      "topic_preparation.json": "dfb651a923c63317a3342005aee964de7530a428a20419623715b6046cb9c9f6",
+      "topic_preparation_context.json": "209bef403fbf4689f70c2ed51beb2367fa10a4ba2b4a32fd920602999c1f0ff5",
+      "topic_proxy.joblib": "e0b00f8104ad2901585b3289a755599dc5aab5c95175c74155090f03ad85433d",
+      "topic_quality.json": "697c099bb9c17bcd12dcfb93fba2762b8d6769aaeca571701257ef18443b6d97",
+      "topic_review.json": "80c68692be332258321039d821a6cbc0b46ae6c407ca1e6d9f1ba87e1466b3d5",
+      "topic_review_packet.json": "4d5e4d80c5b51b292701033fe448443a308be3700cb76eef48bcb134bf08034b"
+    },
+    "parent_study": "results/supervised/a_q5_crop_20261109_v5_study",
+    "plan_content_sha256": "3d64e13006c76064811d4141bbdb137a7d9b270c07bcc1fd9a4ea8d547b73b5f",
+    "source_sha256": {
+      "experiments/supervised/crop_revised_topics.py": "17dd8ae2064603ef2fd9b3421c09de88dab61324d46e856c690e1645f4ae4abc",
+      "experiments/supervised/crop_topics.py": "5f0c6299dbe6289f60e0c55b4f5ea739d003c63ea24c6de800d224c469f7a049",
+      "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    }
+  },
+  "historical_blind_reviews_reused": true,
+  "historical_preparation_receipts_copied_unchanged": true,
+  "inherited_artifacts": {
+    "parent_completion.json": {
+      "parent_filename": "completion.json",
+      "sha256": "ee58837cc881adef45e8676c08a7c8a8b1bc01e7702fad663767e0252b434f10"
+    },
+    "parent_plan.json": {
+      "parent_filename": "plan.json",
+      "sha256": "445a8dfa014ff3374cc08817822c2d0e2c24f1ba859b3a2bedc2bf06c771e517"
+    },
+    "parent_topic_finalization.json": {
+      "parent_filename": "topic_finalization.json",
+      "sha256": "57152df13050bbb0bc1c9dfac4416ca876a795af1cc91693557b40552e43cf65"
+    },
+    "parent_topic_quality.json": {
+      "parent_filename": "topic_quality.json",
+      "sha256": "697c099bb9c17bcd12dcfb93fba2762b8d6769aaeca571701257ef18443b6d97"
+    },
+    "topic_assignments.csv": {
+      "parent_filename": "topic_assignments.csv",
+      "sha256": "676010ceab9622328da687e01d3b07c4901cdd1f5271c22373780ced7d02da39"
+    },
+    "topic_folds.csv": {
+      "parent_filename": "topic_folds.csv",
+      "sha256": "f6101671657cb9fe509ae4779d1b2f95a2924819484b6b0c6717c8e8a26a5788"
+    },
+    "topic_preparation.json": {
+      "parent_filename": "topic_preparation.json",
+      "sha256": "dfb651a923c63317a3342005aee964de7530a428a20419623715b6046cb9c9f6"
+    },
+    "topic_preparation_context.json": {
+      "parent_filename": "topic_preparation_context.json",
+      "sha256": "209bef403fbf4689f70c2ed51beb2367fa10a4ba2b4a32fd920602999c1f0ff5"
+    },
+    "topic_proxy.joblib": {
+      "parent_filename": "topic_proxy.joblib",
+      "sha256": "e0b00f8104ad2901585b3289a755599dc5aab5c95175c74155090f03ad85433d"
+    },
+    "topic_review.json": {
+      "parent_filename": "topic_review.json",
+      "sha256": "80c68692be332258321039d821a6cbc0b46ae6c407ca1e6d9f1ba87e1466b3d5"
+    },
+    "topic_review_packet.json": {
+      "parent_filename": "topic_review_packet.json",
+      "sha256": "4d5e4d80c5b51b292701033fe448443a308be3700cb76eef48bcb134bf08034b"
+    }
+  },
+  "interpretation": "Previously observed diagnostics motivated the authorized revision. No fresh blindness or pristine preregistration is claimed.",
+  "new_blind_reviews_performed": false,
+  "predictive_features_reused": false,
+  "status": "adaptive_revised_protocol",
+  "topic_grouping_fits_performed": 0
+}

@@ -1,0 +1,30 @@
+{
+  "reason": "MPS-to-CPU simultaneous float64 conversion fails after completed epoch2; fix CPU transfer before dtype conversion",
+  "fit_key": "random_0",
+  "completed_optimizer_updates": 676,
+  "completed_epochs": 2,
+  "new_model_fits_required": 0,
+  "seed_or_recipe_changed": false,
+  "held_quality_scores_available_before_repair": false,
+  "resume_checkpoint_sha256": "f8aa32e5ca62fa10ebe9aaadd187106959cc7ceef66bb20d6e766e3ba0ae064b",
+  "resume_checkpoint_bytes": 1496009739,
+  "original_files_sha256": {
+    "fits/random_0/train_ids.csv": "a0b603eb4da2061bd61809e29728d5e57c504c31907360dce0e397e7c84c4c24",
+    "fits/random_0/config.json": "6f249b965f217c1ad54f73801de4947f210a5fb3694c9c43977b8f78514f28c1",
+    "fits/random_0/epoch_receipts.json": "b9716beb58aa07d8e410a92afe53f537af3e63d955f9fc8219311b6402978682",
+    "fits/random_0/training_steps.csv": "0d3134f5448c9bae1519643277b1bc38ed29f283c463a202fb222349724bec4b",
+    "fits/random_0/memory_summary.json": "88161d7b5bcfced6f805440d2edb27dce2c8132064a896056263de5954be9faf",
+    "fits/random_0/epoch_2_order.csv": "bbfce1e81b4d1ab1dd5802f05292f258089d1721848b7203f55bfbf51cdb9b46",
+    "fits/random_0/train_metadata.csv": "0903728814f87811cbdc5a81f9e02f9d59312daa161b12cc5d1f8ea514365e19",
+    "fits/random_0/held_ids.csv": "06b5929b8c134d0a6698fdabb7938e005996839e2105bb802307913f5e9f6f00",
+    "fits/random_0/held_metadata.csv": "553f562593127a711f0a62eb5fc2ae645f6080de4fec2b3b7c8bb18613583520",
+    "fits/random_0/memory_samples.csv": "dbf1ef8a1e2366b13f6cfb63afb06df2411253024a87b3842b5fde63f5488c96",
+    "fits/random_0/epoch_1_order.csv": "cedcd6ffa05235c5a9d1c53db4472874bf2c34f385ffe92133adf5cb34aa1d33",
+    "fits/random_0/progress.json": "d3f88e444dc833100e8aadefa2a20a6a646b4d5e85b8b0c9dda763ec0e79eef3",
+    "fits/random_0/failure_1794267705525235000.json": "b065ae2ccd3ef86f14b41326aae7e085971db1b6d9d151ebe33ed42744427259",
+    "fits/random_0/failure.json": "b065ae2ccd3ef86f14b41326aae7e085971db1b6d9d151ebe33ed42744427259",
+    "fits/random_0/status.json": "5e833f74249529684ee8b64c5204b76da1732ff2052b1ec76b73093302e5e69a",
+    "fits/random_0/warnings.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  "copy_scope": "All JSON/CSV plus plan/provenance/execution/native logs retain originals; .pt remains in place and hash-pinned"
+}

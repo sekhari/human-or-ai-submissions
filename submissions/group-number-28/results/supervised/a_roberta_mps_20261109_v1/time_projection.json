@@ -1,0 +1,13 @@
+{
+  "basis": "Direct FP32 B4/L512/A4 measured complete-loop wall time; effective batch16",
+  "seconds_per_optimizer_update": 1.2992471395991743,
+  "full_8000_two_epochs_updates": 1000,
+  "full_8000_two_epochs_training_seconds": 1299.2471395991743,
+  "six_cv_fits_two_epochs_updates": 4008,
+  "six_cv_fits_two_epochs_training_seconds": 5207.38253551349,
+  "limitations": [
+    "Training-update estimate, not a measured full run",
+    "Excludes downloads, loading, tokenization, evaluation, checkpoint writes and verification",
+    "Short fixed-shape measurement does not capture long-run thermal or memory changes"
+  ]
+}

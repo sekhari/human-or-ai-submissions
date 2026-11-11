@@ -1,0 +1,39 @@
+{
+  "auroc_95_intervals": {
+    "baseline_wc120": [
+      0.9635009,
+      0.976193475
+    ],
+    "c60_c1": [
+      0.9628217249999999,
+      0.9760090500000002
+    ],
+    "wc120_c1": [
+      0.9635009,
+      0.976193475
+    ]
+  },
+  "delta_vs_baseline_95_intervals": {
+    "baseline_wc120": [
+      0.0,
+      0.0
+    ],
+    "c60_c1": [
+      -0.0026113249999998923,
+      0.0018995499999999827
+    ],
+    "wc120_c1": [
+      0.0,
+      0.0
+    ]
+  },
+  "limitations": "development split, conditional on fitted models; training variation and selection correction omitted",
+  "method": "class-stratified paired percentile bootstrap",
+  "point_deltas_vs_baseline": {
+    "baseline_wc120": 0.0,
+    "c60_c1": -0.00045600000000001195,
+    "wc120_c1": 0.0
+  },
+  "replicates": 1000,
+  "seed": 342
+}

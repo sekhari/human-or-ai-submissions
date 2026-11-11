@@ -1,0 +1,171 @@
+[
+  {
+    "fit_key": "random_0",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "random_0"
+    ],
+    "return_code": 1,
+    "process_wall_seconds": 886.0549382083118,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_0.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_0.attempt1.stderr.log",
+    "stdout_sha256": "ab10a87d990648d8129365be6070933b2c332b0a084485284ab1340220400863",
+    "stderr_sha256": "13899cc41fad0edbe6329d9f5e41d690e6de8072289dcf72eea90619511e2250",
+    "finished_at_utc": "2026-11-09T23:41:46.108676+00:00"
+  },
+  {
+    "fit_key": "random_0",
+    "attempt": 2,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "random_0",
+      "--resume"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 318.23916212515905,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_0.attempt2.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_0.attempt2.stderr.log",
+    "stdout_sha256": "34eaa7cc22bba3f2a61bb60a5cf05dea9431c798904f932037b09116a55be01d",
+    "stderr_sha256": "b58971ff8d5ab6fb86927f5d46d02d5a0dadb8bf39590fd64c91a3b0e19f341f",
+    "finished_at_utc": "2026-11-09T23:51:28.616413+00:00"
+  },
+  {
+    "fit_key": "random_1",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "random_1"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 1190.6859371666797,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_1.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_1.attempt1.stderr.log",
+    "stdout_sha256": "ef604ce6387c1f58604a2542d80081ed328e9fc0e2df7624cb3add22b9f43156",
+    "stderr_sha256": "4c4f20cc2ee8ab6817fe8ebf4165acca73604e4fdfc14930258ea85b2bdf6d8c",
+    "finished_at_utc": "2026-11-10T00:11:19.293190+00:00"
+  },
+  {
+    "fit_key": "random_2",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "random_2"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 1246.1350904172286,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_2.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_2.attempt1.stderr.log",
+    "stdout_sha256": "2d12c5801107618f32bfa6ab8eb7597e011fcfb5c72cafdd6263cb0071deb066",
+    "stderr_sha256": "3c7d1910198b94b76423818f4c280952a650bc8d1cba29303291651aacb9553a",
+    "finished_at_utc": "2026-11-10T00:32:05.416285+00:00"
+  },
+  {
+    "fit_key": "topic_0",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "topic_0"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 1242.4075362090953,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/topic_0.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/topic_0.attempt1.stderr.log",
+    "stdout_sha256": "30af2652c1b3e52bfc0861660a9797df8da1e5d7c369dfb5f475ab91f5081ef4",
+    "stderr_sha256": "625cccafd3b098550506f78482b9dfa9d2710c7da513aac25716844d4c8eaa2c",
+    "finished_at_utc": "2026-11-10T00:52:47.880441+00:00"
+  },
+  {
+    "fit_key": "topic_1",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "topic_1"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 1164.0041827908717,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/topic_1.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/topic_1.attempt1.stderr.log",
+    "stdout_sha256": "eb2e0c67d26cee14d9d62b7ad56fe5331b158c6a6b69855c9656055961435125",
+    "stderr_sha256": "faa8f942aca9a4e4322dc3fc1a40dfcf0ce03599aae7e84954c78a2c829e43a3",
+    "finished_at_utc": "2026-11-10T01:12:11.900720+00:00"
+  },
+  {
+    "fit_key": "topic_2",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "topic_2"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 1266.0013435836881,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/topic_2.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/topic_2.attempt1.stderr.log",
+    "stdout_sha256": "d9e32f4e9e925cdfe36bfb50e771b4e0b9bb26b6de520ab2f7ef055535d79d79",
+    "stderr_sha256": "9dfa36a493831cd4be85a874e4a8967ee9ecf7fbf495ccedce442b9cd8c4c85c",
+    "finished_at_utc": "2026-11-10T01:33:17.919258+00:00"
+  },
+  {
+    "fit_key": "canonical_8000",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "canonical_8000"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 1587.3140583746135,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/canonical_8000.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/canonical_8000.attempt1.stderr.log",
+    "stdout_sha256": "dbf33883708271733befe7164d1bb67f3ea0c7d05146e801304e888cfe6ad263",
+    "stderr_sha256": "468f68658cd7c730479843c9171ea84ce397c4e267a450f608fb2646868de5fa",
+    "finished_at_utc": "2026-11-10T01:59:45.184982+00:00"
+  }
+]

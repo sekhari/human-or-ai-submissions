@@ -1,0 +1,26 @@
+{
+  "completed_resume_check": {
+    "exit_code": 0,
+    "output": "Quote study already complete; no refit or overwrite"
+  },
+  "cv_warning_count": 0,
+  "job_completed_at_utc": "2026-11-09T02:01:08.393732+00:00",
+  "job_including_verification_plotting_seconds": 379.63454,
+  "job_started_at_utc": "2026-11-09T01:54:48.759192+00:00",
+  "model_fit_seconds": {
+    "c60_norm": 33.51969579234719,
+    "wc120_norm": 40.3462569587864,
+    "wc120_norm_full10000": 50.02060524979606
+  },
+  "model_fit_warning_count": 0,
+  "n_candidate_fold_fits": 12,
+  "n_full_10000_models": 1,
+  "n_new_8000_models": 2,
+  "n_test_predictions": 3000,
+  "new_submission_generated": true,
+  "preparation_interrupted_before_training": true,
+  "recorded_at_utc": "2026-11-09T02:06:32.236616+00:00",
+  "training_evaluation_export_seconds": 346.708969542291,
+  "training_job_completed_without_interruption": true,
+  "uploaded_to_kaggle": false
+}

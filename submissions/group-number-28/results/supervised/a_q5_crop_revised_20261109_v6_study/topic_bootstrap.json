@@ -1,0 +1,62 @@
+{
+  "conditions": {
+    "clean": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.0043832624721153336,
+      "paired_delta_ci_97_5": -0.0008279988375750283,
+      "point_macro_delta_auroc": -0.0032191972961438755,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "digit_runs_to_zero": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.0038430475112923522,
+      "paired_delta_ci_97_5": -0.0005247086240184305,
+      "point_macro_delta_auroc": -0.002634575391614158,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "prefix_100": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": 0.006565342148083288,
+      "paired_delta_ci_97_5": 0.04319798064243837,
+      "point_macro_delta_auroc": 0.03768655644334488,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "quote_and_dash": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.004488189325041223,
+      "paired_delta_ci_97_5": -0.0009129944830804296,
+      "point_macro_delta_auroc": -0.003326015007172186,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "whitespace_only": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.0012754854800731176,
+      "paired_delta_ci_97_5": 0.004429358054240462,
+      "point_macro_delta_auroc": 0.0030086438336538826,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    }
+  },
+  "limitations": [
+    "Fixed fitted models and splits",
+    "No training-variation or adaptive-selection correction",
+    "Overlapping training folds are not independent replications",
+    "Suffix/middle variants are not independent datasets",
+    "Multiple conditions are not independent tests"
+  ],
+  "method": "Within-fold whole-topic paired bootstrap",
+  "n_folds": 3,
+  "no_replacement_of_invalid_replicates": true,
+  "requested_replicates": 1000,
+  "scheme": "topic",
+  "seed": 549
+}

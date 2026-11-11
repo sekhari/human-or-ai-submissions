@@ -1,0 +1,112 @@
+{
+  "all_gradients_mps": true,
+  "checkpoint_bytes": 498654652,
+  "checkpoint_reload_seconds": 2.119202791247517,
+  "checkpoint_sha256": "7c331e50e957803b4789d0a1c7c59f9d2648c1df93d67f03c4c583fd3863f650",
+  "completed_epoch_loop_and_checkpoint_seconds": 875.7907603755593,
+  "condition_metrics": {
+    "clean": {
+      "auroc_logit_margin": 0.9937659356869842,
+      "auroc_probability": 0.9937659356869842,
+      "inference_seconds": 61.0137670408003,
+      "n": 2606,
+      "n_ai": 1322,
+      "n_human": 1284,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "digit_runs_to_zero": {
+      "auroc_logit_margin": 0.9944345865086883,
+      "auroc_probability": 0.9944345865086883,
+      "inference_seconds": 61.9412651672028,
+      "n": 2606,
+      "n_ai": 1322,
+      "n_human": 1284,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "prefix_100": {
+      "auroc_logit_margin": 0.8262396066407005,
+      "auroc_probability": 0.8262396066407005,
+      "inference_seconds": 51.65652224980295,
+      "n": 2087,
+      "n_ai": 990,
+      "n_human": 1097,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "quote_and_dash": {
+      "auroc_logit_margin": 0.9942796480363463,
+      "auroc_probability": 0.9942796480363463,
+      "inference_seconds": 62.05755358329043,
+      "n": 2606,
+      "n_ai": 1322,
+      "n_human": 1284,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "whitespace_only": {
+      "auroc_logit_margin": 0.8821206894113988,
+      "auroc_probability": 0.8821206894113988,
+      "inference_seconds": 63.908869333099574,
+      "n": 2606,
+      "n_ai": 1322,
+      "n_human": 1284,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    }
+  },
+  "epochs": 2,
+  "evaluation_seconds": 307.1441616672091,
+  "fit_key": "random_0",
+  "fold": 0,
+  "held_tokenization_seconds": 2.1043657497502863,
+  "limitations": [
+    "One seed/recipe; overlapping CV fits are not independent replications",
+    "Prior diagnostic folds reused; no untouched hidden-domain estimate",
+    "Memory is sampled, not an exact peak; unified-memory measures overlap",
+    "CPU host/bookkeeping work expected; inspect native logs in addition to Python warnings",
+    "No probability calibration/ensemble fitting or test prediction is performed"
+  ],
+  "model_load_seconds": 0.27680658269673586,
+  "monitored_parameter_max_changes": {
+    "classifier.out_proj.weight": 0.0010355450212955475,
+    "roberta.encoder.layer.0.attention.self.query.weight": 0.0011929599568247795
+  },
+  "n_held": 2606,
+  "n_train": 5394,
+  "optimizer_state_devices": {
+    "exp_avg:mps:torch.float32": 201,
+    "exp_avg_sq:mps:torch.float32": 201,
+    "step:cpu:torch.float32": 201
+  },
+  "optimizer_updates": 676,
+  "process_elapsed_seconds": 314.9843141660094,
+  "process_lifetime_max_rss_bytes": 2480685056,
+  "recovery_process": true,
+  "recovery_source_amendment": {
+    "amendment": {
+      "allowed_change": "evaluation_cpu_transfer_cast_only",
+      "applies_to_fit_keys": [
+        "random_0"
+      ],
+      "created_at_utc": "2026-11-09T23:46:06.042154+00:00",
+      "id": "evaluation_cpu_transfer_001",
+      "new_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+      "no_held_quality_scores_observed_before_repair": true,
+      "no_new_optimizer_updates_needed_for_recovered_fit": true,
+      "old_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+      "preservation_receipt": "mechanical_recovery_001/preservation_receipt.json",
+      "reason": "MPS-to-CPU combined float64 conversion failed after completed epoch2. Separate CPU transfer and double cast; retain completed scientific training and add strict source-only recovery lineage and protected prior-memory handling. No data, model, recipe, seed, epoch or training-loop change."
+    },
+    "mechanical_amendments_sha256": "c8e450a99b721859b0b3ec80e7be4c5b4d97c4da56a60a0a77ebceb5e96d42d2",
+    "original_config_sha256": "6f249b965f217c1ad54f73801de4947f210a5fb3694c9c43977b8f78514f28c1",
+    "original_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+    "recovery_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2"
+  },
+  "reload_max_logit_error": 0.0,
+  "scheme": "random",
+  "status": "complete",
+  "train_tokenization_seconds": 4.186006458941847,
+  "training_documents_processed": 10788,
+  "training_epoch_loop_seconds": 871.5557289589196,
+  "training_process_wall_seconds": 0.0001204581931233406,
+  "training_process_wall_seconds_scope": "Training/checkpoint stage in this process; a resumed evaluation-only process performs zero training updates",
+  "training_update_seconds": 870.9716776614077,
+  "training_updates_in_this_process": 0
+}

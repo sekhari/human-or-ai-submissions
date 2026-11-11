@@ -1,0 +1,8 @@
+{
+  "captured_fallback_warning_count": 0,
+  "captured_fallback_warnings": [],
+  "claim": "Captured Python warnings and native stderr must both be reviewed. Unsupported-op fallback was disabled; CPU host/optimizer bookkeeping is not asserted absent.",
+  "environment": "0",
+  "stderr_must_also_be_reviewed": true,
+  "unsupported_op_fallback_enabled": false
+}

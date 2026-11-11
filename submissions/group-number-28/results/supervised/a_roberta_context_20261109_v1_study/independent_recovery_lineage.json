@@ -1,0 +1,9 @@
+{
+  "purpose": "Independent zero-fit check of source-only mechanical recovery lineage and unchanged completed training evidence",
+  "status": "passed",
+  "passed_checks": 44,
+  "errors": [],
+  "verifier_source_sha256": "05fb93e8b453f0ed9af43d5952194597c2e099d13df02563551a4bb743a638d8",
+  "model_or_quality_evaluation_performed": false,
+  "complete_fit_verification_still_pending": true
+}

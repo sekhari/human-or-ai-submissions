@@ -1,0 +1,8 @@
+{
+  "c60": {
+    "max_cv_auroc_error": 0.0
+  },
+  "wc120": {
+    "max_cv_auroc_error": 0.0
+  }
+}

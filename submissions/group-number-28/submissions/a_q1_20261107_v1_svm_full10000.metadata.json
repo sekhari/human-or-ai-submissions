@@ -1,0 +1,9 @@
+{
+  "created_at_utc": "2026-11-08T04:46:36.583692+00:00",
+  "csv_sha256": "0af001abe49b88a4184b5a3318ca6915832747ff858bc9d397de8b891aab6e1a",
+  "full_refit": true,
+  "model_run_id": "a_q1_20261107_v1_svm_full10000",
+  "n_test": 3000,
+  "source_selection_run_id": "a_q1_20261107_v1_svm",
+  "uploaded_to_kaggle": false
+}

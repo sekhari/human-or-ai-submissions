@@ -1,0 +1,22 @@
+{
+  "c60": {
+    "C": 1,
+    "candidate_id": "c60_c1",
+    "fold_0_auroc": 0.9646928223810075,
+    "fold_1_auroc": 0.9640275511156648,
+    "fold_2_auroc": 0.9615817307665252,
+    "mean_cv_auroc": 0.9634340347543993,
+    "representation": "c60",
+    "std_cv_auroc": 0.0016382670758283155
+  },
+  "wc120": {
+    "C": 1,
+    "candidate_id": "wc120_c1",
+    "fold_0_auroc": 0.9643779010719696,
+    "fold_1_auroc": 0.9659980587350735,
+    "fold_2_auroc": 0.9627675110825717,
+    "mean_cv_auroc": 0.9643811569632049,
+    "representation": "wc120",
+    "std_cv_auroc": 0.0016152762873242275
+  }
+}

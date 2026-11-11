@@ -1,0 +1,25 @@
+{
+  "source_sha256": {
+    "experiments/supervised/train_roberta.py": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+    "experiments/supervised/evaluate_roberta.py": "790fb7a53920192f285805b27f79d6ce25ca665349d5b0a7ff9e24942a67c746",
+    "experiments/supervised/prepare_roberta.py": "9b800374be8c7b37165003cd331cab08fec8eadffcb982d3cb8c200542b514df",
+    "experiments/supervised/run_roberta_study.py": "d1b564f1977ed292a67a45f76965277e87c7d4a3ae35263325988530cdab2cfa",
+    "experiments/supervised/benchmark_roberta_mps.py": "3cb89bfb42e5a87139f14ed032b7dce0aead89b22a97adcd428e27ae6e7f6fc5",
+    "experiments/supervised/crop_evaluation.py": "152aea042f08548f88b7524794126bfaed886ff1f9726879fa41dda9a4cbe42e",
+    "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d",
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad",
+    "docs/roberta_context_protocol_20261109.md": "17c39e77268fe26edce70c6bdbb3a15f333be259d8eac8f3c4a22b9f238daa25"
+  },
+  "plan_sha256": "3dba5bad02626a008b7b8f6b200f70ece8cc4a8b544d90bb63ee515174bc5e67",
+  "frozen_at_utc": "2026-11-09T23:46:06.042154+00:00",
+  "python": "/opt/anaconda3/envs/python_course/bin/python",
+  "before_first_neural_fit": false,
+  "independent_verifier": "Separately versioned zero-fit post-run audit; not a model-training dependency",
+  "initial_frozen_at_utc": "2026-11-09T23:27:00.102372+00:00",
+  "initial_provenance_file": "mechanical_recovery_001/provenance.json",
+  "initial_provenance_sha256": "4a77cad82633eee76e5efdd7e3891ae219ef85164b228bca19de6154434c44d6",
+  "mechanical_amendment_file": "mechanical_amendments.json",
+  "mechanical_amendment_sha256": "c8e450a99b721859b0b3ec80e7be4c5b4d97c4da56a60a0a77ebceb5e96d42d2",
+  "note": "Initial executing sources were frozen before first fit; current worker revision is a mechanical post-training/pre-quality-result evaluation/recovery fix. Other sources and plan are unchanged."
+}

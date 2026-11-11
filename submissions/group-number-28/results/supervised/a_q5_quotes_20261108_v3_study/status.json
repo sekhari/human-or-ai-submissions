@@ -1,0 +1,10 @@
+{
+  "completed_at_utc": "2026-11-09T02:00:35.988895+00:00",
+  "completed_cv_fits": 12,
+  "exported_candidate": "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.csv",
+  "pid": 91513,
+  "stage": "complete",
+  "started_at_utc": "2026-11-09T01:54:49.283167+00:00",
+  "updated_at_utc": "2026-11-09T02:00:35.988973+00:00",
+  "wall_seconds": 346.708969542291
+}

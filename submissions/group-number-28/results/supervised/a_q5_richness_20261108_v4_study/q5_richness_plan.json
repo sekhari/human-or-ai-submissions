@@ -1,0 +1,106 @@
+{
+  "C": 1,
+  "conditions": [
+    "original",
+    "quote_typography",
+    "dash_typography"
+  ],
+  "evaluation": {
+    "bootstrap_replicates": 1000,
+    "calibration": "Unchanged sigmoid three-fold training-only calibration, ensemble=False, complete pipeline inside calibrator",
+    "cv": "Four fixed pipelines, three training-only folds, raw-margin AUROC; save held margins and scaler statistics for reconstruction",
+    "length_cutpoints": "Unchanged training-only whitespace-word-count tertiles"
+  },
+  "excluded": [
+    "split replacement",
+    "quote normalization in training",
+    "test fitting",
+    "unlabeled learning",
+    "C tuning",
+    "adaptive feature selection",
+    "automatic Kaggle upload",
+    "automatic additional model family"
+  ],
+  "export_rule": {
+    "maximum_extra_typography_loss_vs_incumbent": 0.003,
+    "maximum_length_bin_regression_vs_incumbent": 0.01,
+    "maximum_new_candidates": 1,
+    "minimum_positive_cv_folds_vs_incumbent": 2,
+    "positive_mean_cv_delta_vs_incumbent": true,
+    "positive_validation_interval_lower_vs_c60": true,
+    "positive_validation_interval_lower_vs_incumbent": true,
+    "selection": "Choose exactly one of the three new models by largest mean original-text training CV before consulting validation. Exact ties prefer fewer numeric features, then c60_length, c60_richness, c60_length_richness. Never try a runner-up if this candidate fails."
+  },
+  "feature_geometry": "Original L2 C60 TF-IDF unchanged. Each numeric block: document-local extractor then StandardScaler, fitted inside the complete CV/calibration pipeline. FeatureUnion weights char=1, length=1/sqrt(2), richness=1/sqrt(3). No final row normalization. Expected training squared norm of each numeric block is nonconstant_columns/block_dimension, not necessarily 1. No block weight or C search.",
+  "feature_plan": "experiments/supervised/q5_plan.json",
+  "incumbent_run_id": "a_q5_20261108_v1_wc120",
+  "length_features": [
+    "log1p(letter_token_count)",
+    "log1p(raw_character_count)"
+  ],
+  "limitations": [
+    "This is development research after inspected validation/public feedback, not an untouched test.",
+    "Incremental predictive information is conditional on this explicit two-feature length block and chosen model geometry; no causal independence or complete removal of length dependence is established.",
+    "Short documents use shorter MATTR windows; all three richness statistics can remain length-dependent.",
+    "Adding numeric blocks changes geometry and effective regularization; fixed C does not equate model capacity.",
+    "Bootstrap intervals condition on fitted models and this split, omit training variation and selection adjustment; secondary contrasts are descriptive.",
+    "Typography conditions were already inspected; no independent OOD robustness claim follows.",
+    "No credible source groups are currently established; this run does not invent a grouped split."
+  ],
+  "method_references": [
+    "https://doi.org/10.1080/09296171003643098",
+    "https://scikit-learn.org/1.5/common_pitfalls.html"
+  ],
+  "models": {
+    "c60": {
+      "length": false,
+      "richness": false
+    },
+    "c60_length": {
+      "length": true,
+      "richness": false
+    },
+    "c60_length_richness": {
+      "length": true,
+      "richness": true
+    },
+    "c60_richness": {
+      "length": false,
+      "richness": true
+    }
+  },
+  "primary_comparison": "richness_given_length: c60_length_richness minus c60_length on original validation text",
+  "primary_evidence_rule": {
+    "minimum_positive_cv_folds": 2,
+    "positive_mean_cv_delta": true,
+    "positive_validation_interval_lower": true
+  },
+  "purpose": "Four-group character/length/lexical-richness ablation authorized after negative C tuning and a separate quote intervention",
+  "reference_study": "a_q5_20261108_v1_study",
+  "resources": {
+    "external_weights": false,
+    "gpu": false,
+    "threads": 1
+  },
+  "richness_features": [
+    "MATTR: mean unique-token fraction over all sliding windows of min(50,n); zero for n=0",
+    "Unigram Shannon entropy with natural log divided by log(n); zero for n<2",
+    "Repeated-bigram fraction: (n_bigrams - n_distinct_bigrams)/n_bigrams; zero for n<2"
+  ],
+  "secondary_comparisons": [
+    "length_only: c60_length minus c60",
+    "richness_only: c60_richness minus c60",
+    "length_given_richness: c60_length_richness minus c60_richness",
+    "interaction: R3-R1-R2+R0",
+    "each new model versus historical WC120 incumbent"
+  ],
+  "seeds": {
+    "bootstrap": 342,
+    "calibration": 242,
+    "inner_cv": 142,
+    "model": 42
+  },
+  "stopping_rule": "Complete 12 CV fits, three new calibrated 8000-row fits (reuse checksum-guarded historical C60), four-group analysis and WC120 diagnostic reference, independent verification; optionally export one eligible 10000-label candidate. No further feature, window, C, block-weight or split changes after scores.",
+  "tokenization": "Lowercase Unicode letter-only tokens using (?u)\\b[^\\W\\d_]+\\b; digit-containing and underscore-containing tokens are excluded; apostrophes split words",
+  "window_size": 50
+}

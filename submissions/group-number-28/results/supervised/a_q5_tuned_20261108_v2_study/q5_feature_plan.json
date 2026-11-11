@@ -1,0 +1,50 @@
+{
+  "purpose": "Frozen Q5 representation ablation, authorized after discussion and before any Q5 scores",
+  "question": "Does adding character TF-IDF improve the fixed Q1 word-TF-IDF SVM?",
+  "hypothesis": "Character n-grams may contribute complementary local writing-form information; this mechanism is unverified.",
+  "models": {
+    "w60": {"name": "Word 60k (Q1 baseline)", "representation": "word(1,2)", "word_max_features": 60000},
+    "c60": {"name": "Character 60k", "representation": "char(3,5)", "char_max_features": 60000},
+    "wc120": {"name": "Word + character 120k", "representation": "word(1,2)+char(3,5), equal blocks, global L2", "word_max_features": 60000, "char_max_features": 60000},
+    "w120": {"name": "Word 120k (budget reference)", "representation": "word(1,2)", "word_max_features": 120000}
+  },
+  "word_representation": {
+    "analyzer": "word", "ngram_range": [1, 2], "lowercase": true,
+    "token_pattern": "(?u)\\b\\w\\w+\\b", "strip_accents": null,
+    "stop_words": null, "min_df": 2, "max_df": 1.0,
+    "max_features": 60000, "sublinear_tf": true, "smooth_idf": true,
+    "use_idf": true, "norm": "l2", "dtype": "float64"
+  },
+  "char_representation": {
+    "analyzer": "char", "ngram_range": [3, 5], "lowercase": true,
+    "strip_accents": null, "min_df": 2, "max_df": 1.0,
+    "max_features": 60000, "sublinear_tf": true, "smooth_idf": true,
+    "use_idf": true, "norm": "l2", "dtype": "float64"
+  },
+  "classifier": {"C": 1, "dual": "auto", "tol": 0.00001, "max_iter": 10000},
+  "seeds": {"model": 42, "inner_cv": 142, "calibration": 242, "bootstrap": 342},
+  "evaluation": {
+    "train_rows": 8000, "validation_rows": 2000,
+    "inner_folds": 3, "inner_metric": "raw-margin AUROC, diagnostic only; no tuning",
+    "calibration": "sigmoid, 3 stratified shuffled training-only folds, ensemble=False; full feature pipeline inside calibrator",
+    "primary_comparison": ["wc120", "w60"],
+    "secondary_comparisons": ["c60 vs w60", "w120 vs w60", "wc120 vs w120"],
+    "bootstrap_replicates": 1000,
+    "bootstrap_method": "class-stratified paired percentile bootstrap, conditional on fitted models and split",
+    "baseline_tolerance": 0.0000000001,
+    "error_threshold": 0.5,
+    "length_bins": "training-partition word-count tertiles; descriptive only"
+  },
+  "baseline_reference": "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv",
+  "resources": {"threads": 1, "gpu": false, "external_weights": false},
+  "stopping_rule": "Complete exactly these four fixed configurations. Do not add ranges, weights, classifiers, or C searches after seeing results. Fault recovery may resume identical unfinished steps.",
+  "decision_rule": "Use the primary paired difference, interval, training-fold consistency and cost together. An interval crossing zero is inconclusive, not evidence of equivalence. Negative results complete Q5.",
+  "limitations": [
+    "The canonical validation set already informed Q1 development; this is a development comparison, not an untouched final test.",
+    "Intervals omit training variation and selection adjustment.",
+    "W120 is a feature-budget reference, not a strict isolation of effective model capacity.",
+    "Fixed C and normalization permit a controlled representation comparison, not a claim that all geometry or regularization effects are identical.",
+    "Character features may encode source-specific shortcuts; hidden-domain robustness remains unverified."
+  ],
+  "excluded": ["test fitting", "unlabeled learning", "validation fitting", "Kaggle feedback", "adaptive search", "full-10000 final training", "automatic upload"]
+}

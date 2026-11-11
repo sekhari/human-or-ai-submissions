@@ -1,0 +1,12 @@
+{
+  "arm": "baseline",
+  "fitting_id_sha256": "cbee754846b69161f4719f4825dc17cb2bf6ca399751fe490e356a70c23a8b78",
+  "fold": 0,
+  "model_sha256": "ac9a36c0337ed4a83d7c44d8a0bfd8b2ed1217c34a64db5153c1378174393155",
+  "n_features": 120000,
+  "n_originals": 5333,
+  "n_training_rows": 5333,
+  "sample_weight_sum": 5333.0,
+  "scheme": "random",
+  "stage": 1
+}

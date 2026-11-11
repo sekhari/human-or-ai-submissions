@@ -1,0 +1,43 @@
+{
+  "actual_execution_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+  "all_gradients_mps": true,
+  "all_numeric_checks_passed": true,
+  "completed_epochs_before_held_inference": 2,
+  "encoder_and_classifier_parameters_updated": true,
+  "files_sha256": {
+    "config.json": "6f249b965f217c1ad54f73801de4947f210a5fb3694c9c43977b8f78514f28c1",
+    "epoch_receipts.json": "b9716beb58aa07d8e410a92afe53f537af3e63d955f9fc8219311b6402978682",
+    "held_ids.csv": "06b5929b8c134d0a6698fdabb7938e005996839e2105bb802307913f5e9f6f00",
+    "held_metadata.csv": "553f562593127a711f0a62eb5fc2ae645f6080de4fec2b3b7c8bb18613583520",
+    "metrics.json": "29e0be1279b872ea05cce6b21fd1b06d92f7fdffaa88b7b8816bd168d3d098c2",
+    "predictions.csv": "0bd6a714ecb31c414e85550993a984fe62b51dff4a8d97311b7322a51a38fe13",
+    "train_ids.csv": "a0b603eb4da2061bd61809e29728d5e57c504c31907360dce0e397e7c84c4c24",
+    "train_metadata.csv": "0903728814f87811cbdc5a81f9e02f9d59312daa161b12cc5d1f8ea514365e19",
+    "training_steps.csv": "0d3134f5448c9bae1519643277b1bc38ed29f283c463a202fb222349724bec4b"
+  },
+  "forward_backward_optimizer_executed": true,
+  "held_early_stopping_or_epoch_selection": false,
+  "recovery_source_amendment": {
+    "amendment": {
+      "allowed_change": "evaluation_cpu_transfer_cast_only",
+      "applies_to_fit_keys": [
+        "random_0"
+      ],
+      "created_at_utc": "2026-11-09T23:46:06.042154+00:00",
+      "id": "evaluation_cpu_transfer_001",
+      "new_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+      "no_held_quality_scores_observed_before_repair": true,
+      "no_new_optimizer_updates_needed_for_recovered_fit": true,
+      "old_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+      "preservation_receipt": "mechanical_recovery_001/preservation_receipt.json",
+      "reason": "MPS-to-CPU combined float64 conversion failed after completed epoch2. Separate CPU transfer and double cast; retain completed scientific training and add strict source-only recovery lineage and protected prior-memory handling. No data, model, recipe, seed, epoch or training-loop change."
+    },
+    "mechanical_amendments_sha256": "c8e450a99b721859b0b3ec80e7be4c5b4d97c4da56a60a0a77ebceb5e96d42d2",
+    "original_config_sha256": "6f249b965f217c1ad54f73801de4947f210a5fb3694c9c43977b8f78514f28c1",
+    "original_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+    "recovery_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2"
+  },
+  "reload_check_training_or_held_examples": "first two held clean inputs, after training only",
+  "reload_max_logit_error": 0.0,
+  "reload_tolerance": 1e-06
+}

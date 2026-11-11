@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-11-10T00:13:09.057852+00:00",
+  "source_sha256": {
+    "experiments/supervised/evaluate_roberta.py": "790fb7a53920192f285805b27f79d6ce25ca665349d5b0a7ff9e24942a67c746",
+    "experiments/supervised/verify_roberta.py": "05fb93e8b453f0ed9af43d5952194597c2e099d13df02563551a4bb743a638d8",
+    "experiments/supervised/report_roberta.py": "1e36493b1e9913388a5afde39cf56cc3916aa2b95b58e820214f1c0be0d6cf11",
+    "experiments/supervised/diagnose_roberta_prefix.py": "c7ed31b591b318550df522b66001df585f99283a1cdebd3992cb7c61d0ccf571",
+    "experiments/supervised/train_roberta.py": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+    "experiments/supervised/crop_evaluation.py": "152aea042f08548f88b7524794126bfaed886ff1f9726879fa41dda9a4cbe42e",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+  },
+  "controller_sha256": "57fb51c1146a21dc641f95f1274e64aea61bfe34430b45440960fe8854a54425",
+  "primary_plan_sha256": "3dba5bad02626a008b7b8f6b200f70ece8cc4a8b544d90bb63ee515174bc5e67",
+  "exploratory_plan_sha256": "8a3fca46a2b5429a10b0abecd8b2e4be72738c89750e9635b3ff8ad490d7cba7",
+  "new_model_fits": 0,
+  "wait_for": "All7 completed primary fits and successful final native process receipts",
+  "stages": [
+    "paired_analysis",
+    "full_independent_audit",
+    "primary_report",
+    "declared_prefix_whitespace_inference"
+  ],
+  "not_a_training_dependency": true
+}

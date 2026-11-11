@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "primary_fits": 7,
+  "new_fits_in_postprocessing": 0,
+  "all_primary_analysis_and_declared_exploratory_inference_complete": true,
+  "completed_at_utc": "2026-11-10T02:01:26.736818+00:00",
+  "candidate_export": false
+}

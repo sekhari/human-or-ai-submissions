@@ -1,0 +1,25 @@
+{
+  "completed_at_utc": "2026-11-09T17:30:22.842818+00:00",
+  "independent_verification_passed": true,
+  "new_competition_svc_fits": 12,
+  "new_synthetic_svc_fits": 0,
+  "two_authorized_group_constraints_diagnostic_only": true,
+  "remaining_model_and_performance_settings_preserved": true,
+  "parent_artifact_hashes_intact": true,
+  "random_screen_passed": true,
+  "topic_screen_passed": false,
+  "topic_failed_mean_checks": [
+    "clean_mean",
+    "quote_and_dash_mean"
+  ],
+  "new_candidates": 0,
+  "uploads": 0,
+  "test_text_accessed": false,
+  "incumbent_retained": true,
+  "sha256": {
+    "results/supervised/a_q5_crop_revised_20261109_v6_verification.json": "16480b7fe029ae4ec67c01be17cd05ce439a15e96ca9df0c95e687aace71c4ec",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/completion.json": "83626559475c45dd5401f91ccaa3c93e6b5ec3468b4d55241faa20303b900a5a",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/comparison.csv": "14b9e346edc2dc2993ca8ad699455723f87875efc0401b017df64029cc922321",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/topic_sensitivity.json": "cfc2cb3010ac56eba2980098bf236d9cbcb88140003226837071d6d34c83357a"
+  }
+}

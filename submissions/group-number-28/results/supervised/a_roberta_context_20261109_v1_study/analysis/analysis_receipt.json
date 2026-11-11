@@ -1,0 +1,42 @@
+{
+  "analysis_source_sha256": "790fb7a53920192f285805b27f79d6ce25ca665349d5b0a7ff9e24942a67c746",
+  "bootstrap_settings": {
+    "seeds": {
+      "random_bootstrap": 548,
+      "topic_bootstrap": 549,
+      "validation_bootstrap": 550
+    },
+    "statistics": {
+      "bootstrap_repetitions": 1000,
+      "interval_limitations": [
+        "Conditional on fixed models/splits; no training variation or adaptive selection correction.",
+        "Overlapping fitting folds are not independent replications.",
+        "Whole-topic sensitivity uses only the existing 12 lexical-topic/style proxy groups.",
+        "Dependent text transformations are not independent datasets; intervals are descriptive and unadjusted for multiplicity."
+      ],
+      "minimum_valid_bootstrap_fraction_all_schemes": 0.9
+    }
+  },
+  "bootstrap_source_sha256": "152aea042f08548f88b7524794126bfaed886ff1f9726879fa41dda9a4cbe42e",
+  "encoder_primary_score": "logit_margin",
+  "fits": 7,
+  "held_cohort_score_transform": false,
+  "log_loss_clipping": "float64 machine epsilon at both probability boundaries",
+  "new_candidate_or_blend": false,
+  "new_model_fits": 0,
+  "output_sha256": {
+    "aggregate_metrics.json": "0841b7a795849cf8d9c6f3bff0a9dbabfc4f9bd5ad3a4759a459509502d10277",
+    "clean_subgroups.csv": "1e1873ee98a096aecb580004e773e0ae9d6c034f8477c196e9c05b5db99bceb4",
+    "coverage_summary.json": "ac057187dca48e207fa21ebd84323305e1e7350bc96276143f650d975f758c9e",
+    "input_hashes.json": "6c9779a1d32801fba342065b698302f93273e6a8a3f2f5e1b27c80bbbddcb67f",
+    "pair_complementarity.csv": "4e085d518c381d4efbddcbe61632419d05bdb0a945974860619eee0c5fda0945",
+    "paired_bootstrap.json": "a64501be37db53fb2f051702993e92529e3c039aae1f0e5783abd422bf49a7b8",
+    "per_fold_metrics.csv": "068c5a05ab7544d13c04796c521b851455827bf0720e55dc16d2c79cdfbe94a1"
+  },
+  "pair_decomposition": "Positive/negative changes in 1/0.5/0 pair credit, divided by all AI-human pairs. Descriptive evidence, not an ensemble score.",
+  "primary_condition_rows": 35,
+  "probability_score_secondary": "p_ai",
+  "raw_margin_probability_mixing": false,
+  "scientific_quality_gate_applied": false,
+  "status": "complete"
+}

@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-11-09T02:06:32.236616+00:00",
+  "snapshot_root": "results/supervised/a_q5_quotes_20261108_v3_study/postprocessing_source",
+  "snapshot_timing": "Post-execution snapshot of actual verifier, plotting helpers and tests; training protocol/source were frozen separately.",
+  "source_sha256": {
+    "experiments/supervised/plot_q5.py": "bb46a6f0afb488be93c910403e39a1980b5fb7f749a8ac042d0831231c6638cc",
+    "experiments/supervised/plot_q5_quotes.py": "824159fe4bd20ba55fc423bceaa53031d764e1056b628ab0454b1fa8a837cb5e",
+    "experiments/supervised/test_q5_quotes.py": "474fb480f6a9d07cd7d0b2ac8eef6cb5586707394cc688e1a14d6a8176c5f8c8",
+    "experiments/supervised/verify_q5_quotes.py": "e2cd1a39facf26a1ec05176601e549a86441010616b1eb4faa1ddf19276e4207",
+    "experiments/supervised/verify_q5_tune.py": "68cae97cd18b533d2a2d56c23d8718804751713b0a2c59e82ce370c967a7b92a"
+  }
+}

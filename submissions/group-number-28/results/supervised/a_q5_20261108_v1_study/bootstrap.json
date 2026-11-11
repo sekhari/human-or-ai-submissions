@@ -1,0 +1,61 @@
+{
+  "auroc_95_intervals": {
+    "c60": [
+      0.9628217249999999,
+      0.9760090500000002
+    ],
+    "w120": [
+      0.935597925,
+      0.954428325
+    ],
+    "w60": [
+      0.9350324750000001,
+      0.9542430749999999
+    ],
+    "wc120": [
+      0.9635009,
+      0.976193475
+    ]
+  },
+  "deltas_vs_w60_95_intervals": {
+    "c60": [
+      0.018089525000000047,
+      0.03329925000000005
+    ],
+    "w120": [
+      -0.0005621499999998447,
+      0.0018593000000000524
+    ],
+    "w60": [
+      0.0,
+      0.0
+    ],
+    "wc120": [
+      0.0200833500000001,
+      0.031970925000000164
+    ]
+  },
+  "limitations": "development validation; conditional on fitted models and split; no training variation or model-selection adjustment",
+  "method": "stratified paired percentile bootstrap",
+  "prediction_sha256": {
+    "c60": "3278bc9bac3130259edf1b452bcf3847919df37027f06a1909fa2c1803ce21e9",
+    "w120": "4a39481e80ad2912bcdce996326f88477d1384ad9609e200b9ec81a603dc667d",
+    "w60": "7a913c9e633786923a37454f3739ead50a0477a9d2cdfe872a30ee714e5b9789",
+    "wc120": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461"
+  },
+  "primary_comparison": [
+    "wc120",
+    "w60"
+  ],
+  "primary_delta": 0.026130000000000098,
+  "primary_delta_95_interval": [
+    0.0200833500000001,
+    0.031970925000000164
+  ],
+  "replicates": 1000,
+  "seed": 342,
+  "wc120_minus_w120_95_interval": [
+    0.01972745,
+    0.031052249999999972
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "cpu_count": 14,
+  "dependencies": {
+    "joblib": "1.4.2",
+    "matplotlib": "3.9.2",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.5.0"
+  },
+  "git_commit": "17aba0e1f0c7b87fa597b4afb53e0cf8db61b2f9",
+  "git_dirty": true,
+  "git_status": "M .gitignore\n M README.md\n M docs/experiment_contract.md\n M docs/team_workflow.md\n M experiments/supervised/README.md\n M report/README.md\n M report/sections/q1.tex\n M results/README.md\n?? docs/lin_q1_handoff.md\n?? experiments/supervised/expanded_q1.py\n?? experiments/supervised/plot_q1.py\n?? experiments/supervised/predict.py\n?? experiments/supervised/q1_expanded_plan.json\n?? experiments/supervised/q1_plan.json\n?? experiments/supervised/requirements.txt\n?? experiments/supervised/run_q1.py\n?? experiments/supervised/test_q1.py\n?? experiments/supervised/verify_q1.py\n?? output/\n?? report/figures/q1_a_q1_20261107_v1_comparison.png\n?? report/figures/q1_a_q1_20261107_v1_cv.png\n?? report/q1_preview.tex\n?? results/supervised/a_q1_20261107_v1_candidate_verification.json\n?? results/supervised/a_q1_20261107_v1_lr/\n?? results/supervised/a_q1_20261107_v1_nb/\n?? results/supervised/a_q1_20261107_v1_study/\n?? results/supervised/a_q1_20261107_v1_svm/\n?? results/supervised/a_q1_20261107_v1_svm_full10000/\n?? results/supervised/a_q1_20261107_v1_verification.json\n?? results/supervised/a_q1_expanded_20261108_v2_study/\n?? submissions/a_q1_20261107_v1_svm_full10000.csv\n?? submissions/a_q1_20261107_v1_svm_full10000.metadata.json",
+  "machine": "arm64",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "processor": "arm",
+  "python": "3.12.7",
+  "source_sha256": {
+    "experiments/supervised/expanded_q1.py": "89cdf9df1fa3f9dc309027c2dc74518fc737aa83edc16b0f217e540f73be9c2e",
+    "experiments/supervised/q1_expanded_plan.json": "9d3c6235e7429be2091bb4071622167ed48f0a325687c61e7fdb496ea56abdee",
+    "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+    "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+    "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+    "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+  },
+  "started_at_utc": "2026-11-08T05:00:31.918243+00:00",
+  "thread_limit": 1,
+  "threadpools": [
+    {
+      "architecture": "armv8",
+      "filepath": "/opt/anaconda3/lib/libopenblasp-r0.3.21.dylib",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "threading_layer": "pthreads",
+      "user_api": "blas",
+      "version": "0.3.21"
+    },
+    {
+      "filepath": "/opt/anaconda3/lib/libomp.dylib",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "user_api": "openmp",
+      "version": null
+    }
+  ]
+}

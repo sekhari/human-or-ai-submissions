@@ -1,0 +1,22 @@
+{
+  "completed_at_utc": "2026-11-09T07:46:20.473957+00:00",
+  "execution_completed_under_stopping_rule": true,
+  "competition_svc_fits": 6,
+  "synthetic_svc_fits": 7,
+  "classifier_boundary_tests_passed": 5,
+  "metric_zero_fit_tests_passed": 6,
+  "shared_contract_tests_passed": 10,
+  "independent_verification_passed": true,
+  "no_candidate_exported": true,
+  "no_kaggle_upload": true,
+  "sealed_conditions_not_evaluated": true,
+  "canonical_2000_not_scored_this_run": true,
+  "test_text_not_accessed": true,
+  "incumbent_retained": true,
+  "sha256": {
+    "results/supervised/a_q5_crop_20261109_v5_verification.json": "4d154e05649358343f8db06addf6d176200da3848e83a45049bc85d3ff1fd396",
+    "results/supervised/a_q5_crop_20261109_v5_whitespace_checks.json": "fd2b9b23a6aaacd924dcf48c02043e7a09def0fbc2b816558118b2e437d5acd2",
+    "results/supervised/a_q5_crop_20261109_v5_study/completion.json": "ee58837cc881adef45e8676c08a7c8a8b1bc01e7702fad663767e0252b434f10",
+    "results/supervised/a_q5_crop_20261109_v5_study/comparison.csv": "a25db8f9b6ff2e2751680e8ebdf417270324822b2fc6f3b8d064486359c40a64"
+  }
+}

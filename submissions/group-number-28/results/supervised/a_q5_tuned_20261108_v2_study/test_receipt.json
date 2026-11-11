@@ -1,0 +1,16 @@
+{
+  "commands_executed": [
+    {
+      "command": "/opt/anaconda3/bin/python -m unittest experiments.supervised.test_q5_tune experiments.supervised.test_q5_sensitivity -v",
+      "failed": 0,
+      "passed": 5
+    },
+    {
+      "command": "/opt/anaconda3/bin/python -m experiments.supervised.q5_tune --prefix a_q5_tuned_20261108_v2 --resume",
+      "exit_code": 0,
+      "output": "Tuning study already complete; no fits or overwrites"
+    }
+  ],
+  "full_size_training_performed_by_tests": false,
+  "recorded_at_utc": "2026-11-08T22:11:07.076229+00:00"
+}

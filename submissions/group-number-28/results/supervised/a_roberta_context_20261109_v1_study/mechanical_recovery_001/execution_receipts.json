@@ -1,0 +1,23 @@
+[
+  {
+    "fit_key": "random_0",
+    "attempt": 1,
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.train_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "random_0"
+    ],
+    "return_code": 1,
+    "process_wall_seconds": 886.0549382083118,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_0.attempt1.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/random_0.attempt1.stderr.log",
+    "stdout_sha256": "ab10a87d990648d8129365be6070933b2c332b0a084485284ab1340220400863",
+    "stderr_sha256": "13899cc41fad0edbe6329d9f5e41d690e6de8072289dcf72eea90619511e2250",
+    "finished_at_utc": "2026-11-09T23:41:46.108676+00:00"
+  }
+]

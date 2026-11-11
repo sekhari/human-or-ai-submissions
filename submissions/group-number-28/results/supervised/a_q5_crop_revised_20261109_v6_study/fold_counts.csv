@@ -1,0 +1,7 @@
+scheme,fold,fitting_n,fitting_human,fitting_ai,held_n,held_human,held_ai,fitting_topics_n,held_topics_n,shared_topics_n
+topic,0,5394,2716,2678,2606,1284,1322,7,5,0
+topic,1,4646,2338,2308,3354,1662,1692,9,3,0
+topic,2,5960,2946,3014,2040,1054,986,8,4,0
+matched_random,0,5394,2716,2678,2606,1284,1322,12,12,12
+matched_random,1,4646,2338,2308,3354,1662,1692,12,12,12
+matched_random,2,5960,2946,3014,2040,1054,986,12,12,12

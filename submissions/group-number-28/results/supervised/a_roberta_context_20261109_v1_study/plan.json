@@ -1,0 +1,238 @@
+{
+  "protocol_version": 1,
+  "created_at_utc": "2026-11-09T23:22:33.282520+00:00",
+  "purpose": "One fixed pretrained contextual candidate versus WC120, complete matched random/topic comparison and reused canonical development evaluation",
+  "status_at_freeze": "Before any scientific RoBERTa fit or held-model prediction",
+  "hypothesis": "A supplied-label fine-tuned contextual encoder may improve held-topic ranking and repair WC120 errors; hidden-test improvement is unknown",
+  "comparison_scope": "Model-family comparison, not an isolated causal effect of pretraining or architecture",
+  "python_executable": "/opt/anaconda3/envs/python_course/bin/python",
+  "model": {
+    "name": "FacebookAI/roberta-base",
+    "snapshot": "/Users/lin/Desktop/Cornell_tech_kaggle/tmp/huggingface/hub/models--FacebookAI--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+    "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+    "weights_sha256": "5bde1d28afb363d0103324efeb5afc8b2b397fe5e04beabb9b1ef355255ade81",
+    "weights_use": "Generic base checkpoint; never device-test weights",
+    "license": "MIT (pinned model card)"
+  },
+  "recipe": {
+    "epochs": 2,
+    "microbatch": 4,
+    "gradient_accumulation": 4,
+    "max_length": 512,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "attention": "sdpa",
+    "dtype": "float32",
+    "lr_schedule": "constant",
+    "optimizer": "AdamW",
+    "foreach": false,
+    "fused": false,
+    "padding": "max_length",
+    "weight_decay_scope": "All trainable parameters, including bias/normalization, as in the device test",
+    "partial_accumulation": "Retain every original; weight microbatch mean loss by microbatch_n/actual_effectivebatch_n",
+    "checkpoint_selection": "Final prescribed epoch only; no held-loss evaluation or early stopping",
+    "cpu_threads": 10
+  },
+  "fits": [
+    {
+      "key": "random_0",
+      "scheme": "random",
+      "fold": 0,
+      "train_ids_file": "ids/random_0_train.csv",
+      "held_ids_file": "ids/random_0_held.csv",
+      "training_n": 5394,
+      "held_n": 2606,
+      "baseline_predictions_file": "baselines/random_0.csv",
+      "baseline_score_type": "raw_svm_margin",
+      "length_word_tertiles": [
+        174.0,
+        240.0
+      ],
+      "expected_optimizer_updates": 676
+    },
+    {
+      "key": "random_1",
+      "scheme": "random",
+      "fold": 1,
+      "train_ids_file": "ids/random_1_train.csv",
+      "held_ids_file": "ids/random_1_held.csv",
+      "training_n": 4646,
+      "held_n": 3354,
+      "baseline_predictions_file": "baselines/random_1.csv",
+      "baseline_score_type": "raw_svm_margin",
+      "length_word_tertiles": [
+        173.0,
+        239.0
+      ],
+      "expected_optimizer_updates": 582
+    },
+    {
+      "key": "random_2",
+      "scheme": "random",
+      "fold": 2,
+      "train_ids_file": "ids/random_2_train.csv",
+      "held_ids_file": "ids/random_2_held.csv",
+      "training_n": 5960,
+      "held_n": 2040,
+      "baseline_predictions_file": "baselines/random_2.csv",
+      "baseline_score_type": "raw_svm_margin",
+      "length_word_tertiles": [
+        174.0,
+        239.0
+      ],
+      "expected_optimizer_updates": 746
+    },
+    {
+      "key": "topic_0",
+      "scheme": "topic",
+      "fold": 0,
+      "train_ids_file": "ids/topic_0_train.csv",
+      "held_ids_file": "ids/topic_0_held.csv",
+      "training_n": 5394,
+      "held_n": 2606,
+      "baseline_predictions_file": "baselines/topic_0.csv",
+      "baseline_score_type": "raw_svm_margin",
+      "length_word_tertiles": [
+        178.0,
+        243.0
+      ],
+      "expected_optimizer_updates": 676
+    },
+    {
+      "key": "topic_1",
+      "scheme": "topic",
+      "fold": 1,
+      "train_ids_file": "ids/topic_1_train.csv",
+      "held_ids_file": "ids/topic_1_held.csv",
+      "training_n": 4646,
+      "held_n": 3354,
+      "baseline_predictions_file": "baselines/topic_1.csv",
+      "baseline_score_type": "raw_svm_margin",
+      "length_word_tertiles": [
+        181.0,
+        244.0
+      ],
+      "expected_optimizer_updates": 582
+    },
+    {
+      "key": "topic_2",
+      "scheme": "topic",
+      "fold": 2,
+      "train_ids_file": "ids/topic_2_train.csv",
+      "held_ids_file": "ids/topic_2_held.csv",
+      "training_n": 5960,
+      "held_n": 2040,
+      "baseline_predictions_file": "baselines/topic_2.csv",
+      "baseline_score_type": "raw_svm_margin",
+      "length_word_tertiles": [
+        165.0,
+        230.0
+      ],
+      "expected_optimizer_updates": 746
+    },
+    {
+      "key": "canonical_8000",
+      "scheme": "validation",
+      "fold": 0,
+      "train_ids_file": "ids/canonical_8000_train.csv",
+      "held_ids_file": "ids/canonical_8000_held.csv",
+      "training_n": 8000,
+      "held_n": 2000,
+      "baseline_predictions_file": "baselines/canonical_8000.csv",
+      "baseline_score_type": "calibrated_probability",
+      "length_word_tertiles": [
+        174.0,
+        240.0
+      ],
+      "expected_optimizer_updates": 1000
+    }
+  ],
+  "conditions": [
+    "clean",
+    "quote_and_dash",
+    "digit_runs_to_zero",
+    "whitespace_only",
+    "prefix_100"
+  ],
+  "include_sealed": false,
+  "prefix_eligibility": "Original whitespace word count >=150; first100 words joined with one ASCII space",
+  "tokenizer_coverage": "Train coverage before fitting, held coverage only after final epoch; full token length includes specials; record truncation at512",
+  "ranking_score": "RoBERTa raw class1 minus class0 logits, to avoid FP32 probability saturation ties",
+  "statistics": {
+    "primary": "Equal-weight mean of three within-fold clean AUROCs per scheme and paired deltas against identical-ID WC120 predictions",
+    "secondary": [
+      "prefix100 and other fixed sensitivity conditions",
+      "per-fold ranking repairs and regressions with ties at0.5",
+      "rank correlation",
+      "natural-length and512truncation subgroups"
+    ],
+    "bootstrap_repetitions": 1000,
+    "minimum_valid_bootstrap_fraction_all_schemes": 0.9,
+    "interval_scope": "Conditional on fitted models, fixed/adaptively reused splits; no training variation, selection or multiplicity correction",
+    "topic_interval": "Resample whole frozen lexical topic clusters within each fixed held fold; record undefined replicates without redrawing",
+    "pooling": "Never pool cross-fold raw margins as primary AUROC"
+  },
+  "seeds": {
+    "model": 42,
+    "random_bootstrap": 548,
+    "topic_bootstrap": 549,
+    "validation_bootstrap": 550
+  },
+  "boundaries": {
+    "canonical_split_changes": false,
+    "external_labelled_data": false,
+    "unlabeled_or_test_learning": false,
+    "held_evaluation_before_final_epoch": false,
+    "held_set_is_untouched": false,
+    "topic_proxy_is_true_domain_label": false,
+    "blend_fitting_or_export": false,
+    "automatic_submission": false
+  },
+  "completion_policy": "Finish all7 fixed fits regardless of quality. Stop only for data, numeric, hardware or software failures; preserve failed attempts and resume identical unfinished work. No score thresholds or architecture/seed/epoch/weight search.",
+  "input_files_sha256": {
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad",
+    "data/splits/train_ids.csv": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+    "data/splits/validation_ids.csv": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f",
+    "results/supervised/a_q5_20261108_v1_wc120/model.joblib": "b824bb4181333c20c46a3101455afc7d07c59980f72a198efa8d97e9cad5bfd8",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/random_folds.csv": "af6cdcb1f9dd08760c06e046dbf6213d5a07266de2ffe1ba5c9f22db96c116c9",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/topic_folds.csv": "f6101671657cb9fe509ae4779d1b2f95a2924819484b6b0c6717c8e8a26a5788",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/topic_assignments.csv": "676010ceab9622328da687e01d3b07c4901cdd1f5271c22373780ced7d02da39",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/fold_counts.csv": "8d82c3e24148b8f51b0742d3e56aa8fdc0bf089bd1ae531f1ad832aec14df211",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/folds/random_0/primary_predictions.csv": "ea7104f7e4dbe1d573e659565a7d83406d4c3bf1bdf5cedf3d80603bf5f62b63",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/folds/random_1/primary_predictions.csv": "437dd0186e19d9b7a572de455e173a06fdf056b7eb4e3556b0e8f06736c3fc9e",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/folds/random_2/primary_predictions.csv": "8547a00a15f149ef153df734b22d921d7d5d0c67a9e2f0d4c448bf9144f50ff1",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/folds/topic_0/primary_predictions.csv": "c46e7384e5af4864e0dfae3ab2bcc0fe8a288188af14aa4dcdb40c1419749b95",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/folds/topic_1/primary_predictions.csv": "a9dd9da6fd09fb03c6e4f08304e839fd677454a4609097ad09c62f90ba2ed2d8",
+    "results/supervised/a_q5_crop_revised_20261109_v6_study/folds/topic_2/primary_predictions.csv": "e157e4af76861f384611afd77635454a355302a4a2ef71b6781f20a1ce15b83d",
+    "results/supervised/a_q5_20261108_v1_wc120/validation_predictions.csv": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461",
+    "results/supervised/a_public_gap_20261109_v1_stress/predictions.csv": "8c508cd63c964014520ad0b6b35f38b8b2fe8f485fd35eeb75e6f21ecd6203a5"
+  },
+  "prepared_files_sha256": {
+    "ids/random_0_train.csv": "60f5b6108256d87ee630d1225cee39a81a920dc9f46635c441a55d6177f293c1",
+    "ids/random_0_held.csv": "a42337201f04130440a0b3606e664cdb66a9a31c2358f3cf858bdf6e39fa54a1",
+    "baselines/random_0.csv": "d7ce539c3d31f7e790cfe70268360aabcef6b4759428c7983899e432ff60bc5d",
+    "ids/random_1_train.csv": "064918a7947c674b45b6807af6df0593e745c01df88d57b82e38277f362be80e",
+    "ids/random_1_held.csv": "942b7f871c2b8eab55d838c04ef7370abacef745e667c2cdd32f5880bfa47167",
+    "baselines/random_1.csv": "92d3dd1149975227c8605f78b10421c00bda8305b5d2f7fecd2064fb79c58db9",
+    "ids/random_2_train.csv": "b8e3d6f88c48ba67d20d909fc2987cb38f232fd0d62982591d8bc43e36ef68db",
+    "ids/random_2_held.csv": "d3761f8aa31860fed7a9309c26d9eb83b041f6b14a97c0e7e655c0a865a19eb9",
+    "baselines/random_2.csv": "09b9e517b218a5800d5d50089463b4386db311844254532f6ff7f2da6c589eed",
+    "ids/topic_0_train.csv": "8b2785794eebbb73d29be94084e01be7e1c789dde63e3d40b10e53e4b9b10261",
+    "ids/topic_0_held.csv": "d770e6c6cd17643f2956c13c7f639dfeb612d08fdaba3f143defa327fbdd3f9c",
+    "baselines/topic_0.csv": "5de99186f272580b834f916e52c614be16a856d2236eaf8c6549c1d208301aaf",
+    "ids/topic_1_train.csv": "8c9a07f354e0a670e338c8080fa99ed27a8c33177efdf03cacbf8b32a2f09a55",
+    "ids/topic_1_held.csv": "fc073b4868ff513e486dde3071d9d9d1a8844731751e35f96008180c31c2caae",
+    "baselines/topic_1.csv": "a75988786b6b1cd0c655a15059da48624a1e86c7f78e8f8180423864786cfbf0",
+    "ids/topic_2_train.csv": "424b61d73c14f26fb847c11b9f5118045a41ec0e0a166737bcaf711ba5ef0b1f",
+    "ids/topic_2_held.csv": "6642c2447554bd26da0098e1eec6243b0267afcb24a5e1ebf14994df67c554cb",
+    "baselines/topic_2.csv": "40aa1782db558ae384f97e2b88cca6287dffd72ad1ecfb7be4b86ada8de1d73a",
+    "ids/canonical_8000_train.csv": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+    "ids/canonical_8000_held.csv": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f",
+    "baselines/canonical_8000.csv": "3414c1ebc09e0c0a70cbd3632d01625b174578768d1d2ac2662f89aebc53ecef"
+  },
+  "preparer_source_sha256": "9b800374be8c7b37165003cd331cab08fec8eadffcb982d3cb8c200542b514df",
+  "git_commit": "0b4a1a9efd46e72a524dace9359120393de4d05d",
+  "git_dirty": true
+}

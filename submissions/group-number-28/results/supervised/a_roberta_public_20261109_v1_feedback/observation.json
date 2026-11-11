@@ -1,0 +1,23 @@
+{
+  "run_id": "a_roberta_20261109_v1_raw_full10000",
+  "submission_filename": "a_roberta_20261109_v1_raw_full10000.csv",
+  "local_csv_sha256": "c721fb356ab72315bab6c8499b3630391f4955e9429f8e359bdbc3d5896e781b",
+  "public_auroc": 0.9697,
+  "score_display": "0.96970",
+  "score_source": "User-provided Kaggle submission screenshot",
+  "screenshot": "docs/evidence/roberta_public_20261109_096970.png",
+  "screenshot_sha256": "69213208b1850540e99d68b948d32dcc0f6a08c5acce3387e475795ca7c0b4c1",
+  "screenshot_displayed_status": "Complete",
+  "screenshot_displayed_account": "Yslin9",
+  "screenshot_submission_description": "Roberta_lin",
+  "recorded_at_utc": "2026-11-10T03:42:29.104156+00:00",
+  "actual_uploaded_at": null,
+  "kaggle_submission_id": null,
+  "previous_best_run_id": "a_q5_20261108_v1_wc120_full10000",
+  "previous_reported_public_auroc": 0.87399,
+  "absolute_public_auroc_gain": 0.09571,
+  "source_8000_development_auroc": 0.999297,
+  "heldout_score_for_full10000_refit": null,
+  "private_score": null,
+  "verification_scope": "Screenshot transcription and local filename/artifact consistency; exact upload time, server-side checksum and submission ID not independently verified. Historical export metadata remains unchanged."
+}

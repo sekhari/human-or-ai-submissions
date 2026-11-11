@@ -1,0 +1,51 @@
+{
+  "git_commit": "e1b79cb41fa15df4bcb579e6799aae8cb67ca92c",
+  "git_status": " M README.md\n M docs/robustness_research_plan.md\n M experiments/supervised/README.md\n M submissions/README.md\n M submissions/leaderboard_log.csv\n?? docs/next_round_crop_protocol_20261109.md\n?? docs/public_score_research_20261109.md\n?? docs/q5_crop_results_20261109.md\n?? docs/q5_crop_revised_protocol_20261109.md\n?? experiments/supervised/audit_overlap.py\n?? experiments/supervised/audit_public_predictions.py\n?? experiments/supervised/audit_public_stress.py\n?? experiments/supervised/crop_evaluation.py\n?? experiments/supervised/crop_model.py\n?? experiments/supervised/crop_revised_topics.py\n?? experiments/supervised/crop_topics.py\n?? experiments/supervised/pilot_crop_robustness.py\n?? experiments/supervised/q5_crop_plan.json\n?? experiments/supervised/q5_crop_revised_plan.json\n?? experiments/supervised/run_q5_crop.py\n?? experiments/supervised/test_q5_crop.py\n?? experiments/supervised/verify_q5_crop.py\n?? experiments/supervised/verify_q5_crop_revised.py\n?? results/supervised/a_public_gap_20261109_v1_crop_pilot/\n?? results/supervised/a_public_gap_20261109_v1_overlap/\n?? results/supervised/a_public_gap_20261109_v1_predictions/\n?? results/supervised/a_public_gap_20261109_v1_review/\n?? results/supervised/a_public_gap_20261109_v1_stress/\n?? results/supervised/a_q5_crop_20261109_v5_delivery_checks.json\n?? results/supervised/a_q5_crop_20261109_v5_study/\n?? results/supervised/a_q5_crop_20261109_v5_verification.json\n?? results/supervised/a_q5_crop_20261109_v5_whitespace_checks.json\n",
+  "packages": {
+    "joblib": "1.4.2",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.5.0"
+  },
+  "plan_sha256": "cbd2491c341a1e792ee68034a2e1c710b8515a2f68371758613729d52d896408",
+  "python": "3.12.7",
+  "source_sha256": {
+    "docs/next_round_crop_protocol_20261109.md": "1de0bf130e4592ef7032df88451f624ae770bf82b5b266465c6857740ff6324c",
+    "docs/q5_crop_revised_protocol_20261109.md": "3e37473a574722c9ea40a996473262eec662f173a0153b47443d90c3a53a65d9",
+    "experiments/supervised/crop_evaluation.py": "152aea042f08548f88b7524794126bfaed886ff1f9726879fa41dda9a4cbe42e",
+    "experiments/supervised/crop_model.py": "6a743e173ee3fdd6bf0d4c06deaf7773cc49fa372165db25799d95b991d564de",
+    "experiments/supervised/crop_revised_topics.py": "17dd8ae2064603ef2fd9b3421c09de88dab61324d46e856c690e1645f4ae4abc",
+    "experiments/supervised/crop_topics.py": "5f0c6299dbe6289f60e0c55b4f5ea739d003c63ea24c6de800d224c469f7a049",
+    "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+    "experiments/supervised/q5_crop_plan.json": "021a8c289a86066ec72dc2d40bf6ed570c6125bea23704b6b2a1e69bce8d20de",
+    "experiments/supervised/q5_crop_revised_plan.json": "cbd2491c341a1e792ee68034a2e1c710b8515a2f68371758613729d52d896408",
+    "experiments/supervised/q5_plan.json": "631833499cdbe658dbc96c693a96e76c74bfd27dca897818d5113c95af5af71d",
+    "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808",
+    "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+    "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+    "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+    "experiments/supervised/run_q5_crop.py": "3004fe7844f198b61277af8937b2e111060a6f644bd1ec694504fb689385f9e6",
+    "experiments/supervised/test_q5_crop.py": "97ba26656bc0ddabf570f9cad82f20e86b8f78d6e25cb54301078ee4de2c2bc0",
+    "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+  },
+  "started_at_utc": "2026-11-09T17:24:34.570004+00:00",
+  "synthetic_checks": {
+    "inherited_prior_check_receipt": {
+      "new_synthetic_svc_fits": 0,
+      "parent_provenance": "results/supervised/a_q5_crop_20261109_v5_study/provenance.json",
+      "policy": "Reuse unchanged estimator/metric regression results; run only zero-fit checks for revision split handling and soft-vs-hard constraints.",
+      "previously_passed_synthetic_svc_fits": 7,
+      "source_sha256": {
+        "experiments/supervised/crop_evaluation.py": "152aea042f08548f88b7524794126bfaed886ff1f9726879fa41dda9a4cbe42e",
+        "experiments/supervised/crop_model.py": "6a743e173ee3fdd6bf0d4c06deaf7773cc49fa372165db25799d95b991d564de",
+        "experiments/supervised/test_q5_crop.py": "97ba26656bc0ddabf570f9cad82f20e86b8f78d6e25cb54301078ee4de2c2bc0"
+      }
+    },
+    "svc_fits": 0
+  },
+  "threads": 1,
+  "uploads_performed": 0,
+  "user_authorized_execution": true
+}

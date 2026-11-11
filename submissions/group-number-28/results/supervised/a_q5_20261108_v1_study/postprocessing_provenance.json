@@ -1,0 +1,10 @@
+{
+  "recorded_at_utc": "2026-11-08T07:35:20.355605+00:00",
+  "snapshot_timing": "Recorded after successful execution; training protocol was frozen separately before Q5 scores.",
+  "source_sha256": {
+    "experiments/supervised/plot_q5.py": "bb46a6f0afb488be93c910403e39a1980b5fb7f749a8ac042d0831231c6638cc",
+    "experiments/supervised/q5_job.py": "31b32a00788138dad2f2500c84ecbf26faf5d424fdc6d9c8f182aca8c03f0f57",
+    "experiments/supervised/test_q5.py": "38c5cbad3630b1a0b7756ce11b34bae33c34473cbf42e0f614cc8dc656cf7bcc",
+    "experiments/supervised/verify_q5.py": "00a08239e8d12b657c7a357a72a3ed3fd6997864d00b19efa0e7b93c57827800"
+  }
+}

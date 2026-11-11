@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-11-08T22:11:07.075939+00:00",
+  "snapshot_timing": "Post-execution snapshot of actual verifier, plotting helpers and tests; training protocol was frozen separately.",
+  "source_sha256": {
+    "experiments/supervised/plot_q5.py": "bb46a6f0afb488be93c910403e39a1980b5fb7f749a8ac042d0831231c6638cc",
+    "experiments/supervised/plot_q5_tune.py": "6a0f9190c401543b50882776d120b06b792bfc5d15298d6fd1d720469f719678",
+    "experiments/supervised/test_q5_sensitivity.py": "d50c8f38de388d299dd9a2bff31adcccac049ce6a103066023306fd84b7d02df",
+    "experiments/supervised/test_q5_tune.py": "7f7ffefa489659702757c58fa51ed068e619e0c7d00e8f3cec6540e55e6f0836",
+    "experiments/supervised/verify_q5_tune.py": "68cae97cd18b533d2a2d56c23d8718804751713b0a2c59e82ce370c967a7b92a"
+  }
+}

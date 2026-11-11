@@ -1,0 +1,20 @@
+{
+  "feature_counts": {
+    "char": 60000,
+    "total": 120000,
+    "word": 60000
+  },
+  "fit_seconds": 41.48659362504259,
+  "n_features": 120000,
+  "note": "All supplied labels include the former validation rows; this refit has no held-out evaluation.",
+  "timing_definition": "one CPU thread; full feature fitting and training-only sigmoid calibration included",
+  "train": {
+    "accuracy_at_0_5": 1.0,
+    "auroc": 1.0,
+    "brier": 0.0009671108049044714,
+    "log_loss": 0.017962436230979806,
+    "n": 10000
+  },
+  "validation": null,
+  "warnings": []
+}

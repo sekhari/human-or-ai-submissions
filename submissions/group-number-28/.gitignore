@@ -1,0 +1,45 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.ipynb_checkpoints/
+.Rhistory
+.RData
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.log
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+cornell-tech-cs-5785-combined-2026-ai-vs-human-text/
+# Original supplied file contains an Overleaf access/share URL; keep local.
+old_rubric.tex
+old_rubric.tex.zip
+# Reports are authored separately in Overleaf. Local drafts are not uploaded.
+/output/pdf/
+/report/sections/*.tex
+/report/archive/
+/report/*.tex
+/experiments/supervised/report_expanded_q1.py
+# Local build intermediates.
+/tmp/
+report/*.aux
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+
+
+# Generated final-pipeline environments, models, and predictions.
+.venv-*/
+/artifacts/
+/submission.csv
+*.safetensors

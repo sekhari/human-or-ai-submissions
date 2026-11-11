@@ -1,0 +1,62 @@
+{
+  "conditions": {
+    "clean": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.002987608342895698,
+      "paired_delta_ci_97_5": -0.0017383722387810945,
+      "point_macro_delta_auroc": -0.002363626708731137,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "digit_runs_to_zero": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.002240133410580025,
+      "paired_delta_ci_97_5": -0.001122490363556858,
+      "point_macro_delta_auroc": -0.0016657357810233586,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "prefix_100": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": 0.04653736018322287,
+      "paired_delta_ci_97_5": 0.05527568046440109,
+      "point_macro_delta_auroc": 0.050727449888421296,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "quote_and_dash": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": -0.0032076635626648283,
+      "paired_delta_ci_97_5": -0.0018830424846521838,
+      "point_macro_delta_auroc": -0.002533499068701891,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    },
+    "whitespace_only": {
+      "interval_available": true,
+      "invalid_replicates": 0,
+      "paired_delta_ci_2_5": 0.0031402958148792006,
+      "paired_delta_ci_97_5": 0.005195699518562544,
+      "point_macro_delta_auroc": 0.004168354859561241,
+      "valid_fraction": 1.0,
+      "valid_replicates": 1000
+    }
+  },
+  "limitations": [
+    "Fixed fitted models and splits",
+    "No training-variation or adaptive-selection correction",
+    "Overlapping training folds are not independent replications",
+    "Suffix/middle variants are not independent datasets",
+    "Multiple conditions are not independent tests"
+  ],
+  "method": "Within-fold class-stratified original-ID paired bootstrap",
+  "n_folds": 3,
+  "no_replacement_of_invalid_replicates": true,
+  "requested_replicates": 1000,
+  "scheme": "random",
+  "seed": 548
+}

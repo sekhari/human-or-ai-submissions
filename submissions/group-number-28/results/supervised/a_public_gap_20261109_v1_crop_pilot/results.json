@@ -1,0 +1,78 @@
+{
+  "artifact_sha256": {
+    "summary.csv": "d28555d3772b50983d957f2782f1bbd2edb352130cb20332a95143d8f04b23fb",
+    "training_crop_ids.csv": "89e44eceae9c7aae79224c8d129f8adfe7c5ad1e127dfb2814127fc5f54779e0",
+    "validation_margins_not_probabilities.csv": "6cabc71db610822850cae7666bf9e3cd5b1f3b44533a7f2d746ef28efb88cb7b"
+  },
+  "baseline_reproduction": {
+    "baseline_margin_auroc": 0.970006,
+    "max_absolute_margin_error": 9.547918011776346e-15,
+    "saved_probability_auroc": 0.970006
+  },
+  "completed_at_utc": "2026-11-09T05:07:59.848245+00:00",
+  "fit_records": {
+    "baseline": {
+      "fit_seconds": 0.8206239580176771,
+      "n_features": 120000,
+      "n_iter": 36,
+      "n_training_rows": 8000,
+      "sample_weight_sum": 8000.0,
+      "warnings": []
+    },
+    "crop_augmented": {
+      "fit_seconds": 1.052439915947616,
+      "n_features": 120000,
+      "n_iter": 30,
+      "n_training_rows": 14420,
+      "sample_weight_sum": 8000.0,
+      "warnings": []
+    }
+  },
+  "plan_sha256": "36b472f854115394c3de6920d25ee1525a7dc695e4fd028cead015ffd289a0ad",
+  "rows": [
+    {
+      "augmented_minus_baseline_auroc": -0.005340000000000122,
+      "augmented_raw_margin_auroc": 0.9646659999999999,
+      "baseline_raw_margin_auroc": 0.970006,
+      "condition": "clean",
+      "n": 2000,
+      "n_ai": 1000,
+      "n_human": 1000,
+      "paired_delta_ci_2_5": -0.008038099999999848,
+      "paired_delta_ci_97_5": -0.0027757750000000697
+    },
+    {
+      "augmented_minus_baseline_auroc": -0.005653999999999715,
+      "augmented_raw_margin_auroc": 0.9615340000000001,
+      "baseline_raw_margin_auroc": 0.9671879999999998,
+      "condition": "quote_and_dash",
+      "n": 2000,
+      "n_ai": 1000,
+      "n_human": 1000,
+      "paired_delta_ci_2_5": null,
+      "paired_delta_ci_97_5": null
+    },
+    {
+      "augmented_minus_baseline_auroc": -0.004516999999999993,
+      "augmented_raw_margin_auroc": 0.9620029999999998,
+      "baseline_raw_margin_auroc": 0.9665199999999998,
+      "condition": "digit_runs_to_zero",
+      "n": 2000,
+      "n_ai": 1000,
+      "n_human": 1000,
+      "paired_delta_ci_2_5": null,
+      "paired_delta_ci_97_5": null
+    },
+    {
+      "augmented_minus_baseline_auroc": 0.059952416311809587,
+      "augmented_raw_margin_auroc": 0.9361802724696541,
+      "baseline_raw_margin_auroc": 0.8762278561578445,
+      "condition": "prefix_100_on_min150",
+      "n": 1627,
+      "n_ai": 770,
+      "n_human": 857,
+      "paired_delta_ci_2_5": 0.0499028247132098,
+      "paired_delta_ci_97_5": 0.07097565503341469
+    }
+  ]
+}

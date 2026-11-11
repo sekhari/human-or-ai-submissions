@@ -1,0 +1,8 @@
+{
+  "completed_at_utc": "2026-11-08T07:30:00.746027+00:00",
+  "max_probability_error": 0.0,
+  "passed": true,
+  "reference_predictions": "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv",
+  "reference_sha256": "7a913c9e633786923a37454f3739ead50a0477a9d2cdfe872a30ee714e5b9789",
+  "validation_auroc": 0.9438759999999999
+}

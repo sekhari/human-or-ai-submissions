@@ -1,0 +1,30 @@
+{
+  "auroc_95_intervals": {
+    "lr": [
+      0.934581675,
+      0.9536644499999999
+    ],
+    "nb": [
+      0.89286755,
+      0.9189601
+    ],
+    "svm": [
+      0.9350324750000001,
+      0.9542430749999999
+    ]
+  },
+  "limitations": "conditional on these fitted models and split; not adjusted for model selection; no training variability",
+  "method": "stratified paired percentile bootstrap",
+  "replicates": 1000,
+  "seed": 342,
+  "winner_minus_other_95_intervals": {
+    "lr": [
+      -0.0007131500000000762,
+      0.0016602249999999928
+    ],
+    "nb": [
+      0.028393450000000004,
+      0.047475200000000016
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_sha256": {
+    "fold_counts.csv": "dcbc0916ca0c64e2a5862f326e2c4bed9357ec0eb4ae269cdd2e4b7339e7765c",
+    "random_folds.csv": "61188e1c799fc96f4105b064b5591b3bbb81f2a69d32f54b80fe1d2c262b9a75",
+    "topic_folds.csv": "f6101671657cb9fe509ae4779d1b2f95a2924819484b6b0c6717c8e8a26a5788",
+    "topic_quality.json": "697c099bb9c17bcd12dcfb93fba2762b8d6769aaeca571701257ef18443b6d97",
+    "topic_review.json": "80c68692be332258321039d821a6cbc0b46ae6c407ca1e6d9f1ba87e1466b3d5"
+  },
+  "completed_at_utc": "2026-11-09T07:41:13.223479+00:00",
+  "execution_contract": {
+    "input_id_text_sha256": "64f0750cf2e1998386cb2f0e89929af9a85e96396e71dbff26d08a4d0e413fb0",
+    "n_originals": 8000,
+    "packages": {
+      "joblib": "1.4.2",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.5.1",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.5.0"
+    },
+    "plan_content_sha256": "5771665e2bd548bcda54c9a92dc9705a503b24cef41158d8420db373cecf1cfe",
+    "source_sha256": {
+      "experiments/supervised/crop_topics.py": "5f0c6299dbe6289f60e0c55b4f5ea739d003c63ea24c6de800d224c469f7a049",
+      "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    }
+  },
+  "topic_valid": false
+}

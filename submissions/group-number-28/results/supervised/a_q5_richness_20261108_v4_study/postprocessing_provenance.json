@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-11-09T03:38:49.001691+00:00",
+  "snapshot_root": "results/supervised/a_q5_richness_20261108_v4_study/postprocessing_source",
+  "snapshot_timing": "Post-execution snapshot of actual verifier, plotting helpers and tests; training protocol and source were frozen separately.",
+  "source_sha256": {
+    "experiments/supervised/plot_q5.py": "bb46a6f0afb488be93c910403e39a1980b5fb7f749a8ac042d0831231c6638cc",
+    "experiments/supervised/plot_q5_richness.py": "7a2737f2482f6936905898448c04d8a74b37d2cf7c9feeb72ad953f15acaa705",
+    "experiments/supervised/test_q5_richness.py": "bd9083b443f79364a3da3e4dc8ea53fdcf27c66894bd535ca1962ffde6bea196",
+    "experiments/supervised/verify_q5_richness.py": "b7c3a33e6b02be4c5b8b2c9543c5a672b3eb93535b3ca1bfb173a310f9246b9f",
+    "experiments/supervised/verify_q5_tune.py": "68cae97cd18b533d2a2d56c23d8718804751713b0a2c59e82ce370c967a7b92a"
+  }
+}

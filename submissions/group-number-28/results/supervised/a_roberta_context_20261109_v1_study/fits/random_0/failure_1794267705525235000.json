@@ -1,0 +1,7 @@
+{
+  "error": "TypeError(\"Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.\")",
+  "failed_at_utc": "2026-11-09T23:41:45.525173+00:00",
+  "source_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/lin/Desktop/Cornell_tech_kaggle/experiments/supervised/train_roberta.py\", line 555, in main\n    metrics = run(args, output)\n              ^^^^^^^^^^^^^^^^^\n  File \"/Users/lin/Desktop/Cornell_tech_kaggle/experiments/supervised/train_roberta.py\", line 459, in run\n    host_logits = logits.detach().to(device=\"cpu\", dtype=torch.float64)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.\n"
+}

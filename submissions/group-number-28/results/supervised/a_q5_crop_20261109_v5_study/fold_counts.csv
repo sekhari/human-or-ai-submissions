@@ -1,0 +1,7 @@
+scheme,fold,fitting_n,fitting_human,fitting_ai,held_n,held_human,held_ai,fitting_topics_n,held_topics_n,shared_topics_n
+topic,0,5394,2716,2678,2606,1284,1322,7,5,0
+topic,1,4646,2338,2308,3354,1662,1692,9,3,0
+topic,2,5960,2946,3014,2040,1054,986,8,4,0
+fallback_random_diagnostic_only,0,5333,2667,2666,2667,1333,1334,12,12,12
+fallback_random_diagnostic_only,1,5333,2666,2667,2667,1334,1333,12,12,12
+fallback_random_diagnostic_only,2,5334,2667,2667,2666,1333,1333,12,12,12

@@ -1,0 +1,154 @@
+{
+  "purpose": "Consolidated device measurements; no held/test scoring",
+  "benchmark_status": "passed",
+  "no_unsupported_op_cpu_fallback_observed_on_exercised_paths": true,
+  "zero_cpu_activity_claimed": false,
+  "timing_scope": "Complete training updates/loop, with setup/tokenization/evaluation/checkpoint outside timing",
+  "memory_scope": "Warmup/training observed sampled maxima, not exact peaks; process lifetime RSS is separate; unified-memory measures overlap",
+  "measured_configurations": [
+    {
+      "key": "b2_l256_a1",
+      "microbatch": 2,
+      "max_tokens": 256,
+      "gradient_accumulation": 1,
+      "effective_batch": 2,
+      "mean_update_seconds": 0.11453402913175523,
+      "twenty_update_loop_wall_seconds": 2.3045214591547847,
+      "loop_documents_per_second": 17.357182698863024,
+      "loop_effective_tokens_per_second": 3945.287627451565,
+      "training_sampled_maximum_bytes": {
+        "mps_current_allocated_bytes": 2405267712,
+        "mps_driver_allocated_bytes": 3729604608,
+        "process_rss_bytes": 852361216,
+        "system_available_bytes": 13582925824,
+        "system_swap_used_bytes": 799801344
+      },
+      "process_lifetime_max_rss_bytes": 2236383232,
+      "timed_process_cpu_seconds": 1.0259409920000007,
+      "reload_max_probability_error": 0.0,
+      "independent_verification_status": "passed",
+      "independent_passed_checks": 429
+    },
+    {
+      "key": "b4_l512_a1",
+      "microbatch": 4,
+      "max_tokens": 512,
+      "gradient_accumulation": 1,
+      "effective_batch": 4,
+      "mean_update_seconds": 0.3534851333359256,
+      "twenty_update_loop_wall_seconds": 7.082530874758959,
+      "loop_documents_per_second": 11.295397283068343,
+      "loop_effective_tokens_per_second": 3164.12316391952,
+      "training_sampled_maximum_bytes": {
+        "mps_current_allocated_bytes": 4319622912,
+        "mps_driver_allocated_bytes": 6734856192,
+        "process_rss_bytes": 1024770048,
+        "system_available_bytes": 14130085888,
+        "system_swap_used_bytes": 799801344
+      },
+      "process_lifetime_max_rss_bytes": 2231107584,
+      "timed_process_cpu_seconds": 1.0735370240000002,
+      "reload_max_probability_error": 0.0,
+      "independent_verification_status": "passed",
+      "independent_passed_checks": 429
+    },
+    {
+      "key": "b4_l512_a4",
+      "microbatch": 4,
+      "max_tokens": 512,
+      "gradient_accumulation": 4,
+      "effective_batch": 16,
+      "mean_update_seconds": 1.2981148521415888,
+      "twenty_update_loop_wall_seconds": 25.984942791983485,
+      "loop_documents_per_second": 12.314824110319842,
+      "loop_effective_tokens_per_second": 3536.7020330078244,
+      "training_sampled_maximum_bytes": {
+        "mps_current_allocated_bytes": 6328907008,
+        "mps_driver_allocated_bytes": 7884111872,
+        "process_rss_bytes": 1072889856,
+        "system_available_bytes": 14731706368,
+        "system_swap_used_bytes": 799801344
+      },
+      "process_lifetime_max_rss_bytes": 2411642880,
+      "timed_process_cpu_seconds": 3.0726955519999994,
+      "reload_max_probability_error": 0.0,
+      "independent_verification_status": "passed",
+      "independent_passed_checks": 430
+    }
+  ],
+  "training_only_projections": [
+    {
+      "scope": "canonical_8000_two_epochs",
+      "optimizer_updates": 1000,
+      "seconds": 1299.2471395991743,
+      "minutes": 21.65411899331957
+    },
+    {
+      "scope": "six_existing_cv_fits_two_epochs",
+      "optimizer_updates": 4008,
+      "seconds": 5207.38253551349,
+      "minutes": 86.78970892522484
+    },
+    {
+      "scope": "six_cv_plus_canonical_8000",
+      "optimizer_updates": 5008,
+      "seconds": 6506.629675112665,
+      "minutes": 108.44382791854441
+    },
+    {
+      "scope": "optional_later_10000_label_refit",
+      "optimizer_updates": 1250,
+      "seconds": 1624.0589244989678,
+      "minutes": 27.067648741649464
+    },
+    {
+      "scope": "six_cv_plus_canonical_8000_plus_optional_10000",
+      "optimizer_updates": 6258,
+      "seconds": 8130.6885996116325,
+      "minutes": 135.51147666019386
+    }
+  ],
+  "projection_excludes": [
+    "download",
+    "model loading",
+    "tokenization",
+    "evaluation",
+    "calibration and blending",
+    "checkpoint I/O",
+    "independent verification"
+  ],
+  "projection_assumes": {
+    "dtype": "float32",
+    "attention": "sdpa",
+    "microbatch": 4,
+    "sequence_length": 512,
+    "grad_accum": 4,
+    "epochs_per_fit": 2,
+    "seconds_per_update_complete_loop": 1.2992471395991743,
+    "partial_final_batch_retained": true
+  },
+  "source_files_sha256": {
+    "b2_l256_a1/plan.json": "d9b6f1c7781f840a8436d401127c284e27f43b37e963e4399a24b4ca5e15d74f",
+    "b2_l256_a1/metrics.json": "f51c680819446954ad169ecec4a6dff5df4a784912b11b832b47cad3caf6bd70",
+    "b2_l256_a1/independent_verification.json": "6b874d790d5a7a66641d3143965766e022bb0e96cdd6db3139bbf0e21769e1f1",
+    "b4_l512_a1/plan.json": "2060995d482e59e769f63f2f823eb0d45991a0dabbae53862ff8ca6cfea32483",
+    "b4_l512_a1/metrics.json": "2ad279829115a75bfbc805349890c30b91bac92640ce13282ddb26eb5b716a34",
+    "b4_l512_a1/independent_verification.json": "0204e7ab40f1ed3cb8ec7c2ec08278510b137bd4b1422099efca80d3e834e0cd",
+    "b4_l512_a4/plan.json": "2a67f6c586d8264c4dff1f69d6f4c36ed40c6acfbdad6708c0df35402be125b8",
+    "b4_l512_a4/metrics.json": "d36a9085e602520ec4324499f72c4c91af82acaa495334fb99a26aa4a33309d4",
+    "b4_l512_a4/independent_verification.json": "73bcab564ee724ac6ba611bdbf3177aec25a06bd02f1f9ac2475c5249a65fec3"
+  },
+  "new_assets": [
+    "Working full RoBERTa FP32 MPS path in python_course",
+    "Pinned local generic model/tokenizer cache",
+    "Per-update timings and sampled memory",
+    "Independently verified numerical/update/reload and CPU-fallback observations",
+    "Training-cost projections for defined fitting scopes"
+  ],
+  "still_unverified": [
+    "Full-epoch thermal and memory stability",
+    "Full evaluation/calibration workflow time",
+    "Held-out model quality and WC120 complementarity",
+    "Hidden-domain/private-set transfer"
+  ]
+}

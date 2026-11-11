@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-11-09T05:05:12.018409+00:00",
+  "git_commit": "e1b79cb41fa15df4bcb579e6799aae8cb67ca92c",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.5.1"
+  },
+  "source_sha256": {
+    "experiments/supervised/audit_public_predictions.py": "0f0c7306e924cdc4624f85b1600b90860ea391c00bc529762c33fcdc630494ca"
+  },
+  "input_sha256": {
+    "cornell-tech-cs-5785-combined-2026-ai-vs-human-text/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "cornell-tech-cs-5785-combined-2026-ai-vs-human-text/test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "cornell-tech-cs-5785-combined-2026-ai-vs-human-text/unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+    "submissions/a_q1_20261107_v1_svm_full10000.csv": "0af001abe49b88a4184b5a3318ca6915832747ff858bc9d397de8b891aab6e1a",
+    "results/supervised/a_q1_20261107_v1_svm/validation_predictions.csv": "7a913c9e633786923a37454f3739ead50a0477a9d2cdfe872a30ee714e5b9789",
+    "submissions/a_q1_expanded_20261108_v2_svm_full10000.csv": "0af001abe49b88a4184b5a3318ca6915832747ff858bc9d397de8b891aab6e1a",
+    "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv": "7a913c9e633786923a37454f3739ead50a0477a9d2cdfe872a30ee714e5b9789",
+    "submissions/a_q5_20261108_v1_wc120_full10000.csv": "621750cf99ad970b3d3ee01ad26ed2bfe46ea4cee0a37a9f9676f0748464c4c2",
+    "results/supervised/a_q5_20261108_v1_wc120/validation_predictions.csv": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461",
+    "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.csv": "67c97db099987366538d5b3bc35213dcdb3c9a0ed13ab5d115ed161b9b9849cb",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm/validation_predictions.csv": "094eb30c7b8095ef86bd1b14175f49972ea67dfe6b1fd40feb16a4e9cd681185",
+    "submissions/a_q5_richness_20261108_v4_c60_richness_full10000.csv": "7179c376820b13c3f99cbbf6c5b3968bddb52d6392b0c3cfef52b1eac8ba58af",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness/validation_predictions.csv": "cbfec06276a67913f208a929d53a0c92c11d732a8fbea8874f3716a46f25a08b"
+  },
+  "models_fitted": 0,
+  "limitations": [
+    "No test labels are available; all test-set statistics are unlabeled diagnostics.",
+    "Feature shift does not establish which shift caused the score gap.",
+    "The reused validation set is a development set and subgroup comparisons are exploratory.",
+    "A test mean outside both training class means is inconsistent with exact population-level pure label shift for that feature; sampling uncertainty and source composition remain.",
+    "Approximate mean standard errors assume independent observations and omit multiple-comparison adjustment.",
+    "Predicted AI fractions do not estimate the true test class balance."
+  ]
+}

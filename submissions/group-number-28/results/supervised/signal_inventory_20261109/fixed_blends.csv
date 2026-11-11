@@ -1,0 +1,5 @@
+baseline,second_model,rule,validation_auroc,delta_vs_wc120,candidate_export_allowed
+wc120,mlp,probability_mean_50_50,0.966774,-0.0032320000000000126,False
+wc120,mlp,within_validation_percentile_rank_mean_50_50,0.9645585,-0.0054475000000000495,False
+wc120,boost,probability_mean_50_50,0.9705949999999999,0.0005889999999998397,False
+wc120,boost,within_validation_percentile_rank_mean_50_50,0.9680695,-0.0019365000000000077,False

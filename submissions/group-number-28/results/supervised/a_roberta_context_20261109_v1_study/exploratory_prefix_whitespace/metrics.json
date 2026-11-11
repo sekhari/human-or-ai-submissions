@@ -1,0 +1,63 @@
+{
+  "auroc_delta_raw_minus_joined": 0.2084923244783221,
+  "bootstrap_valid_replicates": 1000,
+  "classification_flip_fraction_at_probability0_5": 0.20835894283958206,
+  "conditions": {
+    "joined": {
+      "auroc_logit_margin": 0.7824561669369138,
+      "auroc_probability": 0.7824561669369138,
+      "inference_seconds": 40.548092167358845,
+      "mean_full_token_count": 132.41057160417947,
+      "mean_tokens_kept": 132.41057160417947,
+      "n_truncated_at512": 0
+    },
+    "raw": {
+      "auroc_logit_margin": 0.9909484914152359,
+      "auroc_probability": 0.9909484914152359,
+      "inference_seconds": 39.55927795777097,
+      "mean_full_token_count": 139.19545175169023,
+      "mean_tokens_kept": 139.19545175169023,
+      "n_truncated_at512": 0
+    }
+  },
+  "fit_key": "canonical_8000",
+  "joined_reproduction_max_logit_margin_error": 0.0,
+  "joined_reproduction_max_probability_error": 0.0,
+  "limitations": [
+    "Post-hoc hypothesis motivated by the first primary fold; no untouched confirmatory claim",
+    "One fixed canonical model and reused eligible held originals; no training variation",
+    "Not evidence about the competition hidden text distribution or causal authorship",
+    "No primary recipe/checkpoint/selection rule is changed by this diagnostic",
+    "CPU preprocessing/host transfers remain expected; inspect native logs for unsupported-op fallback"
+  ],
+  "maximum_absolute_logit_margin_change": 17.99470281600952,
+  "maximum_absolute_probability_change": 0.9996920318375057,
+  "mean_absolute_logit_margin_change": 3.5854758866332794,
+  "mean_absolute_probability_change": 0.20512856431777343,
+  "mean_logit_margin_change": -1.698931528714422,
+  "mean_probability_change": -0.10593822371536124,
+  "n": 1627,
+  "n_ai": 770,
+  "n_human": 857,
+  "new_model_fits": 0,
+  "optimizer_updates": 0,
+  "original_whitespace_changed_n": 1212,
+  "paired_95_interval": [
+    0.18415982209156068,
+    0.23363018836472738
+  ],
+  "post_hoc": true,
+  "primary_ranking_score": "Raw class1-class0 logits after FP32->CPU->float64 transfer",
+  "process_elapsed_seconds": 84.58411170914769,
+  "secondary_fully_covered_in_both_variants": {
+    "delta_raw_minus_joined": 0.2084923244783221,
+    "interpretation": "Descriptive paired subset with both complete prefixes retained at512; does not filter or replace the all-eligible primary contrast",
+    "joined_auroc_logit_margin": 0.7824561669369138,
+    "n": 1627,
+    "n_ai": 770,
+    "n_human": 857,
+    "raw_auroc_logit_margin": 0.9909484914152359
+  },
+  "single_changed_factor": "Preserve original leading/interword whitespace at identical first100 whitespace-word tokens; raw=text[:end_of_100th_nonspace_match], joined=oneASCIIspace.join(original.split()[:100])",
+  "status": "complete"
+}

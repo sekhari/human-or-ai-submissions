@@ -1,0 +1,94 @@
+{
+  "all_model_gradients_mps": true,
+  "benchmark_only": true,
+  "checkpoint_bytes": 498641231,
+  "checkpoint_sha256": "c8dc3d107cd07099a56c21c3d264fbec070b16ecf6a3e8b64504d751ce6b5a0e",
+  "documents_per_second": 17.462059225204435,
+  "documents_processed": 40,
+  "effective_tokens_per_second": 3969.1260618889683,
+  "end_to_end_loop_documents_per_second": 17.357182698863024,
+  "limitations": [
+    "Observed sampled memory is not an exact peak; allocator/RSS measures overlap in unified memory.",
+    "Checkpoint I/O/reload and tokenization are excluded from update timing.",
+    "Per-phase times are host enqueue durations; GPU execution is asynchronous.",
+    "Diagnostics/logging/memory sampling add overhead; this is not a full-epoch benchmark.",
+    "CPU optimizer step scalars and host input/bookkeeping work are expected and do not imply unsupported-op fallback.",
+    "No validation/test score or competition training result is produced."
+  ],
+  "maximum_update_seconds": 0.11644362471997738,
+  "mean_update_seconds": 0.11453402913175523,
+  "median_update_seconds": 0.11454906244762242,
+  "memory": {
+    "all_training": {
+      "mps_current_allocated_bytes": {
+        "maximum": 2405267712,
+        "minimum": 498605824
+      },
+      "mps_driver_allocated_bytes": {
+        "maximum": 3729604608,
+        "minimum": 1114374144
+      },
+      "process_rss_bytes": {
+        "maximum": 852361216,
+        "minimum": 657620992
+      },
+      "system_available_bytes": {
+        "maximum": 13582925824,
+        "minimum": 11575984128
+      },
+      "system_swap_used_bytes": {
+        "maximum": 799801344,
+        "minimum": 799801344
+      }
+    },
+    "n_samples": 78,
+    "peak_kind": "Observed samples, not guaranteed exact peaks",
+    "sample_errors": [],
+    "sample_interval_seconds": 0.1,
+    "timed": {
+      "mps_current_allocated_bytes": {
+        "maximum": 2255083264,
+        "minimum": 2255073792
+      },
+      "mps_driver_allocated_bytes": {
+        "maximum": 3729604608,
+        "minimum": 3723313152
+      },
+      "process_rss_bytes": {
+        "maximum": 838500352,
+        "minimum": 830734336
+      },
+      "system_available_bytes": {
+        "maximum": 11596169216,
+        "minimum": 11575984128
+      },
+      "system_swap_used_bytes": {
+        "maximum": 799801344,
+        "minimum": 799801344
+      }
+    },
+    "unified_memory_note": "RSS and MPS driver allocation overlap; do not sum them."
+  },
+  "minimum_update_seconds": 0.1123213330283761,
+  "model_load_and_to_mps_seconds": 0.4826234169304371,
+  "monitored_parameter_max_updates": {
+    "classifier.out_proj.weight": 0.00022335723042488098,
+    "roberta.encoder.layer.0.attention.self.query.weight": 0.0003084661439061165
+  },
+  "optimizer_state_devices": {
+    "exp_avg:mps:torch.float32": 201,
+    "exp_avg_sq:mps:torch.float32": 201,
+    "step:cpu:torch.float32": 201
+  },
+  "optimizer_tensor_state_bytes": 997178164,
+  "padded_tokens_per_second": 4470.287161652335,
+  "parameter_count": 124647170,
+  "process_lifetime_max_rss_bytes": 2236383232,
+  "reload_max_probability_error": 0.0,
+  "status": "completed",
+  "timed_loop_wall_seconds": 2.3045214591547847,
+  "timed_microsteps": 20,
+  "timed_optimizer_updates": 20,
+  "timed_process_cpu_seconds": 1.0259409920000007,
+  "timed_update_seconds_sum": 2.2906805826351047
+}

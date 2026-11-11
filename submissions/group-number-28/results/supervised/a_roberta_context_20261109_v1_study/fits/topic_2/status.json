@@ -1,0 +1,7 @@
+{
+  "epochs": 2,
+  "fit_key": "topic_2",
+  "metrics_sha256": "833fd184ed3d96bb7d772ad21b3249465f1e9e030d5b775abd50a256b0a371f4",
+  "optimizer_updates": 746,
+  "phase": "complete"
+}

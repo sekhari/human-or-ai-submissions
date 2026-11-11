@@ -1,0 +1,15 @@
+{
+  "all_checks_passed": true,
+  "artifact_sha256": {
+    "report/figures/q5_a_q5_quotes_20261108_v3_quotes.png": "0d9f831eec27e578d557029fd430080ea5b162246b38947e0927ae780bdfa46d",
+    "results/supervised/a_q5_quotes_20261108_v3_study/bootstrap.json": "19b3cb5259ffbaa086ce4fcf6b152d36728a226dc2833b1b23072f8a67087740",
+    "results/supervised/a_q5_quotes_20261108_v3_study/comparison.csv": "980793003a89f40ac64ec5697eb3be575b4bdbc40aec64a91b28f2ac091d0a75",
+    "results/supervised/a_q5_quotes_20261108_v3_study/selection.json": "3b16526fc841b76d347a9dd0991c9127aef489bab884a1a57ff6cb5c8a72e288",
+    "results/supervised/a_q5_quotes_20261108_v3_verification.json": "c944053a7f8d6a6cb12c440121ca8288781d0cfee4e97c75c0e35922675fe159"
+  },
+  "completed_at_utc": "2026-11-09T02:01:08.392872+00:00",
+  "n_cv_fits": 12,
+  "n_matrix_conditions": 12,
+  "n_new_8000_models": 2,
+  "uploaded_to_kaggle": false
+}

@@ -1,0 +1,13 @@
+{
+  "fit_seconds": 67.78996304189786,
+  "note": "All supplied labels including former validation rows; no held-out evaluation.",
+  "train": {
+    "accuracy_at_0_5": 0.999,
+    "auroc": 0.9999914799999999,
+    "brier": 0.0033105317709070724,
+    "log_loss": 0.031207843329812277,
+    "n": 10000
+  },
+  "validation": null,
+  "warnings": []
+}

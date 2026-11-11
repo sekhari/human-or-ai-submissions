@@ -1,0 +1,40 @@
+{
+  "created_at_utc": "2026-11-09T18:51:24.597773+00:00",
+  "git_commit": "0b4a1a9efd46e72a524dace9359120393de4d05d",
+  "source_sha256": "973343c1d7340ec78af4f1ed61e5c3a4b05f0a46583beea7bee1a8bc5ecd484f",
+  "input_sha256": {
+    "results/supervised/a_q1_expanded_20261108_v2_lr/validation_predictions.csv": "1b3582d8596b9b6f587c8f54038baef75ed50eb8fadabd3886a612f0a2b43b74",
+    "results/supervised/a_q1_expanded_20261108_v2_nb/validation_predictions.csv": "91fa3624970d04ab9900ad4b818ff5ce129e934a7e2bc65631ae16724b1c2cb5",
+    "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv": "7a913c9e633786923a37454f3739ead50a0477a9d2cdfe872a30ee714e5b9789",
+    "results/supervised/a_q1_expanded_20261108_v2_tree/validation_predictions.csv": "c5d6eca02061c09fe18c36dcfcb582ae71100d51caacb473aa9e0521d01b9e9e",
+    "results/supervised/a_q1_expanded_20261108_v2_forest/validation_predictions.csv": "441bddaa525f8ed5997428c68d9c87f1adcc512582d15e20aeea9ff06313e5e0",
+    "results/supervised/a_q1_expanded_20261108_v2_boost/validation_predictions.csv": "c561355e7d7e32718f2a183ad88f9247618ef68eb2dd46ef592f0ec762b1fe72",
+    "results/supervised/a_q1_expanded_20261108_v2_mlp/validation_predictions.csv": "6dc731527492eee45006c7826c738b7f47fa87dc60485880f9d6635b3f603df0",
+    "results/supervised/a_q1_expanded_20261108_v2_lr_svd/validation_predictions.csv": "6a00a8acb3cfeff348baaaad3e5b22080b153300bd851c3e02f1c70652b09079",
+    "results/supervised/a_q5_20261108_v1_c60/validation_predictions.csv": "3278bc9bac3130259edf1b452bcf3847919df37027f06a1909fa2c1803ce21e9",
+    "results/supervised/a_q5_20261108_v1_wc120/validation_predictions.csv": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461",
+    "results/supervised/a_q5_20261108_v1_w120/validation_predictions.csv": "4a39481e80ad2912bcdce996326f88477d1384ad9609e200b9ec81a603dc667d",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm/validation_predictions.csv": "094eb30c7b8095ef86bd1b14175f49972ea67dfe6b1fd40feb16a4e9cd681185",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness/validation_predictions.csv": "cbfec06276a67913f208a929d53a0c92c11d732a8fbea8874f3716a46f25a08b"
+  },
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.5.1"
+  },
+  "n_validation": 2000,
+  "n_human": 1000,
+  "n_ai": 1000,
+  "models_fitted": 0,
+  "test_text_accessed": false,
+  "exports": 0,
+  "existing_mlp_representation": "Original word TF-IDF -> TruncatedSVD128 -> StandardScaler -> MLP128; not a pretrained contextual encoder.",
+  "limitations": [
+    "Reused development labels; all comparisons and blends are exploratory, with no selection correction.",
+    "Threshold-half disagreement depends on probability calibration and is secondary to ranking evidence.",
+    "Strict-pair counts ignore ties; they describe ranking complementarity, not an implementable oracle.",
+    "Rank averaging uses the development score distribution; any production version needs a separately declared transform and evaluation.",
+    "No training-only OOF blend selection, topic-separated blend evaluation or hidden-test gain has been established.",
+    "The fixed blend scores are not new submission candidates and no weights are tuned here."
+  ]
+}

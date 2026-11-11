@@ -1,0 +1,8 @@
+{
+  "completed_at_utc": "2026-11-10T01:12:11.310553+00:00",
+  "epochs": 2,
+  "fit_key": "topic_1",
+  "metrics_sha256": "230d655575ba72407b28f8db724e16f7115cc8bb04376f5c65f53cb7a8723fa5",
+  "optimizer_updates": 582,
+  "status": "complete"
+}

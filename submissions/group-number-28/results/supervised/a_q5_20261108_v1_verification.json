@@ -1,0 +1,77 @@
+{
+  "all_checks_passed": true,
+  "baseline_reproduction_max_probability_error": 0.0,
+  "canonical_split_and_fold_ids_match": true,
+  "error_change_counts_reconstructed": {
+    "corrected": 107,
+    "new_errors": 34,
+    "w60_errors": 258,
+    "wc120_errors": 185
+  },
+  "full_model_refits_performed_by_verifier": false,
+  "models": {
+    "c60": {
+      "complete_pipeline_inside_calibration": true,
+      "cv_mean_reconstructed": 0.9634340347543993,
+      "feature_block_dimensions": {
+        "char": 60000
+      },
+      "n_features": 60000,
+      "n_predictions": 2000,
+      "prediction_sha256": "3278bc9bac3130259edf1b452bcf3847919df37027f06a1909fa2c1803ce21e9",
+      "saved_model_prediction_max_error": 0.0,
+      "unit_norm_nonempty_rows_checked": 32,
+      "validation_auroc": 0.96955
+    },
+    "w120": {
+      "complete_pipeline_inside_calibration": true,
+      "cv_mean_reconstructed": 0.9368760522599824,
+      "feature_block_dimensions": {
+        "word": 120000
+      },
+      "n_features": 120000,
+      "n_predictions": 2000,
+      "prediction_sha256": "4a39481e80ad2912bcdce996326f88477d1384ad9609e200b9ec81a603dc667d",
+      "saved_model_prediction_max_error": 0.0,
+      "unit_norm_nonempty_rows_checked": 32,
+      "validation_auroc": 0.9445970000000001
+    },
+    "w60": {
+      "complete_pipeline_inside_calibration": true,
+      "cv_mean_reconstructed": 0.936042546213101,
+      "feature_block_dimensions": {
+        "word": 60000
+      },
+      "n_features": 60000,
+      "n_predictions": 2000,
+      "prediction_sha256": "7a913c9e633786923a37454f3739ead50a0477a9d2cdfe872a30ee714e5b9789",
+      "saved_model_prediction_max_error": 0.0,
+      "unit_norm_nonempty_rows_checked": 32,
+      "validation_auroc": 0.9438759999999999
+    },
+    "wc120": {
+      "complete_pipeline_inside_calibration": true,
+      "cv_mean_reconstructed": 0.9643811569632049,
+      "feature_block_dimensions": {
+        "char": 60000,
+        "word": 60000
+      },
+      "n_features": 120000,
+      "n_predictions": 2000,
+      "prediction_sha256": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461",
+      "saved_model_prediction_max_error": 0.0,
+      "unit_norm_nonempty_rows_checked": 32,
+      "validation_auroc": 0.970006
+    }
+  },
+  "n_cv_fits": 12,
+  "n_train": 8000,
+  "n_validation": 2000,
+  "primary_bootstrap_interval_reconstructed": [
+    0.0200833500000001,
+    0.031970925000000164
+  ],
+  "primary_delta": 0.026130000000000098,
+  "source_hashes_match": true,
+  "uncertainty_limitation": "Conditional on fitted models and this development split; no training variation or model-selection correction."
+}

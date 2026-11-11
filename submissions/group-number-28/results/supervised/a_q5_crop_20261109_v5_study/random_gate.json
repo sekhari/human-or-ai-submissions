@@ -1,0 +1,113 @@
+{
+  "checks": {
+    "all_conditions_have_sufficient_three_folds": true,
+    "clean_any_fold": true,
+    "clean_mean": true,
+    "digit_runs_to_zero_any_fold": true,
+    "digit_runs_to_zero_mean": true,
+    "prefix_mean": true,
+    "prefix_positive_folds": true,
+    "quote_and_dash_any_fold": true,
+    "quote_and_dash_mean": true,
+    "whitespace_only_any_fold": true,
+    "whitespace_only_mean": true
+  },
+  "conditions": {
+    "clean": {
+      "complete_three_folds": true,
+      "evidence_sufficient": true,
+      "fold_deltas": [
+        -0.0019035868412382584,
+        -0.002817420996928499,
+        -0.0023698722880268752
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "maximum_fold_delta": -0.0019035868412382584,
+      "mean_delta": -0.002363626708731211,
+      "minimum_fold_delta": -0.002817420996928499,
+      "positive_folds": 0
+    },
+    "digit_runs_to_zero": {
+      "complete_three_folds": true,
+      "evidence_sufficient": true,
+      "fold_deltas": [
+        -0.0013327919686069167,
+        -0.002055986260433129,
+        -0.001608429114030141
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "maximum_fold_delta": -0.0013327919686069167,
+      "mean_delta": -0.0016657357810233957,
+      "minimum_fold_delta": -0.002055986260433129,
+      "positive_folds": 0
+    },
+    "prefix_100": {
+      "complete_three_folds": true,
+      "evidence_sufficient": true,
+      "fold_deltas": [
+        0.051395989196417746,
+        0.0436386513769339,
+        0.057147709091912136
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "maximum_fold_delta": 0.057147709091912136,
+      "mean_delta": 0.05072744988842126,
+      "minimum_fold_delta": 0.0436386513769339,
+      "positive_folds": 3
+    },
+    "quote_and_dash": {
+      "complete_three_folds": true,
+      "evidence_sufficient": true,
+      "fold_deltas": [
+        -0.0021302177118491805,
+        -0.002941140082622029,
+        -0.0025291394116345733
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "maximum_fold_delta": -0.0021302177118491805,
+      "mean_delta": -0.0025334990687019276,
+      "minimum_fold_delta": -0.002941140082622029,
+      "positive_folds": 0
+    },
+    "whitespace_only": {
+      "complete_three_folds": true,
+      "evidence_sufficient": true,
+      "fold_deltas": [
+        0.004901525231382764,
+        0.0025165586749010815,
+        0.005086980672399766
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "maximum_fold_delta": 0.005086980672399766,
+      "mean_delta": 0.0041683548595612034,
+      "minimum_fold_delta": 0.0025165586749010815,
+      "positive_folds": 3
+    }
+  },
+  "failed_checks": [],
+  "gate_family": "random",
+  "passed": true,
+  "scheme": "random",
+  "status": "passed",
+  "summary_definition": "Equal-weight mean of within-fold AUROC arm differences; never pooled raw margins."
+}

@@ -1,0 +1,55 @@
+{
+  "configuration": {
+    "batch_size": 4,
+    "grad_accum": 4,
+    "sequence_length": 512
+  },
+  "errors": [],
+  "limitations": [
+    "This verifier inspects saved evidence without loading the model or rerunning any fit.",
+    "No observed unsupported-op CPU fallback is supported only for this exercised path.",
+    "Ordinary CPU activity and AdamW scalar step bookkeeping are expected.",
+    "Memory extrema are sampled observed maxima; unified-memory measurements overlap."
+  ],
+  "observed_native_fallback_matches": [],
+  "passed_checks": 430,
+  "projection": {
+    "effective_batch_size": 16,
+    "epochs": 2,
+    "excluded": [
+      "download",
+      "loading",
+      "tokenization",
+      "evaluation",
+      "checkpoint I/O"
+    ],
+    "fold_sizes_source": "results/supervised/a_q5_crop_revised_20261109_v6_study/fold_counts.csv",
+    "fold_sizes_source_sha256": "8d82c3e24148b8f51b0742d3e56aa8fdc0bf089bd1ae531f1ad832aec14df211",
+    "full_8000_loop_seconds": 1299.2471395991743,
+    "full_8000_optimizer_updates": 1000,
+    "full_8000_update_seconds": 1298.114852141589,
+    "seconds_per_update_including_benchmark_diagnostics": 1.2992471395991743,
+    "seconds_per_update_measured": 1.2981148521415888,
+    "six_outer_fits_loop_seconds": 5207.38253551349,
+    "six_outer_fits_optimizer_updates": 4008,
+    "six_outer_fits_train_sizes": [
+      5394,
+      4646,
+      5960,
+      5394,
+      4646,
+      5960
+    ],
+    "six_outer_fits_update_seconds": 5202.844327383488,
+    "uncertainty": "20 measured updates; no confidence interval or full-epoch thermal measurement. CV sizing assumes the existing matched random/topic training folds."
+  },
+  "run_dir": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_mps_20261109_v1/b4_l512_a4",
+  "status": "passed",
+  "verified_input_files_sha256": {
+    "stderr": "6524bfc9c57ef9e3c97cdfab5ae052801e0ab42003f9c40013449bd9532d4916",
+    "stdout": "7e9576a2f762f2646c309e369f725ede133e402592c6141be34b8c7f7fe95fb6",
+    "validation_receipt": "5531cf402e2400f0b628c92905963fc5e7698aeb56e1fc13c73d63719bb0c237"
+  },
+  "verifier_python": "/opt/anaconda3/envs/python_course/bin/python",
+  "verifier_source_sha256": "6066fa35886cec16b9bb417315b6561aed1c38137e22369e3359d7b6c4375e82"
+}

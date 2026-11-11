@@ -1,0 +1,78 @@
+{
+  "verifier": "Zero-fit standard-library artifact audit",
+  "verifier_source_sha256": "05fb93e8b453f0ed9af43d5952194597c2e099d13df02563551a4bb743a638d8",
+  "verifier_python": "/opt/anaconda3/envs/python_course/bin/python",
+  "study_dir": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+  "limitations": [
+    "No model loading, checkpoint inference or fresh fit is performed.",
+    "Saved evidence and source review do not constitute an operator-by-operator GPU profile.",
+    "Reused topic/style proxy and validation are developmental, not untouched hidden-domain estimates."
+  ],
+  "analysis_metrics_present_and_checked": false,
+  "audit_scope": "random_0",
+  "reconstructed_metrics": [
+    {
+      "fit_key": "random_0",
+      "scheme": "random",
+      "fold": 0,
+      "condition": "clean",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.9937659356869842,
+      "baseline_auc": 0.966803695901141,
+      "delta_auc": 0.026962239785843223
+    },
+    {
+      "fit_key": "random_0",
+      "scheme": "random",
+      "fold": 0,
+      "condition": "quote_and_dash",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.9942796480363463,
+      "baseline_auc": 0.9631576342839369,
+      "delta_auc": 0.031122013752409416
+    },
+    {
+      "fit_key": "random_0",
+      "scheme": "random",
+      "fold": 0,
+      "condition": "digit_runs_to_zero",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.9944345865086883,
+      "baseline_auc": 0.9634192034159514,
+      "delta_auc": 0.03101538309273688
+    },
+    {
+      "fit_key": "random_0",
+      "scheme": "random",
+      "fold": 0,
+      "condition": "whitespace_only",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.8821206894113988,
+      "baseline_auc": 0.9409319166183588,
+      "delta_auc": -0.05881122720696008
+    },
+    {
+      "fit_key": "random_0",
+      "scheme": "random",
+      "fold": 0,
+      "condition": "prefix_100",
+      "n": 2087,
+      "n_human": 1097,
+      "n_ai": 990,
+      "roberta_auc": 0.8262396066407005,
+      "baseline_auc": 0.857559183447971,
+      "delta_auc": -0.03131957680727049
+    }
+  ],
+  "status": "passed",
+  "passed_checks": 75367,
+  "errors": []
+}

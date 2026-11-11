@@ -1,0 +1,6 @@
+{
+  "mean_cv_auroc": 0.9674641266661655,
+  "model_id": "c60_richness",
+  "rule": "Choose exactly one of the three new models by largest mean original-text training CV before consulting validation. Exact ties prefer fewer numeric features, then c60_length, c60_richness, c60_length_richness. Never try a runner-up if this candidate fails.",
+  "selection_uses_validation": false
+}

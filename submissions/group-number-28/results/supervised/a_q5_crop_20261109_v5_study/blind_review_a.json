@@ -1,0 +1,78 @@
+{
+  "reviewer": "reviewer_a_crop_estimator",
+  "reviewed_without_labels_or_scores": true,
+  "clusters": [
+    {
+      "topic": 0,
+      "decision": "content",
+      "description": "Music artists, recordings, bands, releases and the music business form a coherent dominant subject across all five samples.",
+      "inspected_ids": ["3406", "8523", "1159", "5987", "6760"]
+    },
+    {
+      "topic": 1,
+      "decision": "style-format",
+      "description": "Conversational first-person forum requests, opinions and personal accounts span gaming, transport, anxiety and finances; the commonality is conversational genre rather than a shared content subject.",
+      "inspected_ids": ["7943", "6742", "2392", "9003", "2860"]
+    },
+    {
+      "topic": 2,
+      "decision": "content",
+      "description": "Savory cooking recipes, ingredients and preparation steps consistently dominate all five samples.",
+      "inspected_ids": ["2371", "760", "8506", "1593", "4337"]
+    },
+    {
+      "topic": 3,
+      "decision": "mixed",
+      "description": "Regional geography and heterogeneous historical reference material are mixed with energy relocation advice; the sampled municipality, voting law, storm, energy and printing-history subjects lack a single dominant content topic.",
+      "inspected_ids": ["5215", "8086", "5907", "7487", "6519"]
+    },
+    {
+      "topic": 4,
+      "decision": "content",
+      "description": "Machine learning and computer-vision research, especially image segmentation and medical applications, provide a coherent dominant content subject.",
+      "inspected_ids": ["5068", "1625", "3751", "4772", "2847"]
+    },
+    {
+      "topic": 5,
+      "decision": "content",
+      "description": "Film and television production, performers, directors and screen franchises coherently connect the five samples.",
+      "inspected_ids": ["3902", "5261", "2883", "6876", "3589"]
+    },
+    {
+      "topic": 6,
+      "decision": "content",
+      "description": "Mathematical and physical systems research connects network dynamics, fluid simulation, quantum gases, optimization and relativity; it is broad but content-interpretable beyond generic abstract formatting.",
+      "inspected_ids": ["4992", "2094", "4217", "7846", "8029"]
+    },
+    {
+      "topic": 7,
+      "decision": "mixed",
+      "description": "Financial and economic material is interleaved with international politics, political theory and a personal legal allegation; public-affairs reporting is broad and the five samples lack a dominant specific content subject.",
+      "inspected_ids": ["3272", "5061", "5346", "7734", "7848"]
+    },
+    {
+      "topic": 8,
+      "decision": "content",
+      "description": "Baking, dough, cakes and sweet preparations dominate four samples, with one related fruit beverage recipe; culinary preparation is coherent and baking is the dominant subtopic.",
+      "inspected_ids": ["1827", "3529", "6664", "1046", "8216"]
+    },
+    {
+      "topic": 9,
+      "decision": "content",
+      "description": "Film reviews and assessments of acting, narrative, direction and viewing experience form a coherent content topic across all samples.",
+      "inspected_ids": ["7297", "6740", "7791", "9472", "4869"]
+    },
+    {
+      "topic": 10,
+      "decision": "content",
+      "description": "Biographical profiles, personal careers, education and professional affiliations dominate the samples, including one repetitive music-group membership profile.",
+      "inspected_ids": ["5028", "2775", "8781", "5205", "2547"]
+    },
+    {
+      "topic": 11,
+      "decision": "content",
+      "description": "Sports participants, competitions, player careers and performance consistently connect cricket, tennis, basketball, golf and football samples.",
+      "inspected_ids": ["332", "616", "7624", "4934", "5681"]
+    }
+  ]
+}

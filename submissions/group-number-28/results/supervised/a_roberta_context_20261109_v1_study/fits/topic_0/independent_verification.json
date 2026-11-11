@@ -1,0 +1,78 @@
+{
+  "verifier": "Zero-fit standard-library artifact audit",
+  "verifier_source_sha256": "05fb93e8b453f0ed9af43d5952194597c2e099d13df02563551a4bb743a638d8",
+  "verifier_python": "/opt/anaconda3/envs/python_course/bin/python",
+  "study_dir": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+  "limitations": [
+    "No model loading, checkpoint inference or fresh fit is performed.",
+    "Saved evidence and source review do not constitute an operator-by-operator GPU profile.",
+    "Reused topic/style proxy and validation are developmental, not untouched hidden-domain estimates."
+  ],
+  "analysis_metrics_present_and_checked": false,
+  "audit_scope": "topic_0",
+  "reconstructed_metrics": [
+    {
+      "fit_key": "topic_0",
+      "scheme": "topic",
+      "fold": 0,
+      "condition": "clean",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.9934260136392985,
+      "baseline_auc": 0.9153788510752612,
+      "delta_auc": 0.07804716256403732
+    },
+    {
+      "fit_key": "topic_0",
+      "scheme": "topic",
+      "fold": 0,
+      "condition": "quote_and_dash",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.9934631281783006,
+      "baseline_auc": 0.9153747272375943,
+      "delta_auc": 0.07808840094070635
+    },
+    {
+      "fit_key": "topic_0",
+      "scheme": "topic",
+      "fold": 0,
+      "condition": "digit_runs_to_zero",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.9932693078079564,
+      "baseline_auc": 0.9160198132726305,
+      "delta_auc": 0.07724949453532592
+    },
+    {
+      "fit_key": "topic_0",
+      "scheme": "topic",
+      "fold": 0,
+      "condition": "whitespace_only",
+      "n": 2606,
+      "n_human": 1284,
+      "n_ai": 1322,
+      "roberta_auc": 0.7798453914346714,
+      "baseline_auc": 0.8761281641617299,
+      "delta_auc": -0.09628277272705854
+    },
+    {
+      "fit_key": "topic_0",
+      "scheme": "topic",
+      "fold": 0,
+      "condition": "prefix_100",
+      "n": 1938,
+      "n_human": 984,
+      "n_ai": 954,
+      "roberta_auc": 0.7479110207768744,
+      "baseline_auc": 0.8064088305977399,
+      "delta_auc": -0.0584978098208655
+    }
+  ],
+  "status": "passed",
+  "passed_checks": 74590,
+  "errors": []
+}

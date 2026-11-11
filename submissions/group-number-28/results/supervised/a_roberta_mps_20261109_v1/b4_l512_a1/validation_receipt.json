@@ -1,0 +1,45 @@
+{
+  "all_numeric_checks_passed": true,
+  "encoder_and_classifier_parameters_updated": true,
+  "fallback_policy": "Unsupported-op fallback disabled before torch import; success is evidence for this exercised path, not proof that all CPU work is absent.",
+  "files_sha256": {
+    "memory_samples.csv": "e861d6f99cd84a097f949acf7439da667f3c8f00d963f6410896a91eea7899d0",
+    "metrics.json": "2ad279829115a75bfbc805349890c30b91bac92640ce13282ddb26eb5b716a34",
+    "plan.json": "2060995d482e59e769f63f2f823eb0d45991a0dabbae53862ff8ca6cfea32483",
+    "steps.csv": "095b0ad5c6017e5da7f697d095b77d49e699554249e4f3d7eef8aed462491617"
+  },
+  "final_eval_probabilities": [
+    [
+      0.5652815699577332,
+      0.43471845984458923
+    ],
+    [
+      0.5706092119216919,
+      0.4293907880783081
+    ]
+  ],
+  "forward_backward_optimizer_executed": true,
+  "gradients_on_mps": true,
+  "initial_eval_probabilities": [
+    [
+      0.5609976053237915,
+      0.4390024244785309
+    ],
+    [
+      0.5595616698265076,
+      0.4404383599758148
+    ]
+  ],
+  "reload_max_error": 0.0,
+  "reload_tolerance": 1e-06,
+  "reloaded_eval_probabilities": [
+    [
+      0.5652815699577332,
+      0.43471845984458923
+    ],
+    [
+      0.5706092119216919,
+      0.4293907880783081
+    ]
+  ]
+}

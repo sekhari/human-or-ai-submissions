@@ -1,0 +1,52 @@
+{
+  "augmentation": "Original >=150-whitespace-word training docs receive weight 0.5 and an additional first-100-whitespace-word crop joined by one ASCII space receives weight 0.5 with same label; shorter originals retain weight 1. Total sample weight remains 8000.",
+  "baseline": "Refit saved underlying LinearSVC parameters on frozen-feature original 8000 rows, all weights 1.",
+  "bootstrap": {
+    "conditions": [
+      "clean",
+      "prefix_100_on_min150"
+    ],
+    "method": "Class-stratified paired percentile resampling of validation document IDs; fixed models, no training or selection correction.",
+    "repetitions": 500,
+    "seed": 20261109
+  },
+  "conditions": {
+    "clean": "All 2000 canonical validation rows unchanged.",
+    "digit_runs_to_zero": "Python Unicode re.sub(r'\\d+', '0', text); same full validation IDs.",
+    "prefix_100_on_min150": "First 100 whitespace words joined by one ASCII space, only canonical validation docs with >=150 whitespace words; equal IDs across models.",
+    "quote_and_dash": "Existing frozen quote_typography then dash_typography mappings; same full validation IDs."
+  },
+  "created_at_utc": "2026-11-09T05:07:40.517637+00:00",
+  "fit_parameters": {
+    "C": 1,
+    "class_weight": null,
+    "dual": "auto",
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "loss": "squared_hinge",
+    "max_iter": 10000,
+    "multi_class": "ovr",
+    "penalty": "l2",
+    "random_state": 42,
+    "tol": 1e-05,
+    "verbose": 0
+  },
+  "frozen_representation": "Saved 8000-training-row WC120 full-training feature transformer; same learned word/character vocabularies, IDF and L2 geometry for baseline and augmentation. Never refit feature extraction.",
+  "limitations": "Fixed features use all original 8000 training documents in both arms; this isolates an input-augmentation factor for one fixed representation, not a full production training recipe. Cropping changes length, content and whitespace; label-preservation is an authorship hypothesis. Constructed stress gains do not establish hidden-test transfer.",
+  "n_training_crops": 6420,
+  "n_training_original": 8000,
+  "n_validation": 2000,
+  "n_validation_prefix_subset": 1627,
+  "score_schema": "Raw LinearSVC decision margins; NOT probabilities; never use this CSV as a submission.",
+  "single_changed_factor": "Weighted inclusion of train-document crops with fixed representation and classifier hyperparameters.",
+  "source_model": "results/supervised/a_q5_20261108_v1_wc120/model.joblib",
+  "source_model_sha256": "b824bb4181333c20c46a3101455afc7d07c59980f72a198efa8d97e9cad5bfd8",
+  "source_sha256": {
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad",
+    "experiments/supervised/pilot_crop_robustness.py": "693095e70a58170eb5cc43338813acc7e6be56dbeb8b2890931df2dacf04ff66",
+    "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808"
+  },
+  "status": "Exploratory pilot selected after observing prefix weakness on the reused canonical development validation set; no clean holdout claim.",
+  "stopping_rule": "Exactly one baseline and one augmented classifier fit; no tuning, calibration, model saving, candidate selection, test prediction or export.",
+  "total_training_sample_weight": 8000
+}

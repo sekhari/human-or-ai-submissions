@@ -1,0 +1,30 @@
+{
+  "all_training": {
+    "mps_current_allocated_bytes": {
+      "maximum": 6330526720,
+      "minimum": 498597632
+    },
+    "mps_driver_allocated_bytes": {
+      "maximum": 8021688320,
+      "minimum": 1091010560
+    },
+    "process_rss_bytes": {
+      "maximum": 2157887488,
+      "minimum": 543997952
+    },
+    "system_available_bytes": {
+      "maximum": 16552624128,
+      "minimum": 9683910656
+    },
+    "system_swap_used_bytes": {
+      "maximum": 799801344,
+      "minimum": 799801344
+    }
+  },
+  "n_samples": 2670,
+  "peak_kind": "Observed samples, not guaranteed exact peaks",
+  "sample_errors": [],
+  "sample_interval_seconds": 0.5,
+  "timed": null,
+  "unified_memory_note": "RSS and MPS driver allocation overlap; do not sum them."
+}

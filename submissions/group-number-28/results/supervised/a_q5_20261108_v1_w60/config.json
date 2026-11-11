@@ -1,0 +1,254 @@
+{
+  "estimator_parameters": {
+    "cv": "StratifiedKFold(n_splits=3, random_state=242, shuffle=True)",
+    "ensemble": false,
+    "estimator": "Pipeline(steps=[('features',\n                 TfidfVectorizer(max_features=60000, min_df=2,\n                                 ngram_range=(1, 2), sublinear_tf=True)),\n                ('classifier',\n                 LinearSVC(C=1, max_iter=10000, random_state=42, tol=1e-05))])",
+    "estimator__classifier": "LinearSVC(C=1, max_iter=10000, random_state=42, tol=1e-05)",
+    "estimator__classifier__C": 1,
+    "estimator__classifier__class_weight": null,
+    "estimator__classifier__dual": "auto",
+    "estimator__classifier__fit_intercept": true,
+    "estimator__classifier__intercept_scaling": 1,
+    "estimator__classifier__loss": "squared_hinge",
+    "estimator__classifier__max_iter": 10000,
+    "estimator__classifier__multi_class": "ovr",
+    "estimator__classifier__penalty": "l2",
+    "estimator__classifier__random_state": 42,
+    "estimator__classifier__tol": 1e-05,
+    "estimator__classifier__verbose": 0,
+    "estimator__features": "TfidfVectorizer(max_features=60000, min_df=2, ngram_range=(1, 2),\n                sublinear_tf=True)",
+    "estimator__features__analyzer": "word",
+    "estimator__features__binary": false,
+    "estimator__features__decode_error": "strict",
+    "estimator__features__dtype": "<class 'numpy.float64'>",
+    "estimator__features__encoding": "utf-8",
+    "estimator__features__input": "content",
+    "estimator__features__lowercase": true,
+    "estimator__features__max_df": 1.0,
+    "estimator__features__max_features": 60000,
+    "estimator__features__min_df": 2,
+    "estimator__features__ngram_range": [
+      1,
+      2
+    ],
+    "estimator__features__norm": "l2",
+    "estimator__features__preprocessor": null,
+    "estimator__features__smooth_idf": true,
+    "estimator__features__stop_words": null,
+    "estimator__features__strip_accents": null,
+    "estimator__features__sublinear_tf": true,
+    "estimator__features__token_pattern": "(?u)\\b\\w\\w+\\b",
+    "estimator__features__tokenizer": null,
+    "estimator__features__use_idf": true,
+    "estimator__features__vocabulary": null,
+    "estimator__memory": null,
+    "estimator__steps": "[('features', TfidfVectorizer(max_features=60000, min_df=2, ngram_range=(1, 2),\n                sublinear_tf=True)), ('classifier', LinearSVC(C=1, max_iter=10000, random_state=42, tol=1e-05))]",
+    "estimator__verbose": false,
+    "method": "sigmoid",
+    "n_jobs": 1
+  },
+  "model": "w60",
+  "plan": {
+    "baseline_reference": "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv",
+    "char_representation": {
+      "analyzer": "char",
+      "dtype": "float64",
+      "lowercase": true,
+      "max_df": 1.0,
+      "max_features": 60000,
+      "min_df": 2,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "norm": "l2",
+      "smooth_idf": true,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "use_idf": true
+    },
+    "classifier": {
+      "C": 1,
+      "dual": "auto",
+      "max_iter": 10000,
+      "tol": 1e-05
+    },
+    "decision_rule": "Use the primary paired difference, interval, training-fold consistency and cost together. An interval crossing zero is inconclusive, not evidence of equivalence. Negative results complete Q5.",
+    "evaluation": {
+      "baseline_tolerance": 1e-10,
+      "bootstrap_method": "class-stratified paired percentile bootstrap, conditional on fitted models and split",
+      "bootstrap_replicates": 1000,
+      "calibration": "sigmoid, 3 stratified shuffled training-only folds, ensemble=False; full feature pipeline inside calibrator",
+      "error_threshold": 0.5,
+      "inner_folds": 3,
+      "inner_metric": "raw-margin AUROC, diagnostic only; no tuning",
+      "length_bins": "training-partition word-count tertiles; descriptive only",
+      "primary_comparison": [
+        "wc120",
+        "w60"
+      ],
+      "secondary_comparisons": [
+        "c60 vs w60",
+        "w120 vs w60",
+        "wc120 vs w120"
+      ],
+      "train_rows": 8000,
+      "validation_rows": 2000
+    },
+    "excluded": [
+      "test fitting",
+      "unlabeled learning",
+      "validation fitting",
+      "Kaggle feedback",
+      "adaptive search",
+      "full-10000 final training",
+      "automatic upload"
+    ],
+    "hypothesis": "Character n-grams may contribute complementary local writing-form information; this mechanism is unverified.",
+    "limitations": [
+      "The canonical validation set already informed Q1 development; this is a development comparison, not an untouched final test.",
+      "Intervals omit training variation and selection adjustment.",
+      "W120 is a feature-budget reference, not a strict isolation of effective model capacity.",
+      "Fixed C and normalization permit a controlled representation comparison, not a claim that all geometry or regularization effects are identical.",
+      "Character features may encode source-specific shortcuts; hidden-domain robustness remains unverified."
+    ],
+    "models": {
+      "c60": {
+        "char_max_features": 60000,
+        "name": "Character 60k",
+        "representation": "char(3,5)"
+      },
+      "w120": {
+        "name": "Word 120k (budget reference)",
+        "representation": "word(1,2)",
+        "word_max_features": 120000
+      },
+      "w60": {
+        "name": "Word 60k (Q1 baseline)",
+        "representation": "word(1,2)",
+        "word_max_features": 60000
+      },
+      "wc120": {
+        "char_max_features": 60000,
+        "name": "Word + character 120k",
+        "representation": "word(1,2)+char(3,5), equal blocks, global L2",
+        "word_max_features": 60000
+      }
+    },
+    "purpose": "Frozen Q5 representation ablation, authorized after discussion and before any Q5 scores",
+    "question": "Does adding character TF-IDF improve the fixed Q1 word-TF-IDF SVM?",
+    "resources": {
+      "external_weights": false,
+      "gpu": false,
+      "threads": 1
+    },
+    "seeds": {
+      "bootstrap": 342,
+      "calibration": 242,
+      "inner_cv": 142,
+      "model": 42
+    },
+    "stopping_rule": "Complete exactly these four fixed configurations. Do not add ranges, weights, classifiers, or C searches after seeing results. Fault recovery may resume identical unfinished steps.",
+    "word_representation": {
+      "analyzer": "word",
+      "dtype": "float64",
+      "lowercase": true,
+      "max_df": 1.0,
+      "max_features": 60000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "smooth_idf": true,
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b",
+      "use_idf": true
+    }
+  },
+  "provenance": {
+    "dependencies": {
+      "joblib": "1.4.2",
+      "matplotlib": "3.9.2",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.5.1",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.5.0"
+    },
+    "git_commit": "2c6f5960fa4f1d5266b8e5321a0c0cf0b18c508e",
+    "git_dirty": true,
+    "git_status": "?? experiments/supervised/plot_q5.py\n?? experiments/supervised/q5_job.py\n?? experiments/supervised/q5_plan.json\n?? experiments/supervised/run_q5.py\n?? experiments/supervised/test_q5.py\n?? experiments/supervised/verify_q5.py",
+    "pid_at_launch": 69703,
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "python": "3.12.7",
+    "source_sha256": {
+      "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+      "experiments/supervised/q5_plan.json": "631833499cdbe658dbc96c693a96e76c74bfd27dca897818d5113c95af5af71d",
+      "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+      "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+      "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+      "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    },
+    "started_at_utc": "2026-11-08T07:29:54.808082+00:00",
+    "thread_limit": 1,
+    "threadpools": [
+      {
+        "architecture": "armv8",
+        "filepath": "/opt/anaconda3/lib/libopenblasp-r0.3.21.dylib",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "pthreads",
+        "user_api": "blas",
+        "version": "0.3.21"
+      },
+      {
+        "filepath": "/opt/anaconda3/lib/libomp.dylib",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libomp",
+        "user_api": "openmp",
+        "version": null
+      }
+    ]
+  },
+  "run_id": "a_q5_20261108_v1_w60",
+  "settings": {
+    "name": "Word 60k (Q1 baseline)",
+    "representation": "word(1,2)",
+    "word_max_features": 60000
+  },
+  "split": {
+    "algorithm": "lexicographically sorted string IDs; Python Random(42); shuffle class 0 then class 1; first 1000/class for validation",
+    "counts": {
+      "train": 8000,
+      "validation": 2000
+    },
+    "duplicate_audit": "No exact duplicates after whitespace normalization; near-duplicates and source leakage not assessed",
+    "label_counts": {
+      "train": {
+        "0": 4000,
+        "1": 4000
+      },
+      "validation": {
+        "0": 1000,
+        "1": 1000
+      }
+    },
+    "seed": 42,
+    "source": "train.csv",
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "split_sha256": {
+      "train": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+      "validation": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f"
+    },
+    "version": 1
+  },
+  "study_id": "a_q5_20261108_v1_study",
+  "train_ids_file": "../a_q5_20261108_v1_study/train_ids.csv",
+  "validation_ids_file": "../a_q5_20261108_v1_study/validation_ids.csv"
+}

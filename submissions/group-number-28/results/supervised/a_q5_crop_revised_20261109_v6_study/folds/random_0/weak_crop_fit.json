@@ -1,0 +1,12 @@
+{
+  "arm": "weak_crop",
+  "fitting_id_sha256": "b53197b6c7ef18f843e5df61d33e8c736f8ec988016a288782aaf9dfe47f279c",
+  "fold": 0,
+  "model_sha256": "b5cdce016418feea90f44038ec8e185c64b3ce1465ff2061b8e16827afaa58e1",
+  "n_features": 120000,
+  "n_originals": 5394,
+  "n_training_rows": 9727,
+  "sample_weight_sum": 5394.000000000001,
+  "scheme": "random",
+  "stage": 1
+}

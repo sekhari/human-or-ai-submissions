@@ -1,0 +1,6 @@
+{
+  "train_auroc": 1.0,
+  "validation_auroc": 0.9690420000000001,
+  "fit_seconds": 48.44017638899993,
+  "evaluation_rows": 2000
+}

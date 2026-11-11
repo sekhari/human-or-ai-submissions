@@ -1,0 +1,32 @@
+[
+  {
+    "epoch": 1,
+    "epoch_checkpoint_seconds": 2.0298817078582942,
+    "epoch_loop_wall_seconds": 375.3069649580866,
+    "epoch_order_file": "epoch_1_order.csv",
+    "epoch_order_file_sha256": "9c8b40099ca2a09d7707da6972e611c4125577de85d78553fa2ca74675075cef",
+    "epoch_permutation_sha256": "157d72ec92309a448541e2c74f738d274baa9915508454930d88dc7c322a5256",
+    "held_metrics_evaluated": false,
+    "held_model_inputs_used": false,
+    "mean_loss": 0.19832429085191447,
+    "optimizer_updates": 291,
+    "originals_seen": 4646,
+    "training_update_seconds": 375.0638082535006,
+    "unique_originals_seen": 4646
+  },
+  {
+    "epoch": 2,
+    "epoch_checkpoint_seconds": 1.8912109998054802,
+    "epoch_loop_wall_seconds": 373.6603189171292,
+    "epoch_order_file": "epoch_2_order.csv",
+    "epoch_order_file_sha256": "a7077413993279ad9812a9cba17ec5be0e7094378abedce7c51f90cfa7ee7bb1",
+    "epoch_permutation_sha256": "de9b2ae62d0193b2d6bfe38d285b3a6adee9339fc36da01685624d26605dd035",
+    "held_metrics_evaluated": false,
+    "held_model_inputs_used": false,
+    "mean_loss": 0.07373564448410705,
+    "optimizer_updates": 291,
+    "originals_seen": 4646,
+    "training_update_seconds": 373.40844528889284,
+    "unique_originals_seen": 4646
+  }
+]

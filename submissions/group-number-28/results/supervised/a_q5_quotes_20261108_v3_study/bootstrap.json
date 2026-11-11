@@ -1,0 +1,131 @@
+{
+  "auroc_95_intervals": {
+    "c60_norm__dash_typography": [
+      0.960924925,
+      0.974142175
+    ],
+    "c60_norm__original": [
+      0.96092135,
+      0.97410565
+    ],
+    "c60_norm__quote_typography": [
+      0.96092135,
+      0.97410565
+    ],
+    "c60_raw__dash_typography": [
+      0.9627653999999999,
+      0.9760580249999999
+    ],
+    "c60_raw__original": [
+      0.9628217249999999,
+      0.9760090500000002
+    ],
+    "c60_raw__quote_typography": [
+      0.9590525249999999,
+      0.972936625
+    ],
+    "wc120_norm__dash_typography": [
+      0.9620939000000001,
+      0.974849525
+    ],
+    "wc120_norm__original": [
+      0.9620469250000001,
+      0.974822125
+    ],
+    "wc120_norm__quote_typography": [
+      0.9620469250000001,
+      0.974822125
+    ],
+    "wc120_raw__dash_typography": [
+      0.9635235249999999,
+      0.9762064749999999
+    ],
+    "wc120_raw__original": [
+      0.9635009,
+      0.976193475
+    ],
+    "wc120_raw__quote_typography": [
+      0.960352875,
+      0.9736321499999999
+    ]
+  },
+  "comparisons": {
+    "c60_clean": {
+      "interval95": [
+        -0.003657200000000238,
+        4.69249999998858e-05
+      ],
+      "left": "c60_norm__original",
+      "point_delta": -0.0017519999999998648,
+      "right": "c60_raw__original"
+    },
+    "c60_clean_vs_incumbent": {
+      "interval95": [
+        -0.00502937499999995,
+        0.0005481499999999943
+      ],
+      "left": "c60_norm__original",
+      "point_delta": -0.0022079999999998767,
+      "right": "wc120_raw__original"
+    },
+    "c60_quote": {
+      "interval95": [
+        0.0002777250000000009,
+        0.0026650249999999208
+      ],
+      "left": "c60_norm__quote_typography",
+      "point_delta": 0.0014990000000001391,
+      "right": "c60_raw__quote_typography"
+    },
+    "c60_quote_vs_incumbent": {
+      "interval95": [
+        -0.0018773499999999832,
+        0.003204149999999878
+      ],
+      "left": "c60_norm__quote_typography",
+      "point_delta": 0.0006450000000002287,
+      "right": "wc120_raw__quote_typography"
+    },
+    "wc120_clean": {
+      "interval95": [
+        -0.002695949999999894,
+        -2.200000000191666e-06
+      ],
+      "left": "wc120_norm__original",
+      "point_delta": -0.00133099999999986,
+      "right": "wc120_raw__original"
+    },
+    "wc120_clean_vs_incumbent": {
+      "interval95": [
+        -0.002695949999999894,
+        -2.200000000191666e-06
+      ],
+      "left": "wc120_norm__original",
+      "point_delta": -0.00133099999999986,
+      "right": "wc120_raw__original"
+    },
+    "wc120_quote": {
+      "interval95": [
+        0.0005494000000000499,
+        0.0025032749999999186
+      ],
+      "left": "wc120_norm__quote_typography",
+      "point_delta": 0.0015220000000002454,
+      "right": "wc120_raw__quote_typography"
+    },
+    "wc120_quote_vs_incumbent": {
+      "interval95": [
+        0.0005494000000000499,
+        0.0025032749999999186
+      ],
+      "left": "wc120_norm__quote_typography",
+      "point_delta": 0.0015220000000002454,
+      "right": "wc120_raw__quote_typography"
+    }
+  },
+  "limitations": "conditional development intervals; no training variation or selection adjustment; invariance is constructed",
+  "method": "class-stratified paired percentile bootstrap",
+  "primary_comparison_key": "wc120_quote",
+  "replicates": 1000,
+  "seed": 342
+}

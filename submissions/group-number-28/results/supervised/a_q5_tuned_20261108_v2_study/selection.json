@@ -1,0 +1,35 @@
+{
+  "eligibility": {
+    "c60_c1": {
+      "checks": {
+        "cv_mean_improves": false,
+        "different_from_current_settings": true,
+        "format_guard_passes": true,
+        "length_guard_passes": true,
+        "paired_interval_lower_positive": false
+      },
+      "eligible": false,
+      "maximum_extra_format_loss": 0.00039799999999989844,
+      "maximum_length_bin_regression": 0.0017167306405605487
+    },
+    "wc120_c1": {
+      "checks": {
+        "cv_mean_improves": false,
+        "different_from_current_settings": false,
+        "format_guard_passes": true,
+        "length_guard_passes": true,
+        "paired_interval_lower_positive": false
+      },
+      "eligible": false,
+      "maximum_extra_format_loss": 0.0,
+      "maximum_length_bin_regression": 0.0
+    }
+  },
+  "export_eligible": false,
+  "public_feedback_motivated_study": true,
+  "retain_current_public_baseline": true,
+  "selected_C": 1,
+  "selected_candidate_id": "wc120_c1",
+  "selected_representation": "wc120",
+  "selection_scope": "local follow-up selection; no new Kaggle score or upload"
+}

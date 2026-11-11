@@ -1,0 +1,185 @@
+{
+  "random": {
+    "conditions": {
+      "clean": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.027131682960580272,
+        "paired_delta_ci_97_5": 0.034447215776903864,
+        "point_macro_delta_auroc": 0.030825577502331097,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "digit_runs_to_zero": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.030450323813270817,
+        "paired_delta_ci_97_5": 0.03819332862727285,
+        "point_macro_delta_auroc": 0.03449822112959829,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "prefix_100": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": -0.05695810173103878,
+        "paired_delta_ci_97_5": -0.032243548100913406,
+        "point_macro_delta_auroc": -0.044863480762983445,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "quote_and_dash": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.03025843641507734,
+        "paired_delta_ci_97_5": 0.03787188380404926,
+        "point_macro_delta_auroc": 0.03400527647937827,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "whitespace_only": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": -0.10069881449302095,
+        "paired_delta_ci_97_5": -0.08333379107631593,
+        "point_macro_delta_auroc": -0.09220336643736804,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      }
+    },
+    "limitations": [
+      "Conditional on fixed models/splits; no training variation or adaptive selection correction.",
+      "Overlapping fitting folds are not independent replications.",
+      "Whole-topic sensitivity uses only the existing 12 lexical-topic/style proxy groups.",
+      "Dependent text transformations are not independent datasets; intervals are descriptive and unadjusted for multiplicity."
+    ],
+    "method": "Within-fold class-stratified original-ID paired bootstrap",
+    "n_folds": 3,
+    "no_replacement_of_invalid_replicates": true,
+    "requested_replicates": 1000,
+    "scheme": "random",
+    "seed": 548
+  },
+  "topic": {
+    "conditions": {
+      "clean": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.033757729365631664,
+        "paired_delta_ci_97_5": 0.10466103493169693,
+        "point_macro_delta_auroc": 0.06290653614441837,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "digit_runs_to_zero": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.039546974549005263,
+        "paired_delta_ci_97_5": 0.10556459602797838,
+        "point_macro_delta_auroc": 0.06832448119842882,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "prefix_100": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": -0.038515198605293594,
+        "paired_delta_ci_97_5": 0.041772536058463296,
+        "point_macro_delta_auroc": 0.0013510728679556234,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "quote_and_dash": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.0337370373856848,
+        "paired_delta_ci_97_5": 0.10737188918920124,
+        "point_macro_delta_auroc": 0.06422834570945017,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "whitespace_only": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": -0.059688769600871355,
+        "paired_delta_ci_97_5": 0.039216395842625644,
+        "point_macro_delta_auroc": -0.03880961263361308,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      }
+    },
+    "limitations": [
+      "Conditional on fixed models/splits; no training variation or adaptive selection correction.",
+      "Overlapping fitting folds are not independent replications.",
+      "Whole-topic sensitivity uses only the existing 12 lexical-topic/style proxy groups.",
+      "Dependent text transformations are not independent datasets; intervals are descriptive and unadjusted for multiplicity."
+    ],
+    "method": "Within-fold whole-topic paired bootstrap",
+    "n_folds": 3,
+    "no_replacement_of_invalid_replicates": true,
+    "requested_replicates": 1000,
+    "scheme": "topic",
+    "seed": 549
+  },
+  "validation": {
+    "conditions": {
+      "clean": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.02292289999999992,
+        "paired_delta_ci_97_5": 0.035713325000000073,
+        "point_macro_delta_auroc": 0.029290999999999956,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "digit_runs_to_zero": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.025815674999999948,
+        "paired_delta_ci_97_5": 0.03923500000000004,
+        "point_macro_delta_auroc": 0.03274199999999994,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "prefix_100": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": -0.12012481788824855,
+        "paired_delta_ci_97_5": -0.06960072283541384,
+        "point_macro_delta_auroc": -0.09377168922093071,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "quote_and_dash": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": 0.02541774999999997,
+        "paired_delta_ci_97_5": 0.03869434999999992,
+        "point_macro_delta_auroc": 0.03208299999999997,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      },
+      "whitespace_only": {
+        "interval_available": true,
+        "invalid_replicates": 0,
+        "paired_delta_ci_2_5": -0.1207411750000001,
+        "paired_delta_ci_97_5": -0.08355164999999996,
+        "point_macro_delta_auroc": -0.10072000000000003,
+        "valid_fraction": 1.0,
+        "valid_replicates": 1000
+      }
+    },
+    "limitations": [
+      "Conditional on fixed models/splits; no training variation or adaptive selection correction.",
+      "Overlapping fitting folds are not independent replications.",
+      "Whole-topic sensitivity uses only the existing 12 lexical-topic/style proxy groups.",
+      "Dependent text transformations are not independent datasets; intervals are descriptive and unadjusted for multiplicity."
+    ],
+    "method": "Within-fold class-stratified original-ID paired bootstrap",
+    "n_folds": 1,
+    "no_replacement_of_invalid_replicates": true,
+    "requested_replicates": 1000,
+    "scheme": "validation",
+    "seed": 550
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-11-09T07:38:05.942082+00:00",
+  "execution_contract": {
+    "input_id_text_sha256": "64f0750cf2e1998386cb2f0e89929af9a85e96396e71dbff26d08a4d0e413fb0",
+    "n_originals": 8000,
+    "packages": {
+      "joblib": "1.4.2",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.5.1",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.5.0"
+    },
+    "plan_content_sha256": "5771665e2bd548bcda54c9a92dc9705a503b24cef41158d8420db373cecf1cfe",
+    "source_sha256": {
+      "experiments/supervised/crop_topics.py": "5f0c6299dbe6289f60e0c55b4f5ea739d003c63ea24c6de800d224c469f7a049",
+      "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    }
+  },
+  "purpose": "Split construction only; no record labels read."
+}

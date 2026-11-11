@@ -1,0 +1,13 @@
+{
+  "artifact_sha256": {
+    "results/supervised/a_q5_20261108_v1_wc120_full10000/config.json": "437fb775da3c6e9a082eba32f49c5492608016a76814f338b027a2789cc80e4e",
+    "results/supervised/a_q5_20261108_v1_wc120_full10000/metrics.json": "ee0e7f568244e583100f543bd3d27ecb33471402dc2f74bf099505f11638b0d5",
+    "results/supervised/a_q5_20261108_v1_wc120_full10000/model.joblib": "b2141babfb7f7e69d1d14489c625bbfbd2d79a2d8771d0fa387495c95db380a1",
+    "results/supervised/a_q5_20261108_v1_wc120_full10000/model_fit.json": "16c50130c86af98c0282bf727f655a114dbdb80bc55980e9be385bb4ec12f649",
+    "results/supervised/a_q5_20261108_v1_wc120_full10000/train_ids.csv": "114ec875864fd8679d7e5191c94fbe941f986abafae6e0687036ee13992fae93",
+    "results/supervised/a_q5_20261108_v1_wc120_full10000/verification.json": "03257bac4a22dd567d5da6de4ea2587e0049508d459f4f4d92fa67a37a352ba0",
+    "submissions/a_q5_20261108_v1_wc120_full10000.csv": "621750cf99ad970b3d3ee01ad26ed2bfe46ea4cee0a37a9f9676f0748464c4c2",
+    "submissions/a_q5_20261108_v1_wc120_full10000.metadata.json": "909b069028ea90b1913698221ac858cba605c4bbf64b3e9f3b7bc097c3e5e790"
+  },
+  "completed_at_utc": "2026-11-08T20:08:40.912884+00:00"
+}

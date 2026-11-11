@@ -1,0 +1,7 @@
+{
+  "definition": "bin 0 <= cut0; bin 1 <= cut1; bin 2 > cut1",
+  "training_word_count_tertiles": [
+    174.0,
+    240.0
+  ]
+}

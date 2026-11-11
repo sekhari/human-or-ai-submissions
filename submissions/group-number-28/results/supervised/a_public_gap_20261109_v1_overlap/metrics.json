@@ -1,0 +1,31 @@
+{
+  "counts": {
+    "train": 8000,
+    "validation": 2000,
+    "unlabeled": 3000,
+    "test": 3000
+  },
+  "exact_normalized": {
+    "pairs": 0,
+    "pairs_by_boundary": {},
+    "affected_records_by_boundary": {},
+    "label_conflicts": 0
+  },
+  "near_duplicate": {
+    "pairs": 0,
+    "pairs_by_boundary": {},
+    "affected_records_by_boundary": {},
+    "label_conflicts": 0
+  },
+  "candidate_pairs_verified": 16,
+  "nontrivial_components": 0,
+  "component_size_distribution": {},
+  "largest_component": 1,
+  "elapsed_seconds": 3.92813245812431,
+  "interpretation": "No hidden labels or domain/generator memberships are inferred by this audit.",
+  "limitations": [
+    "Detects substantial contiguous lexical overlap, not paraphrases, shared topics, domains, or generators.",
+    "Global frequencies are used only to accelerate an exact audit, never to fit a predictive model.",
+    "The 0.8 threshold is a strict duplicate screen, not an estimated source-group boundary."
+  ]
+}

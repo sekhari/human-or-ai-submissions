@@ -1,0 +1,26 @@
+{
+  "commands_executed": [
+    {
+      "command": "MPLCONFIGDIR=/private/tmp/q5-matplotlib /opt/anaconda3/bin/python -m unittest experiments.supervised.test_q5_quotes -v",
+      "errors": 0,
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 5,
+      "tool_wall_seconds": 1.706,
+      "unittest_seconds": 1.19
+    },
+    {
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLCONFIGDIR=/private/tmp/q5-matplotlib /opt/anaconda3/bin/python -m experiments.supervised.q5_quotes --prefix a_q5_quotes_20261108_v3 --resume",
+      "exit_code": 0,
+      "output": "Quote study already complete; no refit or overwrite"
+    }
+  ],
+  "full_size_training_performed_by_tests": false,
+  "recorded_at_utc": "2026-11-09T02:06:47.678600+00:00",
+  "tested_source_sha256": {
+    "experiments/supervised/test_q5_quotes.py": "474fb480f6a9d07cd7d0b2ac8eef6cb5586707394cc688e1a14d6a8176c5f8c8",
+    "experiments/supervised/verify_q5_quotes.py": "e2cd1a39facf26a1ec05176601e549a86441010616b1eb4faa1ddf19276e4207"
+  },
+  "unit_test_execution_evidence": "Confirmed by delegated verifier agent from its observed tool output; no separate stdout log was saved.",
+  "verifier_and_tests_changed_after_unit_test_execution": false
+}

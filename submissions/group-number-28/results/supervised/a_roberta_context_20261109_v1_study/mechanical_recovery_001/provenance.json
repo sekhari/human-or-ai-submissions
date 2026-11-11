@@ -1,0 +1,19 @@
+{
+  "source_sha256": {
+    "experiments/supervised/train_roberta.py": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+    "experiments/supervised/evaluate_roberta.py": "790fb7a53920192f285805b27f79d6ce25ca665349d5b0a7ff9e24942a67c746",
+    "experiments/supervised/prepare_roberta.py": "9b800374be8c7b37165003cd331cab08fec8eadffcb982d3cb8c200542b514df",
+    "experiments/supervised/run_roberta_study.py": "d1b564f1977ed292a67a45f76965277e87c7d4a3ae35263325988530cdab2cfa",
+    "experiments/supervised/benchmark_roberta_mps.py": "3cb89bfb42e5a87139f14ed032b7dce0aead89b22a97adcd428e27ae6e7f6fc5",
+    "experiments/supervised/crop_evaluation.py": "152aea042f08548f88b7524794126bfaed886ff1f9726879fa41dda9a4cbe42e",
+    "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d",
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad",
+    "docs/roberta_context_protocol_20261109.md": "17c39e77268fe26edce70c6bdbb3a15f333be259d8eac8f3c4a22b9f238daa25"
+  },
+  "plan_sha256": "3dba5bad02626a008b7b8f6b200f70ece8cc4a8b544d90bb63ee515174bc5e67",
+  "frozen_at_utc": "2026-11-09T23:27:00.102372+00:00",
+  "python": "/opt/anaconda3/envs/python_course/bin/python",
+  "before_first_neural_fit": true,
+  "independent_verifier": "Separately versioned zero-fit post-run audit; not a model-training dependency"
+}

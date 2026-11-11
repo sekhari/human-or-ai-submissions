@@ -1,0 +1,13 @@
+{
+  "fit_seconds": 7.776171834208071,
+  "note": "All 10000 labels used; no honest held-out score for this refit",
+  "timing_definition": "wall seconds, features and sigmoid calibration included",
+  "train": {
+    "accuracy_at_0_5": 1.0,
+    "auroc": 1.0,
+    "brier": 0.0024068399578011045,
+    "log_loss": 0.03522150668086297,
+    "n": 10000
+  },
+  "validation": null
+}

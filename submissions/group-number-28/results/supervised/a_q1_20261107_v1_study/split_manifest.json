@@ -1,0 +1,26 @@
+{
+  "algorithm": "lexicographically sorted string IDs; Python Random(42); shuffle class 0 then class 1; first 1000/class for validation",
+  "counts": {
+    "train": 8000,
+    "validation": 2000
+  },
+  "duplicate_audit": "No exact duplicates after whitespace normalization; near-duplicates and source leakage not assessed",
+  "label_counts": {
+    "train": {
+      "0": 4000,
+      "1": 4000
+    },
+    "validation": {
+      "0": 1000,
+      "1": 1000
+    }
+  },
+  "seed": 42,
+  "source": "train.csv",
+  "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "split_sha256": {
+    "train": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+    "validation": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f"
+  },
+  "version": 1
+}

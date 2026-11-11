@@ -1,0 +1,31 @@
+{
+  "completed_resume_check": {
+    "exit_code": 0,
+    "output": "Richness study already complete; no refit or overwrite"
+  },
+  "completed_without_interruption": true,
+  "cv_warning_count": 0,
+  "job_completed_at_utc": "2026-11-09T03:36:43.884712+00:00",
+  "job_including_verification_plotting_seconds": 511.503722,
+  "job_started_at_utc": "2026-11-09T03:28:12.380990+00:00",
+  "model_fit_seconds": {
+    "c60_length": 38.10789629071951,
+    "c60_length_richness": 57.16693295817822,
+    "c60_richness": 54.406259125098586,
+    "c60_richness_full10000": 67.78996304189786
+  },
+  "n_candidate_fold_fits": 12,
+  "n_full_10000_models": 1,
+  "n_new_8000_models": 3,
+  "n_reused_8000_models": 2,
+  "n_test_predictions": 3000,
+  "new_model_warning_count": 0,
+  "new_submission_generated": true,
+  "recorded_at_utc": "2026-11-09T03:38:49.001691+00:00",
+  "reused_model_ids": [
+    "c60",
+    "incumbent_wc120"
+  ],
+  "training_evaluation_export_seconds": 469.0060331253335,
+  "uploaded_to_kaggle": false
+}

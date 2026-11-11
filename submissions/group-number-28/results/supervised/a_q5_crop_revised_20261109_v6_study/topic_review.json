@@ -1,0 +1,355 @@
+{
+  "combined": [
+    {
+      "decision": "content",
+      "topic": 0
+    },
+    {
+      "decision": "style-format",
+      "topic": 1
+    },
+    {
+      "decision": "content",
+      "topic": 2
+    },
+    {
+      "decision": "mixed",
+      "topic": 3
+    },
+    {
+      "decision": "content",
+      "topic": 4
+    },
+    {
+      "decision": "content",
+      "topic": 5
+    },
+    {
+      "decision": "content",
+      "topic": 6
+    },
+    {
+      "decision": "mixed",
+      "topic": 7
+    },
+    {
+      "decision": "content",
+      "topic": 8
+    },
+    {
+      "decision": "content",
+      "topic": 9
+    },
+    {
+      "decision": "mixed",
+      "topic": 10
+    },
+    {
+      "decision": "content",
+      "topic": 11
+    }
+  ],
+  "disagreement_policy": "Any decision disagreement counts as mixed.",
+  "labels_read_before_review_freeze": false,
+  "review_a": {
+    "clusters": [
+      {
+        "decision": "content",
+        "description": "Music artists, recordings, bands, releases and the music business form a coherent dominant subject across all five samples.",
+        "inspected_ids": [
+          "3406",
+          "8523",
+          "1159",
+          "5987",
+          "6760"
+        ],
+        "topic": 0
+      },
+      {
+        "decision": "style-format",
+        "description": "Conversational first-person forum requests, opinions and personal accounts span gaming, transport, anxiety and finances; the commonality is conversational genre rather than a shared content subject.",
+        "inspected_ids": [
+          "7943",
+          "6742",
+          "2392",
+          "9003",
+          "2860"
+        ],
+        "topic": 1
+      },
+      {
+        "decision": "content",
+        "description": "Savory cooking recipes, ingredients and preparation steps consistently dominate all five samples.",
+        "inspected_ids": [
+          "2371",
+          "760",
+          "8506",
+          "1593",
+          "4337"
+        ],
+        "topic": 2
+      },
+      {
+        "decision": "mixed",
+        "description": "Regional geography and heterogeneous historical reference material are mixed with energy relocation advice; the sampled municipality, voting law, storm, energy and printing-history subjects lack a single dominant content topic.",
+        "inspected_ids": [
+          "5215",
+          "8086",
+          "5907",
+          "7487",
+          "6519"
+        ],
+        "topic": 3
+      },
+      {
+        "decision": "content",
+        "description": "Machine learning and computer-vision research, especially image segmentation and medical applications, provide a coherent dominant content subject.",
+        "inspected_ids": [
+          "5068",
+          "1625",
+          "3751",
+          "4772",
+          "2847"
+        ],
+        "topic": 4
+      },
+      {
+        "decision": "content",
+        "description": "Film and television production, performers, directors and screen franchises coherently connect the five samples.",
+        "inspected_ids": [
+          "3902",
+          "5261",
+          "2883",
+          "6876",
+          "3589"
+        ],
+        "topic": 5
+      },
+      {
+        "decision": "content",
+        "description": "Mathematical and physical systems research connects network dynamics, fluid simulation, quantum gases, optimization and relativity; it is broad but content-interpretable beyond generic abstract formatting.",
+        "inspected_ids": [
+          "4992",
+          "2094",
+          "4217",
+          "7846",
+          "8029"
+        ],
+        "topic": 6
+      },
+      {
+        "decision": "mixed",
+        "description": "Financial and economic material is interleaved with international politics, political theory and a personal legal allegation; public-affairs reporting is broad and the five samples lack a dominant specific content subject.",
+        "inspected_ids": [
+          "3272",
+          "5061",
+          "5346",
+          "7734",
+          "7848"
+        ],
+        "topic": 7
+      },
+      {
+        "decision": "content",
+        "description": "Baking, dough, cakes and sweet preparations dominate four samples, with one related fruit beverage recipe; culinary preparation is coherent and baking is the dominant subtopic.",
+        "inspected_ids": [
+          "1827",
+          "3529",
+          "6664",
+          "1046",
+          "8216"
+        ],
+        "topic": 8
+      },
+      {
+        "decision": "content",
+        "description": "Film reviews and assessments of acting, narrative, direction and viewing experience form a coherent content topic across all samples.",
+        "inspected_ids": [
+          "7297",
+          "6740",
+          "7791",
+          "9472",
+          "4869"
+        ],
+        "topic": 9
+      },
+      {
+        "decision": "content",
+        "description": "Biographical profiles, personal careers, education and professional affiliations dominate the samples, including one repetitive music-group membership profile.",
+        "inspected_ids": [
+          "5028",
+          "2775",
+          "8781",
+          "5205",
+          "2547"
+        ],
+        "topic": 10
+      },
+      {
+        "decision": "content",
+        "description": "Sports participants, competitions, player careers and performance consistently connect cricket, tennis, basketball, golf and football samples.",
+        "inspected_ids": [
+          "332",
+          "616",
+          "7624",
+          "4934",
+          "5681"
+        ],
+        "topic": 11
+      }
+    ],
+    "reviewed_without_labels_or_scores": true,
+    "reviewer": "reviewer_a_crop_estimator"
+  },
+  "review_b": {
+    "clusters": [
+      {
+        "decision": "content",
+        "description": "Music releases, performers and bands; all five samples concern recording careers, albums, songs or the music industry.",
+        "inspected_ids": [
+          "3406",
+          "8523",
+          "1159",
+          "5987",
+          "6760"
+        ],
+        "topic": 0
+      },
+      {
+        "decision": "style-format",
+        "description": "Conversational first-person posts and advice requests across games, transport, anxiety and finance; generic personal-discussion language dominates rather than one content subject.",
+        "inspected_ids": [
+          "7943",
+          "6742",
+          "2392",
+          "9003",
+          "2860"
+        ],
+        "topic": 1
+      },
+      {
+        "decision": "content",
+        "description": "Savory cooking ingredients and preparation procedures; the five samples consistently concern recipes and kitchen techniques.",
+        "inspected_ids": [
+          "2371",
+          "760",
+          "8506",
+          "1593",
+          "4337"
+        ],
+        "topic": 2
+      },
+      {
+        "decision": "mixed",
+        "description": "Samples span a settlement, voting discrimination, a historical hurricane, renewable-energy choices and early print news. Place/history vocabulary provides broad overlap without one dominant subject.",
+        "inspected_ids": [
+          "5215",
+          "8086",
+          "5907",
+          "7487",
+          "6519"
+        ],
+        "topic": 3
+      },
+      {
+        "decision": "content",
+        "description": "Machine-learning methods with a strong image/semantic-segmentation focus; healthcare prediction is a related technical outlier.",
+        "inspected_ids": [
+          "5068",
+          "1625",
+          "3751",
+          "4772",
+          "2847"
+        ],
+        "topic": 4
+      },
+      {
+        "decision": "content",
+        "description": "Film and television productions, performers, directors and screen-industry careers; the five samples share that subject area.",
+        "inspected_ids": [
+          "3902",
+          "5261",
+          "2883",
+          "6876",
+          "3589"
+        ],
+        "topic": 5
+      },
+      {
+        "decision": "content",
+        "description": "Mathematical and physical-science modeling, including network dynamics, fluid mechanics, quantum gases, optimization and relativity; quantitative theory is the shared subject area.",
+        "inspected_ids": [
+          "4992",
+          "2094",
+          "4217",
+          "7846",
+          "8029"
+        ],
+        "topic": 6
+      },
+      {
+        "decision": "mixed",
+        "description": "Economics/business terms mix with diplomacy, political-value theory and personal allegations; the five samples do not establish one dominant content subject.",
+        "inspected_ids": [
+          "3272",
+          "5061",
+          "5346",
+          "7734",
+          "7848"
+        ],
+        "topic": 7
+      },
+      {
+        "decision": "content",
+        "description": "Baking, desserts and kitchen preparations; bread, cakes, crepes and a drink recipe share ingredients and food-preparation content.",
+        "inspected_ids": [
+          "1827",
+          "3529",
+          "6664",
+          "1046",
+          "8216"
+        ],
+        "topic": 8
+      },
+      {
+        "decision": "content",
+        "description": "Film reviews and evaluation of stories, acting and direction; every sampled document discusses a movie.",
+        "inspected_ids": [
+          "7297",
+          "6740",
+          "7791",
+          "9472",
+          "4869"
+        ],
+        "topic": 9
+      },
+      {
+        "decision": "mixed",
+        "description": "Biographical/career vocabulary spans military, psychiatry, folklore, pop music and choreography; cohesion largely follows a biography template across heterogeneous subjects.",
+        "inspected_ids": [
+          "5028",
+          "2775",
+          "8781",
+          "5205",
+          "2547"
+        ],
+        "topic": 10
+      },
+      {
+        "decision": "content",
+        "description": "Sports players, teams, competition and performance; the five samples cover cricket, tennis, basketball, golf and football.",
+        "inspected_ids": [
+          "332",
+          "616",
+          "7624",
+          "4934",
+          "5681"
+        ],
+        "topic": 11
+      }
+    ],
+    "reviewed_without_labels_or_scores": true,
+    "reviewer": "reviewer_b_crop_topic"
+  },
+  "topic_review_packet_sha256": "4d5e4d80c5b51b292701033fe448443a308be3700cb76eef48bcb134bf08034b"
+}

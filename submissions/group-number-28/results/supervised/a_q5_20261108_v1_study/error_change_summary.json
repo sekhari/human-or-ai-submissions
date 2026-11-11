@@ -1,0 +1,19 @@
+{
+  "corrected": 107,
+  "counts_by_change_and_error_type": {
+    "corrected_FN": 51,
+    "corrected_FP": 56,
+    "new_error_FN": 12,
+    "new_error_FP": 22
+  },
+  "interpretation": "Descriptive diagnostics only; passage-level failure hypotheses require human review. No causal or source claims are inferred.",
+  "length_bin_definition": "bin 0: length <= cut0; bin 1: cut0 < length <= cut1; bin 2: length > cut1",
+  "length_cutpoints_from_training_only": [
+    174.0,
+    240.0
+  ],
+  "new_errors": 34,
+  "threshold": 0.5,
+  "w60_errors": 258,
+  "wc120_errors": 185
+}

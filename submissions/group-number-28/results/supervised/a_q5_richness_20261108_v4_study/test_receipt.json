@@ -1,0 +1,31 @@
+{
+  "commands_executed": [
+    {
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLCONFIGDIR=/private/tmp/q5-matplotlib /opt/anaconda3/bin/python -m unittest experiments.supervised.test_q5_richness -v",
+      "errors": 0,
+      "exit_code": 0,
+      "failed": 0,
+      "passed": 9,
+      "unittest_seconds": 0.477
+    },
+    {
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLCONFIGDIR=/private/tmp/q5-matplotlib /opt/anaconda3/bin/python -m experiments.supervised.q5_richness --prefix a_q5_richness_20261108_v4 --resume",
+      "exit_code": 0,
+      "output": "Richness study already complete; no refit or overwrite"
+    },
+    {
+      "command": "/opt/anaconda3/bin/python -m human_ai.check_predictions submissions/a_q5_richness_20261108_v4_c60_richness_full10000.csv --kind submission",
+      "exit_code": 0,
+      "n_test": 3000
+    }
+  ],
+  "full_size_training_performed_by_tests": false,
+  "recorded_at_utc": "2026-11-09T03:30:14.081564+00:00",
+  "stdout_file": "test_stdout.txt",
+  "stdout_sha256": "36596abe0bebd783049d6d4a97a6e8b4d1ca87003f15d8e621c2da7a2fed99f1",
+  "tested_source_sha256": {
+    "experiments/supervised/q5_richness.py": "41302e77e5bcd50b9d21f3c2401b02404104bb8f582e971aec6d9004b1104a0e",
+    "experiments/supervised/richness_features.py": "2361f1c09bbf1e93745b46fb5efe3884bc7e56c87990cf919c04e3a9b460112c",
+    "experiments/supervised/test_q5_richness.py": "bd9083b443f79364a3da3e4dc8ea53fdcf27c66894bd535ca1962ffde6bea196"
+  }
+}

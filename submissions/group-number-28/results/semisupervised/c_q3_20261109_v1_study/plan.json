@@ -1,0 +1,38 @@
+{
+  "primary_comparison": "st95_r1 vs baseline (threshold 0.95, predeclared)",
+  "C_grid": [
+    1.0,
+    3.0,
+    10.0,
+    30.0,
+    100.0
+  ],
+  "chosen_C": 30.0,
+  "sweep_thresholds": [
+    0.99,
+    0.95,
+    0.9,
+    0.8,
+    0.5
+  ],
+  "max_rounds": 3,
+  "bootstrap_replicates": 1000,
+  "seed": 20261109,
+  "split": "data/splits (canonical 8000/2000)",
+  "train_rows": 8000,
+  "validation_rows": 2000,
+  "unlabeled_rows": 3000,
+  "unlabeled_sha256": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+  "representation": "TfidfVectorizer(analyzer='char', ngram_range=(3,5), min_df=2, max_features=60000, sublinear_tf=True)",
+  "classifier": "LogisticRegression(solver='liblinear', L2)",
+  "git": {
+    "commit": "35cf00de1257d2447df711e12d1afc9e61631ef8",
+    "uncommitted_changes": false
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "competition_svc_fits": 6,
+  "limitations": [
+    "Review blindness is verified from frozen attestations and source control flow, not independently observable reviewer cognition.",
+    "No model is refitted; source/IDF/weight receipts and reloaded predictions verify the recorded training boundary without redoing optimization.",
+    "Conditional bootstrap excludes training variation and adaptive-selection correction."
+  ],
+  "models_fitted_by_verifier": 0,
+  "outcome": "stopped_no_export",
+  "passed": true,
+  "raw_stages": {
+    "random": {
+      "bootstrap": {
+        "clean": {
+          "valid_replicates": 1000,
+          "verified": true
+        },
+        "digit_runs_to_zero": {
+          "valid_replicates": 1000,
+          "verified": true
+        },
+        "prefix_100": {
+          "valid_replicates": 1000,
+          "verified": true
+        },
+        "quote_and_dash": {
+          "valid_replicates": 1000,
+          "verified": true
+        },
+        "whitespace_only": {
+          "valid_replicates": 1000,
+          "verified": true
+        }
+      },
+      "gate_passed": true,
+      "idf_checks": [
+        {
+          "analyzer": "word",
+          "idf_max_error": 0.0,
+          "n_features": 60000,
+          "n_fitting_originals": 5333
+        },
+        {
+          "analyzer": "char",
+          "idf_max_error": 0.0,
+          "n_features": 60000,
+          "n_fitting_originals": 5333
+        },
+        {
+          "analyzer": "word",
+          "idf_max_error": 0.0,
+          "n_features": 60000,
+          "n_fitting_originals": 5333
+        },
+        {
+          "analyzer": "char",
+          "idf_max_error": 0.0,
+          "n_features": 60000,
+          "n_fitting_originals": 5333
+        },
+        {
+          "analyzer": "word",
+          "idf_max_error": 0.0,
+          "n_features": 60000,
+          "n_fitting_originals": 5334
+        },
+        {
+          "analyzer": "char",
+          "idf_max_error": 0.0,
+          "n_features": 60000,
+          "n_fitting_originals": 5334
+        }
+      ],
+      "means": {
+        "clean": {
+          "mean": -0.002363626708731211,
+          "minimum": -0.002817420996928499,
+          "positive": 0
+        },
+        "digit_runs_to_zero": {
+          "mean": -0.0016657357810233957,
+          "minimum": -0.002055986260433129,
+          "positive": 0
+        },
+        "prefix_100": {
+          "mean": 0.05072744988842126,
+          "minimum": 0.0436386513769339,
+          "positive": 3
+        },
+        "quote_and_dash": {
+          "mean": -0.0025334990687019276,
+          "minimum": -0.002941140082622029,
+          "positive": 0
+        },
+        "whitespace_only": {
+          "mean": 0.0041683548595612034,
+          "minimum": 0.0025165586749010815,
+          "positive": 3
+        }
+      }
+    }
+  },
+  "reason": "topic_proxy_invalid_diagnostic_random_only",
+  "source_snapshot_hashes_checked": 15,
+  "study": "results/supervised/a_q5_crop_20261109_v5_study",
+  "test_text_read_by_verifier": false,
+  "topic_quality_checks": {
+    "all_clusters_nonempty_and_large_enough": true,
+    "maximum_cluster_dominant_class_fraction": true,
+    "maximum_cluster_size": true,
+    "maximum_style_format_topics": true,
+    "minimum_interpretable_content_topics": false,
+    "topic_fold_balance_and_size": false,
+    "topic_label_nmi": true
+  },
+  "topic_valid": false,
+  "verified_at_utc": "2026-11-09T07:44:03.918765+00:00"
+}

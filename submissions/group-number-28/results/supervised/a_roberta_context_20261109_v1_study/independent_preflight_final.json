@@ -1,0 +1,16 @@
+{
+  "verifier": "Zero-fit standard-library artifact audit",
+  "verifier_source_sha256": "2f18699a760c816492c06178f91cd1f1a768a942b147507c9bcbf8bdcdc059f1",
+  "verifier_python": "/opt/anaconda3/envs/python_course/bin/python",
+  "study_dir": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+  "limitations": [
+    "No model loading, checkpoint inference or fresh fit is performed.",
+    "Saved evidence and source review do not constitute an operator-by-operator GPU profile.",
+    "Reused topic/style proxy and validation are developmental, not untouched hidden-domain estimates."
+  ],
+  "audit_scope": "preflight",
+  "reconstructed_metrics": [],
+  "status": "passed",
+  "passed_checks": 109,
+  "errors": []
+}

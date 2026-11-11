@@ -1,0 +1,10 @@
+{
+  "criterion": "highest canonical 2000-row held-out AUROC after one refit per family",
+  "full_10000_refit_performed": false,
+  "scope": "Q1 candidate only; team final selection can change after Q3/Q5",
+  "test_or_leaderboard_used": false,
+  "total_experiment_wall_seconds": 18.461764917243272,
+  "tuning_seconds_all_families": 5.436629417352378,
+  "winner": "svm",
+  "winner_run_id": "a_q1_20261107_v1_svm"
+}

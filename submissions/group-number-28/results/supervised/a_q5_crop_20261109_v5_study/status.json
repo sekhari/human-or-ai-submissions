@@ -1,0 +1,295 @@
+{
+  "competition_svc_fits": 6,
+  "completed_at_utc": "2026-11-09T07:42:10.062620+00:00",
+  "incumbent_retained": true,
+  "new_candidates": 0,
+  "outcome": "stopped_no_export",
+  "random_gate": {
+    "checks": {
+      "all_conditions_have_sufficient_three_folds": true,
+      "clean_any_fold": true,
+      "clean_mean": true,
+      "digit_runs_to_zero_any_fold": true,
+      "digit_runs_to_zero_mean": true,
+      "prefix_mean": true,
+      "prefix_positive_folds": true,
+      "quote_and_dash_any_fold": true,
+      "quote_and_dash_mean": true,
+      "whitespace_only_any_fold": true,
+      "whitespace_only_mean": true
+    },
+    "conditions": {
+      "clean": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0019035868412382584,
+          -0.002817420996928499,
+          -0.0023698722880268752
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0019035868412382584,
+        "mean_delta": -0.002363626708731211,
+        "minimum_fold_delta": -0.002817420996928499,
+        "positive_folds": 0
+      },
+      "digit_runs_to_zero": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0013327919686069167,
+          -0.002055986260433129,
+          -0.001608429114030141
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0013327919686069167,
+        "mean_delta": -0.0016657357810233957,
+        "minimum_fold_delta": -0.002055986260433129,
+        "positive_folds": 0
+      },
+      "prefix_100": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          0.051395989196417746,
+          0.0436386513769339,
+          0.057147709091912136
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": 0.057147709091912136,
+        "mean_delta": 0.05072744988842126,
+        "minimum_fold_delta": 0.0436386513769339,
+        "positive_folds": 3
+      },
+      "quote_and_dash": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0021302177118491805,
+          -0.002941140082622029,
+          -0.0025291394116345733
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0021302177118491805,
+        "mean_delta": -0.0025334990687019276,
+        "minimum_fold_delta": -0.002941140082622029,
+        "positive_folds": 0
+      },
+      "whitespace_only": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          0.004901525231382764,
+          0.0025165586749010815,
+          0.005086980672399766
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": 0.005086980672399766,
+        "mean_delta": 0.0041683548595612034,
+        "minimum_fold_delta": 0.0025165586749010815,
+        "positive_folds": 3
+      }
+    },
+    "failed_checks": [],
+    "gate_family": "random",
+    "passed": true,
+    "scheme": "random",
+    "status": "passed",
+    "summary_definition": "Equal-weight mean of within-fold AUROC arm differences; never pooled raw margins."
+  },
+  "reason": "topic_proxy_invalid_diagnostic_random_only",
+  "stage": "complete_negative",
+  "synthetic_svc_fits": 7,
+  "test_text_accessed": false,
+  "topic_quality": {
+    "checks": {
+      "all_clusters_nonempty_and_large_enough": true,
+      "maximum_cluster_dominant_class_fraction": true,
+      "maximum_cluster_size": true,
+      "maximum_style_format_topics": true,
+      "minimum_interpretable_content_topics": false,
+      "topic_fold_balance_and_size": false,
+      "topic_label_nmi": true
+    },
+    "class_counts_by_topic": [
+      {
+        "ai": 91,
+        "dominant_class_fraction": 0.5380710659898477,
+        "human": 106,
+        "n": 197,
+        "topic": 0
+      },
+      {
+        "ai": 787,
+        "dominant_class_fraction": 0.5127035830618892,
+        "human": 748,
+        "n": 1535,
+        "topic": 1
+      },
+      {
+        "ai": 412,
+        "dominant_class_fraction": 0.5065868263473053,
+        "human": 423,
+        "n": 835,
+        "topic": 2
+      },
+      {
+        "ai": 282,
+        "dominant_class_fraction": 0.5300751879699248,
+        "human": 250,
+        "n": 532,
+        "topic": 3
+      },
+      {
+        "ai": 493,
+        "dominant_class_fraction": 0.5010162601626016,
+        "human": 491,
+        "n": 984,
+        "topic": 4
+      },
+      {
+        "ai": 156,
+        "dominant_class_fraction": 0.5531914893617021,
+        "human": 126,
+        "n": 282,
+        "topic": 5
+      },
+      {
+        "ai": 415,
+        "dominant_class_fraction": 0.5123456790123457,
+        "human": 395,
+        "n": 810,
+        "topic": 6
+      },
+      {
+        "ai": 300,
+        "dominant_class_fraction": 0.5136986301369864,
+        "human": 284,
+        "n": 584,
+        "topic": 7
+      },
+      {
+        "ai": 349,
+        "dominant_class_fraction": 0.511204481792717,
+        "human": 365,
+        "n": 714,
+        "topic": 8
+      },
+      {
+        "ai": 234,
+        "dominant_class_fraction": 0.515527950310559,
+        "human": 249,
+        "n": 483,
+        "topic": 9
+      },
+      {
+        "ai": 295,
+        "dominant_class_fraction": 0.5148026315789473,
+        "human": 313,
+        "n": 608,
+        "topic": 10
+      },
+      {
+        "ai": 186,
+        "dominant_class_fraction": 0.573394495412844,
+        "human": 250,
+        "n": 436,
+        "topic": 11
+      }
+    ],
+    "fold_quality_settings": {
+      "maximum_held_ai_fraction": 0.65,
+      "maximum_held_n": 3334,
+      "minimum_held_ai_fraction": 0.35,
+      "minimum_held_n": 2000,
+      "minimum_held_n_per_class": 500
+    },
+    "interpretation": "Lexical-topic proxy only, not true domain/source/generator separation. Quality thresholds are conservative engineering rules.",
+    "invalid_grouping_action": "No retries; diagnostic fallback random CV only, no promotion.",
+    "n_content_topics": 8,
+    "n_mixed_topics": 3,
+    "n_style_format_topics": 1,
+    "promotion_allowed_by_grouping": false,
+    "quality_settings": {
+      "maximum_cluster_dominant_class_fraction_exclusive": 0.9,
+      "maximum_cluster_n": 2400,
+      "maximum_style_or_format_clusters": 1,
+      "maximum_topic_label_nmi_inclusive": 0.1,
+      "minimum_cluster_n": 100,
+      "minimum_content_topic_clusters": 9,
+      "nmi_average_method": "arithmetic",
+      "review": "Before labels/scores are revealed to reviewers, inspect 12 top unigram terms and 5 seeded local documents per cluster. Record IDs, topic description and content/mixed/style-format decision, not passages. Two independent reviews; disagreement counts as mixed."
+    },
+    "random_scheme": "fallback_random_diagnostic_only",
+    "review_sha256": "80c68692be332258321039d821a6cbc0b46ae6c407ca1e6d9f1ba87e1466b3d5",
+    "topic_fold_details": [
+      {
+        "fitting_ai": 2678,
+        "fitting_human": 2716,
+        "fitting_n": 5394,
+        "fitting_topics_n": 7,
+        "fold": 0,
+        "held_ai": 1322,
+        "held_human": 1284,
+        "held_n": 2606,
+        "held_topics_n": 5,
+        "quality_passed": true,
+        "scheme": "topic",
+        "shared_topics_n": 0
+      },
+      {
+        "fitting_ai": 2308,
+        "fitting_human": 2338,
+        "fitting_n": 4646,
+        "fitting_topics_n": 9,
+        "fold": 1,
+        "held_ai": 1692,
+        "held_human": 1662,
+        "held_n": 3354,
+        "held_topics_n": 3,
+        "quality_passed": false,
+        "scheme": "topic",
+        "shared_topics_n": 0
+      },
+      {
+        "fitting_ai": 3014,
+        "fitting_human": 2946,
+        "fitting_n": 5960,
+        "fitting_topics_n": 8,
+        "fold": 2,
+        "held_ai": 986,
+        "held_human": 1054,
+        "held_n": 2040,
+        "held_topics_n": 4,
+        "quality_passed": true,
+        "scheme": "topic",
+        "shared_topics_n": 0
+      }
+    ],
+    "topic_folds_generated": true,
+    "topic_label_nmi": 0.0007824197381024596,
+    "topic_valid": false
+  },
+  "updated_at_utc": "2026-11-09T07:42:10.063065+00:00",
+  "uploads": 0
+}

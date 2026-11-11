@@ -1,0 +1,12 @@
+{
+  "arm": "baseline",
+  "fitting_id_sha256": "04eff78ee18f9c335254483509168085bb390890a146ceed418ade52b55fc272",
+  "fold": 0,
+  "model_sha256": "7e311c5e2c799856ec708faa2486b929bc8bf82bee3c9ad0fea1bcb07de92340",
+  "n_features": 120000,
+  "n_originals": 5394,
+  "n_training_rows": 5394,
+  "sample_weight_sum": 5394.0,
+  "scheme": "topic",
+  "stage": 2
+}

@@ -1,0 +1,13 @@
+# Tested neural training/analysis environment: python_course, Python 3.11.15.
+# Separate from historical classical-model requirements.txt.
+# prepare_roberta's saved WC120 inference uses that historical environment.
+torch==2.11.0
+transformers==5.4.0
+huggingface-hub==1.8.0
+tokenizers==0.22.2
+safetensors==0.7.0
+numpy==2.4.3
+psutil==7.0.0
+scikit-learn==1.8.0
+scipy==1.17.1
+threadpoolctl==3.5.0

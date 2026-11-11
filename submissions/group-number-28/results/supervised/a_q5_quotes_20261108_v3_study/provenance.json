@@ -1,0 +1,52 @@
+{
+  "dependencies": {
+    "joblib": "1.4.2",
+    "matplotlib": "3.9.2",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.1",
+    "scipy": "1.13.1",
+    "threadpoolctl": "3.5.0"
+  },
+  "git_commit": "38a5c0b0d87c90e805c5ce9626e940ddec32ddb6",
+  "git_dirty": true,
+  "git_status": "M README.md\n M docs/development_history.md\n M docs/lin_q1_handoff.md\n M experiments/supervised/README.md\n M results/README.md\n M submissions/README.md\n M submissions/leaderboard_log.csv\n?? docs/robustness_research_plan.md\n?? experiments/supervised/export_q5.py\n?? experiments/supervised/plot_q5_quotes.py\n?? experiments/supervised/plot_q5_tune.py\n?? experiments/supervised/q5_quote_plan.json\n?? experiments/supervised/q5_quotes.py\n?? experiments/supervised/q5_quotes_job.py\n?? experiments/supervised/q5_sensitivity.py\n?? experiments/supervised/q5_tune.py\n?? experiments/supervised/q5_tune_job.py\n?? experiments/supervised/q5_tuning_plan.json\n?? experiments/supervised/quote_normalizer.py\n?? experiments/supervised/test_q5_quotes.py\n?? experiments/supervised/test_q5_sensitivity.py\n?? experiments/supervised/test_q5_tune.py\n?? experiments/supervised/verify_q5_quotes.py\n?? experiments/supervised/verify_q5_tune.py\n?? report/figures/q5_a_q5_tuned_20261108_v2_tuning.png\n?? results/supervised/a_q5_20261108_v1_wc120_full10000/\n?? results/supervised/a_q5_tuned_20261108_v2_c60_c1/\n?? results/supervised/a_q5_tuned_20261108_v2_delivery_checks.json\n?? results/supervised/a_q5_tuned_20261108_v2_study/\n?? results/supervised/a_q5_tuned_20261108_v2_verification.json\n?? results/supervised/a_q5_tuned_20261108_v2_wc120_c1/\n?? submissions/a_q5_20261108_v1_wc120_full10000.csv\n?? submissions/a_q5_20261108_v1_wc120_full10000.metadata.json",
+  "pid_at_launch": 91513,
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "python": "3.12.7",
+  "source_sha256": {
+    "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+    "experiments/supervised/q5_plan.json": "631833499cdbe658dbc96c693a96e76c74bfd27dca897818d5113c95af5af71d",
+    "experiments/supervised/q5_quote_plan.json": "1aea5e03cff084d12a662b7a56e6f14e6c82dd9c3124fb784b3ba60f6a04a941",
+    "experiments/supervised/q5_quotes.py": "ee7c7d8035765fa847d5a45ca99eeead5ba869931b35b79a9811fd20d6cb8a47",
+    "experiments/supervised/q5_quotes_job.py": "b1bfe344a5531eebafb39b5dbda2d64cd21add26b1a0232fe4a682fac6ad5771",
+    "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808",
+    "experiments/supervised/quote_normalizer.py": "5ccac67b3161928441b9a1cf8743e442a96a29d46649ebf00e04836c046175e3",
+    "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+    "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+    "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+    "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+  },
+  "started_at_utc": "2026-11-09T01:54:49.183574+00:00",
+  "thread_limit": 1,
+  "threadpools": [
+    {
+      "architecture": "armv8",
+      "filepath": "/opt/anaconda3/lib/libopenblasp-r0.3.21.dylib",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "threading_layer": "pthreads",
+      "user_api": "blas",
+      "version": "0.3.21"
+    },
+    {
+      "filepath": "/opt/anaconda3/lib/libomp.dylib",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "user_api": "openmp",
+      "version": null
+    }
+  ]
+}

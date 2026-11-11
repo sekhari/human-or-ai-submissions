@@ -1,0 +1,420 @@
+{
+  "estimator_parameters": {
+    "classifier": "HistGradientBoostingClassifier(early_stopping=False, l2_regularization=0,\n                               max_iter=300, max_leaf_nodes=15,\n                               random_state=42)",
+    "classifier__categorical_features": "warn",
+    "classifier__class_weight": null,
+    "classifier__early_stopping": false,
+    "classifier__interaction_cst": null,
+    "classifier__l2_regularization": 0,
+    "classifier__learning_rate": 0.1,
+    "classifier__loss": "log_loss",
+    "classifier__max_bins": 255,
+    "classifier__max_depth": null,
+    "classifier__max_features": 1.0,
+    "classifier__max_iter": 300,
+    "classifier__max_leaf_nodes": 15,
+    "classifier__min_samples_leaf": 20,
+    "classifier__monotonic_cst": null,
+    "classifier__n_iter_no_change": 10,
+    "classifier__random_state": 42,
+    "classifier__scoring": "loss",
+    "classifier__tol": 1e-07,
+    "classifier__validation_fraction": 0.1,
+    "classifier__verbose": 0,
+    "classifier__warm_start": false,
+    "memory": null,
+    "steps": "[('tfidf', TfidfVectorizer(max_features=60000, min_df=2, ngram_range=(1, 2),\n                sublinear_tf=True)), ('svd', TruncatedSVD(n_components=128, n_iter=7, random_state=42)), ('classifier', HistGradientBoostingClassifier(early_stopping=False, l2_regularization=0,\n                               max_iter=300, max_leaf_nodes=15,\n                               random_state=42))]",
+    "svd": "TruncatedSVD(n_components=128, n_iter=7, random_state=42)",
+    "svd__algorithm": "randomized",
+    "svd__n_components": 128,
+    "svd__n_iter": 7,
+    "svd__n_oversamples": 10,
+    "svd__power_iteration_normalizer": "auto",
+    "svd__random_state": 42,
+    "svd__tol": 0.0,
+    "tfidf": "TfidfVectorizer(max_features=60000, min_df=2, ngram_range=(1, 2),\n                sublinear_tf=True)",
+    "tfidf__analyzer": "word",
+    "tfidf__binary": false,
+    "tfidf__decode_error": "strict",
+    "tfidf__dtype": "<class 'numpy.float64'>",
+    "tfidf__encoding": "utf-8",
+    "tfidf__input": "content",
+    "tfidf__lowercase": true,
+    "tfidf__max_df": 1.0,
+    "tfidf__max_features": 60000,
+    "tfidf__min_df": 2,
+    "tfidf__ngram_range": [
+      1,
+      2
+    ],
+    "tfidf__norm": "l2",
+    "tfidf__preprocessor": null,
+    "tfidf__smooth_idf": true,
+    "tfidf__stop_words": null,
+    "tfidf__strip_accents": null,
+    "tfidf__sublinear_tf": true,
+    "tfidf__token_pattern": "(?u)\\b\\w\\w+\\b",
+    "tfidf__tokenizer": null,
+    "tfidf__use_idf": true,
+    "tfidf__vocabulary": null,
+    "verbose": false
+  },
+  "family": "boost",
+  "original_representation_plan": {
+    "excluded": [
+      "validation fitting",
+      "test fitting",
+      "unlabeled data",
+      "starter duplication",
+      "Kaggle feedback for tuning"
+    ],
+    "hypotheses": [
+      "Discriminative linear classifiers may rank better than multinomial NB with identical TF-IDF features.",
+      "Inner CV can reveal when weaker or stronger regularization hurts; retain unsuccessful candidate results.",
+      "Small held-out differences may not resolve which classifier generalizes better."
+    ],
+    "models": {
+      "lr": {
+        "candidates": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "parameter": "C"
+      },
+      "nb": {
+        "candidates": [
+          0.01,
+          0.1,
+          1.0
+        ],
+        "parameter": "alpha"
+      },
+      "svm": {
+        "candidates": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "parameter": "C"
+      }
+    },
+    "purpose": "Q1 controlled comparison; defined before observing model validation scores",
+    "representation": {
+      "analyzer": "word",
+      "dtype": "float64",
+      "lowercase": true,
+      "max_df": 1.0,
+      "max_features": 60000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "smooth_idf": true,
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b",
+      "use_idf": true
+    },
+    "resources": {
+      "external_weights": false,
+      "gpu": false,
+      "threads": 1
+    },
+    "seeds": {
+      "bootstrap": 342,
+      "calibration": 242,
+      "inner_cv": 142,
+      "model": 42
+    },
+    "selection": {
+      "criterion": "highest mean inner-fold AUROC; exact ties choose first listed candidate",
+      "family_selection": "highest canonical 2000-row held-out AUROC after one refit per family",
+      "inner_cv": "3-fold stratified shuffled on the canonical 8000 training rows only",
+      "inner_seed": 142,
+      "no_adaptive_grid_expansion": true,
+      "representation_refit": "vocabulary and IDF fit only on each inner training fold",
+      "scope": "Q1 candidate only; team final selection can change after Q3/Q5"
+    },
+    "svm_probability": {
+      "method": "sigmoid calibration, 3 stratified shuffled folds, ensemble=false",
+      "pipeline": "entire TF-IDF + LinearSVC pipeline inside CalibratedClassifierCV",
+      "reason": "full-training SVM plus sigmoid fitted to out-of-fold training margins; no held-out calibration",
+      "tuning": "raw decision-function AUROC; calibration only after C selection"
+    },
+    "uncertainty": "1000 stratified paired validation bootstraps; exploratory intervals conditional on fitted models, not adjusted for family selection"
+  },
+  "plan": {
+    "boost": {
+      "early_stopping": false,
+      "implementation": "HistGradientBoostingClassifier",
+      "loss": "log_loss"
+    },
+    "excluded": [
+      "validation fitting",
+      "test fitting",
+      "unlabeled learning",
+      "Kaggle feedback",
+      "adaptive decisions based on expanded validation scores"
+    ],
+    "families": [
+      "lr",
+      "nb",
+      "svm",
+      "tree",
+      "forest",
+      "boost",
+      "mlp",
+      "lr_svd"
+    ],
+    "initial_grids": {
+      "boost": {
+        "l2_regularization": [
+          0,
+          1
+        ],
+        "learning_rate": [
+          0.05,
+          0.1
+        ],
+        "max_iter": [
+          150
+        ],
+        "max_leaf_nodes": [
+          7,
+          15
+        ]
+      },
+      "forest": {
+        "max_depth": [
+          20,
+          null
+        ],
+        "max_features": [
+          "sqrt",
+          0.02
+        ],
+        "min_samples_leaf": [
+          1,
+          5
+        ],
+        "n_estimators": [
+          100
+        ]
+      },
+      "lr": {
+        "C": [
+          0.1,
+          1,
+          10,
+          100,
+          1000
+        ]
+      },
+      "lr_svd": {
+        "C": [
+          0.1,
+          1,
+          10,
+          100
+        ]
+      },
+      "mlp": {
+        "alpha": [
+          0.0001,
+          0.01
+        ],
+        "hidden_layer_sizes": [
+          [
+            64
+          ],
+          [
+            128,
+            64
+          ]
+        ],
+        "learning_rate_init": [
+          0.001,
+          0.003
+        ]
+      },
+      "nb": {
+        "alpha": [
+          0.01,
+          0.1,
+          1
+        ]
+      },
+      "svm": {
+        "C": [
+          0.1,
+          1,
+          10
+        ]
+      },
+      "tree": {
+        "max_depth": [
+          5,
+          15,
+          null
+        ],
+        "min_samples_leaf": [
+          1,
+          10
+        ]
+      }
+    },
+    "mlp": {
+      "activation": "relu",
+      "early_stopping": true,
+      "max_iter": 500,
+      "n_iter_no_change": 20,
+      "secondary_seed_checks": [
+        7,
+        142
+      ],
+      "seed_selection": "none; report seed spread, do not choose the best seed",
+      "solver": "adam",
+      "stopping_metric": "sklearn internal validation accuracy; no outer validation rows",
+      "tol": 0.0001,
+      "validation_fraction": 0.1
+    },
+    "previous_study": "a_q1_20261107_v1_study",
+    "purpose": "User-requested Q1 expansion; all search/refinement rules fixed before expanded held-out scores",
+    "refinement": {
+      "boost": "At stage-1 best, test max_iter=300, learning_rate/2, and both changes together",
+      "duplicates": "Skip identical configurations; retain every tried result",
+      "forest": "At stage-1 best, change n_estimators separately to 200 and 400",
+      "lr_nb_svm_lr_svd": "Multiply stage-1 best C/alpha by 1/3 and 3",
+      "mlp": "At stage-1 best, change alpha to alpha/10 and alpha*10; separately test hidden_layer_sizes=[128]",
+      "no_global_optimality_claim": true,
+      "rounds": 1,
+      "selection_basis": "mean three-fold training-only AUROC; exact ties choose first candidate",
+      "tree": "At stage-1 best, change leaf size to max(1, floor(leaf/2)) and 2*leaf; separately depth to 30/60 if None, else max(2,floor(depth/2)) and 2*depth"
+    },
+    "representations": {
+      "by_family": {
+        "boost": "dense",
+        "forest": "sparse",
+        "lr": "sparse",
+        "lr_svd": "scaled_dense",
+        "mlp": "scaled_dense",
+        "nb": "sparse",
+        "svm": "sparse",
+        "tree": "sparse"
+      },
+      "dense": "Training-only randomized TruncatedSVD, 128 components, n_iter=7, seed=42",
+      "scaled_dense": "Dense representation followed by training-only StandardScaler",
+      "sparse": "Identical word unigram/bigram TF-IDF as original Q1; max_features=60000"
+    },
+    "resources": {
+      "external_weights": false,
+      "forest_n_jobs": 1,
+      "gpu": false,
+      "threads": 1
+    },
+    "seeds": {
+      "bootstrap": 342,
+      "calibration": 242,
+      "inner_cv": 142,
+      "model": 42,
+      "svd": 42
+    },
+    "selection": {
+      "all_feature_steps_refit_per_fold": true,
+      "caveat": "The validation set was already inspected in v1; this extension is a development comparison, not an untouched final estimate",
+      "cv": "same 3 stratified shuffled training-only folds as original Q1, seed=142",
+      "family_choice": "highest fixed 2000-row validation AUROC; primary neural seed remains 42"
+    },
+    "uncertainty": "1000 stratified paired bootstraps, conditional and not selection-adjusted"
+  },
+  "provenance": {
+    "cpu_count": 14,
+    "dependencies": {
+      "joblib": "1.4.2",
+      "matplotlib": "3.9.2",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.5.1",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.5.0"
+    },
+    "git_commit": "17aba0e1f0c7b87fa597b4afb53e0cf8db61b2f9",
+    "git_dirty": true,
+    "git_status": "M .gitignore\n M README.md\n M docs/experiment_contract.md\n M docs/team_workflow.md\n M experiments/supervised/README.md\n M report/README.md\n M report/sections/q1.tex\n M results/README.md\n?? docs/lin_q1_handoff.md\n?? experiments/supervised/expanded_q1.py\n?? experiments/supervised/plot_q1.py\n?? experiments/supervised/predict.py\n?? experiments/supervised/q1_expanded_plan.json\n?? experiments/supervised/q1_plan.json\n?? experiments/supervised/requirements.txt\n?? experiments/supervised/run_q1.py\n?? experiments/supervised/test_q1.py\n?? experiments/supervised/verify_q1.py\n?? output/\n?? report/figures/q1_a_q1_20261107_v1_comparison.png\n?? report/figures/q1_a_q1_20261107_v1_cv.png\n?? report/q1_preview.tex\n?? results/supervised/a_q1_20261107_v1_candidate_verification.json\n?? results/supervised/a_q1_20261107_v1_lr/\n?? results/supervised/a_q1_20261107_v1_nb/\n?? results/supervised/a_q1_20261107_v1_study/\n?? results/supervised/a_q1_20261107_v1_svm/\n?? results/supervised/a_q1_20261107_v1_svm_full10000/\n?? results/supervised/a_q1_20261107_v1_verification.json\n?? results/supervised/a_q1_expanded_20261108_v2_study/\n?? submissions/a_q1_20261107_v1_svm_full10000.csv\n?? submissions/a_q1_20261107_v1_svm_full10000.metadata.json",
+    "machine": "arm64",
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "processor": "arm",
+    "python": "3.12.7",
+    "source_sha256": {
+      "experiments/supervised/expanded_q1.py": "89cdf9df1fa3f9dc309027c2dc74518fc737aa83edc16b0f217e540f73be9c2e",
+      "experiments/supervised/q1_expanded_plan.json": "9d3c6235e7429be2091bb4071622167ed48f0a325687c61e7fdb496ea56abdee",
+      "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+      "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+      "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+      "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    },
+    "started_at_utc": "2026-11-08T05:00:31.918243+00:00",
+    "thread_limit": 1,
+    "threadpools": [
+      {
+        "architecture": "armv8",
+        "filepath": "/opt/anaconda3/lib/libopenblasp-r0.3.21.dylib",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "pthreads",
+        "user_api": "blas",
+        "version": "0.3.21"
+      },
+      {
+        "filepath": "/opt/anaconda3/lib/libomp.dylib",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libomp",
+        "user_api": "openmp",
+        "version": null
+      }
+    ]
+  },
+  "representation": "dense",
+  "run_id": "a_q1_expanded_20261108_v2_boost",
+  "selected_parameters": {
+    "l2_regularization": 0,
+    "learning_rate": 0.1,
+    "max_iter": 300,
+    "max_leaf_nodes": 15
+  },
+  "split": {
+    "algorithm": "lexicographically sorted string IDs; Python Random(42); shuffle class 0 then class 1; first 1000/class for validation",
+    "counts": {
+      "train": 8000,
+      "validation": 2000
+    },
+    "duplicate_audit": "No exact duplicates after whitespace normalization; near-duplicates and source leakage not assessed",
+    "label_counts": {
+      "train": {
+        "0": 4000,
+        "1": 4000
+      },
+      "validation": {
+        "0": 1000,
+        "1": 1000
+      }
+    },
+    "seed": 42,
+    "source": "train.csv",
+    "source_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "split_sha256": {
+      "train": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+      "validation": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f"
+    },
+    "version": 1
+  },
+  "study_id": "a_q1_expanded_20261108_v2_study",
+  "train_ids_file": "../a_q1_expanded_20261108_v2_study/train_ids.csv",
+  "validation_ids_file": "../a_q1_expanded_20261108_v2_study/validation_ids.csv"
+}

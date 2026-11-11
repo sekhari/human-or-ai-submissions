@@ -1,0 +1,16 @@
+{
+  "checkpoint_sha256": "1d2f9aa5d90c60d5d52d3ef41427beb3689814c4279da5eea7d2c201ff4489a1",
+  "created_at_utc": "2026-11-10T03:01:59.996762+00:00",
+  "csv_sha256": "c721fb356ab72315bab6c8499b3630391f4955e9429f8e359bdbc3d5896e781b",
+  "full_refit": true,
+  "held_out_score": null,
+  "n_test": 3000,
+  "n_train": 10000,
+  "public_score": null,
+  "raw_whitespace_preserved": true,
+  "reload_probability_max_error": 0.0,
+  "run_id": "a_roberta_20261109_v1_raw_full10000",
+  "selection_basis": "Highest clean random/topic and canonical development AUROCs among evaluated candidates; formatting sensitivity remains a known tradeoff",
+  "source_study": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+  "uploaded_to_kaggle": false
+}

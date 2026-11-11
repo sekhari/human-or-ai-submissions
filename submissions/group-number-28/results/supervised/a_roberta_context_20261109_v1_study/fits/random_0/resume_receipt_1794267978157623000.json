@@ -1,0 +1,28 @@
+{
+  "checkpoint_sha256": "f8aa32e5ca62fa10ebe9aaadd187106959cc7ceef66bb20d6e766e3ba0ae064b",
+  "completed_epoch": 2,
+  "config_sha256": "6f249b965f217c1ad54f73801de4947f210a5fb3694c9c43977b8f78514f28c1",
+  "current_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+  "preserved_evidence_directory": "recovery_attempts/1794267973311956000",
+  "resume_at_utc": "2026-11-09T23:46:18.672654+00:00",
+  "source_amendment": {
+    "amendment": {
+      "allowed_change": "evaluation_cpu_transfer_cast_only",
+      "applies_to_fit_keys": [
+        "random_0"
+      ],
+      "created_at_utc": "2026-11-09T23:46:06.042154+00:00",
+      "id": "evaluation_cpu_transfer_001",
+      "new_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+      "no_held_quality_scores_observed_before_repair": true,
+      "no_new_optimizer_updates_needed_for_recovered_fit": true,
+      "old_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+      "preservation_receipt": "mechanical_recovery_001/preservation_receipt.json",
+      "reason": "MPS-to-CPU combined float64 conversion failed after completed epoch2. Separate CPU transfer and double cast; retain completed scientific training and add strict source-only recovery lineage and protected prior-memory handling. No data, model, recipe, seed, epoch or training-loop change."
+    },
+    "mechanical_amendments_sha256": "c8e450a99b721859b0b3ec80e7be4c5b4d97c4da56a60a0a77ebceb5e96d42d2",
+    "original_config_sha256": "6f249b965f217c1ad54f73801de4947f210a5fb3694c9c43977b8f78514f28c1",
+    "original_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+    "recovery_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2"
+  }
+}

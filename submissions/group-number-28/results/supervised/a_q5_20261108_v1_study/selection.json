@@ -1,0 +1,10 @@
+{
+  "all_four_predeclared_conditions_completed": true,
+  "new_full_data_candidate_generated": false,
+  "nominal_highest_validation_model": "wc120",
+  "primary_comparison": "wc120 minus w60",
+  "scope": "Q5 development evidence; team-wide final choice requires cost, uncertainty and Q3 evidence",
+  "test_or_leaderboard_used": false,
+  "validation_previously_inspected_in_q1": true,
+  "wall_seconds_this_invocation": 146.0477148341015
+}

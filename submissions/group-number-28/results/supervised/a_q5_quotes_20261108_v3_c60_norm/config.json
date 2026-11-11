@@ -1,0 +1,232 @@
+{
+  "C": 1,
+  "estimator_parameters": {
+    "cv": "StratifiedKFold(n_splits=3, random_state=242, shuffle=True)",
+    "ensemble": false,
+    "estimator": "Pipeline(steps=[('quote_normalize', QuoteNormalizer()),\n                ('features',\n                 TfidfVectorizer(analyzer='char', max_features=60000, min_df=2,\n                                 ngram_range=(3, 5), sublinear_tf=True)),\n                ('classifier',\n                 LinearSVC(C=1, max_iter=10000, random_state=42, tol=1e-05))])",
+    "estimator__classifier": "LinearSVC(C=1, max_iter=10000, random_state=42, tol=1e-05)",
+    "estimator__classifier__C": 1,
+    "estimator__classifier__class_weight": null,
+    "estimator__classifier__dual": "auto",
+    "estimator__classifier__fit_intercept": true,
+    "estimator__classifier__intercept_scaling": 1,
+    "estimator__classifier__loss": "squared_hinge",
+    "estimator__classifier__max_iter": 10000,
+    "estimator__classifier__multi_class": "ovr",
+    "estimator__classifier__penalty": "l2",
+    "estimator__classifier__random_state": 42,
+    "estimator__classifier__tol": 1e-05,
+    "estimator__classifier__verbose": 0,
+    "estimator__features": "TfidfVectorizer(analyzer='char', max_features=60000, min_df=2,\n                ngram_range=(3, 5), sublinear_tf=True)",
+    "estimator__features__analyzer": "char",
+    "estimator__features__binary": false,
+    "estimator__features__decode_error": "strict",
+    "estimator__features__dtype": "<class 'numpy.float64'>",
+    "estimator__features__encoding": "utf-8",
+    "estimator__features__input": "content",
+    "estimator__features__lowercase": true,
+    "estimator__features__max_df": 1.0,
+    "estimator__features__max_features": 60000,
+    "estimator__features__min_df": 2,
+    "estimator__features__ngram_range": [
+      3,
+      5
+    ],
+    "estimator__features__norm": "l2",
+    "estimator__features__preprocessor": null,
+    "estimator__features__smooth_idf": true,
+    "estimator__features__stop_words": null,
+    "estimator__features__strip_accents": null,
+    "estimator__features__sublinear_tf": true,
+    "estimator__features__token_pattern": "(?u)\\b\\w\\w+\\b",
+    "estimator__features__tokenizer": null,
+    "estimator__features__use_idf": true,
+    "estimator__features__vocabulary": null,
+    "estimator__memory": null,
+    "estimator__quote_normalize": "QuoteNormalizer()",
+    "estimator__steps": "[('quote_normalize', QuoteNormalizer()), ('features', TfidfVectorizer(analyzer='char', max_features=60000, min_df=2,\n                ngram_range=(3, 5), sublinear_tf=True)), ('classifier', LinearSVC(C=1, max_iter=10000, random_state=42, tol=1e-05))]",
+    "estimator__verbose": false,
+    "method": "sigmoid",
+    "n_jobs": 1
+  },
+  "feature_plan": {
+    "baseline_reference": "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv",
+    "char_representation": {
+      "analyzer": "char",
+      "dtype": "float64",
+      "lowercase": true,
+      "max_df": 1.0,
+      "max_features": 60000,
+      "min_df": 2,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "norm": "l2",
+      "smooth_idf": true,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "use_idf": true
+    },
+    "classifier": {
+      "C": 1,
+      "dual": "auto",
+      "max_iter": 10000,
+      "tol": 1e-05
+    },
+    "decision_rule": "Use the primary paired difference, interval, training-fold consistency and cost together. An interval crossing zero is inconclusive, not evidence of equivalence. Negative results complete Q5.",
+    "evaluation": {
+      "baseline_tolerance": 1e-10,
+      "bootstrap_method": "class-stratified paired percentile bootstrap, conditional on fitted models and split",
+      "bootstrap_replicates": 1000,
+      "calibration": "sigmoid, 3 stratified shuffled training-only folds, ensemble=False; full feature pipeline inside calibrator",
+      "error_threshold": 0.5,
+      "inner_folds": 3,
+      "inner_metric": "raw-margin AUROC, diagnostic only; no tuning",
+      "length_bins": "training-partition word-count tertiles; descriptive only",
+      "primary_comparison": [
+        "wc120",
+        "w60"
+      ],
+      "secondary_comparisons": [
+        "c60 vs w60",
+        "w120 vs w60",
+        "wc120 vs w120"
+      ],
+      "train_rows": 8000,
+      "validation_rows": 2000
+    },
+    "excluded": [
+      "test fitting",
+      "unlabeled learning",
+      "validation fitting",
+      "Kaggle feedback",
+      "adaptive search",
+      "full-10000 final training",
+      "automatic upload"
+    ],
+    "hypothesis": "Character n-grams may contribute complementary local writing-form information; this mechanism is unverified.",
+    "limitations": [
+      "The canonical validation set already informed Q1 development; this is a development comparison, not an untouched final test.",
+      "Intervals omit training variation and selection adjustment.",
+      "W120 is a feature-budget reference, not a strict isolation of effective model capacity.",
+      "Fixed C and normalization permit a controlled representation comparison, not a claim that all geometry or regularization effects are identical.",
+      "Character features may encode source-specific shortcuts; hidden-domain robustness remains unverified."
+    ],
+    "models": {
+      "c60": {
+        "char_max_features": 60000,
+        "name": "Character 60k",
+        "representation": "char(3,5)"
+      },
+      "w120": {
+        "name": "Word 120k (budget reference)",
+        "representation": "word(1,2)",
+        "word_max_features": 120000
+      },
+      "w60": {
+        "name": "Word 60k (Q1 baseline)",
+        "representation": "word(1,2)",
+        "word_max_features": 60000
+      },
+      "wc120": {
+        "char_max_features": 60000,
+        "name": "Word + character 120k",
+        "representation": "word(1,2)+char(3,5), equal blocks, global L2",
+        "word_max_features": 60000
+      }
+    },
+    "purpose": "Frozen Q5 representation ablation, authorized after discussion and before any Q5 scores",
+    "question": "Does adding character TF-IDF improve the fixed Q1 word-TF-IDF SVM?",
+    "resources": {
+      "external_weights": false,
+      "gpu": false,
+      "threads": 1
+    },
+    "seeds": {
+      "bootstrap": 342,
+      "calibration": 242,
+      "inner_cv": 142,
+      "model": 42
+    },
+    "stopping_rule": "Complete exactly these four fixed configurations. Do not add ranges, weights, classifiers, or C searches after seeing results. Fault recovery may resume identical unfinished steps.",
+    "word_representation": {
+      "analyzer": "word",
+      "dtype": "float64",
+      "lowercase": true,
+      "max_df": 1.0,
+      "max_features": 60000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "smooth_idf": true,
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b",
+      "use_idf": true
+    }
+  },
+  "held_out_evaluation": "fixed development validation",
+  "n_train": 8000,
+  "normalize_quotes": true,
+  "provenance": {
+    "dependencies": {
+      "joblib": "1.4.2",
+      "matplotlib": "3.9.2",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.5.1",
+      "scipy": "1.13.1",
+      "threadpoolctl": "3.5.0"
+    },
+    "git_commit": "38a5c0b0d87c90e805c5ce9626e940ddec32ddb6",
+    "git_dirty": true,
+    "git_status": "M README.md\n M docs/development_history.md\n M docs/lin_q1_handoff.md\n M experiments/supervised/README.md\n M results/README.md\n M submissions/README.md\n M submissions/leaderboard_log.csv\n?? docs/robustness_research_plan.md\n?? experiments/supervised/export_q5.py\n?? experiments/supervised/plot_q5_quotes.py\n?? experiments/supervised/plot_q5_tune.py\n?? experiments/supervised/q5_quote_plan.json\n?? experiments/supervised/q5_quotes.py\n?? experiments/supervised/q5_quotes_job.py\n?? experiments/supervised/q5_sensitivity.py\n?? experiments/supervised/q5_tune.py\n?? experiments/supervised/q5_tune_job.py\n?? experiments/supervised/q5_tuning_plan.json\n?? experiments/supervised/quote_normalizer.py\n?? experiments/supervised/test_q5_quotes.py\n?? experiments/supervised/test_q5_sensitivity.py\n?? experiments/supervised/test_q5_tune.py\n?? experiments/supervised/verify_q5_quotes.py\n?? experiments/supervised/verify_q5_tune.py\n?? report/figures/q5_a_q5_tuned_20261108_v2_tuning.png\n?? results/supervised/a_q5_20261108_v1_wc120_full10000/\n?? results/supervised/a_q5_tuned_20261108_v2_c60_c1/\n?? results/supervised/a_q5_tuned_20261108_v2_delivery_checks.json\n?? results/supervised/a_q5_tuned_20261108_v2_study/\n?? results/supervised/a_q5_tuned_20261108_v2_verification.json\n?? results/supervised/a_q5_tuned_20261108_v2_wc120_c1/\n?? submissions/a_q5_20261108_v1_wc120_full10000.csv\n?? submissions/a_q5_20261108_v1_wc120_full10000.metadata.json",
+    "pid_at_launch": 91513,
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "python": "3.12.7",
+    "source_sha256": {
+      "experiments/supervised/q1_plan.json": "d0bf789e8d206f9477d18f0f0e52381358ab59c975fe1cc3b3de2abe39075f5d",
+      "experiments/supervised/q5_plan.json": "631833499cdbe658dbc96c693a96e76c74bfd27dca897818d5113c95af5af71d",
+      "experiments/supervised/q5_quote_plan.json": "1aea5e03cff084d12a662b7a56e6f14e6c82dd9c3124fb784b3ba60f6a04a941",
+      "experiments/supervised/q5_quotes.py": "ee7c7d8035765fa847d5a45ca99eeead5ba869931b35b79a9811fd20d6cb8a47",
+      "experiments/supervised/q5_quotes_job.py": "b1bfe344a5531eebafb39b5dbda2d64cd21add26b1a0232fe4a682fac6ad5771",
+      "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808",
+      "experiments/supervised/quote_normalizer.py": "5ccac67b3161928441b9a1cf8743e442a96a29d46649ebf00e04836c046175e3",
+      "experiments/supervised/requirements.txt": "696f74110d174173b9c90cff4dcb94740a199bc8017255be6db1a68d6c0060b0",
+      "experiments/supervised/run_q1.py": "fd6f63fe60acd5c21652d585dccd09e255d15f8db132637a3ebf8fe9b7c2bfeb",
+      "experiments/supervised/run_q5.py": "9a54840055c01b8156fe9f1acfa9257cd018449bc2e38d880cbbc395d2452a2b",
+      "human_ai/check_predictions.py": "f835e10b17d62d27735eb8c4f94482914d598a26dffdcb24cb5e813a82035afe",
+      "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d"
+    },
+    "started_at_utc": "2026-11-09T01:54:49.183574+00:00",
+    "thread_limit": 1,
+    "threadpools": [
+      {
+        "architecture": "armv8",
+        "filepath": "/opt/anaconda3/lib/libopenblasp-r0.3.21.dylib",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "pthreads",
+        "user_api": "blas",
+        "version": "0.3.21"
+      },
+      {
+        "filepath": "/opt/anaconda3/lib/libomp.dylib",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libomp",
+        "user_api": "openmp",
+        "version": null
+      }
+    ]
+  },
+  "representation": "c60",
+  "run_id": "a_q5_quotes_20261108_v3_c60_norm",
+  "study_id": "a_q5_quotes_20261108_v3_study",
+  "training_order": "canonical train IDs"
+}

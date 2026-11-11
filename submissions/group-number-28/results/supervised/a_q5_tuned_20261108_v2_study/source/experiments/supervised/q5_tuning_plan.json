@@ -1,0 +1,36 @@
+{
+  "purpose": "First bounded follow-up after the public leaderboard feedback; six fixed SVM configurations",
+  "representations": ["c60", "wc120"],
+  "C_candidates": [0.1, 1, 10],
+  "feature_plan": "experiments/supervised/q5_plan.json",
+  "reference_study": "a_q5_20261108_v1_study",
+  "baseline_run_id": "a_q5_20261108_v1_wc120",
+  "reported_baseline_public_auroc": 0.87399,
+  "seeds": {"model": 42, "inner_cv": 142, "calibration": 242, "bootstrap": 342},
+  "inner_cv": {"folds": 3, "metric": "raw-margin AUROC", "feature_refit": "independent within each training fold; cached only across C values in that fold"},
+  "within_representation_selection": "highest mean training-only CV AUROC; exact ties prefer smaller fold SD, then C=1, C=0.1, C=10",
+  "finalist_evaluation": "one selected C per representation; fit complete calibrated pipelines on 8000 rows, then evaluate both on the fixed 2000 development rows",
+  "between_finalists_selection": "highest validation AUROC among export-eligible finalists, else highest validation AUROC for reporting only; exact ties prefer higher CV mean, lower CV SD, then c60",
+  "evaluation": {"error_threshold": 0.5, "bootstrap_replicates": 1000, "length_cutpoints": "training-only word-count tertiles"},
+  "sensitivity_conditions": ["original", "quote_typography", "dash_typography"],
+  "quote_rule": "U+2018/2019/201A/201B -> ASCII apostrophe; U+201C/201D/201E/201F -> ASCII double quote",
+  "dash_rule": "U+2013 and U+2014 -> ASCII hyphen",
+  "export_rule": {
+    "must_differ_from_current_wc120_C1": true,
+    "cv_mean_must_exceed_baseline": true,
+    "paired_validation_delta_95_lower_bound_must_be_positive": true,
+    "maximum_length_bin_auroc_regression": 0.01,
+    "maximum_extra_format_auroc_loss_vs_baseline": 0.005,
+    "maximum_new_candidates": 1,
+    "guardrail_note": "The subgroup/format margins are predeclared practical safeguards, not statistical equivalence thresholds. A positive conditional interval is not proof of hidden-test improvement."
+  },
+  "resources": {"threads": 1, "gpu": false, "external_weights": false},
+  "stopping_rule": "Complete six CV configurations, evaluate exactly two finalists, verify artifacts, and export at most one eligible full-label candidate. Do not expand the grid at its boundaries or automatically start another method family.",
+  "limitations": [
+    "This follow-up was motivated by two public scores; it is a new development study, not a retroactive change to Q5.",
+    "The fixed validation set has already been inspected; paired intervals omit training variation and selection adjustment.",
+    "Typography sensitivity is not an established simulation of hidden domain/generator shift.",
+    "No actual Kaggle upload or private-score claim is authorized by this runner."
+  ],
+  "excluded": ["split replacement", "test fitting", "unlabeled learning", "new feature ranges", "feature-weight search", "automatic Kaggle upload"]
+}

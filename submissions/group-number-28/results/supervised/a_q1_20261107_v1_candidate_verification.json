@@ -1,0 +1,9 @@
+{
+  "all_checks_passed": true,
+  "csv_sha256": "0af001abe49b88a4184b5a3318ca6915832747ff858bc9d397de8b891aab6e1a",
+  "held_out_metric_for_full_refit": null,
+  "max_saved_model_probability_error": 0.0,
+  "n_test_predictions": 3000,
+  "n_unique_training_ids": 10000,
+  "note": "Original 8000-row checkpoints remain separate; no Kaggle upload"
+}

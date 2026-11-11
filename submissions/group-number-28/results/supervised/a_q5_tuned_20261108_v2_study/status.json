@@ -1,0 +1,18 @@
+{
+  "completed_at_utc": "2026-11-08T22:07:02.445517+00:00",
+  "completed_cv_fits": 18,
+  "completed_finalists": [
+    "c60",
+    "wc120"
+  ],
+  "exported_candidate": null,
+  "finalists": [
+    "c60_c1",
+    "wc120_c1"
+  ],
+  "pid": 84634,
+  "stage": "complete",
+  "started_at_utc": "2026-11-08T22:04:26.466890+00:00",
+  "updated_at_utc": "2026-11-08T22:07:02.445610+00:00",
+  "wall_seconds": 155.97817300027236
+}

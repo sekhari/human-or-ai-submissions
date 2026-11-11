@@ -1,0 +1,39 @@
+{
+  "C": 1,
+  "candidate_category": "exploratory_robustness_tradeoff",
+  "created_at_utc": "2026-11-09T02:00:35.975487+00:00",
+  "csv_sha256": "67c97db099987366538d5b3bc35213dcdb3c9a0ed13ab5d115ed161b9b9849cb",
+  "eligibility": {
+    "checks": {
+      "clean_cv_within_budget_vs_incumbent": true,
+      "clean_point_within_budget_vs_incumbent": true,
+      "dash_guard_passes_vs_incumbent": true,
+      "length_guard_passes_vs_incumbent": true,
+      "quote_cv_mean_improves_own_raw": true,
+      "quote_cv_positive_fold_count_passes": true,
+      "quote_validation_interval_lower_vs_incumbent_positive": true
+    },
+    "clean_cv_delta_vs_incumbent": -0.0023044426976358556,
+    "clean_delta_vs_incumbent": -0.00133099999999986,
+    "eligible": true,
+    "extra_dash_loss_vs_incumbent": 7.00000000020129e-06,
+    "maximum_length_bin_regression_vs_incumbent": 0.0034997554965338074,
+    "quote_cv_fold_gains": [
+      0.00046282185238955,
+      0.0018158587622918443,
+      0.0002588794235319769
+    ]
+  },
+  "full_refit": true,
+  "full_refit_held_out_evaluation": null,
+  "model_reload_prediction_max_error": 0.0,
+  "model_run_id": "a_q5_quotes_20261108_v3_wc120_norm_full10000",
+  "model_sha256": "03899a696efe1800bec296004081d9309fff690fe9756b4e62286f01a8dcbd58",
+  "n_test": 3000,
+  "n_train": 10000,
+  "quote_normalization": true,
+  "representation": "wc120",
+  "source_study": "a_q5_quotes_20261108_v3_study",
+  "test_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "uploaded_to_kaggle": false
+}

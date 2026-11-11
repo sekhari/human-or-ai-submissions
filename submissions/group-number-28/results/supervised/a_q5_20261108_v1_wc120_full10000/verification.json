@@ -1,0 +1,17 @@
+{
+  "all_checks_passed": true,
+  "canonical_all_label_ids_used_once": true,
+  "csv_sha256": "621750cf99ad970b3d3ee01ad26ed2bfe46ea4cee0a37a9f9676f0748464c4c2",
+  "feature_counts": {
+    "char": 60000,
+    "total": 120000,
+    "word": 60000
+  },
+  "model_reload_max_probability_error": 0.0,
+  "n_test": 3000,
+  "n_train": 10000,
+  "source_8000_artifacts_unchanged": true,
+  "test_ids_match_original_order": true,
+  "test_used_for_fitting": false,
+  "uploaded_to_kaggle": false
+}

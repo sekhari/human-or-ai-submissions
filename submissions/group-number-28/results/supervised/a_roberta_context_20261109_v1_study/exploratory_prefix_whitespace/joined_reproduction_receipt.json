@@ -1,0 +1,7 @@
+{
+  "maximum_logit_margin_error": 0.0,
+  "maximum_probability_error": 0.0,
+  "n": 1627,
+  "passed": true,
+  "tolerance": 1e-06
+}

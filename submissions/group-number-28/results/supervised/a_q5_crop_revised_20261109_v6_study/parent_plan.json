@@ -1,0 +1,307 @@
+{
+  "arms": {
+    "baseline": {
+      "crop_weight": 0.0
+    },
+    "crop_eligibility_min_whitespace_words": 150,
+    "crop_join": "One ASCII space between text.split() tokens",
+    "crop_position": "prefix",
+    "crop_words": 100,
+    "not_searched": [
+      "crop weight",
+      "crop length",
+      "crop position",
+      "C",
+      "representation",
+      "seed",
+      "ensemble weight"
+    ],
+    "single_changed_factor": "Allocation of a fixed original-ID sample weight between original text and its prefix crop.",
+    "weak_crop": {
+      "crop_weight": 0.1
+    },
+    "weights": "Eligible original 0.9 plus its crop 0.1; ineligible original 1.0. Each original ID has total weight exactly 1."
+  },
+  "calibrated_development_gate": {
+    "baseline_max_probability_reproduction_error": 1e-10,
+    "calibration": {
+      "ensemble": false,
+      "method": "sigmoid",
+      "n_jobs": 1,
+      "n_splits": 3,
+      "random_state": 242,
+      "shuffle": true
+    },
+    "clean_length_subgroups": {
+      "boundaries": "Whitespace-word-count tertiles learned on original 8000 fitting texts; digitize right=True; merge no bins after scoring.",
+      "minimum_any_bin_delta": -0.01,
+      "minimum_n_per_class_per_bin": 30
+    },
+    "clean_minimum_paired_95_interval_lower": -0.003,
+    "clean_minimum_point_delta": -0.003,
+    "implementation": "Calibrator receives original rows only. Base estimator.fit fits features on its current fitting originals, then creates weighted crops internally. Never augment before splitting calibration originals.",
+    "on_failure_or_insufficient_evidence": "Keep WC120. No export, new crop weights, ensembling or retrospective changes to gates.",
+    "other_conditions_minimum_each_point_delta": -0.003,
+    "prefix_minimum_point_delta": 0.005,
+    "prefix_paired_95_interval_lower_must_be_positive": true,
+    "run_only_after": "Valid topic grouping and every random/topic/sealed-condition screening gate passes.",
+    "secondary_reports": [
+      "log loss",
+      "Brier score",
+      "score rank correlation",
+      "AUROC per length bin",
+      "fit seconds",
+      "warnings",
+      "feature counts",
+      "original-ID sample weights"
+    ],
+    "training_original_n": 8000
+  },
+  "data_boundaries": {
+    "canonical_split_changes_allowed": false,
+    "development_fitting_n": 8000,
+    "development_fitting_original_ids": "data/splits/train_ids.csv",
+    "grouping_text_scope": "Only the 8000 original fitting documents; grouping representation is split construction only and must never become predictive features.",
+    "reused_validation_n": 2000,
+    "reused_validation_original_ids": "data/splits/validation_ids.csv",
+    "test_access_before_export_eligibility": false,
+    "unlabeled_learning_included": false
+  },
+  "evaluation_conditions": {
+    "clean": "Original texts, all held IDs.",
+    "digit_runs_to_zero": "Python Unicode re.sub(r'\\d+', '0', text), all held IDs.",
+    "middle_100": "100 whitespace words beginning at floor((n_words-100)/2), same IDs as prefix.",
+    "minimum_n_per_class_per_condition_fold": 50,
+    "missing_condition_policy": "Record insufficient evidence or not evaluated due to declared stopping; never count missing/undefined AUC as passing.",
+    "paired_unit": "Original document ID, including all variants and both model arms.",
+    "prefix_100": "First 100 whitespace words, original n_words >=150 only.",
+    "quote_and_dash": "Existing q5_sensitivity quote_typography mapping followed by dash_typography, all held IDs.",
+    "reveal_new_conditions_when": "After both random and topic primary gates pass; score cached fold models without additional fitting.",
+    "sealed_new_conditions": [
+      "suffix_100",
+      "middle_100"
+    ],
+    "suffix_100": "Last 100 whitespace words, same original n_words >=150 IDs as prefix.",
+    "whitespace_only": "One ASCII space joining text.split(), all held IDs; no tokens removed."
+  },
+  "execution": {
+    "checkpointing": "Immutable run directory; atomic per-stage/per-fold receipts and hashes; resume only identical incomplete steps.",
+    "environment": "Pinned experiments/supervised/requirements.txt; historical interpreter /opt/anaconda3/bin/python",
+    "external_weights_or_label_apis": false,
+    "fit_warning_policy": "ConvergenceWarning invalidates the fit; no silent parameter increase or favorable-score-only partial result.",
+    "gpu": false,
+    "new_dependencies": false,
+    "parallel_fits": false,
+    "threads": 1,
+    "wall_time_estimate_minutes_not_measured": [
+      15,
+      45
+    ]
+  },
+  "expected_reference_sha256": {
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad",
+    "data/splits/train_ids.csv": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+    "data/splits/validation_ids.csv": "32d4af7b92719eb1c47f001c0c6287db5ddcb0e2a8d3ecf737ed47577eba8b1f",
+    "experiments/supervised/q5_plan.json": "631833499cdbe658dbc96c693a96e76c74bfd27dca897818d5113c95af5af71d",
+    "results/supervised/a_public_gap_20261109_v1_crop_pilot/plan.json": "36b472f854115394c3de6920d25ee1525a7dc695e4fd028cead015ffd289a0ad",
+    "results/supervised/a_q5_20261108_v1_wc120/model.joblib": "b824bb4181333c20c46a3101455afc7d07c59980f72a198efa8d97e9cad5bfd8",
+    "submissions/a_q5_20261108_v1_wc120_full10000.csv": "621750cf99ad970b3d3ee01ad26ed2bfe46ea4cee0a37a9f9676f0748464c4c2"
+  },
+  "export": {
+    "automatic_kaggle_upload": false,
+    "category": "exploratory_robustness_tradeoff",
+    "checks": [
+      "finite probabilities in [0,1]",
+      "exact unique test ID coverage",
+      "class-1 orientation",
+      "saved-model reload agreement",
+      "CSV/model/source/data hashes",
+      "independent artifact verification"
+    ],
+    "external_check": "Coordinate current team slots before any separately authorized upload. Do not infer quota/reset times from the old Sunday workflow. Record actual score without retuning this protocol.",
+    "fit_original_n": 10000,
+    "heldout_score_for_10000_refit": null,
+    "maximum_new_candidates": 1,
+    "same_fixed_recipe": true,
+    "schema": "id,label; label is P(AI=1), exact original 3000 test IDs"
+  },
+  "hypothesis_status": "Adaptive hypothesis motivated by prior development diagnostics; prospective rules for the next run, not a pristine confirmatory study.",
+  "incumbent": {
+    "retain_until_external_selection": true,
+    "submission": "submissions/a_q5_20261108_v1_wc120_full10000.csv",
+    "user_reported_public_auroc": 0.87399
+  },
+  "out_of_scope_this_round": [
+    "training execution while only planning was requested",
+    "automatic upload",
+    "weight/C/seed sweeps",
+    "richness changes",
+    "quote training changes",
+    "NB weighting",
+    "pseudo-labeling",
+    "pretrained encoders",
+    "ensemble search",
+    "canonical split replacement"
+  ],
+  "planned_code_not_yet_implemented": [
+    "experiments/supervised/crop_model.py",
+    "experiments/supervised/run_q5_crop.py",
+    "experiments/supervised/verify_q5_crop.py",
+    "experiments/supervised/test_q5_crop.py"
+  ],
+  "predictive_representation": {
+    "fit_scope": "Original documents in the current fitting boundary only; no crop text enters vocabulary or IDF fitting.",
+    "forbidden_cv_shortcut": "Do not load the saved all-8000-row transformer for any cross-validation fold.",
+    "model_key": "wc120",
+    "parameters_from_reference_plan": [
+      "word_representation",
+      "char_representation",
+      "models.wc120",
+      "classifier"
+    ],
+    "raw_cv_sharing": "Fit one representation per fitting fold; use identical transformed originals/crops for both classifier arms."
+  },
+  "protocol_version": 1,
+  "purpose": "Evaluate one fixed weak crop intervention under matched random and topic-proxy splits before considering one exploratory candidate.",
+  "reference_pilot": "results/supervised/a_public_gap_20261109_v1_crop_pilot/plan.json",
+  "reference_plan": "experiments/supervised/q5_plan.json",
+  "reference_source_model": "results/supervised/a_q5_20261108_v1_wc120/model.joblib",
+  "required_checks_before_real_fit": [
+    "synthetic baseline wrapper/direct-pipeline equivalence; full real-data reproduction occurs only in stage 3",
+    "per-original-ID weight conservation",
+    "no held-original ID or variant enters feature fitting",
+    "calibration originals and their variants stay within fitting boundaries",
+    "matched class/total fold counts and topic disjointness",
+    "deterministic paired condition IDs and undefined-AUC handling"
+  ],
+  "screening_gates": {
+    "difference_direction": "weak_crop minus baseline",
+    "failure_action": "Finish the already started stage and save all its fold results; do not start later stages, alter hyperparameters or export. A mechanical failure may resume the identical unfinished protocol.",
+    "random": {
+      "clean_minimum_any_fold_delta": -0.006,
+      "clean_minimum_mean_delta": -0.003,
+      "prefix_minimum_mean_delta": 0.005,
+      "prefix_minimum_positive_folds": 3,
+      "quote_digit_whitespace_minimum_any_fold_delta": -0.006,
+      "quote_digit_whitespace_minimum_each_mean_delta": -0.003
+    },
+    "sealed_conditions_after_primary_pass": {
+      "claim": "Passing a non-regression floor does not establish improvement on those conditions.",
+      "suffix_middle_minimum_any_fold_delta": -0.006,
+      "suffix_middle_minimum_each_mean_delta_in_each_scheme": -0.003
+    },
+    "topic": {
+      "clean_minimum_any_fold_delta": -0.006,
+      "clean_minimum_mean_delta": -0.003,
+      "prefix_minimum_any_fold_delta": -0.003,
+      "prefix_minimum_mean_delta": 0.005,
+      "prefix_minimum_positive_folds": 2,
+      "quote_digit_whitespace_minimum_any_fold_delta": -0.006,
+      "quote_digit_whitespace_minimum_each_mean_delta": -0.003
+    }
+  },
+  "seeds": {
+    "calibration": 242,
+    "classifier": 42,
+    "fallback_random_folds": 546,
+    "matched_random_folds": 545,
+    "random_bootstrap": 548,
+    "topic_bootstrap": 549,
+    "topic_folds": 544,
+    "topic_kmeans": 543,
+    "topic_review_sampling": 547,
+    "topic_svd": 542,
+    "validation_bootstrap": 550
+  },
+  "stages_and_svc_fit_budget": {
+    "accounting": "The matched random folds are the primary random CV; do not add a redundant separate random CV. Topic TF-IDF/SVD/KMeans and sigmoid optimization are outside the SVC count. Stress scoring adds no fits.",
+    "fit_budget_scope": "Competition-data SVC fits only; no additional real-data baseline fit is allowed outside these stages. Full baseline reproduction is part of the budgeted stage 3.",
+    "maximum_additional_synthetic_test_svc_fits": 8,
+    "maximum_binary_sigmoid_calibrators": 3,
+    "maximum_predictive_representation_fits": 18,
+    "maximum_svc_fits": 24,
+    "stage_0_group_and_freeze": 0,
+    "stage_1_matched_random_three_folds_two_arms": 6,
+    "stage_2_topic_three_folds_two_arms": 6,
+    "stage_3_calibrated_8000_two_arms_three_cv_plus_refit_each": 8,
+    "stage_4_eligible_10000_single_arm_three_cv_plus_refit": 4,
+    "synthetic_test_maximum_original_documents_per_fit": 30
+  },
+  "statistics": {
+    "bootstrap_repetitions": 1000,
+    "interval_limitations": [
+      "Fixed fitted models and splits",
+      "No training-variation or adaptive-selection correction",
+      "Overlapping training folds are not independent replications",
+      "Suffix/middle variants are not independent datasets",
+      "Multiple conditions are not independent tests"
+    ],
+    "invalid_replicate_policy_all_schemes": "Skip single-class/undefined replicates, report valid counts, never redraw to obtain a desired number of valid samples. An interval is unavailable below 90 percent valid replicates; a gate requiring that interval becomes insufficient evidence. Descriptive-only intervals do not themselves determine promotion.",
+    "minimum_valid_bootstrap_fraction_all_schemes": 0.9,
+    "minimum_valid_topic_bootstrap_fraction": 0.9,
+    "pooled_raw_margin_auroc_primary_allowed": false,
+    "primary_cv_summary": "Equal-weight mean of the three within-fold arm AUROC differences, with all fold AUROCs/differences and ranges.",
+    "random_bootstrap": "Within each held fold, class-stratified paired original-ID resampling; reuse each draw across arms and conditions; recompute macro fold difference. Eligibility subsets use the sampled eligible IDs.",
+    "reused_validation_bootstrap": "Class-stratified paired original-ID resampling, reuse across arms and conditions; 95 percent percentile intervals for clean and prefix differences.",
+    "topic_bootstrap": "Resample whole topic clusters with replacement separately within each fixed held fold, preserving all document variants and arms; report valid replicate count, discard single-class replicates, do not redraw until 1000 valid. Descriptive conditional sensitivity only with 12 groups."
+  },
+  "status": "planned_not_executed",
+  "suggested_run_prefix": "a_q5_crop_20261109_v5",
+  "topic_proxy": {
+    "fold_quality_gates": {
+      "maximum_held_ai_fraction": 0.65,
+      "maximum_held_n": 3334,
+      "minimum_held_ai_fraction": 0.35,
+      "minimum_held_n": 2000,
+      "minimum_held_n_per_class": 500
+    },
+    "folds": {
+      "n_splits": 3,
+      "random_state": 544,
+      "shuffle": true,
+      "type": "StratifiedGroupKFold"
+    },
+    "interpretation": "Lexical-topic proxy only, not true domain/source/generator separation. Quality thresholds are conservative engineering rules.",
+    "kmeans": {
+      "algorithm": "lloyd",
+      "max_iter": 300,
+      "n_clusters": 12,
+      "n_init": 10,
+      "random_state": 543,
+      "tol": 0.0001
+    },
+    "matched_random_control": "Permute original IDs independently within each true class using seed 545, then allocate consecutive IDs to fold 0/1/2 using the exact class counts of those topic folds. Match both training and held-out class/total counts; each original ID is held once per scheme.",
+    "on_invalid_grouping": "No retries or group deletion. Run only diagnostic StratifiedKFold(3, shuffle=True, random_state=546); stop promotion even if that diagnostic passes.",
+    "post_svd_normalization": "l2",
+    "quality_gates": {
+      "maximum_cluster_dominant_class_fraction_exclusive": 0.9,
+      "maximum_cluster_n": 2400,
+      "maximum_style_or_format_clusters": 1,
+      "maximum_topic_label_nmi_inclusive": 0.1,
+      "minimum_cluster_n": 100,
+      "minimum_content_topic_clusters": 9,
+      "nmi_average_method": "arithmetic",
+      "review": "Before labels/scores are revealed to reviewers, inspect 12 top unigram terms and 5 seeded local documents per cluster. Record IDs, topic description and content/mixed/style-format decision, not passages. Two independent reviews; disagreement counts as mixed."
+    },
+    "svd": {
+      "n_components": 64,
+      "n_iter": 7,
+      "random_state": 542
+    },
+    "vectorizer": {
+      "analyzer": "word",
+      "lowercase": true,
+      "max_df": 0.6,
+      "max_features": 20000,
+      "min_df": 10,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "norm": "l2",
+      "stop_words": "english",
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b[^\\W\\d_]{3,}\\b"
+    }
+  }
+}

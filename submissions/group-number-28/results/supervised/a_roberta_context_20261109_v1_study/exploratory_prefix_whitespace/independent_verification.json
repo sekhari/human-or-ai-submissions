@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "passed_checks": 18930,
+  "errors": [],
+  "new_model_fits": 0,
+  "model_imports": 0,
+  "n": 1627,
+  "original_clean_auc_same_eligible_ids": 0.9993271605873706,
+  "joined_auc": 0.7824561669369138,
+  "raw_auc": 0.9909484914152359,
+  "independent_paired_interval": [
+    0.18415982209156068,
+    0.23363018836472738
+  ],
+  "verifier_source_sha256": "93db0a3a3d0ad1f238fd31a2e9898884a5dd1419c2d58084f40920025305b942",
+  "base_independent_auc_source_sha256": "05fb93e8b453f0ed9af43d5952194597c2e099d13df02563551a4bb743a638d8",
+  "scope": "Post-run arithmetic, IDs, equal-word intervention, replay and evidence hashes; no fresh inference or fit"
+}

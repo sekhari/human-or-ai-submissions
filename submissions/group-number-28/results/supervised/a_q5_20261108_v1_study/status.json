@@ -1,0 +1,16 @@
+{
+  "active_model": "w120",
+  "completed_at_utc": "2026-11-08T07:32:20.922537+00:00",
+  "completed_cv_fits": 12,
+  "completed_models": [
+    "w60",
+    "c60",
+    "wc120",
+    "w120"
+  ],
+  "pid": 69703,
+  "stage": "complete",
+  "started_at_utc": "2026-11-08T07:29:54.874652+00:00",
+  "updated_at_utc": "2026-11-08T07:32:20.922599+00:00",
+  "wall_seconds_this_invocation": 146.04785237507895
+}

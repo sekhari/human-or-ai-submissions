@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "at_utc": "2026-11-10T02:07:57.624813+00:00",
+  "canonical_validation_checker": {
+    "schema": "id,label,p_ai",
+    "n_unique_ids": 2000,
+    "result": "Passed actual human_ai.check_predictions CLI in python_course; finite in[0,1] and exact canonical IDs"
+  },
+  "generic_download_cache_files_unchanged": {
+    "config.json": true,
+    "model.safetensors": true,
+    "tokenizer_config.json": true,
+    "tokenizer.json": true,
+    "vocab.json": true,
+    "merges.txt": true,
+    "README.md": true
+  },
+  "primary_independent_audit_sha256": "bfe8d69fc8e43e21f6dd238aafe110d4a87a1b207a48d39077da26c7df1f8c9c",
+  "exploratory_independent_audit_sha256": "93dc33c43bdb01c8698216c272699e95e9b56471ca6bdb9ab03da22d5aef9a48",
+  "all_optimizer_updates": 5008,
+  "training_epoch_loop_minutes": 109.79335972780828,
+  "full_main_and_declared_diagnostic_span_minutes": 154.44471800000002,
+  "elapsed_scope": "First scientific process inferred start to end of declared diagnostic; includes repair pause, excludes earlier implementation/download/preparation and final documentation",
+  "max_training_checkpoint_driver_GiB": 7.61627197265625,
+  "per_fit_swap_growth_bytes": {
+    "random_0": 0,
+    "random_1": 0,
+    "random_2": 0,
+    "topic_0": 0,
+    "topic_1": 0,
+    "topic_2": 0,
+    "canonical_8000": 0
+  },
+  "primary_report_sha256": "be50dc9e14c014063e77fd211f32269289395ee18938332432d1db3be12cc203",
+  "prefix_report_sha256": "7cd732d5f2bbb58d1d561c89266d34a5d517079be229db7a13c8288472ed194a",
+  "new_model_fits_in_final_checks": 0
+}

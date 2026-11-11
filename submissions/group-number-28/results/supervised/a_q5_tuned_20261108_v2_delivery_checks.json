@@ -1,0 +1,15 @@
+{
+  "all_checks_passed": true,
+  "artifact_sha256": {
+    "report/figures/q5_a_q5_tuned_20261108_v2_tuning.png": "afaa879d5002eba9c35d8dae37c4b68926dd776179a6cded02d8f198afaeecd7",
+    "results/supervised/a_q5_tuned_20261108_v2_study/bootstrap.json": "6bb2c70f07613a1f5ee5612dcda197550ea744a7b3f43957b46b345821ed9b90",
+    "results/supervised/a_q5_tuned_20261108_v2_study/comparison.csv": "ad8f15b1ffaaa2a5c3f82b93179fc249a279ca7d07110c64d958aa90b80a7a86",
+    "results/supervised/a_q5_tuned_20261108_v2_study/selection.json": "c21df8cd855f9b7b622d8162b25a9df9dbd4f3adbacc3d3334ae1003746eec6a",
+    "results/supervised/a_q5_tuned_20261108_v2_verification.json": "ddc9abcba179e509a6e3b65eb6fad080459d52ca26255e0138268bce4d58c4a0"
+  },
+  "completed_at_utc": "2026-11-08T22:07:20.318037+00:00",
+  "n_candidate_fold_fits": 18,
+  "n_configurations": 6,
+  "n_finalists": 2,
+  "uploaded_to_kaggle": false
+}

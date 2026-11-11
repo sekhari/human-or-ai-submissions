@@ -1,0 +1,62 @@
+[
+  {
+    "baseline_auroc": 0.9264782861387701,
+    "condition": "clean",
+    "delta_auroc": -0.003887441255373991,
+    "evidence_sufficient": true,
+    "fold": 2,
+    "n": 2040,
+    "n_ai": 986,
+    "n_human": 1054,
+    "scheme": "topic",
+    "weak_crop_auroc": 0.9225908448833962
+  },
+  {
+    "baseline_auroc": 0.9265879812633029,
+    "condition": "quote_and_dash",
+    "delta_auroc": -0.003967307003937437,
+    "evidence_sufficient": true,
+    "fold": 2,
+    "n": 2040,
+    "n_ai": 986,
+    "n_human": 1054,
+    "scheme": "topic",
+    "weak_crop_auroc": 0.9226206742593654
+  },
+  {
+    "baseline_auroc": 0.9152066309740543,
+    "condition": "digit_runs_to_zero",
+    "delta_auroc": -0.0037209740927059975,
+    "evidence_sufficient": true,
+    "fold": 2,
+    "n": 2040,
+    "n_ai": 986,
+    "n_human": 1054,
+    "scheme": "topic",
+    "weak_crop_auroc": 0.9114856568813483
+  },
+  {
+    "baseline_auroc": 0.9072845260593277,
+    "condition": "whitespace_only",
+    "delta_auroc": 0.004531178433553551,
+    "evidence_sufficient": true,
+    "fold": 2,
+    "n": 2040,
+    "n_ai": 986,
+    "n_human": 1054,
+    "scheme": "topic",
+    "weak_crop_auroc": 0.9118157044928813
+  },
+  {
+    "baseline_auroc": 0.790018386292624,
+    "condition": "prefix_100",
+    "delta_auroc": 0.06388954688504622,
+    "evidence_sufficient": true,
+    "fold": 2,
+    "n": 1889,
+    "n_ai": 870,
+    "n_human": 1019,
+    "scheme": "topic",
+    "weak_crop_auroc": 0.8539079331776702
+  }
+]

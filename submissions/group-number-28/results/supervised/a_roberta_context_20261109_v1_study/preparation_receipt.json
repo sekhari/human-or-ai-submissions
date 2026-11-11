@@ -1,0 +1,9 @@
+{
+  "plan_sha256": "3dba5bad02626a008b7b8f6b200f70ece8cc4a8b544d90bb63ee515174bc5e67",
+  "fits": 7,
+  "new_model_fits": 0,
+  "canonical_training_n": 8000,
+  "canonical_validation_n": 2000,
+  "held_test_predictions_generated": false,
+  "baseline_only_canonical_inference": true
+}

@@ -1,0 +1,74 @@
+{
+  "baseline_whitespace_minus_clean_macro_auroc": -0.026234351714996218,
+  "condition_macro_means": {
+    "clean": {
+      "baseline_auroc": 0.9651864314110439,
+      "delta_auroc": -0.002363626708731211,
+      "weak_crop_auroc": 0.9628228047023125
+    },
+    "digit_runs_to_zero": {
+      "baseline_auroc": 0.9617947726189637,
+      "delta_auroc": -0.0016657357810233957,
+      "weak_crop_auroc": 0.9601290368379404
+    },
+    "prefix_100": {
+      "baseline_auroc": 0.8558601465438255,
+      "delta_auroc": 0.05072744988842126,
+      "weak_crop_auroc": 0.9065875964322467
+    },
+    "quote_and_dash": {
+      "baseline_auroc": 0.9624232170024025,
+      "delta_auroc": -0.0025334990687019276,
+      "weak_crop_auroc": 0.9598897179337005
+    },
+    "whitespace_only": {
+      "baseline_auroc": 0.9389520796960477,
+      "delta_auroc": 0.0041683548595612034,
+      "weak_crop_auroc": 0.9431204345556089
+    }
+  },
+  "interpretation": "Whitespace-only preserves the token sequence and word features but changes character features. The pinned char analyzer collapses runs of at least two whitespace characters, retaining isolated newline/tab characters until this condition replaces them with a space.",
+  "limitations": "Observed format sensitivity is a candidate next hypothesis, not proof of the Kaggle gap's cause or evidence that normalization training would improve it.",
+  "models_fitted": 0,
+  "passed": true,
+  "per_fold_feature_checks": [
+    {
+      "char_feature_changed_rows": 1129,
+      "char_feature_difference_nnz": 2566313,
+      "feature_model_sha256": "f76292ddc2689348c880af45ae99410b5f3d477c96d39a0e01696c8ededd426a",
+      "fold": 0,
+      "installed_char_whitespace_regex": "\\s\\s+",
+      "n": 2667,
+      "n_text_changed": 1933,
+      "tokens_preserved": true,
+      "word_feature_difference_nnz": 0
+    },
+    {
+      "char_feature_changed_rows": 1125,
+      "char_feature_difference_nnz": 2562530,
+      "feature_model_sha256": "9e8e3143957136f6bc039c16eb3fd556aec1c16562ea28c433b12ebd111054bc",
+      "fold": 1,
+      "installed_char_whitespace_regex": "\\s\\s+",
+      "n": 2667,
+      "n_text_changed": 1915,
+      "tokens_preserved": true,
+      "word_feature_difference_nnz": 0
+    },
+    {
+      "char_feature_changed_rows": 1150,
+      "char_feature_difference_nnz": 2639956,
+      "feature_model_sha256": "d13d878eec99f930fb33436e68974a98aea958580287352d970bb17fec9377dc",
+      "fold": 2,
+      "installed_char_whitespace_regex": "\\s\\s+",
+      "n": 2666,
+      "n_text_changed": 1969,
+      "tokens_preserved": true,
+      "word_feature_difference_nnz": 0
+    }
+  ],
+  "study": "results/supervised/a_q5_crop_20261109_v5_study",
+  "test_text_accessed": false,
+  "verified_at_utc": "2026-11-09T07:45:22.625548+00:00",
+  "verifier_source_sha256": "736a690a4017bd8ead9ac77d358ae8bf8b6ee3e6cf91d956be08a9edc8e97aff",
+  "weak_crop_whitespace_minus_clean_macro_auroc": -0.01970237014670362
+}

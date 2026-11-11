@@ -1,0 +1,44 @@
+{
+  "data": {
+    "train": {
+      "n": 10000,
+      "empty": 0,
+      "duplicate_extras_after_lowercase_whitespace_normalization": 0
+    },
+    "test": {
+      "n": 3000,
+      "empty": 0,
+      "duplicate_extras_after_lowercase_whitespace_normalization": 0
+    },
+    "unlabeled": {
+      "n": 3000,
+      "empty": 0,
+      "duplicate_extras_after_lowercase_whitespace_normalization": 0
+    }
+  },
+  "train_test_normalized_exact_overlap": 0,
+  "train_unlabeled_normalized_exact_overlap": 0,
+  "submissions": {
+    "word_original": {
+      "valid_rows": 3000,
+      "valid_validation_rows": 2000
+    },
+    "word_expanded": {
+      "valid_rows": 3000,
+      "valid_validation_rows": 2000
+    },
+    "wc120": {
+      "valid_rows": 3000,
+      "valid_validation_rows": 2000
+    },
+    "wc120_quotes": {
+      "valid_rows": 3000,
+      "valid_validation_rows": 2000
+    },
+    "c60_richness": {
+      "valid_rows": 3000,
+      "valid_validation_rows": 2000
+    }
+  },
+  "word_original_and_expanded_max_abs_prediction_difference": 0.0
+}

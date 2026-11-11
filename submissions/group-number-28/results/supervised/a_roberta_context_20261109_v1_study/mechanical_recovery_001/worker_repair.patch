@@ -1,0 +1,184 @@
+--- initial/train_roberta.py
++++ repaired/train_roberta.py
+@@ -18,6 +18,7 @@
+ import random
+ import re
+ import resource
++import shutil
+ import sys
+ import time
+ import traceback
+@@ -129,6 +130,42 @@
+     if len(ids) != len(set(ids)):
+         raise ValueError(f"Duplicate original IDs: {path}")
+     return ids
++
++
++def resume_source_amendment(study, key, original, current):
++    """Permit only an explicitly recorded, evaluation-only source repair."""
++    if original == current:
++        return None
++    before, after = dict(original), dict(current)
++    old_source, new_source = before.pop("source_sha256"), after.pop("source_sha256")
++    if before != after:
++        raise ValueError("A resume amendment cannot change the plan, data, recipe or environment")
++    path = study / "mechanical_amendments.json"
++    amendments = json.loads(path.read_text())["amendments"]
++    matches = [item for item in amendments
++               if item["old_worker_sha256"] == old_source and item["new_worker_sha256"] == new_source
++               and key in item["applies_to_fit_keys"]
++               and item["allowed_change"] == "evaluation_cpu_transfer_cast_only"]
++    if len(matches) != 1:
++        raise ValueError("No unique authorized mechanical source amendment for this resume")
++    return {"amendment": matches[0], "mechanical_amendments_sha256": sha256(path),
++            "original_config_sha256": sha256(study / "fits" / key / "config.json"),
++            "original_worker_sha256": old_source, "recovery_worker_sha256": new_source}
++
++
++def archive_resume_outputs(output):
++    """Preserve all prior small evidence before any resumed-process writes."""
++    destination = output / "recovery_attempts" / str(time.time_ns())
++    destination.mkdir(parents=True, exist_ok=False)
++    hashes = {}
++    for path in sorted(output.iterdir()):
++        if path.is_file() and path.suffix in (".csv", ".json"):
++            shutil.copy2(path, destination / path.name)
++            hashes[path.name] = sha256(path)
++    atomic_json(destination / "preservation_receipt.json", {"preserved_files_sha256": hashes,
++        "preserved_at_utc": datetime.now(timezone.utc).isoformat(),
++        "large_checkpoint_preserved_in_place": "resume.pt"})
++    return destination
+ 
+ 
+ def load_fit_inputs(study, key):
+@@ -264,18 +301,28 @@
+         "test_access": False, "train_from_device_probe_weights": False,
+     }
+     config_path = output / "config.json"
++    recovery_lineage = None
++    recovery_archive = None
+     if args.resume:
+-        if not config_path.is_file() or json.loads(config_path.read_text()) != config:
+-            raise ValueError("Resume source/plan/data/environment must exactly match the original fit")
++        if not config_path.is_file():
++            raise ValueError("Resume requires the original immutable configuration")
++        recovery_lineage = resume_source_amendment(study, args.fit_key, json.loads(config_path.read_text()), config)
+         if (output / "completion.json").is_file():
+             raise ValueError("A completed fit cannot be resumed")
++        recovery_archive = archive_resume_outputs(output)
+     else:
+         atomic_json(config_path, config)
+         atomic_csv(output / "train_ids.csv", [{"id": row["id"], "label": row["label"]} for row in train], ["id", "label"])
+         atomic_csv(output / "held_ids.csv", [{"id": row["id"], "label": row["label"]} for row in held], ["id", "label"])
+     tokenizer = AutoTokenizer.from_pretrained(snapshot, local_files_only=True)
+     train_encoded, train_metadata, train_tokenization_seconds = tokenize(tokenizer, train, length, torch)
+-    atomic_csv(output / "train_metadata.csv", train_metadata, list(train_metadata[0]))
++    if args.resume:
++        previous_metadata = read_csv(output / "train_metadata.csv")
++        normalized_metadata = [{key: str(value) for key, value in row.items()} for row in train_metadata]
++        if previous_metadata != normalized_metadata:
++            raise ValueError("Re-tokenized training metadata differs from the original fit")
++    else:
++        atomic_csv(output / "train_metadata.csv", train_metadata, list(train_metadata[0]))
+     train_encoded["labels"] = torch.tensor([int(row["label"]) for row in train], dtype=torch.long)
+     valid_counts = train_encoded["attention_mask"].sum(dim=1).tolist()
+     model_load_started = time.perf_counter()
+@@ -306,24 +353,34 @@
+         initial_parameters = state["initial_parameters"]
+         epoch_receipts = state["epoch_receipts"]
+         start_epoch = int(state["completed_epoch"]) + 1
++        original_epoch_receipts = json.loads((output / "epoch_receipts.json").read_text())
++        if len(original_epoch_receipts) < len(epoch_receipts):
++            raise ValueError("Original completed-epoch receipts are incomplete")
++        for saved, recorded in zip(epoch_receipts, original_epoch_receipts, strict=False):
++            if any(recorded.get(key) != value for key, value in saved.items()):
++                raise ValueError("Checkpoint and original epoch receipts differ")
++        epoch_receipts = original_epoch_receipts[:start_epoch - 1]
+         previous_steps_path = output / "training_steps.csv"
+         if previous_steps_path.is_file():
+             prior = read_csv(previous_steps_path)
+-            preserved = output / f"interrupted_training_steps_{time.time_ns()}.csv"
+-            previous_steps_path.replace(preserved)
+             steps = [row for row in prior if int(row["epoch"]) < start_epoch]
+         if len(steps) != len(epoch_receipts) * math.ceil(len(train) / effective_batch):
+             raise ValueError("Resume completed-epoch step records are incomplete")
+         atomic_json(output / f"resume_receipt_{time.time_ns()}.json", {
+             "completed_epoch": start_epoch - 1, "checkpoint_sha256": sha256(resume_path),
+             "config_sha256": sha256(config_path), "resume_at_utc": datetime.now(timezone.utc).isoformat(),
++            "current_worker_sha256": sha256(__file__), "source_amendment": recovery_lineage,
++            "preserved_evidence_directory": str(recovery_archive.relative_to(output)),
+         })
+         del state
+         gc.collect()
+     step_path = output / "training_steps.csv"
+-    atomic_csv(step_path, steps, STEP_FIELDS)
+-    sampler = MemorySampler(torch, psutil, interval=0.5)
+-    sampler.start()
++    has_training_remaining = start_epoch <= recipe["epochs"]
++    if has_training_remaining:
++        atomic_csv(step_path, steps, STEP_FIELDS)
++    sampler = MemorySampler(torch, psutil, interval=0.5) if has_training_remaining else None
++    if sampler is not None:
++        sampler.start()
+     training_started = time.perf_counter()
+     try:
+         with step_path.open("a", newline="", encoding="utf-8") as step_stream:
+@@ -416,9 +473,10 @@
+                 atomic_json(output / "epoch_receipts.json", epoch_receipts)
+                 print(json.dumps({"fit_key": args.fit_key, "phase": "epoch_complete", **receipt}), flush=True)
+     finally:
+-        sampler.stop()
+-        atomic_csv(output / "memory_samples.csv", sampler.rows, list(sampler.rows[0]) if sampler.rows else ["elapsed_seconds", "phase"])
+-        atomic_json(output / "memory_summary.json", sampler.summary())
++        if sampler is not None:
++            sampler.stop()
++            atomic_csv(output / "memory_samples.csv", sampler.rows, list(sampler.rows[0]) if sampler.rows else ["elapsed_seconds", "phase"])
++            atomic_json(output / "memory_summary.json", sampler.summary())
+     training_process_wall_seconds = time.perf_counter() - training_started
+     if len(epoch_receipts) != recipe["epochs"]:
+         raise RuntimeError("The prescribed epochs did not complete")
+@@ -456,14 +514,14 @@
+                 logits = model(**batch).logits
+                 if logits.device.type != "mps":
+                     raise RuntimeError("Evaluation logits left MPS")
+-                host_logits = logits.detach().to(device="cpu", dtype=torch.float64)
++                host_logits = logits.detach().cpu().to(dtype=torch.float64)
+                 if not torch.isfinite(host_logits).all().item():
+                     raise RuntimeError("Nonfinite evaluation logits")
+                 margins.extend((host_logits[:, 1] - host_logits[:, 0]).tolist())
+                 probabilities.extend(host_logits.softmax(-1)[:, 1].tolist())
+                 if condition == "clean" and start == 0:
+                     reload_inputs = {name: values[:min(2, len(indices))].to("mps") for name, values in encoded.items()}
+-                    before_reload = model(**reload_inputs).logits.detach().to(device="cpu", dtype=torch.float64)
++                    before_reload = model(**reload_inputs).logits.detach().cpu().to(dtype=torch.float64)
+         labels = [int(held[i]["label"]) for i in indices]
+         condition_metrics[condition] = {"n": len(indices), "n_human": labels.count(0), "n_ai": labels.count(1),
+             "auroc_logit_margin": auc(labels, margins), "auroc_probability": auc(labels, probabilities),
+@@ -492,7 +550,7 @@
+     restored.load_state_dict(torch.load(checkpoint, map_location="cpu", weights_only=True))
+     restored = restored.float().to("mps").eval()
+     with torch.inference_mode():
+-        after_reload = restored(**reload_inputs).logits.detach().to(device="cpu", dtype=torch.float64)
++        after_reload = restored(**reload_inputs).logits.detach().cpu().to(dtype=torch.float64)
+     reload_error = float((after_reload - before_reload).abs().max())
+     if not torch.isfinite(after_reload).all().item() or reload_error > 1e-6:
+         raise RuntimeError(f"Saved-model reload logit discrepancy: {reload_error}")
+@@ -504,6 +562,10 @@
+         "training_update_seconds": sum(float(row["training_update_seconds"]) for row in epoch_receipts),
+         "training_epoch_loop_seconds": sum(float(row["epoch_loop_wall_seconds"]) for row in epoch_receipts),
+         "training_process_wall_seconds": training_process_wall_seconds,
++        "training_process_wall_seconds_scope": "Training/checkpoint stage in this process; a resumed evaluation-only process performs zero training updates",
++        "training_updates_in_this_process": sum(int(row["optimizer_updates"]) for row in epoch_receipts if int(row["epoch"]) >= start_epoch),
++        "completed_epoch_loop_and_checkpoint_seconds": sum(float(row["epoch_loop_wall_seconds"]) + float(row.get("epoch_checkpoint_seconds", 0)) for row in epoch_receipts),
++        "recovery_process": bool(args.resume), "recovery_source_amendment": recovery_lineage,
+         "train_tokenization_seconds": train_tokenization_seconds,
+         "held_tokenization_seconds": held_tokenization_seconds, "model_load_seconds": model_load_seconds,
+         "evaluation_seconds": evaluation_seconds, "checkpoint_reload_seconds": checkpoint_reload_seconds,
+@@ -525,6 +587,7 @@
+         "encoder_and_classifier_parameters_updated": True, "completed_epochs_before_held_inference": 2,
+         "held_early_stopping_or_epoch_selection": False, "reload_max_logit_error": reload_error,
+         "reload_tolerance": 1e-6, "reload_check_training_or_held_examples": "first two held clean inputs, after training only",
++        "actual_execution_worker_sha256": sha256(__file__), "recovery_source_amendment": recovery_lineage,
+         "files_sha256": {name: sha256(output / name) for name in (
+             "config.json", "train_ids.csv", "held_ids.csv", "train_metadata.csv", "held_metadata.csv",
+             "training_steps.csv", "epoch_receipts.json", "predictions.csv", "metrics.json")}})

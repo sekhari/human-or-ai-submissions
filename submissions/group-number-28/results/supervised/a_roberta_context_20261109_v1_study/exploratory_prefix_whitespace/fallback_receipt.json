@@ -1,0 +1,7 @@
+{
+  "captured_fallback_warning_count": 0,
+  "captured_fallback_warnings": [],
+  "claim": "No unsupported-op fallback observed only if native logs also have no matches; ordinary CPU work is expected",
+  "environment": "0",
+  "native_stdout_stderr_review_required": true
+}

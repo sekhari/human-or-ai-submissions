@@ -1,0 +1,10 @@
+{
+  "artifact_sha256": {
+    "config.json": "3bfb66101a9e0277f429644a01a8c85426a0f3263b7f8d3ed1e5ebb9caede6e5",
+    "metrics.json": "49d8fe6543131d4ee5381b07546f22c54c4aebcd3705b6e029a5a49644e7093d",
+    "model.joblib": "0f5a0b463fa8bab2492c27666347ca383de7c140966374584ffc035474c01d6b",
+    "model_fit.json": "14cb3eed6206cd40213940d9a97f34e580564b6f3811a13ef48bd30b6d283568",
+    "train_ids.csv": "2e29896d7e5be3e35381400b5e77245e3c8020d4545ea53786bcc1205e5ee237",
+    "validation_predictions.csv": "cbfec06276a67913f208a929d53a0c92c11d732a8fbea8874f3716a46f25a08b"
+  }
+}

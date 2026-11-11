@@ -1,0 +1,31 @@
+{
+  "purpose": "Narrow mechanical source-lineage support in independent zero-fit verifier",
+  "revision": "mechanical_lineage_001",
+  "frozen_at_utc": "2026-11-09T23:46:09.873500+00:00",
+  "previous_receipt": "audit_source_receipt.json",
+  "previous_receipt_sha256": "ea3328aa3677d48e998e9892fa1e5ef500014e1c87b75604c9796295e8a47fb3",
+  "previous_verifier_source_sha256": "2f18699a760c816492c06178f91cd1f1a768a942b147507c9bcbf8bdcdc059f1",
+  "source_files_sha256": {
+    "experiments/supervised/verify_roberta.py": "05fb93e8b453f0ed9af43d5952194597c2e099d13df02563551a4bb743a638d8",
+    "experiments/supervised/test_roberta_audit.py": "130fabf4c608bf9efe6aaa5055c9ccba6a1c3f99cde2cbf057a526c121a0a694"
+  },
+  "copy_root": "audit_source_revision_001",
+  "authorized_context": "Post-training evaluation CPU-transfer repair oldworker->newworker for random_0 only, with original epoch2 checkpoint and training evidence preserved",
+  "allowed_audit_change": "Recognize explicit source amendment chain and verify archived original provenance plus unchanged protected training artifacts; no numerical/count/AUROC criteria changed",
+  "unchanged_function_class_ast_checks": [
+    "sha256",
+    "read_json",
+    "read_csv",
+    "resolve",
+    "ids_digest",
+    "auc",
+    "Checks",
+    "verify_boundaries",
+    "verify_prepared",
+    "verify_predictions",
+    "verify_metric_outputs",
+    "main"
+  ],
+  "synthetic_tests_passed": 4,
+  "no_model_loading_or_fits": true
+}

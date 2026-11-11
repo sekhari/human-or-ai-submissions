@@ -1,0 +1,14 @@
+{
+  "all_checks_passed": true,
+  "artifact_sha256": {
+    "report/figures/q5_a_q5_20261108_v1_comparison.png": "d7e5f758a4845dae16670ba8fb77a0f10712b5a8212fdc0f2645c1e6106b1524",
+    "results/supervised/a_q5_20261108_v1_study/bootstrap.json": "d092a5deda4f10d538b158e033987329e49091983904d15fa99464dae26276af",
+    "results/supervised/a_q5_20261108_v1_study/comparison.csv": "abb711fe21db51f1bbbfbbbb613ac96373aef81b770a873173b8377d80338911",
+    "results/supervised/a_q5_20261108_v1_verification.json": "1fd5247b98f6b4ffb627227c7e04264a34d1ef8f4cccf4bf22462b4b8268a0df"
+  },
+  "completed_at_utc": "2026-11-08T07:32:33.675689+00:00",
+  "full_data_refit_performed": false,
+  "n_cv_fits": 12,
+  "n_models": 4,
+  "uploaded_to_kaggle": false
+}

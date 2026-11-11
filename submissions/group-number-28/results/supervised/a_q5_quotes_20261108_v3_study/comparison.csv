@@ -1,0 +1,13 @@
+model_id,representation,train_preprocessing,condition,validation_auroc,n_changed,n,fit_seconds
+c60_raw,c60,raw,original,0.96955,0,2000,27.425853833090514
+c60_raw,c60,raw,quote_typography,0.966299,157,2000,27.425853833090514
+c60_raw,c60,raw,dash_typography,0.9695289999999999,177,2000,27.425853833090514
+c60_norm,c60,quote_normalized,original,0.9677980000000002,0,2000,33.51969579234719
+c60_norm,c60,quote_normalized,quote_typography,0.9677980000000002,157,2000,33.51969579234719
+c60_norm,c60,quote_normalized,dash_typography,0.967816,177,2000,33.51969579234719
+wc120_raw,wc120,raw,original,0.970006,0,2000,33.65951129095629
+wc120_raw,wc120,raw,quote_typography,0.9671529999999999,157,2000,33.65951129095629
+wc120_raw,wc120,raw,dash_typography,0.970036,177,2000,33.65951129095629
+wc120_norm,wc120,quote_normalized,original,0.9686750000000002,0,2000,40.3462569587864
+wc120_norm,wc120,quote_normalized,quote_typography,0.9686750000000002,157,2000,40.3462569587864
+wc120_norm,wc120,quote_normalized,dash_typography,0.968698,177,2000,40.3462569587864

@@ -1,0 +1,23 @@
+{
+  "class_counts": {
+    "0": 5000,
+    "1": 5000
+  },
+  "held_out_evaluation": null,
+  "macOS": "15.7.4",
+  "n_train": 10000,
+  "packages": {
+    "huggingface-hub": "1.8.0",
+    "numpy": "2.4.3",
+    "psutil": "7.0.0",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.11.0",
+    "transformers": "5.4.0"
+  },
+  "plan_sha256": "2e8f52ce90379173322e0e5b23bf6c48c09d64fa602d0cf38130d6b2709addd3",
+  "python": "/opt/anaconda3/envs/python_course/bin/python",
+  "python_version": "3.11.15",
+  "test_used_for_fitting": false,
+  "training_id_order_sha256": "ec247a764ce7283b1f45d0e91aeb2027104c543673e7b4e22cb9a80692a5cbe3"
+}

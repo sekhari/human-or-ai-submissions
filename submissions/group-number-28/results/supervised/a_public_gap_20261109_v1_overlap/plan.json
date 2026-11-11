@@ -1,0 +1,21 @@
+{
+  "tokenization": "lowercase Unicode letters only; digits and punctuation ignored",
+  "shingle_size": 5,
+  "jaccard_threshold": 0.8,
+  "candidate_method": "global document-frequency-ordered prefix filter, followed by exact tuple-set Jaccard",
+  "prefix_length": "n-ceil(0.8*n)+1; length ratio must be at least 0.8",
+  "exact_normalization": "same tokenization joined with one space",
+  "source_sha256": {
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd"
+  },
+  "script_sha256": "a80a4ba1bfed466dd0d75c5c1e824def1c51aa618b87de209c14239b378b0d56",
+  "fitting_performed": false,
+  "limitations": [
+    "Detects substantial contiguous lexical overlap, not paraphrases, shared topics, domains, or generators.",
+    "Global frequencies are used only to accelerate an exact audit, never to fit a predictive model.",
+    "The 0.8 threshold is a strict duplicate screen, not an estimated source-group boundary."
+  ],
+  "started_at_utc": "2026-11-09T05:04:44.128018+00:00"
+}

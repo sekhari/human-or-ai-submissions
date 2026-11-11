@@ -1,0 +1,25 @@
+{
+  "feature_counts": {
+    "char": 60000,
+    "total": 60000,
+    "word": 0
+  },
+  "fit_seconds": 30.105159291997552,
+  "n_features": 60000,
+  "timing_definition": "one CPU thread, full features and calibration, CV excluded",
+  "train": {
+    "accuracy_at_0_5": 0.999625,
+    "auroc": 1.0,
+    "brier": 0.002145460000671147,
+    "log_loss": 0.025676440124547558,
+    "n": 8000
+  },
+  "validation": {
+    "accuracy_at_0_5": 0.9075,
+    "auroc": 0.96955,
+    "brier": 0.0655559216615679,
+    "log_loss": 0.22151755760287836,
+    "n": 2000
+  },
+  "warnings": []
+}

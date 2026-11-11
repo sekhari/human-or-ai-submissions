@@ -1,0 +1,31 @@
+{
+  "observed_at_utc": "2026-11-09T20:36:37.705943+00:00",
+  "hardware_source": "Read-only local platform and sysctl probe; no serial number queried",
+  "chip": "Apple M4 Pro",
+  "architecture": "arm64",
+  "unified_memory_bytes": 51539607552,
+  "unified_memory_GiB": 48.0,
+  "physical_cpu_cores": 14,
+  "logical_cpu_cores": 14,
+  "macOS": "15.7.4",
+  "python": "3.12.7",
+  "interpreter": "/opt/anaconda3/bin/python",
+  "packages_present": {
+    "torch": false,
+    "transformers": false,
+    "tokenizers": false,
+    "sentencepiece": false,
+    "safetensors": false,
+    "accelerate": false
+  },
+  "mps_runtime_available": null,
+  "mps_runtime_status": "Not tested: PyTorch is not installed in the inspected environment",
+  "new_packages_installed": 0,
+  "models_downloaded": 0,
+  "classifier_fits": 0,
+  "test_text_accessed": false,
+  "limitations": [
+    "Unified memory is shared with macOS and other applications; nominal capacity is not free GPU memory.",
+    "No measured encoder/LM throughput, peak memory, MPS operator compatibility or full-training runtime is claimed."
+  ]
+}

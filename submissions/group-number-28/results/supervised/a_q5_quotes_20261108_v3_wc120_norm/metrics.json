@@ -1,0 +1,26 @@
+{
+  "dash_validation_auroc": 0.968698,
+  "feature_counts": {
+    "char": 60000,
+    "total": 120000,
+    "word": 60000
+  },
+  "fit_seconds": 40.3462569587864,
+  "quote_invariance_is_by_construction": true,
+  "quote_validation_auroc": 0.9686750000000002,
+  "train": {
+    "accuracy_at_0_5": 1.0,
+    "auroc": 1.0,
+    "brier": 0.0006493161686700247,
+    "log_loss": 0.015065874548987623,
+    "n": 8000
+  },
+  "validation": {
+    "accuracy_at_0_5": 0.905,
+    "auroc": 0.9686750000000002,
+    "brier": 0.06786276846928893,
+    "log_loss": 0.22532238432146218,
+    "n": 2000
+  },
+  "warnings": []
+}

@@ -1,0 +1,29 @@
+{
+  "checkpoint_sha256": "1d2f9aa5d90c60d5d52d3ef41427beb3689814c4279da5eea7d2c201ff4489a1",
+  "class1_is_ai": true,
+  "csv_sha256": "c721fb356ab72315bab6c8499b3630391f4955e9429f8e359bdbc3d5896e781b",
+  "epochs": 2,
+  "held_out_evaluation": null,
+  "n_test": 3000,
+  "n_train": 10000,
+  "optimizer_state_devices": {
+    "exp_avg:mps": 201,
+    "exp_avg_sq:mps": 201,
+    "step:cpu": 201
+  },
+  "optimizer_updates": 1250,
+  "parameter_max_changes": {
+    "classifier.out_proj.weight": 0.0012623108923435211,
+    "roberta.encoder.layer.0.attention.self.query.weight": 0.0022218748927116394
+  },
+  "prediction_save_reload_seconds": 148.49965674988925,
+  "process_elapsed_seconds": 1820.9773401250131,
+  "raw_whitespace_preserved": true,
+  "reload_margin_max_error_all_test": 0.0,
+  "reload_probability_max_error_all_test": 0.0,
+  "status": "complete",
+  "test_source_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "test_used_for_fitting": false,
+  "train_tokenization_seconds": 7.640652624890208,
+  "training_process_seconds": 1662.7237977916375
+}

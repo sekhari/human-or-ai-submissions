@@ -1,0 +1,1208 @@
+[
+  {
+    "candidate_id": "lr_01",
+    "classifier_fit_seconds_sum": 0.13413741579279304,
+    "fold_aurocs": [
+      0.8991121468523053,
+      0.8975015493003686,
+      0.9011857240379112
+    ],
+    "mean_cv_auroc": 0.8992664733968617,
+    "model": "lr",
+    "parameters": {
+      "C": 0.1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0018469294480170989,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_02",
+    "classifier_fit_seconds_sum": 0.22174833342432976,
+    "fold_aurocs": [
+      0.9230062388160758,
+      0.9287901060722453,
+      0.9262109225731039
+    ],
+    "mean_cv_auroc": 0.9260024224871417,
+    "model": "lr",
+    "parameters": {
+      "C": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.002897565240617059,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_03",
+    "classifier_fit_seconds_sum": 0.40013366704806685,
+    "fold_aurocs": [
+      0.9343299093139101,
+      0.9394046412652639,
+      0.9337904618690307
+    ],
+    "mean_cv_auroc": 0.9358416708160683,
+    "model": "lr",
+    "parameters": {
+      "C": 10
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.003097389175229339,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_04",
+    "classifier_fit_seconds_sum": 0.5726755834184587,
+    "fold_aurocs": [
+      0.9349040783434239,
+      0.9393186002647587,
+      0.9334674253709714
+    ],
+    "mean_cv_auroc": 0.9358967013263847,
+    "model": "lr",
+    "parameters": {
+      "C": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.003049268305536271,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_05",
+    "classifier_fit_seconds_sum": 0.6471118750050664,
+    "fold_aurocs": [
+      0.9344558778375254,
+      0.9386567031562988,
+      0.9327374979528826
+    ],
+    "mean_cv_auroc": 0.9352833596489022,
+    "model": "lr",
+    "parameters": {
+      "C": 1000
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0030451259696697127,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_06",
+    "classifier_fit_seconds_sum": 0.48613608442246914,
+    "fold_aurocs": [
+      0.9350390446187258,
+      0.9396672631426222,
+      0.9338405494096704
+    ],
+    "mean_cv_auroc": 0.9361822857236728,
+    "model": "lr",
+    "parameters": {
+      "C": 33.33333333333333
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.003076995027534566,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_07",
+    "classifier_fit_seconds_sum": 0.5722059588879347,
+    "fold_aurocs": [
+      0.9346960053356668,
+      0.9390644137796069,
+      0.9330627855763641
+    ],
+    "mean_cv_auroc": 0.9356077348972126,
+    "model": "lr",
+    "parameters": {
+      "C": 300
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.003102953974447132,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "nb_01",
+    "classifier_fit_seconds_sum": 0.00846787542104721,
+    "fold_aurocs": [
+      0.8876051471638524,
+      0.8802612947089845,
+      0.8784532967450415
+    ],
+    "mean_cv_auroc": 0.8821065795392928,
+    "model": "nb",
+    "parameters": {
+      "alpha": 0.01
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004846947348671836,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "nb_02",
+    "classifier_fit_seconds_sum": 0.008230207953602076,
+    "fold_aurocs": [
+      0.8929357526787995,
+      0.8813370883950372,
+      0.8853113503432122
+    ],
+    "mean_cv_auroc": 0.886528063805683,
+    "model": "nb",
+    "parameters": {
+      "alpha": 0.1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0058942808746423195,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "nb_03",
+    "classifier_fit_seconds_sum": 0.008997332770377398,
+    "fold_aurocs": [
+      0.8928435257240097,
+      0.8743149055629724,
+      0.8862343117662386
+    ],
+    "mean_cv_auroc": 0.884464247684407,
+    "model": "nb",
+    "parameters": {
+      "alpha": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.00939027616251739,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "nb_04",
+    "classifier_fit_seconds_sum": 0.007998666726052761,
+    "fold_aurocs": [
+      0.8907194939664451,
+      0.881331464800233,
+      0.882356185445461
+    ],
+    "mean_cv_auroc": 0.8848023814040463,
+    "model": "nb",
+    "parameters": {
+      "alpha": 0.03333333333333333
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.005149920281641424,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "nb_05",
+    "classifier_fit_seconds_sum": 0.00853929203003645,
+    "fold_aurocs": [
+      0.8939929885019982,
+      0.8795662183911795,
+      0.8872456298620791
+    ],
+    "mean_cv_auroc": 0.8869349455850856,
+    "model": "nb",
+    "parameters": {
+      "alpha": 0.30000000000000004
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.007218401311757371,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "svm_01",
+    "classifier_fit_seconds_sum": 0.09856845764443278,
+    "fold_aurocs": [
+      0.9227278708732656,
+      0.9285128628483957,
+      0.9261006174274253
+    ],
+    "mean_cv_auroc": 0.9257804503830288,
+    "model": "svm",
+    "parameters": {
+      "C": 0.1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.002905755192771452,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "svm_02",
+    "classifier_fit_seconds_sum": 0.2053487910889089,
+    "fold_aurocs": [
+      0.935384895699187,
+      0.939249992408147,
+      0.933492750531969
+    ],
+    "mean_cv_auroc": 0.936042546213101,
+    "model": "svm",
+    "parameters": {
+      "C": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.002934422712228565,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "svm_03",
+    "classifier_fit_seconds_sum": 0.5010236673988402,
+    "fold_aurocs": [
+      0.9326686994087354,
+      0.9360681624679035,
+      0.9303535561309683
+    ],
+    "mean_cv_auroc": 0.9330301393358691,
+    "model": "svm",
+    "parameters": {
+      "C": 10
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.002874397417238924,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "svm_04",
+    "classifier_fit_seconds_sum": 0.13342958316206932,
+    "fold_aurocs": [
+      0.9332946055104482,
+      0.9383592149911542,
+      0.9330655994831415
+    ],
+    "mean_cv_auroc": 0.9349064733282479,
+    "model": "svm",
+    "parameters": {
+      "C": 0.3333333333333333
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.0029923535357995316,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "svm_05",
+    "classifier_fit_seconds_sum": 0.34127887338399887,
+    "fold_aurocs": [
+      0.9341387070905657,
+      0.93753310891441,
+      0.9317486911112625
+    ],
+    "mean_cv_auroc": 0.9344735023720793,
+    "model": "svm",
+    "parameters": {
+      "C": 3
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.0029067057368669805,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_01",
+    "classifier_fit_seconds_sum": 1.150411166716367,
+    "fold_aurocs": [
+      0.7524454202006273,
+      0.7584736326510413,
+      0.7397803126700655
+    ],
+    "mean_cv_auroc": 0.7502331218405781,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 5,
+      "min_samples_leaf": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.009541003668545291,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_02",
+    "classifier_fit_seconds_sum": 0.9513194160535932,
+    "fold_aurocs": [
+      0.7544626036569113,
+      0.7587466581787874,
+      0.7395532303931197
+    ],
+    "mean_cv_auroc": 0.7509208307429395,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 5,
+      "min_samples_leaf": 10
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.01007497067348181,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_03",
+    "classifier_fit_seconds_sum": 3.13286270853132,
+    "fold_aurocs": [
+      0.7293855885260669,
+      0.7410410511173521,
+      0.7332354468962327
+    ],
+    "mean_cv_auroc": 0.7345540288465505,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 15,
+      "min_samples_leaf": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.005938555870242355,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_04",
+    "classifier_fit_seconds_sum": 2.146196916233748,
+    "fold_aurocs": [
+      0.8007965259680736,
+      0.7912763423239617,
+      0.779820236379425
+    ],
+    "mean_cv_auroc": 0.7906310348904868,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 15,
+      "min_samples_leaf": 10
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.010503023254734112,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_05",
+    "classifier_fit_seconds_sum": 5.410040665883571,
+    "fold_aurocs": [
+      0.7142893294538026,
+      0.72253239471787,
+      0.7164291072768193
+    ],
+    "mean_cv_auroc": 0.7177502771494972,
+    "model": "tree",
+    "parameters": {
+      "max_depth": null,
+      "min_samples_leaf": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004277399748827851,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_06",
+    "classifier_fit_seconds_sum": 2.7427331670187414,
+    "fold_aurocs": [
+      0.7997603786253911,
+      0.7821725858751045,
+      0.7794620260466467
+    ],
+    "mean_cv_auroc": 0.7871316635157141,
+    "model": "tree",
+    "parameters": {
+      "max_depth": null,
+      "min_samples_leaf": 10
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.01102044090029749,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_07",
+    "classifier_fit_seconds_sum": 2.5509156244806945,
+    "fold_aurocs": [
+      0.7612142915788918,
+      0.7539494506310236,
+      0.7681695367577828
+    ],
+    "mean_cv_auroc": 0.7611110929892327,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 15,
+      "min_samples_leaf": 5
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.007110604743957642,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_08",
+    "classifier_fit_seconds_sum": 1.8811025829054415,
+    "fold_aurocs": [
+      0.8085168780950859,
+      0.805946332910064,
+      0.7994598987331228
+    ],
+    "mean_cv_auroc": 0.8046410365794242,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 15,
+      "min_samples_leaf": 20
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.004667447661607179,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_09",
+    "classifier_fit_seconds_sum": 1.1595276682637632,
+    "fold_aurocs": [
+      0.795923118710712,
+      0.7704547013814924,
+      0.7560264034500749
+    ],
+    "mean_cv_auroc": 0.7741347411807599,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 7,
+      "min_samples_leaf": 10
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.02020133638748268,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "tree_10",
+    "classifier_fit_seconds_sum": 2.674669000785798,
+    "fold_aurocs": [
+      0.7901828343142758,
+      0.7821725858751045,
+      0.7803951175340722
+    ],
+    "mean_cv_auroc": 0.7842501792411509,
+    "model": "tree",
+    "parameters": {
+      "max_depth": 30,
+      "min_samples_leaf": 10
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.0052141294180668065,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_01",
+    "classifier_fit_seconds_sum": 1.8762945840135217,
+    "fold_aurocs": [
+      0.9095273256095133,
+      0.9019427832970237,
+      0.9093201657503647
+    ],
+    "mean_cv_auroc": 0.9069300915523005,
+    "model": "forest",
+    "parameters": {
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "min_samples_leaf": 1,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004320377475021733,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_02",
+    "classifier_fit_seconds_sum": 1.3197894170880318,
+    "fold_aurocs": [
+      0.9135169849433872,
+      0.9037710139678847,
+      0.9108132246865168
+    ],
+    "mean_cv_auroc": 0.9093670745325962,
+    "model": "forest",
+    "parameters": {
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.005031351733341392,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_03",
+    "classifier_fit_seconds_sum": 8.661951166111976,
+    "fold_aurocs": [
+      0.9173888299661122,
+      0.9145792820019099,
+      0.9188092221855164
+    ],
+    "mean_cv_auroc": 0.9169257780511795,
+    "model": "forest",
+    "parameters": {
+      "max_depth": 20,
+      "max_features": 0.02,
+      "min_samples_leaf": 1,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.00215265215401014,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_04",
+    "classifier_fit_seconds_sum": 6.606572333257645,
+    "fold_aurocs": [
+      0.9189701848250669,
+      0.9100632541943582,
+      0.9150622239205712
+    ],
+    "mean_cv_auroc": 0.9146985543133321,
+    "model": "forest",
+    "parameters": {
+      "max_depth": 20,
+      "max_features": 0.02,
+      "min_samples_leaf": 5,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004464587887194771,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_05",
+    "classifier_fit_seconds_sum": 5.409544125199318,
+    "fold_aurocs": [
+      0.924764455731624,
+      0.9204300700362497,
+      0.9194969410019421
+    ],
+    "mean_cv_auroc": 0.9215638222566053,
+    "model": "forest",
+    "parameters": {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 1,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.002810822553937708,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_06",
+    "classifier_fit_seconds_sum": 2.3364074174314737,
+    "fold_aurocs": [
+      0.9173123490767745,
+      0.9170292010783806,
+      0.9232974034956601
+    ],
+    "mean_cv_auroc": 0.9192129845502718,
+    "model": "forest",
+    "parameters": {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.003540042625214328,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_07",
+    "classifier_fit_seconds_sum": 15.665718500036746,
+    "fold_aurocs": [
+      0.9269987099473519,
+      0.9214999589477579,
+      0.9187270561076127
+    ],
+    "mean_cv_auroc": 0.9224085750009076,
+    "model": "forest",
+    "parameters": {
+      "max_depth": null,
+      "max_features": 0.02,
+      "min_samples_leaf": 1,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004210018011855618,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_08",
+    "classifier_fit_seconds_sum": 9.976138707716018,
+    "fold_aurocs": [
+      0.9208574632413726,
+      0.9205338253603881,
+      0.9197541320814074
+    ],
+    "mean_cv_auroc": 0.9203818068943894,
+    "model": "forest",
+    "parameters": {
+      "max_depth": null,
+      "max_features": 0.02,
+      "min_samples_leaf": 5,
+      "n_estimators": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0005671570528883356,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_09",
+    "classifier_fit_seconds_sum": 31.118532498832792,
+    "fold_aurocs": [
+      0.9334984608221022,
+      0.9279780589825117,
+      0.9246165629929614
+    ],
+    "mean_cv_auroc": 0.9286976942658584,
+    "model": "forest",
+    "parameters": {
+      "max_depth": null,
+      "max_features": 0.02,
+      "min_samples_leaf": 1,
+      "n_estimators": 200
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.004484465795120116,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "forest_10",
+    "classifier_fit_seconds_sum": 62.826695166062564,
+    "fold_aurocs": [
+      0.9369344772474978,
+      0.9320023034244319,
+      0.9286809699424107
+    ],
+    "mean_cv_auroc": 0.9325392502047801,
+    "model": "forest",
+    "parameters": {
+      "max_depth": null,
+      "max_features": 0.02,
+      "min_samples_leaf": 1,
+      "n_estimators": 400
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.004152870042810915,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_01",
+    "classifier_fit_seconds_sum": 1.0832630833610892,
+    "fold_aurocs": [
+      0.9051338921686943,
+      0.911828781783152,
+      0.8910460923557972
+    ],
+    "mean_cv_auroc": 0.9026695887692145,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 0,
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 7
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.010608234461586262,
+    "warning_count": 1
+  },
+  {
+    "candidate_id": "boost_02",
+    "classifier_fit_seconds_sum": 1.9531007506884634,
+    "fold_aurocs": [
+      0.9194847437496557,
+      0.9221582007195952,
+      0.9029534202755489
+    ],
+    "mean_cv_auroc": 0.9148654549149334,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 0,
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 15
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.01040236847933917,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_03",
+    "classifier_fit_seconds_sum": 1.0667612086981535,
+    "fold_aurocs": [
+      0.9148351555655031,
+      0.9223994529366975,
+      0.9005615995146574
+    ],
+    "mean_cv_auroc": 0.9125987360056195,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 0,
+      "learning_rate": 0.1,
+      "max_iter": 150,
+      "max_leaf_nodes": 7
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.011089370579816488,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_04",
+    "classifier_fit_seconds_sum": 1.906330667436123,
+    "fold_aurocs": [
+      0.9262493659396859,
+      0.9320810337516913,
+      0.9117333722027656
+    ],
+    "mean_cv_auroc": 0.9233545906313809,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 0,
+      "learning_rate": 0.1,
+      "max_iter": 150,
+      "max_leaf_nodes": 15
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.010478149917403635,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_05",
+    "classifier_fit_seconds_sum": 1.0825379178859293,
+    "fold_aurocs": [
+      0.9043522124909038,
+      0.9109576869479739,
+      0.8888551845388204
+    ],
+    "mean_cv_auroc": 0.9013883613258994,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 1,
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 7
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.01134541596782076,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_06",
+    "classifier_fit_seconds_sum": 2.0095027931965888,
+    "fold_aurocs": [
+      0.9202810447739371,
+      0.9234122623609426,
+      0.9051780949738559
+    ],
+    "mean_cv_auroc": 0.9162904673695786,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 1,
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 15
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.009750115183432813,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_07",
+    "classifier_fit_seconds_sum": 1.0417672907933593,
+    "fold_aurocs": [
+      0.9163450907704438,
+      0.9214501901337403,
+      0.9021942282269744
+    ],
+    "mean_cv_auroc": 0.9133298363770529,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 1,
+      "learning_rate": 0.1,
+      "max_iter": 150,
+      "max_leaf_nodes": 7
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.009975812574991211,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_08",
+    "classifier_fit_seconds_sum": 1.907853082753718,
+    "fold_aurocs": [
+      0.9286894437252492,
+      0.9294295088014883,
+      0.9116512061248621
+    ],
+    "mean_cv_auroc": 0.9232567195505332,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 1,
+      "learning_rate": 0.1,
+      "max_iter": 150,
+      "max_leaf_nodes": 15
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.010057478833402633,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_09",
+    "classifier_fit_seconds_sum": 3.288127874955535,
+    "fold_aurocs": [
+      0.9291134627734894,
+      0.9348894569969328,
+      0.9153959532643849
+    ],
+    "mean_cv_auroc": 0.9264662910116024,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 0,
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 15
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.01001273242903322,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "boost_10",
+    "classifier_fit_seconds_sum": 3.5153706655837595,
+    "fold_aurocs": [
+      0.9276828202552886,
+      0.9301791339888945,
+      0.9118892626382401
+    ],
+    "mean_cv_auroc": 0.9232504056274743,
+    "model": "boost",
+    "parameters": {
+      "l2_regularization": 0,
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 15
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.009917891564264963,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_01",
+    "classifier_fit_seconds_sum": 1.2121454998850822,
+    "fold_aurocs": [
+      0.9257443671262642,
+      0.9292894812908624,
+      0.9228798197298762
+    ],
+    "mean_cv_auroc": 0.9259712227156675,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        64
+      ],
+      "learning_rate_init": 0.001
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0032108469171588877,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_02",
+    "classifier_fit_seconds_sum": 0.8282304988242686,
+    "fold_aurocs": [
+      0.9256600132042007,
+      0.9332934807914873,
+      0.9227334965774452
+    ],
+    "mean_cv_auroc": 0.9272289968577111,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        64
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.005452027047708212,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_03",
+    "classifier_fit_seconds_sum": 2.4791769990697503,
+    "fold_aurocs": [
+      0.920965436261614,
+      0.9295667245147119,
+      0.9194012681715065
+    ],
+    "mean_cv_auroc": 0.9233111429826107,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        128,
+        64
+      ],
+      "learning_rate_init": 0.001
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.005473653321329461,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_04",
+    "classifier_fit_seconds_sum": 1.7302225409075618,
+    "fold_aurocs": [
+      0.9219400052411904,
+      0.9280258595383479,
+      0.9182683893028771
+    ],
+    "mean_cv_auroc": 0.922744751360805,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        128,
+        64
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004928262227885296,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_05",
+    "classifier_fit_seconds_sum": 1.399118334054947,
+    "fold_aurocs": [
+      0.9254446295231978,
+      0.9301375193873431,
+      0.9221245671507899
+    ],
+    "mean_cv_auroc": 0.9259022386871103,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.01,
+      "hidden_layer_sizes": [
+        64
+      ],
+      "learning_rate_init": 0.001
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004026028501699058,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_06",
+    "classifier_fit_seconds_sum": 0.8314535412937403,
+    "fold_aurocs": [
+      0.9267594259884312,
+      0.9334301341452302,
+      0.921065975421087
+    ],
+    "mean_cv_auroc": 0.9270851785182495,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.01,
+      "hidden_layer_sizes": [
+        64
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0061885128481698965,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_07",
+    "classifier_fit_seconds_sum": 2.085610874928534,
+    "fold_aurocs": [
+      0.9210801575956209,
+      0.9296943801167683,
+      0.9195205778188733
+    ],
+    "mean_cv_auroc": 0.9234317051770876,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.01,
+      "hidden_layer_sizes": [
+        128,
+        64
+      ],
+      "learning_rate_init": 0.001
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.005479406475165851,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_08",
+    "classifier_fit_seconds_sum": 1.8962337085977197,
+    "fold_aurocs": [
+      0.9217994153710841,
+      0.9324443179760458,
+      0.9106545203442644
+    ],
+    "mean_cv_auroc": 0.9216327512304648,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.01,
+      "hidden_layer_sizes": [
+        128,
+        64
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.01089585484991069,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_09",
+    "classifier_fit_seconds_sum": 0.8667637500911951,
+    "fold_aurocs": [
+      0.9254924300790339,
+      0.9332946055104481,
+      0.9227593845197986
+    ],
+    "mean_cv_auroc": 0.9271821400364267,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 1e-05,
+      "hidden_layer_sizes": [
+        64
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.005467088817235381,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_10",
+    "classifier_fit_seconds_sum": 0.8506557093933225,
+    "fold_aurocs": [
+      0.9257668615054815,
+      0.9332608639416224,
+      0.9227143620113578
+    ],
+    "mean_cv_auroc": 0.9272473624861539,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.001,
+      "hidden_layer_sizes": [
+        64
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.00542688567288808,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "mlp_11",
+    "classifier_fit_seconds_sum": 1.4650592925027013,
+    "fold_aurocs": [
+      0.9329138881422004,
+      0.9331652628299503,
+      0.9241528311560261
+    ],
+    "mean_cv_auroc": 0.930077327376059,
+    "model": "mlp",
+    "parameters": {
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        128
+      ],
+      "learning_rate_init": 0.003
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.005132303469622381,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_svd_01",
+    "classifier_fit_seconds_sum": 0.09606916829943657,
+    "fold_aurocs": [
+      0.9143250955167577,
+      0.9199306948176325,
+      0.9108475543492025
+    ],
+    "mean_cv_auroc": 0.9150344482278642,
+    "model": "lr_svd",
+    "parameters": {
+      "C": 0.1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004582929864603332,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_svd_02",
+    "classifier_fit_seconds_sum": 0.11588399996981025,
+    "fold_aurocs": [
+      0.9143245331572774,
+      0.9196770706919608,
+      0.9110141376304316
+    ],
+    "mean_cv_auroc": 0.9150052471598898,
+    "model": "lr_svd",
+    "parameters": {
+      "C": 1
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.0043713992007306515,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_svd_03",
+    "classifier_fit_seconds_sum": 0.13232204131782055,
+    "fold_aurocs": [
+      0.9143262202357185,
+      0.9196185853059966,
+      0.9109916263762114
+    ],
+    "mean_cv_auroc": 0.9149788106393087,
+    "model": "lr_svd",
+    "parameters": {
+      "C": 10
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004350346051774917,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_svd_04",
+    "classifier_fit_seconds_sum": 0.12423416646197438,
+    "fold_aurocs": [
+      0.9143222837193556,
+      0.9196090251948293,
+      0.9109983797524774
+    ],
+    "mean_cv_auroc": 0.9149765628888874,
+    "model": "lr_svd",
+    "parameters": {
+      "C": 100
+    },
+    "stage": 1,
+    "std_cv_auroc": 0.004342449154248827,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_svd_05",
+    "classifier_fit_seconds_sum": 0.07359466841444373,
+    "fold_aurocs": [
+      0.9142480522679396,
+      0.9197558010192204,
+      0.9103140376241847
+    ],
+    "mean_cv_auroc": 0.9147726303037816,
+    "model": "lr_svd",
+    "parameters": {
+      "C": 0.03333333333333333
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.00474269022694132,
+    "warning_count": 0
+  },
+  {
+    "candidate_id": "lr_svd_06",
+    "classifier_fit_seconds_sum": 0.10872775036841631,
+    "fold_aurocs": [
+      0.9143284696736402,
+      0.9198120369672627,
+      0.910989938032145
+    ],
+    "mean_cv_auroc": 0.9150434815576826,
+    "model": "lr_svd",
+    "parameters": {
+      "C": 0.30000000000000004
+    },
+    "stage": 2,
+    "std_cv_auroc": 0.004454300046134341,
+    "warning_count": 0
+  }
+]

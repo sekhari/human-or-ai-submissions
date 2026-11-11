@@ -1,0 +1,5 @@
+{
+  "completed_epochs": 2,
+  "fit_key": "topic_0",
+  "phase": "evaluation_after_final_epoch"
+}

@@ -1,0 +1,18 @@
+{
+  "amendments": [
+    {
+      "id": "evaluation_cpu_transfer_001",
+      "old_worker_sha256": "cfab945bae883bc21491f256796ac2f3fc1a17ea56f2af3cc11724a2e523c36a",
+      "new_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+      "reason": "MPS-to-CPU combined float64 conversion failed after completed epoch2. Separate CPU transfer and double cast; retain completed scientific training and add strict source-only recovery lineage and protected prior-memory handling. No data, model, recipe, seed, epoch or training-loop change.",
+      "allowed_change": "evaluation_cpu_transfer_cast_only",
+      "applies_to_fit_keys": [
+        "random_0"
+      ],
+      "created_at_utc": "2026-11-09T23:46:06.042154+00:00",
+      "preservation_receipt": "mechanical_recovery_001/preservation_receipt.json",
+      "no_held_quality_scores_observed_before_repair": true,
+      "no_new_optimizer_updates_needed_for_recovered_fit": true
+    }
+  ]
+}

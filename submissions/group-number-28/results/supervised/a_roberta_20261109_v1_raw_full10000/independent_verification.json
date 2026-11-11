@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "passed_checks": 12296,
+  "errors": [],
+  "n_train": 10000,
+  "n_test": 3000,
+  "optimizer_updates": 1250,
+  "csv": "/Users/lin/Desktop/Cornell_tech_kaggle/submissions/a_roberta_20261109_v1_raw_full10000.csv",
+  "csv_sha256": "c721fb356ab72315bab6c8499b3630391f4955e9429f8e359bdbc3d5896e781b",
+  "source_sha256": "8821ebe062ba6d8e0d0dcd6cea68fb6ac5cf451f6f0d9e86096127a1d40e309e",
+  "audit_scope": "Saved full-label training/evidence/CSV arithmetic and hashes; no model import, prediction or fitting",
+  "checked_at_utc": "2026-11-10T03:03:09.489434+00:00"
+}

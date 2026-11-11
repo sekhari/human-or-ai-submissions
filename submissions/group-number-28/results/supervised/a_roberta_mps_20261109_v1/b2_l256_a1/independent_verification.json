@@ -1,0 +1,26 @@
+{
+  "configuration": {
+    "batch_size": 2,
+    "grad_accum": 1,
+    "sequence_length": 256
+  },
+  "errors": [],
+  "limitations": [
+    "This verifier inspects saved evidence without loading the model or rerunning any fit.",
+    "No observed unsupported-op CPU fallback is supported only for this exercised path.",
+    "Ordinary CPU activity and AdamW scalar step bookkeeping are expected.",
+    "Memory extrema are sampled observed maxima; unified-memory measurements overlap."
+  ],
+  "observed_native_fallback_matches": [],
+  "passed_checks": 429,
+  "projection": null,
+  "run_dir": "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_mps_20261109_v1/b2_l256_a1",
+  "status": "passed",
+  "verified_input_files_sha256": {
+    "stderr": "558516c48333baa5bbb0a6757c8e1aea70daae6af416cb1fdc6a8c99184684b8",
+    "stdout": "014ba998d3d2e68566b29982245ee7868771094686f6a8390e1ba49b8841e509",
+    "validation_receipt": "3e2cdf4299b13eebf5970fb4a13f1a96309cb7a231089c59f53837c9ce44b756"
+  },
+  "verifier_python": "/opt/anaconda3/envs/python_course/bin/python",
+  "verifier_source_sha256": "6066fa35886cec16b9bb417315b6561aed1c38137e22369e3359d7b6c4375e82"
+}

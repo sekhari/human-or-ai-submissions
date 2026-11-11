@@ -1,0 +1,286 @@
+{
+  "auroc_95_intervals": {
+    "c60__dash_typography": [
+      0.9627653999999999,
+      0.9760580249999999
+    ],
+    "c60__original": [
+      0.9628217249999999,
+      0.9760090500000002
+    ],
+    "c60__quote_typography": [
+      0.9590525249999999,
+      0.972936625
+    ],
+    "c60_length__dash_typography": [
+      0.9633254250000001,
+      0.9761930999999999
+    ],
+    "c60_length__original": [
+      0.9633025,
+      0.9762012500000001
+    ],
+    "c60_length__quote_typography": [
+      0.9595945750000001,
+      0.9730534250000001
+    ],
+    "c60_length_richness__dash_typography": [
+      0.9686237000000001,
+      0.98059845
+    ],
+    "c60_length_richness__original": [
+      0.96863065,
+      0.9805990500000001
+    ],
+    "c60_length_richness__quote_typography": [
+      0.965568,
+      0.978104025
+    ],
+    "c60_richness__dash_typography": [
+      0.9681686749999999,
+      0.980253925
+    ],
+    "c60_richness__original": [
+      0.968183175,
+      0.98023855
+    ],
+    "c60_richness__quote_typography": [
+      0.9650274249999999,
+      0.9778140750000002
+    ],
+    "incumbent_wc120__dash_typography": [
+      0.9635235249999999,
+      0.9762064749999999
+    ],
+    "incumbent_wc120__original": [
+      0.9635009,
+      0.976193475
+    ],
+    "incumbent_wc120__quote_typography": [
+      0.960352875,
+      0.9736321499999999
+    ]
+  },
+  "comparisons": {
+    "c60_length_richness_vs_c60": {
+      "interval95": [
+        0.002040449999999952,
+        0.008707325000000127
+      ],
+      "left": "c60_length_richness__original",
+      "point_delta": 0.005287999999999848,
+      "right": "c60__original",
+      "terms": [
+        [
+          "c60_length_richness__original",
+          1
+        ],
+        [
+          "c60__original",
+          -1
+        ]
+      ]
+    },
+    "c60_length_richness_vs_incumbent": {
+      "interval95": [
+        0.0015899249999998728,
+        0.00865814999999994
+      ],
+      "left": "c60_length_richness__original",
+      "point_delta": 0.004831999999999836,
+      "right": "incumbent_wc120__original",
+      "terms": [
+        [
+          "c60_length_richness__original",
+          1
+        ],
+        [
+          "incumbent_wc120__original",
+          -1
+        ]
+      ]
+    },
+    "c60_length_vs_c60": {
+      "interval95": [
+        -0.0005961000000001438,
+        0.00113635000000013
+      ],
+      "left": "c60_length__original",
+      "point_delta": 0.0002750000000000252,
+      "right": "c60__original",
+      "terms": [
+        [
+          "c60_length__original",
+          1
+        ],
+        [
+          "c60__original",
+          -1
+        ]
+      ]
+    },
+    "c60_length_vs_incumbent": {
+      "interval95": [
+        -0.0024340250000001564,
+        0.0021694499999999777
+      ],
+      "left": "c60_length__original",
+      "point_delta": -0.00018099999999998673,
+      "right": "incumbent_wc120__original",
+      "terms": [
+        [
+          "c60_length__original",
+          1
+        ],
+        [
+          "incumbent_wc120__original",
+          -1
+        ]
+      ]
+    },
+    "c60_richness_vs_c60": {
+      "interval95": [
+        0.0014697750000000065,
+        0.008531525000000007
+      ],
+      "left": "c60_richness__original",
+      "point_delta": 0.004957999999999907,
+      "right": "c60__original",
+      "terms": [
+        [
+          "c60_richness__original",
+          1
+        ],
+        [
+          "c60__original",
+          -1
+        ]
+      ]
+    },
+    "c60_richness_vs_incumbent": {
+      "interval95": [
+        0.0010349500000001455,
+        0.008509275000000096
+      ],
+      "left": "c60_richness__original",
+      "point_delta": 0.004501999999999895,
+      "right": "incumbent_wc120__original",
+      "terms": [
+        [
+          "c60_richness__original",
+          1
+        ],
+        [
+          "incumbent_wc120__original",
+          -1
+        ]
+      ]
+    },
+    "interaction": {
+      "interval95": [
+        -0.0009680750000001847,
+        0.0011081000000001061
+      ],
+      "point_delta": 5.499999999991623e-05,
+      "terms": [
+        [
+          "c60_length_richness__original",
+          1
+        ],
+        [
+          "c60_length__original",
+          -1
+        ],
+        [
+          "c60_richness__original",
+          -1
+        ],
+        [
+          "c60__original",
+          1
+        ]
+      ]
+    },
+    "length_given_richness": {
+      "interval95": [
+        -0.0002660499999998789,
+        0.0009611749999998807
+      ],
+      "left": "c60_length_richness__original",
+      "point_delta": 0.00032999999999994145,
+      "right": "c60_richness__original",
+      "terms": [
+        [
+          "c60_length_richness__original",
+          1
+        ],
+        [
+          "c60_richness__original",
+          -1
+        ]
+      ]
+    },
+    "length_only": {
+      "interval95": [
+        -0.0005961000000001438,
+        0.00113635000000013
+      ],
+      "left": "c60_length__original",
+      "point_delta": 0.0002750000000000252,
+      "right": "c60__original",
+      "terms": [
+        [
+          "c60_length__original",
+          1
+        ],
+        [
+          "c60__original",
+          -1
+        ]
+      ]
+    },
+    "richness_given_length": {
+      "interval95": [
+        0.0020063499999998734,
+        0.00824182499999994
+      ],
+      "left": "c60_length_richness__original",
+      "point_delta": 0.005012999999999823,
+      "right": "c60_length__original",
+      "terms": [
+        [
+          "c60_length_richness__original",
+          1
+        ],
+        [
+          "c60_length__original",
+          -1
+        ]
+      ]
+    },
+    "richness_only": {
+      "interval95": [
+        0.0014697750000000065,
+        0.008531525000000007
+      ],
+      "left": "c60_richness__original",
+      "point_delta": 0.004957999999999907,
+      "right": "c60__original",
+      "terms": [
+        [
+          "c60_richness__original",
+          1
+        ],
+        [
+          "c60__original",
+          -1
+        ]
+      ]
+    }
+  },
+  "limitations": "Conditional development intervals; omit training variation and selection adjustment; secondary contrasts descriptive.",
+  "method": "class-stratified paired percentile bootstrap",
+  "primary_comparison_key": "richness_given_length",
+  "replicates": 1000,
+  "seed": 342
+}

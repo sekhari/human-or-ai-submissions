@@ -1,0 +1,8 @@
+# Final raw-text RoBERTa entrypoints. Tested original environment: Python 3.11.15.
+# Historical classical/Q3 experiments have separate dependency files.
+torch==2.11.0
+transformers==5.4.0
+huggingface-hub==1.8.0
+tokenizers==0.22.2
+safetensors==0.7.0
+numpy==2.4.3

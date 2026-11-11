@@ -1,0 +1,39 @@
+{
+  "purpose": "Q1 controlled comparison; defined before observing model validation scores",
+  "models": {
+    "lr": {"parameter": "C", "candidates": [0.1, 1.0, 10.0]},
+    "nb": {"parameter": "alpha", "candidates": [0.01, 0.1, 1.0]},
+    "svm": {"parameter": "C", "candidates": [0.1, 1.0, 10.0]}
+  },
+  "representation": {
+    "analyzer": "word", "ngram_range": [1, 2], "lowercase": true,
+    "token_pattern": "(?u)\\b\\w\\w+\\b", "strip_accents": null,
+    "stop_words": null, "min_df": 2, "max_df": 1.0,
+    "max_features": 60000, "sublinear_tf": true, "smooth_idf": true,
+    "use_idf": true, "norm": "l2", "dtype": "float64"
+  },
+  "selection": {
+    "inner_cv": "3-fold stratified shuffled on the canonical 8000 training rows only",
+    "inner_seed": 142,
+    "criterion": "highest mean inner-fold AUROC; exact ties choose first listed candidate",
+    "representation_refit": "vocabulary and IDF fit only on each inner training fold",
+    "family_selection": "highest canonical 2000-row held-out AUROC after one refit per family",
+    "scope": "Q1 candidate only; team final selection can change after Q3/Q5",
+    "no_adaptive_grid_expansion": true
+  },
+  "seeds": {"model": 42, "inner_cv": 142, "calibration": 242, "bootstrap": 342},
+  "svm_probability": {
+    "method": "sigmoid calibration, 3 stratified shuffled folds, ensemble=false",
+    "pipeline": "entire TF-IDF + LinearSVC pipeline inside CalibratedClassifierCV",
+    "tuning": "raw decision-function AUROC; calibration only after C selection",
+    "reason": "full-training SVM plus sigmoid fitted to out-of-fold training margins; no held-out calibration"
+  },
+  "resources": {"threads": 1, "gpu": false, "external_weights": false},
+  "excluded": ["validation fitting", "test fitting", "unlabeled data", "starter duplication", "Kaggle feedback for tuning"],
+  "hypotheses": [
+    "Discriminative linear classifiers may rank better than multinomial NB with identical TF-IDF features.",
+    "Inner CV can reveal when weaker or stronger regularization hurts; retain unsuccessful candidate results.",
+    "Small held-out differences may not resolve which classifier generalizes better."
+  ],
+  "uncertainty": "1000 stratified paired validation bootstraps; exploratory intervals conditional on fitted models, not adjusted for family selection"
+}

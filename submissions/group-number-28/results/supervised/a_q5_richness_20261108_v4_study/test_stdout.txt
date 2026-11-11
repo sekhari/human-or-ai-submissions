@@ -1,0 +1,14 @@
+test_calibration_extractor_fits_and_independent_process_reload (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_calibration_extractor_fits_and_independent_process_reload) ... ok
+test_complete_feature_and_scaling_pipeline_stays_inside_calibration (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_complete_feature_and_scaling_pipeline_stays_inside_calibration) ... ok
+test_cv_fits_only_training_folds_and_resume_reuses_all_checkpoints (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_cv_fits_only_training_folds_and_resume_reuses_all_checkpoints) ... ok
+test_frozen_tokens_and_length_are_document_local (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_frozen_tokens_and_length_are_document_local) ... ok
+test_invalid_window_and_nontext_inputs_fail (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_invalid_window_and_nontext_inputs_fail) ... ok
+test_richness_exact_formulas_and_short_documents (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_richness_exact_formulas_and_short_documents) ... ok
+test_richness_is_not_a_duplicate_of_length_or_one_formula (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_richness_is_not_a_duplicate_of_length_or_one_formula) ... ok
+test_scaling_fits_training_rows_and_transform_does_not_update_it (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_scaling_fits_training_rows_and_transform_does_not_update_it) ... ok
+test_sliding_windows_use_every_position (experiments.supervised.test_q5_richness.RichnessFeatureChecks.test_sliding_windows_use_every_position) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.477s
+
+OK

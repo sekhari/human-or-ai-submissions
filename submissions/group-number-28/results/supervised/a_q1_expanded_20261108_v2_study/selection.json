@@ -1,0 +1,10 @@
+{
+  "criterion": "highest fixed 2000-row validation AUROC; primary neural seed remains 42",
+  "scope": "Q1 candidate; team-wide choice open after Q3/Q5",
+  "test_or_leaderboard_used": false,
+  "total_wall_seconds_before_bootstrap": 297.4741468750872,
+  "tuning_seconds_all_families": 223.09998816717416,
+  "validation_previously_inspected": true,
+  "winner": "svm",
+  "winner_run_id": "a_q1_expanded_20261108_v2_svm"
+}

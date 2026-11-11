@@ -1,0 +1,8 @@
+{
+  "completed_at_utc": "2026-11-10T01:59:44.684976+00:00",
+  "epochs": 2,
+  "fit_key": "canonical_8000",
+  "metrics_sha256": "10f41c0b5e3e19e48aae96612dc16cb9aab3c3230f7e3a7895e79bcb30dc768b",
+  "optimizer_updates": 1000,
+  "status": "complete"
+}

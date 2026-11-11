@@ -1,0 +1,24 @@
+{
+  "actual_execution_worker_sha256": "f9ef45df16836c9f1ac36fe0ab1c62fd8f991b87f0bbca655f023a79e39975c2",
+  "all_gradients_mps": true,
+  "all_numeric_checks_passed": true,
+  "completed_epochs_before_held_inference": 2,
+  "encoder_and_classifier_parameters_updated": true,
+  "files_sha256": {
+    "config.json": "927a3e46ee436e6fb2e2ba545b32c1f260b39e920799dc7d0612341938569e5b",
+    "epoch_receipts.json": "8103d949a18dd0bd8f3838cdd183496e68f4d93ec7d2aa77f1b9ceca5d57658e",
+    "held_ids.csv": "69ec18759cc1f6e52d176c0f2192168873636988439297ac72268e56c8ac0acf",
+    "held_metadata.csv": "44c430f0dd226c5dffedbf2a3b3813387994346b9695e61948b0a89406bf65f1",
+    "metrics.json": "ff4fea512686e4811c845b20b37e64a78ddb35ffa4045c11ebb703e3aa596fcc",
+    "predictions.csv": "3dd594b1da5e6091b395654d713ed3098e5ecd1a0ae0972428e9a11a96787a8a",
+    "train_ids.csv": "60ca4b6d85fbe621e134a1b98d385b5af2740ea0448b57258864c1bdda027354",
+    "train_metadata.csv": "a0f65ad2a8c5eb1908a44db0c60e801d6a9c02d2a6bdc2194b69758434876312",
+    "training_steps.csv": "eae1f22f21882d607bc1c1815fbf70b1149d611aafbc73e09475b5777384fbf3"
+  },
+  "forward_backward_optimizer_executed": true,
+  "held_early_stopping_or_epoch_selection": false,
+  "recovery_source_amendment": null,
+  "reload_check_training_or_held_examples": "first two held clean inputs, after training only",
+  "reload_max_logit_error": 0.0,
+  "reload_tolerance": 1e-06
+}

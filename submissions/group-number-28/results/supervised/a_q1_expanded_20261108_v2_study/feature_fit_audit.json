@@ -1,0 +1,29 @@
+[
+  {
+    "feature_seconds": {
+      "sparse": 1.44293574988842,
+      "svd": 1.9354815422557294
+    },
+    "fit_ids_sha256": "b54e64755886c4472e1fd1efe9d7fb8d75f2061090d4068b91860a509fc40638",
+    "held_ids_sha256": "9d41fe74833527b7696087b20eb5832c640de14e246db998198bbb28342c9e1a",
+    "svd_explained_variance_ratio_sum": 0.12646141639426195
+  },
+  {
+    "feature_seconds": {
+      "sparse": 1.4054479580372572,
+      "svd": 1.9590817498974502
+    },
+    "fit_ids_sha256": "bb7bfba84d9b6a03db3696f0b06ffcedf4009d50887a1dcc168e9f8cbbad656b",
+    "held_ids_sha256": "b0ead8be1acb680225855390fa7120a75b06139057b8901177e864ae0249b5ad",
+    "svd_explained_variance_ratio_sum": 0.1278392524228495
+  },
+  {
+    "feature_seconds": {
+      "sparse": 1.4052988337352872,
+      "svd": 2.077820625156164
+    },
+    "fit_ids_sha256": "1090aa341a85e52dec44666e64c9cbb15dde19c8d64c203f7ce6d51fbf257f24",
+    "held_ids_sha256": "6fc9ed06b25d2a1f76c857e57775ba6701cba3028147de8857d32b55d686d62b",
+    "svd_explained_variance_ratio_sum": 0.12772188923506247
+  }
+]

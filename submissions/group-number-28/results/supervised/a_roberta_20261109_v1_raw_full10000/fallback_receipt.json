@@ -1,0 +1,5 @@
+{
+  "generic_fallback_environment": "0",
+  "native_logs_also_require_review": true,
+  "python_fallback_warnings": []
+}

@@ -1,0 +1,54 @@
+{
+  "candidate_category": "exploratory_robustness_tradeoff",
+  "eligibility": {
+    "c60_norm": {
+      "checks": {
+        "clean_cv_within_budget_vs_incumbent": false,
+        "clean_point_within_budget_vs_incumbent": true,
+        "dash_guard_passes_vs_incumbent": true,
+        "length_guard_passes_vs_incumbent": true,
+        "quote_cv_mean_improves_own_raw": true,
+        "quote_cv_positive_fold_count_passes": true,
+        "quote_validation_interval_lower_vs_incumbent_positive": false
+      },
+      "clean_cv_delta_vs_incumbent": -0.0033356860940867428,
+      "clean_delta_vs_incumbent": -0.0022079999999998767,
+      "eligible": false,
+      "extra_dash_loss_vs_incumbent": 1.2000000000123023e-05,
+      "maximum_length_bin_regression_vs_incumbent": 0.004384265943585541,
+      "quote_cv_fold_gains": [
+        0.0006900150824814544,
+        0.0023022997128593348,
+        0.0004693596504903308
+      ]
+    },
+    "wc120_norm": {
+      "checks": {
+        "clean_cv_within_budget_vs_incumbent": true,
+        "clean_point_within_budget_vs_incumbent": true,
+        "dash_guard_passes_vs_incumbent": true,
+        "length_guard_passes_vs_incumbent": true,
+        "quote_cv_mean_improves_own_raw": true,
+        "quote_cv_positive_fold_count_passes": true,
+        "quote_validation_interval_lower_vs_incumbent_positive": true
+      },
+      "clean_cv_delta_vs_incumbent": -0.0023044426976358556,
+      "clean_delta_vs_incumbent": -0.00133099999999986,
+      "eligible": true,
+      "extra_dash_loss_vs_incumbent": 7.00000000020129e-06,
+      "maximum_length_bin_regression_vs_incumbent": 0.0034997554965338074,
+      "quote_cv_fold_gains": [
+        0.00046282185238955,
+        0.0018158587622918443,
+        0.0002588794235319769
+      ]
+    }
+  },
+  "export_eligible": true,
+  "interpretation": "A tradeoff candidate is exploratory; constructed quote invariance is not proof of hidden-test gains.",
+  "new_kaggle_upload": false,
+  "primary_comparison_key": "wc120_quote",
+  "retain_incumbent_until_external_check": true,
+  "selected_model_id": "wc120_norm",
+  "submission_csv": "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.csv"
+}

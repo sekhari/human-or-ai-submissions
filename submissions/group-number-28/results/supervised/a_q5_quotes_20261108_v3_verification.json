@@ -1,0 +1,141 @@
+{
+  "all_bootstrap_intervals_reconstructed": true,
+  "all_checks_passed": true,
+  "candidate_category": "exploratory_robustness_tradeoff",
+  "canonical_split_and_fold_ids_match": true,
+  "export_eligibility_and_selection_reconstructed": true,
+  "export_eligible": true,
+  "full_label_export": {
+    "csv": "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.csv",
+    "model_reload_prediction_max_error": 0.0,
+    "n_test": 3000,
+    "uploaded_to_kaggle": false
+  },
+  "full_size_refits_performed_by_verifier": false,
+  "limitations": "Conditional development verification; constructed invariance is not independent OOD evidence. No new model was fitted by this verifier.",
+  "models": {
+    "c60_norm": {
+      "C": 1,
+      "complete_pipeline_inside_calibration": true,
+      "conditions": {
+        "dash_typography": {
+          "auroc": 0.967816,
+          "n_changed": 177,
+          "prediction_sha256": "24719dac216d29be80fe76deadebc4509eed69c051a8b21441a29334fb81456c"
+        },
+        "original": {
+          "auroc": 0.9677980000000002,
+          "n_changed": 0,
+          "prediction_sha256": "a5b58dc7084d2b078cb29f4ed922eccdf24485b37a9e97cede7b9adbbba061aa"
+        },
+        "quote_typography": {
+          "auroc": 0.9677980000000002,
+          "n_changed": 157,
+          "prediction_sha256": "a5b58dc7084d2b078cb29f4ed922eccdf24485b37a9e97cede7b9adbbba061aa"
+        }
+      },
+      "feature_counts": {
+        "char": 60000,
+        "total": 60000,
+        "word": 0
+      },
+      "n_features": 60000,
+      "normalization_inside_calibration": true,
+      "saved_prediction_max_error": 0.0
+    },
+    "c60_raw": {
+      "C": 1,
+      "complete_pipeline_inside_calibration": true,
+      "conditions": {
+        "dash_typography": {
+          "auroc": 0.9695289999999999,
+          "n_changed": 177,
+          "prediction_sha256": "ea982dc6d76c9dcdff101a971d3626544d3dcd2ff807e9e7b596be6386c49ae3"
+        },
+        "original": {
+          "auroc": 0.96955,
+          "n_changed": 0,
+          "prediction_sha256": "3278bc9bac3130259edf1b452bcf3847919df37027f06a1909fa2c1803ce21e9"
+        },
+        "quote_typography": {
+          "auroc": 0.966299,
+          "n_changed": 157,
+          "prediction_sha256": "3846a5a6f958c2e2f1546297ad6c59afaa2603b74b587a8ba211209ff38e9586"
+        }
+      },
+      "feature_counts": {
+        "char": 60000,
+        "total": 60000,
+        "word": 0
+      },
+      "n_features": 60000,
+      "normalization_inside_calibration": false,
+      "saved_prediction_max_error": 0.0
+    },
+    "wc120_norm": {
+      "C": 1,
+      "complete_pipeline_inside_calibration": true,
+      "conditions": {
+        "dash_typography": {
+          "auroc": 0.968698,
+          "n_changed": 177,
+          "prediction_sha256": "cc7bb1c40f96eba8441e1cdfafbf622d00b68f3fe84f90b08c516d48517964e0"
+        },
+        "original": {
+          "auroc": 0.9686750000000002,
+          "n_changed": 0,
+          "prediction_sha256": "094eb30c7b8095ef86bd1b14175f49972ea67dfe6b1fd40feb16a4e9cd681185"
+        },
+        "quote_typography": {
+          "auroc": 0.9686750000000002,
+          "n_changed": 157,
+          "prediction_sha256": "094eb30c7b8095ef86bd1b14175f49972ea67dfe6b1fd40feb16a4e9cd681185"
+        }
+      },
+      "feature_counts": {
+        "char": 60000,
+        "total": 120000,
+        "word": 60000
+      },
+      "n_features": 120000,
+      "normalization_inside_calibration": true,
+      "saved_prediction_max_error": 0.0
+    },
+    "wc120_raw": {
+      "C": 1,
+      "complete_pipeline_inside_calibration": true,
+      "conditions": {
+        "dash_typography": {
+          "auroc": 0.970036,
+          "n_changed": 177,
+          "prediction_sha256": "af8ba21ef438c1cded69cfde71a3a5c3857269ba746400f7e0804d1023552505"
+        },
+        "original": {
+          "auroc": 0.970006,
+          "n_changed": 0,
+          "prediction_sha256": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461"
+        },
+        "quote_typography": {
+          "auroc": 0.9671529999999999,
+          "n_changed": 157,
+          "prediction_sha256": "b210ce8e52a6d992801be2beb92ce19f69a5e3ff6f68d741c35551e61d21e22e"
+        }
+      },
+      "feature_counts": {
+        "char": 60000,
+        "total": 120000,
+        "word": 60000
+      },
+      "n_features": 120000,
+      "normalization_inside_calibration": false,
+      "saved_prediction_max_error": 0.0
+    }
+  },
+  "n_cv_fits": 12,
+  "n_matrix_conditions": 12,
+  "n_validation": 2000,
+  "prior_evidence_unchanged": true,
+  "selected_model_id": "wc120_norm",
+  "source_hashes_match": true,
+  "verifier_source_sha256": "e2cd1a39facf26a1ec05176601e549a86441010616b1eb4faa1ddf19276e4207"
+}

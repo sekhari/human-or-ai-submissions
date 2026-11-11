@@ -1,0 +1,38 @@
+{
+  "C": 1,
+  "candidate_category": "development_improvement_candidate",
+  "created_at_utc": "2026-11-09T03:36:01.854044+00:00",
+  "csv_sha256": "7179c376820b13c3f99cbbf6c5b3968bddb52d6392b0c3cfef52b1eac8ba58af",
+  "eligibility": {
+    "checks": {
+      "length_guard": true,
+      "positive_cv_fold_count_vs_incumbent": true,
+      "positive_mean_cv_delta_vs_incumbent": true,
+      "positive_validation_interval_lower_vs_c60": true,
+      "positive_validation_interval_lower_vs_incumbent": true,
+      "typography_guard": true
+    },
+    "cv_fold_gains_vs_incumbent": [
+      0.0037807427868962185,
+      -0.0009936892019106747,
+      0.0064618555238959985
+    ],
+    "eligible": true,
+    "extra_typography_loss_vs_incumbent": {
+      "dash_typography": 1.0999999999872223e-05,
+      "quote_typography": -7.90000000002733e-05
+    },
+    "maximum_length_bin_regression_vs_incumbent": -0.0007897618150162211
+  },
+  "full_refit": true,
+  "full_refit_held_out_evaluation": null,
+  "model_id": "c60_richness",
+  "model_reload_prediction_max_error": 0.0,
+  "model_run_id": "a_q5_richness_20261108_v4_c60_richness_full10000",
+  "model_sha256": "0aa5f3dc47abd2793fd82b4705511f93095e6b478cf1219d48782727c74fd070",
+  "n_test": 3000,
+  "n_train": 10000,
+  "source_study": "a_q5_richness_20261108_v4_study",
+  "test_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "uploaded_to_kaggle": false
+}

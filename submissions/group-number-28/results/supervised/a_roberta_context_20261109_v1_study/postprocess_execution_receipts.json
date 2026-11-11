@@ -1,0 +1,84 @@
+[
+  {
+    "stage": "paired_analysis",
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.evaluate_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 4.074198957998306,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/paired_analysis.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/paired_analysis.stderr.log",
+    "stdout_sha256": "3635f572e229bda3cc9f289b6ec0b086f27e06ae15147922e0592b929524bb8c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "finished_at_utc": "2026-11-10T01:59:55.332281+00:00"
+  },
+  {
+    "stage": "full_independent_audit",
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.verify_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--output",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/FINAL_AUDIT.json"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 3.6206461670808494,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/full_independent_audit.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/full_independent_audit.stderr.log",
+    "stdout_sha256": "186a7da55f531c0383f3b8adb36eca152b174beea83b359c6da4432706540e3b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "finished_at_utc": "2026-11-10T01:59:58.953892+00:00"
+  },
+  {
+    "stage": "primary_report",
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.report_roberta",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--output",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/docs/roberta_context_results_20261109.md",
+      "--verification",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/FINAL_AUDIT.json"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 0.029782041907310486,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/primary_report.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/primary_report.stderr.log",
+    "stdout_sha256": "a580f3fc6b2b35aee792fd5329e4656952020a42ba6b901a2ec716f773158a9f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "finished_at_utc": "2026-11-10T01:59:58.984505+00:00"
+  },
+  {
+    "stage": "declared_prefix_whitespace_inference",
+    "command": [
+      "/opt/anaconda3/envs/python_course/bin/python",
+      "-u",
+      "-m",
+      "experiments.supervised.diagnose_roberta_prefix",
+      "--study-dir",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+      "--fit-key",
+      "canonical_8000",
+      "--output",
+      "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study/exploratory_prefix_whitespace"
+    ],
+    "return_code": 0,
+    "process_wall_seconds": 87.75124641740695,
+    "stdout_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/declared_prefix_whitespace_inference.stdout.log",
+    "stderr_path": "results/supervised/a_roberta_context_20261109_v1_study/logs/declared_prefix_whitespace_inference.stderr.log",
+    "stdout_sha256": "3011f2444d0d44a117454687e196e82d33fbdbcdefcffbcaa594a5fd4fc2bdda",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "finished_at_utc": "2026-11-10T02:01:26.736416+00:00"
+  }
+]

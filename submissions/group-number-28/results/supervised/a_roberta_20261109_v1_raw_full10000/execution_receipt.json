@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/anaconda3/envs/python_course/bin/python",
+    "-u",
+    "-m",
+    "experiments.supervised.export_roberta",
+    "--source-study",
+    "/Users/lin/Desktop/Cornell_tech_kaggle/results/supervised/a_roberta_context_20261109_v1_study",
+    "--run-id",
+    "a_roberta_20261109_v1_raw_full10000",
+    "--output",
+    "/Users/lin/Desktop/Cornell_tech_kaggle/submissions/a_roberta_20261109_v1_raw_full10000.csv"
+  ],
+  "return_code": 0,
+  "process_wall_seconds": 1824.703378625214,
+  "stdout_path": "results/supervised/a_roberta_20261109_v1_raw_full10000/logs/a_roberta_20261109_v1_raw_full10000.stdout.log",
+  "stderr_path": "results/supervised/a_roberta_20261109_v1_raw_full10000/logs/a_roberta_20261109_v1_raw_full10000.stderr.log",
+  "stdout_sha256": "bf7c278b5109dbbc7bb16027813ce0e4c41b94d02f50c0f0f461be1db5534b9b",
+  "stderr_sha256": "9b8232d89dbc497514b09672cd22edd5d701bb651d3388041016e20f4fb97c4c",
+  "completed_at_utc": "2026-11-10T03:02:00.592684+00:00"
+}

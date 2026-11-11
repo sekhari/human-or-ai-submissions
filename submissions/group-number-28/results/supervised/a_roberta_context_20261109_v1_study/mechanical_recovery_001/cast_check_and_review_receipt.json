@@ -1,0 +1,8 @@
+{
+  "interpreter": "/opt/anaconda3/envs/python_course/bin/python",
+  "original_combined_conversion_reproduced_error": true,
+  "separate_cpu_then_float64_conversion_passed": true,
+  "model_fits": 0,
+  "optimizer_updates": 0,
+  "independent_worker_review": "Approved safe to resume; training loop unchanged, 676 steps preserved"
+}

@@ -1,0 +1,16 @@
+{
+  "all_checks_passed": true,
+  "artifact_sha256": {
+    "report/figures/q5_a_q5_richness_20261108_v4_richness.png": "6c58c2968b9e239323520e8da23349fe7182030a367623c2d9bb8cb0095c2f63",
+    "results/supervised/a_q5_richness_20261108_v4_study/bootstrap.json": "7cd8d9179f0c5909856c21cba1b0179ee0f46e56b018862dda73ed1011355094",
+    "results/supervised/a_q5_richness_20261108_v4_study/comparison.csv": "5d3b437fc20cc04915bdbd343d5e0fca9c17aa48ad6ed577db790df908e8029c",
+    "results/supervised/a_q5_richness_20261108_v4_study/selection.json": "e8bf36435e2467218d651c5a2795bcba21a12ac5622d957faee9d9693041a55a",
+    "results/supervised/a_q5_richness_20261108_v4_verification.json": "dc5dd6aec7cb1605ae2a0786f114e4eaf40cb5242a28e1930928d897c53dc974"
+  },
+  "completed_at_utc": "2026-11-09T03:36:43.883828+00:00",
+  "n_cv_fits": 12,
+  "n_matrix_conditions": 15,
+  "n_new_8000_models": 3,
+  "new_submission_generated": true,
+  "uploaded_to_kaggle": false
+}

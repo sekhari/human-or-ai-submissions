@@ -1,0 +1,11 @@
+{
+  "elapsed_this_process_seconds": 878.3888707919978,
+  "epoch": 2,
+  "examples": 10788,
+  "fit_key": "random_0",
+  "loss": 0.0010101753287017345,
+  "phase": "training",
+  "recent_mean_update_seconds": 1.2426704168878495,
+  "training_only_eta_seconds": 0.0,
+  "update_global": 676
+}

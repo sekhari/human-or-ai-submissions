@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-11-08T20:08:40.911592+00:00",
+  "csv_sha256": "621750cf99ad970b3d3ee01ad26ed2bfe46ea4cee0a37a9f9676f0748464c4c2",
+  "export_source_sha256": "609cef2a5745198f1a987567ad4799e08c5a708712bcde43264497da1176b871",
+  "full_refit": true,
+  "full_refit_held_out_evaluation": null,
+  "model_reload_prediction_max_error": 0.0,
+  "model_run_id": "a_q5_20261108_v1_wc120_full10000",
+  "model_sha256": "b2141babfb7f7e69d1d14489c625bbfbd2d79a2d8771d0fa387495c95db380a1",
+  "n_test": 3000,
+  "n_train": 10000,
+  "probability_summary": {
+    "max": 0.9999996488550972,
+    "mean": 0.4190423748462329,
+    "min": 6.122521022587926e-06
+  },
+  "source_8000_model_validation_auroc": 0.970006,
+  "source_run_id": "a_q5_20261108_v1_wc120",
+  "test_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "uploaded_to_kaggle": false
+}

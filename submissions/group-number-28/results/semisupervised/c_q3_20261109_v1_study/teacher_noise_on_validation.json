@@ -1,0 +1,37 @@
+[
+  {
+    "threshold": 0.99,
+    "selected": 532,
+    "selected_share": 0.266,
+    "error_rate": 0.005639097744360902,
+    "selected_ai_share": 0.6353383458646616
+  },
+  {
+    "threshold": 0.95,
+    "selected": 1072,
+    "selected_share": 0.536,
+    "error_rate": 0.011194029850746268,
+    "selected_ai_share": 0.5513059701492538
+  },
+  {
+    "threshold": 0.9,
+    "selected": 1332,
+    "selected_share": 0.666,
+    "error_rate": 0.01876876876876877,
+    "selected_ai_share": 0.5315315315315315
+  },
+  {
+    "threshold": 0.8,
+    "selected": 1596,
+    "selected_share": 0.798,
+    "error_rate": 0.03132832080200501,
+    "selected_ai_share": 0.5075187969924813
+  },
+  {
+    "threshold": 0.5,
+    "selected": 2000,
+    "selected_share": 1.0,
+    "error_rate": 0.092,
+    "selected_ai_share": 0.491
+  }
+]

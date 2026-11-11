@@ -1,0 +1,11 @@
+{
+  "new_model_fits": 0,
+  "model_sha256": "b824bb4181333c20c46a3101455afc7d07c59980f72a198efa8d97e9cad5bfd8",
+  "python": "/opt/anaconda3/bin/python",
+  "elapsed_seconds": 7.305694709066302,
+  "prediction_rows": 9627,
+  "matched_historical_prediction_rows": 7627,
+  "maximum_historical_error": 0.0,
+  "probability_orientation": "P(AI=1)",
+  "fit_validation_or_test_inputs_used": false
+}

@@ -1,0 +1,11 @@
+{
+  "artifact_sha256": {
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness_full10000/config.json": "8fcd16154394ba7db9345b8a2afa1f5c186b8b6fb4330f4a29285edb18db04f2",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness_full10000/metrics.json": "134b786953e0ad431b6ae0a6ab4b32c408f48839f351949f585bba0fa04e77d6",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness_full10000/model.joblib": "0aa5f3dc47abd2793fd82b4705511f93095e6b478cf1219d48782727c74fd070",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness_full10000/model_fit.json": "c3baa1eb032cb0a4faed86514863c8e67eae583e03b2677c6aa627afbd53b0ce",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness_full10000/train_ids.csv": "114ec875864fd8679d7e5191c94fbe941f986abafae6e0687036ee13992fae93",
+    "submissions/a_q5_richness_20261108_v4_c60_richness_full10000.csv": "7179c376820b13c3f99cbbf6c5b3968bddb52d6392b0c3cfef52b1eac8ba58af",
+    "submissions/a_q5_richness_20261108_v4_c60_richness_full10000.metadata.json": "2e154a22d60e60870063873751a8e4553c06cf6e0a2d9bcd7b46f2a9ba0906d1"
+  }
+}

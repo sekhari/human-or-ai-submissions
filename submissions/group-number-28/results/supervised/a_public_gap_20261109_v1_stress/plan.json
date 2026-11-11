@@ -1,0 +1,50 @@
+{
+  "authorship_preservation_hypotheses": [
+    "Quote/dash mapping changes typography while preserving authorship and most content.",
+    "Digit masking preserves original authorship but removes potentially meaningful numerical content; a stress diagnostic, not realistic attack evidence.",
+    "A prefix retains original authorship but removes content and changes length/whitespace; not a pure length intervention or proven hidden-test attack."
+  ],
+  "bootstrap": {
+    "method": "Paired, class-stratified percentile bootstrap of original document IDs; fixed models/split, no selection or training-variation correction.",
+    "repetitions": 500,
+    "seed": 20261109
+  },
+  "conditions": {
+    "digit_runs_to_zero": "Python Unicode-aware re.sub(r'\\d+', '0', passage); full canonical validation IDs.",
+    "prefix_100_on_min150": "Keep first 100 whitespace-split words joined by one ASCII space; compare with unchanged original text on exactly canonical IDs having >=150 whitespace words.",
+    "quote_and_dash": "Apply existing frozen quote_typography then dash_typography mappings together; full canonical validation IDs."
+  },
+  "created_at_utc": "2026-11-09T05:05:11.109912+00:00",
+  "diagnostic_only": true,
+  "fit_performed": false,
+  "limitations": "Post-public-feedback exploratory diagnostics. No observed condition identifies hidden domains, attacks, or causes of the public gap. No candidate selection or export.",
+  "models": {
+    "c60": {
+      "model_sha256": "5bcc415138cc457f41f119e335e1f58027846aea185b3140db61ae49038a292a",
+      "reference_predictions_sha256": "3278bc9bac3130259edf1b452bcf3847919df37027f06a1909fa2c1803ce21e9",
+      "run_id": "a_q5_20261108_v1_c60"
+    },
+    "c60_richness": {
+      "model_sha256": "0f5a0b463fa8bab2492c27666347ca383de7c140966374584ffc035474c01d6b",
+      "reference_predictions_sha256": "cbfec06276a67913f208a929d53a0c92c11d732a8fbea8874f3716a46f25a08b",
+      "run_id": "a_q5_richness_20261108_v4_c60_richness"
+    },
+    "wc120": {
+      "model_sha256": "b824bb4181333c20c46a3101455afc7d07c59980f72a198efa8d97e9cad5bfd8",
+      "reference_predictions_sha256": "700e425c4c07e488ed4d05dd05f66fa5625f3906b8f67b754079d3595866d461",
+      "run_id": "a_q5_20261108_v1_wc120"
+    },
+    "wc120_quotes": {
+      "model_sha256": "c275ca3ee910870134996f8893c87ddcac50fd38b64998e8cfc8226bb679ca92",
+      "reference_predictions_sha256": "094eb30c7b8095ef86bd1b14175f49972ea67dfe6b1fd40feb16a4e9cd681185",
+      "run_id": "a_q5_quotes_20261108_v3_wc120_norm"
+    }
+  },
+  "n_prefix_subset": 1627,
+  "n_validation": 2000,
+  "source_sha256": {
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad",
+    "experiments/supervised/audit_public_stress.py": "93ce89e1446a92af28ec85394e5e023820d07e1dcb2e824c3abd682fe72c45d9",
+    "experiments/supervised/q5_sensitivity.py": "5bd60837d214f2e3023e4e45cf9fbb0d533d53d701d1e41250839ded003e7808"
+  }
+}

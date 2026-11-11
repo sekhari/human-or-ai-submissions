@@ -1,0 +1,368 @@
+{
+  "random": {
+    "clean": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.026962239785843223,
+        0.03492687325931032,
+        0.030587619461839632
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": 0.03082557750233106,
+      "macro_regression_credit_fraction": 0.0027180226593525917,
+      "macro_repair_credit_fraction": 0.03354360016168367,
+      "maximum_fold_delta": 0.03492687325931032,
+      "minimum_fold_delta": 0.026962239785843223,
+      "positive_folds": 3,
+      "roberta_macro_auroc": 0.9966733635357157,
+      "wc120_macro_auroc": 0.9658477860333847
+    },
+    "digit_runs_to_zero": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.03101538309273677,
+        0.03818030912085746,
+        0.03429897117520031
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": 0.03449822112959818,
+      "macro_regression_credit_fraction": 0.002574629063455482,
+      "macro_repair_credit_fraction": 0.03707285019305376,
+      "maximum_fold_delta": 0.03818030912085746,
+      "minimum_fold_delta": 0.03101538309273677,
+      "positive_folds": 3,
+      "roberta_macro_auroc": 0.9968729376998212,
+      "wc120_macro_auroc": 0.9623747165702232
+    },
+    "prefix_100": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        -0.0313195768072706,
+        -0.07222512373673917,
+        -0.031045741744940458
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2087,
+        2699,
+        1634
+      ],
+      "macro_delta_auroc": -0.04486348076298341,
+      "macro_regression_credit_fraction": 0.14964742626715727,
+      "macro_repair_credit_fraction": 0.10478394550417384,
+      "maximum_fold_delta": -0.031045741744940458,
+      "minimum_fold_delta": -0.07222512373673917,
+      "positive_folds": 0,
+      "roberta_macro_auroc": 0.8121553264775673,
+      "wc120_macro_auroc": 0.8570188072405506
+    },
+    "quote_and_dash": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.031122013752409416,
+        0.03724435511631141,
+        0.03364946056941387
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": 0.03400527647937823,
+      "macro_regression_credit_fraction": 0.002562725634422358,
+      "macro_repair_credit_fraction": 0.03656800211380066,
+      "maximum_fold_delta": 0.03724435511631141,
+      "minimum_fold_delta": 0.031122013752409416,
+      "positive_folds": 3,
+      "roberta_macro_auroc": 0.9967992367983319,
+      "wc120_macro_auroc": 0.9627939603189538
+    },
+    "whitespace_only": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        -0.05881122720696019,
+        -0.1270810041164907,
+        -0.09071786798865333
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": -0.09220336643736808,
+      "macro_regression_credit_fraction": 0.1282236305208481,
+      "macro_repair_credit_fraction": 0.036020264083480046,
+      "maximum_fold_delta": -0.05881122720696019,
+      "minimum_fold_delta": -0.1270810041164907,
+      "positive_folds": 0,
+      "roberta_macro_auroc": 0.8477150873868146,
+      "wc120_macro_auroc": 0.9399184538241826
+    }
+  },
+  "topic": {
+    "clean": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.07804716256403743,
+        0.0421591804570528,
+        0.06851326541216507
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": 0.06290653614441843,
+      "macro_regression_credit_fraction": 0.0033148626684873887,
+      "macro_repair_credit_fraction": 0.06622139881290577,
+      "maximum_fold_delta": 0.07804716256403743,
+      "minimum_fold_delta": 0.0421591804570528,
+      "positive_folds": 3,
+      "roberta_macro_auroc": 0.9956515345498977,
+      "wc120_macro_auroc": 0.9327449984054793
+    },
+    "digit_runs_to_zero": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.07724949453532592,
+        0.04780335293431548,
+        0.07992059612564517
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": 0.06832448119842886,
+      "macro_regression_credit_fraction": 0.003312068285524042,
+      "macro_repair_credit_fraction": 0.07163654948395289,
+      "maximum_fold_delta": 0.07992059612564517,
+      "minimum_fold_delta": 0.04780335293431548,
+      "positive_folds": 3,
+      "roberta_macro_auroc": 0.995653533131534,
+      "wc120_macro_auroc": 0.9273290519331052
+    },
+    "prefix_100": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        -0.0584978098208655,
+        -0.03322576423879853,
+        0.0957767926635309
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        1938,
+        2593,
+        1889
+      ],
+      "macro_delta_auroc": 0.0013510728679556234,
+      "macro_regression_credit_fraction": 0.12985950999573953,
+      "macro_repair_credit_fraction": 0.1312105828636951,
+      "maximum_fold_delta": 0.0957767926635309,
+      "minimum_fold_delta": -0.0584978098208655,
+      "positive_folds": 1,
+      "roberta_macro_auroc": 0.8182250299781725,
+      "wc120_macro_auroc": 0.8168739571102167
+    },
+    "quote_and_dash": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.07808840094070635,
+        0.04620846170696391,
+        0.06838817448068035
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": 0.0642283457094502,
+      "macro_regression_credit_fraction": 0.003342685053033955,
+      "macro_repair_credit_fraction": 0.06757103076248408,
+      "maximum_fold_delta": 0.07808840094070635,
+      "minimum_fold_delta": 0.04620846170696391,
+      "positive_folds": 3,
+      "roberta_macro_auroc": 0.9956008104104009,
+      "wc120_macro_auroc": 0.9313724647009507
+    },
+    "whitespace_only": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        -0.09628277272705843,
+        -0.0447456779692359,
+        0.024599612795454973
+      ],
+      "folds": [
+        0,
+        1,
+        2
+      ],
+      "held_n_by_fold": [
+        2606,
+        3354,
+        2040
+      ],
+      "macro_delta_auroc": -0.03880961263361312,
+      "macro_regression_credit_fraction": 0.10423281171804706,
+      "macro_repair_credit_fraction": 0.065423199084434,
+      "maximum_fold_delta": 0.024599612795454973,
+      "minimum_fold_delta": -0.09628277272705843,
+      "positive_folds": 1,
+      "roberta_macro_auroc": 0.862552494389147,
+      "wc120_macro_auroc": 0.9013621070227603
+    }
+  },
+  "validation": {
+    "clean": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.029290999999999845
+      ],
+      "folds": [
+        0
+      ],
+      "held_n_by_fold": [
+        2000
+      ],
+      "macro_delta_auroc": 0.029290999999999845,
+      "macro_regression_credit_fraction": 0.00025,
+      "macro_repair_credit_fraction": 0.029541,
+      "maximum_fold_delta": 0.029290999999999845,
+      "minimum_fold_delta": 0.029290999999999845,
+      "positive_folds": 1,
+      "roberta_macro_auroc": 0.9992969999999999,
+      "wc120_macro_auroc": 0.970006
+    },
+    "digit_runs_to_zero": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.03274200000000016
+      ],
+      "folds": [
+        0
+      ],
+      "held_n_by_fold": [
+        2000
+      ],
+      "macro_delta_auroc": 0.03274200000000016,
+      "macro_regression_credit_fraction": 0.000266,
+      "macro_repair_credit_fraction": 0.033008,
+      "maximum_fold_delta": 0.03274200000000016,
+      "minimum_fold_delta": 0.03274200000000016,
+      "positive_folds": 1,
+      "roberta_macro_auroc": 0.999262,
+      "wc120_macro_auroc": 0.9665199999999998
+    },
+    "prefix_100": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        -0.09377168922093071
+      ],
+      "folds": [
+        0
+      ],
+      "held_n_by_fold": [
+        1627
+      ],
+      "macro_delta_auroc": -0.09377168922093071,
+      "macro_regression_credit_fraction": 0.17160890451438876,
+      "macro_repair_credit_fraction": 0.077837215293458,
+      "maximum_fold_delta": -0.09377168922093071,
+      "minimum_fold_delta": -0.09377168922093071,
+      "positive_folds": 0,
+      "roberta_macro_auroc": 0.7824561669369138,
+      "wc120_macro_auroc": 0.8762278561578445
+    },
+    "quote_and_dash": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        0.032083000000000195
+      ],
+      "folds": [
+        0
+      ],
+      "held_n_by_fold": [
+        2000
+      ],
+      "macro_delta_auroc": 0.032083000000000195,
+      "macro_regression_credit_fraction": 0.000251,
+      "macro_repair_credit_fraction": 0.032334,
+      "maximum_fold_delta": 0.032083000000000195,
+      "minimum_fold_delta": 0.032083000000000195,
+      "positive_folds": 1,
+      "roberta_macro_auroc": 0.999271,
+      "wc120_macro_auroc": 0.9671879999999998
+    },
+    "whitespace_only": {
+      "aggregation": "Equal-weight mean of within-fit metrics; no pooled cross-fit score AUC.",
+      "fold_delta_aurocs": [
+        -0.10072000000000003
+      ],
+      "folds": [
+        0
+      ],
+      "held_n_by_fold": [
+        2000
+      ],
+      "macro_delta_auroc": -0.10072000000000003,
+      "macro_regression_credit_fraction": 0.129607,
+      "macro_repair_credit_fraction": 0.028887,
+      "maximum_fold_delta": -0.10072000000000003,
+      "minimum_fold_delta": -0.10072000000000003,
+      "positive_folds": 0,
+      "roberta_macro_auroc": 0.846949,
+      "wc120_macro_auroc": 0.947669
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "purpose": "Frozen independent zero-fit audit implementation; separate from scientific training provenance",
+  "frozen_at_utc": "2026-11-09T23:27:31.795838+00:00",
+  "source_files_sha256": {
+    "experiments/supervised/verify_roberta.py": "2f18699a760c816492c06178f91cd1f1a768a942b147507c9bcbf8bdcdc059f1",
+    "experiments/supervised/test_roberta_audit.py": "130fabf4c608bf9efe6aaa5055c9ccba6a1c3f99cde2cbf057a526c121a0a694"
+  },
+  "copy_root": "audit_source",
+  "preflight_status": "passed",
+  "preflight_passed_checks": 109,
+  "preflight_receipt_sha256": "aa58d4135e2a1fd7ca37f8475fc1586e1ab6a46c1fab4c6a41a7c819fa06d6b7",
+  "synthetic_tests_passed": 4,
+  "no_model_loading_or_fits": true,
+  "timing_scope": "Audit source frozen after first training process launch but before its first quality results; training/evaluation source provenance is independent"
+}

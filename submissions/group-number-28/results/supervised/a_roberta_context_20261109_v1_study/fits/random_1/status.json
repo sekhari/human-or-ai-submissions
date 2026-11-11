@@ -1,0 +1,7 @@
+{
+  "epochs": 2,
+  "fit_key": "random_1",
+  "metrics_sha256": "f596f59e8fe3a6c2bcf6ad3396bd2cf0c7ef8ed2ead9f688728f649d54b890f5",
+  "optimizer_updates": 582,
+  "phase": "complete"
+}

@@ -1,0 +1,29 @@
+{
+  "feature_counts": {
+    "char": 0,
+    "total": 120000,
+    "word": 120000
+  },
+  "fit_seconds": 5.470422166865319,
+  "memory_note": "cumulative process high-water mark, not isolated model memory",
+  "n_features": 120000,
+  "norm_check_max_abs_error": 7.771561172376096e-16,
+  "prediction_seconds_train_plus_validation": 0.9620323749259114,
+  "process_peak_rss_bytes": 2082471936,
+  "timing_definition": "one CPU thread; full feature fitting and sigmoid calibration; CV excluded",
+  "train": {
+    "accuracy_at_0_5": 0.999875,
+    "auroc": 1.0,
+    "brier": 0.0008979895363486104,
+    "log_loss": 0.021453747144056675,
+    "n": 8000
+  },
+  "validation": {
+    "accuracy_at_0_5": 0.871,
+    "auroc": 0.9445970000000001,
+    "brier": 0.090334093629031,
+    "log_loss": 0.29415725705167384,
+    "n": 2000
+  },
+  "warnings": []
+}

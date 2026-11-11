@@ -1,0 +1,40 @@
+{
+  "purpose": "Targeted quote-canonicalization intervention after measured typography sensitivity and negative C tuning",
+  "representations": ["c60", "wc120"],
+  "train_preprocessing": ["raw", "quote_normalized"],
+  "C": 1,
+  "feature_plan": "experiments/supervised/q5_plan.json",
+  "reference_study": "a_q5_20261108_v1_study",
+  "preceding_study": "a_q5_tuned_20261108_v2_study",
+  "incumbent_run_id": "a_q5_20261108_v1_wc120",
+  "seeds": {"model": 42, "inner_cv": 142, "calibration": 242, "bootstrap": 342},
+  "conditions": ["original", "quote_typography", "dash_typography"],
+  "quote_rule": "U+2018/2019/201A/201B -> ASCII apostrophe; U+201C/201D/201E/201F -> ASCII double quote",
+  "placement": "stateless quote_normalize transformer before TF-IDF inside the complete calibrated pipeline",
+  "primary_comparison": "wc120_norm minus wc120_raw on identical quote_typography validation inputs",
+  "secondary_comparisons": "within-representation clean and quote differences for C60; clean cost, dash axis and incumbent-relative differences",
+  "cv": "three training-only stratified folds; four fixed pipelines and 12 candidate-fold fits; raw-margin AUROC on all three input conditions",
+  "evaluation": {"error_threshold": 0.5, "bootstrap_replicates": 1000, "length_cutpoints": "training-only word-count tertiles"},
+  "export_rule": {
+    "candidate_priority": ["wc120_norm", "c60_norm"],
+    "minimum_positive_quote_cv_folds": 2,
+    "quote_cv_mean_must_improve_own_raw": true,
+    "quote_validation_interval_lower_vs_incumbent_must_be_positive": true,
+    "maximum_clean_point_regression_vs_incumbent": 0.003,
+    "maximum_clean_cv_regression_vs_incumbent": 0.003,
+    "maximum_length_bin_regression_vs_incumbent": 0.01,
+    "maximum_extra_dash_loss_vs_incumbent": 0.005,
+    "maximum_new_candidates": 1,
+    "budget_note": "The 0.003 point-loss budget is an exploratory preference fixed after v2 diagnosis but before v3 scores; it is not a statistical noninferiority margin. Passing only this tradeoff rule does not establish a better Kaggle model."
+  },
+  "resources": {"threads": 1, "gpu": false, "external_weights": false},
+  "stopping_rule": "Complete the 12 CV fits, two normalized 8000-row fits, full train-preprocessing x input-condition matrix and verification; export at most one eligible candidate. Do not add a second intervention or expand parameters in this run.",
+  "limitations": [
+    "This intervention follows inspected public and development diagnostics; it is not an untouched test.",
+    "Equal normalized-model predictions on raw and canonical quotes are guaranteed by construction, not independent robustness evidence.",
+    "Dash is an additional diagnostic axis already observed in v2, not a new independent holdout.",
+    "Bootstrap intervals condition on models and this split, omitting training variation and selection adjustment.",
+    "A robustness-tradeoff candidate may slightly reduce clean performance and has no established public/private gain."
+  ],
+  "excluded": ["split replacement", "test fitting", "unlabeled learning", "C tuning", "new quote rules", "automatic Kaggle upload", "automatic second method family"]
+}

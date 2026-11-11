@@ -1,0 +1,47 @@
+{
+  "candidate_category": "development_improvement_candidate",
+  "cv_selected_model_id": "c60_richness",
+  "eligibility": {
+    "c60_richness": {
+      "checks": {
+        "length_guard": true,
+        "positive_cv_fold_count_vs_incumbent": true,
+        "positive_mean_cv_delta_vs_incumbent": true,
+        "positive_validation_interval_lower_vs_c60": true,
+        "positive_validation_interval_lower_vs_incumbent": true,
+        "typography_guard": true
+      },
+      "cv_fold_gains_vs_incumbent": [
+        0.0037807427868962185,
+        -0.0009936892019106747,
+        0.0064618555238959985
+      ],
+      "eligible": true,
+      "extra_typography_loss_vs_incumbent": {
+        "dash_typography": 1.0999999999872223e-05,
+        "quote_typography": -7.90000000002733e-05
+      },
+      "maximum_length_bin_regression_vs_incumbent": -0.0007897618150162211
+    }
+  },
+  "export_eligible": true,
+  "interpretation": "Incremental prediction conditional on the explicit length block and geometry; no causal or hidden-test claim.",
+  "new_kaggle_upload": false,
+  "primary_comparison_key": "richness_given_length",
+  "primary_evidence": {
+    "all_passed": true,
+    "checks": {
+      "minimum_positive_cv_folds": true,
+      "positive_mean_cv_delta": true,
+      "positive_validation_interval_lower": true
+    },
+    "cv_fold_gains": [
+      0.0026222822572209425,
+      0.0016685205784205959,
+      0.006870434787991875
+    ]
+  },
+  "retain_incumbent_until_external_check": true,
+  "selected_model_id": "c60_richness",
+  "submission_csv": "submissions/a_q5_richness_20261108_v4_c60_richness_full10000.csv"
+}

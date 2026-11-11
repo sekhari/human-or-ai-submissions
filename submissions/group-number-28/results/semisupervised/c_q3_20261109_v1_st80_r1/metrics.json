@@ -1,0 +1,10 @@
+{
+  "round": 1,
+  "pseudo_added": 2309,
+  "pseudo_ai": 1076,
+  "pseudo_human": 1233,
+  "train_auroc_labeled_rows": 1.0,
+  "validation_auroc": 0.969557,
+  "fit_seconds": 32.55644192099999,
+  "evaluation_rows": 2000
+}

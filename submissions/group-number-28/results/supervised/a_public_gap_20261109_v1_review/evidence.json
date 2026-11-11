@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-11-09T05:05:54.549584+00:00",
+  "observation_source": "User-supplied Kaggle submission screenshot in current chat",
+  "observation_date_client": "2026-11-09",
+  "image_filename": "codex-clipboard-3ce9f5ae-219d-4f1c-b78b-568da3ee5c32.png",
+  "image_sha256": "b8c1387f7d522ac64c617fcb98f3c1266376356216c9acc3ac8270d9ccda12bc",
+  "input_sha256": {
+    "results/supervised/a_q1_expanded_20261108_v2_svm/metrics.json": "3da5b4d33c89285379653bb5011ea524db4a026f9634662aa7b2128c3d0abf38",
+    "submissions/a_q1_expanded_20261108_v2_svm_full10000.csv": "0af001abe49b88a4184b5a3318ca6915832747ff858bc9d397de8b891aab6e1a",
+    "results/supervised/a_q5_20261108_v1_wc120/metrics.json": "a46711eadb95547535af77b26e286f4e8653c81fcbe08e2a81497478dde216e7",
+    "submissions/a_q5_20261108_v1_wc120_full10000.csv": "621750cf99ad970b3d3ee01ad26ed2bfe46ea4cee0a37a9f9676f0748464c4c2",
+    "results/supervised/a_q5_quotes_20261108_v3_wc120_norm/metrics.json": "6184bec8eeddb723f88818f5703f86b764bcb1812837efa52f92441840d46a48",
+    "submissions/a_q5_quotes_20261108_v3_wc120_norm_full10000.csv": "67c97db099987366538d5b3bc35213dcdb3c9a0ed13ab5d115ed161b9b9849cb",
+    "results/supervised/a_q5_richness_20261108_v4_c60_richness/metrics.json": "49d8fe6543131d4ee5381b07546f22c54c4aebcd3705b6e029a5a49644e7093d",
+    "submissions/a_q5_richness_20261108_v4_c60_richness_full10000.csv": "7179c376820b13c3f99cbbf6c5b3968bddb52d6392b0c3cfef52b1eac8ba58af"
+  },
+  "unique_scored_candidates": 4,
+  "screenshot_rows": 5,
+  "repeated_wc120_rows": 2,
+  "upload_timestamp_verified": false,
+  "kaggle_submission_ids_verified": false,
+  "public_labels_available": false,
+  "models_fitted": 0,
+  "new_submissions_created": 0,
+  "limitations": [
+    "Development AUROCs belong to separately trained 8000-label models; public scores belong to 10000-label refits.",
+    "The repeated WC120 upload has the same score and is not independent evidence.",
+    "No paired public uncertainty or private score is available."
+  ]
+}

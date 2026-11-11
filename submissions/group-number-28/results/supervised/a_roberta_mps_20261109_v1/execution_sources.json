@@ -1,0 +1,9 @@
+{
+  "source_sha256": {
+    "experiments/supervised/benchmark_roberta_mps.py": "3cb89bfb42e5a87139f14ed032b7dce0aead89b22a97adcd428e27ae6e7f6fc5",
+    "human_ai/data.py": "ba2ffd9acc28ed8264bb95b6070b8dc44a590c4cf095015a89a60e135473df3d",
+    "data/splits/manifest.json": "8b9334a2e6c3101d878c455bfb3175a4cc1ae68b0aedfdebbb89ad28c95732ad"
+  },
+  "device_plan_sha256": "2b607fa5566291ace8fa46aeb2e2d45eaf1837a2cac9a014ada7c2b9b38b5cc4",
+  "model_download_sha256": "704256889f2ea3d000c9adbb07e7f1f46151995d01b5bef72c52d313d196bd03"
+}

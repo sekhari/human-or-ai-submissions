@@ -1,0 +1,121 @@
+{
+  "baseline_reference": "results/supervised/a_q1_expanded_20261108_v2_svm/validation_predictions.csv",
+  "char_representation": {
+    "analyzer": "char",
+    "dtype": "float64",
+    "lowercase": true,
+    "max_df": 1.0,
+    "max_features": 60000,
+    "min_df": 2,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "norm": "l2",
+    "smooth_idf": true,
+    "strip_accents": null,
+    "sublinear_tf": true,
+    "use_idf": true
+  },
+  "classifier": {
+    "C": 1,
+    "dual": "auto",
+    "max_iter": 10000,
+    "tol": 1e-05
+  },
+  "decision_rule": "Use the primary paired difference, interval, training-fold consistency and cost together. An interval crossing zero is inconclusive, not evidence of equivalence. Negative results complete Q5.",
+  "evaluation": {
+    "baseline_tolerance": 1e-10,
+    "bootstrap_method": "class-stratified paired percentile bootstrap, conditional on fitted models and split",
+    "bootstrap_replicates": 1000,
+    "calibration": "sigmoid, 3 stratified shuffled training-only folds, ensemble=False; full feature pipeline inside calibrator",
+    "error_threshold": 0.5,
+    "inner_folds": 3,
+    "inner_metric": "raw-margin AUROC, diagnostic only; no tuning",
+    "length_bins": "training-partition word-count tertiles; descriptive only",
+    "primary_comparison": [
+      "wc120",
+      "w60"
+    ],
+    "secondary_comparisons": [
+      "c60 vs w60",
+      "w120 vs w60",
+      "wc120 vs w120"
+    ],
+    "train_rows": 8000,
+    "validation_rows": 2000
+  },
+  "excluded": [
+    "test fitting",
+    "unlabeled learning",
+    "validation fitting",
+    "Kaggle feedback",
+    "adaptive search",
+    "full-10000 final training",
+    "automatic upload"
+  ],
+  "hypothesis": "Character n-grams may contribute complementary local writing-form information; this mechanism is unverified.",
+  "limitations": [
+    "The canonical validation set already informed Q1 development; this is a development comparison, not an untouched final test.",
+    "Intervals omit training variation and selection adjustment.",
+    "W120 is a feature-budget reference, not a strict isolation of effective model capacity.",
+    "Fixed C and normalization permit a controlled representation comparison, not a claim that all geometry or regularization effects are identical.",
+    "Character features may encode source-specific shortcuts; hidden-domain robustness remains unverified."
+  ],
+  "models": {
+    "c60": {
+      "char_max_features": 60000,
+      "name": "Character 60k",
+      "representation": "char(3,5)"
+    },
+    "w120": {
+      "name": "Word 120k (budget reference)",
+      "representation": "word(1,2)",
+      "word_max_features": 120000
+    },
+    "w60": {
+      "name": "Word 60k (Q1 baseline)",
+      "representation": "word(1,2)",
+      "word_max_features": 60000
+    },
+    "wc120": {
+      "char_max_features": 60000,
+      "name": "Word + character 120k",
+      "representation": "word(1,2)+char(3,5), equal blocks, global L2",
+      "word_max_features": 60000
+    }
+  },
+  "purpose": "Frozen Q5 representation ablation, authorized after discussion and before any Q5 scores",
+  "question": "Does adding character TF-IDF improve the fixed Q1 word-TF-IDF SVM?",
+  "resources": {
+    "external_weights": false,
+    "gpu": false,
+    "threads": 1
+  },
+  "seeds": {
+    "bootstrap": 342,
+    "calibration": 242,
+    "inner_cv": 142,
+    "model": 42
+  },
+  "stopping_rule": "Complete exactly these four fixed configurations. Do not add ranges, weights, classifiers, or C searches after seeing results. Fault recovery may resume identical unfinished steps.",
+  "word_representation": {
+    "analyzer": "word",
+    "dtype": "float64",
+    "lowercase": true,
+    "max_df": 1.0,
+    "max_features": 60000,
+    "min_df": 2,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "norm": "l2",
+    "smooth_idf": true,
+    "stop_words": null,
+    "strip_accents": null,
+    "sublinear_tf": true,
+    "token_pattern": "(?u)\\b\\w\\w+\\b",
+    "use_idf": true
+  }
+}

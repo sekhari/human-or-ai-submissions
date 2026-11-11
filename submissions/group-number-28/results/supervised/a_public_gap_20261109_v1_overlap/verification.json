@@ -1,0 +1,21 @@
+{
+  "script_hash_matches_plan": true,
+  "expected_partition_counts_match": true,
+  "zero_pair_outputs_have_header_only": true,
+  "synthetic_prefix_filter_check": {
+    "universe_size": 8,
+    "subset_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "unordered_pairs_checked": 32131,
+    "threshold": 0.8,
+    "missed_qualifying_pairs": 0,
+    "purpose": "Check prefix-intersection property independently by exhaustive set enumeration."
+  }
+}

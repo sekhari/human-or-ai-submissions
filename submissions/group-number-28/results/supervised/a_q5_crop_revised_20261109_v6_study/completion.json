@@ -1,0 +1,241 @@
+{
+  "competition_svc_fits": 12,
+  "completed_at_utc": "2026-11-09T17:26:32.003814+00:00",
+  "incumbent_retained": true,
+  "new_candidates": 0,
+  "outcome": "stopped_no_export",
+  "random_gate": {
+    "checks": {
+      "all_conditions_have_sufficient_three_folds": true,
+      "clean_any_fold": true,
+      "clean_mean": true,
+      "digit_runs_to_zero_any_fold": true,
+      "digit_runs_to_zero_mean": true,
+      "prefix_mean": true,
+      "prefix_positive_folds": true,
+      "quote_and_dash_any_fold": true,
+      "quote_and_dash_mean": true,
+      "whitespace_only_any_fold": true,
+      "whitespace_only_mean": true
+    },
+    "conditions": {
+      "clean": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0025267342504747825,
+          -0.0026307704124742814,
+          -0.002281466142695976
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.002281466142695976,
+        "mean_delta": -0.0024796569352150133,
+        "minimum_fold_delta": -0.0026307704124742814,
+        "positive_folds": 0
+      },
+      "digit_runs_to_zero": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0017809087524330858,
+          -0.0019032013040768403,
+          -0.0014770352294554145
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0014770352294554145,
+        "mean_delta": -0.001720381761988447,
+        "minimum_fold_delta": -0.0019032013040768403,
+        "positive_folds": 0
+      },
+      "prefix_100": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          0.05239265950296024,
+          0.047689329331447095,
+          0.05268955166069533
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": 0.05268955166069533,
+        "mean_delta": 0.05092384683170089,
+        "minimum_fold_delta": 0.047689329331447095,
+        "positive_folds": 3
+      },
+      "quote_and_dash": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.002814224647824326,
+          -0.0028494678717430055,
+          -0.0024998941538272312
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0024998941538272312,
+        "mean_delta": -0.0027211955577981875,
+        "minimum_fold_delta": -0.0028494678717430055,
+        "positive_folds": 0
+      },
+      "whitespace_only": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          0.0033391302708536408,
+          0.004318474707905695,
+          0.0040029098075139435
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": 0.004318474707905695,
+        "mean_delta": 0.0038868382620910933,
+        "minimum_fold_delta": 0.0033391302708536408,
+        "positive_folds": 3
+      }
+    },
+    "failed_checks": [],
+    "gate_family": "random",
+    "passed": true,
+    "scheme": "random",
+    "status": "passed",
+    "summary_definition": "Equal-weight mean of within-fold AUROC arm differences; never pooled raw margins."
+  },
+  "reason": "topic_screen_failed",
+  "synthetic_svc_fits": 0,
+  "test_text_accessed": false,
+  "topic_gate": {
+    "checks": {
+      "all_conditions_have_sufficient_three_folds": true,
+      "clean_any_fold": true,
+      "clean_mean": false,
+      "digit_runs_to_zero_any_fold": true,
+      "digit_runs_to_zero_mean": true,
+      "prefix_any_fold": true,
+      "prefix_mean": true,
+      "prefix_positive_folds": true,
+      "quote_and_dash_any_fold": true,
+      "quote_and_dash_mean": false,
+      "whitespace_only_any_fold": true,
+      "whitespace_only_mean": true
+    },
+    "conditions": {
+      "clean": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0019676596867767016,
+          -0.003802490946280934,
+          -0.003887441255373991
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0019676596867767016,
+        "mean_delta": -0.0032191972961438755,
+        "minimum_fold_delta": -0.003887441255373991,
+        "positive_folds": 0
+      },
+      "digit_runs_to_zero": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0018457119157700985,
+          -0.0023370401663664886,
+          -0.0037209740927059975
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0018457119157700985,
+        "mean_delta": -0.0026345753916141947,
+        "minimum_fold_delta": -0.0037209740927059975,
+        "positive_folds": 0
+      },
+      "prefix_100": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          0.007842460500076642,
+          0.041327661944911664,
+          0.06388954688504622
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": 0.06388954688504622,
+        "mean_delta": 0.03768655644334484,
+        "minimum_fold_delta": 0.007842460500076642,
+        "positive_folds": 3
+      },
+      "quote_and_dash": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          -0.0019152280364405083,
+          -0.004095509981138612,
+          -0.003967307003937437
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": -0.0019152280364405083,
+        "mean_delta": -0.003326015007172186,
+        "minimum_fold_delta": -0.004095509981138612,
+        "positive_folds": 0
+      },
+      "whitespace_only": {
+        "complete_three_folds": true,
+        "evidence_sufficient": true,
+        "fold_deltas": [
+          0.004552716784254951,
+          -5.796371684685386e-05,
+          0.004531178433553551
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "maximum_fold_delta": 0.004552716784254951,
+        "mean_delta": 0.0030086438336538826,
+        "minimum_fold_delta": -5.796371684685386e-05,
+        "positive_folds": 2
+      }
+    },
+    "failed_checks": [
+      "clean_mean",
+      "quote_and_dash_mean"
+    ],
+    "gate_family": "topic",
+    "passed": false,
+    "scheme": "topic",
+    "status": "failed_or_insufficient_evidence",
+    "summary_definition": "Equal-weight mean of within-fold AUROC arm differences; never pooled raw margins."
+  },
+  "uploads": 0
+}

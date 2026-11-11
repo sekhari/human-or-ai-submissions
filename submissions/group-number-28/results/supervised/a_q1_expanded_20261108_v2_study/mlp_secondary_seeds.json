@@ -1,0 +1,41 @@
+{
+  "purpose": "stability only; not used for selection",
+  "runs": [
+    {
+      "fit_seconds": 5.105316916946322,
+      "seed": 7,
+      "selected_parameters": {
+        "alpha": 0.0001,
+        "hidden_layer_sizes": [
+          128
+        ],
+        "learning_rate_init": 0.003
+      },
+      "validation": {
+        "accuracy_at_0_5": 0.8665,
+        "auroc": 0.9368339999999998,
+        "brier": 0.0995552395435226,
+        "log_loss": 0.33482829506536155
+      },
+      "warnings": []
+    },
+    {
+      "fit_seconds": 4.85689291683957,
+      "seed": 142,
+      "selected_parameters": {
+        "alpha": 0.0001,
+        "hidden_layer_sizes": [
+          128
+        ],
+        "learning_rate_init": 0.003
+      },
+      "validation": {
+        "accuracy_at_0_5": 0.8725,
+        "auroc": 0.9401649999999999,
+        "brier": 0.09883907197676547,
+        "log_loss": 0.3415939740143266
+      },
+      "warnings": []
+    }
+  ]
+}

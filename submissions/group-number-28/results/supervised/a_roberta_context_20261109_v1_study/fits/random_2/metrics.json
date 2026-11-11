@@ -1,0 +1,93 @@
+{
+  "all_gradients_mps": true,
+  "checkpoint_bytes": 498654652,
+  "checkpoint_reload_seconds": 2.4891684162430465,
+  "checkpoint_sha256": "e9efe8b7e0641147d0b9a9decb2aa5d11453d8c161f6039fd0a715e90befa276",
+  "completed_epoch_loop_and_checkpoint_seconds": 981.4440584606491,
+  "condition_metrics": {
+    "clean": {
+      "auroc_logit_margin": 0.9981602010692388,
+      "auroc_probability": 0.9981602010692388,
+      "inference_seconds": 48.778924291953444,
+      "n": 2040,
+      "n_ai": 986,
+      "n_human": 1054,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "digit_runs_to_zero": {
+      "auroc_logit_margin": 0.9982015773004222,
+      "auroc_probability": 0.9982015773004222,
+      "inference_seconds": 51.705682625062764,
+      "n": 2040,
+      "n_ai": 986,
+      "n_human": 1054,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "prefix_100": {
+      "auroc_logit_margin": 0.8266240800813401,
+      "auroc_probability": 0.8266240800813401,
+      "inference_seconds": 42.27792233414948,
+      "n": 1634,
+      "n_ai": 736,
+      "n_human": 898,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "quote_and_dash": {
+      "auroc_logit_margin": 0.9981428807864178,
+      "auroc_probability": 0.9981428807864178,
+      "inference_seconds": 52.18189154099673,
+      "n": 2040,
+      "n_ai": 986,
+      "n_human": 1054,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    },
+    "whitespace_only": {
+      "auroc_logit_margin": 0.8517778308077795,
+      "auroc_probability": 0.8517778308077795,
+      "inference_seconds": 52.46462112478912,
+      "n": 2040,
+      "n_ai": 986,
+      "n_human": 1054,
+      "ranking_score": "class1-class0 logits, cast from FP32 to float64 before subtraction"
+    }
+  },
+  "epochs": 2,
+  "evaluation_seconds": 252.70426029199734,
+  "fit_key": "random_2",
+  "fold": 2,
+  "held_tokenization_seconds": 1.814031624700874,
+  "limitations": [
+    "One seed/recipe; overlapping CV fits are not independent replications",
+    "Prior diagnostic folds reused; no untouched hidden-domain estimate",
+    "Memory is sampled, not an exact peak; unified-memory measures overlap",
+    "CPU host/bookkeeping work expected; inspect native logs in addition to Python warnings",
+    "No probability calibration/ensemble fitting or test prediction is performed"
+  ],
+  "model_load_seconds": 0.2833431251347065,
+  "monitored_parameter_max_changes": {
+    "classifier.out_proj.weight": 0.0011677208822220564,
+    "roberta.encoder.layer.0.attention.self.query.weight": 0.0012622028589248657
+  },
+  "n_held": 2040,
+  "n_train": 5960,
+  "optimizer_state_devices": {
+    "exp_avg:mps:torch.float32": 201,
+    "exp_avg_sq:mps:torch.float32": 201,
+    "step:cpu:torch.float32": 201
+  },
+  "optimizer_updates": 746,
+  "process_elapsed_seconds": 1242.2340084160678,
+  "process_lifetime_max_rss_bytes": 2176319488,
+  "recovery_process": false,
+  "recovery_source_amendment": null,
+  "reload_max_logit_error": 0.0,
+  "scheme": "random",
+  "status": "complete",
+  "train_tokenization_seconds": 4.878024875186384,
+  "training_documents_processed": 11920,
+  "training_epoch_loop_seconds": 977.5166230015457,
+  "training_process_wall_seconds": 981.4581371247768,
+  "training_process_wall_seconds_scope": "Training/checkpoint stage in this process; a resumed evaluation-only process performs zero training updates",
+  "training_update_seconds": 976.8426469271071,
+  "training_updates_in_this_process": 746
+}
