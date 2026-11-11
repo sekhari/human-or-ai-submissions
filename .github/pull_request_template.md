@@ -1,15 +1,15 @@
 ## Team
 
-- Kaggle team name:
-- Members (name, NetID):
+- Kaggle team name: Team 27
+- Members (name, NetID): Rachel Liu (rl996), Henry Lam (hgl32), Yang Xiao (yx752)  
 - Report PR URL field will use: this PR
 
 ## Reproducibility
 
-- Setup command(s):
+- Setup command(s): 
 - Train / validation command(s):
 - Command that writes `submission.csv`:
-- Random seed(s):
+- Random seed(s): 27 ?? 
 
 ## Checklist
 

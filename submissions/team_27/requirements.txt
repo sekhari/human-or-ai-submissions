@@ -1,0 +1,15 @@
+# Provided by prof
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+
+# Additional dependencies for this project
+matplotlib
+scipy
+torch
+
+# Enables this environment to run as a Jupyter notebook kernel
+ipykernel
+
+# Transformer fine-tuning notebook
+transformers>=4.40,<5.0

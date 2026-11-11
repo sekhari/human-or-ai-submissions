@@ -1,0 +1,33 @@
+{
+  "model": "openai-community/gpt2",
+  "max_tokens": 512,
+  "rows": 3000,
+  "input_sha256": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+  "torch": "2.8.0",
+  "seconds": 528.0943212499999,
+  "features": [
+    "lm_tokens",
+    "lm_logprob_mean",
+    "lm_logprob_std",
+    "lm_logprob_min",
+    "lm_entropy_mean",
+    "lm_entropy_std",
+    "lm_surprisal_entropy",
+    "lm_logrank_mean",
+    "lm_rank_mean",
+    "lm_logprob_q10",
+    "lm_logprob_q25",
+    "lm_logprob_q50",
+    "lm_logprob_q75",
+    "lm_logprob_q90",
+    "lm_top1_fraction",
+    "lm_top5_fraction",
+    "lm_top10_fraction",
+    "lm_top50_fraction",
+    "lm_surprisal_std",
+    "lm_lowprob_fraction",
+    "lm_half_drift",
+    "lm_char_nll",
+    "lm_adjacent_delta"
+  ]
+}

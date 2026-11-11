@@ -1,0 +1,42 @@
+{
+  "seed": 27,
+  "run_mode": "fixed_final",
+  "frozen_model": "openai-community/gpt2",
+  "chosen": {
+    "family": "lgbm",
+    "view": "combined",
+    "leaves": 31,
+    "trees": 400,
+    "lr": 0.03,
+    "l2": 2
+  },
+  "new_weight": 0.75,
+  "selection_oof_auroc": 0.9991880000000001,
+  "development": [
+    {
+      "model": "v5 baseline",
+      "development_auroc": 0.9981040000000001
+    },
+    {
+      "model": "Frozen branch",
+      "development_auroc": 0.999448
+    },
+    {
+      "model": "Selected blend",
+      "development_auroc": 0.99959
+    }
+  ],
+  "probability_development_auroc": 0.99959,
+  "lm_input_hashes": {
+    "train.csv": "096acb8b4a6d784fcca2307b8093c55c33ce4bbf0dd4470b2e21f5cdd6e79a90",
+    "test.csv": "c37f38ef5a458e404d634423a70edc74f72a2c873c4d57d0946255868a389ce7"
+  },
+  "software_versions": {
+    "numpy": "2.4.2",
+    "pandas": "3.0.1",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "lightgbm": "4.6.0"
+  },
+  "python_version": "3.14.2"
+}
