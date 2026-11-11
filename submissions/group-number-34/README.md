@@ -1,12 +1,12 @@
 # Classical Text Classification
 
-Archived experiment: `classical_fixed2000_v001`.
+Archived experiment: `classical_fixed2000_v002`.
 
 Team: Sydney Patel (sjp294), Teddy Taylor (tft32), Zhenghao Zhou (zz2222).
 
 Kaggle team: `group-number-34`.
 
-The fixed split contains 8,000 training and 2,000 validation examples, with seed 42. Models A-C search C; Model D uses C=16. The learning curve uses the combined model at C=16.
+The fixed split contains 8,000 training and 2,000 validation examples, with seed 42. All four models search C; the selected values are 16, 4, 1, and 4. The learning curve uses the combined model at C=16.
 
 Use Python 3.12 and install `requirements.txt`. Place the competition data in `data/`.
 

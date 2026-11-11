@@ -3,7 +3,7 @@
 
 Run with --train PATH --output-dir PACKAGE_DIR --seed 42. Original team
 sources must be in PACKAGE_DIR/code, or supplied with --code-dir.
-No estimator parameters are changed. No models are downloaded or saved.
+The original model builders are retained. No models are downloaded or saved.
 """
 from __future__ import annotations
 
@@ -21,7 +21,9 @@ import traceback
 import warnings
 
 C_VALUES = [0.25, 1.0, 4.0, 16.0, 64.0]
-TUNED_MODELS = ["tfidf_lr", "char_lr", "tfidf_svm"]
+TUNED_MODELS = ["tfidf_lr", "char_lr", "tfidf_svm", "word_char_lr"]
+INITIAL_C = {"tfidf_lr": 4.0, "char_lr": 4.0, "tfidf_svm": 4.0, "word_char_lr": 16.0}
+EXPECTED_UNIQUE_FITS = 24
 TRAIN_SIZES = [500, 1000, 2000, 5000, 8000]
 TIE_TOLERANCE = 0.001
 
@@ -112,7 +114,7 @@ def main():
 
     if SEED != args.seed:
         raise ValueError(f"Team source SEED is {SEED}, expected {args.seed}")
-    if set(TUNED_MODELS + ["word_char_lr"]) - set(MODELS):
+    if set(TUNED_MODELS) - set(MODELS):
         raise ValueError("The original four model builders are required.")
     training_sources = [code / "train.py", code / "src" / "data.py", code / "src" / "__init__.py"]
     source_files = {str(path.relative_to(code)): sha256_file(path)
@@ -151,12 +153,12 @@ def main():
         "train_class_counts": {str(k): int(v) for k, v in train["label"].value_counts().items()},
         "validation_class_counts": {str(k): int(v) for k, v in validation["label"].value_counts().items()},
         "tuned_models": TUNED_MODELS, "C_values": C_VALUES,
-        "initial_C": {name: 4.0 for name in TUNED_MODELS} | {"word_char_lr": 16.0},
+        "initial_C": INITIAL_C,
         "selection_rule": "Choose smallest C with best validation AUC minus candidate AUC strictly less than 0.001.",
         "tie_tolerance": TIE_TOLERANCE,
         "learning_curve": {"model": "word_char_lr", "C": 16.0, "sizes": TRAIN_SIZES,
                            "sampling": "Independent stratified train_test_split from the fixed 8000, random_state=42; full 8000 reused."},
-        "expected_unique_fits": 20,
+        "expected_unique_fits": EXPECTED_UNIQUE_FITS,
         "estimator_parameters": "Use original train.MODELS builders unchanged; supply only seed and C.",
         "runtime": {"python": platform.python_version(), "platform": platform.platform(),
                     "packages": {name: importlib.metadata.version(name)
@@ -277,10 +279,9 @@ def main():
         write_csv(output / filename, pd.DataFrame([{key: item[key] for key in columns} for item in results]))
 
     try:
-        event("started", expected_unique_fits=20)
-        initial = [fit_one(name, 4.0, train) for name in TUNED_MODELS]
-        combined = fit_one("word_char_lr", 16.0, train)
-        initial.append(combined)
+        event("started", expected_unique_fits=EXPECTED_UNIQUE_FITS)
+        initial = [fit_one(name, INITIAL_C[name], train) for name in TUNED_MODELS]
+        combined = next(result for result in initial if result["model"] == "word_char_lr")
         table("comparison_initial.csv", initial)
         tuning, selected = [], []
         selections = {}
@@ -294,7 +295,6 @@ def main():
                                 "best_val_auroc": best_auc, "best_minus_selected_auc": best_auc - choice["val_auroc"]}
             selected.append(choice)
             table("tuning.csv", tuning)
-        selected.append(combined)
         table("comparison_selected.csv", selected)
         curve = []
         for size in TRAIN_SIZES:
@@ -314,8 +314,8 @@ def main():
                    "total_fit_seconds": sum(item["fit_seconds"] for item in all_results.values()),
                    "total_predict_seconds": sum(item["predict_seconds"] for item in all_results.values()),
                    "interpretation": "Selected scores reuse the hyperparameter-selection validation set and are not an independent final test estimate."}
-        if len(all_results) != 20:
-            raise RuntimeError(f"Expected 20 unique fits, found {len(all_results)}")
+        if len(all_results) != EXPECTED_UNIQUE_FITS:
+            raise RuntimeError(f"Expected {EXPECTED_UNIQUE_FITS} unique fits, found {len(all_results)}")
         write_json(output / "summary.json", summary)
         event("complete", summary_path=str(output / "summary.json"), unique_fits=len(all_results))
     except BaseException as error:

@@ -1,7 +1,7 @@
 """Export report-ready AUROC figures from completed classical-model experiments.
 
 Usage:
-    python plot_classical_fixed2000.py --results-dir RESULTS --output-dir FIGURES
+    python plot_results.py --results-dir RESULTS --output-dir FIGURES
 
 The script reads full-precision CSV values, verifies them against summary.json,
 and exports PNG, SVG, and PDF figures without fitting any model.
@@ -39,6 +39,7 @@ PANEL_LABELS = {
     'tfidf_lr': 'Word TF–IDF + LR',
     'char_lr': 'Character TF–IDF + LR',
     'tfidf_svm': 'Word TF–IDF + SVM',
+    'word_char_lr': 'Word + character TF–IDF + LR',
 }
 
 
@@ -85,12 +86,12 @@ def load_results(directory):
         raise ValueError('The learning curve must contain each planned training size exactly once.')
     if any(row['model'] != curve_protocol['model'] or row['C'] != curve_protocol['C'] for row in curve):
         raise ValueError('Learning-curve model or C changed across training sizes.')
-    if set(row['model'] for row in tables['tuning']) != set(MODEL_ORDER[:3]):
-        raise ValueError('Expected tuning results for the three individual text models.')
+    if set(row['model'] for row in tables['tuning']) != set(MODEL_ORDER):
+        raise ValueError('Expected tuning results for all four text models.')
     selected = {row['model']: row for row in tables['comparison']}
     if set(selected) != set(MODEL_ORDER) or len(selected) != len(tables['comparison']):
         raise ValueError('Expected one selected result for each of the four models.')
-    for model in MODEL_ORDER[:3]:
+    for model in MODEL_ORDER:
         candidates = sorted((row for row in tables['tuning'] if row['model'] == model), key=lambda row: row['C'])
         if [row['C'] for row in candidates] != sorted(protocol['C_values']):
             raise ValueError(f'Tuning grid is missing or duplicated for {model}.')
@@ -183,13 +184,13 @@ def plot_learning_curve(summary, tables, output):
 
 
 def plot_hyperparameters(summary, tables, output):
-    fig, axes = plt.subplots(1, 3, figsize=(10.6, 4.0), sharey=True)
-    fig.subplots_adjust(left=0.075, right=0.985, top=0.72, bottom=0.24, wspace=0.16)
-    fig.suptitle('Regularization search', x=0.075, y=0.98, ha='left', fontsize=13, fontweight='semibold')
-    fig.text(0.075, 0.90, f'Validation AUROC · {summary["protocol"]["train_rows"]:,} training / {summary["protocol"]["validation_rows"]:,} validation documents', fontsize=9.5)
+    fig, axes = plt.subplots(2, 2, figsize=(7.8, 6.3), sharey=True)
+    fig.subplots_adjust(left=0.10, right=0.98, top=0.79, bottom=0.17, wspace=0.20, hspace=0.78)
+    fig.suptitle('Regularization search', x=0.10, y=0.98, ha='left', fontsize=13, fontweight='semibold')
+    fig.text(0.10, 0.925, f'Validation AUROC · {summary["protocol"]["train_rows"]:,} training / {summary["protocol"]["validation_rows"]:,} validation documents', fontsize=9.5)
     limits = focused_limits([row['val_auroc'] for row in tables['tuning']])
     selected_C = {}
-    for ax, model in zip(axes, MODEL_ORDER[:3]):
+    for ax, model in zip(axes.flat, MODEL_ORDER):
         rows = sorted((row for row in tables['tuning'] if row['model'] == model), key=lambda row: row['C'])
         chosen = next(row for row in rows if row['C'] == summary['selection'][model]['selected_C'])
         selected_C[model] = chosen['C']
@@ -204,12 +205,13 @@ def plot_hyperparameters(summary, tables, output):
         ax.set_xlim(min(x) / 1.6, max(x) * 1.6)
         ax.set_xlabel('C (log scale)')
         finish_axis(ax, limits)
-    axes[0].set_ylabel('Validation AUROC')
+    for ax in axes[:, 0]:
+        ax.set_ylabel('Validation AUROC')
     tolerance = summary['protocol']['tie_tolerance']
-    fig.text(0.075, 0.075, f'Blue ring: smallest C with AUROC loss strictly below {tolerance:g} relative to the best candidate.', fontsize=8.5)
-    fig.text(0.075, 0.025, 'Common AUROC scale; the same fixed validation set is used to select C.', fontsize=8.5, color='#59636D')
+    fig.text(0.10, 0.060, f'Blue ring: smallest C with AUROC loss strictly below {tolerance:g} relative to the best candidate.', fontsize=8.5)
+    fig.text(0.10, 0.025, 'Common AUROC scale; the same fixed validation set is used to select C.', fontsize=8.5, color='#59636D')
     result = save_figure(fig, output, 'hyperparameter_search')
-    result.update(y_limits=limits, x_scale='log', selected_C=selected_C)
+    result.update(y_limits=limits, x_scale='log', selected_C=selected_C, model_order=list(MODEL_ORDER), layout='2x2')
     return result
 
 
@@ -238,7 +240,7 @@ def plot_model_comparison(summary, tables, output):
     ax.tick_params(axis='y', length=0, pad=8, labelsize=9)
     ax.spines['left'].set_visible(False)
     ax.legend(loc='lower left', bbox_to_anchor=(0, 1.02), ncol=2, frameon=False, borderaxespad=0)
-    fig.text(0.05, 0.075, 'Individual-model C values are validation-selected; combined word + character C is fixed.', fontsize=8.5)
+    fig.text(0.05, 0.075, 'C is validation-selected for all four models; the separate learning curve keeps C = 16.', fontsize=8.5)
     fig.text(0.05, 0.025, 'Seed 42; parameter selection and evaluation use the same fixed validation set.', fontsize=8.5, color='#59636D')
     result = save_figure(fig, output, 'model_comparison')
     result.update(x_limits=limits, model_order=list(MODEL_ORDER))
