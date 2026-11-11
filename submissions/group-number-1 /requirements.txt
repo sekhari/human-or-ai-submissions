@@ -1,0 +1,24 @@
+# Data processing and scientific computing
+numpy>=1.26,<3
+pandas>=2.2,<3
+scipy>=1.11,<2
+
+# Classifiers and preprocessing
+scikit-learn==1.6.1
+catboost==1.2.8
+joblib>=1.4,<2
+threadpoolctl>=3.5,<4
+
+# Frozen language models and tokenization
+torch>=2.6,<3
+transformers==4.57.1
+tokenizers>=0.22,<0.24
+safetensors>=0.4,<1
+
+# Visualization
+matplotlib>=3.5,<4
+
+# Notebook execution and dependency checks
+packaging>=23
+ipykernel>=6,<8
+nbconvert>=7,<8
