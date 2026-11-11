@@ -1,33 +1,18 @@
-**Team members:** Sydney Patel (sjp294), Teddy Taylor (tft32), Zhenghao Zhou (zz2222)
-**Kaggle team name:** `group-number-34`
+# Classical Text Classification
 
-## Setup
+Archived experiment: `classical_fixed2000_v001`.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+Team: Sydney Patel (sjp294), Teddy Taylor (tft32), Zhenghao Zhou (zz2222).
+
+Kaggle team: `group-number-34`.
+
+The fixed split contains 8,000 training and 2,000 validation examples, with seed 42. Models A-C search C; Model D uses C=16. The learning curve uses the combined model at C=16.
+
+Use Python 3.12 and install `requirements.txt`. Place the competition data in `data/`.
+
+```sh
+python run_experiments.py --train data/train.csv --code-dir . --output-dir runs/reproduction --seed 42
+python plot_results.py --results-dir runs/reproduction --output-dir figures
 ```
 
-Place the Kaggle data files (`train.csv`, `unlabeled.csv`, `test.csv`) in `./data/` (not committed).
-
-## Train / validate
-
-```bash
-python train.py --train data/train.csv --seed 20261023
-```
-
-## Predict (writes Kaggle submission)
-
-```bash
-python predict.py --test data/test.csv --out submission.csv
-```
-
-## Seeds and notes
-
-- Global seed: `20261023`
-- Validation: stratified 2,000-row holdout from `train.csv`, fixed across comparisons
-
-## AI assistance
-
-Briefly describe tools used and what you verified manually (required for Q6.3).
+The results directory records the completed model comparison, parameter search, and learning curve.

@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-SEED = 20261107
+SEED = 42
 VAL_SIZE = 2000
 
 # our folder (submissions/group-number-34) relative to this file

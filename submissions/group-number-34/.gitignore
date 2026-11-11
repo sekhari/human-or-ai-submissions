@@ -1,0 +1,13 @@
+/data/
+/runs/
+/figures/
+/artifacts/
+*.joblib
+/submission.csv
+!/results/comparison_selected.csv
+!/results/tuning.csv
+!/results/learning_curve.csv
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
