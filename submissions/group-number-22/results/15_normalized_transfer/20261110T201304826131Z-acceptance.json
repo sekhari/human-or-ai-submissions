@@ -1,0 +1,15 @@
+{
+  "acceptance": {
+    "accepted": 2205,
+    "accepted_AI": 1193,
+    "accepted_human": 1012,
+    "control_seconds": 21.9093502080068,
+    "eligible_rows": 3000,
+    "pseudo_weighted_mass": 551.25,
+    "teacher_seconds": 8.212502249982208,
+    "treatment_seconds": 28.96076229197206,
+    "verified_rows": 6400,
+    "vocabulary_sha256": "5068e9bec638a33dcc42a3146f8fba184b939d9a4ee1cbd58d36aeb1aca121e3"
+  },
+  "internal_score_inspected": false
+}

@@ -1,0 +1,423 @@
+{
+  "artifacts": {
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_0_oof.csv": "a12bddbb5cce35358258e98759a87bc5df6307eead7d50bfb63f43fc253e6af4",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_1_oof.csv": "1ed857e9cae08445ea3050f16e8b123ec57989c2085b33d0c475b6f7031e99d9",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_2_oof.csv": "2d007a7423b8fe94633c99d957f8f2bc29f69dd4b55957de63e6c0cbf7e01d8f",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_3_oof.csv": "a6043fda0e5c66c03ac79c01e18a05e1cd4e01da8b8cc01368ea071512e0ad8e",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_4_oof.csv": "a613ec581d0764536269bcadbb439fbae5d90f0ee36e619e98853010648db1c2",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_5_oof.csv": "f15c58848b5836ed20e3ac96931575289bf64dd08ab3ad0d5a2996cdb4a2c98e",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_6_oof.csv": "71d849d7a8b3eb554b4a394bf126eecd9616081fa538d1929d19c124a45b0482",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_7_oof.csv": "2aa7d494463759df665174cee198f341fd5a8bdcc170d9d25bc68286ed230827",
+    "artifacts/04_word_comparison/20261110T183440571438Z/candidate_8_oof.csv": "fb8c8313a9ab3f6081685bc5f930d56b6f0685adb82d598f277160c1d9a034b2",
+    "artifacts/04_word_comparison/20261110T183440571438Z/comparison.png": "c875dad35e163b758bedeb70697f194dae4b7cf4e570794ed41d1e0abf2fbbe0",
+    "artifacts/04_word_comparison/20261110T183440571438Z/logistic.joblib": "2474b3dd637c8df8031e6d19e8a2db3fdb07d152d58a9c1b3a47606747b5f987",
+    "artifacts/04_word_comparison/20261110T183440571438Z/logistic_train.csv": "137d22d4a94518bff916c90028112b788f7df1899212a5a88cd943840b0dc92c",
+    "artifacts/04_word_comparison/20261110T183440571438Z/logistic_validation.csv": "14c6ecb0725c6cc37c0b6b50a60818a26a7b0fb68cf917bc0f287485b52e380c",
+    "artifacts/04_word_comparison/20261110T183440571438Z/nb.joblib": "2baf23824b3bc2f0e9ba197d118ec2c21f1ceb7c2da2468a27c68c7741ff0ed6",
+    "artifacts/04_word_comparison/20261110T183440571438Z/nb_train.csv": "78c7e82f666bab10d823aea6410221aed603b10f540523e3920bbab21cc33226",
+    "artifacts/04_word_comparison/20261110T183440571438Z/nb_validation.csv": "3e6b7fd190f246d1f1c5ff31df387885e0937aadf021bb2029e76cf6f91ae6fc",
+    "artifacts/04_word_comparison/20261110T183440571438Z/svm.joblib": "60a18cb7c0149338cadf4bb1234ab4a8ebb21844c316bc73991109e1f0be7161",
+    "artifacts/04_word_comparison/20261110T183440571438Z/svm_train.csv": "6c2b49cf0d868f6533eaa2b98c6c6d77f52a866d8f85c00a0b00eac9b0819097",
+    "artifacts/04_word_comparison/20261110T183440571438Z/svm_validation.csv": "0b88ee8b9390b543d4607ca0f08cc1755eabf671f0121e4db28c3664b37ba9c1",
+    "results/04_word_comparison/20261110T183440571438Z-selection.json": "e8a74f09e93502279f11aa4e27891ab6094224e943a114d6701f9c9fdb65e42e"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace notebooks/04_word_comparison.ipynb",
+  "config": {
+    "baseline_prediction_sha256": "f162db861a967505ed37132445ca6e80cd992e26bd4db2d26908f4a03538fb92",
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "calibration": {
+      "cv": "same three stratified training folds; entire pipeline refitted",
+      "ensemble": false,
+      "method": "sigmoid",
+      "n_jobs": 1
+    },
+    "candidates": [
+      {
+        "C": 0.25,
+        "family": "logistic"
+      },
+      {
+        "C": 1.0,
+        "family": "logistic"
+      },
+      {
+        "C": 4.0,
+        "family": "logistic"
+      },
+      {
+        "alpha": 0.1,
+        "family": "nb"
+      },
+      {
+        "alpha": 0.5,
+        "family": "nb"
+      },
+      {
+        "alpha": 1.0,
+        "family": "nb"
+      },
+      {
+        "C": 0.25,
+        "family": "svm"
+      },
+      {
+        "C": 1.0,
+        "family": "svm"
+      },
+      {
+        "C": 4.0,
+        "family": "svm"
+      }
+    ],
+    "cv": {
+      "n_splits": 3,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "extra_versions": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "handoff": {
+      "preference": [
+        "nb",
+        "logistic",
+        "svm"
+      ],
+      "reason": "prefer simpler model within tolerance; report measured time too",
+      "tolerance": 0.002
+    },
+    "logistic": {
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "nb": {
+      "fit_prior": true,
+      "force_alpha": true
+    },
+    "notebook_source_sha256": "19a695cebdc04fdd7337d2c9afb452448aa5411b0e2411a72fc3edd9fc47ae3b",
+    "selection": "highest mean CV AUROC; first candidate breaks exact ties",
+    "svm": {
+      "dual": "auto",
+      "max_iter": 20000,
+      "random_state": 42,
+      "tol": 0.0001
+    },
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b"
+    }
+  },
+  "config_sha256": "a7f8965cb96a496d1a5195a61f502946faf1d8eb6d77af5d6ba82a667563b30c",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "052f8e880f2a5eb15bc4cb6e8b26149f013318cf",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "bootstrap_seconds": 11.160919416986872,
+    "candidate_results": [
+      {
+        "C": 0.25,
+        "cv_mean": 0.9131881521629914,
+        "cv_std": 0.008234487882025422,
+        "error_type": null,
+        "family": "logistic",
+        "fold_auroc": [
+          0.9069126352052782,
+          0.9078304058773314,
+          0.9248214154063648
+        ],
+        "fold_seconds": [
+          2.1910519170342013,
+          2.051887583977077,
+          2.0418637500260957
+        ],
+        "index": 0,
+        "search_seconds": 6.2848745000083,
+        "status": "completed"
+      },
+      {
+        "C": 1.0,
+        "cv_mean": 0.9283754617913873,
+        "cv_std": 0.004545457157959331,
+        "error_type": null,
+        "family": "logistic",
+        "fold_auroc": [
+          0.925960875526228,
+          0.9244233847067465,
+          0.9347421251411877
+        ],
+        "fold_seconds": [
+          2.3467919590184465,
+          2.1622712920070626,
+          2.5622414170065895
+        ],
+        "index": 1,
+        "search_seconds": 7.07135212502908,
+        "status": "completed"
+      },
+      {
+        "C": 4.0,
+        "cv_mean": 0.9360995193175318,
+        "cv_std": 0.0029872416542635937,
+        "error_type": null,
+        "family": "logistic",
+        "fold_auroc": [
+          0.9349541283371818,
+          0.9331506414834594,
+          0.9401937881319542
+        ],
+        "fold_seconds": [
+          2.611646000004839,
+          2.2632675420027226,
+          2.6017098750453442
+        ],
+        "index": 2,
+        "search_seconds": 7.476694332959596,
+        "status": "completed"
+      },
+      {
+        "alpha": 0.1,
+        "cv_mean": 0.8922781453367685,
+        "cv_std": 0.009794194903369333,
+        "error_type": null,
+        "family": "nb",
+        "fold_auroc": [
+          0.879932314412936,
+          0.8930127959276175,
+          0.903889325669752
+        ],
+        "fold_seconds": [
+          2.2393726669833995,
+          2.3236605420242995,
+          2.034698333009146
+        ],
+        "index": 3,
+        "search_seconds": 6.597843041992746,
+        "status": "completed"
+      },
+      {
+        "alpha": 0.5,
+        "cv_mean": 0.8921059260857329,
+        "cv_std": 0.01372904436448094,
+        "error_type": null,
+        "family": "nb",
+        "fold_auroc": [
+          0.8757466728001342,
+          0.8912295540151904,
+          0.9093415514418741
+        ],
+        "fold_seconds": [
+          2.1986527910339646,
+          2.384132542007137,
+          2.3015984169906005
+        ],
+        "index": 4,
+        "search_seconds": 6.884753249993082,
+        "status": "completed"
+      },
+      {
+        "alpha": 1.0,
+        "cv_mean": 0.8904563062139806,
+        "cv_std": 0.015842936838311714,
+        "error_type": null,
+        "family": "nb",
+        "fold_auroc": [
+          0.8720373496672519,
+          0.8886179565880974,
+          0.9107136123865924
+        ],
+        "fold_seconds": [
+          2.180247167008929,
+          2.174169041973073,
+          1.93503629200859
+        ],
+        "index": 5,
+        "search_seconds": 6.289600624993909,
+        "status": "completed"
+      },
+      {
+        "C": 0.25,
+        "cv_mean": 0.9354290692543433,
+        "cv_std": 0.003186113582969314,
+        "error_type": null,
+        "family": "svm",
+        "fold_auroc": [
+          0.9344637508702514,
+          0.9321001539740259,
+          0.9397233029187528
+        ],
+        "fold_seconds": [
+          2.173005082993768,
+          2.1065661250031553,
+          2.049206374969799
+        ],
+        "index": 6,
+        "search_seconds": 6.32884654199006,
+        "status": "completed"
+      },
+      {
+        "C": 1.0,
+        "cv_mean": 0.9372937254632832,
+        "cv_std": 0.0020251896382532195,
+        "error_type": null,
+        "family": "svm",
+        "fold_auroc": [
+          0.9368610893353023,
+          0.9350581648410603,
+          0.9399619222134867
+        ],
+        "fold_seconds": [
+          2.1842192920157686,
+          1.9857748330105096,
+          2.1653145829914138
+        ],
+        "index": 7,
+        "search_seconds": 6.3353476250194944,
+        "status": "completed"
+      },
+      {
+        "C": 4.0,
+        "cv_mean": 0.9344408385534559,
+        "cv_std": 0.0011859638013626064,
+        "error_type": null,
+        "family": "svm",
+        "fold_auroc": [
+          0.9340031784557832,
+          0.93325748978474,
+          0.9360618474198447
+        ],
+        "fold_seconds": [
+          1.9934798749745823,
+          2.0314023749670014,
+          2.1016279999748804
+        ],
+        "index": 8,
+        "search_seconds": 6.126568000006955,
+        "status": "completed"
+      }
+    ],
+    "cv_leader_index": 7,
+    "family_results": [
+      {
+        "cv_mean": 0.9360995193175318,
+        "cv_std": 0.0029872416542635937,
+        "evaluation_seconds": 1.326397333003115,
+        "family": "logistic",
+        "fit_seconds": 2.7847560410154983,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9999251875,
+        "validation_accuracy_at_0_5": 0.878,
+        "validation_auroc": 0.941252
+      },
+      {
+        "cv_mean": 0.8922781453367685,
+        "cv_std": 0.009794194903369333,
+        "evaluation_seconds": 1.5642188340425491,
+        "family": "nb",
+        "fit_seconds": 2.4422423749929294,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9902492500000001,
+        "validation_accuracy_at_0_5": 0.827,
+        "validation_auroc": 0.903867
+      },
+      {
+        "cv_mean": 0.9372937254632832,
+        "cv_std": 0.0020251896382532195,
+        "evaluation_seconds": 1.5709035000181757,
+        "family": "svm",
+        "fit_seconds": 9.568154583044816,
+        "max_reload_difference": 0.0,
+        "train_auroc": 1.0,
+        "validation_accuracy_at_0_5": 0.8755,
+        "validation_auroc": 0.943079
+      }
+    ],
+    "handoff_family": "logistic",
+    "paired_vs_baseline": [
+      {
+        "ci_high": 0.010789124999999832,
+        "ci_low": 0.0064229500000000635,
+        "delta_auroc": 0.008523999999999865,
+        "family": "logistic",
+        "reference": "baseline_C1"
+      },
+      {
+        "ci_high": -0.020337875000000002,
+        "ci_low": -0.037640175000000095,
+        "delta_auroc": -0.028861000000000137,
+        "family": "nb",
+        "reference": "baseline_C1"
+      },
+      {
+        "ci_high": 0.01458410000000004,
+        "ci_low": 0.0063379749999999515,
+        "delta_auroc": 0.010350999999999888,
+        "family": "svm",
+        "reference": "baseline_C1"
+      }
+    ],
+    "search_seconds": 59.53906441596337,
+    "validation_auroc": 0.941252
+  },
+  "run_id": "20261110T183613126372Z",
+  "runtime_seconds": 92.57935195899336,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T18:36:13.182928+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.16",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

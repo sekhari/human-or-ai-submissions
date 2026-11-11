@@ -1,0 +1,187 @@
+{
+  "config": {
+    "cv": {
+      "n_splits": 5,
+      "seed": 42,
+      "selection_metric": "pooled OOF AUROC",
+      "shuffle": true
+    },
+    "ensemble": {
+      "max_members": 5,
+      "min_gain": 0.0005,
+      "repeat_members": false,
+      "tie": "grid order; prefer fewer members within .0005 of best path score",
+      "weights": "equal"
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "9462dfbef2201308f845b2e7f8c44d645bfbf4b8a3d0a5c4e8edd515640f971d",
+        "score": "b06db807f2888e71e94d5797f70ba7c8bc151583e000984b0a13ab51754d175c"
+      },
+      {
+        "fit": "b285e2f0c7e708958a6e07eb637b80c556105811acdd602f40523e276a6ad4a1",
+        "score": "73e080f49324d66be93ee011cc9ff16e7fb6af5e2c7a92d7f19a7285d3b207be"
+      },
+      {
+        "fit": "ceaf5e31f6292ef28457d19e9381e486029989dede09bb9a7a7a0d61bb4185b8",
+        "score": "7fcb7a203a2d072ca22969e12e122b1e02181fce101978c887d20250b7a3736e"
+      },
+      {
+        "fit": "2e0fb618e08620b765d5c87fedd527638259f6a02c2fd6c16a4ce4981ffc54ac",
+        "score": "0b4fb1d38ebb8aad48abb56e0a3a378142d3a66875ebe83e85425dbf9664b6a6"
+      },
+      {
+        "fit": "e0078d9dbb141e8183a0afa260000504787eb1836494d4351928ca728f19fadf",
+        "score": "b485641d7f9717496e74bc9cecb7f5de00d963353caf8f76850056f7ee61b868"
+      }
+    ],
+    "grid": [
+      {
+        "C": 4.0,
+        "learner": "lr",
+        "name": "word12_lr4",
+        "view": "word12"
+      },
+      {
+        "C": 16.0,
+        "learner": "lr",
+        "name": "word12_lr16",
+        "view": "word12"
+      },
+      {
+        "C": 16.0,
+        "learner": "lr",
+        "name": "word13_lr16",
+        "view": "word13"
+      },
+      {
+        "C": 1.0,
+        "learner": "svm",
+        "name": "word12_svm1",
+        "view": "word12"
+      },
+      {
+        "C": 16.0,
+        "learner": "lr",
+        "name": "charwb_lr16",
+        "view": "charwb"
+      },
+      {
+        "C": 16.0,
+        "learner": "lr",
+        "name": "casechar_lr16",
+        "view": "casechar"
+      },
+      {
+        "C": 1.0,
+        "learner": "svm",
+        "name": "casechar_svm1",
+        "view": "casechar"
+      },
+      {
+        "C": 16.0,
+        "learner": "lr",
+        "name": "word13_casechar_lr16",
+        "view": "word_char"
+      },
+      {
+        "C": 4.0,
+        "learner": "lr",
+        "name": "nbword13_lr4",
+        "view": "nbword13"
+      },
+      {
+        "C": 4.0,
+        "learner": "lr",
+        "name": "word12_style_lr4",
+        "view": "word_style"
+      }
+    ],
+    "learners": {
+      "lr": {
+        "max_iter": 5000,
+        "random_state": 42,
+        "solver": "liblinear",
+        "tol": 0.0001
+      },
+      "svm": {
+        "dual": "auto",
+        "max_iter": 20000,
+        "random_state": 42,
+        "tol": 0.0001
+      }
+    },
+    "margin_reference": {
+      "definition": "eligible unlabeled only; population mean/std; zero-variance reference fails",
+      "ordered_id_sha256": "ba87deaa086efd309464078eca7d5cbf2f0f6fde88182f97fadd75ef6af5eddc",
+      "rows": 3000
+    },
+    "nb": {
+      "alpha": 1.0,
+      "binary": true,
+      "max_features": null,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        3
+      ],
+      "ratio": "log normalized class token frequency ratio; training only"
+    },
+    "notebook_source_sha256": "a9bbac638ba8fba36842ef1c92210581cdc953692b18885b2989d6be6303a4ff",
+    "score_mapping": "sigmoid(mean standardized margins); not claimed calibrated",
+    "style": "exact nine features from notebook 09; StandardScaler fitted inside each training pipeline",
+    "style_notebook_source_sha256": "f67258894c52f6d09e9d2684d25876358bf8d4ddbe5b9fa30f612edcd40b2195",
+    "tfidf": {
+      "dtype": "float32",
+      "norm": "l2",
+      "stop_words": null,
+      "sublinear_tf": true
+    },
+    "threads": 1,
+    "views": {
+      "casechar": {
+        "analyzer": "char",
+        "lowercase": false,
+        "max_features": 300000,
+        "min_df": 3,
+        "ngram_range": [
+          2,
+          5
+        ]
+      },
+      "charwb": {
+        "analyzer": "char_wb",
+        "lowercase": true,
+        "max_features": 100000,
+        "min_df": 2,
+        "ngram_range": [
+          3,
+          5
+        ]
+      },
+      "word12": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 50000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          2
+        ]
+      },
+      "word13": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": null,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  "config_sha256": "ed70b208f564e74ff68a21c34cd0402e92bf7410627b65dee79804e8e5f8a9b3",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

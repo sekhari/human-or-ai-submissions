@@ -1,0 +1,81 @@
+{
+  "config": {
+    "adoption": {
+      "ci_low_must_exceed": 0.0,
+      "every_fold_improves": true,
+      "min_validation_gain": 0.002
+    },
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "classifier": {
+      "C": 4.0,
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "classifier_penalty": "l2 (scikit-learn default, not passed)",
+    "cv": {
+      "n_splits": 5,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "9462dfbef2201308f845b2e7f8c44d645bfbf4b8a3d0a5c4e8edd515640f971d",
+        "score": "b06db807f2888e71e94d5797f70ba7c8bc151583e000984b0a13ab51754d175c"
+      },
+      {
+        "fit": "b285e2f0c7e708958a6e07eb637b80c556105811acdd602f40523e276a6ad4a1",
+        "score": "73e080f49324d66be93ee011cc9ff16e7fb6af5e2c7a92d7f19a7285d3b207be"
+      },
+      {
+        "fit": "ceaf5e31f6292ef28457d19e9381e486029989dede09bb9a7a7a0d61bb4185b8",
+        "score": "7fcb7a203a2d072ca22969e12e122b1e02181fce101978c887d20250b7a3736e"
+      },
+      {
+        "fit": "2e0fb618e08620b765d5c87fedd527638259f6a02c2fd6c16a4ce4981ffc54ac",
+        "score": "0b4fb1d38ebb8aad48abb56e0a3a378142d3a66875ebe83e85425dbf9664b6a6"
+      },
+      {
+        "fit": "e0078d9dbb141e8183a0afa260000504787eb1836494d4351928ca728f19fadf",
+        "score": "b485641d7f9717496e74bc9cecb7f5de00d963353caf8f76850056f7ee61b868"
+      }
+    ],
+    "notebook_source_sha256": "f67258894c52f6d09e9d2684d25876358bf8d4ddbe5b9fa30f612edcd40b2195",
+    "reference": "word TF-IDF logistic C4, same settings as the #4 and #5 handoff",
+    "reference_check": "reference validation AUROC must match the #5 handoff record within 1e-9",
+    "style_features": {
+      "digits_per_char": "digit chars / max(1, chars)",
+      "line_breaks_per_word": "newline count / max(1, words)",
+      "list_line_rate": "lines starting with -, *, bullet, or 1. / 1) then a space / max(1, newlines + 1)",
+      "log_words": "log(1 + whitespace-split word count)",
+      "log_words_per_sentence": "log(1 + words / max(1, runs of [.!?]+))",
+      "nonascii_per_char": "chars with code point > 127 / max(1, chars)",
+      "punct_per_char": "chars that are not alphanumeric or whitespace / max(1, chars)",
+      "type_token_ratio": "unique lowercase \\w+ tokens / max(1, tokens)",
+      "upper_per_letter": "uppercase letters / max(1, letters)"
+    },
+    "style_scaling": "StandardScaler inside the pipeline, fit on each fit's training rows only",
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "sublinear_tf": true
+    }
+  },
+  "config_sha256": "a2ab30ee03232b55a714c35f22050ee74cf5fa9c6c7a0ab7a43e7dd8f8676042",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

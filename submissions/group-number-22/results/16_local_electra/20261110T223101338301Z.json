@@ -1,0 +1,229 @@
+{
+  "artifacts": {
+    "artifacts/16_local_electra/20261110T222108811422Z/eligible_unlabeled_margins.csv": "39385d41c70d44ceb6b36a0d53958c1c1ee6af3f86d7f00b91978031f160ea49",
+    "artifacts/16_local_electra/20261110T222108811422Z/frozen2000_margins.csv": "e3f0df519ff54286ffccdc48b8066e48921e0679fb374e85a6141480ea61c4e4",
+    "artifacts/16_local_electra/20261110T222108811422Z/model_train8000/config.json": "b4401c196e0cdee1245886564c9323a089e48b2e2f2ea714203ccc025f078513",
+    "artifacts/16_local_electra/20261110T222108811422Z/model_train8000/model.safetensors": "6953f79c73f97293ee3567c36d47ba6d187ad0c0d847ffaa0d047a2a1c778a75",
+    "artifacts/16_local_electra/20261110T222108811422Z/test_margins.csv": "ed9288f166434defd4f265aacd00abff69eebd685d7a732ad9e8aca6f77a5b53",
+    "results/16_local_electra/20261110T222108811422Z-electra.png": "62827e6eb9a76ed568b9af512de908212dfa9cb746c7e33d305b2fa697b5df3c",
+    "results/16_local_electra/20261110T222108811422Z-plan.json": "5dedc83bcd0e9f6261bba71b1b9817156ba2288bf49aa06ad832b520d09f4010",
+    "results/16_local_electra/20261110T222108811422Z-selection.json": "7500beab25be46489c5018e0e077ca1d238d4979bbdc3ecc11fd06a6381de2c3"
+  },
+  "command": "uv run --project envs/electra --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=7200 notebooks/16_local_electra.ipynb",
+  "config": {
+    "blend": {
+      "guardrail": "original AUROC >= classical original - .002",
+      "neural_weights": [
+        0,
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "objective": "mean AUROC over original, remove_blank_lines, collapse_whitespace, wrap80",
+      "scores": "standardized with eligible-unlabeled reference",
+      "upload": "never automatic"
+    },
+    "checkpoint": {
+      "files_sha256": {
+        "config.json": "9708dadc5705ed0b5b8f6a63e723e959fe52b18aceedd9e704d8058739d3747b",
+        "pytorch_model.bin": "735154b1a8a78ba97da3c8c53c2e3d1d58b8dec5fa5caf0e144661c8bbe0e787",
+        "tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+        "tokenizer_config.json": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "license": "apache-2.0",
+      "loading": "local_files_only after one pinned download",
+      "repo_id": "google/electra-small-discriminator",
+      "revision": "fa8239aadc095e9164941d05878b98afe9b953c3",
+      "source": "Hugging Face Hub, generic pretrained discriminator"
+    },
+    "confirm": "fresh model on original 8000, selected epoch count, LR schedule still sized for 3 epochs; frozen 2000 scored once",
+    "dependencies": {
+      "12": {
+        "record": "results/12_seed_stress/20261110T221222713672Z.json",
+        "record_sha256": "6495b618ae4b27a1e02b763b2fc40b1d278ec06c4e2523a790e5c38302e4b2ed"
+      },
+      "15": {
+        "record": "results/15_normalized_transfer/20261110T202717584850Z.json",
+        "record_sha256": "b2646eedc5f559469bb118b0f9a0ee9fe134cd3e17bf3edc6c22aabeb1aedb96"
+      }
+    },
+    "hardware": {
+      "chip": "Apple M5",
+      "device": "mps",
+      "platform": "macOS-26.1-arm64-arm-64bit",
+      "torch_threads": 4
+    },
+    "inner_split": {
+      "eval_ids_sha256": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b",
+      "fit_ids_sha256": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e",
+      "recipe": "notebook 02 split_ids inside original 8000, seed 42, 800/800, duplicate groups whole"
+    },
+    "neural_lock": {
+      "path": "envs/electra/uv.lock",
+      "sha256": "2f2923280883fa01c61fb12b7302cf024499be5785f0c053bc383b9e12b17644"
+    },
+    "neural_versions": {
+      "huggingface-hub": "2.4.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.15.0",
+      "transformers": "5.22.2"
+    },
+    "nondeterminism": "MPS kernels are not bitwise deterministic; deterministic algorithms off; not rerun to measure",
+    "notebook_code_sha256": "33acd3fdca4bcc5170f1af2744ae81afb5e600c3b09899b8d0b04ce819be4499",
+    "selection": "max internal original AUROC over epochs 1-3, earliest epoch on ties",
+    "stress_scope": "eval rows only; training text stays original",
+    "stresses": {
+      "collapse_whitespace": "all whitespace runs to one space",
+      "original": "unchanged",
+      "remove_blank_lines": "drop whitespace-only lines",
+      "wrap80": "textwrap.fill each nonblank line at 80"
+    },
+    "train": {
+      "batch": 16,
+      "eval_batch": 64,
+      "grad_clip": null,
+      "head": "ElectraForSequenceClassification, 2 labels",
+      "lr": 3e-05,
+      "max_tokens": 256,
+      "no_decay": "bias and LayerNorm",
+      "optimizer": "torch AdamW",
+      "schedule": "linear warmup then linear decay",
+      "schedule_epochs": 3,
+      "score": "logit1 - logit0",
+      "shuffle": "torch.randperm with Generator seed 42 per epoch",
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01
+    }
+  },
+  "config_sha256": "fd5de06e4327cc71334c8ccde63430e0ec07aa553559d7356284f85937274755",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "5624c9af68e8306f91b9d53872332cdde609cf65",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "blend_status": "not_run_waiting_for_17",
+    "confirm_history": [
+      {
+        "epoch": 1,
+        "lr_end": 2.222222222222222e-05,
+        "mean_train_loss": 0.3581024167463183,
+        "steps_done": 500,
+        "total_schedule_steps": 1500,
+        "train_seconds": 92.58508870797232,
+        "warmup_steps": 150
+      },
+      {
+        "epoch": 2,
+        "lr_end": 1.111111111111111e-05,
+        "mean_train_loss": 0.10204800656810403,
+        "steps_done": 1000,
+        "total_schedule_steps": 1500,
+        "train_seconds": 92.5546916660387,
+        "warmup_steps": 150
+      },
+      {
+        "epoch": 3,
+        "lr_end": 0.0,
+        "mean_train_loss": 0.053933014445006845,
+        "steps_done": 1500,
+        "total_schedule_steps": 1500,
+        "train_seconds": 92.6278876659926,
+        "warmup_steps": 150
+      }
+    ],
+    "frozen2000_mean_stress_auroc": 0.9874807500000001,
+    "frozen2000_stress_auroc": {
+      "collapse_whitespace": 0.987481,
+      "original": 0.987481,
+      "remove_blank_lines": 0.987481,
+      "wrap80": 0.98748
+    },
+    "inner_history": [
+      {
+        "auroc_collapse_whitespace": 0.9774640625,
+        "auroc_original": 0.9774593749999999,
+        "auroc_remove_blank_lines": 0.9774593749999999,
+        "auroc_wrap80": 0.9774593749999999,
+        "epoch": 1,
+        "eval_seconds": 17.22972162498627,
+        "lr_end": 2.222222222222222e-05,
+        "mean_train_loss": 0.38575010374188423,
+        "steps_done": 400,
+        "total_schedule_steps": 1200,
+        "train_seconds": 75.76539258391131,
+        "warmup_steps": 120
+      },
+      {
+        "auroc_collapse_whitespace": 0.9805421875,
+        "auroc_original": 0.9805328125000001,
+        "auroc_remove_blank_lines": 0.9805328125000001,
+        "auroc_wrap80": 0.9805515625000001,
+        "epoch": 2,
+        "eval_seconds": 17.00984375004191,
+        "lr_end": 1.111111111111111e-05,
+        "mean_train_loss": 0.11460593572817743,
+        "steps_done": 800,
+        "total_schedule_steps": 1200,
+        "train_seconds": 74.22926454199478,
+        "warmup_steps": 120
+      },
+      {
+        "auroc_collapse_whitespace": 0.9830484375,
+        "auroc_original": 0.9830390625,
+        "auroc_remove_blank_lines": 0.9830390625,
+        "auroc_wrap80": 0.98304375,
+        "epoch": 3,
+        "eval_seconds": 16.826234875014052,
+        "lr_end": 0.0,
+        "mean_train_loss": 0.05457356521626935,
+        "steps_done": 1200,
+        "total_schedule_steps": 1200,
+        "train_seconds": 74.10294829204213,
+        "warmup_steps": 120
+      }
+    ],
+    "scored_rows": {
+      "eligible_unlabeled": 3000,
+      "frozen2000": 2000,
+      "test": 3000
+    },
+    "selected_epochs": 3,
+    "timing": {
+      "confirm_scoring_seconds": 36.871920999954455,
+      "confirm_train_seconds": 278.38862045900896,
+      "inner_3_epochs_with_eval_seconds": 276.701508459053,
+      "run_seconds": 592.0729872500524
+    },
+    "validation_auroc": 0.987481
+  },
+  "run_id": "20261110T223101338301Z",
+  "runtime_seconds": 593.5969896670431,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T22:31:01.434466+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.13",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

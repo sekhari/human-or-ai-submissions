@@ -1,0 +1,163 @@
+{
+  "candidate_results": [
+    {
+      "candidate": "word12_lr4",
+      "cv_seconds": 14.716557791980449,
+      "fold_mean": 0.93981875,
+      "fold_std": 0.0029427049963107344,
+      "pooled_oof_auroc": 0.9398965625
+    },
+    {
+      "candidate": "word12_lr16",
+      "cv_seconds": 14.876821292040404,
+      "fold_mean": 0.9411434375000001,
+      "fold_std": 0.002402238620667225,
+      "pooled_oof_auroc": 0.9411945
+    },
+    {
+      "candidate": "word13_lr16",
+      "cv_seconds": 20.299514207988977,
+      "fold_mean": 0.945905625,
+      "fold_std": 0.003107067076893041,
+      "pooled_oof_auroc": 0.94602725
+    },
+    {
+      "candidate": "word12_svm1",
+      "cv_seconds": 13.822141207987443,
+      "fold_mean": 0.9407874999999999,
+      "fold_std": 0.002321526933870799,
+      "pooled_oof_auroc": 0.9408036875000001
+    },
+    {
+      "candidate": "charwb_lr16",
+      "cv_seconds": 53.35550562501885,
+      "fold_mean": 0.9313634375,
+      "fold_std": 0.00444605344220443,
+      "pooled_oof_auroc": 0.9313372499999999
+    },
+    {
+      "candidate": "casechar_lr16",
+      "cv_seconds": 108.17877808405319,
+      "fold_mean": 0.9722165625000001,
+      "fold_std": 0.0018696657455278198,
+      "pooled_oof_auroc": 0.9722191875
+    },
+    {
+      "candidate": "casechar_svm1",
+      "cv_seconds": 101.67245099996217,
+      "fold_mean": 0.972256875,
+      "fold_std": 0.002112339490943617,
+      "pooled_oof_auroc": 0.972277125
+    },
+    {
+      "candidate": "word13_casechar_lr16",
+      "cv_seconds": 141.9700934169814,
+      "fold_mean": 0.97346375,
+      "fold_std": 0.0019143991795730364,
+      "pooled_oof_auroc": 0.9734970000000002
+    },
+    {
+      "candidate": "nbword13_lr4",
+      "cv_seconds": 23.541087625024375,
+      "fold_mean": 0.948046875,
+      "fold_std": 0.005480351087920818,
+      "pooled_oof_auroc": 0.9479504999999999
+    },
+    {
+      "candidate": "word12_style_lr4",
+      "cv_seconds": 35.58643629204016,
+      "fold_mean": 0.944225625,
+      "fold_std": 0.0014663000177955853,
+      "pooled_oof_auroc": 0.9442851875000001
+    }
+  ],
+  "config_sha256": "ed70b208f564e74ff68a21c34cd0402e92bf7410627b65dee79804e8e5f8a9b3",
+  "path": [
+    {
+      "auroc": 0.9734970000000002,
+      "members": [
+        "word13_casechar_lr16"
+      ]
+    }
+  ],
+  "selected": [
+    "word13_casechar_lr16"
+  ],
+  "selected_oof_auroc": 0.9734970000000002,
+  "trials": [
+    {
+      "auroc": 0.9628606875000001,
+      "gain": -0.010636312500000078,
+      "members": [
+        "word13_casechar_lr16",
+        "word12_lr4"
+      ]
+    },
+    {
+      "auroc": 0.9632698125000001,
+      "gain": -0.010227187500000068,
+      "members": [
+        "word13_casechar_lr16",
+        "word12_lr16"
+      ]
+    },
+    {
+      "auroc": 0.9651446875000002,
+      "gain": -0.008352312500000014,
+      "members": [
+        "word13_casechar_lr16",
+        "word13_lr16"
+      ]
+    },
+    {
+      "auroc": 0.9631089374999999,
+      "gain": -0.010388062500000239,
+      "members": [
+        "word13_casechar_lr16",
+        "word12_svm1"
+      ]
+    },
+    {
+      "auroc": 0.9600298125,
+      "gain": -0.0134671875000002,
+      "members": [
+        "word13_casechar_lr16",
+        "charwb_lr16"
+      ]
+    },
+    {
+      "auroc": 0.973689375,
+      "gain": 0.00019237499999980034,
+      "members": [
+        "word13_casechar_lr16",
+        "casechar_lr16"
+      ]
+    },
+    {
+      "auroc": 0.9738428750000001,
+      "gain": 0.00034587499999994,
+      "members": [
+        "word13_casechar_lr16",
+        "casechar_svm1"
+      ]
+    },
+    {
+      "auroc": 0.970084,
+      "gain": -0.0034130000000002214,
+      "members": [
+        "word13_casechar_lr16",
+        "nbword13_lr4"
+      ]
+    },
+    {
+      "auroc": 0.9707856874999999,
+      "gain": -0.002711312500000229,
+      "members": [
+        "word13_casechar_lr16",
+        "word12_style_lr4"
+      ]
+    }
+  ],
+  "utc": "2026-11-10T20:10:19.422765+00:00",
+  "validation_inspected": false
+}

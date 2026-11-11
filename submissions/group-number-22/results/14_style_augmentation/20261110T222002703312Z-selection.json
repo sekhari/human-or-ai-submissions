@@ -1,0 +1,48 @@
+{
+  "baseline_original_auroc": 0.9979750000000001,
+  "inner_auroc": {
+    "original_only": {
+      "collapse": 0.8098453125,
+      "original": 0.9979750000000001,
+      "single_newline": 0.9827703125,
+      "wrap64": 0.9796546875,
+      "wrap80": 0.9519765624999998
+    },
+    "plus_collapse": {
+      "collapse": 0.9440640625000001,
+      "original": 0.9974687499999999,
+      "single_newline": 0.9823999999999999,
+      "wrap64": 0.9861015625,
+      "wrap80": 0.9715562499999999
+    },
+    "plus_newline_wrap": {
+      "collapse": 0.8622484374999999,
+      "original": 0.9962875,
+      "single_newline": 0.9914015624999999,
+      "wrap64": 0.9904796874999999,
+      "wrap80": 0.9892578125
+    }
+  },
+  "rows": [
+    {
+      "eligible": true,
+      "original": 0.9979750000000001,
+      "preset": "original_only",
+      "selection_mean": 0.9199322916666667
+    },
+    {
+      "eligible": true,
+      "original": 0.9974687499999999,
+      "preset": "plus_collapse",
+      "selection_mean": 0.9710296875000001
+    },
+    {
+      "eligible": true,
+      "original": 0.9962875,
+      "preset": "plus_newline_wrap",
+      "selection_mean": 0.9492645833333334
+    }
+  ],
+  "saved_before_validation": true,
+  "selected": "plus_collapse"
+}

@@ -1,0 +1,12 @@
+# Optional isolated env for notebook 16 only. Main uv.lock stays torch-free.
+# Same core pins as the root project plus the #16 neural pins.
+[project]
+name = "cornell-text-authorship-electra"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+ "numpy==2.5.4","pandas==2.3.3","scipy==1.18.1","scikit-learn==1.9.1",
+ "matplotlib==3.11.2","joblib==1.6.0","python-dotenv==1.2.4",
+ "jupyterlab>=4,<5","nbconvert>=7,<8","nbformat>=5,<6","ipykernel>=6,<8",
+ "torch==2.15.0","transformers==5.22.2","huggingface-hub==2.4.0"
+]

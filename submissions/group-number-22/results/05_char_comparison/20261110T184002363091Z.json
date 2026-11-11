@@ -1,0 +1,205 @@
+{
+  "artifacts": {
+    "artifacts/05_char_comparison/20261110T183831442870Z/C0.25_oof.csv": "d2db16fecf31a6d7e0fc95a981b228535d3b041ef5c4f256507e08c9dbec8bea",
+    "artifacts/05_char_comparison/20261110T183831442870Z/C1.0_oof.csv": "948ac23613fd0d86addc1f0f92793bb8c774dbc7fc4696efc19137f4c645166d",
+    "artifacts/05_char_comparison/20261110T183831442870Z/C4.0_oof.csv": "bc64725b994dfee8f59ceb4db0fc871e3f7fec653b4cc325fabbf6cb98c191e8",
+    "artifacts/05_char_comparison/20261110T183831442870Z/character.joblib": "5b1f734bb939d5f3b8115f52f4d52146277600448c64dd2b27b39f4e5d8f33ed",
+    "artifacts/05_char_comparison/20261110T183831442870Z/character_train.csv": "ea511f058a23b9830caa296073505bf377a3333332d2e237bd6b4d95502a0f33",
+    "artifacts/05_char_comparison/20261110T183831442870Z/character_validation.csv": "39e33fda039c3b4215d2afb32ec50d80441d0fb13dd25b8e543418772b0dbac2",
+    "artifacts/05_char_comparison/20261110T183831442870Z/comparison.png": "25b0a4ce7a6df425687f0598a18a908130b2c986e4b559b35be462cde1e7ab57",
+    "artifacts/05_char_comparison/20261110T183831442870Z/handoff.joblib": "ff785e1dab6be4e5e2d8254e670945503acf3769b82fedcb1b7e71f3492e4bef",
+    "artifacts/05_char_comparison/20261110T183831442870Z/handoff_train.csv": "137d22d4a94518bff916c90028112b788f7df1899212a5a88cd943840b0dc92c",
+    "artifacts/05_char_comparison/20261110T183831442870Z/handoff_validation.csv": "14c6ecb0725c6cc37c0b6b50a60818a26a7b0fb68cf917bc0f287485b52e380c",
+    "results/05_char_comparison/20261110T183831442870Z-selection.json": "58a0209ae0550d809cdeb8c03703db2f634e51e96a7871fdfa5455e36b3f9ff8"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=900 notebooks/05_char_comparison.ipynb",
+  "config": {
+    "C_candidates": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "classifier": {
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "cv": {
+      "n_splits": 3,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "extra_versions": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "handoff": "use character only if CV gain over word handoff is greater than .002; otherwise keep cheaper word view",
+    "notebook_source_sha256": "b66740a21765b1f1054f6a48864decfa58e22224840789d8ad3ffe565b765cb7",
+    "selection": "max mean training CV AUROC; first C breaks exact ties",
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "char_wb",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 100000,
+      "min_df": 2,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "norm": "l2",
+      "strip_accents": null,
+      "sublinear_tf": true
+    },
+    "word_result": "results/04_word_comparison/20261110T183613126372Z.json",
+    "word_result_sha256": "5a2ce1f6db44234e032f764519b35266340032ac2ce088df8814d4e79cdb74fa"
+  },
+  "config_sha256": "6fb39b99461f789918d113e892b338817eb49c5ddc3db34a9938ca3e8227e6b9",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "93a650e2971967b2f57fb0c7f0b5f349b577b96a",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "bootstrap_seconds": 3.631550749996677,
+    "candidate_results": [
+      {
+        "C": 0.25,
+        "cv_mean": 0.9012077170889091,
+        "cv_std": 0.009293395731413169,
+        "error_type": null,
+        "fold_auroc": [
+          0.8904208810823395,
+          0.9000985253809705,
+          0.9131037448034178
+        ],
+        "fold_seconds": [
+          7.78492304100655,
+          6.841696749965195,
+          7.272888041974511
+        ],
+        "search_seconds": 21.899578333017416,
+        "status": "completed"
+      },
+      {
+        "C": 1.0,
+        "cv_mean": 0.9206013451308586,
+        "cv_std": 0.005289780074446386,
+        "error_type": null,
+        "fold_auroc": [
+          0.9151258954168826,
+          0.9189246337071525,
+          0.9277535062685403
+        ],
+        "fold_seconds": [
+          7.346441416011658,
+          6.984435292019043,
+          6.48140595795121
+        ],
+        "search_seconds": 20.812321208009962,
+        "status": "completed"
+      },
+      {
+        "C": 4.0,
+        "cv_mean": 0.9283013561993698,
+        "cv_std": 0.003850073371722026,
+        "error_type": null,
+        "fold_auroc": [
+          0.9255014278307208,
+          0.9256572014067985,
+          0.9337454393605904
+        ],
+        "fold_seconds": [
+          6.985824666044209,
+          7.327189915988129,
+          8.08123249997152
+        ],
+        "search_seconds": 22.394292999990284,
+        "status": "completed"
+      }
+    ],
+    "comparison_results": [
+      {
+        "cv_mean": 0.9360995193175318,
+        "cv_std": 0.0029872416542635937,
+        "evaluation_seconds": 1.326397333003115,
+        "fit_seconds": 2.7847560410154983,
+        "model": "word_logistic",
+        "search_seconds": 20.832920957996976,
+        "train_auroc": 0.9999251875,
+        "validation_auroc": 0.941252
+      },
+      {
+        "cv_mean": 0.9283013561993698,
+        "cv_std": 0.003850073371722026,
+        "evaluation_seconds": 9.283780374971684,
+        "fit_seconds": 8.594038417038973,
+        "model": "character_logistic",
+        "search_seconds": 65.16444512497401,
+        "train_auroc": 0.9984115000000001,
+        "validation_auroc": 0.938334
+      }
+    ],
+    "handoff": "word",
+    "handoff_cv_mean": 0.9360995193175318,
+    "max_reload_difference": 0.0,
+    "paired_comparisons": [
+      {
+        "ci_high": 0.003979650000000056,
+        "ci_low": -0.009703200000000207,
+        "delta_auroc": -0.002917999999999976,
+        "reference": "word_logistic",
+        "treatment": "character_logistic"
+      }
+    ],
+    "search_seconds": 65.16444512497401,
+    "selected_C": 4.0,
+    "validation_auroc": 0.941252
+  },
+  "run_id": "20261110T184002363091Z",
+  "runtime_seconds": 90.9690094999969,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T18:40:02.410533+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.16",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

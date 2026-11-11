@@ -1,0 +1,158 @@
+{
+  "config": {
+    "blend_grid": {
+      "hist": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hist50_old25_nb25": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "hist50_old50": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "hist75_nb25": [
+        0.75,
+        0.0,
+        0.25
+      ],
+      "hist75_old25": [
+        0.75,
+        0.25,
+        0.0
+      ],
+      "old_soft": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "components": [
+      "style_aug",
+      "old_soft",
+      "nb_transfer"
+    ],
+    "dependencies": {
+      "11": {
+        "record": "results/11_formatting_rule/20261110T214338421386Z.json",
+        "record_sha256": "fc242eff9372a423e5076c5274b4d5acb91fd90e692689d863b203ada9d63521"
+      },
+      "13": {
+        "record": "results/13_rich_style/20261110T195146556937Z.json",
+        "record_sha256": "6a4ebaba13fc2b68202c2fa7a256199a2de9a64eeda9fb55dca0e187cde44551"
+      },
+      "14": {
+        "record": "results/14_style_augmentation/20261110T222137757157Z.json",
+        "record_sha256": "90702a02791afc2f21143f28d3b9131d88b267fb6ede43f1e19fa5b6fc266225"
+      },
+      "15": {
+        "record": "results/15_normalized_transfer/20261110T202717584850Z.json",
+        "record_sha256": "b2646eedc5f559469bb118b0f9a0ee9fe134cd3e17bf3edc6c22aabeb1aedb96"
+      }
+    },
+    "diagnostics": {
+      "bins": "training quartiles at .25/.5/.75, open outer bins, right-closed, repeated edges merged",
+      "bootstrap": {
+        "draws": 1000,
+        "interval": "2.5 and 97.5 percentiles",
+        "kind": "class-stratified, resampled within each subgroup",
+        "partitions": [
+          "validation"
+        ],
+        "seed": 42
+      },
+      "case_order": "FP by highest P(AI), FN by lowest P(AI), ties by ID",
+      "cases_per_type": 5,
+      "measures": {
+        "line_breaks": "count of newline characters",
+        "punct_per_char": "characters that are not alphanumeric or whitespace / characters, 0 when empty",
+        "upper_per_letter": "uppercase letters / letters, 0 when no letters",
+        "words": "whitespace-split token count"
+      },
+      "threshold": 0.5
+    },
+    "guard_slack": 0.002,
+    "guard_views": [
+      "remove_blank",
+      "collapse"
+    ],
+    "helper_source_sha256": {
+      "08_error_analysis.ipynb": "c33fb48c17d10f29569357aa4993fa50fb3523a3e40bace6de3e08db8505774c",
+      "10_expanded_text.ipynb": "a9bbac638ba8fba36842ef1c92210581cdc953692b18885b2989d6be6303a4ff",
+      "13_rich_style.ipynb": "7b57c4a1eb203dd2ab2242abdaa83cc6f725b77fce3915a51fce8cee5d134c23",
+      "15_normalized_transfer.ipynb": "254887845fae9d7e80b6fc175c2fc7068dad81d1a7444f8f205ef0317d918ca8"
+    },
+    "internal": {
+      "fit_rows": 6400,
+      "how": "train_test_split(test_size=.2, stratify=label, random_state=42) on manifest training order, then sorted indices (#15)",
+      "score_rows": 1600,
+      "seed": 42
+    },
+    "internal_id_sha256": {
+      "fit": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e",
+      "score": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b"
+    },
+    "nb_transfer": {
+      "classifier": "LR C1 liblinear max_iter 3000 tol 1e-4 seed 42",
+      "confidence": 0.995,
+      "features": "normalized text; binary CountVectorizer word1-3 max 120000 + char3-5 max 180000, min_df 2, float32",
+      "normalization": "NFKC; canonical quotes/dashes/ellipsis; remove Cf; collapse whitespace; lowercase",
+      "pseudo_weight": 0.25,
+      "ratio": "NB log ratio alpha 1 on verified + assigned pseudo labels",
+      "score": "margin standardized on eligible unlabeled",
+      "teacher": "original #13 HistGB (no copies) on the same fit rows"
+    },
+    "notebook_source_sha256": "3c48ffbea2d06960fa1aa3622b281f4c89bd4309bb606722e7d0581e1276697b",
+    "old_soft": {
+      "flag": "literal two consecutive newlines; active only when zero human fit rows have it",
+      "offset": 2.0,
+      "score": "mean of standardized margins + active flag*2; outer standardization on eligible unlabeled",
+      "specialist": "case char2-5 SVM C1, fit rows without literal blank line",
+      "specialist_reference": "eligible unlabeled rows without literal blank lines",
+      "word": "word1-3 + case char2-5 LR C16, all fit rows"
+    },
+    "reference": {
+      "ordered_id_sha256": "ba87deaa086efd309464078eca7d5cbf2f0f6fde88182f97fadd75ef6af5eddc",
+      "rows": 3000
+    },
+    "reproduction": "same grid with original #13 style arm, compared to #15 internal and validation numbers; not used for selection",
+    "score_mapping": "sigmoid of weighted standardized scores; calibration measured, not assumed",
+    "selection": "on internal 1600: eligible if remove_blank and collapse each >= pure augmented hist - .002; max original AUROC; grid order breaks exact ties (pure hist first); wrap80 measured only; saved before validation",
+    "stress": [
+      "original",
+      "remove_blank",
+      "collapse",
+      "wrap80"
+    ],
+    "stress_definitions": {
+      "collapse": "' '.join(text.split()) (#14/#15)",
+      "remove_blank": "drop whitespace-only lines, join with \\n (#15)",
+      "wrap80": "split on blank lines, textwrap.fill width 80, break_long_words=False, break_on_hyphens=False, join with blank line (#14)"
+    },
+    "style": {
+      "copies": [
+        "collapse"
+      ],
+      "copy_weight": 0.25,
+      "histgb": {
+        "early_stopping": false,
+        "l2_regularization": 5.0,
+        "learning_rate": 0.06,
+        "max_iter": 250,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 30,
+        "random_state": 42
+      },
+      "score": "logit(clip(P(AI), 1e-7, 1-1e-7)), standardized on eligible unlabeled"
+    },
+    "threads": "threadpool_limits(limits=1) for every fit and score"
+  },
+  "config_sha256": "35ec3b926883508fda3c69d18f13079172fd6af11a1fbb98682ab1fe56738dc2",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

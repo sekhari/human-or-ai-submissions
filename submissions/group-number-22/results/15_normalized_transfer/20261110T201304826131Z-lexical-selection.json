@@ -1,0 +1,27 @@
+{
+  "candidate_results": [
+    {
+      "candidate": "tfidf",
+      "cv_mean": 0.9521175094141543,
+      "cv_seconds": 70.1548656669911,
+      "cv_std": 0.004586532292685191,
+      "pooled_oof_auroc": 0.9521000624999999
+    },
+    {
+      "candidate": "nb",
+      "cv_mean": 0.9619773832156976,
+      "cv_seconds": 63.387715541990474,
+      "cv_std": 0.005294633239094284,
+      "pooled_oof_auroc": 0.961865375
+    },
+    {
+      "candidate": "two_view",
+      "cv_mean": 0.958630758322685,
+      "cv_seconds": 114.65934433299117,
+      "cv_std": 0.004106915537235183,
+      "pooled_oof_auroc": 0.9586673125
+    }
+  ],
+  "selected": "nb",
+  "validation_inspected": false
+}

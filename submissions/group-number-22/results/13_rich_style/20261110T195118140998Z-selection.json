@@ -1,0 +1,40 @@
+{
+  "fold_auroc": [
+    {
+      "auroc": 0.9979704446351468,
+      "candidate": "histgb",
+      "fold": 0
+    },
+    {
+      "auroc": 0.9986064732075073,
+      "candidate": "histgb",
+      "fold": 1
+    },
+    {
+      "auroc": 0.9976132442713079,
+      "candidate": "histgb",
+      "fold": 2
+    },
+    {
+      "auroc": 0.9967968003995002,
+      "candidate": "extratrees",
+      "fold": 0
+    },
+    {
+      "auroc": 0.9975135275573017,
+      "candidate": "extratrees",
+      "fold": 1
+    },
+    {
+      "auroc": 0.9959732994013696,
+      "candidate": "extratrees",
+      "fold": 2
+    }
+  ],
+  "pooled_oof_auroc": {
+    "extratrees": 0.99677734375,
+    "histgb": 0.998065375
+  },
+  "saved_before_validation": true,
+  "selected": "histgb"
+}

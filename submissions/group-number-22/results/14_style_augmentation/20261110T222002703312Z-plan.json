@@ -1,0 +1,72 @@
+{
+  "config": {
+    "copies": "every fit row gets every copy of its preset, changed or not",
+    "copy_weight": 0.25,
+    "dependencies": {
+      "12": {
+        "record": "results/12_seed_stress/20261110T221222713672Z.json",
+        "record_sha256": "6495b618ae4b27a1e02b763b2fc40b1d278ec06c4e2523a790e5c38302e4b2ed"
+      },
+      "13": {
+        "record": "results/13_rich_style/20261110T195146556937Z.json",
+        "record_sha256": "6a4ebaba13fc2b68202c2fa7a256199a2de9a64eeda9fb55dca0e187cde44551",
+        "source_sha256": "7b57c4a1eb203dd2ab2242abdaa83cc6f725b77fce3915a51fce8cee5d134c23"
+      }
+    },
+    "histgb": {
+      "early_stopping": false,
+      "l2_regularization": 5.0,
+      "learning_rate": 0.06,
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 30,
+      "random_state": 42
+    },
+    "inner_split": {
+      "eval": 1600,
+      "eval_ids_sha256": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b",
+      "fit": 6400,
+      "fit_ids_sha256": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e",
+      "matches_12_split42": true,
+      "seed": 42
+    },
+    "notebook_source_sha256": "1c59a7d457a8278cc475681791644af8c379125b0f7e6ec306b18eee8d1264e1",
+    "original_slack": 0.005,
+    "presets": {
+      "original_only": [],
+      "plus_collapse": [
+        "collapse"
+      ],
+      "plus_newline_wrap": [
+        "single_newline",
+        "wrap64",
+        "wrap80"
+      ]
+    },
+    "schema_sha256": "3126aec1687a3e205dc40b7dba7e5138b66fd7df4fcfbb98e56dc190b51a89a6",
+    "selection": "eligible if original >= original_only original - 0.005; max mean AUROC over original/collapse/wrap80 on inner 1600; tie to fewer copies; saved before validation",
+    "selection_views": [
+      "original",
+      "collapse",
+      "wrap80"
+    ],
+    "threads": "HistGB limited to 1 OpenMP thread",
+    "views": {
+      "collapse": "' '.join(text.split())",
+      "original": "unchanged",
+      "single_newline": "re.sub(r'\\n\\s*\\n', '\\n')",
+      "wrap64": "split on blank lines; textwrap.fill width 64, break_long_words=False, break_on_hyphens=False; join with blank line",
+      "wrap80": "same as wrap64, width 80"
+    },
+    "views_changed_rows_10000": {
+      "collapse": 7296,
+      "original": 0,
+      "single_newline": 3335,
+      "wrap64": 9904,
+      "wrap80": 9830
+    }
+  },
+  "config_sha256": "353598876d421914e54bec16ce085e5b30569f5f6eb6fec8a81999170b113471",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

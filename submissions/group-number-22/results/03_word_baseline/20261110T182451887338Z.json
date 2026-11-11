@@ -1,0 +1,91 @@
+{
+  "artifacts": {
+    "artifacts/03_word_baseline/20261110T182446535794Z/auroc.png": "1ba3eb1d5df4fa213b754c608357e73f9026a315960115e05107815eb9631713",
+    "artifacts/03_word_baseline/20261110T182446535794Z/model.joblib": "6fdb7ba84aaf264a5967ce3f7dbae4b185aba2055e1a2547619624ddbb756077",
+    "artifacts/03_word_baseline/20261110T182446535794Z/train_predictions.csv": "28d1aac4590a4987332c4bf9b0b4e8ebf6b34c98b121d790906eeef2e0d77924",
+    "artifacts/03_word_baseline/20261110T182446535794Z/validation_predictions.csv": "a85fbd65544bedb5dccf0fcad462d306e83391c5776eb710f7af33f5ea610588"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace notebooks/03_word_baseline.ipynb",
+  "config": {
+    "classifier": {
+      "C": 1.0,
+      "class_weight": null,
+      "fit_intercept": true,
+      "intercept_scaling": 1.0,
+      "max_iter": 2000,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "extra_versions": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "notebook_source_sha256": "b91139481d3cedcdff78b60b9dcd6f56e150fcf121d765fe977cc2e2e8d3e667",
+    "prediction_tolerance": 1e-12,
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b"
+    }
+  },
+  "config_sha256": "83a57e1db2534c555df152212ba89197bfa238f6399a14bbdad49bf9fbc5f6c3",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "3cce5997cf17b79f17b5a2136555590b8e79f960",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "evaluation_seconds": 1.0167335419682786,
+    "fit_seconds": 2.7455087080597878,
+    "iterations": [
+      5
+    ],
+    "max_reload_probability_difference": 0.0,
+    "reload_check_seconds": 1.192714250064455,
+    "train_accuracy_at_0_5": 0.952,
+    "train_auroc": 0.9933405,
+    "validation_accuracy_at_0_5": 0.8675,
+    "validation_auroc": 0.9327280000000001,
+    "vocabulary_size": 50000
+  },
+  "run_id": "20261110T182451887338Z",
+  "runtime_seconds": 5.355990000069141,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T18:24:51.918739+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.13",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

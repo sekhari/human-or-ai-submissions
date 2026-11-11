@@ -1,0 +1,94 @@
+{
+  "config": {
+    "blend": {
+      "guardrail": "original AUROC >= classical original - .002",
+      "neural_weights": [
+        0,
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "objective": "mean AUROC over original, remove_blank_lines, collapse_whitespace, wrap80",
+      "scores": "standardized with eligible-unlabeled reference",
+      "upload": "never automatic"
+    },
+    "checkpoint": {
+      "files_sha256": {
+        "config.json": "9708dadc5705ed0b5b8f6a63e723e959fe52b18aceedd9e704d8058739d3747b",
+        "pytorch_model.bin": "735154b1a8a78ba97da3c8c53c2e3d1d58b8dec5fa5caf0e144661c8bbe0e787",
+        "tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+        "tokenizer_config.json": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "license": "apache-2.0",
+      "loading": "local_files_only after one pinned download",
+      "repo_id": "google/electra-small-discriminator",
+      "revision": "fa8239aadc095e9164941d05878b98afe9b953c3",
+      "source": "Hugging Face Hub, generic pretrained discriminator"
+    },
+    "confirm": "fresh model on original 8000, selected epoch count, LR schedule still sized for 3 epochs; frozen 2000 scored once",
+    "dependencies": {
+      "12": {
+        "record": "results/12_seed_stress/20261110T221222713672Z.json",
+        "record_sha256": "6495b618ae4b27a1e02b763b2fc40b1d278ec06c4e2523a790e5c38302e4b2ed"
+      },
+      "15": {
+        "record": "results/15_normalized_transfer/20261110T202717584850Z.json",
+        "record_sha256": "b2646eedc5f559469bb118b0f9a0ee9fe134cd3e17bf3edc6c22aabeb1aedb96"
+      }
+    },
+    "hardware": {
+      "chip": "Apple M5",
+      "device": "mps",
+      "platform": "macOS-26.1-arm64-arm-64bit",
+      "torch_threads": 4
+    },
+    "inner_split": {
+      "eval_ids_sha256": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b",
+      "fit_ids_sha256": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e",
+      "recipe": "notebook 02 split_ids inside original 8000, seed 42, 800/800, duplicate groups whole"
+    },
+    "neural_lock": {
+      "path": "envs/electra/uv.lock",
+      "sha256": "2f2923280883fa01c61fb12b7302cf024499be5785f0c053bc383b9e12b17644"
+    },
+    "neural_versions": {
+      "huggingface-hub": "2.4.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.15.0",
+      "transformers": "5.22.2"
+    },
+    "nondeterminism": "MPS kernels are not bitwise deterministic; deterministic algorithms off; not rerun to measure",
+    "notebook_code_sha256": "33acd3fdca4bcc5170f1af2744ae81afb5e600c3b09899b8d0b04ce819be4499",
+    "selection": "max internal original AUROC over epochs 1-3, earliest epoch on ties",
+    "stress_scope": "eval rows only; training text stays original",
+    "stresses": {
+      "collapse_whitespace": "all whitespace runs to one space",
+      "original": "unchanged",
+      "remove_blank_lines": "drop whitespace-only lines",
+      "wrap80": "textwrap.fill each nonblank line at 80"
+    },
+    "train": {
+      "batch": 16,
+      "eval_batch": 64,
+      "grad_clip": null,
+      "head": "ElectraForSequenceClassification, 2 labels",
+      "lr": 3e-05,
+      "max_tokens": 256,
+      "no_decay": "bias and LayerNorm",
+      "optimizer": "torch AdamW",
+      "schedule": "linear warmup then linear decay",
+      "schedule_epochs": 3,
+      "score": "logit1 - logit0",
+      "shuffle": "torch.randperm with Generator seed 42 per epoch",
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01
+    }
+  },
+  "config_sha256": "fd5de06e4327cc71334c8ccde63430e0ec07aa553559d7356284f85937274755",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

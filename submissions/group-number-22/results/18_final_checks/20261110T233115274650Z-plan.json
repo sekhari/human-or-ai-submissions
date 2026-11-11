@@ -1,0 +1,176 @@
+{
+  "config": {
+    "checkpoint_sha256": {
+      "config.json": "9708dadc5705ed0b5b8f6a63e723e959fe52b18aceedd9e704d8058739d3747b",
+      "pytorch_model.bin": "735154b1a8a78ba97da3c8c53c2e3d1d58b8dec5fa5caf0e144661c8bbe0e787",
+      "tokenizer.json": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+      "tokenizer_config.json": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "classical": {
+      "selected": "hist50_old50",
+      "weights": [
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    "dependencies": {
+      "06": {
+        "record": "results/06_learning_curve/20261110T182635235581Z.json",
+        "record_sha256": "e9ae6e7a96fc6116e4adf90ec2038ad1c0e852553a582b3f988d483984910168"
+      },
+      "07": {
+        "record": "results/07_pseudo_labels/20261110T185517771685Z.json",
+        "record_sha256": "39abcd5967553ff69fd9a9778c44b3bae2050534f554a0761b3767cb701f4a98"
+      },
+      "08": {
+        "record": "results/08_error_analysis/20261110T191604750902Z.json",
+        "record_sha256": "146db9192961b473f832b69095876bce374504e05e9577b25a9488d2ef4d37fc"
+      },
+      "09": {
+        "record": "results/09_linear_style/20261110T193404498410Z.json",
+        "record_sha256": "d80db274e38d3e69d314033bee099e1d6e2f546396d0532535bb000e0f3707db"
+      },
+      "12": {
+        "record": "results/12_seed_stress/20261110T221222713672Z.json",
+        "record_sha256": "6495b618ae4b27a1e02b763b2fc40b1d278ec06c4e2523a790e5c38302e4b2ed"
+      },
+      "16": {
+        "record": "results/16_local_electra/20261110T223101338301Z.json",
+        "record_sha256": "bdb9c7e9ee46220611028c9373ccd1b849c495a5463912246fb8e49936df5c34"
+      },
+      "17": {
+        "record": "results/17_final_blend/20261110T232156602149Z.json",
+        "record_sha256": "dd72adf2c5090b323edb5eeba76726890fd56535c62bec814d97dedb74a47c00"
+      }
+    },
+    "electra": {
+      "batch": 16,
+      "device": "mps",
+      "eval_batch": 64,
+      "lr": 3e-05,
+      "max_tokens": 256,
+      "nondeterminism": "MPS kernels are not bitwise deterministic",
+      "schedule_epochs": 3,
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01
+    },
+    "export": {
+      "columns": [
+        "id",
+        "label"
+      ],
+      "label": "P(AI), class 1",
+      "order": "sample_submission order",
+      "path": "submissions/18_final_checks/<run>/submission.csv",
+      "recompute": "shuffled test order, seed 42, matched by ID, max abs diff <= 1e-12"
+    },
+    "full_order_sha256": {
+      "manifest": "082994f5a0c334c177138367736028ce5183dda1d48f88789d06f8d19d261f94",
+      "style": "b2ab810d589d20604c00461ce3e729a82a3b9f745fd73cef350c29686a1af5ae"
+    },
+    "full_refit": {
+      "electra_epochs": 3,
+      "electra_order": "manifest training then manifest validation",
+      "linear_order": "manifest training then manifest validation",
+      "reference": "eligible unlabeled in split order",
+      "rows": 10000,
+      "style_order": "original train.csv order",
+      "threads": "threadpool_limits(limits=1) for every sklearn fit and score"
+    },
+    "hardware": {
+      "chip": "Apple M5",
+      "device": "mps",
+      "platform": "macOS-26.1-arm64-arm-64bit",
+      "torch_threads": 4
+    },
+    "helper_source_sha256": {
+      "08_error_analysis.ipynb": "c33fb48c17d10f29569357aa4993fa50fb3523a3e40bace6de3e08db8505774c",
+      "10_expanded_text.ipynb": "a9bbac638ba8fba36842ef1c92210581cdc953692b18885b2989d6be6303a4ff",
+      "13_rich_style.ipynb": "7b57c4a1eb203dd2ab2242abdaa83cc6f725b77fce3915a51fce8cee5d134c23"
+    },
+    "neural_blend": {
+      "guardrail": "original >= w0 original - .002",
+      "objective": "mean AUROC over original, remove_blank, collapse, wrap80",
+      "rows": "frozen 2000, 8000-fit scores from #16 and #17 (the only rows with both)",
+      "score": "(1-w)*std(classical blend score) + w*std(ELECTRA margin), std on eligible unlabeled, population std",
+      "ties": "smaller w",
+      "view_note": "classical wrap80 is #17 paragraph wrap; ELECTRA wrap80 is #16 line wrap; ELECTRA moves < 1e-6 under any view",
+      "weights": [
+        0,
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ]
+    },
+    "neural_lock": {
+      "path": "envs/electra/uv.lock",
+      "sha256": "2f2923280883fa01c61fb12b7302cf024499be5785f0c053bc383b9e12b17644"
+    },
+    "neural_versions": {
+      "cloudpickle": "3.1.2",
+      "matplotlib": "3.11.2",
+      "safetensors": "0.8.0",
+      "threadpoolctl": "3.8.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.15.0",
+      "transformers": "5.22.2"
+    },
+    "notebook_code_sha256": "5f371e9d4d79246deca036ae7fdfd709bdb158b7328282d3d800ba4af944b014",
+    "old_soft": {
+      "flag": "literal two consecutive newlines; active only when zero human fit rows have it",
+      "offset": 2.0,
+      "specialist": {
+        "C": 1.0,
+        "learner": "svm",
+        "view": "casechar"
+      },
+      "word": {
+        "C": 16.0,
+        "learner": "lr",
+        "view": "word_char"
+      }
+    },
+    "planned_vs_actual": {
+      "actual": "#17 rule picked hist50_old50; one thread for every sklearn fit, same as #17",
+      "issue_plan": "classical candidate, hist threads 2, linear threads 1"
+    },
+    "private_inputs_sha256": {
+      "artifacts/16_local_electra/20261110T222108811422Z/eligible_unlabeled_margins.csv": "39385d41c70d44ceb6b36a0d53958c1c1ee6af3f86d7f00b91978031f160ea49",
+      "artifacts/16_local_electra/20261110T222108811422Z/frozen2000_margins.csv": "e3f0df519ff54286ffccdc48b8066e48921e0679fb374e85a6141480ea61c4e4",
+      "artifacts/17_final_blend/20261110T231659204936Z/blend_validation_original.csv": "456aefa99ff133f916f78ab074eb325b4960b2828eee8db1868276beb74fc6a7",
+      "artifacts/17_final_blend/20261110T231659204936Z/components_unlabeled.csv": "b61fb8b345be7f10880654856313261fd234ef6a07fd0ded397880292c7ece1b",
+      "artifacts/17_final_blend/20261110T231659204936Z/components_validation_collapse.csv": "606ff6342f4baa48d1af3d88aac025ce96f09eecbadf7425bb20b60b3a6cd294",
+      "artifacts/17_final_blend/20261110T231659204936Z/components_validation_original.csv": "dce9670fa4c2dfcf4bbe2f2516716dcb0890d925b1f64655733638a715beddfd",
+      "artifacts/17_final_blend/20261110T231659204936Z/components_validation_remove_blank.csv": "2f820757e7fb1a3ea0fe14ec33ef7541ed9eb3c233444e85c76445f7e04d8066",
+      "artifacts/17_final_blend/20261110T231659204936Z/components_validation_wrap80.csv": "dd6fd088b6063219c67e46500e3fd11426ccb852413c73ac8d2746ada822618c"
+    },
+    "reference": {
+      "ordered_id_sha256": "ba87deaa086efd309464078eca7d5cbf2f0f6fde88182f97fadd75ef6af5eddc",
+      "rows": 3000
+    },
+    "style": {
+      "copies": [
+        "collapse"
+      ],
+      "copy_weight": 0.25,
+      "histgb": {
+        "early_stopping": false,
+        "l2_regularization": 5.0,
+        "learning_rate": 0.06,
+        "max_iter": 250,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 30,
+        "random_state": 42
+      },
+      "score": "logit(clip(P(AI), 1e-7, 1-1e-7)), standardized on eligible unlabeled"
+    },
+    "upload": "never automatic; Jalil uploads by hand"
+  },
+  "config_sha256": "aaa44f1235c10518c966e63c8f3fc02c4738b3f2c187b64cfb57e92168969fab",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

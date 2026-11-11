@@ -1,0 +1,494 @@
+{
+  "artifacts": {
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/accepted_internal_pseudo.csv": "967152afacee1346a5d2a5031b91974342fd6a1d849d0b29d1e2e050548f9263",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/blend_train.csv": "9221a288bd37b507054d3fc5421d174ad28388d8a5d15aa3a1f95d86afe22b1d",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/blend_validation_collapse.csv": "d4f83e2a76a3dadaebf7f8d898cbafe676074ad5caf1915a4139f0be33757486",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/blend_validation_original.csv": "3b5c21a0ccbf1a81376e6967614b1bc1067aaf64d585c258788ddfa7b74502ff",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/blend_validation_remove_blank.csv": "2033706a5902d19a93c0b4f127e59466307292427c9575e02e088362e2a68f2b",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/comparison.png": "7283d622b6eb4d3a4f998661c0e0cf493690b691c55df01d42996ed986c870dd",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/internal_nb_control.pkl": "ac9193c7e5da53238cd264a2a4a24831b3e5e02cfae825703a871fcfdec117ce",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/internal_nb_treatment.pkl": "3e68b6b2cb4cbd912fef08d694afecf31538e698b9375d33dab8001655ecf022",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/internal_old_soft.pkl": "bc94be094dadf95fb4e264a614cc2b10b2647447ff7b038bb87cde6feee0f56c",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/internal_style.pkl": "8e691a047e0758c2dada3e570325a69dd1d6af7ee2baba9942c2704cf06afa1c",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_nb.pkl": "2275f91b61dbfc43b642c7c3574d5e3d5aff91dfff62a722534d3159b2a217c2",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_nb_train.csv": "0dc091a74c7a26005cfe964dbd5ba7912748a057f27e0ff3ffc0db2075ab4258",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_nb_validation.csv": "d8701dacddd6626326afd5a4135e3f7f2449bdbed90872fec4c21066a9cfcce8",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_oof.csv": "dbbba3d467503fc58f57d2f891b59efdbdfd9b5f0e53022c3b09434b1f3a9446",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_tfidf.pkl": "7c90a1b76f3a9e75137fc2a418eef9db58298c465a522a43cdce2145260c96ce",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_tfidf_train.csv": "832b800dac1f9b6c09a1e841f5f255bff9fbf181e75e63913f82d2fb2bf6eec5",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_tfidf_validation.csv": "b23b2eef41053405713724a9e650e33e831ce7feb58d112a8631a9fb6210a324",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_two_view.pkl": "f32c55d4a853d3aabc61b0c0450587df0fa5c5e1b64f45c43c5ae8261e6423cd",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_two_view_train.csv": "72f7fa2f7e2aa6ee17a31f5a030eb44d14b6ef37888276787beb22898dfd88a6",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/lexical_two_view_validation.csv": "b0ccd7250b60f1704c2c9dbdfaddc14676faef5f8aed7d460aebe011b4a60c96",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/refit_spec.json": "0d9fc8d9caaec3431602e1045d754dd7bfd1b399c5bb28ca7d43658f4df7e312",
+    "artifacts/15_normalized_transfer/20261110T201304826131Z/selected_blend.pkl": "8d088325ecbb71e5fe41dd1661ee7befdd2d6ad46bda58578ab898fe32a348ca",
+    "results/15_normalized_transfer/20261110T201304826131Z-acceptance.json": "aa88e32c4df9ef0f22476475da9fc4bd10f3df53034877938262e8705f19837b",
+    "results/15_normalized_transfer/20261110T201304826131Z-blend-selection.json": "3c5c0213a2b1c5f458109b3dccda93278f53bce71f5b418111f51a12928b4fc0",
+    "results/15_normalized_transfer/20261110T201304826131Z-lexical-selection.json": "1c467cb719ee76f45c37457955b140b6c9fce2734f4dce7dfd43ac49d3586666",
+    "results/15_normalized_transfer/20261110T201304826131Z-plan.json": "f93b18d693aa5dc5bdcdc28345122878761b51a97a9792607035cf2801a08820"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=3600 notebooks/15_normalized_transfer.ipynb",
+  "config": {
+    "blend_grid": {
+      "hist": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hist50_old25_nb25": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "hist50_old50": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "hist75_nb25": [
+        0.75,
+        0.0,
+        0.25
+      ],
+      "hist75_old25": [
+        0.75,
+        0.25,
+        0.0
+      ],
+      "old_soft": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "blend_nb_arm": "normalized NB teacher-transfer treatment; supervised control reported separately",
+    "blend_selection": "max original internal AUROC with remove-blank and collapse each >= hist-.002; grid order makes exact ties prefer hist",
+    "char": {
+      "analyzer": "char",
+      "max_features": 180000,
+      "min_df": 2,
+      "ngram_range": [
+        3,
+        5
+      ]
+    },
+    "classifier": {
+      "max_iter": 3000,
+      "nb_C": 1.0,
+      "seed": 42,
+      "solver": "liblinear",
+      "tfidf_C": 16.0,
+      "tol": 0.0001,
+      "two_view_C": 16.0
+    },
+    "component_scaling": "style clipped logit and NB margin standardized on eligible unlabeled; old arm outer standardized; no test normalization",
+    "cv": {
+      "n_splits": 3,
+      "seed": 42,
+      "selection": "highest mean fold AUROC; grid order breaks ties",
+      "shuffle": true
+    },
+    "extra_versions": {
+      "cloudpickle": "3.1.2",
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "helper_source_sha256": {
+      "10_expanded_text.ipynb": "a9bbac638ba8fba36842ef1c92210581cdc953692b18885b2989d6be6303a4ff",
+      "13_rich_style.ipynb": "7b57c4a1eb203dd2ab2242abdaa83cc6f725b77fce3915a51fce8cee5d134c23"
+    },
+    "internal": {
+      "fit_rows": 6400,
+      "order": "sorted original manifest indices",
+      "score_rows": 1600,
+      "seed": 42
+    },
+    "internal_id_sha256": {
+      "fit": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e",
+      "score": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b"
+    },
+    "lexical_grid": [
+      "tfidf",
+      "nb",
+      "two_view"
+    ],
+    "nb": {
+      "alpha": 1.0,
+      "binary": true,
+      "ratio": "log normalized class token frequencies; training vocabulary only"
+    },
+    "normalization": "NFKC; canonical quotes/dashes/ellipsis; remove Cf; collapse whitespace; lowercase",
+    "notebook_source_sha256": "254887845fae9d7e80b6fc175c2fc7068dad81d1a7444f8f205ef0317d918ca8",
+    "old_soft": {
+      "flag": "literal two consecutive newlines; active only when zero human fit rows have it",
+      "offset": 2.0,
+      "score": "mean standardized margins + active flag*2; outer standardization on all eligible unlabeled",
+      "specialist": "casechar SVM C1 on no-literal-blank fit rows",
+      "specialist_reference": "eligible unlabeled rows without literal blank lines",
+      "word": "word13+casechar LR C16 all fit"
+    },
+    "pseudo": {
+      "classifier_weight": 0.25,
+      "confidence": 0.995,
+      "passes": 1,
+      "ratio": "treatment also uses assigned pseudo labels, unweighted in NB class frequencies; classifier weights remain .25",
+      "threshold": 0.5,
+      "vocabulary": "fit verified internal training only, for both fresh arms"
+    },
+    "reference": {
+      "ordered_id_sha256": "ba87deaa086efd309464078eca7d5cbf2f0f6fde88182f97fadd75ef6af5eddc",
+      "rows": 3000
+    },
+    "score_mapping": "sigmoid of weighted standardized scores; not claimed calibrated",
+    "stress": [
+      "original",
+      "remove_blank",
+      "collapse"
+    ],
+    "style_dependency": {
+      "record": "results/13_rich_style/20261110T195146556937Z.json",
+      "record_sha256": "6a4ebaba13fc2b68202c2fa7a256199a2de9a64eeda9fb55dca0e187cde44551",
+      "schema_sha256": "3126aec1687a3e205dc40b7dba7e5138b66fd7df4fcfbb98e56dc190b51a89a6"
+    },
+    "teacher": {
+      "early_stopping": false,
+      "l2_regularization": 5.0,
+      "learning_rate": 0.06,
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 30,
+      "random_state": 42
+    },
+    "tfidf": {
+      "dtype": "float32",
+      "norm": "l2",
+      "sublinear_tf": true
+    },
+    "threads": 1,
+    "two_view": "fit original and normalized training copies, each weight .5; average the two inference margins",
+    "word": {
+      "max_features": 120000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        3
+      ]
+    }
+  },
+  "config_sha256": "6cc51722ebc05f9a60086cec75388ad38468b24b4115965b74366d097a8cf1b9",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "065c6cf5495e9374906227c9b86347a6451af09b",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "frozen_confirmation": [
+      {
+        "accuracy_at_0_5": 0.9845,
+        "auroc": 0.998492,
+        "rows": 2000,
+        "variant": "original"
+      },
+      {
+        "accuracy_at_0_5": 0.872,
+        "auroc": 0.992831,
+        "rows": 2000,
+        "variant": "remove_blank"
+      },
+      {
+        "accuracy_at_0_5": 0.8075,
+        "auroc": 0.9311579999999999,
+        "rows": 2000,
+        "variant": "collapse"
+      }
+    ],
+    "full_blend_refit_seconds": 135.93622395896818,
+    "full_old_rule_active": true,
+    "full_transfer_acceptance": {
+      "accepted": 2156,
+      "accepted_AI": 1178,
+      "accepted_human": 978,
+      "control_seconds": 28.16048512503039,
+      "eligible_rows": 3000,
+      "pseudo_weighted_mass": 539.0,
+      "teacher_seconds": 9.768370750010945,
+      "treatment_seconds": 34.50338958296925,
+      "verified_rows": 8000,
+      "vocabulary_sha256": "103256e75437dc6a255fa1cba675edb0599556b0b98ce772ed051c4dd2450974"
+    },
+    "internal_blend_grid": [
+      {
+        "candidate": "hist",
+        "collapse": 0.8098453125,
+        "collapse_pass": true,
+        "eligible": true,
+        "original": 0.9979750000000001,
+        "remove_blank": 0.9827703125,
+        "remove_blank_pass": true,
+        "weights": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "candidate": "hist75_old25",
+        "collapse": 0.8524265624999999,
+        "collapse_pass": true,
+        "eligible": true,
+        "original": 0.9988078125,
+        "remove_blank": 0.9879734375,
+        "remove_blank_pass": true,
+        "weights": [
+          0.75,
+          0.25,
+          0.0
+        ]
+      },
+      {
+        "candidate": "hist50_old50",
+        "collapse": 0.8802468749999999,
+        "collapse_pass": true,
+        "eligible": true,
+        "original": 0.99896875,
+        "remove_blank": 0.9886906249999999,
+        "remove_blank_pass": true,
+        "weights": [
+          0.5,
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "candidate": "hist75_nb25",
+        "collapse": 0.9065374999999999,
+        "collapse_pass": true,
+        "eligible": true,
+        "original": 0.9989,
+        "remove_blank": 0.99208125,
+        "remove_blank_pass": true,
+        "weights": [
+          0.75,
+          0.0,
+          0.25
+        ]
+      },
+      {
+        "candidate": "hist50_old25_nb25",
+        "collapse": 0.931546875,
+        "collapse_pass": true,
+        "eligible": true,
+        "original": 0.999021875,
+        "remove_blank": 0.9924437500000001,
+        "remove_blank_pass": true,
+        "weights": [
+          0.5,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "candidate": "old_soft",
+        "collapse": 0.9084140625,
+        "collapse_pass": true,
+        "eligible": false,
+        "original": 0.9941484375,
+        "remove_blank": 0.9571484375,
+        "remove_blank_pass": false,
+        "weights": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "internal_old_rule_active": true,
+    "internal_seconds": 171.0777624999755,
+    "internal_transfer_acceptance": {
+      "accepted": 2205,
+      "accepted_AI": 1193,
+      "accepted_human": 1012,
+      "control_seconds": 21.9093502080068,
+      "eligible_rows": 3000,
+      "pseudo_weighted_mass": 551.25,
+      "teacher_seconds": 8.212502249982208,
+      "treatment_seconds": 28.96076229197206,
+      "verified_rows": 6400,
+      "vocabulary_sha256": "5068e9bec638a33dcc42a3146f8fba184b939d9a4ee1cbd58d36aeb1aca121e3"
+    },
+    "internal_transfer_results": [
+      {
+        "arm": "control",
+        "internal_auroc": 0.9599562500000001,
+        "train_auroc": 1.0
+      },
+      {
+        "arm": "treatment",
+        "internal_auroc": 0.9642390624999999,
+        "train_auroc": 1.0
+      }
+    ],
+    "lexical_candidate_results": [
+      {
+        "candidate": "tfidf",
+        "cv_mean": 0.9521175094141543,
+        "cv_seconds": 70.1548656669911,
+        "cv_std": 0.004586532292685191,
+        "pooled_oof_auroc": 0.9521000624999999
+      },
+      {
+        "candidate": "nb",
+        "cv_mean": 0.9619773832156976,
+        "cv_seconds": 63.387715541990474,
+        "cv_std": 0.005294633239094284,
+        "pooled_oof_auroc": 0.961865375
+      },
+      {
+        "candidate": "two_view",
+        "cv_mean": 0.958630758322685,
+        "cv_seconds": 114.65934433299117,
+        "cv_std": 0.004106915537235183,
+        "pooled_oof_auroc": 0.9586673125
+      }
+    ],
+    "lexical_confirmation": [
+      {
+        "candidate": "tfidf",
+        "features": 300000,
+        "fit_seconds": 27.045745457988232,
+        "max_reload_margin_difference": 0.0,
+        "train_auroc": 1.0,
+        "validation_auroc": 0.9565110000000001
+      },
+      {
+        "candidate": "nb",
+        "features": 300000,
+        "fit_seconds": 29.103715208009817,
+        "max_reload_margin_difference": 0.0,
+        "train_auroc": 1.0,
+        "validation_auroc": 0.9666570000000001
+      },
+      {
+        "candidate": "two_view",
+        "features": 300000,
+        "fit_seconds": 48.94994829199277,
+        "max_reload_margin_difference": 0.0,
+        "train_auroc": 1.0,
+        "validation_auroc": 0.963252
+      }
+    ],
+    "lexical_fold_results": [
+      {
+        "auroc": 0.9541722012212197,
+        "candidate": "tfidf",
+        "fold": 0,
+        "seconds": 23.20912849996239
+      },
+      {
+        "auroc": 0.9457621151914667,
+        "candidate": "tfidf",
+        "fold": 1,
+        "seconds": 24.127569582953583
+      },
+      {
+        "auroc": 0.9564182118297766,
+        "candidate": "tfidf",
+        "fold": 2,
+        "seconds": 22.491066249960568
+      },
+      {
+        "auroc": 0.9618568435212251,
+        "candidate": "nb",
+        "fold": 0,
+        "seconds": 20.651403457974084
+      },
+      {
+        "auroc": 0.9555539184646236,
+        "candidate": "nb",
+        "fold": 1,
+        "seconds": 20.42287679197034
+      },
+      {
+        "auroc": 0.9685213876612441,
+        "candidate": "nb",
+        "fold": 2,
+        "seconds": 22.056417417014018
+      },
+      {
+        "auroc": 0.9605414846965115,
+        "candidate": "two_view",
+        "fold": 0,
+        "seconds": 39.86987966694869
+      },
+      {
+        "auroc": 0.9529254502531179,
+        "candidate": "two_view",
+        "fold": 1,
+        "seconds": 36.97446800000034
+      },
+      {
+        "auroc": 0.9624253400184254,
+        "candidate": "two_view",
+        "fold": 2,
+        "seconds": 37.54198424995411
+      }
+    ],
+    "max_reload_difference": 0.0,
+    "selected_internal_blend": {
+      "candidate": "hist50_old25_nb25",
+      "collapse": 0.931546875,
+      "collapse_pass": true,
+      "eligible": true,
+      "original": 0.999021875,
+      "remove_blank": 0.9924437500000001,
+      "remove_blank_pass": true,
+      "weights": [
+        0.5,
+        0.25,
+        0.25
+      ]
+    },
+    "selected_lexical": "nb",
+    "train_auroc": 1.0,
+    "validation_auroc": 0.998492
+  },
+  "run_id": "20261110T202717584850Z",
+  "runtime_seconds": 852.7722802499775,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T20:27:17.743840+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.16",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

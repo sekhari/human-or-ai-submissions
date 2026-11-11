@@ -1,0 +1,91 @@
+{
+  "acceptance": [
+    {
+      "C": 1.0,
+      "accepted_AI": 8,
+      "accepted_human": 0,
+      "accepted_rows": 8,
+      "control_fit_seconds": 0.1345978329773061,
+      "eligible_rows": 3000,
+      "feature_identity": {
+        "idf": "ba7738ed0cd621c92ac81f599b250e8b90356ba67c8e2c2f85b69f5e756993cb",
+        "vocabulary": "4fca7b3049f43c7c927deb42ec20a2838d9c15334d5e1eb2886bcc20833df0d1"
+      },
+      "feature_seconds": 1.7077044579782523,
+      "max_teacher_control_difference": 0.0,
+      "pseudo_weighted_mass": 2.0,
+      "teacher_fit_seconds": 3.535057459026575,
+      "total_weighted_mass": 8002.0,
+      "treatment_fit_rows": 8008,
+      "treatment_fit_seconds": 0.1574052919750102,
+      "verified_weighted_mass": 8000.0
+    },
+    {
+      "C": 4.0,
+      "accepted_AI": 190,
+      "accepted_human": 61,
+      "accepted_rows": 251,
+      "control_fit_seconds": 0.22427983302623034,
+      "eligible_rows": 3000,
+      "feature_identity": {
+        "idf": "ba7738ed0cd621c92ac81f599b250e8b90356ba67c8e2c2f85b69f5e756993cb",
+        "vocabulary": "4fca7b3049f43c7c927deb42ec20a2838d9c15334d5e1eb2886bcc20833df0d1"
+      },
+      "feature_seconds": 1.731765542004723,
+      "max_teacher_control_difference": 0.0,
+      "pseudo_weighted_mass": 62.75,
+      "teacher_fit_seconds": 2.780139333975967,
+      "total_weighted_mass": 8062.75,
+      "treatment_fit_rows": 8251,
+      "treatment_fit_seconds": 0.21438087499700487,
+      "verified_weighted_mass": 8000.0
+    }
+  ],
+  "config": {
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "classifier": {
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "confidence": 0.95,
+    "fit_row_definition": "8000 verified rows; report pseudo and total treatment fit rows separately",
+    "notebook_source_sha256": "544953e09de3569e873af2b2d686758aeaa012464e2dc830b7bfdc9499e22c65",
+    "passes": 1,
+    "pseudo_label_threshold": 0.5,
+    "pseudo_weight": 0.25,
+    "selection": "fixed ablation only; no tuning of confidence or sample weights on validation",
+    "teacher_C": [
+      1.0,
+      4.0
+    ],
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b"
+    },
+    "verified_weight": 1.0,
+    "vocabulary_idf": "fit on verified training only; frozen during pseudo-label refit",
+    "word_result": "results/04_word_comparison/20261110T183613126372Z.json",
+    "word_result_sha256": "5a2ce1f6db44234e032f764519b35266340032ac2ce088df8814d4e79cdb74fa"
+  },
+  "utc": "2026-11-10T18:54:55.442040+00:00",
+  "validation_inspected": false
+}

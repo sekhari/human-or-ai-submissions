@@ -1,0 +1,385 @@
+{
+  "candidates": [
+    {
+      "C": 0.25,
+      "cv_mean": 0.9131881521629914,
+      "cv_std": 0.008234487882025422,
+      "error_type": null,
+      "family": "logistic",
+      "fold_auroc": [
+        0.9069126352052782,
+        0.9078304058773314,
+        0.9248214154063648
+      ],
+      "fold_seconds": [
+        2.1910519170342013,
+        2.051887583977077,
+        2.0418637500260957
+      ],
+      "index": 0,
+      "search_seconds": 6.2848745000083,
+      "status": "completed"
+    },
+    {
+      "C": 1.0,
+      "cv_mean": 0.9283754617913873,
+      "cv_std": 0.004545457157959331,
+      "error_type": null,
+      "family": "logistic",
+      "fold_auroc": [
+        0.925960875526228,
+        0.9244233847067465,
+        0.9347421251411877
+      ],
+      "fold_seconds": [
+        2.3467919590184465,
+        2.1622712920070626,
+        2.5622414170065895
+      ],
+      "index": 1,
+      "search_seconds": 7.07135212502908,
+      "status": "completed"
+    },
+    {
+      "C": 4.0,
+      "cv_mean": 0.9360995193175318,
+      "cv_std": 0.0029872416542635937,
+      "error_type": null,
+      "family": "logistic",
+      "fold_auroc": [
+        0.9349541283371818,
+        0.9331506414834594,
+        0.9401937881319542
+      ],
+      "fold_seconds": [
+        2.611646000004839,
+        2.2632675420027226,
+        2.6017098750453442
+      ],
+      "index": 2,
+      "search_seconds": 7.476694332959596,
+      "status": "completed"
+    },
+    {
+      "alpha": 0.1,
+      "cv_mean": 0.8922781453367685,
+      "cv_std": 0.009794194903369333,
+      "error_type": null,
+      "family": "nb",
+      "fold_auroc": [
+        0.879932314412936,
+        0.8930127959276175,
+        0.903889325669752
+      ],
+      "fold_seconds": [
+        2.2393726669833995,
+        2.3236605420242995,
+        2.034698333009146
+      ],
+      "index": 3,
+      "search_seconds": 6.597843041992746,
+      "status": "completed"
+    },
+    {
+      "alpha": 0.5,
+      "cv_mean": 0.8921059260857329,
+      "cv_std": 0.01372904436448094,
+      "error_type": null,
+      "family": "nb",
+      "fold_auroc": [
+        0.8757466728001342,
+        0.8912295540151904,
+        0.9093415514418741
+      ],
+      "fold_seconds": [
+        2.1986527910339646,
+        2.384132542007137,
+        2.3015984169906005
+      ],
+      "index": 4,
+      "search_seconds": 6.884753249993082,
+      "status": "completed"
+    },
+    {
+      "alpha": 1.0,
+      "cv_mean": 0.8904563062139806,
+      "cv_std": 0.015842936838311714,
+      "error_type": null,
+      "family": "nb",
+      "fold_auroc": [
+        0.8720373496672519,
+        0.8886179565880974,
+        0.9107136123865924
+      ],
+      "fold_seconds": [
+        2.180247167008929,
+        2.174169041973073,
+        1.93503629200859
+      ],
+      "index": 5,
+      "search_seconds": 6.289600624993909,
+      "status": "completed"
+    },
+    {
+      "C": 0.25,
+      "cv_mean": 0.9354290692543433,
+      "cv_std": 0.003186113582969314,
+      "error_type": null,
+      "family": "svm",
+      "fold_auroc": [
+        0.9344637508702514,
+        0.9321001539740259,
+        0.9397233029187528
+      ],
+      "fold_seconds": [
+        2.173005082993768,
+        2.1065661250031553,
+        2.049206374969799
+      ],
+      "index": 6,
+      "search_seconds": 6.32884654199006,
+      "status": "completed"
+    },
+    {
+      "C": 1.0,
+      "cv_mean": 0.9372937254632832,
+      "cv_std": 0.0020251896382532195,
+      "error_type": null,
+      "family": "svm",
+      "fold_auroc": [
+        0.9368610893353023,
+        0.9350581648410603,
+        0.9399619222134867
+      ],
+      "fold_seconds": [
+        2.1842192920157686,
+        1.9857748330105096,
+        2.1653145829914138
+      ],
+      "index": 7,
+      "search_seconds": 6.3353476250194944,
+      "status": "completed"
+    },
+    {
+      "C": 4.0,
+      "cv_mean": 0.9344408385534559,
+      "cv_std": 0.0011859638013626064,
+      "error_type": null,
+      "family": "svm",
+      "fold_auroc": [
+        0.9340031784557832,
+        0.93325748978474,
+        0.9360618474198447
+      ],
+      "fold_seconds": [
+        1.9934798749745823,
+        2.0314023749670014,
+        2.1016279999748804
+      ],
+      "index": 8,
+      "search_seconds": 6.126568000006955,
+      "status": "completed"
+    }
+  ],
+  "config": {
+    "baseline_prediction_sha256": "f162db861a967505ed37132445ca6e80cd992e26bd4db2d26908f4a03538fb92",
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "calibration": {
+      "cv": "same three stratified training folds; entire pipeline refitted",
+      "ensemble": false,
+      "method": "sigmoid",
+      "n_jobs": 1
+    },
+    "candidates": [
+      {
+        "C": 0.25,
+        "family": "logistic"
+      },
+      {
+        "C": 1.0,
+        "family": "logistic"
+      },
+      {
+        "C": 4.0,
+        "family": "logistic"
+      },
+      {
+        "alpha": 0.1,
+        "family": "nb"
+      },
+      {
+        "alpha": 0.5,
+        "family": "nb"
+      },
+      {
+        "alpha": 1.0,
+        "family": "nb"
+      },
+      {
+        "C": 0.25,
+        "family": "svm"
+      },
+      {
+        "C": 1.0,
+        "family": "svm"
+      },
+      {
+        "C": 4.0,
+        "family": "svm"
+      }
+    ],
+    "cv": {
+      "n_splits": 3,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "handoff": {
+      "preference": [
+        "nb",
+        "logistic",
+        "svm"
+      ],
+      "reason": "prefer simpler model within tolerance; report measured time too",
+      "tolerance": 0.002
+    },
+    "logistic": {
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "nb": {
+      "fit_prior": true,
+      "force_alpha": true
+    },
+    "notebook_source_sha256": "19a695cebdc04fdd7337d2c9afb452448aa5411b0e2411a72fc3edd9fc47ae3b",
+    "selection": "highest mean CV AUROC; first candidate breaks exact ties",
+    "svm": {
+      "dual": "auto",
+      "max_iter": 20000,
+      "random_state": 42,
+      "tol": 0.0001
+    },
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b"
+    }
+  },
+  "cv_leader": {
+    "C": 1.0,
+    "cv_mean": 0.9372937254632832,
+    "cv_std": 0.0020251896382532195,
+    "error_type": null,
+    "family": "svm",
+    "fold_auroc": [
+      0.9368610893353023,
+      0.9350581648410603,
+      0.9399619222134867
+    ],
+    "fold_seconds": [
+      2.1842192920157686,
+      1.9857748330105096,
+      2.1653145829914138
+    ],
+    "index": 7,
+    "search_seconds": 6.3353476250194944,
+    "status": "completed"
+  },
+  "family_winners": {
+    "logistic": {
+      "C": 4.0,
+      "cv_mean": 0.9360995193175318,
+      "cv_std": 0.0029872416542635937,
+      "error_type": null,
+      "family": "logistic",
+      "fold_auroc": [
+        0.9349541283371818,
+        0.9331506414834594,
+        0.9401937881319542
+      ],
+      "fold_seconds": [
+        2.611646000004839,
+        2.2632675420027226,
+        2.6017098750453442
+      ],
+      "index": 2,
+      "search_seconds": 7.476694332959596,
+      "status": "completed"
+    },
+    "nb": {
+      "alpha": 0.1,
+      "cv_mean": 0.8922781453367685,
+      "cv_std": 0.009794194903369333,
+      "error_type": null,
+      "family": "nb",
+      "fold_auroc": [
+        0.879932314412936,
+        0.8930127959276175,
+        0.903889325669752
+      ],
+      "fold_seconds": [
+        2.2393726669833995,
+        2.3236605420242995,
+        2.034698333009146
+      ],
+      "index": 3,
+      "search_seconds": 6.597843041992746,
+      "status": "completed"
+    },
+    "svm": {
+      "C": 1.0,
+      "cv_mean": 0.9372937254632832,
+      "cv_std": 0.0020251896382532195,
+      "error_type": null,
+      "family": "svm",
+      "fold_auroc": [
+        0.9368610893353023,
+        0.9350581648410603,
+        0.9399619222134867
+      ],
+      "fold_seconds": [
+        2.1842192920157686,
+        1.9857748330105096,
+        2.1653145829914138
+      ],
+      "index": 7,
+      "search_seconds": 6.3353476250194944,
+      "status": "completed"
+    }
+  },
+  "handoff_family": "logistic",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "utc": "2026-11-10T18:35:40.127066+00:00",
+  "validation_inspected": false
+}

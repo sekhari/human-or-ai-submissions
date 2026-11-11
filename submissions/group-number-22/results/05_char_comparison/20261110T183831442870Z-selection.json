@@ -1,0 +1,121 @@
+{
+  "candidates": [
+    {
+      "C": 0.25,
+      "cv_mean": 0.9012077170889091,
+      "cv_std": 0.009293395731413169,
+      "error_type": null,
+      "fold_auroc": [
+        0.8904208810823395,
+        0.9000985253809705,
+        0.9131037448034178
+      ],
+      "fold_seconds": [
+        7.78492304100655,
+        6.841696749965195,
+        7.272888041974511
+      ],
+      "search_seconds": 21.899578333017416,
+      "status": "completed"
+    },
+    {
+      "C": 1.0,
+      "cv_mean": 0.9206013451308586,
+      "cv_std": 0.005289780074446386,
+      "error_type": null,
+      "fold_auroc": [
+        0.9151258954168826,
+        0.9189246337071525,
+        0.9277535062685403
+      ],
+      "fold_seconds": [
+        7.346441416011658,
+        6.984435292019043,
+        6.48140595795121
+      ],
+      "search_seconds": 20.812321208009962,
+      "status": "completed"
+    },
+    {
+      "C": 4.0,
+      "cv_mean": 0.9283013561993698,
+      "cv_std": 0.003850073371722026,
+      "error_type": null,
+      "fold_auroc": [
+        0.9255014278307208,
+        0.9256572014067985,
+        0.9337454393605904
+      ],
+      "fold_seconds": [
+        6.985824666044209,
+        7.327189915988129,
+        8.08123249997152
+      ],
+      "search_seconds": 22.394292999990284,
+      "status": "completed"
+    }
+  ],
+  "config": {
+    "C_candidates": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "classifier": {
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "cv": {
+      "n_splits": 3,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "handoff": "use character only if CV gain over word handoff is greater than .002; otherwise keep cheaper word view",
+    "notebook_source_sha256": "b66740a21765b1f1054f6a48864decfa58e22224840789d8ad3ffe565b765cb7",
+    "selection": "max mean training CV AUROC; first C breaks exact ties",
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "char_wb",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 100000,
+      "min_df": 2,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "norm": "l2",
+      "strip_accents": null,
+      "sublinear_tf": true
+    },
+    "word_result": "results/04_word_comparison/20261110T183613126372Z.json",
+    "word_result_sha256": "5a2ce1f6db44234e032f764519b35266340032ac2ce088df8814d4e79cdb74fa"
+  },
+  "handoff": "word",
+  "selected_C": 4.0,
+  "utc": "2026-11-10T18:39:36.622741+00:00",
+  "validation_inspected": false,
+  "word_cv_mean": 0.9360995193175318,
+  "word_family": "logistic"
+}

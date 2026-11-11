@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+data/
+artifacts/
+submissions/
+*.joblib
+*.pkl
+*.pt
+*.safetensors

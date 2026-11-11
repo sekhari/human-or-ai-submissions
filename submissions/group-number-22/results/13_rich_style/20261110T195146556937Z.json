@@ -1,0 +1,202 @@
+{
+  "artifacts": {
+    "artifacts/13_rich_style/20261110T195118140998Z/extratrees.joblib": "bcb0ab3c7d7c7fa22aef714b0ce91c672e8f672470f9a3421e44f75d2da0cdef",
+    "artifacts/13_rich_style/20261110T195118140998Z/extratrees_validation.csv": "837f06cf871fe69e54fbcdf538188672d68d0c891d20e9beef2e70475e879355",
+    "artifacts/13_rich_style/20261110T195118140998Z/histgb.joblib": "eb0f41f51d8ee880e578e0ec797bc15168fee5b49202d1092e13903af2022044",
+    "artifacts/13_rich_style/20261110T195118140998Z/histgb_validation.csv": "082e488a60a4361140ff9fa354b69334e9714a6f2d87da284348a83e0aba0f85",
+    "artifacts/13_rich_style/20261110T195118140998Z/schema.json": "292c6c46b0c212fe9fdca7498d7e792976dbc26c3980edeef5a3bbd13e7b81c5",
+    "results/13_rich_style/20261110T195118140998Z-importance.png": "8bafe4e2ca336d1866bed2493b146461f5daa9bbbec4f69b96ab8426b4334dbc",
+    "results/13_rich_style/20261110T195118140998Z-plan.json": "d6fbd24dbbfd6da4ae25619ea7a03a31f12129c8d9d872768b7b1515b66be1ae",
+    "results/13_rich_style/20261110T195118140998Z-selection.json": "7b5308966a974879bf969b2a4ef47db67d9d386621919eae03c8c446b5828f61"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=1800 notebooks/13_rich_style.ipynb",
+  "config": {
+    "candidates": {
+      "extratrees": {
+        "max_features": 0.8,
+        "min_samples_leaf": 3,
+        "n_estimators": 500,
+        "n_jobs": 2,
+        "random_state": 42
+      },
+      "histgb": {
+        "early_stopping": false,
+        "l2_regularization": 5.0,
+        "learning_rate": 0.06,
+        "max_iter": 250,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 30,
+        "random_state": 42
+      }
+    },
+    "cv": {
+      "n_splits": 3,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "extra_versions": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "n_features": 147,
+    "notebook_source_sha256": "7b57c4a1eb203dd2ab2242abdaa83cc6f725b77fce3915a51fce8cee5d134c23",
+    "schema_sha256": "3126aec1687a3e205dc40b7dba7e5138b66fd7df4fcfbb98e56dc190b51a89a6",
+    "selection": "higher pooled OOF AUROC over 3 training folds; exact tie goes to HistGB; saved before validation",
+    "threads": "HistGB limited to 1 OpenMP thread; ExtraTrees uses n_jobs=2"
+  },
+  "config_sha256": "3618b0f3f9c7084fdd2c4211f5c84d8bce9bc5e97d8ab69867167f58eab31c4f",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "0ff82d821986a9531248929f1c5f3c9d3eb1f22c",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "candidates": {
+      "extratrees": {
+        "cv_seconds": 11.960502296999948,
+        "fit_seconds": 6.333144877999985,
+        "train_auroc": 0.9999965,
+        "validation_accuracy_at_0_5": 0.982,
+        "validation_auroc": 0.9968315
+      },
+      "histgb": {
+        "cv_seconds": 3.3473283759994956,
+        "fit_seconds": 1.5121395420001136,
+        "train_auroc": 0.9999998124999999,
+        "validation_accuracy_at_0_5": 0.984,
+        "validation_auroc": 0.998105
+      }
+    },
+    "feature_seconds": 3.842562918999647,
+    "fold_auroc": [
+      {
+        "auroc": 0.9979704446351468,
+        "candidate": "histgb",
+        "fold": 0
+      },
+      {
+        "auroc": 0.9986064732075073,
+        "candidate": "histgb",
+        "fold": 1
+      },
+      {
+        "auroc": 0.9976132442713079,
+        "candidate": "histgb",
+        "fold": 2
+      },
+      {
+        "auroc": 0.9967968003995002,
+        "candidate": "extratrees",
+        "fold": 0
+      },
+      {
+        "auroc": 0.9975135275573017,
+        "candidate": "extratrees",
+        "fold": 1
+      },
+      {
+        "auroc": 0.9959732994013696,
+        "candidate": "extratrees",
+        "fold": 2
+      }
+    ],
+    "max_reload_difference": {
+      "extratrees": 1.1102230246251565e-16,
+      "histgb": 0.0
+    },
+    "pooled_oof_auroc": {
+      "extratrees": 0.99677734375,
+      "histgb": 0.998065375
+    },
+    "posthoc_blank_line_counts": {
+      "train": {
+        "ai": 2629,
+        "ai_total": 4000,
+        "human": 16,
+        "human_total": 4000
+      },
+      "validation": {
+        "ai": 676,
+        "ai_total": 1000,
+        "human": 1,
+        "human_total": 1000
+      }
+    },
+    "posthoc_no_blank_line_validation": {
+      "extratrees": {
+        "ai": 324,
+        "auroc": 0.9912458755051347,
+        "rows": 1323
+      },
+      "histgb": {
+        "ai": 324,
+        "auroc": 0.9946922230872848,
+        "rows": 1323
+      },
+      "word_c4_handoff": {
+        "ai": 324,
+        "auroc": 0.950889160765704,
+        "rows": 1323
+      }
+    },
+    "selected": "histgb",
+    "top_importances": {
+      "blank_line_per_line": 0.063762125567724,
+      "hapax_fraction": 0.0401334940951706,
+      "line_words_max": 0.009273007621264297,
+      "log_lines": 0.00895346330696878,
+      "log_paragraphs": 0.048469754894974876,
+      "newline_per_char": 0.010236125535863812,
+      "paragraph_words_max": 0.009288944222199091,
+      "paragraph_words_mean": 0.08315397472387541,
+      "paragraph_words_median": 0.08261570340900676,
+      "paragraph_words_min": 0.12982840246530097,
+      "paragraph_words_q25": 0.10078454195895684,
+      "paragraph_words_q75": 0.048278440272689786,
+      "token_entropy": 0.03293499684184549,
+      "twice_fraction": 0.022228779164290887,
+      "unique_fraction": 0.09667549507309622
+    },
+    "validation_auroc": 0.998105
+  },
+  "run_id": "20261110T195146556937Z",
+  "runtime_seconds": 28.301265096999487,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T19:51:46.588870+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.15",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

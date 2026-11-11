@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "configs/split.json": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d"
+  },
+  "command": "RUN_SPLIT_SETUP=1 uv run --locked jupyter nbconvert --execute --to notebook --inplace notebooks/02_split_metrics.ipynb",
+  "config": {
+    "synthetic_checks": "passed",
+    "training_per_class": 4000,
+    "validation_per_class": 1000
+  },
+  "config_sha256": "0f8f3562c0a23a82defa7e92746cbc6463a14928c727487896ffd108d1255133",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 0,
+  "fit_rows": 0,
+  "git_sha": "96b1bc9341cb740f23b659a392fdfa60477e2ea1",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "validation_auroc": null
+  },
+  "run_id": "20261110T145128624646Z",
+  "runtime_seconds": 2.0926760410657153,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T14:51:28.649067+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.13",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

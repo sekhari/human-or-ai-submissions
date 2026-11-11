@@ -1,0 +1,161 @@
+{
+  "config": {
+    "blend_grid": {
+      "hist": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hist50_old25_nb25": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "hist50_old50": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "hist75_nb25": [
+        0.75,
+        0.0,
+        0.25
+      ],
+      "hist75_old25": [
+        0.75,
+        0.25,
+        0.0
+      ],
+      "old_soft": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "blend_nb_arm": "normalized NB teacher-transfer treatment; supervised control reported separately",
+    "blend_selection": "max original internal AUROC with remove-blank and collapse each >= hist-.002; grid order makes exact ties prefer hist",
+    "char": {
+      "analyzer": "char",
+      "max_features": 180000,
+      "min_df": 2,
+      "ngram_range": [
+        3,
+        5
+      ]
+    },
+    "classifier": {
+      "max_iter": 3000,
+      "nb_C": 1.0,
+      "seed": 42,
+      "solver": "liblinear",
+      "tfidf_C": 16.0,
+      "tol": 0.0001,
+      "two_view_C": 16.0
+    },
+    "component_scaling": "style clipped logit and NB margin standardized on eligible unlabeled; old arm outer standardized; no test normalization",
+    "cv": {
+      "n_splits": 3,
+      "seed": 42,
+      "selection": "highest mean fold AUROC; grid order breaks ties",
+      "shuffle": true
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "bcb85284d6e21c41a9352d34e035afb2dd7b4541aa3e601afcdabf9e89cdf765",
+        "score": "b2280ed6f3c9fe092705598f3fff5558c7f4f00777692c7a18ea2741fab8e648"
+      },
+      {
+        "fit": "81f4aa576fd48d6a23c9e1be1ad217d1ea74bfeb94fe15fe3606d790246f9daf",
+        "score": "5947fca133a415f923e135fcc693687eec92f8e250e850c0f1cc43bf454f7add"
+      },
+      {
+        "fit": "7c2d714d61d26487c2ef7eee996f483fefc9921b622e91243a9955a572a3bde2",
+        "score": "e55cdd4f85a009f1bd4ec705652df781b5b28f1a9fcfd05f5ebf2e2bf54aebe2"
+      }
+    ],
+    "helper_source_sha256": {
+      "10_expanded_text.ipynb": "a9bbac638ba8fba36842ef1c92210581cdc953692b18885b2989d6be6303a4ff",
+      "13_rich_style.ipynb": "7b57c4a1eb203dd2ab2242abdaa83cc6f725b77fce3915a51fce8cee5d134c23"
+    },
+    "internal": {
+      "fit_rows": 6400,
+      "order": "sorted original manifest indices",
+      "score_rows": 1600,
+      "seed": 42
+    },
+    "internal_id_sha256": {
+      "fit": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e",
+      "score": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b"
+    },
+    "lexical_grid": [
+      "tfidf",
+      "nb",
+      "two_view"
+    ],
+    "nb": {
+      "alpha": 1.0,
+      "binary": true,
+      "ratio": "log normalized class token frequencies; training vocabulary only"
+    },
+    "normalization": "NFKC; canonical quotes/dashes/ellipsis; remove Cf; collapse whitespace; lowercase",
+    "notebook_source_sha256": "254887845fae9d7e80b6fc175c2fc7068dad81d1a7444f8f205ef0317d918ca8",
+    "old_soft": {
+      "flag": "literal two consecutive newlines; active only when zero human fit rows have it",
+      "offset": 2.0,
+      "score": "mean standardized margins + active flag*2; outer standardization on all eligible unlabeled",
+      "specialist": "casechar SVM C1 on no-literal-blank fit rows",
+      "specialist_reference": "eligible unlabeled rows without literal blank lines",
+      "word": "word13+casechar LR C16 all fit"
+    },
+    "pseudo": {
+      "classifier_weight": 0.25,
+      "confidence": 0.995,
+      "passes": 1,
+      "ratio": "treatment also uses assigned pseudo labels, unweighted in NB class frequencies; classifier weights remain .25",
+      "threshold": 0.5,
+      "vocabulary": "fit verified internal training only, for both fresh arms"
+    },
+    "reference": {
+      "ordered_id_sha256": "ba87deaa086efd309464078eca7d5cbf2f0f6fde88182f97fadd75ef6af5eddc",
+      "rows": 3000
+    },
+    "score_mapping": "sigmoid of weighted standardized scores; not claimed calibrated",
+    "stress": [
+      "original",
+      "remove_blank",
+      "collapse"
+    ],
+    "style_dependency": {
+      "record": "results/13_rich_style/20261110T195146556937Z.json",
+      "record_sha256": "6a4ebaba13fc2b68202c2fa7a256199a2de9a64eeda9fb55dca0e187cde44551",
+      "schema_sha256": "3126aec1687a3e205dc40b7dba7e5138b66fd7df4fcfbb98e56dc190b51a89a6"
+    },
+    "teacher": {
+      "early_stopping": false,
+      "l2_regularization": 5.0,
+      "learning_rate": 0.06,
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 30,
+      "random_state": 42
+    },
+    "tfidf": {
+      "dtype": "float32",
+      "norm": "l2",
+      "sublinear_tf": true
+    },
+    "threads": 1,
+    "two_view": "fit original and normalized training copies, each weight .5; average the two inference margins",
+    "word": {
+      "max_features": 120000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        3
+      ]
+    }
+  },
+  "config_sha256": "2436d05c59d610343d83b1b32bb94f1490de5550d0eed1a07e0cd63a4facacd8",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

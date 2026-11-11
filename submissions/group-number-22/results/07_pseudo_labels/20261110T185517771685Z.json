@@ -1,0 +1,226 @@
+{
+  "artifacts": {
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_accepted_pseudo.csv": "1c85d3b8e07f452823a145c70ba3e57e3ec70b189b2d536042dc7398db3c538f",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_control.joblib": "63057d56a8353fe9ebae680bb6512700124b039add9fd60831152036754ce087",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_control_train.csv": "557aa823be6540e190dbec492e5ec68de44846b36aca494e0aa8882fbe3d281d",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_control_validation.csv": "f162db861a967505ed37132445ca6e80cd992e26bd4db2d26908f4a03538fb92",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_teacher.joblib": "63057d56a8353fe9ebae680bb6512700124b039add9fd60831152036754ce087",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_teacher_train.csv": "557aa823be6540e190dbec492e5ec68de44846b36aca494e0aa8882fbe3d281d",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_teacher_validation.csv": "f162db861a967505ed37132445ca6e80cd992e26bd4db2d26908f4a03538fb92",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_treatment.joblib": "9ce4571af7d3ec16a146a3a8b956714d3f7c932bedc3a22cfbdd8e83f633fd22",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_treatment_train.csv": "96e1d335f0809835c0a71dc9a70b637c8044cf0c5c7add32de2716669efa632e",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C1.0_treatment_validation.csv": "64dc783cb62e2e744524be94a9c24b25f6bf829283c0e12489ba6918807dc545",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_accepted_pseudo.csv": "1048e05636a465b10389be0ec4fe2fae11f53d49db05c4749a611eb8db684d72",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_control.joblib": "f00eb34a459e8f801a4e6b058560aa6459e57bdbbea7c4873f2d318b6fd6cdc7",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_control_train.csv": "137d22d4a94518bff916c90028112b788f7df1899212a5a88cd943840b0dc92c",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_control_validation.csv": "14c6ecb0725c6cc37c0b6b50a60818a26a7b0fb68cf917bc0f287485b52e380c",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_teacher.joblib": "f00eb34a459e8f801a4e6b058560aa6459e57bdbbea7c4873f2d318b6fd6cdc7",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_teacher_train.csv": "137d22d4a94518bff916c90028112b788f7df1899212a5a88cd943840b0dc92c",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_teacher_validation.csv": "14c6ecb0725c6cc37c0b6b50a60818a26a7b0fb68cf917bc0f287485b52e380c",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_treatment.joblib": "4c6d1c959e3d5960c27a5a9102ab5a277553a777a20c6912e44ebac582004491",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_treatment_train.csv": "4a5db2710ead1dff3bf6c4549cc4f0cf2406534883140e25942a197a819065ec",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/C4.0_treatment_validation.csv": "14cf6d351f911101e82728e677ae7921bae3c506f0af63e0ec9fc09a31f96e3d",
+    "artifacts/07_pseudo_labels/20261110T185444769449Z/self_training.png": "c393af4dfdfe7067d3aebcc7e13533209cc367f90b02173a7b4be91c61bd6769",
+    "results/07_pseudo_labels/20261110T185444769449Z-pseudo-selection.json": "6f66ec685645c1d8840d77a72262bc7b286b2190ef1a28bb2920900e8f2d6591"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=900 notebooks/07_pseudo_labels.ipynb",
+  "config": {
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "classifier": {
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "confidence": 0.95,
+    "extra_versions": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "fit_row_definition": "8000 verified rows; report pseudo and total treatment fit rows separately",
+    "notebook_source_sha256": "544953e09de3569e873af2b2d686758aeaa012464e2dc830b7bfdc9499e22c65",
+    "passes": 1,
+    "pseudo_label_threshold": 0.5,
+    "pseudo_weight": 0.25,
+    "selection": "fixed ablation only; no tuning of confidence or sample weights on validation",
+    "teacher_C": [
+      1.0,
+      4.0
+    ],
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "stop_words": null,
+      "strip_accents": null,
+      "sublinear_tf": true,
+      "token_pattern": "(?u)\\b\\w\\w+\\b"
+    },
+    "verified_weight": 1.0,
+    "vocabulary_idf": "fit on verified training only; frozen during pseudo-label refit",
+    "word_result": "results/04_word_comparison/20261110T183613126372Z.json",
+    "word_result_sha256": "5a2ce1f6db44234e032f764519b35266340032ac2ce088df8814d4e79cdb74fa"
+  },
+  "config_sha256": "032bbf87b571e5adbec2010ed5e04c57d62845246bab2903a728bdbae7d12fcb",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "f9341d4de3b93c19795ace8f18e1d628b426ebf3",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "acceptance": [
+      {
+        "C": 1.0,
+        "accepted_AI": 8,
+        "accepted_human": 0,
+        "accepted_rows": 8,
+        "control_fit_seconds": 0.1345978329773061,
+        "eligible_rows": 3000,
+        "feature_identity": {
+          "idf": "ba7738ed0cd621c92ac81f599b250e8b90356ba67c8e2c2f85b69f5e756993cb",
+          "vocabulary": "4fca7b3049f43c7c927deb42ec20a2838d9c15334d5e1eb2886bcc20833df0d1"
+        },
+        "feature_seconds": 1.7077044579782523,
+        "max_teacher_control_difference": 0.0,
+        "pseudo_weighted_mass": 2.0,
+        "teacher_fit_seconds": 3.535057459026575,
+        "total_weighted_mass": 8002.0,
+        "treatment_fit_rows": 8008,
+        "treatment_fit_seconds": 0.1574052919750102,
+        "verified_weighted_mass": 8000.0
+      },
+      {
+        "C": 4.0,
+        "accepted_AI": 190,
+        "accepted_human": 61,
+        "accepted_rows": 251,
+        "control_fit_seconds": 0.22427983302623034,
+        "eligible_rows": 3000,
+        "feature_identity": {
+          "idf": "ba7738ed0cd621c92ac81f599b250e8b90356ba67c8e2c2f85b69f5e756993cb",
+          "vocabulary": "4fca7b3049f43c7c927deb42ec20a2838d9c15334d5e1eb2886bcc20833df0d1"
+        },
+        "feature_seconds": 1.731765542004723,
+        "max_teacher_control_difference": 0.0,
+        "pseudo_weighted_mass": 62.75,
+        "teacher_fit_seconds": 2.780139333975967,
+        "total_weighted_mass": 8062.75,
+        "treatment_fit_rows": 8251,
+        "treatment_fit_seconds": 0.21438087499700487,
+        "verified_weighted_mass": 8000.0
+      }
+    ],
+    "arm_results": [
+      {
+        "C": 1.0,
+        "arm": "teacher",
+        "evaluation_seconds": 1.528862625011243,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9933405,
+        "validation_accuracy_at_0_5": 0.8675,
+        "validation_auroc": 0.9327280000000001
+      },
+      {
+        "C": 1.0,
+        "arm": "control",
+        "evaluation_seconds": 1.4918648329912685,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9933405,
+        "validation_accuracy_at_0_5": 0.8675,
+        "validation_auroc": 0.9327280000000001
+      },
+      {
+        "C": 1.0,
+        "arm": "treatment",
+        "evaluation_seconds": 1.585324458021205,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9933396875000001,
+        "validation_accuracy_at_0_5": 0.8675,
+        "validation_auroc": 0.9327180000000002
+      },
+      {
+        "C": 4.0,
+        "arm": "teacher",
+        "evaluation_seconds": 1.5424814999569207,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9999251875,
+        "validation_accuracy_at_0_5": 0.878,
+        "validation_auroc": 0.941252
+      },
+      {
+        "C": 4.0,
+        "arm": "control",
+        "evaluation_seconds": 1.6494618749711663,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.9999251875,
+        "validation_accuracy_at_0_5": 0.878,
+        "validation_auroc": 0.941252
+      },
+      {
+        "C": 4.0,
+        "arm": "treatment",
+        "evaluation_seconds": 1.4971651249798015,
+        "max_reload_difference": 0.0,
+        "train_auroc": 0.99992425,
+        "validation_accuracy_at_0_5": 0.8795,
+        "validation_auroc": 0.941257
+      }
+    ],
+    "paired_treatment_control": [
+      {
+        "C": 1.0,
+        "bootstrap_seconds": 4.2646987499902025,
+        "ci_high": 6.000000000172534e-06,
+        "ci_low": -2.9000000000059533e-05,
+        "delta_auroc": -9.99999999995449e-06
+      },
+      {
+        "C": 4.0,
+        "bootstrap_seconds": 3.676829290983733,
+        "ci_high": 7.699999999999374e-05,
+        "ci_low": -6.700000000003925e-05,
+        "delta_auroc": 5.000000000032756e-06
+      }
+    ],
+    "selection": "no automatic adoption; both fixed comparisons retained",
+    "validation_auroc": null
+  },
+  "run_id": "20261110T185517771685Z",
+  "runtime_seconds": 33.01128258398967,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T18:55:17.819368+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.16",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

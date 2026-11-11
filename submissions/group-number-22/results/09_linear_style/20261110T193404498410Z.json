@@ -1,0 +1,432 @@
+{
+  "artifacts": {
+    "artifacts/09_linear_style/20261110T193330669059Z/reference_validation.csv": "85c1ef878b8c94758f48bcd73ed4f91eeca757a4bc4a723827e7461ca63a924e",
+    "artifacts/09_linear_style/20261110T193330669059Z/style_validation.csv": "76e53bf1df5f85750ab18581d7abefd079581a995bcf628e500c747d2faf2f51",
+    "results/09_linear_style/20261110T193330669059Z-fold-gains.png": "9a30f804ce2b93e0d81c1bfa808434a6e39f38e079940f82e298fe0cd9325b27",
+    "results/09_linear_style/20261110T193330669059Z-plan.json": "46c6d17560acfdb72eb2dc7fc09ac9e4d059200d7473c2fa2d4900be9e6b9770"
+  },
+  "command": "uv run --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=900 notebooks/09_linear_style.ipynb",
+  "config": {
+    "adoption": {
+      "ci_low_must_exceed": 0.0,
+      "every_fold_improves": true,
+      "min_validation_gain": 0.002
+    },
+    "bootstrap": {
+      "draws": 2000,
+      "sampling": "paired class-stratified percentile 95%",
+      "seed": 42
+    },
+    "classifier": {
+      "C": 4.0,
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "classifier_penalty": "l2 (scikit-learn default, not passed)",
+    "cv": {
+      "n_splits": 5,
+      "random_state": 42,
+      "shuffle": true
+    },
+    "extra_versions": {
+      "matplotlib": "3.11.2",
+      "threadpoolctl": "3.8.0"
+    },
+    "fold_id_sha256": [
+      {
+        "fit": "9462dfbef2201308f845b2e7f8c44d645bfbf4b8a3d0a5c4e8edd515640f971d",
+        "score": "b06db807f2888e71e94d5797f70ba7c8bc151583e000984b0a13ab51754d175c"
+      },
+      {
+        "fit": "b285e2f0c7e708958a6e07eb637b80c556105811acdd602f40523e276a6ad4a1",
+        "score": "73e080f49324d66be93ee011cc9ff16e7fb6af5e2c7a92d7f19a7285d3b207be"
+      },
+      {
+        "fit": "ceaf5e31f6292ef28457d19e9381e486029989dede09bb9a7a7a0d61bb4185b8",
+        "score": "7fcb7a203a2d072ca22969e12e122b1e02181fce101978c887d20250b7a3736e"
+      },
+      {
+        "fit": "2e0fb618e08620b765d5c87fedd527638259f6a02c2fd6c16a4ce4981ffc54ac",
+        "score": "0b4fb1d38ebb8aad48abb56e0a3a378142d3a66875ebe83e85425dbf9664b6a6"
+      },
+      {
+        "fit": "e0078d9dbb141e8183a0afa260000504787eb1836494d4351928ca728f19fadf",
+        "score": "b485641d7f9717496e74bc9cecb7f5de00d963353caf8f76850056f7ee61b868"
+      }
+    ],
+    "notebook_source_sha256": "f67258894c52f6d09e9d2684d25876358bf8d4ddbe5b9fa30f612edcd40b2195",
+    "reference": "word TF-IDF logistic C4, same settings as the #4 and #5 handoff",
+    "reference_check": "reference validation AUROC must match the #5 handoff record within 1e-9",
+    "style_features": {
+      "digits_per_char": "digit chars / max(1, chars)",
+      "line_breaks_per_word": "newline count / max(1, words)",
+      "list_line_rate": "lines starting with -, *, bullet, or 1. / 1) then a space / max(1, newlines + 1)",
+      "log_words": "log(1 + whitespace-split word count)",
+      "log_words_per_sentence": "log(1 + words / max(1, runs of [.!?]+))",
+      "nonascii_per_char": "chars with code point > 127 / max(1, chars)",
+      "punct_per_char": "chars that are not alphanumeric or whitespace / max(1, chars)",
+      "type_token_ratio": "unique lowercase \\w+ tokens / max(1, tokens)",
+      "upper_per_letter": "uppercase letters / max(1, letters)"
+    },
+    "style_scaling": "StandardScaler inside the pipeline, fit on each fit's training rows only",
+    "threads": 1,
+    "vectorizer": {
+      "analyzer": "word",
+      "dtype": "float32",
+      "lowercase": true,
+      "max_features": 50000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "norm": "l2",
+      "sublinear_tf": true
+    }
+  },
+  "config_sha256": "8f4d3248d3c981d744c4cd101e665bb9c967d9754e2730940db20c35f92e473d",
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "error_type": null,
+  "eval_rows": 2000,
+  "fit_rows": 8000,
+  "git_sha": "d074a22161a667c3a95bee119c27b4df4ad5f5eb",
+  "heldout_confirmation": null,
+  "lock_sha256": "5b3e6a5a53a04c957447a8b64db5ef89be72acbf4c1d4ffcf5cde02b4069136d",
+  "metrics": {
+    "adopted": false,
+    "adoption_conditions": [
+      {
+        "condition": "validation gain >= .002",
+        "passed": true,
+        "value": 0.0031200000000000117
+      },
+      {
+        "condition": "bootstrap CI low > 0",
+        "passed": false,
+        "value": -0.002509224999999879
+      },
+      {
+        "condition": "every CV fold improves",
+        "passed": false,
+        "value": -0.0003562499999999469
+      }
+    ],
+    "arms": {
+      "reference": {
+        "cv_fold_auroc": [
+          0.940596875,
+          0.93579375,
+          0.9386062500000001,
+          0.9393078125000001,
+          0.9447921874999999
+        ],
+        "cv_mean": 0.9398193750000001,
+        "cv_seconds": 7.083526544999586,
+        "cv_std": 0.0029418496055309065,
+        "fit_seconds": 1.5630740840006183,
+        "train_auroc": 0.9999251875,
+        "validation_accuracy_at_0_5": 0.878,
+        "validation_auroc": 0.941252
+      },
+      "style": {
+        "cv_fold_auroc": [
+          0.9423640625,
+          0.9434421875000001,
+          0.9440937500000001,
+          0.9467984374999999,
+          0.9444359375
+        ],
+        "cv_mean": 0.944226875,
+        "cv_seconds": 15.038676007000504,
+        "cv_std": 0.0014669811156759508,
+        "fit_seconds": 3.5762216679995618,
+        "train_auroc": 0.999443125,
+        "validation_accuracy_at_0_5": 0.886,
+        "validation_auroc": 0.944372
+      }
+    },
+    "bootstrap_ci": [
+      -0.002509224999999879,
+      0.009000824999999999
+    ],
+    "bootstrap_seconds": 2.307587126000726,
+    "bootstrap_share_positive": 0.8665,
+    "fold_gains": [
+      0.0017671875000000448,
+      0.007648437500000105,
+      0.0054874999999999785,
+      0.007490624999999862,
+      -0.0003562499999999469
+    ],
+    "reference_validation_auroc": 0.941252,
+    "subgroups": [
+      {
+        "accuracy_at_0_5": 0.83014862,
+        "ai": 275,
+        "auroc_reference": 0.9120037106,
+        "auroc_style": 0.8866604824,
+        "bin": "(-inf, 160.0]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": -0.0253432282,
+        "human": 196,
+        "measure": "words",
+        "n": 471,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8907721281,
+        "ai": 209,
+        "auroc_reference": 0.9203542453,
+        "auroc_style": 0.9276055752,
+        "bin": "(160.0, 206.0]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0072513299,
+        "human": 322,
+        "measure": "words",
+        "n": 531,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.9045725646,
+        "ai": 226,
+        "auroc_reference": 0.9660234497,
+        "auroc_style": 0.9736430146,
+        "bin": "(206.0, 256.0]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0076195649,
+        "human": 277,
+        "measure": "words",
+        "n": 503,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8828282828,
+        "ai": 290,
+        "auroc_reference": 0.9607905803,
+        "auroc_style": 0.9735071489,
+        "bin": "(256.0, inf]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0127165685,
+        "human": 205,
+        "measure": "words",
+        "n": 495,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8929765886,
+        "ai": 268,
+        "auroc_reference": 0.954375848,
+        "auroc_style": 0.9372795115,
+        "bin": "(-inf, 0.0]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": -0.0170963365,
+        "human": 330,
+        "measure": "line_breaks",
+        "n": 598,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8717948718,
+        "ai": 139,
+        "auroc_reference": 0.9089397804,
+        "auroc_style": 0.9197168162,
+        "bin": "(0.0, 4.0]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0107770357,
+        "human": 251,
+        "measure": "line_breaks",
+        "n": 390,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8764478764,
+        "ai": 295,
+        "auroc_reference": 0.9525271718,
+        "auroc_style": 0.9554305693,
+        "bin": "(4.0, 13.0]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0029033974,
+        "human": 223,
+        "measure": "line_breaks",
+        "n": 518,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8663967611,
+        "ai": 298,
+        "auroc_reference": 0.9407101767,
+        "auroc_style": 0.952489385,
+        "bin": "(13.0, inf]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0117792083,
+        "human": 196,
+        "measure": "line_breaks",
+        "n": 494,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.9329268293,
+        "ai": 267,
+        "auroc_reference": 0.9801248439,
+        "auroc_style": 0.9630295464,
+        "bin": "(-inf, 0.0181]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": -0.0170952975,
+        "human": 225,
+        "measure": "upper_per_letter",
+        "n": 492,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8860759494,
+        "ai": 250,
+        "auroc_reference": 0.9570357143,
+        "auroc_style": 0.9593214286,
+        "bin": "(0.0181, 0.028]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0022857143,
+        "human": 224,
+        "measure": "upper_per_letter",
+        "n": 474,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8848484848,
+        "ai": 232,
+        "auroc_reference": 0.9488167038,
+        "auroc_style": 0.9519961977,
+        "bin": "(0.028, 0.0446]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0031794939,
+        "human": 263,
+        "measure": "upper_per_letter",
+        "n": 495,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.814471243,
+        "ai": 251,
+        "auroc_reference": 0.8653441788,
+        "auroc_style": 0.8954874945,
+        "bin": "(0.0446, inf]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0301433156,
+        "human": 288,
+        "measure": "upper_per_letter",
+        "n": 539,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.9042553191,
+        "ai": 244,
+        "auroc_reference": 0.9662701291,
+        "auroc_style": 0.9480995213,
+        "bin": "(-inf, 0.021]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": -0.0181706079,
+        "human": 226,
+        "measure": "punct_per_char",
+        "n": 470,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8653846154,
+        "ai": 241,
+        "auroc_reference": 0.9219649311,
+        "auroc_style": 0.9246122042,
+        "bin": "(0.021, 0.0274]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0026472732,
+        "human": 279,
+        "measure": "punct_per_char",
+        "n": 520,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8740310078,
+        "ai": 209,
+        "auroc_reference": 0.9252840422,
+        "auroc_style": 0.9435656063,
+        "bin": "(0.0274, 0.0355]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0182815641,
+        "human": 307,
+        "measure": "punct_per_char",
+        "n": 516,
+        "partition": "reference",
+        "status": "ok"
+      },
+      {
+        "accuracy_at_0_5": 0.8704453441,
+        "ai": 306,
+        "auroc_reference": 0.9560561813,
+        "auroc_style": 0.959671812,
+        "bin": "(0.0355, inf]",
+        "ci_high": null,
+        "ci_low": null,
+        "gain": 0.0036156306,
+        "human": 188,
+        "measure": "punct_per_char",
+        "n": 494,
+        "partition": "reference",
+        "status": "ok"
+      }
+    ],
+    "validation_auroc": 0.944372,
+    "validation_gain": 0.0031200000000000117
+  },
+  "run_id": "20261110T193404498410Z",
+  "runtime_seconds": 33.71426814099959,
+  "seed": 42,
+  "split_file_sha256": "b41c509360f4d0490ca3fc8cebd762f537fd930041eddc3cf30f5053358ddc5d",
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9",
+  "status": "completed",
+  "tracked_worktree_dirty": false,
+  "utc": "2026-11-10T19:34:04.513672+00:00",
+  "versions": {
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.15",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

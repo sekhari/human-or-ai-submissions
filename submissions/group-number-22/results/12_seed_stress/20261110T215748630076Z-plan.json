@@ -1,0 +1,107 @@
+{
+  "config": {
+    "arms": [
+      {
+        "C": 16.0,
+        "fit_mode": "all",
+        "learner": "lr",
+        "name": "rule_all_wordchar16",
+        "rule": true,
+        "view": "word_char"
+      },
+      {
+        "C": 1.0,
+        "fit_mode": "no_blank",
+        "learner": "svm",
+        "name": "rule_no_blank_case_svm1",
+        "rule": true,
+        "view": "casechar"
+      }
+    ],
+    "conditions": [
+      {
+        "name": "split42_solver42",
+        "solver_seed": 42,
+        "split_seed": 42
+      },
+      {
+        "name": "split7_solver42",
+        "solver_seed": 42,
+        "split_seed": 7
+      },
+      {
+        "name": "split2026_solver42",
+        "solver_seed": 42,
+        "split_seed": 2026
+      },
+      {
+        "name": "split42_solver7",
+        "solver_seed": 7,
+        "split_seed": 42
+      },
+      {
+        "name": "split42_solver2026",
+        "solver_seed": 2026,
+        "split_seed": 42
+      }
+    ],
+    "dependency": {
+      "record": "results/11_formatting_rule/20261110T214338421386Z.json",
+      "record_sha256": "fc242eff9372a423e5076c5274b4d5acb91fd90e692689d863b203ada9d63521",
+      "source_sha256": "5038ff307f0deb3e534b7da13ea4795bb961cae9e25e52814e6817486c5bc1d1"
+    },
+    "eval_overlap_rows": {
+      "42_vs_2026": 316,
+      "42_vs_7": 306,
+      "7_vs_2026": 324
+    },
+    "frozen_validation_used": false,
+    "inner_components": 0,
+    "inner_split": "inside original8000 only; exact 800/800 eval quota; duplicate groups whole; notebook 02 split_ids",
+    "inner_split_digests": {
+      "7": {
+        "eval_ids_sha256": "df456bc62e6f27f15d30f044a66b5ae968c4f4beea6f0aa99ce4ac19c5bbeeac",
+        "fit_ids_sha256": "2d8a59b022523723023681328c0db4d20ec6ff8c40af60b90d6b5c40637088fb"
+      },
+      "42": {
+        "eval_ids_sha256": "0f925429c4517abf05614b483502acad66cfb941d6aa70239f4767ee3b7ff60b",
+        "fit_ids_sha256": "29a43f7c5aa0e4c3b4bebc7ef727d187f2882b4cb07daf32d6d63c06bb97390e"
+      },
+      "2026": {
+        "eval_ids_sha256": "5fc7a8485286bc3c7a2151a26943ed1386cafc1b65a0b1c688d1ef4dc0e7f0e0",
+        "fit_ids_sha256": "9800ac0d27a21b3b72f7733ad29bb07d9cb6d7a697cc322dd6d9b157a03434e2"
+      }
+    },
+    "modes": {
+      "hard": 1000.0,
+      "off": 0.0,
+      "soft": 2.0
+    },
+    "notebook_source_sha256": "e804b55e7bfa98139fc8ae3211fe0ad744164bc322282ec33bf4377fdccfaa0b",
+    "reference": {
+      "ordered_id_sha256": "ba87deaa086efd309464078eca7d5cbf2f0f6fde88182f97fadd75ef6af5eddc",
+      "rows": 3000
+    },
+    "solver_seeds": [
+      42,
+      7,
+      2026
+    ],
+    "split_seeds": [
+      42,
+      7,
+      2026
+    ],
+    "stress_scope": "eval rows only; fit rows and reference rows stay original; reference stats frozen from fit",
+    "stresses": {
+      "collapse_whitespace": "all whitespace runs to one space",
+      "original": "unchanged",
+      "remove_blank_lines": "drop whitespace-only lines",
+      "wrap80": "textwrap.fill each nonblank line at 80"
+    },
+    "threads": 1
+  },
+  "config_sha256": "18c2fde9ec513f7eebb22b3741747b9b9f57bfdbf3c8e3a9194a6e51a1f71562",
+  "saved_before_fit": true,
+  "split_sha256": "308f829721138d05495a6f188d0b8b0daae094787c224f7a99a2f62e2bd466e9"
+}

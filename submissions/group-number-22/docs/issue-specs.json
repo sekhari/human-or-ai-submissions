@@ -1,0 +1,211 @@
+[
+  {
+    "number": 1,
+    "owner": "Jalil-g",
+    "slug": "data_setup",
+    "dependencies": [],
+    "title": "Load and audit the data",
+    "notebook": "01_data_setup.ipynb",
+    "body": "## Goal\nLoad and audit the data. Work in notebooks/01_data_setup.ipynb.\n\nOwner:@Jalil-g\nDepends on:None. Start here.\n\n## Steps\n- [ ] Load a private .env with KaggleHub. Download train10000, unlabeled3000, test3000, starter2000, sample3000. Save byte hashes and download time. Do not change raw files.\n- [ ] Check exact schemas, nonempty text, unique string IDs, labels0/1, 5000 per class, starter as exact training subset, and sample/test ID agreement. Show lengths and class counts.\n- [ ] Check exact overlaps and near duplicates across train/unlabeled/test. Normalize audit copies with NFKC, casefold, word tokens. Use five-word shingle sets, Jaccard>=.85, lossless candidate search plus exact verification. Exclude intentional starter duplication.\n- [ ] Save audit hashes, duplicate components, summary table and length plot. Reject changed data rather than silently overwriting. This stage does not fit features on test text.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 2,
+    "owner": "Jalil-g",
+    "slug": "split_metrics",
+    "dependencies": [
+      1
+    ],
+    "title": "Freeze the split and metric helpers",
+    "notebook": "02_split_metrics.ipynb",
+    "body": "## Goal\nFreeze the split and metric helpers. Work in notebooks/02_split_metrics.ipynb.\n\nOwner:@Jalil-g\nDepends on:#1\n\n## Steps\n- [ ] Sort training IDs, use stratified seed42 split:8000 train,2000 validation, balanced by class. Keep duplicate groups together with exact class quotas; fail if impossible. Save IDs, audit/data hashes, policy, seed, split checksum in configs/split.json. Never silently replace a split.\n- [ ] Exclude eligible-unlabeled candidates whose duplicate groups touch validation/test. Shared loaders return rows in manifest ID order and verify all hashes.\n- [ ] Define helper functions here; other notebooks use %run ./02_split_metrics.ipynb. Helpers must not download or train on import. Join predictions/truth by ID, check coverage, duplicates, finite probabilities, class1 mapping. AUROC primary, accuracy at.5 optional. Single-class AUROC=null.\n- [ ] Each run saves command, UTC time, Git SHA, package/lock versions, seed, config, split/data hashes, fit/eval counts, metrics, timing, artifact paths/hashes. Use separate result folders.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 3,
+    "owner": "rdevasia25",
+    "slug": "word_baseline",
+    "dependencies": [
+      2
+    ],
+    "title": "Train word TF-IDF logistic regression",
+    "notebook": "03_word_baseline.ipynb",
+    "body": "## Goal\nTrain word TF-IDF logistic regression. Work in notebooks/03_word_baseline.ipynb.\n\nOwner:@rdevasia25\nDepends on:#2\n\n## Steps\n- [ ] Explain TF-IDF and logistic regression briefly. Keep originals. No global stemming or stopword removal.\n- [ ] Lowercase word1-2 TF-IDF, min_df2,max_features50000,sublinear_tf=True,L2 norm,float32. Logistic C1,liblinear,max_iter2000,seed42. Fit vectorizer and model on8000 only.\n- [ ] Save local model plus ID-aligned train/validation predictions. Report train/validation AUROC and fit time. Reload model and check inference matches.\n- [ ] Provide stable local paths and a safe aggregate JSON for downstream notebooks. Do not treat training score as held-out performance.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 4,
+    "owner": "rdevasia25",
+    "slug": "word_comparison",
+    "dependencies": [
+      3
+    ],
+    "title": "Compare word logistic, NB, and SVM",
+    "notebook": "04_word_comparison.ipynb",
+    "body": "## Goal\nCompare word logistic, NB, and SVM. Work in notebooks/04_word_comparison.ipynb.\n\nOwner:@rdevasia25\nDepends on:#3\n\n## Steps\n- [ ] Use baseline word settings. Three stratified CV folds inside8000, shuffle seed42. Refit the entire pipeline per fold.\n- [ ] Search logistic/SVM C=[.25,1,4], MultinomialNB alpha=[.1,.5,1]. Select highest mean training-CV AUROC; first candidate breaks exact ties. Calibrate chosen SVM using training-only out-of-fold sigmoid scores.\n- [ ] Show candidate fold scores, mean/std, settings, train/validation AUROC, search time and final fit time. Inspect validation only after training-CV selection.\n- [ ] For initial handoff prefer simpler/faster model within.002 of leader. State this is a cost tradeoff. Use paired class-stratified bootstrap2000 draws seed42 for comparisons, with limits stated.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 5,
+    "owner": "rdevasia25",
+    "slug": "char_comparison",
+    "dependencies": [
+      4
+    ],
+    "title": "Compare character features and save a handoff",
+    "notebook": "05_char_comparison.ipynb",
+    "body": "## Goal\nCompare character features and save a handoff. Work in notebooks/05_char_comparison.ipynb.\n\nOwner:@rdevasia25\nDepends on:#4\n\n## Steps\n- [ ] Use char_wb3-5 TF-IDF,min_df2,max_features100000,sublinear TF,L2 norm,float32. Tune logistic C=[.25,1,4] on same training folds.\n- [ ] Compare word/character train and validation AUROC, fold variation, runtime. Save selected settings and models with class1 inference interfaces.\n- [ ] Keep raw punctuation/case available for later representations. Do not apply this vectorizer normalization to every experiment.\n- [ ] Save handoff predictions and model paths for error analysis. Confidence intervals condition on fitted models and reused validation rows.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 6,
+    "owner": "Jalil-g",
+    "slug": "learning_curve",
+    "dependencies": [
+      3
+    ],
+    "title": "Measure how training size changes performance",
+    "notebook": "06_learning_curve.ipynb",
+    "body": "## Goal\nMeasure how training size changes performance. Work in notebooks/06_learning_curve.ipynb.\n\nOwner:@Jalil-g\nDepends on:#3\n\n## Steps\n- [ ] Use fixed baseline C1 model, no new tuning. Nested balanced subsets500,1000,2000,5000,8000 from training only, seed42.\n- [ ] Refit vectorizer per subset. Keep same2000 validation IDs. Save subset ID hashes, settings, train/validation AUROC and runtime.\n- [ ] Plot both AUROC curves versus labeled rows. Explain overfitting, gap, and more-data value in three bullets.\n- [ ] Repeat one size and compare predictions. Do not extrapolate an unmeasured dataset size or Kaggle score.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 7,
+    "owner": "rdevasia25",
+    "slug": "pseudo_labels",
+    "dependencies": [
+      4
+    ],
+    "title": "Test one-pass self-training",
+    "notebook": "07_pseudo_labels.ipynb",
+    "body": "## Goal\nTest one-pass self-training. Work in notebooks/07_pseudo_labels.ipynb.\n\nOwner:@rdevasia25\nDepends on:#4\n\n## Steps\n- [ ] Use C1 and selected C4 word teachers, each with a fresh matched supervised control. Eligible unlabeled rows only, never validation/test.\n- [ ] Accept max(p,1-p)>=.95; hard pseudo-label at.5; original weight1,pseudo weight.25. One pass. Freeze supervised vocabulary/IDF and refit classifier only.\n- [ ] Record accepted counts per predicted class, weighted mass, train/validation scores, treatment-control delta, runtime. Paired bootstrap2000 draws seed42.\n- [ ] Do not tune confidence or weights on validation. Keep negligible or negative results. Explain pseudo-label errors can reinforce the teacher.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 8,
+    "owner": "Gtpatel02",
+    "slug": "error_analysis",
+    "dependencies": [
+      5
+    ],
+    "title": "Analyze subgroups and wrong predictions",
+    "notebook": "08_error_analysis.ipynb",
+    "body": "## Goal\nAnalyze subgroups and wrong predictions. Work in notebooks/08_error_analysis.ipynb.\n\nOwner:@Gtpatel02\nDepends on:#5\n\n## Steps\n- [ ] Use initial handoff model. Derive quartile edges on training for word count,line breaks,uppercase/letter,punctuation/character. Apply unchanged to validation.\n- [ ] Show counts,class balance,AUROC,accuracy at.5 and class-stratified bootstrap95% intervals1000 draws seed42. Handle tied bins,empty and single-class groups honestly.\n- [ ] Inspect five confident FP and five FN when available. Show IDs,probabilities,measurements,short hypotheses,not full passages. FP means human predicted AI.\n- [ ] Compare train/validation gap. Separate observed patterns from guesses about source or genre. Save analysis functions for later selected models. No hidden domain labels.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 9,
+    "owner": "Gtpatel02",
+    "slug": "linear_style",
+    "dependencies": [
+      8
+    ],
+    "title": "Test a small style feature addition",
+    "notebook": "09_linear_style.ipynb",
+    "body": "## Goal\nTest a small style feature addition. Work in notebooks/09_linear_style.ipynb.\n\nOwner:@Gtpatel02\nDepends on:#8\n\n## Steps\n- [ ] Before running, state hypothesis about high-uppercase and short texts. Keep split,word settings and LR C4 fixed.\n- [ ] Add nine features:log word count,line breaks/word,punctuation/character,uppercase/letter,digits/character,log words/sentence,type-token ratio,non-ASCII/character,list-line rate. Scale inside training pipeline.\n- [ ] Five training folds,seed42. Adoption requires validation gain>=.002,paired95% bootstrap CI entirely>0,and every CV fold improving. Save configuration before measurement.\n- [ ] Show both arms,fit/CV runtime,subgroup changes and failed conditions. Do not adopt just because a point score rose.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 10,
+    "owner": "rdevasia25",
+    "slug": "expanded_text",
+    "dependencies": [
+      5,
+      9
+    ],
+    "title": "Search longer word and case-preserving character features",
+    "notebook": "10_expanded_text.ipynb",
+    "body": "## Goal\nSearch longer word and case-preserving character features. Work in notebooks/10_expanded_text.ipynb.\n\nOwner:@rdevasia25\nDepends on:#5, #9\n\n## Steps\n- [ ] Commit candidate grid first:word1-2 LR C4/C16,word1-3 LR C16,word1-2 SVM C1,char_wb3-5 LR C16,case char2-5 LR C16/SVM C1,word1-3+case char2-5 LR C16,NB-weighted word1-3 LR C4,and word1-2+scaled nine-style LR C4.\n- [ ] Word min_df2,sublinear TF,L2,float32,word1-2 cap50000,word1-3 no cap. Case char2-5 min_df3,cap300000,lowercase=False. char_wb3-5 min_df2,cap100000. LR liblinear max_iter5000;SVM dual=auto,max_iter20000.\n- [ ] NB weighting:binary counts,min_df2,alpha1,log normalized class frequency ratio. Fit ratio only within fold. Five stratified training folds seed42. Standardize raw margins using eligible unlabeled text,not test batches.\n- [ ] Greedy ensemble adds only if CV gain>=.0005,max5;prefer fewer members within.0005 of best. Select using CV,then confirm validation. Save OOF scores and candidate configs.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 11,
+    "owner": "Gtpatel02",
+    "slug": "formatting_rule",
+    "dependencies": [
+      10
+    ],
+    "title": "Test a conditional blank-line rule",
+    "notebook": "11_formatting_rule.ipynb",
+    "body": "## Goal\nTest a conditional blank-line rule. Work in notebooks/11_formatting_rule.ipynb.\n\nOwner:@Gtpatel02\nDepends on:#10\n\n## Steps\n- [ ] Inspect training formatting. Within each fit,rule can activate only when no human fit example has two consecutive newlines. Do not derive fold rules from evaluation labels.\n- [ ] Candidates:reference word1-3+case char2-5 LR C16 without rule;rule all-fit same model;rule no-blank-fit word+char LR C16/C64;rule no-blank case-char LR C64/SVM C1;rule no-blank NB-word1-3 LR C4;rule no-blank word1-3 LR C16. Same TF-IDF settings as10.\n- [ ] Use same five folds,greedy threshold and simpler-model tie policy. Standardize margins on eligible unlabeled rows;specialist reference also excludes blank-line text. Save raw margins and flags.\n- [ ] Test hard rule offset1000 as an ablation. Map flagged probabilities to[.99,1),others to(0,.99),preserving score order. Also keep a soft scoring path with offset2. Discuss shortcut risk without assuming hidden-test behavior.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 12,
+    "owner": "Jalil-g",
+    "slug": "seed_stress",
+    "dependencies": [
+      11
+    ],
+    "title": "Check seeds and formatting robustness",
+    "notebook": "12_seed_stress.ipynb",
+    "body": "## Goal\nCheck seeds and formatting robustness. Work in notebooks/12_seed_stress.ipynb.\n\nOwner:@Jalil-g\nDepends on:#11\n\n## Steps\n- [ ] Inside original8000 only,make stratified6400/1600 splits at42,7,2026 with solver42. Vary solver7/2026 on fixed split42. Save ordered ID digests.\n- [ ] Compare original text,remove blank lines,collapse whitespace,wrap80. Compare rule on/off/soft where defined. Never train on transformed evaluation rows.\n- [ ] Report original AUROC ranges,max raw margin change,stress losses and runtime. Keep frozen2000 outside this diagnostic.\n- [ ] Distinguish solver randomness,split sensitivity,and formatting sensitivity. Stress tests do not reveal Kaggle subgroup labels or prove the cause of hidden errors.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 13,
+    "owner": "Gtpatel02",
+    "slug": "rich_style",
+    "dependencies": [
+      2,
+      9
+    ],
+    "title": "Train nonlinear models on rich style features",
+    "notebook": "13_rich_style.ipynb",
+    "body": "## Goal\nTrain nonlinear models on rich style features. Work in notebooks/13_rich_style.ipynb.\n\nOwner:@Gtpatel02\nDepends on:#2, #9\n\n## Steps\n- [ ] Build deterministic float32 features:log counts of chars/words/sentences/lines/paragraphs;unique,hapax,twice-seen fractions;token entropy;uppercase,digit,space,non-ASCII,newline,blank-line,tab,punctuation rates;allcaps,titlecase,long/short word,contraction,list,heading,indent,repeated-space,URL,pronoun,fragment rates.\n- [ ] Add mean,std,min,max,q25,median,q75 for word lengths and sentence/line/paragraph word counts. Count each ASCII punctuation plus Unicode dash/quotes/ellipsis/bullet separately. Add a fixed function-word frequency list. Commit exact names,regexes,denominators,empty-text guards and feature order before running.\n- [ ] Three training folds seed42. HistGB:max_iter250,lr.06,max_leaf_nodes15,min_samples_leaf30,L2=5,early_stopping=False. ExtraTrees:500trees,max_features.8,min_samples_leaf3,seed42,n_jobs2.\n- [ ] Select OOF AUROC then confirm on frozen2000. Save models,feature schema,both candidates,runtime. No automatic upload.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 14,
+    "owner": "Gtpatel02",
+    "slug": "style_augmentation",
+    "dependencies": [
+      13,
+      12
+    ],
+    "title": "Add label-preserving formatting augmentation",
+    "notebook": "14_style_augmentation.ipynb",
+    "body": "## Goal\nAdd label-preserving formatting augmentation. Work in notebooks/14_style_augmentation.ipynb.\n\nOwner:@Gtpatel02\nDepends on:#13, #12\n\n## Steps\n- [ ] Internal6400/1600 seed42. Compare original-only;original+collapsed whitespace;original+single-newline+wrap64+wrap80. Originals weight1,each copied view.25. Never augment held-out rows for fitting.\n- [ ] Collapse uses space-join split words. Single-newline replaces blank-line separators with one newline. Wrap uses textwrap width64/80,blank lines between wrapped chunks,no breaking words or hyphens.\n- [ ] Select highest mean original/collapse/wrap80 internal AUROC among presets with original>=baseline-.005. Record rule before measurement and save selection before validation.\n- [ ] Confirm chosen preset on8000/2000. Save internal6400 and development8000 models,all arms and timings. A copied view is not a new independent labeled example.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 15,
+    "owner": "rdevasia25",
+    "slug": "normalized_transfer",
+    "dependencies": [
+      7,
+      13
+    ],
+    "title": "Test normalized lexical features and teacher transfer",
+    "notebook": "15_normalized_transfer.ipynb",
+    "body": "## Goal\nTest normalized lexical features and teacher transfer. Work in notebooks/15_normalized_transfer.ipynb.\n\nOwner:@rdevasia25\nDepends on:#7, #13\n\n## Steps\n- [ ] Normalize NFKC,canonical quotes/dashes/ellipsis,remove Unicode Cf,collapse whitespace,lowercase. Use word1-3 cap120000,char3-5 cap180000,min_df2,float32.\n- [ ] Compare TF-IDF LR C16 vs binary NB-weighted LR C1 using three training folds. Include original+normalized TF-IDF arm with each view half sample weight. LR liblinear max_iter3000,seed42. Record all arms and validation after CV selection.\n- [ ] Style teacher trained on internal6400;pseudo-label eligible unlabeled at confidence.995,pseudo classifier weight.25. Compare fresh normalized NB control and transfer on internal1600. NB feature weights also use assigned pseudo labels;document that distinction.\n- [ ] Reproduce six-candidate original-style/text/NB grid:hist,hist75_old25,hist50_old50,hist75_nb25,hist50_old25_nb25,old_soft. Use raw style logit clipped1e-7,soft text offset2,outer standardization on eligible unlabeled. Select max original internal AUROC with both remove-blank/collapse within.002 of hist. Keep this as an ablation.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 16,
+    "owner": "Jalil-g",
+    "slug": "local_electra",
+    "dependencies": [
+      12,
+      15
+    ],
+    "title": "Test local ELECTRA and a neural blend",
+    "notebook": "16_local_electra.ipynb",
+    "body": "## Goal\nTest local ELECTRA and a neural blend. Work in notebooks/16_local_electra.ipynb.\n\nOwner:@Jalil-g\nDepends on:#12, #15\n\n## Steps\n- [ ] Optional isolated environment:torch2.15.0,transformers5.22.2,huggingface-hub2.4.0. Generic google/electra-small-discriminator revision fa8239aadc095e9164941d05878b98afe9b953c3,Apache2. Record license and checkpoint source. All inference local.\n- [ ] Internal6400/1600,seed42,max_tokens256,batch16,lr3e-5,weight_decay.01,warmup_fraction.1,three-epoch schedule. Select max internal AUROC,earliest epoch tie. Supplied labels only.\n- [ ] Confirm8000/2000 with selected epoch count but retain original three-epoch LR schedule horizon. Record device,nondeterminism,training time,environment. Full refit only after selection.\n- [ ] After17,compare neural weights[0,.1,.25,.5,.75,1],standardized scores,mean original/remove-blank/collapse/wrap80 AUROC,original>=classical-.002. This subsection waits for17. No automatic upload.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 17,
+    "owner": "Gtpatel02",
+    "slug": "final_blend",
+    "dependencies": [
+      11,
+      14,
+      15
+    ],
+    "title": "Select the augmented style and text blend",
+    "notebook": "17_final_blend.ipynb",
+    "body": "## Goal\nSelect the augmented style and text blend. Work in notebooks/17_final_blend.ipynb.\n\nOwner:@Gtpatel02\nDepends on:#11, #14, #15\n\n## Steps\n- [ ] Fit components only on internal6400;select on internal1600. Use chosen augmented style in the same six-candidate grid from15. Commit grid and guardrails before run.\n- [ ] Text arm candidates include word1-3+case char2-5 LR C16 all-fit and case char2-5 SVM C1 no-blank-fit. Standardize each margin on eligible unlabeled reference,specialist reference no-blank. Mean margins+2*active blank flag,then standardize outer arm.\n- [ ] Style arm:logit of P(AI) clipped[1e-7,1-1e-7],standardized on eligible unlabeled. Final weighted score goes through sigmoid. This is score averaging,not original probability averaging. No test-batch normalization.\n- [ ] Select max original internal AUROC with remove-blank and collapse each>=augmentedhist-.002. Measure wrap80 separately. Exact ties prefer pure hist. Save selection before frozen validation,then confirm with8000-fit components. Include50/50 candidate but do not force its selection.\n- [ ] Rerun issue08 diagnostics for selected held-out model. Save exact feature schemas,weights,normalization stats and standalone refit specification for18. Do not claim probabilities are calibrated without checking.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  },
+  {
+    "number": 18,
+    "owner": "Jalil-g",
+    "slug": "final_checks",
+    "dependencies": [
+      6,
+      7,
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "title": "Refit, validate, and prepare the final handoff",
+    "notebook": "18_final_checks.ipynb",
+    "body": "## Goal\nRefit, validate, and prepare the final handoff. Work in notebooks/18_final_checks.ipynb.\n\nOwner:@Jalil-g\nDepends on:#6, #7, #8, #9, #12, #16, #17\n\n## Steps\n- [ ] Build a standalone notebook refit from raw files and chosen configs. No dependence on past joblib artifacts. All10000 verified labels available only after model selection. Reuse exact feature schemas,seed,row order and thread settings.\n- [ ] For the planned classical candidate,hist fit order=original train.csv;linear order=concat(manifest training,manifest validation);hist threads2,linear threads1. Record any changed selection instead of pretending the planned candidate won.\n- [ ] Export3000 unique test IDs as id,label=class1 probability under ignored submissions/. Check sample IDs,exact columns,no missing/extra/duplicate IDs,finite[0,1]. Recompute predictions by ID to catch shifted values and wrong class column. Test valid and malformed files.\n- [ ] Run completed notebooks from clean kernels in dependency order. Check repeatability by file hashes and numeric tolerances;record maximum differences if bytes differ. Preserve negative results. Full10000 refit has no held-out score;link separate8000-fit validation.\n- [ ] Jalil coordinates uploads. Check shared Group Number22 quota,five/day,across every team submission. No automatic upload or leaderboard probing. Target public AUROC>=.98 is a goal,not a guaranteed or prefilled result. Log actual receipt,status,public score,private pending.\n- [ ] Prepare concise methods/results,member contributions,required course disclosures,and final selected-model diagnostics. Confirm cutoff/timezone,course PR destination,portal and Kaggle final selection. Report template stays deferred until this final stage. Do not mark course delivery complete without evidence.\n\n## Done\n- [ ] Read AGENTS.md and notebook rules. Short clear writing,no em dashes.\n- [ ] Fresh kernel run works after dependencies. No hidden state or fake outputs.\n- [ ] Record measured scores,time,settings,source revision,data/split identity,and artifact hashes.\n- [ ] Save negative results. No private text,credentials,models,or row predictions in Git.\n- [ ] Open a PR,get a teammate review,and preserve useful commits. No padding.\n"
+  }
+]

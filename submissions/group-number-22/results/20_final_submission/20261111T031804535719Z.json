@@ -1,0 +1,143 @@
+{
+  "artifacts": {
+    "submissions/20_final_submission/20261111T031804535719Z/submission.csv": "1f8aba8c7e03ba679a1a71e963ab410ff83c6f9050875233f8d09c72e1bd6f18"
+  },
+  "command": "uv run --project envs/electra --locked jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=7200 notebooks/20_final_submission.ipynb",
+  "config": {
+    "blank_offset": 2.0,
+    "casechar": {
+      "analyzer": "char",
+      "lowercase": false,
+      "max_features": 300000,
+      "min_df": 3,
+      "ngram_range": [
+        2,
+        5
+      ]
+    },
+    "copy_weight": 0.25,
+    "electra": {
+      "batch": 16,
+      "epochs": 3,
+      "lr": 3e-05,
+      "max_tokens": 256,
+      "repo": "google/electra-small-discriminator",
+      "revision": "fa8239aadc095e9164941d05878b98afe9b953c3",
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01
+    },
+    "fit_order": "train.csv order",
+    "hist": {
+      "early_stopping": false,
+      "l2_regularization": 5.0,
+      "learning_rate": 0.06,
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 30,
+      "random_state": 42
+    },
+    "lr": {
+      "C": 16.0,
+      "max_iter": 5000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "tol": 0.0001
+    },
+    "neural_weight": 0.25,
+    "reference": "all 3000 unlabeled rows",
+    "style_weight": 0.5,
+    "svm": {
+      "C": 1.0,
+      "dual": "auto",
+      "max_iter": 20000,
+      "random_state": 42,
+      "tol": 0.0001
+    },
+    "text_weight": 0.5,
+    "word13": {
+      "analyzer": "word",
+      "lowercase": true,
+      "max_features": null,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        3
+      ]
+    }
+  },
+  "data_sha256": {
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae"
+  },
+  "eval_rows": 0,
+  "fit_rows": 10000,
+  "git_sha": "93273b68fc83a132e515004ca62e6593007175de",
+  "hardware": {
+    "device": "mps",
+    "platform": "macOS-26.1-arm64-arm-64bit"
+  },
+  "heldout_confirmation": {
+    "kaggle_public_auroc": 0.98553,
+    "kaggle_ref": 58222131,
+    "weight_pick": "results/19_internal_neural_pick/20261111T024705598557Z.json"
+  },
+  "kaggle": {
+    "uploaded_by_notebook": false
+  },
+  "lock_sha256": "2f2923280883fa01c61fb12b7302cf024499be5785f0c053bc383b9e12b17644",
+  "metrics": {
+    "blank_rule_active": true,
+    "electra_history": [
+      {
+        "epoch": 1,
+        "mean_train_loss": 0.32424169970154765,
+        "seconds": 119.24414895905647
+      },
+      {
+        "epoch": 2,
+        "mean_train_loss": 0.09549193086028099,
+        "seconds": 116.40817483293358
+      },
+      {
+        "epoch": 3,
+        "mean_train_loss": 0.048267509827762844,
+        "seconds": 117.4281672090292
+      }
+    ],
+    "in_sample_auroc_not_heldout": 0.9999996,
+    "max": 0.8375516046192142,
+    "min": 0.17608964177635253,
+    "rows": 3000,
+    "share_above_0_5": 0.45366666666666666,
+    "shuffle_diff": 0.0,
+    "vs_submitted": {
+      "max_abs_diff": 0.08730308985496227,
+      "spearman": 0.9968521485391275
+    }
+  },
+  "run_id": "20261111T031804535719Z",
+  "runtime_seconds": 470.1399797910126,
+  "seed": 42,
+  "status": "completed",
+  "timings": {
+    "electra_fit": 363.43482008296996,
+    "style_fit": 21.446753708994947,
+    "test_scoring": 16.72277329105418,
+    "text_fit": 42.6800212910166,
+    "total": 470.1399797910126
+  },
+  "utc": "2026-11-11T03:18:04.541044+00:00",
+  "validation_auroc": null,
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.13",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "tokenizers": "0.23.3",
+    "torch": "2.15.0",
+    "transformers": "5.22.2"
+  }
+}

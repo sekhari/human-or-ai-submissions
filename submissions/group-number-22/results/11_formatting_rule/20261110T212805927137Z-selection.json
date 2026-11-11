@@ -1,0 +1,349 @@
+{
+  "candidate_results": [
+    {
+      "candidate": "reference",
+      "hard_fold_mean": 0.97346375,
+      "hard_fold_std": 0.0019143991795730364,
+      "hard_pooled_oof": 0.9734970000000002,
+      "soft_fold_mean": 0.97346375,
+      "soft_fold_std": 0.0019143991795730364,
+      "soft_pooled_oof": 0.9734970000000002
+    },
+    {
+      "candidate": "rule_all_wordchar16",
+      "hard_fold_mean": 0.993831875,
+      "hard_fold_std": 0.0015141902358397847,
+      "hard_pooled_oof": 0.993820625,
+      "soft_fold_mean": 0.9938293750000001,
+      "soft_fold_std": 0.0015143339862378608,
+      "soft_pooled_oof": 0.9938173124999999
+    },
+    {
+      "candidate": "rule_no_blank_wordchar16",
+      "hard_fold_mean": 0.9913253125000001,
+      "hard_fold_std": 0.0021139423700162227,
+      "hard_pooled_oof": 0.9912688749999999,
+      "soft_fold_mean": 0.9913034375,
+      "soft_fold_std": 0.0021180390123443174,
+      "soft_pooled_oof": 0.9912519375
+    },
+    {
+      "candidate": "rule_no_blank_wordchar64",
+      "hard_fold_mean": 0.9918428125000001,
+      "hard_fold_std": 0.0019313674620427491,
+      "hard_pooled_oof": 0.9917999375000001,
+      "soft_fold_mean": 0.9918271875,
+      "soft_fold_std": 0.001930692577321637,
+      "soft_pooled_oof": 0.9917873125
+    },
+    {
+      "candidate": "rule_no_blank_casechar64",
+      "hard_fold_mean": 0.9924653124999999,
+      "hard_fold_std": 0.0018211205020020917,
+      "hard_pooled_oof": 0.9924263749999999,
+      "soft_fold_mean": 0.992454375,
+      "soft_fold_std": 0.0018201104769868539,
+      "soft_pooled_oof": 0.9924173125
+    },
+    {
+      "candidate": "rule_no_blank_case_svm1",
+      "hard_fold_mean": 0.9924474999999999,
+      "hard_fold_std": 0.0017446272434964976,
+      "hard_pooled_oof": 0.9923918125000001,
+      "soft_fold_mean": 0.992439375,
+      "soft_fold_std": 0.0017403529859269977,
+      "soft_pooled_oof": 0.9923855625000001
+    },
+    {
+      "candidate": "rule_no_blank_nbword4",
+      "hard_fold_mean": 0.9845340625000001,
+      "hard_fold_std": 0.002582522272713761,
+      "hard_pooled_oof": 0.9845246250000002,
+      "soft_fold_mean": 0.9826981250000001,
+      "soft_fold_std": 0.002569704696373198,
+      "soft_pooled_oof": 0.9826540625
+    },
+    {
+      "candidate": "rule_no_blank_word13_16",
+      "hard_fold_mean": 0.9837278125000001,
+      "hard_fold_std": 0.0036122833791021,
+      "hard_pooled_oof": 0.9837526874999999,
+      "soft_fold_mean": 0.9828625000000001,
+      "soft_fold_std": 0.0036855149582945093,
+      "soft_pooled_oof": 0.9828928124999999
+    }
+  ],
+  "config_sha256": "f230626a7998b8d003f01fb9ed4b73532b1d22a9841921f86c50737bded840bf",
+  "selections": {
+    "hard": {
+      "path": [
+        {
+          "auroc": 0.993820625,
+          "members": [
+            "rule_all_wordchar16"
+          ]
+        },
+        {
+          "auroc": 0.9946908125000001,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1"
+          ]
+        }
+      ],
+      "selected": [
+        "rule_all_wordchar16",
+        "rule_no_blank_case_svm1"
+      ],
+      "selected_oof_auroc": 0.9946908125000001,
+      "trials": [
+        {
+          "auroc": 0.993820625,
+          "gain": 0.0,
+          "members": [
+            "rule_all_wordchar16",
+            "reference"
+          ]
+        },
+        {
+          "auroc": 0.9942236249999999,
+          "gain": 0.0004029999999999312,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_wordchar16"
+          ]
+        },
+        {
+          "auroc": 0.9943770624999999,
+          "gain": 0.0005564374999998956,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_wordchar64"
+          ]
+        },
+        {
+          "auroc": 0.9946720625,
+          "gain": 0.0008514374999999408,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_casechar64"
+          ]
+        },
+        {
+          "auroc": 0.9946908125000001,
+          "gain": 0.0008701875000001191,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1"
+          ]
+        },
+        {
+          "auroc": 0.9930507499999999,
+          "gain": -0.000769875000000142,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_nbword4"
+          ]
+        },
+        {
+          "auroc": 0.9920986875000001,
+          "gain": -0.001721937499999937,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_word13_16"
+          ]
+        },
+        {
+          "auroc": 0.9947854375,
+          "gain": 9.462499999990381e-05,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "reference"
+          ]
+        },
+        {
+          "auroc": 0.99406375,
+          "gain": -0.0006270625000001084,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_wordchar16"
+          ]
+        },
+        {
+          "auroc": 0.9941748125,
+          "gain": -0.000516000000000183,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_wordchar64"
+          ]
+        },
+        {
+          "auroc": 0.9942718125000001,
+          "gain": -0.0004190000000000582,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_casechar64"
+          ]
+        },
+        {
+          "auroc": 0.9940808124999999,
+          "gain": -0.0006100000000002215,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_nbword4"
+          ]
+        },
+        {
+          "auroc": 0.993206,
+          "gain": -0.001484812500000099,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_word13_16"
+          ]
+        }
+      ]
+    },
+    "soft": {
+      "path": [
+        {
+          "auroc": 0.9938173124999999,
+          "members": [
+            "rule_all_wordchar16"
+          ]
+        },
+        {
+          "auroc": 0.9946898750000001,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1"
+          ]
+        }
+      ],
+      "selected": [
+        "rule_all_wordchar16",
+        "rule_no_blank_case_svm1"
+      ],
+      "selected_oof_auroc": 0.9946898750000001,
+      "trials": [
+        {
+          "auroc": 0.9932685625000001,
+          "gain": -0.0005487499999998757,
+          "members": [
+            "rule_all_wordchar16",
+            "reference"
+          ]
+        },
+        {
+          "auroc": 0.9942226249999999,
+          "gain": 0.00040531249999997687,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_wordchar16"
+          ]
+        },
+        {
+          "auroc": 0.9943760625,
+          "gain": 0.0005587500000000523,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_wordchar64"
+          ]
+        },
+        {
+          "auroc": 0.9946711875,
+          "gain": 0.000853875000000115,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_casechar64"
+          ]
+        },
+        {
+          "auroc": 0.9946898750000001,
+          "gain": 0.000872562500000118,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1"
+          ]
+        },
+        {
+          "auroc": 0.9930485625,
+          "gain": -0.0007687499999999847,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_nbword4"
+          ]
+        },
+        {
+          "auroc": 0.9920963125000001,
+          "gain": -0.0017209999999998615,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_word13_16"
+          ]
+        },
+        {
+          "auroc": 0.99469425,
+          "gain": 4.374999999945395e-06,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "reference"
+          ]
+        },
+        {
+          "auroc": 0.9940626875,
+          "gain": -0.0006271875000000149,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_wordchar16"
+          ]
+        },
+        {
+          "auroc": 0.99417375,
+          "gain": -0.0005161250000000894,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_wordchar64"
+          ]
+        },
+        {
+          "auroc": 0.9942708125,
+          "gain": -0.00041906250000001144,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_casechar64"
+          ]
+        },
+        {
+          "auroc": 0.9940797499999999,
+          "gain": -0.0006101250000001279,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_nbword4"
+          ]
+        },
+        {
+          "auroc": 0.9932046875,
+          "gain": -0.0014851875000000403,
+          "members": [
+            "rule_all_wordchar16",
+            "rule_no_blank_case_svm1",
+            "rule_no_blank_word13_16"
+          ]
+        }
+      ]
+    }
+  },
+  "utc": "2026-11-10T21:37:07.656993+00:00",
+  "validation_inspected": false
+}

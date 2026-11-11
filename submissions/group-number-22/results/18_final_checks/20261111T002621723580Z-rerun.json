@@ -1,0 +1,437 @@
+{
+  "notebooks": [
+    {
+      "committed_record": "20261110T052458293699Z.json",
+      "config_identical": true,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "01_data_setup",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T232807486423Z.json",
+      "runtime_committed_s": 3.4,
+      "runtime_rerun_s": 3.0,
+      "status": "rerun completed",
+      "validation_auroc_committed": null,
+      "validation_auroc_rerun": null
+    },
+    {
+      "committed_record": "20261110T145155407082Z.json",
+      "config_identical": true,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "02_split_metrics",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T232815118000Z.json",
+      "runtime_committed_s": 2.1,
+      "runtime_rerun_s": 2.2,
+      "status": "rerun completed",
+      "validation_auroc_committed": null,
+      "validation_auroc_rerun": null
+    },
+    {
+      "committed_record": "20261110T182451887338Z.json",
+      "config_identical": true,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "03_word_baseline",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T232822292809Z.json",
+      "runtime_committed_s": 5.4,
+      "runtime_rerun_s": 4.4,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.9327280000000001,
+      "validation_auroc_rerun": 0.9327280000000001
+    },
+    {
+      "committed_record": "20261110T183613126372Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 5.623594805381771e-07,
+          "path": "metrics/candidate_results[2]/fold_auroc[0]"
+        },
+        {
+          "abs_diff": 1.874531601053775e-07,
+          "path": "metrics/family_results[0]/cv_mean"
+        },
+        {
+          "abs_diff": 1.874531601053775e-07,
+          "path": "metrics/candidate_results[2]/cv_mean"
+        }
+      ],
+      "max_abs_numeric_diff": 5.623594805381771e-07,
+      "metrics_identical": false,
+      "notebook": "04_word_comparison",
+      "numeric_diffs": 5,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T232922732773Z.json",
+      "runtime_committed_s": 92.6,
+      "runtime_rerun_s": 57.6,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.941252,
+      "validation_auroc_rerun": 0.941252
+    },
+    {
+      "committed_record": "20261110T184002363091Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 4.000000000115023e-06,
+          "path": "metrics/paired_comparisons[0]/delta_auroc"
+        },
+        {
+          "abs_diff": 4.000000000115023e-06,
+          "path": "metrics/comparison_results[1]/validation_auroc"
+        },
+        {
+          "abs_diff": 2.249437921708619e-06,
+          "path": "metrics/candidate_results[2]/fold_auroc[1]"
+        }
+      ],
+      "max_abs_numeric_diff": 4.000000000115023e-06,
+      "metrics_identical": false,
+      "notebook": "05_char_comparison",
+      "numeric_diffs": 14,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T233022574941Z.json",
+      "runtime_committed_s": 91.0,
+      "runtime_rerun_s": 56.7,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.941252,
+      "validation_auroc_rerun": 0.941252
+    },
+    {
+      "committed_record": "20261110T182635235581Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "06_learning_curve",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T233033320567Z.json",
+      "runtime_committed_s": 7.3,
+      "runtime_rerun_s": 7.7,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.9327280000000001,
+      "validation_auroc_rerun": 0.9327280000000001
+    },
+    {
+      "committed_record": "20261110T185517771685Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "07_pseudo_labels",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T233057972012Z.json",
+      "runtime_committed_s": 33.0,
+      "runtime_rerun_s": 21.5,
+      "status": "rerun completed",
+      "validation_auroc_committed": null,
+      "validation_auroc_rerun": null
+    },
+    {
+      "committed_record": "20261110T191604750902Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 7.969999993306942e-08,
+          "path": "metrics/error_cases[4]/p_ai"
+        },
+        {
+          "abs_diff": 4.899999994645299e-08,
+          "path": "metrics/error_cases[3]/p_ai"
+        },
+        {
+          "abs_diff": 3.270000004107487e-08,
+          "path": "metrics/error_cases[1]/p_ai"
+        }
+      ],
+      "max_abs_numeric_diff": 7.969999993306942e-08,
+      "metrics_identical": false,
+      "notebook": "08_error_analysis",
+      "numeric_diffs": 10,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T233111811752Z.json",
+      "runtime_committed_s": 8.6,
+      "runtime_rerun_s": 10.0,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.941252,
+      "validation_auroc_rerun": 0.941252
+    },
+    {
+      "committed_record": "20261110T193404498410Z.json",
+      "config_identical": true,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 0.0004999999999999449,
+          "path": "metrics/bootstrap_share_positive"
+        },
+        {
+          "abs_diff": 0.00011464930000004703,
+          "path": "metrics/subgroups[5]/auroc_style"
+        },
+        {
+          "abs_diff": 0.00011464930000000019,
+          "path": "metrics/subgroups[5]/gain"
+        }
+      ],
+      "max_abs_numeric_diff": 0.0004999999999999449,
+      "metrics_identical": false,
+      "notebook": "09_linear_style",
+      "numeric_diffs": 50,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T233158961041Z.json",
+      "runtime_committed_s": 33.7,
+      "runtime_rerun_s": 43.4,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.944372,
+      "validation_auroc_rerun": 0.944379
+    },
+    {
+      "committed_record": "20261110T201406444014Z.json",
+      "config_identical": true,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 0.0005602432043048111,
+          "path": "metrics/fold_results[49]/reference/std"
+        },
+        {
+          "abs_diff": 0.0003482081542083293,
+          "path": "metrics/fold_results[48]/reference/std"
+        },
+        {
+          "abs_diff": 0.0002292754264662522,
+          "path": "metrics/fold_results[49]/reference/mean"
+        }
+      ],
+      "max_abs_numeric_diff": 0.0005602432043048111,
+      "metrics_identical": false,
+      "notebook": "10_expanded_text",
+      "numeric_diffs": 128,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T234305226065Z.json",
+      "runtime_committed_s": 755.2,
+      "runtime_rerun_s": 662.5,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.977144,
+      "validation_auroc_rerun": 0.977144
+    },
+    {
+      "committed_record": "20261110T214338421386Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 0.001252811327231651,
+          "path": "metrics/fold_results[28]/reference/std"
+        },
+        {
+          "abs_diff": 0.00116060942347751,
+          "path": "metrics/final_results[2]/reference/std"
+        },
+        {
+          "abs_diff": 0.0006088356128319816,
+          "path": "metrics/fold_results[31]/reference/std"
+        }
+      ],
+      "max_abs_numeric_diff": 0.001252811327231651,
+      "metrics_identical": false,
+      "notebook": "11_formatting_rule",
+      "numeric_diffs": 181,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T235255795745Z.json",
+      "runtime_committed_s": 932.5,
+      "runtime_rerun_s": 587.2,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.9953900000000001,
+      "validation_auroc_rerun": 0.9953900000000001
+    },
+    {
+      "committed_record": "20261110T221222713672Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "12_seed_stress",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261110T235954119273Z.json",
+      "runtime_committed_s": 424.2,
+      "runtime_rerun_s": 414.9,
+      "status": "rerun completed",
+      "validation_auroc_committed": null,
+      "validation_auroc_rerun": null
+    },
+    {
+      "committed_record": "20261110T195146556937Z.json",
+      "config_identical": true,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 0.0004437087560206915,
+          "path": "metrics/top_importances/unique_fraction"
+        },
+        {
+          "abs_diff": 0.00030410212215255944,
+          "path": "metrics/top_importances/hapax_fraction"
+        },
+        {
+          "abs_diff": 9.031048175048295e-05,
+          "path": "metrics/top_importances/log_lines"
+        }
+      ],
+      "max_abs_numeric_diff": 0.0004437087560206915,
+      "metrics_identical": false,
+      "notebook": "13_rich_style",
+      "numeric_diffs": 22,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261111T000025548892Z.json",
+      "runtime_committed_s": 28.3,
+      "runtime_rerun_s": 28.0,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.998105,
+      "validation_auroc_rerun": 0.998105
+    },
+    {
+      "committed_record": "20261110T222137757157Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "14_style_augmentation",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261111T000204333669Z.json",
+      "runtime_committed_s": 97.8,
+      "runtime_rerun_s": 93.2,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.9977619999999999,
+      "validation_auroc_rerun": 0.9977619999999999
+    },
+    {
+      "committed_record": "20261110T202717584850Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [
+        {
+          "abs_diff": 0.000500000000000056,
+          "path": "metrics/frozen_confirmation[2]/accuracy_at_0_5"
+        },
+        {
+          "abs_diff": 1.6870784413924866e-06,
+          "path": "metrics/lexical_fold_results[7]/auroc"
+        },
+        {
+          "abs_diff": 1.687078441170442e-06,
+          "path": "metrics/lexical_fold_results[0]/auroc"
+        }
+      ],
+      "max_abs_numeric_diff": 0.000500000000000056,
+      "metrics_identical": false,
+      "notebook": "15_normalized_transfer",
+      "numeric_diffs": 13,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261111T001047578407Z.json",
+      "runtime_committed_s": 852.8,
+      "runtime_rerun_s": 519.9,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.998492,
+      "validation_auroc_rerun": 0.998492
+    },
+    {
+      "committed_record": "20261110T223101338301Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": false,
+      "notebook": "16_local_electra",
+      "numeric_diffs": 0,
+      "other_diff_paths": [
+        "metrics/blend_status"
+      ],
+      "other_diffs": 1,
+      "rerun_record": "20261111T002051212415Z.json",
+      "runtime_committed_s": 593.6,
+      "runtime_rerun_s": 598.0,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.987481,
+      "validation_auroc_rerun": 0.987481
+    },
+    {
+      "committed_record": "20261110T232156602149Z.json",
+      "config_identical": false,
+      "data_split_identical": true,
+      "failed_records": 0,
+      "largest_numeric_diffs": [],
+      "max_abs_numeric_diff": 0.0,
+      "metrics_identical": true,
+      "notebook": "17_final_blend",
+      "numeric_diffs": 0,
+      "other_diff_paths": [],
+      "other_diffs": 0,
+      "rerun_record": "20261111T002552415344Z.json",
+      "runtime_committed_s": 297.4,
+      "runtime_rerun_s": 295.0,
+      "status": "rerun completed",
+      "validation_auroc_committed": 0.998426,
+      "validation_auroc_rerun": 0.998426
+    }
+  ],
+  "rerun_commit": "d09956d4d4013879fb4276f4727c029373337c8e",
+  "rule": "latest completed committed record vs newest rerun record; metrics compared recursively; keys containing seconds, timing, utc, run_id, history skipped",
+  "source": "clean-kernel rerun at commit d09956d",
+  "utc": "2026-11-11T00:26:21.723343+00:00"
+}

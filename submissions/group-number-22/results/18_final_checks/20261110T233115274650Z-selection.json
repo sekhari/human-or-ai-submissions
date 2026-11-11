@@ -1,0 +1,88 @@
+{
+  "classical": {
+    "selected": "hist50_old50",
+    "weights": [
+      0.5,
+      0.5,
+      0.0
+    ]
+  },
+  "full_labels_used": false,
+  "neural_grid": [
+    {
+      "collapse": 0.95737,
+      "eligible": true,
+      "mean_auroc": 0.98495875,
+      "neural_weight": 0,
+      "original": 0.998426,
+      "remove_blank": 0.9912479999999999,
+      "wrap80": 0.9927910000000001
+    },
+    {
+      "collapse": 0.9772049999999999,
+      "eligible": true,
+      "mean_auroc": 0.99184,
+      "neural_weight": 0.1,
+      "original": 0.998948,
+      "remove_blank": 0.994612,
+      "wrap80": 0.9965949999999999
+    },
+    {
+      "collapse": 0.9873130000000001,
+      "eligible": true,
+      "mean_auroc": 0.9949054999999999,
+      "neural_weight": 0.25,
+      "original": 0.9990829999999999,
+      "remove_blank": 0.9953649999999999,
+      "wrap80": 0.997861
+    },
+    {
+      "collapse": 0.989754,
+      "eligible": true,
+      "mean_auroc": 0.994761,
+      "neural_weight": 0.5,
+      "original": 0.998143,
+      "remove_blank": 0.993931,
+      "wrap80": 0.9972159999999999
+    },
+    {
+      "collapse": 0.9894270000000001,
+      "eligible": false,
+      "mean_auroc": 0.9925235,
+      "neural_weight": 0.75,
+      "original": 0.994891,
+      "remove_blank": 0.991588,
+      "wrap80": 0.994188
+    },
+    {
+      "collapse": 0.987481,
+      "eligible": false,
+      "mean_auroc": 0.9874807500000001,
+      "neural_weight": 1,
+      "original": 0.987481,
+      "remove_blank": 0.987481,
+      "wrap80": 0.98748
+    }
+  ],
+  "reference_stats_8000_fit": {
+    "classical": {
+      "mean": -2.9013828376870755e-17,
+      "std": 0.98177653131565
+    },
+    "electra": {
+      "mean": 1.8893970122514332,
+      "std": 4.457626676841933
+    }
+  },
+  "rows": "frozen 2000 (selection, reused validation)",
+  "selected": {
+    "collapse": 0.9873130000000001,
+    "eligible": true,
+    "mean_auroc": 0.9949054999999999,
+    "neural_weight": 0.25,
+    "original": 0.9990829999999999,
+    "remove_blank": 0.9953649999999999,
+    "wrap80": 0.997861
+  },
+  "utc": "2026-11-10T23:31:15.405419+00:00"
+}

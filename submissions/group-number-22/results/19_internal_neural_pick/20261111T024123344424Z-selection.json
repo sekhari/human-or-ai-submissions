@@ -1,0 +1,81 @@
+{
+  "frozen2000_read": false,
+  "neural_grid_inner1600": [
+    {
+      "collapse": 0.9539234375,
+      "eligible": true,
+      "mean_auroc": 0.983171484375,
+      "neural_weight": 0,
+      "original": 0.9988484375,
+      "remove_blank": 0.9884328124999999,
+      "wrap80": 0.99148125
+    },
+    {
+      "collapse": 0.9716953125000001,
+      "eligible": true,
+      "mean_auroc": 0.9894175781250001,
+      "neural_weight": 0.1,
+      "original": 0.9990078125,
+      "remove_blank": 0.9922921875,
+      "wrap80": 0.9946750000000001
+    },
+    {
+      "collapse": 0.981715625,
+      "eligible": true,
+      "mean_auroc": 0.992171875,
+      "neural_weight": 0.25,
+      "original": 0.99855625,
+      "remove_blank": 0.9927921875,
+      "wrap80": 0.9956234374999999
+    },
+    {
+      "collapse": 0.9844812500000001,
+      "eligible": false,
+      "mean_auroc": 0.991471484375,
+      "neural_weight": 0.5,
+      "original": 0.9962421874999999,
+      "remove_blank": 0.9908375,
+      "wrap80": 0.994325
+    },
+    {
+      "collapse": 0.985296875,
+      "eligible": false,
+      "mean_auroc": 0.9892,
+      "neural_weight": 0.75,
+      "original": 0.9922312499999999,
+      "remove_blank": 0.988259375,
+      "wrap80": 0.9910125000000001
+    },
+    {
+      "collapse": 0.9830546875,
+      "eligible": false,
+      "mean_auroc": 0.983048828125,
+      "neural_weight": 1,
+      "original": 0.9830453125,
+      "remove_blank": 0.9830453125,
+      "wrap80": 0.9830500000000001
+    }
+  ],
+  "old_pick_frozen2000": 0.25,
+  "reference_stats_6400_fit": {
+    "classical": {
+      "mean": 8.289665250534503e-18,
+      "std": 0.9817406836990309
+    },
+    "electra": {
+      "mean": 1.8083717147403706,
+      "std": 4.214205926683064
+    }
+  },
+  "same_as_old": true,
+  "selected": {
+    "collapse": 0.981715625,
+    "eligible": true,
+    "mean_auroc": 0.992171875,
+    "neural_weight": 0.25,
+    "original": 0.99855625,
+    "remove_blank": 0.9927921875,
+    "wrap80": 0.9956234374999999
+  },
+  "utc": "2026-11-11T02:46:48.197655+00:00"
+}

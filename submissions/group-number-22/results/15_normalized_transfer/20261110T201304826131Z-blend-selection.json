@@ -1,0 +1,119 @@
+{
+  "grid": [
+    {
+      "candidate": "hist",
+      "collapse": 0.8098453125,
+      "collapse_pass": true,
+      "eligible": true,
+      "original": 0.9979750000000001,
+      "remove_blank": 0.9827703125,
+      "remove_blank_pass": true,
+      "weights": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "candidate": "hist75_old25",
+      "collapse": 0.8524265624999999,
+      "collapse_pass": true,
+      "eligible": true,
+      "original": 0.9988078125,
+      "remove_blank": 0.9879734375,
+      "remove_blank_pass": true,
+      "weights": [
+        0.75,
+        0.25,
+        0.0
+      ]
+    },
+    {
+      "candidate": "hist50_old50",
+      "collapse": 0.8802468749999999,
+      "collapse_pass": true,
+      "eligible": true,
+      "original": 0.99896875,
+      "remove_blank": 0.9886906249999999,
+      "remove_blank_pass": true,
+      "weights": [
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "candidate": "hist75_nb25",
+      "collapse": 0.9065374999999999,
+      "collapse_pass": true,
+      "eligible": true,
+      "original": 0.9989,
+      "remove_blank": 0.99208125,
+      "remove_blank_pass": true,
+      "weights": [
+        0.75,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "candidate": "hist50_old25_nb25",
+      "collapse": 0.931546875,
+      "collapse_pass": true,
+      "eligible": true,
+      "original": 0.999021875,
+      "remove_blank": 0.9924437500000001,
+      "remove_blank_pass": true,
+      "weights": [
+        0.5,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "candidate": "old_soft",
+      "collapse": 0.9084140625,
+      "collapse_pass": true,
+      "eligible": false,
+      "original": 0.9941484375,
+      "remove_blank": 0.9571484375,
+      "remove_blank_pass": false,
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "old_rule_active": true,
+  "old_specialist_rows": 4283,
+  "reference_stats": {
+    "nb": {
+      "mean": 1.1178308901970757,
+      "std": 7.647549706014709
+    },
+    "old_outer": {
+      "mean": 0.7155892752549255,
+      "std": 1.5186410783398567
+    },
+    "style": {
+      "mean": 0.3157539155431526,
+      "std": 6.328678393853542
+    }
+  },
+  "selected": {
+    "candidate": "hist50_old25_nb25",
+    "collapse": 0.931546875,
+    "collapse_pass": true,
+    "eligible": true,
+    "original": 0.999021875,
+    "remove_blank": 0.9924437500000001,
+    "remove_blank_pass": true,
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ]
+  },
+  "validation_inspected": false
+}

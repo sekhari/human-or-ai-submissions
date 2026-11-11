@@ -1,0 +1,9 @@
+[project]
+name = "cornell-text-authorship"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+ "numpy==2.5.4","pandas==2.3.3","scipy==1.18.1","scikit-learn==1.9.1",
+ "matplotlib==3.11.2","joblib==1.6.0","kagglehub==1.0.3","python-dotenv==1.2.4",
+ "jupyterlab>=4,<5","nbconvert>=7,<8","nbformat>=5,<6","ipykernel>=6,<8"
+]
