@@ -28,12 +28,13 @@ first. Tested on Python 3.12.10.
 python extract_features.py --model-size 0.5B --dtype float32 \
   --batch-size 2 --splits train test unlabeled --out features
 python train.py --seed 42
-python ensemble.py --npz-dir preds/usman
+python ensemble.py --npz-dir ../results/preds
 ```
 
-`preds/usman/` needs `base512_main.npz`, `base512_final_test.npz`
-and `deberta_main.npz`, made by `../train_deberta.py` (see the usage
-lines in its docstring; base512 uses `--tag base512`).
+`../results/preds/` needs `base512_main.npz`, `base512_final_test.npz`
+and `deberta_main.npz`. Those files come from `../train_deberta.py`
+runs (see the usage lines in its docstring; base512 uses
+`--tag base512`).
 Output: `blend/submission_w0.2.csv`.
 
 Seed 42 everywhere. Plain `train.py` defaults to the older seed

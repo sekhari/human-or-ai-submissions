@@ -21,10 +21,10 @@ Output: <out>/<split>_qwen<size>.parquet, built from per-chunk files in
 <out>/parts/qwen<size>/<split>/ so an interrupted run resumes where it stopped.
 
 Colab:
-  !git clone <repo> && %cd <repo>/submissions/group2
+  !git clone <repo> && %cd <repo>/submissions/group-number-2/lm_stack
   !pip install -r requirements.txt
   # put train.csv / unlabeled.csv / test.csv in data/
-  !python extract_features.py --model-size 1.5B --out features
+  !python extract_features.py --model-size 0.5B --out features
 """
 import argparse
 import json
