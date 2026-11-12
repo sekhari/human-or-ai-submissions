@@ -1,0 +1,53 @@
+{
+  "candidate": "neural_v3",
+  "val_auc": 0.9998049999999999,
+  "train_auc": 1.0,
+  "training_certificate": {
+    "method": "Exact clipped-logit/monotone-ensemble ranking certificate",
+    "min_positive_lower_bound": 0.5906481381914855,
+    "max_negative_upper_bound": 0.2526912617404711,
+    "training_rows": 8000,
+    "train_auc": 1.0
+  },
+  "bootstrap_95_ci": [
+    0.999586975,
+    0.999947
+  ],
+  "confusion_matrix_at_0.5": [
+    [
+      996,
+      4
+    ],
+    [
+      10,
+      990
+    ]
+  ],
+  "length_bins": [
+    {
+      "bin": "0 <= words < 150",
+      "n": 380,
+      "human": 146,
+      "ai": 234,
+      "auc": 0.9998829176911368
+    },
+    {
+      "bin": "150 <= words < 250",
+      "n": 1049,
+      "human": 605,
+      "ai": 444,
+      "auc": 0.9997766361402726
+    },
+    {
+      "bin": "words >= 250",
+      "n": 571,
+      "human": 249,
+      "ai": 322,
+      "auc": 0.9998877497567912
+    }
+  ],
+  "near_duplicate_audit": {
+    "count": 2,
+    "auc_excluding_high_similarity": 0.9998046092184368
+  }
+}

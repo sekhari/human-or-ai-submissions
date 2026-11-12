@@ -1,0 +1,278 @@
+{
+  "records": [
+    {
+      "fold": 0,
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 31
+      },
+      "train_rows": 6664,
+      "validation_rows": 3336,
+      "heldout_clusters": [
+        3,
+        6,
+        8
+      ],
+      "auc": 0.9941010054324768,
+      "seconds": 7.537221875041723
+    },
+    {
+      "fold": 0,
+      "config": {
+        "view": "augmented",
+        "kind": "hist"
+      },
+      "train_rows": 6664,
+      "validation_rows": 3336,
+      "heldout_clusters": [
+        3,
+        6,
+        8
+      ],
+      "auc": 0.9828760532306898,
+      "seconds": 23.997649958357215
+    },
+    {
+      "fold": 0,
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15
+      },
+      "train_rows": 6664,
+      "validation_rows": 3336,
+      "heldout_clusters": [
+        3,
+        6,
+        8
+      ],
+      "auc": 0.9489766037000058,
+      "seconds": 7.588335334323347
+    },
+    {
+      "fold": 0,
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true
+      },
+      "train_rows": 6664,
+      "validation_rows": 3336,
+      "heldout_clusters": [
+        3,
+        6,
+        8
+      ],
+      "auc": 0.9990016086197465,
+      "seconds": 4.887149040587246
+    },
+    {
+      "fold": 0,
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true
+      },
+      "train_rows": 6664,
+      "validation_rows": 3336,
+      "heldout_clusters": [
+        3,
+        6,
+        8
+      ],
+      "auc": 0.993286765807713,
+      "seconds": 6.034507041797042
+    },
+    {
+      "fold": 1,
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 31
+      },
+      "train_rows": 6503,
+      "validation_rows": 3497,
+      "heldout_clusters": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "auc": 0.998777356364756,
+      "seconds": 7.094582167454064
+    },
+    {
+      "fold": 1,
+      "config": {
+        "view": "augmented",
+        "kind": "hist"
+      },
+      "train_rows": 6503,
+      "validation_rows": 3497,
+      "heldout_clusters": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "auc": 0.9893751514794217,
+      "seconds": 22.69486429169774
+    },
+    {
+      "fold": 1,
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15
+      },
+      "train_rows": 6503,
+      "validation_rows": 3497,
+      "heldout_clusters": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "auc": 0.9524544579165602,
+      "seconds": 5.478967292234302
+    },
+    {
+      "fold": 1,
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true
+      },
+      "train_rows": 6503,
+      "validation_rows": 3497,
+      "heldout_clusters": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "auc": 0.9984154433679853,
+      "seconds": 5.425531709566712
+    },
+    {
+      "fold": 1,
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true
+      },
+      "train_rows": 6503,
+      "validation_rows": 3497,
+      "heldout_clusters": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "auc": 0.9911218320330667,
+      "seconds": 6.8004883751273155
+    },
+    {
+      "fold": 2,
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 31
+      },
+      "train_rows": 6833,
+      "validation_rows": 3167,
+      "heldout_clusters": [
+        1,
+        2,
+        10
+      ],
+      "auc": 0.9909908974851318,
+      "seconds": 7.34435979090631
+    },
+    {
+      "fold": 2,
+      "config": {
+        "view": "augmented",
+        "kind": "hist"
+      },
+      "train_rows": 6833,
+      "validation_rows": 3167,
+      "heldout_clusters": [
+        1,
+        2,
+        10
+      ],
+      "auc": 0.9758748625760573,
+      "seconds": 23.888179540634155
+    },
+    {
+      "fold": 2,
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15
+      },
+      "train_rows": 6833,
+      "validation_rows": 3167,
+      "heldout_clusters": [
+        1,
+        2,
+        10
+      ],
+      "auc": 0.932013371539252,
+      "seconds": 5.480161000043154
+    },
+    {
+      "fold": 2,
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true
+      },
+      "train_rows": 6833,
+      "validation_rows": 3167,
+      "heldout_clusters": [
+        1,
+        2,
+        10
+      ],
+      "auc": 0.9972088069486016,
+      "seconds": 5.498504583723843
+    },
+    {
+      "fold": 2,
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true
+      },
+      "train_rows": 6833,
+      "validation_rows": 3167,
+      "heldout_clusters": [
+        1,
+        2,
+        10
+      ],
+      "auc": 0.9884192633837148,
+      "seconds": 5.827452375553548
+    }
+  ],
+  "limitation": "Topic/style clusters are an unsupervised proxy; not external source validation."
+}

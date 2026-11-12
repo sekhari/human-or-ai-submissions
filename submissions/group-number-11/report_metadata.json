@@ -1,0 +1,41 @@
+{
+  "team": "Group Number 11",
+  "members": [
+    {
+      "name": "Ansh Raj Bhargava",
+      "netid": "ab3396"
+    },
+    {
+      "name": "Yilin Gao",
+      "netid": "yg695"
+    },
+    {
+      "name": "Yingzi Gu",
+      "netid": "yg667"
+    }
+  ],
+  "previous_public_auc": 0.92433,
+  "new_public_auc": 0.96962,
+  "private_auc": null,
+  "pr_url": "https://github.com/sekhari/human-or-ai-submissions/pull/13",
+  "contributions": "Yilin Gao (yg695) led model development and comparison (Q1): data inspection, the shared split, representations, baseline comparisons and tuning. Ansh Raj Bhargava (ab3396) led the unlabeled-data and improvement experiments (Q3 and Q5). Yingzi Gu (yg667) led learning curves, subgroup evaluation and error analysis (Q2 and Q4). All three members also trained models and explored stronger configurations. These roles were supplied by the team; the implementation and experiment execution in this rebuilt branch were assisted by Codex. Individual AI-use disclosures appear in Q6.3.",
+  "report_date": "November 11, 2026",
+  "repository_url": "https://github.com/hisylvia66/human-or-ai-submissions",
+  "kaggle_uploaded_by_user": true,
+  "public_score_source": "User-provided Kaggle submission screenshot, November 11, 2026",
+  "optimization_final": true,
+  "optimized_candidate": "medium_v4",
+  "optimized_public_auc": 0.98921,
+  "submission_branch": "submission/group-number-11",
+  "development_branch": "Group11retry",
+  "individual_ai_disclosures": [
+    {
+      "member": "Yilin Gao",
+      "statement": "OpenAI ChatGPT assisted Yilin Gao with baseline implementation, model comparison and hyperparameter-tuning code, result interpretation, GitHub/reproducibility setup, and drafting parts of Q1. Yilin reviewed the code, experimental outputs, and report content before committing or incorporating them."
+    },
+    {
+      "member": "Ansh Raj Bhargava",
+      "statement": "Ansh used Claude (Anthropic) for help with the experiment code for the unlabeled-data and robustness studies (Q3 and Q5), including the self-training and pseudo-labeling pipeline, the normalization and augmentation experiments, data loading and the Kaggle notebook setup, GitHub workflow and reproducibility setup, result interpretation, and drafting parts of Q3 and Q5. Ansh ran the experiments on Kaggle and reviewed the code, experimental outputs and report content before committing or incorporating them."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "candidate": "medium_v4",
+  "file": "output/submission.csv",
+  "submission_rows": 3000,
+  "columns": [
+    "id",
+    "label"
+  ],
+  "submission_sha256": "ac75c035ad713459781168a1f475ef14bedff26e59657742f438391c70ddeef6",
+  "matches_original_scored_csv": true,
+  "public_auc_user_reported": 0.98921,
+  "public_score_source": "Team-reported Kaggle result for the original scored CSV hash.",
+  "private_auc": null,
+  "validation_auc": 0.999822,
+  "split_seed": 20261023,
+  "neural_seed": 20261111,
+  "tree_refit_rows": 10000,
+  "neural_training_rows": 8000,
+  "pr_url": "https://github.com/sekhari/human-or-ai-submissions/pull/13",
+  "checks": "CSV schema, all test IDs, uniqueness, sample order, finite probability bounds, scored-file hash, validation-label alignment and validation AUC passed."
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 20261023,
+  "rows": 10000,
+  "class_counts": {
+    "0": 5000,
+    "1": 5000
+  },
+  "duplicate_texts": 0,
+  "cross_split_exact_duplicates": 0,
+  "data_sha256": {
+    "train_starter_2000.csv": "02bace8a566f4d4ae5e8b5893b2635bff862f6a35ff194d0a702dff9ed08e640",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d"
+  }
+}

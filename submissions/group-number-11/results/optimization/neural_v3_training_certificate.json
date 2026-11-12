@@ -1,0 +1,10 @@
+{
+  "candidate": "neural_v3",
+  "train_auc": 1.0,
+  "method": "Exact cross-class ranking certificate from clipped-logit bounds",
+  "minimum_positive_score_lower_bound": 0.5906481381921808,
+  "maximum_negative_score_upper_bound": 0.2526912617404711,
+  "neural_logit_clip": 1e-06,
+  "neural_weight": 0.1,
+  "training_rows": 8000
+}

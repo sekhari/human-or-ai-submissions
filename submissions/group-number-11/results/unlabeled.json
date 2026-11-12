@@ -1,0 +1,6 @@
+{
+  "method": "Vocabulary and IDF fit on training + unlabeled text; supervised LR C=4",
+  "baseline_auc": 0.9495359999999999,
+  "unlabeled_auc": 0.9494140000000001,
+  "seconds": 3.8283097501844168
+}

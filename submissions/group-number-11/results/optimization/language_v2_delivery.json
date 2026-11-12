@@ -1,0 +1,17 @@
+{
+  "file": "submission_language_v2.csv",
+  "sha256": "426b463d3d9789aa1b0159f1fecb45c0603721e06be61790f633a2898da68515",
+  "rows": 3000,
+  "public_auc": 0.98665,
+  "selected": {
+    "source": "raw_flat_lgb_31",
+    "method": "plain",
+    "baseline_weight": 0.25,
+    "val_auc": 0.9997849999999999,
+    "blank0_auc": 0.9993982558139535,
+    "objective": 0.9994949418604651,
+    "eligible": true
+  },
+  "public_source": "User-reported Kaggle public result, November 11, 2026",
+  "selected_as_best": true
+}

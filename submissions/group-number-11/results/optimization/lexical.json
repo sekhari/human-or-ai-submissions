@@ -1,0 +1,152 @@
+[
+  {
+    "name": "flat_char_lr_1",
+    "config": {
+      "analyzer": "char",
+      "ngram": [
+        2,
+        5
+      ],
+      "kind": "lr",
+      "C": 1
+    },
+    "val_auc": 0.950755,
+    "train_auc": 0.9915484375,
+    "seconds": 58.541706539690495
+  },
+  {
+    "name": "flat_char_lr_4",
+    "config": {
+      "analyzer": "char",
+      "ngram": [
+        2,
+        5
+      ],
+      "kind": "lr",
+      "C": 4
+    },
+    "val_auc": 0.9576070000000001,
+    "train_auc": 0.9996880625,
+    "seconds": 60.505913039669394
+  },
+  {
+    "name": "flat_char_lr_16",
+    "config": {
+      "analyzer": "char",
+      "ngram": [
+        2,
+        5
+      ],
+      "kind": "lr",
+      "C": 16
+    },
+    "val_auc": 0.95835,
+    "train_auc": 1.0,
+    "seconds": 72.11837049853057
+  },
+  {
+    "name": "flat_char_svm_1",
+    "config": {
+      "analyzer": "char",
+      "ngram": [
+        2,
+        5
+      ],
+      "kind": "svm",
+      "C": 1
+    },
+    "val_auc": 0.9578399999999999,
+    "train_auc": 0.9999999375,
+    "seconds": 57.149563499726355
+  },
+  {
+    "name": "flat_char_svm_4",
+    "config": {
+      "analyzer": "char",
+      "ngram": [
+        2,
+        5
+      ],
+      "kind": "svm",
+      "C": 4
+    },
+    "val_auc": 0.95583,
+    "train_auc": 1.0,
+    "seconds": 62.11521508265287
+  },
+  {
+    "name": "flat_char_wb_lr_1",
+    "config": {
+      "analyzer": "char_wb",
+      "ngram": [
+        3,
+        5
+      ],
+      "kind": "lr",
+      "C": 1
+    },
+    "val_auc": 0.933254,
+    "train_auc": 0.9840156875000001,
+    "seconds": 44.466260249726474
+  },
+  {
+    "name": "flat_char_wb_lr_4",
+    "config": {
+      "analyzer": "char_wb",
+      "ngram": [
+        3,
+        5
+      ],
+      "kind": "lr",
+      "C": 4
+    },
+    "val_auc": 0.938666,
+    "train_auc": 0.9986968125,
+    "seconds": 44.306443290784955
+  },
+  {
+    "name": "flat_char_wb_lr_16",
+    "config": {
+      "analyzer": "char_wb",
+      "ngram": [
+        3,
+        5
+      ],
+      "kind": "lr",
+      "C": 16
+    },
+    "val_auc": 0.936557,
+    "train_auc": 0.9999995,
+    "seconds": 47.45717466715723
+  },
+  {
+    "name": "flat_char_wb_svm_1",
+    "config": {
+      "analyzer": "char_wb",
+      "ngram": [
+        3,
+        5
+      ],
+      "kind": "svm",
+      "C": 1
+    },
+    "val_auc": 0.935045,
+    "train_auc": 0.9999890625,
+    "seconds": 41.22777291573584
+  },
+  {
+    "name": "flat_char_wb_svm_4",
+    "config": {
+      "analyzer": "char_wb",
+      "ngram": [
+        3,
+        5
+      ],
+      "kind": "svm",
+      "C": 4
+    },
+    "val_auc": 0.928967,
+    "train_auc": 1.0,
+    "seconds": 44.00005799997598
+  }
+]

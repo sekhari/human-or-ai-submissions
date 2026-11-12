@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "native": 0.997975,
+    "blank0_native": 0.9942936046511628,
+    "AI_only_flat": 0.986677,
+    "AI_only_single": 0.979959,
+    "AI_only_double": 0.999931
+  },
+  "robust_v1": {
+    "native": 0.995598,
+    "blank0_native": 0.9929447674418604,
+    "AI_only_flat": 0.9901960000000001,
+    "AI_only_single": 0.990091,
+    "AI_only_double": 0.99075
+  }
+}

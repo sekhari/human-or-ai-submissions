@@ -1,0 +1,16 @@
+{
+  "candidate": "neural_v3",
+  "file": "submission_neural_v3.csv",
+  "base": "language_v2",
+  "neural": "roberta_v1",
+  "neural_weight": 0.1,
+  "method": "logit",
+  "val_auc": 0.9998049999999999,
+  "public_auc": 0.98861,
+  "sha256": "33879f4ea252eee531343917540363821f821018fa5dfee1d9645e955b6ea677",
+  "rows": 3000,
+  "neural_training_rows": 8000,
+  "note": "The neural model uses only the original training partition; tree components are refit on all 10,000 labels after validation selection.",
+  "public_source": "User-reported Kaggle public result, November 11, 2026",
+  "selected_as_best": true
+}

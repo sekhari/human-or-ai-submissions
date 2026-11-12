@@ -1,0 +1,26 @@
+{
+  "file": "submission_robust_v1.csv",
+  "sha256": "dc61f64c55d717936d4f6a4f8df97728622f442053590ab36fc98e98def18318",
+  "rows": 3000,
+  "public_auc": 0.95899,
+  "baseline_public_auc": 0.96962,
+  "validation": {
+    "rich_name": "augmented_hist",
+    "lexical_name": "flat_char_lr_16",
+    "weights": [
+      0,
+      0.75,
+      0.25
+    ],
+    "aucs": {
+      "raw": 0.995598,
+      "flat": 0.9848769999999999,
+      "single": 0.9850469999999999,
+      "double": 0.985161
+    },
+    "objective": 0.9902374999999999,
+    "eligible": true
+  },
+  "public_source": "User-reported Kaggle result, November 11, 2026",
+  "selected_as_best": false
+}

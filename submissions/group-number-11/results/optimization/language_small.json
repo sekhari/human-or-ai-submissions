@@ -1,0 +1,320 @@
+{
+  "records": [
+    {
+      "name": "native_lgb_7",
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 7,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.9996799999999999,
+        "flat": 0.959697,
+        "single": 0.9787880000000001,
+        "double": 0.962422
+      },
+      "AI_only_aucs": {
+        "flat": 0.99371,
+        "single": 0.998698,
+        "double": 0.999999
+      },
+      "native_train_auc": 0.99999975,
+      "seconds": 5.460317166522145,
+      "format_stress_verified": false
+    },
+    {
+      "name": "native_lgb_15",
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.999739,
+        "flat": 0.9631750000000001,
+        "single": 0.981495,
+        "double": 0.965722
+      },
+      "AI_only_aucs": {
+        "flat": 0.9942010000000001,
+        "single": 0.998725,
+        "double": 1.0
+      },
+      "native_train_auc": 1.0,
+      "seconds": 9.047084500081837,
+      "format_stress_verified": false
+    },
+    {
+      "name": "native_lgb_31",
+      "config": {
+        "view": "native",
+        "kind": "lgb",
+        "leaves": 31,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.9997729999999999,
+        "flat": 0.964912,
+        "single": 0.9817600000000001,
+        "double": 0.95465
+      },
+      "AI_only_aucs": {
+        "flat": 0.9947050000000001,
+        "single": 0.998649,
+        "double": 1.0
+      },
+      "native_train_auc": 1.0,
+      "seconds": 12.22877295780927,
+      "format_stress_verified": false
+    },
+    {
+      "name": "native_cat_5",
+      "config": {
+        "view": "native",
+        "kind": "cat",
+        "depth": 5,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.999617,
+        "flat": 0.9560850000000001,
+        "single": 0.984221,
+        "double": 0.973062
+      },
+      "AI_only_aucs": {
+        "flat": 0.9943839999999999,
+        "single": 0.9982030000000001,
+        "double": 0.999993
+      },
+      "native_train_auc": 1.0,
+      "seconds": 43.798881417140365,
+      "format_stress_verified": false
+    },
+    {
+      "name": "raw_flat_lgb_7",
+      "config": {
+        "view": "raw_flat",
+        "kind": "lgb",
+        "leaves": 7,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.999262,
+        "flat": 0.995466,
+        "single": 0.995422,
+        "double": 0.9914980000000001
+      },
+      "AI_only_aucs": {
+        "flat": 0.9974,
+        "single": 0.9975209999999999,
+        "double": 0.999883
+      },
+      "native_train_auc": 0.9999707499999999,
+      "seconds": 9.404397209174931,
+      "format_stress_verified": false
+    },
+    {
+      "name": "raw_flat_lgb_15",
+      "config": {
+        "view": "raw_flat",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.999517,
+        "flat": 0.996385,
+        "single": 0.99653,
+        "double": 0.9928389999999999
+      },
+      "AI_only_aucs": {
+        "flat": 0.99782,
+        "single": 0.997561,
+        "double": 0.9999
+      },
+      "native_train_auc": 1.0,
+      "seconds": 15.972813500091434,
+      "format_stress_verified": false
+    },
+    {
+      "name": "raw_flat_lgb_31",
+      "config": {
+        "view": "raw_flat",
+        "kind": "lgb",
+        "leaves": 31,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.9995809999999999,
+        "flat": 0.9968319999999999,
+        "single": 0.996759,
+        "double": 0.993474
+      },
+      "AI_only_aucs": {
+        "flat": 0.9981019999999999,
+        "single": 0.997652,
+        "double": 0.999926
+      },
+      "native_train_auc": 1.0,
+      "seconds": 23.18755100015551,
+      "format_stress_verified": false
+    },
+    {
+      "name": "raw_flat_cat_5",
+      "config": {
+        "view": "raw_flat",
+        "kind": "cat",
+        "depth": 5,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.999271,
+        "flat": 0.996452,
+        "single": 0.99624,
+        "double": 0.9926470000000001
+      },
+      "AI_only_aucs": {
+        "flat": 0.998039,
+        "single": 0.9970939999999999,
+        "double": 0.999857
+      },
+      "native_train_auc": 0.9999999375,
+      "seconds": 36.283683749847114,
+      "format_stress_verified": false
+    },
+    {
+      "name": "canonical_lgb_7",
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 7,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.9961399999999999,
+        "flat": 0.9961399999999999,
+        "single": 0.9961399999999999,
+        "double": 0.9961399999999999
+      },
+      "AI_only_aucs": {
+        "flat": 0.9961399999999999,
+        "single": 0.9961399999999999,
+        "double": 0.9961399999999999
+      },
+      "native_train_auc": 0.9995094375,
+      "seconds": 1.5731314588338137,
+      "format_stress_verified": false
+    },
+    {
+      "name": "canonical_lgb_15",
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 15,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.996424,
+        "flat": 0.996424,
+        "single": 0.996424,
+        "double": 0.996424
+      },
+      "AI_only_aucs": {
+        "flat": 0.996424,
+        "single": 0.996424,
+        "double": 0.996424
+      },
+      "native_train_auc": 1.0,
+      "seconds": 2.562046709470451,
+      "format_stress_verified": false
+    },
+    {
+      "name": "canonical_lgb_31",
+      "config": {
+        "view": "canonical",
+        "kind": "lgb",
+        "leaves": 31,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.996609,
+        "flat": 0.996609,
+        "single": 0.996609,
+        "double": 0.996609
+      },
+      "AI_only_aucs": {
+        "flat": 0.996609,
+        "single": 0.996609,
+        "double": 0.996609
+      },
+      "native_train_auc": 1.0,
+      "seconds": 3.6723378747701645,
+      "format_stress_verified": false
+    },
+    {
+      "name": "canonical_cat_5",
+      "config": {
+        "view": "canonical",
+        "kind": "cat",
+        "depth": 5,
+        "lm": true,
+        "lm_dirs": [
+          "lm"
+        ]
+      },
+      "aucs": {
+        "raw": 0.996441,
+        "flat": 0.996441,
+        "single": 0.996441,
+        "double": 0.996441
+      },
+      "AI_only_aucs": {
+        "flat": 0.996441,
+        "single": 0.996441,
+        "double": 0.996441
+      },
+      "native_train_auc": 0.9999781875,
+      "seconds": 13.746218167245388,
+      "format_stress_verified": false
+    }
+  ],
+  "lm_dirs": [
+    "lm"
+  ],
+  "stress_caveat": "LM features retained native format for these style-view diagnostics. Do not treat them as full-pipeline format invariance."
+}

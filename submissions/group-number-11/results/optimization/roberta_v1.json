@@ -1,0 +1,47 @@
+{
+  "pretrained_model": "FacebookAI/roberta-base",
+  "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "seed": 20261111,
+  "split_seed": 20261023,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "max_length": 192,
+  "train_last_blocks": 4,
+  "history": [
+    {
+      "epoch": 1,
+      "step": 250,
+      "val_auc": 0.966928,
+      "log_loss": 0.3298526678796269,
+      "training_loss": 0.4871938566043973,
+      "seconds": 320.97403866704553
+    },
+    {
+      "epoch": 1,
+      "step": 500,
+      "val_auc": 0.9784020000000001,
+      "log_loss": 0.22485986726349502,
+      "training_loss": 0.376794046625495,
+      "seconds": 673.2377686258405
+    },
+    {
+      "epoch": 2,
+      "step": 750,
+      "val_auc": 0.9795830000000001,
+      "log_loss": 0.32538903176477596,
+      "training_loss": 0.200374237626791,
+      "seconds": 1056.519766708836
+    },
+    {
+      "epoch": 2,
+      "step": 861,
+      "val_auc": 0.9791679999999999,
+      "log_loss": 0.3997978480758583,
+      "training_loss": 0.19261048378428017,
+      "seconds": 1346.3606341676787
+    }
+  ],
+  "normalization": "canonical whitespace",
+  "inference": "mean of first and last token-window probabilities",
+  "best_validation_auc": 0.9795830000000001
+}

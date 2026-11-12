@@ -1,0 +1,642 @@
+{
+  "name": "robust_v1",
+  "selection_rule": "Native AUC >= .994; maximize average(native AUC, worst of flat/single/double AUC).",
+  "selected": {
+    "rich_name": "augmented_hist",
+    "lexical_name": "flat_char_lr_16",
+    "weights": [
+      0,
+      0.75,
+      0.25
+    ],
+    "aucs": {
+      "raw": 0.995598,
+      "flat": 0.9848769999999999,
+      "single": 0.9850469999999999,
+      "double": 0.985161
+    },
+    "objective": 0.9902374999999999,
+    "eligible": true
+  },
+  "all_candidates": [
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        0.5,
+        0.5
+      ],
+      "aucs": {
+        "raw": 0.9856619999999999,
+        "flat": 0.9856619999999999,
+        "single": 0.9856619999999999,
+        "double": 0.9856619999999999
+      },
+      "objective": 0.9856619999999999,
+      "eligible": false
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        0.75,
+        0.25
+      ],
+      "aucs": {
+        "raw": 0.985136,
+        "flat": 0.985136,
+        "single": 0.985136,
+        "double": 0.985136
+      },
+      "objective": 0.985136,
+      "eligible": false
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        1.0,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.9813689999999999,
+        "flat": 0.9813689999999999,
+        "single": 0.9813689999999999,
+        "double": 0.9813689999999999
+      },
+      "objective": 0.9813689999999999,
+      "eligible": false
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.375,
+        0.375
+      ],
+      "aucs": {
+        "raw": 0.995752,
+        "flat": 0.9813029999999999,
+        "single": 0.982756,
+        "double": 0.9856189999999998
+      },
+      "objective": 0.9885275,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.5625,
+        0.1875
+      ],
+      "aucs": {
+        "raw": 0.994802,
+        "flat": 0.9804129999999999,
+        "single": 0.982059,
+        "double": 0.9854339999999999
+      },
+      "objective": 0.9876075,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.75,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.992928,
+        "flat": 0.976663,
+        "single": 0.9779329999999999,
+        "double": 0.982569
+      },
+      "objective": 0.9847954999999999,
+      "eligible": false
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "aucs": {
+        "raw": 0.997954,
+        "flat": 0.961971,
+        "single": 0.9697469999999999,
+        "double": 0.985264
+      },
+      "objective": 0.9799625000000001,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.375,
+        0.125
+      ],
+      "aucs": {
+        "raw": 0.9978539999999999,
+        "flat": 0.96512,
+        "single": 0.971241,
+        "double": 0.9856480000000001
+      },
+      "objective": 0.981487,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.9975999999999999,
+        "flat": 0.9659479999999999,
+        "single": 0.9706539999999999,
+        "double": 0.983732
+      },
+      "objective": 0.9817739999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.125,
+        0.125
+      ],
+      "aucs": {
+        "raw": 0.998139,
+        "flat": 0.9099240000000001,
+        "single": 0.9296389999999999,
+        "double": 0.983122
+      },
+      "objective": 0.9540315,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.1875,
+        0.0625
+      ],
+      "aucs": {
+        "raw": 0.998201,
+        "flat": 0.9120820000000001,
+        "single": 0.9323210000000001,
+        "double": 0.985281
+      },
+      "objective": 0.9551415000000001,
+      "eligible": true
+    },
+    {
+      "rich_name": "canonical_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.25,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.998178,
+        "flat": 0.913601,
+        "single": 0.9338710000000001,
+        "double": 0.9846539999999999
+      },
+      "objective": 0.9558895000000001,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        0.5,
+        0.5
+      ],
+      "aucs": {
+        "raw": 0.994941,
+        "flat": 0.9854170000000001,
+        "single": 0.9855099999999998,
+        "double": 0.985751
+      },
+      "objective": 0.990179,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        0.75,
+        0.25
+      ],
+      "aucs": {
+        "raw": 0.995598,
+        "flat": 0.9848769999999999,
+        "single": 0.9850469999999999,
+        "double": 0.985161
+      },
+      "objective": 0.9902374999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        1.0,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.9947419999999999,
+        "flat": 0.981066,
+        "single": 0.981274,
+        "double": 0.9813009999999999
+      },
+      "objective": 0.9879039999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.375,
+        0.375
+      ],
+      "aucs": {
+        "raw": 0.9976959999999999,
+        "flat": 0.9805689999999999,
+        "single": 0.982378,
+        "double": 0.985695
+      },
+      "objective": 0.9891325,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.5625,
+        0.1875
+      ],
+      "aucs": {
+        "raw": 0.9976659999999999,
+        "flat": 0.9794969999999998,
+        "single": 0.9814470000000001,
+        "double": 0.985405
+      },
+      "objective": 0.9885814999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.75,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.9973949999999998,
+        "flat": 0.9758110000000001,
+        "single": 0.9775719999999999,
+        "double": 0.982428
+      },
+      "objective": 0.9866029999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "aucs": {
+        "raw": 0.998194,
+        "flat": 0.9613510000000001,
+        "single": 0.9693829999999999,
+        "double": 0.985388
+      },
+      "objective": 0.9797725,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.375,
+        0.125
+      ],
+      "aucs": {
+        "raw": 0.998209,
+        "flat": 0.964299,
+        "single": 0.970841,
+        "double": 0.985747
+      },
+      "objective": 0.9812540000000001,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.998181,
+        "flat": 0.9647140000000001,
+        "single": 0.970172,
+        "double": 0.9836929999999999
+      },
+      "objective": 0.9814475,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.125,
+        0.125
+      ],
+      "aucs": {
+        "raw": 0.998266,
+        "flat": 0.9095689999999998,
+        "single": 0.929524,
+        "double": 0.983306
+      },
+      "objective": 0.9539175,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.1875,
+        0.0625
+      ],
+      "aucs": {
+        "raw": 0.998335,
+        "flat": 0.911661,
+        "single": 0.9321389999999999,
+        "double": 0.985382
+      },
+      "objective": 0.954998,
+      "eligible": true
+    },
+    {
+      "rich_name": "augmented_hist",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.25,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.9983199999999999,
+        "flat": 0.9130119999999998,
+        "single": 0.9337279999999999,
+        "double": 0.9846520000000001
+      },
+      "objective": 0.9556659999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        0.5,
+        0.5
+      ],
+      "aucs": {
+        "raw": 0.99749,
+        "flat": 0.9429259999999999,
+        "single": 0.961583,
+        "double": 0.958581
+      },
+      "objective": 0.970208,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        0.75,
+        0.25
+      ],
+      "aucs": {
+        "raw": 0.998172,
+        "flat": 0.904406,
+        "single": 0.9287690000000001,
+        "double": 0.958978
+      },
+      "objective": 0.951289,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0,
+        1.0,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.998182,
+        "flat": 0.851206,
+        "single": 0.8759370000000001,
+        "double": 0.8499430000000001
+      },
+      "objective": 0.9240625,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.375,
+        0.375
+      ],
+      "aucs": {
+        "raw": 0.9978149999999999,
+        "flat": 0.920549,
+        "single": 0.9472889999999999,
+        "double": 0.9590410000000001
+      },
+      "objective": 0.959182,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.5625,
+        0.1875
+      ],
+      "aucs": {
+        "raw": 0.998373,
+        "flat": 0.8983650000000001,
+        "single": 0.9206099999999999,
+        "double": 0.959478
+      },
+      "objective": 0.948369,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.25,
+        0.75,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.998663,
+        "flat": 0.8698299999999999,
+        "single": 0.8850849999999999,
+        "double": 0.94903
+      },
+      "objective": 0.9342465,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "aucs": {
+        "raw": 0.9981039999999999,
+        "flat": 0.903691,
+        "single": 0.9266619999999999,
+        "double": 0.9590839999999999
+      },
+      "objective": 0.9508975,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.375,
+        0.125
+      ],
+      "aucs": {
+        "raw": 0.9984849999999998,
+        "flat": 0.892277,
+        "single": 0.9106719999999999,
+        "double": 0.958491
+      },
+      "objective": 0.9453809999999999,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.998694,
+        "flat": 0.8760049999999999,
+        "single": 0.8904749999999999,
+        "double": 0.948032
+      },
+      "objective": 0.9373495,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.125,
+        0.125
+      ],
+      "aucs": {
+        "raw": 0.9982119999999999,
+        "flat": 0.891234,
+        "single": 0.9075430000000001,
+        "double": 0.9574590000000001
+      },
+      "objective": 0.944723,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.1875,
+        0.0625
+      ],
+      "aucs": {
+        "raw": 0.99844,
+        "flat": 0.886013,
+        "single": 0.901349,
+        "double": 0.955343
+      },
+      "objective": 0.9422265000000001,
+      "eligible": true
+    },
+    {
+      "rich_name": "native_lgb_7",
+      "lexical_name": "flat_char_lr_16",
+      "weights": [
+        0.75,
+        0.25,
+        0.0
+      ],
+      "aucs": {
+        "raw": 0.998576,
+        "flat": 0.878533,
+        "single": 0.8932359999999998,
+        "double": 0.9476029999999999
+      },
+      "objective": 0.9385545,
+      "eligible": true
+    }
+  ],
+  "baseline_aucs": {
+    "raw": 0.997975,
+    "flat": 0.877512,
+    "single": 0.890076,
+    "double": 0.947324
+  },
+  "limitation": "Repeated holdout selection and synthetic transforms; no guarantee of hidden-domain robustness."
+}

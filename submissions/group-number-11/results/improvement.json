@@ -1,0 +1,44 @@
+{
+  "hypothesis": "Whitespace augmentation reduces dependence on paragraph formatting.",
+  "selection_rule": "Original AUC within 0.0005 of baseline; collapsed AUC >= 0.98; then maximize original AUC.",
+  "original_baseline_auc": 0.997975,
+  "candidates": [
+    {
+      "leaves": 15,
+      "style_weight": 0.75,
+      "val_auc": 0.9973859999999999,
+      "collapsed_auc": 0.9764039999999999,
+      "train_auc": 0.9999895625,
+      "seconds": 5.561895126476884,
+      "eligible": false
+    },
+    {
+      "leaves": 15,
+      "style_weight": 1.0,
+      "val_auc": 0.996381,
+      "collapsed_auc": 0.969506,
+      "train_auc": 0.9999246875,
+      "seconds": 5.561895126476884,
+      "eligible": false
+    },
+    {
+      "leaves": 31,
+      "style_weight": 0.75,
+      "val_auc": 0.997503,
+      "collapsed_auc": 0.9786020000000001,
+      "train_auc": 1.0,
+      "seconds": 6.5672747092321515,
+      "eligible": false
+    },
+    {
+      "leaves": 31,
+      "style_weight": 1.0,
+      "val_auc": 0.996402,
+      "collapsed_auc": 0.972425,
+      "train_auc": 1.0,
+      "seconds": 6.5672747092321515,
+      "eligible": false
+    }
+  ],
+  "selected": null
+}

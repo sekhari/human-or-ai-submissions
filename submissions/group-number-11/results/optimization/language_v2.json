@@ -1,0 +1,188 @@
+{
+  "selected": {
+    "source": "raw_flat_lgb_31",
+    "method": "plain",
+    "baseline_weight": 0.25,
+    "val_auc": 0.9997849999999999,
+    "blank0_auc": 0.9993982558139535,
+    "objective": 0.9994949418604651,
+    "eligible": true
+  },
+  "config": {
+    "view": "raw_flat",
+    "kind": "lgb",
+    "leaves": 31,
+    "lm": true,
+    "lm_dirs": [
+      "lm"
+    ]
+  },
+  "all_candidates": [
+    {
+      "source": "native_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.25,
+      "val_auc": 0.999749,
+      "blank0_auc": 0.9992761627906978,
+      "objective": 0.9993943720930233,
+      "eligible": true
+    },
+    {
+      "source": "native_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.5,
+      "val_auc": 0.99963,
+      "blank0_auc": 0.9989302325581396,
+      "objective": 0.9991051744186048,
+      "eligible": true
+    },
+    {
+      "source": "native_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.75,
+      "val_auc": 0.9993940000000001,
+      "blank0_auc": 0.9982412790697675,
+      "objective": 0.9985294593023256,
+      "eligible": true
+    },
+    {
+      "source": "native_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.25,
+      "val_auc": 0.9997539999999999,
+      "blank0_auc": 0.9992877906976744,
+      "objective": 0.9994043430232558,
+      "eligible": true
+    },
+    {
+      "source": "native_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.5,
+      "val_auc": 0.999674,
+      "blank0_auc": 0.9990523255813953,
+      "objective": 0.9992077441860465,
+      "eligible": true
+    },
+    {
+      "source": "native_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.75,
+      "val_auc": 0.999448,
+      "blank0_auc": 0.9983953488372093,
+      "objective": 0.998658511627907,
+      "eligible": true
+    },
+    {
+      "source": "raw_flat_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.25,
+      "val_auc": 0.9997849999999999,
+      "blank0_auc": 0.9993982558139535,
+      "objective": 0.9994949418604651,
+      "eligible": true
+    },
+    {
+      "source": "raw_flat_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.5,
+      "val_auc": 0.999748,
+      "blank0_auc": 0.9992848837209302,
+      "objective": 0.9994006627906976,
+      "eligible": true
+    },
+    {
+      "source": "raw_flat_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.75,
+      "val_auc": 0.999536,
+      "blank0_auc": 0.9986598837209303,
+      "objective": 0.9988789127906977,
+      "eligible": true
+    },
+    {
+      "source": "raw_flat_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.25,
+      "val_auc": 0.9997499999999999,
+      "blank0_auc": 0.9993343023255814,
+      "objective": 0.9994382267441859,
+      "eligible": true
+    },
+    {
+      "source": "raw_flat_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.5,
+      "val_auc": 0.999709,
+      "blank0_auc": 0.9991540697674418,
+      "objective": 0.9992928023255814,
+      "eligible": true
+    },
+    {
+      "source": "raw_flat_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.75,
+      "val_auc": 0.9994230000000001,
+      "blank0_auc": 0.9983226744186047,
+      "objective": 0.9985977558139536,
+      "eligible": true
+    },
+    {
+      "source": "canonical_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.25,
+      "val_auc": 0.999163,
+      "blank0_auc": 0.9988953488372093,
+      "objective": 0.998962261627907,
+      "eligible": true
+    },
+    {
+      "source": "canonical_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.5,
+      "val_auc": 0.999447,
+      "blank0_auc": 0.9987441860465116,
+      "objective": 0.9989198895348836,
+      "eligible": true
+    },
+    {
+      "source": "canonical_lgb_31",
+      "method": "plain",
+      "baseline_weight": 0.75,
+      "val_auc": 0.9993839999999999,
+      "blank0_auc": 0.9983255813953488,
+      "objective": 0.9985901860465116,
+      "eligible": true
+    },
+    {
+      "source": "canonical_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.25,
+      "val_auc": 0.9996240000000001,
+      "blank0_auc": 0.9989680232558139,
+      "objective": 0.9991320174418605,
+      "eligible": true
+    },
+    {
+      "source": "canonical_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.5,
+      "val_auc": 0.999593,
+      "blank0_auc": 0.9988168604651162,
+      "objective": 0.9990108953488371,
+      "eligible": true
+    },
+    {
+      "source": "canonical_lgb_31",
+      "method": "conditional_rank",
+      "baseline_weight": 0.75,
+      "val_auc": 0.999294,
+      "blank0_auc": 0.9979476744186047,
+      "objective": 0.9982842558139535,
+      "eligible": true
+    }
+  ],
+  "baseline_native_auc": 0.997975,
+  "baseline_blank0_auc": 0.9942936046511628,
+  "selection_rule": "At least 25% baseline, native AUC >= .9975; maximize .75*blank0 AUC + .25*overall native AUC.",
+  "calibration_note": "conditional_rank maps each new-score rank to the baseline score distribution within the same observed blank-line group; it uses no true labels at inference."
+}

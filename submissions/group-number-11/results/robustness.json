@@ -1,0 +1,145 @@
+{
+  "secondary_splits": [
+    {
+      "seed": 20261024,
+      "ensemble_auc": 0.9989410000000001,
+      "components": {
+        "word": 0.9507050000000001,
+        "char": 0.9776790000000001,
+        "style": 0.9977440000000001
+      },
+      "seconds": 18.27448633313179
+    },
+    {
+      "seed": 20261025,
+      "ensemble_auc": 0.997419,
+      "components": {
+        "word": 0.947983,
+        "char": 0.9764430000000001,
+        "style": 0.9971879999999999
+      },
+      "seconds": 18.533674749545753
+    },
+    {
+      "seed": 20261026,
+      "ensemble_auc": 0.9988779999999999,
+      "components": {
+        "word": 0.952882,
+        "char": 0.9768499999999999,
+        "style": 0.999001
+      },
+      "seconds": 18.9167373329401
+    }
+  ],
+  "top_style_features": [
+    [
+      "blank_lines_per_word",
+      76206.76005831733
+    ],
+    [
+      "type_token_ratio",
+      31688.18119016476
+    ],
+    [
+      "character_'\\n'",
+      10432.622212100774
+    ],
+    [
+      "hapax_ratio",
+      8981.556492581964
+    ],
+    [
+      "lines_per_word",
+      8373.969708304852
+    ],
+    [
+      "log_words",
+      6750.816345460713
+    ],
+    [
+      "word_length_std",
+      5182.512931903824
+    ],
+    [
+      "log_characters",
+      2779.2637512069196
+    ],
+    [
+      "sentence_words_std",
+      2634.9759387578815
+    ],
+    [
+      "character_'>'",
+      2021.308475393802
+    ],
+    [
+      "contractions",
+      1819.7135508842766
+    ],
+    [
+      "function_was",
+      1469.1221108064055
+    ],
+    [
+      "list_start",
+      1371.2684608623385
+    ],
+    [
+      "function_we",
+      1329.9380616731942
+    ],
+    [
+      "character_','",
+      1276.7598701231182
+    ],
+    [
+      "multiple_spaces",
+      1275.0966646187007
+    ],
+    [
+      "repeated_type_ratio",
+      1091.471352495253
+    ],
+    [
+      "function_our",
+      1071.895046852529
+    ],
+    [
+      "function_this",
+      1050.3507013879716
+    ],
+    [
+      "character_'['",
+      949.3395102359354
+    ]
+  ],
+  "ablation": {
+    "dropped": [
+      "log_characters",
+      "log_words",
+      "sentence_words_mean",
+      "sentence_words_std",
+      "sentence_words_max",
+      "sentences_per_word",
+      "lines_per_word",
+      "blank_lines_per_word"
+    ],
+    "style_baseline_auc": 0.9972340000000001,
+    "ablated_auc": 0.996225
+  },
+  "stress_tests": [
+    {
+      "transformation": "collapse_whitespace",
+      "auc": 0.877512
+    },
+    {
+      "transformation": "ascii_punctuation",
+      "auc": 0.9977969999999999
+    },
+    {
+      "transformation": "remove_bracketed_references",
+      "auc": 0.997425
+    }
+  ],
+  "limitation": "Secondary splits overlap selection data; these are stability diagnostics, not independent external evaluations."
+}

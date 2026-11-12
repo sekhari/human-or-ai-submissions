@@ -1,0 +1,14 @@
+{
+  "submission_rows": 3000,
+  "columns": [
+    "id",
+    "label"
+  ],
+  "submission_sha256": "c37fac07342d8939b47bbd063a1db38ee2a8ff78b6c53948e49f90b47b28f9c9",
+  "model_sha256": "e6ce74dd2f84d8a16d597f1cc61098410d74828d2b91acaaf775f50b46adece6",
+  "validation_auc": 0.997975,
+  "kaggle_uploaded": true,
+  "public_auc_user_reported": 0.96962,
+  "prior_public_auc_user_reported": 0.92433,
+  "checks": "IDs, sample order, finite [0,1] probabilities, data hashes, fixed split, validation labels/AUC and blend weights passed."
+}

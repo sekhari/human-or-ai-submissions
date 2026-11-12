@@ -1,0 +1,70 @@
+{
+  "candidate": "medium_v4",
+  "first": "neural_v3",
+  "second": "language_medium",
+  "selected": {
+    "method": "logit",
+    "second_weight": 0.25,
+    "val_auc": 0.999822,
+    "blank0_auc": 0.9995377906976743,
+    "objective": 0.9996088430232557,
+    "eligible": true
+  },
+  "grid": [
+    {
+      "method": "plain",
+      "second_weight": 0.25,
+      "val_auc": 0.999818,
+      "blank0_auc": 0.9995261627906976,
+      "objective": 0.9995991220930232,
+      "eligible": true
+    },
+    {
+      "method": "plain",
+      "second_weight": 0.5,
+      "val_auc": 0.9998269999999999,
+      "blank0_auc": 0.9995145348837209,
+      "objective": 0.9995926511627906,
+      "eligible": true
+    },
+    {
+      "method": "plain",
+      "second_weight": 0.75,
+      "val_auc": 0.999806,
+      "blank0_auc": 0.9994418604651162,
+      "objective": 0.9995328953488372,
+      "eligible": true
+    },
+    {
+      "method": "logit",
+      "second_weight": 0.25,
+      "val_auc": 0.999822,
+      "blank0_auc": 0.9995377906976743,
+      "objective": 0.9996088430232557,
+      "eligible": true
+    },
+    {
+      "method": "logit",
+      "second_weight": 0.5,
+      "val_auc": 0.999827,
+      "blank0_auc": 0.9995348837209302,
+      "objective": 0.9996079127906976,
+      "eligible": true
+    },
+    {
+      "method": "logit",
+      "second_weight": 0.75,
+      "val_auc": 0.999819,
+      "blank0_auc": 0.9994883720930232,
+      "objective": 0.9995710290697674,
+      "eligible": true
+    }
+  ],
+  "file": "submission_medium_v4.csv",
+  "public_auc": 0.98921,
+  "sha256": "ac75c035ad713459781168a1f475ef14bedff26e59657742f438391c70ddeef6",
+  "rows": 3000,
+  "rule": "Retain >=25% of the currently scored best; native AUC within .00005 of parent, then maximize .75*blank0 AUC + .25*overall.",
+  "public_source": "User-reported Kaggle result, November 11, 2026",
+  "selected_as_best": true
+}

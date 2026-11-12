@@ -1,0 +1,62 @@
+[
+  {
+    "method": "plain",
+    "neural_weight": 0,
+    "val_auc": 0.9997849999999999
+  },
+  {
+    "method": "plain",
+    "neural_weight": 0.05,
+    "val_auc": 0.999803
+  },
+  {
+    "method": "plain",
+    "neural_weight": 0.1,
+    "val_auc": 0.999803
+  },
+  {
+    "method": "plain",
+    "neural_weight": 0.15,
+    "val_auc": 0.999799
+  },
+  {
+    "method": "plain",
+    "neural_weight": 0.25,
+    "val_auc": 0.999665
+  },
+  {
+    "method": "plain",
+    "neural_weight": 0.5,
+    "val_auc": 0.9979820000000001
+  },
+  {
+    "method": "logit",
+    "neural_weight": 0,
+    "val_auc": 0.9997849999999999
+  },
+  {
+    "method": "logit",
+    "neural_weight": 0.05,
+    "val_auc": 0.999803
+  },
+  {
+    "method": "logit",
+    "neural_weight": 0.1,
+    "val_auc": 0.9998049999999999
+  },
+  {
+    "method": "logit",
+    "neural_weight": 0.15,
+    "val_auc": 0.9997959999999999
+  },
+  {
+    "method": "logit",
+    "neural_weight": 0.25,
+    "val_auc": 0.9996339999999999
+  },
+  {
+    "method": "logit",
+    "neural_weight": 0.5,
+    "val_auc": 0.997976
+  }
+]

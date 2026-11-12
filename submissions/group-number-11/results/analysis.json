@@ -1,0 +1,47 @@
+{
+  "val_auc": 0.997975,
+  "bootstrap_95_ci": [
+    0.9964525499999999,
+    0.99916235
+  ],
+  "confusion_matrix_at_0.5": [
+    [
+      993,
+      7
+    ],
+    [
+      24,
+      976
+    ]
+  ],
+  "train_auc": 1.0,
+  "length_bins": [
+    {
+      "bin": "0 <= words < 150",
+      "n": 380,
+      "human": 146,
+      "ai": 234,
+      "auc": 0.9979510595948953
+    },
+    {
+      "bin": "150 <= words < 250",
+      "n": 1049,
+      "human": 605,
+      "ai": 444,
+      "auc": 0.9979227161045343
+    },
+    {
+      "bin": "words >= 250",
+      "n": 571,
+      "human": 249,
+      "ai": 322,
+      "auc": 0.9984160243458305
+    }
+  ],
+  "near_duplicate_audit": {
+    "criterion": "word TF-IDF cosine similarity >= 0.90",
+    "count": 2,
+    "max_similarity": 0.9611769914627075,
+    "auc_excluding_high_similarity": 0.9979709418837674
+  }
+}
