@@ -1,0 +1,30 @@
+{
+  "epochs": 2,
+  "learning_rates": [
+    1e-05,
+    1e-05
+  ],
+  "warmup_epochs": 0.3,
+  "rule": "Median of five best epochs; at each selected epoch, median of five observed learning rates, carrying the final observed rate for a shorter history.",
+  "fold_best_epochs": [
+    1,
+    3,
+    1,
+    8,
+    2
+  ],
+  "fold_history_sha256": [
+    "6ea5eae0d043da6c7dfc11756c187432bfa57ad74d33b7ba33d07d8879db5562",
+    "ee05ff2f191f4f4a59d4dc7d03b4b7002b8402a38c5f9ef5c4b8cef5a13db256",
+    "78a6d1bab570931cc3e0ae7cfdb4a785bc064b13ec21cf23dbb178c0a7f37300",
+    "ab2070189a67e18a74d5ae31ec9ba769b311f384f9d9fde2f133f33e430fc97d",
+    "0f348912644edee56122f2ab73cbc1e27ddbafbf09f2543f09b008541409236c"
+  ],
+  "selection_partition": "development_inner_folds_only",
+  "historical_source": {
+    "experiment": "v006_large_adaptation",
+    "schedule_sha256": "89c70d21f6644648dbf68895a5848ffd207fa8f73ea11cab4590c833c4402a88",
+    "archive_sha256": "9b7cc825ed590f82ec38099d6a26c7cbb3782606af9f52a1de808769a338b766",
+    "role": "Previously selected raw-control training schedule; reused without repeating raw-control cross-validation."
+  }
+}

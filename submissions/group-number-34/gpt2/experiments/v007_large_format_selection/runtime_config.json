@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "model": "openai-community/gpt2-large",
+  "max_length": 512,
+  "chosen": {
+    "lm": {
+      "batch_size": 8,
+      "gradient_accumulation": 2,
+      "eval_batch_size": 32,
+      "gradient_checkpointing": false,
+      "precision": "bf16",
+      "attention_backend": "flash_or_math"
+    },
+    "classifier": {
+      "batch_size": 8,
+      "gradient_accumulation": 2,
+      "eval_batch_size": 32,
+      "gradient_checkpointing": false,
+      "precision": "bf16",
+      "attention_backend": "flash_or_math"
+    }
+  },
+  "source_experiment": "v007",
+  "settings_source": "Recorded completed experiment configuration",
+  "recorded_gpu": "NVIDIA A100-SXM4-80GB"
+}

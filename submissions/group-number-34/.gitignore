@@ -1,0 +1,10 @@
+/data
+/runs/
+/figures/
+/artifacts/
+*.joblib
+/submission.csv
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store

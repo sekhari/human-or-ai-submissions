@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+runs/
+data/
+figures/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.log
+!configs/fixed_validation_ids.csv
