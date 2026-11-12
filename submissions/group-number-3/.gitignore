@@ -1,0 +1,11 @@
+data/
+results/
+report/
+submission.csv
+sub_*.csv
+__pycache__/
+.ipynb_checkpoints/
+.person_b_cache/
+
+# Fixed shared validation input.
+!splits/splits.csv

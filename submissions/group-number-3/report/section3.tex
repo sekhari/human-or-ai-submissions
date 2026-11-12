@@ -1,0 +1,97 @@
+% ============================================================
+% Section 3: Model comparison and selection (Q1.1 -- Q1.4)
+% Paste each block into the matching response box.
+% Plain tabular + \hline only; no extra packages needed.
+% ============================================================
+
+% ---------------- Q1.1 ----------------
+We compared four representations. \textbf{(1) Sparse $n$-grams:} scikit-learn's
+default tokenizer with lowercasing and no stemming or stopword removal, since
+function-word frequency proved informative. Word 1--2-grams
+(\texttt{min\_df}=2, $\le$200k features) capture phrasing such as ``overall'' or
+``such as''; character 3--5-grams (\texttt{char\_wb}, \texttt{min\_df}=3,
+$\le$300k features) capture sub-word patterns. Both use sublinear TF-IDF.
+\textbf{(2) Stylometric features:} 26 statistics (word/sentence length,
+type--token ratio, function-word, punctuation and newline rates).
+\textbf{(3) Fine-tuned transformers} (DistilRoBERTa and RoBERTa-base) with their
+byte-level BPE tokenizer, truncated to 256 tokens. \textbf{(4) Perplexity
+features:} statistics of per-token log-probability, entropy and rank under GPT-2
+(13 features) and under GPT-2 + GPT-2 Medium together, including Binoculars
+scores (25 features). After finding that blank lines leaked the label (0\% of
+human vs.\ 66\% of AI training passages) and did not transfer to the test set,
+we \textbf{collapsed all whitespace} before the transformer and perplexity
+models, so they cannot use formatting.
+
+% ---------------- Q1.2 ----------------
+\begin{center}
+\footnotesize
+\begin{tabular}{|p{3.0cm}|p{4.2cm}|c|c|p{2.5cm}|}
+\hline
+\textbf{Model} & \textbf{Text representation} & \textbf{Train AUROC} & \textbf{Val.\ AUROC} & \textbf{Train time} \\
+\hline
+Logistic regression & Word 1--2g + char 3--5g TF-IDF & 1.000 & 0.9506 & 9.7 s \\
+Logistic regression & Word 1--2g TF-IDF & 1.000 & 0.9413 & 2.9 s \\
+Logistic regression & Char 3--5g TF-IDF & 0.998 & 0.9386 & 10.1 s \\
+Linear SVM (calibrated) & Word + char TF-IDF & 1.000 & 0.9504 & 8.1 s \\
+Multinomial Naive Bayes & Word 1--2g counts & 0.999 & 0.8682 & 1.6 s \\
+Gradient boosting & 26 stylometric features & 1.000 & 0.9945$^{*}$ & 6.4 s \\
+Gradient boosting & 13 GPT-2 perplexity features & 0.9995 & 0.9706 & $\sim$9 min feat.\ + $<$10 s fit \\
+Gradient boosting & 25 GPT-2 + GPT-2 Medium features (incl.\ Binoculars) & 1.000 & 0.9754 & $\sim$32 min feat.\ + $<$10 s fit \\
+DistilRoBERTa (2 epochs) & Subword tokens, whitespace collapsed & 0.9951 & 0.9867 & 10.9 min (M4 GPU) \\
+RoBERTa-base (2 epochs) & Subword tokens, whitespace collapsed & 0.9971 & 0.9926 & 22.5 min (M4 GPU) \\
+\textbf{Rank-average ensemble} & 5 models above (see Q1.3 for weights) & -- & \textbf{0.9960} & sum of parts \\
+\hline
+\end{tabular}
+\end{center}
+{\footnotesize $^{*}$Relies on the newline artifact: 0.9418 without the newline
+feature, and only 0.858 on the public leaderboard.}
+
+% ---------------- Q1.3 ----------------
+\begin{center}
+\small
+\begin{tabular}{|l|p{8.2cm}|l|}
+\hline
+\textbf{Model} & \textbf{Parameters / values searched} & \textbf{Chosen setting} \\
+\hline
+TF-IDF logistic regression & $C \in \{0.25, 0.5, 1, 2, 4, 8, 16, 32\}$ & $C = 4$ \\
+Stylometric gradient boosting & \texttt{learning\_rate} $\in \{0.03, 0.05, 0.1\}$ $\times$
+\texttt{max\_iter} $\in \{100, 300, 600\}$ $\times$ \texttt{max\_leaf\_nodes} $\in \{15, 31, 63\}$
+(27 settings) & 0.05 / 300 / 31 \\
+Transformer & Model $\in$ \{DistilRoBERTa, RoBERTa-base\}; epochs $\in \{1, 2\}$
+(val.\ AUROC after each epoch) & RoBERTa-base, 2 epochs \\
+Ensemble weights & One weight per model on a 0.1 grid, summing to 1 & 0.5 / 0.1 / 0.2 / 0.1 / 0.1$^{\dagger}$ \\
+\hline
+\end{tabular}
+\end{center}
+{\footnotesize $^{\dagger}$RoBERTa-base / DistilRoBERTa / GPT-2 perplexity GBM /
+two-model perplexity GBM / TF-IDF LR.}
+
+Every setting was trained on the same 8,000-row training split and scored on the
+fixed, stratified 2,000-row validation split (seed 42); Kaggle scores were never
+used for tuning. For logistic regression, validation AUROC rose from 0.932
+($C=0.25$) to a plateau of 0.949--0.951 for $C \ge 2$; we kept $C=4$, since
+$C=8$ was only 0.0006 higher, which is within noise. The GBM grid ranged from
+0.986 to 0.995; we kept the default (0.9945), because the best setting (0.9953)
+differed by under 0.001 and used twice as many trees. For the transformers, the
+second epoch helped both models (DistilRoBERTa 0.9821$\to$0.9867, RoBERTa-base
+0.9863$\to$0.9926). Ensemble weights were taken from a flat region: the top 10
+combinations all scored 0.9959--0.9960, and equal weights reached 0.9953, so
+the choice is not fragile.
+
+% ---------------- Q1.4 ----------------
+% >>> Replace [X.XXX] with the public score of sub_ensemble_final.csv. <<<
+% >>> If it did NOT beat 0.921, tell Claude and use the 3-model version instead. <<<
+Our final submission is a \textbf{rank-average ensemble of five models}:
+fine-tuned RoBERTa-base (weight 0.5) and DistilRoBERTa (0.1), two perplexity
+GBMs (GPT-2, 0.2; GPT-2 + GPT-2 Medium with Binoculars, 0.1) and word+char
+TF-IDF logistic regression (0.1). It reaches 0.9960 validation AUROC and
+\textbf{[X.XXX] on the public leaderboard}. Validation score alone was not
+enough: the stylometric GBM had a top validation AUROC (0.9945), but its strength
+came from a blank-line artifact, and it scored only 0.858 on Kaggle, the largest
+validation-to-test drop of any model ($-0.137$). We therefore favored models that
+see no formatting and whose errors complement each other. On Kaggle, the
+transformer alone (DistilRoBERTa, 0.894) beat every classical model by 3 points;
+adding TF-IDF raised it to 0.902 and adding GPT-2 perplexity features to 0.921,
+and RoBERTa-base was the strongest single model on validation. The full pipeline
+trains in about an hour on a laptop GPU, and its weights are stable ($\pm$0.0001
+across the top 10), suggesting it is not tuned to validation noise.

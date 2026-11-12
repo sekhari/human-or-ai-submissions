@@ -1,0 +1,20 @@
+{
+  "model": "tfidf_logreg",
+  "C": 4.0,
+  "sampling_seed": 42,
+  "training_sizes": [500, 1000, 2000, 5000, 8000],
+  "validation_fold": "random_fold",
+  "expected_random_train": 8000,
+  "expected_random_validation": 2000,
+  "threads": 2,
+  "pseudo_label_low": 0.05,
+  "pseudo_label_high": 0.95,
+  "pseudo_label_rounds": 1,
+  "pseudo_label_weight": 1.0,
+  "q3_feature_policy": "freeze_vectorizers_fitted_on_labeled_training_only",
+  "expected_sha256": {
+    "data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "data/unlabeled.csv": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+    "splits/splits.csv": "ced00ff13b0e58fee0b332e74e8726aea90110bcc45e1cf08796bc265645f95d"
+  }
+}

@@ -1,0 +1,9 @@
+fold,model,train_auroc,oof_train_auroc,val_auroc,seconds,gap
+random_fold,tfidf_lr,1.0,0.9423,0.9506,10,0.0494
+random_fold,tfidf_svm,1.0,0.9431,0.9519,2,0.0481
+random_fold,ppl2_gbm,1.0,0.9738,0.9754,2,0.0246
+random_fold,stack_cv5,1.0,0.9848,0.9867,39,0.0133
+random_fold,stack_cv10,1.0,,0.9867,13,0.0133
+ood_fold,tfidf_lr,1.0,0.9432,0.9359,11,0.0641
+ood_fold,tfidf_svm,1.0,0.9439,0.9359,2,0.0641
+ood_fold,ppl2_gbm,1.0,0.9778,0.9658,2,0.0342

@@ -1,0 +1,133 @@
+% ============================================================
+% Aarushi's report sections (Q0.1, Q1.1--Q1.4, Q2.1--Q2.3)
+% Paste each block into the matching response box of the template.
+% Tables use plain tabular + \hline (no extra packages needed).
+% If the template does not already load graphicx, add \usepackage{graphicx}.
+% ============================================================
+
+% ---------------- Q0.1 ----------------
+\textbf{Aarushi Singh (as469):} Set up the repository and shared pipeline (data
+loading, fixed stratified validation split, evaluation and submission scripts).
+Ran the model comparison (logistic regression, linear SVM, Naive Bayes, gradient
+boosting on stylometric features) and hyperparameter searches. Discovered and
+analyzed the blank-line formatting artifact. Ran robustness tests (typos,
+homoglyphs, word dropping, newline removal) and error analysis. Ran the
+pseudo-labeling experiments. Fine-tuned DistilRoBERTa, built the GPT-2 perplexity
+and Binoculars features, built the rank-averaged ensembles, and managed the
+Kaggle submissions.
+
+% ---------------- Q1.1 ----------------
+We compared four representations. \textbf{(1) Sparse $n$-grams:} scikit-learn's
+default tokenizer with lowercasing and no stemming or stopword removal, since
+function-word frequency proved informative. Word 1--2-grams
+(\texttt{min\_df}=2, $\le$200k features) capture phrasing such as ``overall'' or
+``such as''; character 3--5-grams (\texttt{char\_wb}, \texttt{min\_df}=3,
+$\le$300k features) capture sub-word patterns. Both use sublinear TF-IDF.
+\textbf{(2) Stylometric features:} 26 statistics (word/sentence length,
+type--token ratio, function-word, punctuation and newline rates).
+\textbf{(3) Fine-tuned DistilRoBERTa} with its byte-level BPE tokenizer,
+truncated to 256 tokens. \textbf{(4) Perplexity features:} 13 statistics of
+GPT-2's per-token log-probabilities, entropy and rank, plus a Binoculars-style
+ratio. After finding that blank lines leaked the label (0\% of human vs.\ 66\%
+of AI training passages) and did not transfer to the test set, we
+\textbf{collapsed all whitespace} before the transformer and perplexity models,
+so they cannot use formatting.
+
+% ---------------- Q1.2 ----------------
+\begin{center}
+\footnotesize
+\begin{tabular}{|p{3.0cm}|p{4.2cm}|c|c|p{2.5cm}|}
+\hline
+\textbf{Model} & \textbf{Text representation} & \textbf{Train AUROC} & \textbf{Val.\ AUROC} & \textbf{Train time} \\
+\hline
+Logistic regression & Word 1--2g + char 3--5g TF-IDF & 1.000 & 0.9506 & 9.7 s \\
+Logistic regression & Word 1--2g TF-IDF & 1.000 & 0.9413 & 2.9 s \\
+Logistic regression & Char 3--5g TF-IDF & 0.998 & 0.9386 & 10.1 s \\
+Linear SVM (calibrated) & Word + char TF-IDF & 1.000 & 0.9504 & 8.1 s \\
+Multinomial Naive Bayes & Word 1--2g counts & 0.999 & 0.8682 & 1.6 s \\
+Gradient boosting & 26 stylometric features & 1.000 & 0.9945$^{*}$ & 6.4 s \\
+Gradient boosting & 13 GPT-2 perplexity features & 0.9995 & 0.9706 & $\sim$9 min feat.\ + $<$10 s fit \\
+DistilRoBERTa (2 epochs) & Subword tokens, whitespace collapsed & 0.9951 & 0.9867 & 10.9 min (M4 GPU) \\
+\textbf{Ensemble (0.5/0.3/0.2)} & DistilRoBERTa + perplexity GBM + TF-IDF LR & -- & \textbf{0.9940} & sum of parts \\
+\hline
+\end{tabular}
+\end{center}
+{\footnotesize $^{*}$Relies on the newline artifact: 0.9418 without the newline
+feature, and only 0.858 on the public leaderboard.}
+
+% ---------------- Q1.3 ----------------
+\begin{center}
+\small
+\begin{tabular}{|l|p{8.2cm}|l|}
+\hline
+\textbf{Model} & \textbf{Parameters / values searched} & \textbf{Chosen setting} \\
+\hline
+TF-IDF logistic regression & $C \in \{0.25, 0.5, 1, 2, 4, 8, 16, 32\}$ & $C = 4$ \\
+Stylometric gradient boosting & \texttt{learning\_rate} $\in \{0.03, 0.05, 0.1\}$ $\times$
+\texttt{max\_iter} $\in \{100, 300, 600\}$ $\times$ \texttt{max\_leaf\_nodes} $\in \{15, 31, 63\}$
+(27 settings) & 0.05 / 300 / 31 \\
+Ensemble weights & Transformer / perplexity / TF-IDF weights on a 0.1 grid summing to 1 & 0.5 / 0.3 / 0.2 \\
+\hline
+\end{tabular}
+\end{center}
+
+Every setting was trained on the same 8,000-row training split and scored on the
+fixed, stratified 2,000-row validation split (seed 42); Kaggle scores were never
+used for tuning. For logistic regression, validation AUROC rose from 0.932
+($C=0.25$) to a plateau of 0.949--0.951 for $C \ge 2$; we kept $C=4$, since
+$C=8$ was only 0.0006 higher, which is within noise. The GBM grid ranged from
+0.986 to 0.995; we kept the default (0.9945), because the best setting (0.9953)
+differed by under 0.001 and used twice as many trees. Ensemble weights were
+picked from a flat region: the top 10 combinations all scored 0.993--0.994, so
+the choice is not fragile.
+
+% ---------------- Q1.4 ----------------
+Our final submission is a \textbf{rank-average ensemble of fine-tuned
+DistilRoBERTa (0.5), a GPT-2 perplexity GBM (0.3) and word+char TF-IDF logistic
+regression (0.2)}, with 0.9940 validation AUROC and \textbf{0.921 on the public
+leaderboard}. Validation score alone was not enough: the stylometric GBM had the
+best validation AUROC (0.9945), but its strength came from a blank-line artifact,
+and it scored 0.858 on Kaggle, the largest validation-to-test drop of any model
+($-0.137$). We therefore favored models that see no formatting and whose errors
+complement each other. DistilRoBERTa alone gained 3 points on Kaggle over every
+classical model (0.894). Adding TF-IDF raised it to 0.902, and adding perplexity
+features, which do not depend on topic or formatting, raised it to 0.921.
+Training costs about 25 minutes on a laptop GPU. The top weightings were stable
+($\pm$0.001), suggesting the ensemble is not tuned to validation noise.
+
+% ---------------- Q2.1 ----------------
+\begin{center}
+\begin{tabular}{|r|c|c|l|}
+\hline
+\textbf{Training rows} & \textbf{Training AUROC} & \textbf{Validation AUROC} & \textbf{Notes} \\
+\hline
+500   & 1.000 & 0.870 $\pm$ 0.007 & mean of 3 seeds \\
+1,000 & 1.000 & 0.897 $\pm$ 0.003 & mean of 3 seeds \\
+2,000 & 1.000 & 0.924 $\pm$ 0.001 & mean of 3 seeds \\
+5,000 & 1.000 & 0.943 $\pm$ 0.001 & mean of 3 seeds \\
+8,000 & 1.000 & 0.951 & single fit (full split) \\
+\hline
+\end{tabular}
+\end{center}
+{\footnotesize Model: word+char TF-IDF logistic regression, $C=4$, fixed
+hyperparameters and the same 2,000-row validation set throughout.}
+
+% ---------------- Q2.2 ----------------
+\begin{center}
+\includegraphics[width=0.85\linewidth]{learning_curve_train_val.png}
+\end{center}
+% (copy results/learning_curve_train_val.png next to your .tex file, or adjust the path)
+
+% ---------------- Q2.3 ----------------
+Training AUROC is 1.000 at every size: with up to 500k sparse features and at
+most 8,000 passages, the logistic regression can always separate its training
+set perfectly, so the model is clearly \textbf{not underfitting}. The gap between
+training and validation AUROC indicates \textbf{overfitting (high variance)}, but
+it shrinks steadily as data grows, from 0.130 at 500 rows to 0.049 at 8,000.
+Validation AUROC is still rising at 8,000 rows ($+0.008$ from 5k to 8k), roughly
+linearly in $\log n$, so \textbf{more labeled data would still help}, though with
+diminishing returns per example. Stronger regularization does not help: lowering
+$C$ reduced both training and validation AUROC (0.932 at $C=0.25$), suggesting
+the model is limited by data rather than capacity, which also motivated our
+pseudo-labeling experiment. Seed-to-seed variability also falls with size
+($\pm$0.007 to $\pm$0.001).
