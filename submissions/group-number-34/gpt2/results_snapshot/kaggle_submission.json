@@ -1,0 +1,11 @@
+{
+  "model": "openai-community/gpt2",
+  "selected_epoch": 3,
+  "public_auroc": 0.94864,
+  "rows": 3000,
+  "submission_columns": [
+    "id",
+    "label"
+  ],
+  "submission_sha256": "a47d9248a93512a5028960ba55068b13d5dd37e6f97d8d3f5aa485f41ca098a7"
+}
