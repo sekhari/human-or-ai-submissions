@@ -1,0 +1,46 @@
+{
+  "seed": 42,
+  "sizes": [
+    500,
+    1000,
+    2000,
+    5000,
+    8000
+  ],
+  "C": 1.0,
+  "embedding_weight": 0.25,
+  "lexical_specs": {
+    "word": {
+      "analyzer": "word",
+      "lowercase": true,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "max_features": 60000,
+      "sublinear_tf": true,
+      "norm": "l2",
+      "token_pattern": "(?u)\\b\\w\\w+\\b"
+    },
+    "char": {
+      "analyzer": "char",
+      "lowercase": false,
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 3,
+      "max_features": 80000,
+      "sublinear_tf": true,
+      "norm": "l2"
+    }
+  },
+  "data_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "sampling": "nested balanced subsets; one realization",
+  "validation_rows": 2000,
+  "timing": "excludes cached frozen MiniLM extraction",
+  "versions": {
+    "numpy": "2.5.4"
+  }
+}

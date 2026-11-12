@@ -1,0 +1,205 @@
+{
+  "source_optimization_run": "20261108T221349_843691Z",
+  "selected_configuration": {
+    "selected": {
+      "name": "WordChar_emb025",
+      "lexical": [
+        "Word12",
+        "Char35"
+      ],
+      "emb_weight": 0.25,
+      "C": 1.0
+    },
+    "search_plan": {
+      "C_grid": [
+        0.3,
+        1.0,
+        3.0
+      ],
+      "candidates": [
+        {
+          "name": "TF_emb025",
+          "lexical": [
+            "TF"
+          ],
+          "emb_weight": 0.25
+        },
+        {
+          "name": "TF_emb050",
+          "lexical": [
+            "TF"
+          ],
+          "emb_weight": 0.5
+        },
+        {
+          "name": "IDF_uni",
+          "lexical": [
+            "IDF_uni"
+          ],
+          "emb_weight": 0.0
+        },
+        {
+          "name": "IDF_uni_emb050",
+          "lexical": [
+            "IDF_uni"
+          ],
+          "emb_weight": 0.5
+        },
+        {
+          "name": "Word12",
+          "lexical": [
+            "Word12"
+          ],
+          "emb_weight": 0.0
+        },
+        {
+          "name": "Word12_emb050",
+          "lexical": [
+            "Word12"
+          ],
+          "emb_weight": 0.5
+        },
+        {
+          "name": "Char35",
+          "lexical": [
+            "Char35"
+          ],
+          "emb_weight": 0.0
+        },
+        {
+          "name": "WordChar",
+          "lexical": [
+            "Word12",
+            "Char35"
+          ],
+          "emb_weight": 0.0
+        },
+        {
+          "name": "WordChar_emb025",
+          "lexical": [
+            "Word12",
+            "Char35"
+          ],
+          "emb_weight": 0.25
+        },
+        {
+          "name": "WordChar_emb050",
+          "lexical": [
+            "Word12",
+            "Char35"
+          ],
+          "emb_weight": 0.5
+        }
+      ],
+      "lexical_specs": {
+        "TF": {
+          "lowercase": true,
+          "min_df": 5,
+          "max_df": 1.0,
+          "token_pattern": "(?u)\\b\\w\\w+\\b",
+          "ngram_range": [
+            1,
+            1
+          ],
+          "norm": "l2"
+        },
+        "IDF_uni": {
+          "analyzer": "word",
+          "lowercase": true,
+          "ngram_range": [
+            1,
+            1
+          ],
+          "min_df": 5,
+          "max_df": 1.0,
+          "norm": "l2",
+          "sublinear_tf": false,
+          "token_pattern": "(?u)\\b\\w\\w+\\b"
+        },
+        "Word12": {
+          "analyzer": "word",
+          "lowercase": true,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "min_df": 3,
+          "max_features": 60000,
+          "norm": "l2",
+          "sublinear_tf": true,
+          "token_pattern": "(?u)\\b\\w\\w+\\b"
+        },
+        "Char35": {
+          "analyzer": "char",
+          "lowercase": false,
+          "ngram_range": [
+            3,
+            5
+          ],
+          "min_df": 3,
+          "max_features": 80000,
+          "norm": "l2",
+          "sublinear_tf": true
+        }
+      },
+      "embedding_config": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "max_sequence_length": 256,
+        "overlap": 0,
+        "aggregation": "content_token_weighted_mean_of_unit_chunk_vectors_then_L2",
+        "batch_size": 32,
+        "device": "cpu"
+      },
+      "svm_tol": 1e-05,
+      "svm_max_iter": 50000,
+      "seed": 42,
+      "data_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+      "split_sha256": "2f049724b45f119fa62882beb40d9c837af574315e56a0ae67dcdb0d3dea352d",
+      "source_baseline_run": "20261106T215833_887540Z",
+      "baseline": {
+        "name": "Previous_TF_MiniLM",
+        "lexical": [
+          "TF"
+        ],
+        "emb_weight": 1.0,
+        "C": 1.0
+      }
+    },
+    "validation_AUROC": 0.9741029999999999,
+    "baseline_AUROC": 0.9223129999999999,
+    "descriptive_bootstrap_gain_95pct": [
+      0.04282663103308688,
+      0.06082195494926303
+    ],
+    "selection_note": "Selected on this validation set; not an independent test estimate"
+  },
+  "calibration": "sigmoid, 5-fold stratified shuffled CV, ensemble=False; vocabularies and IDFs fit inside each fold",
+  "seed": 42,
+  "full_training_rows": 10000,
+  "test_rows": 3000,
+  "validation": {
+    "AUROC": 0.9741029999999999,
+    "log_loss": 0.2021068181130504,
+    "Brier": 0.06060376088844322,
+    "rows": 2000
+  },
+  "full_training_feature_counts": {
+    "Word12": 60000,
+    "Char35": 80000,
+    "MiniLM": 384
+  },
+  "probability_min": 5.213597521906492e-06,
+  "probability_max": 0.999999260423989,
+  "submission_file": "submission_Jennie_WordChar_MiniLM025_SVM_C1_20261108T221653Z.csv",
+  "submission_sha256": "3ee381b92a0c7aacf964d67b80a83c45c9b59202c779a1dfd3369d479c4c88d9",
+  "test_sha256": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "6.2.0"
+  },
+  "note": "Validation AUROC is not a Kaggle score. Test labels and sample placeholder labels were never used."
+}

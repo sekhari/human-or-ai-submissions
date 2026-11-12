@@ -1,0 +1,12 @@
+{
+  "published_name": "Jianing Li",
+  "notebook": "01_Jianing_TF_MiniLM_SVM.ipynb",
+  "notebook_outputs": "cleared for publication; numeric results and figures retained",
+  "path_changes": "Jennie/jennie renamed to Jianing/jianing in executable code and package paths; historical result receipts retained unchanged",
+  "optimized_csv_repository_name": "submission_Jianing_WordChar_MiniLM025_SVM_C1.csv",
+  "optimized_csv_user_filename": "submission_WordChar_MiniLM025_SVM_C1.csv",
+  "optimized_csv_receipt_filename": "submission_Jennie_WordChar_MiniLM025_SVM_C1_20261108T221653Z.csv",
+  "optimized_csv_sha256": "3ee381b92a0c7aacf964d67b80a83c45c9b59202c779a1dfd3369d479c4c88d9",
+  "public_AUROC_user_reported": 0.90456,
+  "score_source": "User report 2026-11-08; not independently queried from Kaggle"
+}

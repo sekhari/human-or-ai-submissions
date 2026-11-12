@@ -1,0 +1,50 @@
+{
+  "run_id": "20261106T214045_050882Z",
+  "seed": 42,
+  "C_by_method": {
+    "TF": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "MiniLM_chunked": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ]
+  },
+  "svm": {
+    "dual": "auto",
+    "max_iter": 50000,
+    "tol": 1e-05
+  },
+  "features": {
+    "data_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "split_sha256": "2f049724b45f119fa62882beb40d9c837af574315e56a0ae67dcdb0d3dea352d",
+    "TF": {
+      "lowercase": true,
+      "min_df": 5,
+      "max_df": 1.0,
+      "token_pattern": "(?u)\\b\\w\\w+\\b",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "norm": "l2"
+    },
+    "MiniLM_chunked": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "max_sequence_length": 256,
+      "overlap": 0,
+      "aggregation": "content_token_weighted_mean_of_unit_chunk_vectors_then_L2",
+      "batch_size": 32,
+      "device": "cpu"
+    },
+    "embedding_cache_key": "17081c9dbf2074d0ef53232f75cebc27933ab132f2821bcee671755f89b1e20c"
+  }
+}

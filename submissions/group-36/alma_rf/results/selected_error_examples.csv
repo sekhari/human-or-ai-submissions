@@ -1,0 +1,11 @@
+id,label,p_ai,word_count,error_type,model,failure_hypothesis
+775,0,0.8511309523809523,307,FP,style_only,Pending human review; snippet alone does not establish cause.
+3326,0,0.8314999999999999,114,FP,style_only,Pending human review; snippet alone does not establish cause.
+7182,0,0.7874523809523808,209,FP,style_only,Pending human review; snippet alone does not establish cause.
+3660,0,0.7816666666666666,207,FP,style_only,Pending human review; snippet alone does not establish cause.
+6840,0,0.7725,112,FP,style_only,Pending human review; snippet alone does not establish cause.
+4519,1,0.024940476190476187,141,FN,style_only,Pending human review; snippet alone does not establish cause.
+6331,1,0.05683333333333333,260,FN,style_only,Pending human review; snippet alone does not establish cause.
+278,1,0.1270952380952381,268,FN,style_only,Pending human review; snippet alone does not establish cause.
+3706,1,0.15016666666666667,231,FN,style_only,Pending human review; snippet alone does not establish cause.
+1362,1,0.15076190476190474,233,FN,style_only,Pending human review; snippet alone does not establish cause.

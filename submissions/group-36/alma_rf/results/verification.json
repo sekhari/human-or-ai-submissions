@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "original split retained",
+    "CV IDs training-only and unique",
+    "18 representation fold scores",
+    "12 tuning fold scores",
+    "all six holdout AUROCs independently recomputed",
+    "CV-based model selection verified",
+    "all code cells executed without errors"
+  ],
+  "selected_false_positives_at_0_5": 49,
+  "selected_false_negatives_at_0_5": 47
+}

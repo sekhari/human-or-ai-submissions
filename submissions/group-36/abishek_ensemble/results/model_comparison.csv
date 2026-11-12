@@ -1,0 +1,7 @@
+model,cv_auc,val_auc
+nbsvm_word,0.9436,0.95119
+nbsvm_char,0.944,0.9534509999999999
+nbsvm_skeleton,0.9564,0.9667789999999999
+nbsvm_charx,0.9663,0.971617
+stylo_hgb,0.9606,0.970109
+rank_average,0.9834,0.989949

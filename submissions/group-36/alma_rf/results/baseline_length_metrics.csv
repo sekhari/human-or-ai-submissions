@@ -1,0 +1,4 @@
+model,length_bin,n,n_human,n_ai,auroc
+baseline_count,<=150,413,156,257,0.8838671056569889
+baseline_count,151-250,1056,619,437,0.9538156693271423
+baseline_count,>250,531,225,306,0.9619026870007263

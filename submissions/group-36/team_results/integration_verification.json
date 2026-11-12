@@ -1,0 +1,26 @@
+{
+  "checked_date": "2026-11-08",
+  "scope": "Isolated clone; portable paths checked before push",
+  "Jianing": {
+    "notebook_executed_code_cells": 12,
+    "notebook_errors": 0,
+    "all_30_trial_AUROCs_recomputed": true,
+    "optimized_validation_AUROC": 0.9741029999999999,
+    "calibrated_validation_AUROC": 0.9741029999999999,
+    "regenerated_submission_byte_identical": true,
+    "submission_sha256": "3ee381b92a0c7aacf964d67b80a83c45c9b59202c779a1dfd3369d479c4c88d9",
+    "submission_rows": 3000,
+    "tested_notebook_before_output_clear_sha256": "873be4fc28636277de94dadd0c5b99f903fabccb322028c8ddb577ab9da6c591"
+  },
+  "Alma": {
+    "CLI_validation_completed": true,
+    "original_RF_source_unchanged": true,
+    "export_notebook_completed_with_tracked_metadata": true,
+    "predict_CLI_smoke_passed": true,
+    "original_validation_AUROC": 0.989913,
+    "relocation_test_validation_AUROC": 0.989905,
+    "max_probability_difference_vs_original": 0.025000000000000022,
+    "note": "Reproduction used Jianing Python 3.13 environment rather than Alma original Python 3.12. Historical RF results retained."
+  },
+  "publication": "Notebook outputs cleared; aggregate results/figures remain. Raw data, model binaries and caches excluded."
+}

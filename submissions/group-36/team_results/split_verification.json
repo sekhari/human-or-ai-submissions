@@ -1,0 +1,12 @@
+{
+  "same_membership": true,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "dataset_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+  "note": "Verified ID-to-partition mappings, not filename/hash equality; manifests use different column/order formats.",
+  "members_verified": [
+    "Alma",
+    "Jianing"
+  ],
+  "Abishek": "Not verified; artifacts not yet integrated"
+}

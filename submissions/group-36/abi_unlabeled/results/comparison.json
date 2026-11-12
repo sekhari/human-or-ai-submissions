@@ -1,0 +1,12 @@
+{
+  "validation_rows": 2000,
+  "supervised_auc": 0.988825,
+  "unlabeled_auc": 0.988813,
+  "delta_auc": -1.1999999999900979e-05,
+  "paired_95_interval": [
+    -8.499999999978802e-05,
+    6.099999999997774e-05
+  ],
+  "bootstrap_replicates": 1000,
+  "seed": 42
+}

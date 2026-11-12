@@ -1,0 +1,9 @@
+{
+  "reconstructed_train_auc": 1.0,
+  "reconstructed_validation_auc": 0.988825,
+  "unlabeled_auc_difference": 0.0002629999999999022,
+  "unlabeled_stratified_paired_bootstrap_95": [
+    -0.0005370999999998987,
+    0.001005025000000248
+  ]
+}

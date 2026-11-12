@@ -1,0 +1,12 @@
+5214c5073b41c3e2d6150261b0a2a7868ff0c5e3 2026-11-07T14:58:17-05:00 Codex (AI assistant)
+Record completed RF baseline and planned controlled experiments
+
+ca78d50369f8b9ffc04d8be538b69d9abacc9a87 2026-11-07T15:01:23-05:00 Codex (AI assistant)
+Add controlled feature ablations, training-only CV and RF tuning
+
+6c2e15dc54dba8c455e15381383a14f46531ca16 2026-11-07T15:07:12-05:00 Codex (AI assistant)
+Record RF feature experiments, verified gains and unsuccessful tuning
+
+316813e9bdd3b286f78185e59bbfd73ff1ddac39 2026-11-07T15:09:27-05:00 Codex (AI assistant)
+Refit selected style RF on full labeled data and export Kaggle probabilities
+

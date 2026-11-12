@@ -1,0 +1,3 @@
+partition,rows,TF_features,MiniLM_features,combined_features,concatenation_seconds
+Train,8000,14198,384,14582,0.06479645799845457
+Validation,2000,14198,384,14582,0.01155983300122898

@@ -1,0 +1,12 @@
+{
+  "rows": 10000,
+  "ID dtype": "int64",
+  "unique IDs": 10000,
+  "missing cells": 0,
+  "exact duplicate texts": 0,
+  "normalized duplicate texts": 0,
+  "text words: minimum": 75,
+  "text words: median": 206.0,
+  "text words: maximum": 350,
+  "train_sha256": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e"
+}

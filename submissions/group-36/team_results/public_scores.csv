@@ -1,0 +1,11 @@
+member,submission_file,public_AUROC,description
+Abishek Chozhan,stack_nbsvm_stylo.csv,0.92847,Comparison
+Abishek Chozhan,stack_v3.csv,0.92729,Comparison
+Abishek Chozhan,rankavg_v2.csv,0.92568,Comparison
+Abishek Chozhan,rankavg_v1.csv,0.92390,Comparison
+Abishek Chozhan,prob_average_final.csv,0.92207,Team Choice
+Jianing Li,submission_Jianing.csv,0.90977,Binary TF-IDF and MiniLM
+Jianing Li,submission_WordChar_MiniLM025_SVM_C1.csv,0.90456,Word/character TF-IDF and MiniLM
+Liyan Yang,submission_rf_style.csv,0.89682,Random Forest
+Jianing Li,submission_Jennie_TF_MiniLM_SVM_C1.csv,0.84249,TF and MiniLM
+Team,stack_unlabeled.csv,0.92117,Unlabeled-vocabulary reconstruction (public score reported by team)

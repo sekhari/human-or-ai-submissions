@@ -1,0 +1,10 @@
+{
+  "selected_model": "style_only",
+  "delta_vs_count_baseline": 0.04561500000000007,
+  "paired_bootstrap_95pct_interval": [
+    0.035675274999999985,
+    0.05510805000000005
+  ],
+  "resamples": 1000,
+  "seed": 42
+}

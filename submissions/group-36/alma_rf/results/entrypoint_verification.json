@@ -1,0 +1,6 @@
+{
+  "validation_auroc": 0.9899129999999998,
+  "prediction_rows": 3000,
+  "max_probability_difference": 4.440892098500626e-16,
+  "passed": true
+}
