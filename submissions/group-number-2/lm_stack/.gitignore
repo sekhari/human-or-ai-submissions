@@ -1,0 +1,6 @@
+features/
+preds/
+results/
+*.parquet
+*.parquet.tmp
+.venv/
