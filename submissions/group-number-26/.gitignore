@@ -1,0 +1,61 @@
+# Group 26 ignore rules.
+#
+# The repository root .gitignore excludes `*.csv` everywhere. That would
+# silently drop every experiment result we want graded, so this file
+# re-includes the CSVs under results/ only. Re-inclusion works here because
+# results/ is not itself an excluded directory -- git cannot re-include a file
+# whose parent directory is excluded, which is why data/ below stays excluded
+# outright rather than being negated.
+
+# --- Re-include experiment outputs the grader needs to see -----------------
+!results/
+!results/*.csv
+!results/*.json
+!results/*.md
+!results/*.png
+!results/.gitkeep
+
+# --- Competition data: never commit ----------------------------------------
+# Also covered by the root .gitignore `data/` rule; repeated here so the
+# intent is explicit if this folder is ever read on its own.
+data/
+train.csv
+test.csv
+unlabeled.csv
+train_starter_2000.csv
+sample_submission.csv
+
+# --- Generated Kaggle predictions ------------------------------------------
+# The course does not ask for submission.csv in the repo; predict.py
+# regenerates it from the documented command.
+submission.csv
+submission_*.csv
+
+# --- Model artifacts --------------------------------------------------------
+*.joblib
+*.pkl
+*.pickle
+*.npz
+models/
+checkpoints/
+
+# --- Environments and caches ------------------------------------------------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Credentials ------------------------------------------------------------
+.env
+.env.*
+kaggle.json
+**/credentials*
+**/secrets*
+
+# --- OS / editor ------------------------------------------------------------
+.DS_Store
+*.swp

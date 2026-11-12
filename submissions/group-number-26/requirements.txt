@@ -1,0 +1,22 @@
+# Group 26 - Human or AI?
+#
+# Versions are pinned to the environment every reported number was measured in:
+# Python 3.14.7, macOS 26.6.2 arm64. The pipeline uses only standard
+# scikit-learn estimators, so nearby versions should reproduce the same
+# results, but these pins are what we actually ran.
+#
+# Direct imports across the submission:
+#   numpy          features.py, models.py, team_knn.py, course_models.py
+#   pandas         experiments/knn_baseline.py
+#   scikit-learn   every model and metric
+#   threadpoolctl  team_knn.py, course_models.py (pins BLAS threads to 1 so
+#                  neighbour timings are stable and comparable)
+#
+# scipy is listed because scikit-learn requires it at runtime and we pin it for
+# reproducibility, not because our code imports it directly.
+
+numpy==2.5.4
+pandas==3.1.1
+scikit-learn==1.9.1
+scipy==1.18.1
+threadpoolctl==3.8.0

@@ -1,0 +1,4 @@
+model,k,weights,metric,n_features,n_train,n_val,train_auroc_self_excluded,val_auroc,fit_seconds,val_predict_seconds,train_score_seconds,featurize_seconds,split_source,split_seed
+distance_weighted_knn,15,distance,euclidean,23,8000,2000,0.973,0.976686,0.0008,0.0309,0.0314,1.842,group26_validation_ids.txt,20261023
+distance_weighted_knn,35,distance,euclidean,23,8000,2000,0.96987,0.974544,0.0003,0.012,0.0465,1.842,group26_validation_ids.txt,20261023
+distance_weighted_knn,75,distance,euclidean,23,8000,2000,0.964611,0.968988,0.0003,0.0175,0.0711,1.842,group26_validation_ids.txt,20261023
