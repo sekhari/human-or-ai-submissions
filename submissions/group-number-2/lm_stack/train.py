@@ -35,7 +35,7 @@ from normalize import raw_flags
 from split import get_split
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEED = 20261023
+SEED = 42
 
 LM_FEATURES = [
     "base_lp_mean", "base_lp_std", "instr_lp_mean", "instr_lp_std",

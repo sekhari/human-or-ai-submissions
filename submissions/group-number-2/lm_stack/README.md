@@ -37,8 +37,7 @@ runs (see the usage lines in its docstring; base512 uses
 `--tag base512`).
 Output: `blend/submission_w0.2.csv`.
 
-Seed 42 everywhere. Plain `train.py` defaults to the older seed
-20261023, which is a different validation set.
+Seed 42 everywhere.
 
 ## Notes
 

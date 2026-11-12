@@ -39,7 +39,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from normalize import normalize
 
-SEED = 20261023
+SEED = 42
 MAX_TOKENS = 512
 HERE = os.path.dirname(os.path.abspath(__file__))
 SPLITS = ("train", "unlabeled", "test")

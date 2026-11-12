@@ -4,7 +4,7 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-SEED = 20261023
+SEED = 42
 VAL_SIZE = 2000
 TRAIN_CSV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "train.csv")
 

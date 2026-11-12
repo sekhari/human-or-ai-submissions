@@ -90,8 +90,7 @@ DeBERTa-v3-small).
 ## Seeds and config
 
 - Seed 42 for the split, CV, subsampling, training and the
-  bootstrap. (`lm_stack/train.py` still defaults to an older
-  seed, so pass `--seed 42`.)
+  bootstrap.
 - DeBERTa-v3-small: `microsoft/deberta-v3-small`, max_len 384,
   batch 16, 2 epochs, lr 3e-5, weight decay 0.01, 10% linear
   warmup, fp16 on CUDA (`--no-amp` to disable).
