@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "max_length": 512,
+  "batch_size": 8,
+  "gradient_accumulation": 2,
+  "eval_batch_size": 32,
+  "precision": "bf16",
+  "attention_backend": "flash_or_math",
+  "weight_decay": 0.01,
+  "warmup_epochs": 0.3,
+  "learning_rate": 1e-05,
+  "min_learning_rate": 2.5e-06,
+  "min_delta": 0.0005,
+  "lr_patience": 2,
+  "stop_patience": 3,
+  "classification_epochs": 9,
+  "model_name_or_path": "openai-community/gpt2-large",
+  "adaptation_epochs": 3,
+  "lm_min_epochs": 1,
+  "augmentation_probability": 0.25,
+  "consistency_weight": 0.5
+}
