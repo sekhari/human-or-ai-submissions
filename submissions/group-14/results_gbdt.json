@@ -1,0 +1,31 @@
+{
+  "model": "Gradient-boosted trees (HistGradientBoostingClassifier)",
+  "representation": "37 stylometric + 200-d LSA of v2 word 1-2 + char 2-5 TF-IDF",
+  "params": {
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15
+  },
+  "n_trees": 160,
+  "cv_auroc": 0.998068,
+  "train_auroc": 0.999953,
+  "val_auroc": 0.998432,
+  "val_auroc_ablation": {
+    "stylometric only": 0.997694,
+    "LSA only": 0.994725
+  },
+  "top_permutation_importance": {
+    "n_blank_lines": 0.1496,
+    "lsa_010": 0.0046,
+    "repeated_bigram_rate": 0.0026,
+    "paragraph_len_mean": 0.0023,
+    "lsa_002": 0.0022,
+    "lsa_011": 0.0013,
+    "type_token_ratio": 0.001,
+    "lsa_006": 0.0007,
+    "ends_with_punct": 0.0007,
+    "hapax_ratio": 0.0005
+  },
+  "train_time_s_model_fit": 1.6,
+  "train_time_s_features_plus_fit": 316.1
+}

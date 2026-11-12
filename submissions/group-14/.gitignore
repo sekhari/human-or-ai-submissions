@@ -1,0 +1,6 @@
+features/
+*.npz
+*.npy
+
+# Local data
+data/

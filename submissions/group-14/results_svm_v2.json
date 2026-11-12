@@ -1,0 +1,16 @@
+{
+  "model": "Linear SVM (LinearSVC, squared hinge loss, L2)",
+  "representation": "blank-line-aware (v2) word 1-2 + char 2-5 TF-IDF (300k features)",
+  "C": 3.0,
+  "cv_auroc_by_C": {
+    "0.03": 0.991,
+    "0.1": 0.9943,
+    "0.3": 0.9954,
+    "1.0": 0.9956,
+    "3.0": 0.9956
+  },
+  "train_auroc": 1.0,
+  "val_auroc": 0.996447,
+  "train_time_s_model_fit": 1.3,
+  "train_time_s_features_plus_fit": 52.5
+}

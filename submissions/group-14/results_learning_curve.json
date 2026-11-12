@@ -1,0 +1,102 @@
+{
+  "model": "GBDT (results_gbdt.json params)",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 0.0
+  },
+  "repeats": 5,
+  "validation_rows": 2000,
+  "by_size": {
+    "500": {
+      "train_auroc": {
+        "mean": 0.999318,
+        "std": 0.001277
+      },
+      "val_auroc": {
+        "mean": 0.990116,
+        "std": 0.002252
+      },
+      "n_trees": {
+        "mean": 130.2,
+        "std": 54.532192
+      },
+      "fit_s": {
+        "mean": 1.468023,
+        "std": 0.738087
+      }
+    },
+    "1000": {
+      "train_auroc": {
+        "mean": 0.99886,
+        "std": 0.000423
+      },
+      "val_auroc": {
+        "mean": 0.992486,
+        "std": 0.0009
+      },
+      "n_trees": {
+        "mean": 71.8,
+        "std": 7.833262
+      },
+      "fit_s": {
+        "mean": 0.824663,
+        "std": 0.079051
+      }
+    },
+    "2000": {
+      "train_auroc": {
+        "mean": 0.999709,
+        "std": 0.000487
+      },
+      "val_auroc": {
+        "mean": 0.995275,
+        "std": 0.000858
+      },
+      "n_trees": {
+        "mean": 135.0,
+        "std": 42.227953
+      },
+      "fit_s": {
+        "mean": 1.591708,
+        "std": 0.454595
+      }
+    },
+    "5000": {
+      "train_auroc": {
+        "mean": 0.999833,
+        "std": 8.4e-05
+      },
+      "val_auroc": {
+        "mean": 0.996853,
+        "std": 0.000363
+      },
+      "n_trees": {
+        "mean": 125.6,
+        "std": 12.370934
+      },
+      "fit_s": {
+        "mean": 1.77904,
+        "std": 0.143246
+      }
+    },
+    "8000": {
+      "train_auroc": {
+        "mean": 0.999954,
+        "std": 3e-05
+      },
+      "val_auroc": {
+        "mean": 0.9979,
+        "std": 0.000189
+      },
+      "n_trees": {
+        "mean": 196.4,
+        "std": 42.944615
+      },
+      "fit_s": {
+        "mean": 3.019098,
+        "std": 0.763251
+      }
+    }
+  }
+}
