@@ -102,6 +102,34 @@ def write_results(output_dir, name, rows):
     write_csv(Path(output_dir) / name, list(rows[0]), rows)
 
 
+def write_runtime_comparison(output_dir, baseline_adaptation, baseline_classifier,
+                             candidate_adaptation, candidate_classifier):
+    """Export matched adaptation and classifier stage timings."""
+    rows = []
+    for arm, adaptation, classifier in (
+        ('format_augmentation', baseline_adaptation, baseline_classifier),
+        ('format_consistency', candidate_adaptation, candidate_classifier),
+    ):
+        lm = read_json(Path(adaptation) / 'metrics.json')
+        clf = read_json(Path(classifier) / 'metrics.json')
+        environment = read_json(Path(classifier) / 'environment.json')
+        total = lm['elapsed_seconds'] + clf['elapsed_seconds']
+        rows.append({'arm': arm, 'adaptation_seconds': lm['elapsed_seconds'],
+                     'classifier_seconds': clf['elapsed_seconds'],
+                     'total_training_seconds': total, 'total_training_minutes': total / 60,
+                     'adaptation_epochs': lm['completed_epochs'],
+                     'classifier_epochs': clf['completed_epochs'],
+                     'gpu': environment.get('gpu', environment['device'])})
+    write_results(output_dir, 'runtime_comparison.csv', rows)
+    return {
+        'definition': ('Adaptation and classifier stage elapsed time, including stage-internal '
+                       'validation and checkpoint writing; excluding process startup, environment '
+                       'setup, downloads, final diagnostic evaluation, and plotting.'),
+        'table': 'runtime_comparison.csv',
+        'results': rows,
+    }
+
+
 def load_reused_classifier(run_dir, config, prepared, augmentation, consistency):
     """Read a completed run with matching training data and hyperparameters."""
     run_dir = Path(run_dir).resolve()
@@ -242,16 +270,20 @@ def main(args):
             baseline, baseline_seconds, baseline_stage = load_reused_classifier(
                 args.baseline_run, config, prepared, config['augmentation_probability'], 0.0)
             prior_model = Path(read_json(baseline_stage / 'config.json')['model_name_or_path'])
+            baseline_adaptation = prior_model.parent
+            baseline_adaptation_seconds = read_json(baseline_adaptation / 'runtime.json')['training_seconds']
             if sha256(prior_model / 'model.safetensors') != sha256(adapted / 'model.safetensors'):
                 raise ValueError('The reused comparison must use the same adapted language-model weights.')
         else:
+            baseline_adaptation = root / 'adaptation'
+            baseline_adaptation_seconds = adaptation_seconds
             baseline_stage = root / 'baseline/training'
             baseline, baseline_seconds = run_stage(config, 'refit', adapted, training,
                 baseline_stage, args.device, augmentation=config['augmentation_probability'])
         measured, eval_seconds = evaluate(config, baseline, training, validation,
             root / 'baseline/evaluation', args.device, format_variants=True)
         rows = [result_row('format_augmentation', measured, baseline_seconds,
-                           adaptation_seconds, eval_seconds)]
+                           baseline_adaptation_seconds, eval_seconds)]
         stage = root / 'candidate/training'
         checkpoint, seconds = run_stage(config, 'refit', adapted, training, stage,
             args.device, augmentation=config['augmentation_probability'],
@@ -262,8 +294,11 @@ def main(args):
             baseline_dir=root / 'baseline/evaluation')
         rows.append(result_row('format_consistency', measured, seconds, adaptation_seconds, eval_seconds))
         write_results(root, 'comparison.csv', rows)
+        runtime = write_runtime_comparison(root, baseline_adaptation, baseline_stage,
+                                           root / 'adaptation', stage)
         write_json(root / 'metrics.json', {'status': 'complete', 'experiment': args.experiment,
             'adaptation_shared_between_arms': True, 'results': rows,
+            'stage_runtime': runtime,
             'format_comparison': 'candidate/evaluation/comparison.csv'})
         return
 
