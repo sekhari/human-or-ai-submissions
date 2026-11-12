@@ -12,7 +12,14 @@ from pathlib import Path
 from src.data import TRAINING_SIZES, prepare_data, read_csv, sha256, write_csv, write_json
 
 ROOT = Path(__file__).resolve().parent
-EXPERIMENTS = ('final', 'learning-curve', 'unlabeled', 'diagnostics', 'consistency')
+EXPERIMENT_CONFIGS = {
+    'final': 'v008_large_format_final.json',
+    'learning-curve': 'v009_small_learning_curve.json',
+    'unlabeled': 'v010_small_unlabeled_comparison.json',
+    'diagnostics': 'v011_large_diagnostics.json',
+    'consistency': 'v012_large_consistency.json',
+}
+EXPERIMENTS = tuple(EXPERIMENT_CONFIGS)
 
 
 def read_json(path):
@@ -204,7 +211,7 @@ def prepare(args, config):
 
 
 def main(args):
-    config = read_json(ROOT / 'configs' / (args.experiment + '.json'))
+    config = read_json(ROOT / 'configs' / EXPERIMENT_CONFIGS[args.experiment])
     if args.precision:
         config['precision'] = args.precision
     if args.attention_backend:
