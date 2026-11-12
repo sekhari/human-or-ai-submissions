@@ -1,169 +1,130 @@
-"""Render the recorded GPT-2 results as PNG and SVG figures."""
+"""Plot saved learning curves, model comparisons, and validation diagnostics."""
+
+from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
-import matplotlib
-
-matplotlib.use("Agg")
+os.environ['MPLBACKEND'] = 'Agg'
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FormatStrFormatter
+import numpy as np
+import pandas as pd
+
+BLUE, ORANGE = '#236B82', '#D78636'
 
 
-BLUE = "#286A9E"
-DARK_BLUE = "#174366"
-GOLD = "#986400"
-INK = "#202B35"
-MUTED = "#57636E"
-GRID = "#E1E6EA"
+def save_figure(figure, output_dir, name):
+    figure.tight_layout()
+    paths = []
+    for extension in ['png', 'pdf']:
+        path = output_dir / f'{name}.{extension}'
+        figure.savefig(path, dpi=180, bbox_inches='tight')
+        paths.append(str(path))
+    plt.close(figure)
+    return paths
 
 
-def configure_style():
-    plt.rcParams.update({
-        "font.family": "DejaVu Sans",
-        "font.size": 11,
-        "text.color": INK,
-        "axes.labelcolor": INK,
-        "xtick.color": MUTED,
-        "ytick.color": MUTED,
-        "axes.edgecolor": "#A5AFB7",
-        "axes.linewidth": 0.8,
-        "axes.spines.top": False,
-        "axes.spines.right": False,
-        "figure.facecolor": "white",
-        "axes.facecolor": "white",
-        "svg.fonttype": "none",
-        "svg.hashsalt": "gpt2-results",
-        "savefig.dpi": 180,
-    })
+def auc_limits(ax, values):
+    values = np.asarray(values, dtype=float)
+    finite = values[np.isfinite(values)]
+    if len(finite):
+        margin = max(0.002, float(finite.max() - finite.min()) * 0.15)
+        ax.set_ylim(max(0, float(finite.min()) - margin), min(1.005, float(finite.max()) + margin))
+    ax.grid(axis='y', alpha=0.2)
+    ax.set_ylabel('AUROC')
 
 
-def save_figure(fig, output_dir, name):
-    for extension in ("png", "svg"):
-        metadata = {"Date": None} if extension == "svg" else None
-        path = output_dir / f"{name}.{extension}"
-        fig.savefig(path, facecolor="white", metadata=metadata)
-        if extension == "svg":
-            path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n")
-        print(path)
-    plt.close(fig)
+def plot_results(results_dir, output_dir):
+    results_dir, output_dir = Path(results_dir), Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    paths = []
+    curve_path = results_dir / 'learning_curve.csv'
+    if curve_path.is_file():
+        frame = pd.read_csv(curve_path).sort_values('training_rows')
+        figure, ax = plt.subplots(figsize=(7.2, 4.3))
+        ax.plot(frame.training_rows, frame.train_auc, 'o-', color=BLUE, label='Training')
+        ax.plot(frame.training_rows, frame.val_auc, 'o--', color=ORANGE, label='Validation')
+        ax.set_xticks(frame.training_rows)
+        ax.set_xlabel('Labeled training passages')
+        ax.set_title('GPT-2 learning curve')
+        ax.legend(frameon=False)
+        auc_limits(ax, np.r_[frame.train_auc, frame.val_auc])
+        paths += save_figure(figure, output_dir, 'learning_curve')
+    comparison_path = results_dir / 'comparison.csv'
+    if comparison_path.is_file():
+        frame = pd.read_csv(comparison_path)
+        figure, ax = plt.subplots(figsize=(8, 4.3))
+        positions = np.arange(len(frame))
+        if {'format', 'baseline_auc', 'candidate_auc'}.issubset(frame.columns):
+            ax.plot(positions, frame.baseline_auc, 'o-', color=BLUE, label='Format augmentation')
+            ax.plot(positions, frame.candidate_auc, 'o--', color=ORANGE, label='Format augmentation + consistency')
+            ax.set_xticks(positions, frame['format'].str.replace('_', ' '))
+            ax.set_title('Validation AUROC across text formats')
+            values = np.r_[frame.baseline_auc, frame.candidate_auc]
+            name = 'format_comparison'
+        elif {'train_auc', 'val_auc'}.issubset(frame.columns):
+            label_column = next((column for column in ['arm', 'model', 'experiment', 'configuration']
+                                 if column in frame.columns), None)
+            labels = frame[label_column].astype(str).str.replace('_', ' ') if label_column else frame.index.astype(str)
+            ax.plot(positions, frame.train_auc, 'o-', color=BLUE, label='Training')
+            ax.plot(positions, frame.val_auc, 'o--', color=ORANGE, label='Validation')
+            ax.set_xticks(positions, labels)
+            ax.set_title('Model comparison')
+            values = np.r_[frame.train_auc, frame.val_auc]
+            name = 'model_comparison'
+        else:
+            raise ValueError('Comparison CSV requires AUROC columns and model or format labels.')
+        ax.legend(frameon=False)
+        auc_limits(ax, values)
+        paths += save_figure(figure, output_dir, name)
+        if {'format', 'baseline_mean_probability_change', 'candidate_mean_probability_change'}.issubset(frame.columns):
+            transformed = frame.loc[frame['format'] != 'original']
+            figure, ax = plt.subplots(figsize=(7.2, 4.3))
+            positions = np.arange(len(transformed))
+            ax.bar(positions - 0.18, transformed.baseline_mean_probability_change, 0.36, color=BLUE, label='Format augmentation')
+            ax.bar(positions + 0.18, transformed.candidate_mean_probability_change, 0.36, color=ORANGE, label='Format augmentation + consistency')
+            ax.set_xticks(positions, transformed['format'].str.replace('_', ' '))
+            ax.set_ylabel('Mean absolute probability change')
+            ax.set_title('Prediction changes after formatting transformations')
+            maximum = max(transformed.baseline_mean_probability_change.max(),
+                          transformed.candidate_mean_probability_change.max())
+            ax.set_ylim(0, max(float(maximum), 1e-6) * 1.35)
+            ax.legend(frameon=False)
+            paths += save_figure(figure, output_dir, 'probability_drift')
+    metric_path = results_dir / 'metrics.json'
+    if metric_path.is_file():
+        metrics = json.loads(metric_path.read_text())
+        values = metrics.get('metrics', metrics)
+        if 'training' in values and 'validation' in values:
+            figure, ax = plt.subplots(figsize=(5.6, 4.1))
+            scores = [values['training']['auc'], values['validation']['auc']]
+            ax.plot([0, 1], scores, 'o-', color=BLUE)
+            ax.set_xticks([0, 1], ['Training', 'Validation'])
+            ax.set_title('Training and validation AUROC')
+            auc_limits(ax, scores)
+            paths += save_figure(figure, output_dir, 'training_validation')
+    subgroup_path = results_dir / 'length_subgroups.csv'
+    if subgroup_path.is_file():
+        frame = pd.read_csv(subgroup_path)
+        figure, ax = plt.subplots(figsize=(7.5, 4.3))
+        x = np.arange(len(frame))
+        y = frame.auc.to_numpy(dtype=float)
+        ax.vlines(x, frame.auc_ci_lower, frame.auc_ci_upper, color=BLUE)
+        ax.scatter(x, y, color=BLUE)
+        ax.set_xticks(x, [f'{name}\n(n={count:,})' for name, count in zip(frame.subgroup, frame.rows)])
+        ax.set_title('Validation AUROC by passage length')
+        auc_limits(ax, np.r_[frame.auc_ci_lower, frame.auc_ci_upper])
+        paths += save_figure(figure, output_dir, 'length_subgroups')
+    if not paths:
+        raise ValueError('No supported result files were found.')
+    return paths
 
 
-def plot_format_sensitivity(snapshot, output_dir):
-    variants = [
-        ("original", "Original text"),
-        ("spaces_only", "Collapse consecutive\nspaces and tabs"),
-        ("newlines_only", "Replace line breaks\nwith spaces"),
-        ("all_whitespace", "Normalize all whitespace"),
-    ]
-    metrics = {row["variant"]: row for row in snapshot["metrics"]}
-    values = [metrics[key]["auc"] for key, _ in variants]
-    original_auc = metrics["original"]["auc"]
-    fig = plt.figure(figsize=(12, 5.4))
-    ax = fig.add_axes([0.29, 0.22, 0.43, 0.52])
-    fig.text(0.045, 0.93, "GPT-2 formatting sensitivity", fontsize=20, weight="bold")
-    fig.text(
-        0.045, 0.865,
-        f"Same {snapshot['validation_rows']:,} validation passages | "
-        f"Selected epoch {snapshot['selected_epoch']} | No retraining",
-        color=MUTED,
-    )
-
-    positions = list(range(len(variants)))
-    ax.barh(positions, values, height=0.48, color=[DARK_BLUE, BLUE, BLUE, BLUE])
-    ax.set_yticks(positions, [label for _, label in variants])
-    ax.invert_yaxis()
-    ax.set_xlim(0, 1)
-    ax.set_xticks([0, 0.25, 0.5, 0.75, 1])
-    ax.xaxis.set_major_formatter(FormatStrFormatter("%.2f"))
-    ax.set_xlabel("Validation AUROC", labelpad=10)
-    ax.tick_params(axis="y", length=0, pad=12)
-    ax.set_axisbelow(True)
-    ax.grid(axis="x", color=GRID, linewidth=0.8)
-    ax.spines["left"].set_visible(False)
-
-    ax.text(1.04, 1.10, "AUROC", transform=ax.transAxes, weight="bold", fontsize=10)
-    ax.text(1.30, 1.10, "Change vs. original", transform=ax.transAxes, weight="bold", fontsize=10)
-    for position, value in zip(positions, values):
-        ax.text(1.04, position, f"{value:.7f}", transform=ax.get_yaxis_transform(), va="center")
-        delta = value - original_auc
-        label = "Reference" if position == 0 else f"{delta:+.7f}"
-        ax.text(1.30, position, label, transform=ax.get_yaxis_transform(), va="center", color=MUTED)
-
-    fig.text(0.045, 0.085, "All transformations preserve non-whitespace characters.", fontsize=10, color=MUTED)
-    fig.text(0.045, 0.045, "Source: results_snapshot/format_sensitivity.json", fontsize=9, color=MUTED)
-    save_figure(fig, output_dir, "format_sensitivity")
-
-
-def plot_training_history(snapshot, output_dir):
-    history = sorted(snapshot["history"], key=lambda row: row["epoch"])
-    epochs = [row["epoch"] for row in history]
-    losses = [row["training_loss"] for row in history]
-    aucs = [row["validation_auc"] for row in history]
-    best_epoch = snapshot["best_epoch"]
-    best_row = next(row for row in history if row["epoch"] == best_epoch)
-
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5.6))
-    fig.subplots_adjust(left=0.08, right=0.96, bottom=0.24, top=0.72, wspace=0.43)
-    fig.text(0.045, 0.93, "GPT-2 training history", fontsize=20, weight="bold")
-    fig.text(
-        0.045, 0.865,
-        f"{snapshot['training_rows']:,} training passages | "
-        f"Same {snapshot['validation_rows']:,} validation passages | "
-        f"Selected epoch: {best_epoch}",
-        color=MUTED,
-    )
-
-    loss_ax, auc_ax = axes
-    loss_ax.set_title("Training loss", loc="left", fontsize=13, weight="bold", pad=14)
-    loss_ax.plot(epochs, losses, color=BLUE, marker="o", linewidth=1.8, markersize=6)
-    loss_ax.set_ylabel("Binary cross-entropy")
-    loss_ax.set_ylim(0, max(losses) * 1.22)
-    loss_ax.yaxis.set_major_formatter(FormatStrFormatter("%.2f"))
-    for epoch, loss in zip(epochs, losses):
-        offset = (12, 12) if epoch == epochs[1] else (0, 12)
-        alignment = "left" if epoch == epochs[1] else "center"
-        loss_ax.annotate(f"{loss:.7f}", (epoch, loss), xytext=offset, textcoords="offset points", ha=alignment, fontsize=10)
-
-    auc_ax.set_title("Validation AUROC", loc="left", fontsize=13, weight="bold", pad=14)
-    auc_ax.plot(epochs, aucs, color=BLUE, marker="o", linewidth=1.8, markersize=6)
-    auc_ax.scatter([best_epoch], [best_row["validation_auc"]], color=GOLD, marker="D", s=65, zorder=3)
-    auc_ax.set_ylabel("AUROC (zoomed scale)")
-    padding = max(max(aucs) - min(aucs), 0.0001) * 0.35
-    auc_ax.set_ylim(max(0, min(aucs) - padding), min(1, max(aucs) + padding))
-    auc_ax.yaxis.set_major_formatter(FormatStrFormatter("%.4f"))
-    for epoch, auc in zip(epochs, aucs):
-        auc_ax.annotate(
-            f"{auc:.7f}", (epoch, auc), xytext=(0, -24) if epoch == epochs[1] else (0, 12),
-            textcoords="offset points", ha="center", fontsize=10,
-            color=GOLD if epoch == best_epoch else INK,
-        )
-    for ax in axes:
-        ax.set_xticks(epochs)
-        ax.set_xlim(min(epochs) - 0.35, max(epochs) + 0.35)
-        ax.set_xlabel("Epoch", labelpad=8)
-        ax.set_axisbelow(True)
-        ax.grid(axis="y", color=GRID, linewidth=0.8)
-
-    fig.text(0.045, 0.10, "Loss is averaged within each epoch. The highest validation AUROC selects the model.", fontsize=10, color=MUTED)
-    fig.text(0.045, 0.055, "Source: results_snapshot/training_metrics.json", fontsize=9, color=MUTED)
-    save_figure(fig, output_dir, "training_history")
-
-
-def main():
+if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    root = Path(__file__).resolve().parent
-    parser.add_argument("--snapshot-dir", type=Path, default=root / "results_snapshot")
-    parser.add_argument("--output-dir", type=Path, default=root / "figures")
+    parser.add_argument('--results-dir', type=Path, required=True)
+    parser.add_argument('--output-dir', type=Path)
     args = parser.parse_args()
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    configure_style()
-    training = json.loads((args.snapshot_dir / "training_metrics.json").read_text())
-    formatting = json.loads((args.snapshot_dir / "format_sensitivity.json").read_text())
-    plot_training_history(training, args.output_dir)
-    plot_format_sensitivity(formatting, args.output_dir)
-
-
-if __name__ == "__main__":
-    main()
+    print(json.dumps(plot_results(args.results_dir, args.output_dir or args.results_dir / 'figures'), indent=2))

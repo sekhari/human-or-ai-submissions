@@ -1,6 +1,12 @@
-!code/val_ids.csv
-results/
-format_sensitivity/
-work/
-*.zip
+__pycache__/
+*.py[cod]
+.venv/
+runs/
+data/
+figures/
 *.safetensors
+*.pt
+*.pth
+*.bin
+*.log
+!configs/fixed_validation_ids.csv
