@@ -1,0 +1,3 @@
+variant,val_auroc_clean,val_auroc_whitespace,val_auroc_typos
+char_2_5_plus_blank,0.993719,0.9261179999999999,0.9939449999999999
+newline_char,0.991713,0.8887019999999999,0.9919770000000001

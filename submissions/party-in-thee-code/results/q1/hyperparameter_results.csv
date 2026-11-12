@@ -1,0 +1,10 @@
+family,model,parameter,value,training_auroc,validation_auroc,training_time_seconds,vocabulary_size,score_type
+word_lr,Word TF-IDF + Logistic Regression,C,0.1,0.957064125,0.9073880000000001,4.762277541000003,50000,probability
+word_lr,Word TF-IDF + Logistic Regression,C,1.0,0.993343625,0.9327049999999999,4.45862771100019,50000,probability
+word_lr,Word TF-IDF + Logistic Regression,C,10.0,1.0,0.942977,4.7197063089997755,50000,probability
+word_nb,Word TF-IDF + Multinomial Naive Bayes,alpha,0.1,0.99026675,0.903779,4.342299554999954,50000,probability
+word_nb,Word TF-IDF + Multinomial Naive Bayes,alpha,0.5,0.982729125,0.902459,4.16964432199984,50000,probability
+word_nb,Word TF-IDF + Multinomial Naive Bayes,alpha,1.0,0.9766986875,0.9005770000000001,4.233958132000225,50000,probability
+char_svm,Character TF-IDF + Linear SVM,C,0.1,0.99224825,0.964064,18.024073121000583,50000,decision_function
+char_svm,Character TF-IDF + Linear SVM,C,1.0,0.9999974374999999,0.9707039999999999,18.344914382999377,50000,decision_function
+char_svm,Character TF-IDF + Linear SVM,C,10.0,1.0,0.966582,19.928473701999792,50000,decision_function

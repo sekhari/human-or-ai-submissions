@@ -1,0 +1,34 @@
+{
+  "model": "Character TF-IDF 2-5 + blank-line logistic stack",
+  "reference": "Character TF-IDF 3-5 with newlines kept as paragraph marks",
+  "seed": 42,
+  "ngram_range": [
+    2,
+    5
+  ],
+  "max_features": 50000,
+  "svm_C": 1.0,
+  "stack": "Logistic regression on the SVM margin and a blank-line indicator",
+  "stack_fit": "3-fold out-of-fold margins on the 8,000-row training split",
+  "logistic_coefficients_margin_blank": [
+    5.063784790400419,
+    7.257357390235862
+  ],
+  "logistic_intercept": -1.0167630311177243,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "rows": [
+    {
+      "variant": "char_2_5_plus_blank",
+      "val_auroc_clean": 0.993719,
+      "val_auroc_whitespace": 0.9261179999999999,
+      "val_auroc_typos": 0.9939449999999999
+    },
+    {
+      "variant": "newline_char",
+      "val_auroc_clean": 0.991713,
+      "val_auroc_whitespace": 0.8887019999999999,
+      "val_auroc_typos": 0.9919770000000001
+    }
+  ]
+}

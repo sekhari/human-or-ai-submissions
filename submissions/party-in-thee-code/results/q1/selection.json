@@ -1,0 +1,51 @@
+{
+  "family": "char_svm",
+  "model": "Character TF-IDF + Linear SVM",
+  "parameter": "C",
+  "value": 1.0,
+  "seed": 42,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "training_auroc": 0.9999974374999999,
+  "validation_auroc": 0.9707039999999999,
+  "base_pipeline_fit_seconds": 18.344914382999377,
+  "probability_output": {
+    "method": "3-fold training-only sigmoid calibration of the full pipeline",
+    "ensemble": false,
+    "fold_seed": 42,
+    "extra_fit_time_seconds": 65.87750098299966
+  },
+  "selection_rule": "Highest held-out validation AUROC among the 9 fixed candidates; ascending grid order breaks exact within-family ties, LR then NB then SVM breaks exact family ties.",
+  "hyperparameter_search": {
+    "word_lr": [
+      "C",
+      [
+        0.1,
+        1.0,
+        10.0
+      ]
+    ],
+    "word_nb": [
+      "alpha",
+      [
+        0.1,
+        0.5,
+        1.0
+      ]
+    ],
+    "char_svm": [
+      "C",
+      [
+        0.1,
+        1.0,
+        10.0
+      ]
+    ]
+  },
+  "split_file_sha256": {
+    "train_ids.csv": "9f6702b97a4e89cf06a7480dbe477e89e841829abb7794e9c2f9ceed55ececcf",
+    "validation_ids.csv": "4d4891e348665ff7e018ceb03e73527a6a167a65476cec2ae601d522dd443fd6",
+    "split_manifest.json": "abe437928c0ecd12aa206d548561e61771eb0480be54b63fb487a9dcdbea4b30"
+  },
+  "status": "Q1 selected model; later team improvements may change the final approach."
+}

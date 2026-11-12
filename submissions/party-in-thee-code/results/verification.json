@@ -1,0 +1,24 @@
+{
+  "shared_split_sizes": [
+    8000,
+    2000
+  ],
+  "training_counts": {
+    "human": 4000,
+    "AI": 4000
+  },
+  "validation_counts": {
+    "human": 1000,
+    "AI": 1000
+  },
+  "overlapping_ids": 0,
+  "split_stable_after_input_row_shuffle": true,
+  "saved_model_matches_exported_predictions": true,
+  "exported_probabilities_reproduce_recorded_auroc": true,
+  "tfidf_idf_matches_8000_training_texts_only": true,
+  "validation_unlabeled_case_whitespace_normalized_text_overlap": 0,
+  "executed_notebook_code_cells": 5,
+  "notebook_errors": 0,
+  "first_script_and_notebook_auroc_match": true,
+  "near_duplicate_detection": "Not performed beyond exact and case/whitespace normalization."
+}

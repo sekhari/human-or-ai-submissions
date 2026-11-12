@@ -1,0 +1,2 @@
+model,training_auroc,validation_auroc,training_time_seconds
+Word TF-IDF + Logistic Regression,0.993343625,0.9327049999999999,4.653440856000088

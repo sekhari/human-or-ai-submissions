@@ -1,0 +1,24 @@
+{
+  "model": "Word TF-IDF + Logistic Regression",
+  "seed": 42,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "training_auroc": 0.993343625,
+  "validation_auroc": 0.9327049999999999,
+  "training_time_seconds": 4.653440856000088,
+  "timing_scope": "Pipeline.fit: TF-IDF fitting/transformation and logistic regression fitting; excludes CSV reading and evaluation",
+  "vocabulary_size": 50000,
+  "lr_iterations": 5,
+  "convergence_warning": false,
+  "decision_threshold": 0.5,
+  "validation_confusion_matrix_labels_0_1": [
+    [
+      931,
+      69
+    ],
+    [
+      197,
+      803
+    ]
+  ]
+}

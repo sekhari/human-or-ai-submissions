@@ -1,0 +1,18 @@
+{
+  "candidate_configurations": 9,
+  "model_families": 3,
+  "same_shared_split": true,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "original_baseline_files_unchanged": true,
+  "notebook_code_cells_executed": 5,
+  "notebook_errors": 0,
+  "script_and_notebook_all_auroc_results_match": true,
+  "each_family_uses_highest_validation_auroc": true,
+  "stored_family_scores_reproduce_comparison_auroc": true,
+  "saved_probability_model_reproduces_exported_predictions": true,
+  "selected_model_idf_matches_training_texts_only": true,
+  "sigmoid_preserves_svm_ranking": true,
+  "selected_family": "char_svm",
+  "selected_validation_auroc": 0.9707039999999999
+}

@@ -1,0 +1,36 @@
+{
+  "model": "Character TF-IDF + Linear SVM",
+  "C": 1.0,
+  "analyzer": "char",
+  "ngram_range": [
+    3,
+    5
+  ],
+  "min_df": 2,
+  "max_df": 1.0,
+  "max_features": 50000,
+  "sublinear_tf": true,
+  "smooth_idf": true,
+  "norm": "l2",
+  "lowercase": true,
+  "svm_dual": "auto",
+  "svm_max_iter": 5000,
+  "svm_tol": 0.0001,
+  "seed": 42,
+  "sizes": [
+    500,
+    1000,
+    2000,
+    5000,
+    8000
+  ],
+  "subset_sampling": "Seeded per-class permutations; balanced nested prefixes; shared training order retained.",
+  "tfidf_fitting": "Refitted separately on each training subset; validation texts never used for fitting.",
+  "auc_score_type": "Uncalibrated decision_function, as in the Q1 SVM comparison. No probability calibration is needed for this ranking metric.",
+  "timing_scope": "Full pipeline fit; excludes loading, predictions and plotting; one BLAS thread.",
+  "split_file_sha256": {
+    "train_ids.csv": "9f6702b97a4e89cf06a7480dbe477e89e841829abb7794e9c2f9ceed55ececcf",
+    "validation_ids.csv": "4d4891e348665ff7e018ceb03e73527a6a167a65476cec2ae601d522dd443fd6",
+    "split_manifest.json": "abe437928c0ecd12aa206d548561e61771eb0480be54b63fb487a9dcdbea4b30"
+  }
+}

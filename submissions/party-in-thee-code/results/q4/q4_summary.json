@@ -1,0 +1,218 @@
+{
+  "model": "char TF-IDF (3-5) + LinearSVC C=1, sigmoid-calibrated on training folds",
+  "threshold": 0.5,
+  "train_auroc": 0.999997,
+  "validation_auroc": 0.970704,
+  "confusion_matrix_labels_0_1": [
+    [
+      925,
+      75
+    ],
+    [
+      97,
+      903
+    ]
+  ],
+  "length_bins": [
+    {
+      "bin": "75-175",
+      "count": 667,
+      "n_ai": 348,
+      "n_human": 319,
+      "auroc": 0.972
+    },
+    {
+      "bin": "176-239",
+      "count": 669,
+      "n_ai": 287,
+      "n_human": 382,
+      "auroc": 0.9723
+    },
+    {
+      "bin": "240-350",
+      "count": 664,
+      "n_ai": 365,
+      "n_human": 299,
+      "auroc": 0.9742
+    }
+  ],
+  "newline_bins": [
+    {
+      "bin": "0-0",
+      "count": 598,
+      "n_ai": 268,
+      "n_human": 330,
+      "auroc": 0.9817
+    },
+    {
+      "bin": "1-5",
+      "count": 407,
+      "n_ai": 144,
+      "n_human": 263,
+      "auroc": 0.9402
+    },
+    {
+      "bin": "6+",
+      "count": 995,
+      "n_ai": 588,
+      "n_human": 407,
+      "auroc": 0.9841
+    }
+  ],
+  "baseline_length_bins": [
+    {
+      "bin": "75-175",
+      "count": 667,
+      "n_ai": 348,
+      "n_human": 319,
+      "auroc": 0.907
+    },
+    {
+      "bin": "176-239",
+      "count": 669,
+      "n_ai": 287,
+      "n_human": 382,
+      "auroc": 0.9383
+    },
+    {
+      "bin": "240-350",
+      "count": 664,
+      "n_ai": 365,
+      "n_human": 299,
+      "auroc": 0.9542
+    }
+  ],
+  "gap": 0.029293,
+  "error_overlap_with_word_lr": {
+    "svm_errors": 172,
+    "lr_errors": 266,
+    "shared": 112,
+    "score_correlation_pearson": 0.8698
+  },
+  "feature_means_by_outcome": {
+    "FN": {
+      "newlines": 12.69,
+      "blank_lines": 4.52,
+      "non_ascii": 1.95,
+      "digits": 25.67,
+      "double_spaces": 0.7,
+      "word_count": 219.59
+    },
+    "FP": {
+      "newlines": 1.53,
+      "blank_lines": 0.0,
+      "non_ascii": 0.69,
+      "digits": 12.92,
+      "double_spaces": 0.68,
+      "word_count": 196.55
+    },
+    "correct": {
+      "newlines": 10.17,
+      "blank_lines": 2.85,
+      "non_ascii": 1.4,
+      "digits": 16.95,
+      "double_spaces": 0.4,
+      "word_count": 209.61
+    }
+  },
+  "feature_means_by_label": {
+    "0": {
+      "newlines": 5.98,
+      "blank_lines": 0.0,
+      "non_ascii": 1.49,
+      "digits": 15.89,
+      "double_spaces": 0.41,
+      "word_count": 208.66
+    },
+    "1": {
+      "newlines": 13.96,
+      "blank_lines": 5.64,
+      "non_ascii": 1.31,
+      "digits": 18.55,
+      "double_spaces": 0.44,
+      "word_count": 210.55
+    }
+  },
+  "cases": [
+    {
+      "id": "969",
+      "error_type": "FP",
+      "predicted_ai_probability": 0.9823,
+      "word_count": 182,
+      "newlines": 0,
+      "double_spaces": 8
+    },
+    {
+      "id": "8785",
+      "error_type": "FP",
+      "predicted_ai_probability": 0.9391,
+      "word_count": 157,
+      "newlines": 0,
+      "double_spaces": 0
+    },
+    {
+      "id": "4587",
+      "error_type": "FP",
+      "predicted_ai_probability": 0.939,
+      "word_count": 158,
+      "newlines": 0,
+      "double_spaces": 0
+    },
+    {
+      "id": "3519",
+      "error_type": "FP",
+      "predicted_ai_probability": 0.9199,
+      "word_count": 266,
+      "newlines": 14,
+      "double_spaces": 10
+    },
+    {
+      "id": "4498",
+      "error_type": "FP",
+      "predicted_ai_probability": 0.8982,
+      "word_count": 332,
+      "newlines": 2,
+      "double_spaces": 0
+    },
+    {
+      "id": "1810",
+      "error_type": "FN",
+      "predicted_ai_probability": 0.0023,
+      "word_count": 277,
+      "newlines": 65,
+      "double_spaces": 0
+    },
+    {
+      "id": "3062",
+      "error_type": "FN",
+      "predicted_ai_probability": 0.0037,
+      "word_count": 170,
+      "newlines": 6,
+      "double_spaces": 0
+    },
+    {
+      "id": "2989",
+      "error_type": "FN",
+      "predicted_ai_probability": 0.0059,
+      "word_count": 170,
+      "newlines": 16,
+      "double_spaces": 0
+    },
+    {
+      "id": "2703",
+      "error_type": "FN",
+      "predicted_ai_probability": 0.0085,
+      "word_count": 255,
+      "newlines": 25,
+      "double_spaces": 5
+    },
+    {
+      "id": "9490",
+      "error_type": "FN",
+      "predicted_ai_probability": 0.0119,
+      "word_count": 288,
+      "newlines": 26,
+      "double_spaces": 0
+    }
+  ]
+}

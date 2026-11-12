@@ -1,0 +1,18 @@
+{
+  "labeled_rows": 10000,
+  "unique_ids": 10000,
+  "missing_values": 0,
+  "repeated_exact_texts": 0,
+  "repeated_case_whitespace_normalized_texts": 0,
+  "exact_text_overlap_between_splits": 0,
+  "normalized_text_overlap_between_splits": 0,
+  "near_duplicate_check": "Not performed; source/domain/generator metadata are unavailable.",
+  "train_label_counts": {
+    "0": 4000,
+    "1": 4000
+  },
+  "validation_label_counts": {
+    "0": 1000,
+    "1": 1000
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "method": "train_test_split, stratified by label, input sorted lexicographically by ID",
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "dataset_sha256": "a5fe8d64ac51ad88c8145620b0966b8fe56fb564cc99ec209021643417bcada7",
+  "label_mapping": {
+    "0": "human",
+    "1": "AI"
+  }
+}

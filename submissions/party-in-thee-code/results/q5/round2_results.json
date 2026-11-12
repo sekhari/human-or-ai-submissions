@@ -1,0 +1,53 @@
+{
+  "blank_line_rate_by_label_train_csv": {
+    "0": 0.0,
+    "1": 0.6602
+  },
+  "rows": [
+    {
+      "variant": "baseline",
+      "fit_seconds": 14.971,
+      "train_auroc": 0.999997,
+      "val_auroc_clean": 0.970704,
+      "val_auroc_whitespace": 0.930538,
+      "val_auroc_typos": 0.971202,
+      "delta_clean": 0.0,
+      "delta_whitespace": 0.0,
+      "delta_typos": 0.0
+    },
+    {
+      "variant": "v4_newline",
+      "fit_seconds": 15.53,
+      "train_auroc": 1.0,
+      "val_auroc_clean": 0.991701,
+      "val_auroc_whitespace": 0.888725,
+      "val_auroc_typos": 0.991986,
+      "delta_clean": 0.020997,
+      "delta_whitespace": -0.041813,
+      "delta_typos": 0.020784
+    },
+    {
+      "variant": "v5_newline_rank_avg",
+      "fit_seconds": 17.884,
+      "train_auroc": 1.0,
+      "val_auroc_clean": 0.979158,
+      "val_auroc_whitespace": 0.936187,
+      "val_auroc_typos": 0.979388,
+      "delta_clean": 0.008454,
+      "delta_whitespace": 0.005649,
+      "delta_typos": 0.008186
+    },
+    {
+      "variant": "v6_newline_200k",
+      "fit_seconds": 15.892,
+      "train_auroc": 1.0,
+      "val_auroc_clean": 0.991862,
+      "val_auroc_whitespace": 0.892963,
+      "val_auroc_typos": 0.992086,
+      "delta_clean": 0.021158,
+      "delta_whitespace": -0.037575,
+      "delta_typos": 0.020884
+    }
+  ],
+  "notes": "Round 2, chosen after round 1. All variants share the round-1 validation set, so round-1 and round-2 winners are selection results on that set."
+}

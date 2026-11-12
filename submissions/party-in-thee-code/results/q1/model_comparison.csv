@@ -1,0 +1,4 @@
+family,model,parameter,value,training_auroc,validation_auroc,training_time_seconds,vocabulary_size,score_type
+word_lr,Word TF-IDF + Logistic Regression,C,10.0,1.0,0.942977,4.7197063089997755,50000,probability
+word_nb,Word TF-IDF + Multinomial Naive Bayes,alpha,0.1,0.99026675,0.903779,4.342299554999954,50000,probability
+char_svm,Character TF-IDF + Linear SVM,C,1.0,0.9999974374999999,0.9707039999999999,18.344914382999377,50000,decision_function

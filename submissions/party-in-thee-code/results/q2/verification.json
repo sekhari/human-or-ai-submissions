@@ -1,0 +1,20 @@
+{
+  "training_sizes": [
+    500,
+    1000,
+    2000,
+    5000,
+    8000
+  ],
+  "all_subsets_balanced": true,
+  "subsets_nested": true,
+  "all_training_ids_from_shared_training_partition": true,
+  "same_2000_validation_ids_at_every_size": true,
+  "no_training_validation_id_overlap": true,
+  "stored_decision_scores_reproduce_all_auroc_values": true,
+  "8000_row_endpoint_matches_q1": true,
+  "baseline_q1_code_results_and_split_files_unchanged": true,
+  "executed_notebook_code_cells": 4,
+  "notebook_errors": 0,
+  "pdf_and_png_figures_generated": true
+}

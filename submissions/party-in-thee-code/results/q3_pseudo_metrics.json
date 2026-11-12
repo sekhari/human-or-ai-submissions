@@ -1,0 +1,55 @@
+{
+  "method": "Confidence-based pseudo-labeling",
+  "model": "Word TF-IDF + Logistic Regression",
+  "human_if_p_ai_le": 0.1,
+  "ai_if_p_ai_ge": 0.9,
+  "decision_threshold": 0.5,
+  "unlabeled_rows": 3000,
+  "selected_rows": 72,
+  "discarded_rows": 2928,
+  "pseudo_label_counts": {
+    "0": 6,
+    "1": 66
+  },
+  "unlabeled_probability_bins": {
+    "[0.0, 0.1)": 6,
+    "[0.1, 0.2)": 207,
+    "[0.2, 0.5)": 1535,
+    "[0.5, 0.8)": 885,
+    "[0.8, 0.9)": 301,
+    "[0.9, 1.0)": 66
+  },
+  "leakage_checks": {
+    "id_overlap_train": 0,
+    "id_overlap_val": 0,
+    "exact_text_overlap_train": 0,
+    "exact_text_overlap_val": 0,
+    "normalized_text_overlap_train": 0,
+    "normalized_text_overlap_val": 0
+  },
+  "supervised_validation_auroc": 0.9327280000000001,
+  "with_unlabeled_validation_auroc": 0.932614,
+  "auroc_delta": -0.0001140000000000585,
+  "supervised_confusion_matrix_labels_0_1": [
+    [
+      931,
+      69
+    ],
+    [
+      196,
+      804
+    ]
+  ],
+  "with_unlabeled_confusion_matrix_labels_0_1": [
+    [
+      931,
+      69
+    ],
+    [
+      196,
+      804
+    ]
+  ],
+  "validation_protocol": "Shared stratified split, 8000 train / 2000 validation, seed 42",
+  "leakage_rule": "Validation rows are excluded from fitting, vocabulary construction, and pseudo-label selection. The confidence cutoffs were fixed before evaluation."
+}
