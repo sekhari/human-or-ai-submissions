@@ -143,6 +143,33 @@ def main():
           "LM weight 0.2 minus base512 alone, val AUROC:\n"
           f"  mean {diffs.mean():.4f}, 2.5% {lo:.4f}, 97.5% {hi:.4f}")
 
+    # 3c. save val predictions for LM weight 0.2 (rows in val order)
+    os.makedirs(a.out_dir, exist_ok=True)
+    pd.DataFrame({"id": train["id"].iloc[va].to_numpy(),
+                  "label": yv,
+                  "base512": base_va,
+                  "lm": lm_va,
+                  "blend": blend_va}).to_csv(
+        os.path.join(a.out_dir, "val_preds_w0.2.csv"), index=False)
+
+    # 3d. top-1000 cutoff: the 1,000 highest-scoring val rows are called AI,
+    # the rest human. Print only.
+    def top_half_wrong(score):
+        pred_ai = np.zeros(len(score), dtype=bool)
+        pred_ai[np.argsort(-score, kind="stable")[:len(score) // 2]] = True
+        return pred_ai, pred_ai != (yv == 1)
+
+    print("\nTop-1000 cutoff (highest 1,000 val scores called AI):")
+    wrong_by = {}
+    for name, s in [("base512", base_va), ("LM", lm_va), ("blend w0.2", blend_va)]:
+        pred_ai, wrong = top_half_wrong(s)
+        wrong_by[name] = wrong
+        print(f"  {name:<11} FP {int((pred_ai & (yv == 0)).sum()):>3}  "
+              f"FN {int((~pred_ai & (yv == 1)).sum()):>3}  "
+              f"errors {int(wrong.sum()):>3}")
+    print("  errors shared by base512 and LM: "
+          f"{int((wrong_by['base512'] & wrong_by['LM']).sum())}")
+
     # 4. do the models make different mistakes? (0.5 cutoff)
     wrong_b = (base_va >= 0.5) != (y[va] == 1)
     wrong_l = (lm_va >= 0.5) != (y[va] == 1)
