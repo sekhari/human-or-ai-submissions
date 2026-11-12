@@ -1,0 +1,24 @@
+[
+  {
+    "pooling": "mean",
+    "seeds": 3,
+    "validation_auc_mean": 0.942873,
+    "validation_auc_sd": 0.0043838901,
+    "validation_auc_min": 0.938439,
+    "validation_auc_max": 0.947205,
+    "train_auc_mean": 0.9949613125,
+    "validation_loss_mean": 0.3913637563,
+    "fit_seconds_mean": 998.3225202667
+  },
+  {
+    "pooling": "attention",
+    "seeds": 3,
+    "validation_auc_mean": 0.9422046667,
+    "validation_auc_sd": 0.003285097,
+    "validation_auc_min": 0.939306,
+    "validation_auc_max": 0.945773,
+    "train_auc_mean": 0.9947067083,
+    "validation_loss_mean": 0.3535888863,
+    "fit_seconds_mean": 938.8437130333
+  }
+]

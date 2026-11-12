@@ -1,0 +1,21 @@
+{
+  "note": "Original experiment scripts copied without edits. Git commits record this export and subsequent integration, not a fabricated earlier history.",
+  "files": [
+    {
+      "file": "experiments/logistic_regression_experiments.py",
+      "original_sha256": "2ead22ae539559b6f23b1d89038daaeeece3f6fc82b4d518bc2f7bc94d99d282"
+    },
+    {
+      "file": "experiments/punctuation_experiments.py",
+      "original_sha256": "afa5f6f0746f79b302f8f646dbc0763d6f50900004c304827c0dfc837d7d4ea4"
+    },
+    {
+      "file": "experiments/svm_experiments.py",
+      "original_sha256": "9bdb5506ef13f1aae5d9419eeaaf6cacb5bb487beca8c8d221839195214b0242"
+    },
+    {
+      "file": "experiments/neural_network_experiments.py",
+      "original_sha256": "b9d27e9a9a60b62400412a9bf2eb8a7c0706dea89af2553f603c49fc2115adf9"
+    }
+  ]
+}

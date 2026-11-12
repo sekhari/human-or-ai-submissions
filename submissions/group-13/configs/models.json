@@ -1,0 +1,111 @@
+{
+  "members": {
+    "r42": {
+      "kind": "roberta",
+      "seed": 42,
+      "lr": 3e-05,
+      "epochs": 3,
+      "schedule_epochs": 3,
+      "micro_batch": 16,
+      "gradient_checkpointing": false
+    },
+    "r43": {
+      "kind": "roberta",
+      "seed": 43,
+      "lr": 3e-05,
+      "epochs": 2,
+      "schedule_epochs": 3,
+      "micro_batch": 16,
+      "gradient_checkpointing": false
+    },
+    "r44": {
+      "kind": "roberta",
+      "seed": 44,
+      "lr": 3e-05,
+      "epochs": 3,
+      "schedule_epochs": 3,
+      "micro_batch": 16,
+      "gradient_checkpointing": false
+    },
+    "rl1": {
+      "kind": "roberta_large",
+      "seed": 42,
+      "lr": 1e-05,
+      "epochs": 3,
+      "schedule_epochs": 3,
+      "micro_batch": 8,
+      "gradient_checkpointing": true
+    },
+    "rl2": {
+      "kind": "roberta_large",
+      "seed": 42,
+      "lr": 2e-05,
+      "epochs": 3,
+      "schedule_epochs": 3,
+      "micro_batch": 8,
+      "gradient_checkpointing": true
+    },
+    "t42": {
+      "kind": "t5",
+      "seed": 42,
+      "lr": 0.0001,
+      "epochs": 3,
+      "schedule_epochs": 3,
+      "micro_batch": 8,
+      "gradient_checkpointing": false
+    },
+    "t43": {
+      "kind": "t5",
+      "seed": 43,
+      "lr": 0.0001,
+      "epochs": 3,
+      "schedule_epochs": 3,
+      "micro_batch": 8,
+      "gradient_checkpointing": false
+    },
+    "q42": {
+      "kind": "qwen",
+      "seed": 42,
+      "lr": 0.0001,
+      "epochs": 2,
+      "schedule_epochs": 2,
+      "micro_batch": 4,
+      "gradient_checkpointing": true
+    },
+    "q43": {
+      "kind": "qwen",
+      "seed": 43,
+      "lr": 0.0001,
+      "epochs": 2,
+      "schedule_epochs": 2,
+      "micro_batch": 4,
+      "gradient_checkpointing": true
+    }
+  },
+  "sources": {
+    "roberta": {
+      "repo": "FacebookAI/roberta-base",
+      "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+      "license": "mit"
+    },
+    "roberta_large": {
+      "repo": "FacebookAI/roberta-large",
+      "revision": "722cf37b1afa9454edce342e7895e588b6ff1d59",
+      "license": "mit"
+    },
+    "t5": {
+      "repo": "google/t5-v1_1-base",
+      "revision": "b5fc947a416ea3cb079532cb3c2bbadeb7f800fc",
+      "license": "apache-2.0"
+    },
+    "qwen": {
+      "repo": "Qwen/Qwen2.5-1.5B",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "license": "apache-2.0"
+    }
+  },
+  "max_length": 512,
+  "effective_batch": 32,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1
+}

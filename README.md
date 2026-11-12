@@ -104,13 +104,3 @@ Copy the PR URL into:
 | AI disclosure | Honest account of AI use and what you verified |
 
 We inspect the **final code and its development history**, not only the last snapshot.
-
-## Competition reminders
-
-- Do not retrieve hidden labels from RAID or any external source.
-- Do not use external LLM APIs to directly label or predict competition test passages.
-- Laptop-friendly pipelines are sufficient for full credit; GPUs are optional.
-
-## Questions
-
-Post on the course Ed / Canvas channel, or email course staff.

@@ -1,0 +1,20 @@
+{
+  "scope": "Export verification, not a new search or GPU retraining run",
+  "classical": {
+    "logistic": {
+      "AUROC": 0.9594760000000001,
+      "log_loss": 0.27344684031838606
+    },
+    "svm": {
+      "AUROC": 0.962387,
+      "log_loss": 0.24567461671349264
+    }
+  },
+  "recipe_max_absolute_errors": {
+    "equal": 2.2176704916887502e-14,
+    "best": 1.326716514427062e-14,
+    "t5-qwen": 2.220446049250313e-16,
+    "stack": 2.0694557179012918e-13,
+    "midpoint": 1.0347278589506459e-13
+  }
+}

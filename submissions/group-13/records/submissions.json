@@ -1,0 +1,40 @@
+{
+  "public_fraction_approx": 0.3,
+  "private_fraction_approx": 0.7,
+  "submissions": [
+    {
+      "recipe": "equal",
+      "file": "submission_roberta_t5_qwen_seeds_42_43_equal_thirds.csv",
+      "public_AUROC": 0.98641,
+      "sha256": "bdc3de9bf57e51015ae6ee518edc713727d723c8c848351228fb6bfd0c48d449",
+      "source": "User-reported Kaggle public score; not independently fetched."
+    },
+    {
+      "recipe": "best",
+      "file": "submission_roberta_t5_qwen_seeds_42_43_20_40_40.csv",
+      "public_AUROC": 0.98786,
+      "sha256": "fa7c3fef1b4a9fda288aa0e2b4ddd16dbc56ee6cf1ab592d2a1bde0a71a5ccd1",
+      "source": "User-reported Kaggle public score; not independently fetched."
+    },
+    {
+      "recipe": "t5-qwen",
+      "file": "submission_t5_qwen_seeds_42_43_50_50.csv",
+      "public_AUROC": 0.98709,
+      "sha256": "63459d414b0c0c4830db4663b45f251e78dcbfaab990a8a2692f1052eeed6a73",
+      "source": "User-reported Kaggle public score; not independently fetched."
+    },
+    {
+      "recipe": "stack",
+      "file": "submission_logistic_stack_roberta_t5_qwen.csv",
+      "public_AUROC": 0.98784,
+      "sha256": "a9068179b1f8bfd46a11c8709ea2a6fdeddb658f9ff8f07e99c781b9ac48ba63",
+      "source": "User-reported Kaggle public score; not independently fetched."
+    },
+    {
+      "recipe": "midpoint",
+      "file": "submission_incumbent_stack_50_50.csv",
+      "public_AUROC": null,
+      "source": "Prepared; no score reported."
+    }
+  ]
+}

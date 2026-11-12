@@ -1,0 +1,12 @@
+artifacts/
+outputs/
+data/
+.hf-cache/
+.matplotlib/
+experiments/results*/
+experiments/.matplotlib/
+*.safetensors
+*.bin
+*.npz
+*.zip
+*.log

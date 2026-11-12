@@ -1,0 +1,12 @@
+{
+  "logit_coefficients_R_T_Q": [
+    0.39571407289809585,
+    0.23702473770047208,
+    0.27049267789642517
+  ],
+  "intercept": -1.9093563623409995,
+  "clip": 1e-06,
+  "C": 0.1,
+  "training_unique_IDs": 10000,
+  "note": "Fitted from excluded predictions after four grouped checks; these coefficients, not a percentage average, define the reported stack."
+}
