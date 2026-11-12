@@ -1,0 +1,26 @@
+FINAL PIPELINE READ-ONLY REVIEW: no blocking finding
+Reviewed UTC: 2026-11-06T20:51:11.022910+00:00
+
+Independent checks performed without model fitting:
+- Recomputed all 33 frozen candidate scores on random/topic/layout from saved NPZ arrays; AUROCs matched to 1e-12.
+- Verified exact candidate ID/label alignment and current protocol/layout-plan hashes.
+- Independently applied ordinary AUROC gate 0.9932934840621175 and 0.0005 near-tie rule. Exactly one candidate remained near the best: style_extra_leaf2, weight 1, probability aggregation.
+- Verified source/shared-split ID sets: 8000 development and 2000 original validation rows, disjoint and complete; all three internal partitions are confined to the original development rows. Raw CSV reads in this check used ID columns only.
+
+Code review:
+- final_model.py uses only text for component fits/predictions. Selected StyleFeatures are stateless per document; no prediction-batch normalization occurs.
+- Selected probability scoring is expit(common.decision_scores), matching selection from the NPZ decision scores. ExtraTrees probability clipping/logit/expit can create tiny numeric-tie differences from raw probabilities; selection and final inference use the same transform.
+- train_final.py reads and checks the frozen recipe before loading labels, fits the original 8000 rows for one benchmark evaluation, then refits the identical template on all 10000 labeled rows. There is no branch or parameter change based on the benchmark score.
+- Test probabilities are indexed by test IDs and mapped into sample-submission ID order. Checks cover row count, exact columns, missing/duplicate IDs, matching test ID set, sample order, finite probabilities in [0,1], CSV readback, model reload, batch predictions, and fit-row counts.
+- Final selection hash is checked again after training. The source recipe/protocol are copied to the artifact directory and source/data/library metadata are recorded.
+- No unlabeled-data, test-label, or external-model path is used by the selected model or final-training script.
+
+Runtime boundary: this reviewer did not execute fits, inspect original-validation labels, or rerun final inference. Final artifact reload/batch/readback checks are implemented in train_final.py; their runtime outcome must be taken from the completed final metrics.
+Interpretation: the original 2000-row validation set is correctly described as a reused development benchmark. The layout stress split is post hoc and overlaps other internal validation data. These scores do not establish Kaggle/public-distribution performance.
+
+Reviewed SHA-256 values:
+models/text_generalization/final_model.py 2dd2b8f80bcd73481bf385abae10a2f3324bf93e7b90dc85bf93206e6c34ffa7
+models/text_generalization/select_ensemble.py 42fcec7288888690fa01c0ac262a52cfb493a4fec5d660bec781c7adfcb5a5d1
+models/text_generalization/train_final.py da0f2f24cc0ac3333ffe24107aead33e0e8fbf6de621d6c7edf90862afac32be
+outputs/text_generalization/selection/selected.json 598c7f0255d1da8ae33c7cd3d8fdb8d82b091a583b5574877d9183d419863d69
+outputs/text_generalization/protocol.json 032f1559f04750a553fc81bb5185b1ea65fa696dc165e2e221384d011304a6bc

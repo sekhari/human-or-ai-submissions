@@ -1,0 +1,18 @@
+{
+  "random": {
+    "training_rows": 6000,
+    "validation_rows": 2000,
+    "validation_counts": {
+      "0": 1000,
+      "1": 1000
+    }
+  },
+  "topic": {
+    "training_rows": 6042,
+    "validation_rows": 1958,
+    "validation_counts": {
+      "0": 987,
+      "1": 971
+    }
+  }
+}

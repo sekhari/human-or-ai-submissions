@@ -1,0 +1,12 @@
+[
+  {
+    "name": "semi_style_hgb31_t095",
+    "threshold": 0.95,
+    "pseudo_weight": 0.25
+  },
+  {
+    "name": "semi_style_hgb31_t099",
+    "threshold": 0.99,
+    "pseudo_weight": 0.25
+  }
+]

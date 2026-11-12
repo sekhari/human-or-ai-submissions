@@ -1,0 +1,10 @@
+# Local data and generated files; this does not remove previously tracked files.
+/data/
+/artifacts/
+/.venv/
+/submission*.csv
+*.joblib
+*.npy
+*.npz
+__pycache__/
+*.py[cod]

@@ -1,0 +1,10 @@
+{
+  "unlabeled_sha256": "42fe881240148a2e06583692ff16ded3df5bd60558820738b2de470680934aae",
+  "labeled_text_rows_checked": 10000,
+  "unlabeled_rows_before_exclusion": 3000,
+  "excluded_exact_text_matches": 0,
+  "excluded_ids": [],
+  "eligible_unlabeled_rows": 3000,
+  "within_eligible_exact_text_duplicate_count": 0,
+  "deduplication": "SHA256 of exact original UTF-8 text; labeled text column only; no normalization"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": [
+    "sklearn clone and fit on synthetic text",
+    "class ordering [0,1]",
+    "145 feature columns",
+    "probability rows sum to one",
+    "permuted inference order matches",
+    "singleton batch matches",
+    "joblib round-trip",
+    "valid 3000-row submission accepted",
+    "NaN, out-of-range, missing row, duplicate ID and reversed sample order rejected"
+  ],
+  "note": "Synthetic interface checks; final-model numerical verification is separately recorded in metrics.json and artifact_qa.json."
+}

@@ -1,0 +1,84 @@
+{
+  "training_rows": 6000,
+  "present_layout_group_count": 3,
+  "target_cell_count": 1000.0,
+  "power": 1.0,
+  "cap_before_normalization": 10.0,
+  "normalization_mean": 0.8616666666666667,
+  "clipped_training_row_count": 17,
+  "raw_weight_stats": {
+    "min": 0.5002501250625313,
+    "mean": 1.0,
+    "max": 58.8235294117647,
+    "std": 3.2031441321418983,
+    "sum": 6000.0,
+    "effective_sample_size": 532.8534180131232
+  },
+  "pre_normalization_weight_stats": {
+    "min": 0.5002501250625313,
+    "mean": 0.8616666666666667,
+    "max": 10.0,
+    "std": 0.9985362544928013,
+    "sum": 5170.0,
+    "effective_sample_size": 2560.9104574923263
+  },
+  "normalized_weight_stats": {
+    "min": 0.5805610735735373,
+    "mean": 1.0,
+    "max": 11.60541586073501,
+    "std": 1.1588428485409683,
+    "sum": 6000.0,
+    "effective_sample_size": 2560.9104574923267
+  },
+  "cells": [
+    {
+      "layout_group": "blank_paragraph_multiblock",
+      "label": 0,
+      "count": 17,
+      "raw_weight": 58.8235294117647,
+      "clipped_weight": 10.0,
+      "normalized_weight": 11.60541586073501
+    },
+    {
+      "layout_group": "blank_paragraph_multiblock",
+      "label": 1,
+      "count": 1999,
+      "raw_weight": 0.5002501250625313,
+      "clipped_weight": 0.5002501250625313,
+      "normalized_weight": 0.5805610735735373
+    },
+    {
+      "layout_group": "multiline_no_blank_paragraphs",
+      "label": 0,
+      "count": 1967,
+      "raw_weight": 0.5083884087442806,
+      "clipped_weight": 0.5083884087442806,
+      "normalized_weight": 0.5900058902254707
+    },
+    {
+      "layout_group": "multiline_no_blank_paragraphs",
+      "label": 1,
+      "count": 181,
+      "raw_weight": 5.524861878453039,
+      "clipped_weight": 5.524861878453039,
+      "normalized_weight": 6.411831967256911
+    },
+    {
+      "layout_group": "no_newlines",
+      "label": 0,
+      "count": 1016,
+      "raw_weight": 0.984251968503937,
+      "clipped_weight": 0.984251968503937,
+      "normalized_weight": 1.1422653406235246
+    },
+    {
+      "layout_group": "no_newlines",
+      "label": 1,
+      "count": 820,
+      "raw_weight": 1.2195121951219512,
+      "clipped_weight": 1.2195121951219512,
+      "normalized_weight": 1.415294617162806
+    }
+  ],
+  "validation_labels_used": false
+}

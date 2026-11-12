@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "date_utc": "2026-11-07T03:46:12.241205+00:00",
+  "scope": "Fresh local Git clone of baseline with only explicit publication files overlaid; no original working-tree caches/models/prediction arrays used.",
+  "command": "python3 -m models.text_generalization.train_final --output-dir outputs/text_generalization/final/clean-checkout-check",
+  "baseline_commit": "346bb6f4689bff8683d115e344ba93275afe0ce1",
+  "expected_validation_auroc": 0.995889,
+  "reproduced_validation_auroc": 0.995889,
+  "benchmark_training_rows": 8000,
+  "benchmark_validation_rows": 2000,
+  "final_training_rows": 10000,
+  "submission_rows": 3000,
+  "probability_comparison_atol": 1e-12,
+  "max_absolute_error_vs_original": {
+    "validation_predictions.csv": 0.0,
+    "submission_style_extratrees_full10000.csv": 0.0
+  },
+  "source_hashes_identical": true,
+  "data_hashes_identical": true,
+  "selection_sha256": "598c7f0255d1da8ae33c7cd3d8fdb8d82b091a583b5574877d9183d419863d69",
+  "built_in_checks": "PASS: schema, IDs, probabilities, reload, batch invariance, fit row counts, frozen selection"
+}

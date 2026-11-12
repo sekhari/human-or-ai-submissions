@@ -1,0 +1,85 @@
+{
+  "criterion": "Maximize mean AUROC across random/topic/layout subject to ordinary(random/topic) mean >= best ordinary standalone minus0.005; within0.0005 of best prefer fewer components then probability averaging",
+  "candidates": [
+    {
+      "style_hgb31": 1.0
+    },
+    {
+      "style_hgb15": 1.0
+    },
+    {
+      "style_extra_leaf2": 1.0
+    },
+    {
+      "group_style_hgb31_p05": 1.0
+    },
+    {
+      "group_style_hgb31_p10": 1.0
+    },
+    {
+      "style_extra_leaf2": 0.25,
+      "style_hgb31": 0.75
+    },
+    {
+      "style_extra_leaf2": 0.5,
+      "style_hgb31": 0.5
+    },
+    {
+      "style_extra_leaf2": 0.75,
+      "style_hgb31": 0.25
+    },
+    {
+      "style_extra_leaf2": 0.25,
+      "style_hgb15": 0.75
+    },
+    {
+      "style_extra_leaf2": 0.5,
+      "style_hgb15": 0.5
+    },
+    {
+      "style_extra_leaf2": 0.75,
+      "style_hgb15": 0.25
+    },
+    {
+      "style_extra_leaf2": 0.25,
+      "group_style_hgb31_p05": 0.75
+    },
+    {
+      "style_extra_leaf2": 0.5,
+      "group_style_hgb31_p05": 0.5
+    },
+    {
+      "style_extra_leaf2": 0.75,
+      "group_style_hgb31_p05": 0.25
+    },
+    {
+      "style_extra_leaf2": 0.25,
+      "group_style_hgb31_p10": 0.75
+    },
+    {
+      "style_extra_leaf2": 0.5,
+      "group_style_hgb31_p10": 0.5
+    },
+    {
+      "style_extra_leaf2": 0.75,
+      "group_style_hgb31_p10": 0.25
+    },
+    {
+      "style_extra_leaf2": 0.5,
+      "style_hgb15": 0.25,
+      "group_style_hgb31_p05": 0.25
+    },
+    {
+      "style_extra_leaf2": 0.5,
+      "style_hgb15": 0.25,
+      "group_style_hgb31_p10": 0.25
+    }
+  ],
+  "aggregations": [
+    "probability",
+    "scaled_logit"
+  ],
+  "ordinary_tolerance": 0.005,
+  "near_tie": 0.0005,
+  "note": "Layout diagnostic was added after observing format dependence; all three validation sets lie within original8000 and overlap. No outer2000 labels or Kaggle labels enter this selection."
+}

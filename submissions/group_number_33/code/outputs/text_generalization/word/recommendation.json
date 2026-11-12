@@ -1,0 +1,30 @@
+{
+  "selected_candidate": "raw_punct_word12_lr_C4",
+  "selection_rule": "Highest equally weighted mean of predeclared random and topic training-only AUROC; also highest worst-protocol AUROC.",
+  "selected_config": {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "punctuation",
+    "nb_ratio": false,
+    "name": "raw_punct_word12_lr_C4",
+    "C": 4.0
+  },
+  "random_auroc": 0.962677,
+  "topic_auroc": 0.9326246351905356,
+  "mean_auroc": 0.9476508175952678,
+  "fit_seconds": {
+    "random": 2.455244999997376,
+    "topic": 2.3446811250032624
+  },
+  "predictions_file": "raw_punct_word12_lr_C4_predictions.npz",
+  "outer_evaluated": false,
+  "test_predicted": false
+}

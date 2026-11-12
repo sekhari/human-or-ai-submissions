@@ -1,0 +1,16 @@
+{
+  "random": {
+    "auroc": 0.99875,
+    "fit_seconds": 1.435710416000802,
+    "baseline_max_absolute_score_difference": 0.0,
+    "baseline_parity": true,
+    "true_training_rows": 6000
+  },
+  "topic": {
+    "auroc": 0.997836968124235,
+    "fit_seconds": 1.5580592499973136,
+    "baseline_max_absolute_score_difference": 0.0,
+    "baseline_parity": true,
+    "true_training_rows": 6042
+  }
+}

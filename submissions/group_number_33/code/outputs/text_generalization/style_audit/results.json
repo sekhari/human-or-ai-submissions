@@ -1,0 +1,162 @@
+{
+  "random_validation_auroc": 0.99875,
+  "label_shuffle_validation_auroc": 0.5458540000000001,
+  "top_features": [
+    {
+      "feature": "line_chars_min",
+      "auc_drop": 0.028487500000000054,
+      "univariate_separation": 0.7608165,
+      "human_train_mean": 428.3973388671875,
+      "ai_train_mean": 298.6786804199219,
+      "validation_median": 34.0,
+      "test_median": 30.0,
+      "test_outside_training_range": 0.0003333333333333333
+    },
+    {
+      "feature": "line_chars_p75",
+      "auc_drop": 0.002797000000000105,
+      "univariate_separation": 0.5351085,
+      "human_train_mean": 544.6129150390625,
+      "ai_train_mean": 467.7439270019531,
+      "validation_median": 356.0,
+      "test_median": 362.0,
+      "test_outside_training_range": 0.001
+    },
+    {
+      "feature": "normalized_token_entropy",
+      "auc_drop": 0.0009190000000000031,
+      "univariate_separation": 0.5592839999999999,
+      "human_train_mean": 0.8457249402999878,
+      "ai_train_mean": 0.8470305800437927,
+      "validation_median": 0.8467491269111633,
+      "test_median": 0.8413127660751343,
+      "test_outside_training_range": 0.0016666666666666668
+    },
+    {
+      "feature": "whitespace_run_mean",
+      "auc_drop": 0.0009129999999999971,
+      "univariate_separation": 0.7779335,
+      "human_train_mean": 1.0027459859848022,
+      "ai_train_mean": 1.0279664993286133,
+      "validation_median": 1.0,
+      "test_median": 1.0,
+      "test_outside_training_range": 0.0003333333333333333
+    },
+    {
+      "feature": "paragraph_tokens_min",
+      "auc_drop": 0.0008255000000000345,
+      "univariate_separation": 0.8890355,
+      "human_train_mean": 213.5973358154297,
+      "ai_train_mean": 72.23466491699219,
+      "validation_median": 155.0,
+      "test_median": 173.0,
+      "test_outside_training_range": 0.001
+    },
+    {
+      "feature": "line_chars_max",
+      "auc_drop": 0.00046850000000003833,
+      "univariate_separation": 0.6412605,
+      "human_train_mean": 797.4530029296875,
+      "ai_train_mean": 606.9883422851562,
+      "validation_median": 725.0,
+      "test_median": 659.0,
+      "test_outside_training_range": 0.0026666666666666666
+    },
+    {
+      "feature": "line_chars_std",
+      "auc_drop": 0.00037650000000005734,
+      "univariate_separation": 0.512416,
+      "human_train_mean": 127.3794174194336,
+      "ai_train_mean": 115.72296905517578,
+      "validation_median": 59.58525848388672,
+      "test_median": 11.675813674926758,
+      "test_outside_training_range": 0.0
+    },
+    {
+      "feature": "word_hapax_fraction",
+      "auc_drop": 0.0003630000000000022,
+      "univariate_separation": 0.5814865,
+      "human_train_mean": 0.42269065976142883,
+      "ai_train_mean": 0.49474504590034485,
+      "validation_median": 0.4343434274196625,
+      "test_median": 0.440502405166626,
+      "test_outside_training_range": 0.0
+    },
+    {
+      "feature": "markdown_quote_line_fraction",
+      "auc_drop": 0.0002695000000000336,
+      "univariate_separation": 0.5265,
+      "human_train_mean": 0.0,
+      "ai_train_mean": 0.03745966777205467,
+      "validation_median": 0.0,
+      "test_median": 0.0,
+      "test_outside_training_range": 0.0
+    },
+    {
+      "feature": "line_count",
+      "auc_drop": 0.0002615000000000811,
+      "univariate_separation": 0.598659,
+      "human_train_mean": 6.973333358764648,
+      "ai_train_mean": 13.15999984741211,
+      "validation_median": 5.0,
+      "test_median": 6.0,
+      "test_outside_training_range": 0.0036666666666666666
+    },
+    {
+      "feature": "line_chars_p25",
+      "auc_drop": 0.0002615000000000256,
+      "univariate_separation": 0.7340694999999999,
+      "human_train_mean": 471.26116943359375,
+      "ai_train_mean": 312.8196716308594,
+      "validation_median": 73.0,
+      "test_median": 72.0,
+      "test_outside_training_range": 0.0003333333333333333
+    },
+    {
+      "feature": "word_type_token_ratio",
+      "auc_drop": 0.00025850000000010587,
+      "univariate_separation": 0.571607,
+      "human_train_mean": 0.5907084941864014,
+      "ai_train_mean": 0.6305621862411499,
+      "validation_median": 0.5970804691314697,
+      "test_median": 0.592167854309082,
+      "test_outside_training_range": 0.0033333333333333335
+    },
+    {
+      "feature": "token_entropy",
+      "auc_drop": 0.0002535000000000731,
+      "univariate_separation": 0.5312295,
+      "human_train_mean": 6.502120018005371,
+      "ai_train_mean": 6.451394081115723,
+      "validation_median": 6.507591247558594,
+      "test_median": 6.512477397918701,
+      "test_outside_training_range": 0.002
+    },
+    {
+      "feature": "parenthesis_count",
+      "auc_drop": 0.0001754999999999396,
+      "univariate_separation": 0.515758,
+      "human_train_mean": 2.991666555404663,
+      "ai_train_mean": 3.2043333053588867,
+      "validation_median": 2.0,
+      "test_median": 0.0,
+      "test_outside_training_range": 0.0
+    },
+    {
+      "feature": "square_bracket_per_char",
+      "auc_drop": 0.00016150000000003661,
+      "univariate_separation": 0.5423144999999999,
+      "human_train_mean": 4.413588249008171e-05,
+      "ai_train_mean": 0.0004903402295894921,
+      "validation_median": 0.0,
+      "test_median": 0.0,
+      "test_outside_training_range": 0.0003333333333333333
+    }
+  ],
+  "feature_count": 145,
+  "all_features_finite": true,
+  "outer_validation_labels_used": false,
+  "test_labels_used": false,
+  "interpretation": "Permutation importance and distribution ranges are descriptive, not proof of causal generalization. Source-format shortcuts can remain even without code leakage.",
+  "elapsed_seconds": 20.14210224999988
+}

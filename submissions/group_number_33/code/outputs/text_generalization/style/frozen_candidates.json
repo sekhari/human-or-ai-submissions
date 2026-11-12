@@ -1,0 +1,55 @@
+[
+  {
+    "name": "style_hgb15",
+    "kind": "hist_gradient_boosting",
+    "params": {
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "learning_rate": 0.06,
+      "min_samples_leaf": 30,
+      "l2_regularization": 5.0
+    }
+  },
+  {
+    "name": "style_hgb31",
+    "kind": "hist_gradient_boosting",
+    "params": {
+      "max_iter": 250,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.06,
+      "min_samples_leaf": 30,
+      "l2_regularization": 5.0
+    }
+  },
+  {
+    "name": "style_hgb15_regularized",
+    "kind": "hist_gradient_boosting",
+    "params": {
+      "max_iter": 350,
+      "max_leaf_nodes": 15,
+      "learning_rate": 0.04,
+      "min_samples_leaf": 45,
+      "l2_regularization": 15.0
+    }
+  },
+  {
+    "name": "style_extra_leaf2",
+    "kind": "extra_trees",
+    "params": {
+      "n_estimators": 400,
+      "max_features": 0.8,
+      "min_samples_leaf": 2,
+      "max_depth": null
+    }
+  },
+  {
+    "name": "style_extra_leaf5",
+    "kind": "extra_trees",
+    "params": {
+      "n_estimators": 400,
+      "max_features": 0.8,
+      "min_samples_leaf": 5,
+      "max_depth": 24
+    }
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "candidate": "char_wb_min_35_lr2",
+    "config": {
+      "name": "char_wb_min_35_lr2",
+      "family": "char_tfidf",
+      "analyzer": "char_wb",
+      "text_view": "minimal",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "classifier": "logistic",
+      "C": 2,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.933645,
+    "random_fit_seconds": 5.540964332998556,
+    "random_train_score_mean": 0.044843285063097864,
+    "random_train_score_std": 1.6455940158478461,
+    "topic_auroc": 0.9072150103769185,
+    "topic_fit_seconds": 5.263032625000051,
+    "topic_train_score_mean": 0.05307203104041763,
+    "topic_train_score_std": 1.6658121318939034,
+    "mean_auroc": 0.9204300051884593,
+    "worst_auroc": 0.9072150103769185
+  },
+  {
+    "candidate": "char_wb_min_35_lr8",
+    "config": {
+      "name": "char_wb_min_35_lr8",
+      "family": "char_tfidf",
+      "analyzer": "char_wb",
+      "text_view": "minimal",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "classifier": "logistic",
+      "C": 8,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.9363730000000001,
+    "random_fit_seconds": 1.2541507499990985,
+    "random_train_score_mean": 0.09758788614942909,
+    "random_train_score_std": 2.601430672726893,
+    "topic_auroc": 0.9028680780110541,
+    "topic_fit_seconds": 1.2223793750017649,
+    "topic_train_score_mean": 0.10938855005473894,
+    "topic_train_score_std": 2.629849950592858,
+    "mean_auroc": 0.9196205390055271,
+    "worst_auroc": 0.9028680780110541
+  },
+  {
+    "candidate": "char_wb_min_35_svc03",
+    "config": {
+      "name": "char_wb_min_35_svc03",
+      "family": "char_tfidf",
+      "analyzer": "char_wb",
+      "text_view": "minimal",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "classifier": "linear_svc",
+      "C": 0.3,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.9361689999999999,
+    "random_fit_seconds": 0.8453724999999395,
+    "random_train_score_mean": 0.008356889282283028,
+    "random_train_score_std": 0.6971548219400585,
+    "topic_auroc": 0.9057072529912551,
+    "topic_fit_seconds": 0.8203829580015736,
+    "topic_train_score_mean": 0.01212090464080213,
+    "topic_train_score_std": 0.7077960713448823,
+    "mean_auroc": 0.9209381264956276,
+    "worst_auroc": 0.9057072529912551
+  },
+  {
+    "candidate": "char_wb_min_35_svc1",
+    "config": {
+      "name": "char_wb_min_35_svc1",
+      "family": "char_tfidf",
+      "analyzer": "char_wb",
+      "text_view": "minimal",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "classifier": "linear_svc",
+      "C": 1,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.933964,
+    "random_fit_seconds": 0.9582860000009532,
+    "random_train_score_mean": 0.024372511436030777,
+    "random_train_score_std": 0.9196193373660602,
+    "topic_auroc": 0.8954847622595283,
+    "topic_fit_seconds": 0.9478490830006194,
+    "topic_train_score_mean": 0.02870218935707664,
+    "topic_train_score_std": 0.9305710492049509,
+    "mean_auroc": 0.9147243811297642,
+    "worst_auroc": 0.8954847622595283
+  },
+  {
+    "candidate": "char_min_25_svc1",
+    "config": {
+      "name": "char_min_25_svc1",
+      "family": "char_tfidf",
+      "analyzer": "char",
+      "text_view": "minimal",
+      "ngram_range": [
+        2,
+        5
+      ],
+      "classifier": "linear_svc",
+      "C": 1,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.9569819999999999,
+    "random_fit_seconds": 9.18587608300004,
+    "random_train_score_mean": 0.027481075099138507,
+    "random_train_score_std": 0.9220599015511325,
+    "topic_auroc": 0.915553065234245,
+    "topic_fit_seconds": 9.033989290997852,
+    "topic_train_score_mean": 0.02679317503178431,
+    "topic_train_score_std": 0.9258696196321701,
+    "mean_auroc": 0.9362675326171224,
+    "worst_auroc": 0.915553065234245
+  },
+  {
+    "candidate": "char_min_36_lr8",
+    "config": {
+      "name": "char_min_36_lr8",
+      "family": "char_tfidf",
+      "analyzer": "char",
+      "text_view": "minimal",
+      "ngram_range": [
+        3,
+        6
+      ],
+      "classifier": "logistic",
+      "C": 8,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.9577789999999999,
+    "random_fit_seconds": 12.749317750000046,
+    "random_train_score_mean": 0.11918810509917463,
+    "random_train_score_std": 2.6937949553681477,
+    "topic_auroc": 0.9176232317762216,
+    "topic_fit_seconds": 12.612724124999659,
+    "topic_train_score_mean": 0.12182061308068647,
+    "topic_train_score_std": 2.704134975644962,
+    "mean_auroc": 0.9377011158881108,
+    "worst_auroc": 0.9176232317762216
+  },
+  {
+    "candidate": "char_wb_clean_35_lr8",
+    "config": {
+      "name": "char_wb_clean_35_lr8",
+      "family": "char_tfidf",
+      "analyzer": "char_wb",
+      "text_view": "clean",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "classifier": "logistic",
+      "C": 8,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.934451,
+    "random_fit_seconds": 5.788017667000531,
+    "random_train_score_mean": 0.1047355349631711,
+    "random_train_score_std": 2.5745442819529556,
+    "topic_auroc": 0.9007812165776099,
+    "topic_fit_seconds": 5.813147624998237,
+    "topic_train_score_mean": 0.12136184200520908,
+    "topic_train_score_std": 2.5958767815026076,
+    "mean_auroc": 0.917616108288805,
+    "worst_auroc": 0.9007812165776099
+  },
+  {
+    "candidate": "char_wb_clean_35_svc1",
+    "config": {
+      "name": "char_wb_clean_35_svc1",
+      "family": "char_tfidf",
+      "analyzer": "char_wb",
+      "text_view": "clean",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "classifier": "linear_svc",
+      "C": 1,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "random_auroc": 0.9321380000000001,
+    "random_fit_seconds": 0.9331030839966843,
+    "random_train_score_mean": 0.026617350326973897,
+    "random_train_score_std": 0.9132361191961739,
+    "topic_auroc": 0.8936911048574829,
+    "topic_fit_seconds": 0.9629340419996879,
+    "topic_train_score_mean": 0.032062628264025166,
+    "topic_train_score_std": 0.9230798460177813,
+    "mean_auroc": 0.9129145524287415,
+    "worst_auroc": 0.8936911048574829
+  }
+]

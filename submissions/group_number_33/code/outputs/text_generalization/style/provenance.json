@@ -1,0 +1,23 @@
+{
+  "python": "3.10.8",
+  "numpy": "1.26.0",
+  "scikit_learn": "1.7.2",
+  "files_sha256": {
+    "models/text_generalization/style_search.py": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8",
+    "models/text_generalization/common.py": "a7f4208672c891ec519fbfb66989e6411118a5c5a074c6f8ccad6e3728f1034f",
+    "outputs/text_generalization/protocol.json": "032f1559f04750a553fc81bb5185b1ea65fa696dc165e2e221384d011304a6bc"
+  },
+  "feature_count": 145,
+  "input": "Raw text from common.load_protocol development subset only",
+  "preprocessing": "Stateless fixed scalar rules; no fitted corpus vocabulary/statistics",
+  "selection_protocols": [
+    "random",
+    "topic"
+  ],
+  "outer_holdout_evaluated": false,
+  "test_predictions_generated": false,
+  "scoring": "common.decision_scores: positive-class probability converted to clipped logit; z standardized by training-score mean/std",
+  "declared_candidate_count": 5,
+  "search_expanded_after_results": false,
+  "cpu_threads": 2
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "candidate": "style_hgb15",
+    "family": "style",
+    "config": {
+      "name": "style_hgb15",
+      "kind": "hist_gradient_boosting",
+      "params": {
+        "max_iter": 250,
+        "max_leaf_nodes": 15,
+        "learning_rate": 0.06,
+        "min_samples_leaf": 30,
+        "l2_regularization": 5.0
+      }
+    },
+    "layout_auroc": 0.8111555479918312,
+    "layout_fit_seconds": 6.441341958001431,
+    "layout_train_score_mean": 3.740116931737915,
+    "layout_train_score_std": 5.814680438742134,
+    "validation_group": "multiline_no_blank_paragraphs",
+    "validation_rows": 2826,
+    "fit_rows": 5174
+  },
+  {
+    "candidate": "style_extra_leaf2",
+    "family": "style",
+    "config": {
+      "name": "style_extra_leaf2",
+      "kind": "extra_trees",
+      "params": {
+        "n_estimators": 400,
+        "max_features": 0.8,
+        "min_samples_leaf": 2,
+        "max_depth": null
+      }
+    },
+    "layout_auroc": 0.8513248808713411,
+    "layout_fit_seconds": 7.830482375000429,
+    "layout_train_score_mean": 7.164706297679049,
+    "layout_train_score_std": 10.32577056257062,
+    "validation_group": "multiline_no_blank_paragraphs",
+    "validation_rows": 2826,
+    "fit_rows": 5174
+  }
+]

@@ -1,0 +1,76 @@
+Independent style-model audit, 2026-11-06
+
+Conclusion: no direct target, ID, file-path, cache-reuse, or row-alignment leakage was found in the inspected implementation or current artifacts. The approximately 0.998 internal AUROC is supported by correctly aligned heldout predictions. This does not establish robustness to a different source/generator/preprocessing mixture. Topic-heldout evaluation can retain source/style artifacts across its training and validation portions.
+
+Scope: read style_search.py, common.py, make_protocol.py, the frozen protocol and style outputs; inspected installed sklearn Pipeline caching source; ran data-free synthetic checks and read-only checks on the 8,000 development rows. No test/unlabeled data was opened, no outer-validation labels were analyzed, and no real-data classifier was fitted by this audit. Only synthetic toy classifiers were fitted in a temporary cache, removed automatically afterward. No source files were edited.
+
+Source evidence:
+- style_search.py:66-159 computes 145 scalar features from one text value. Counters retain token identities only transiently to calculate within-document diversity/repetition; there is no corpus vocabulary, label map, source path, external model or document-ID input.
+- style_search.py:165-173: fit ignores X and y; transform iterates supplied text values in order. Index and label changes cannot enter its output.
+- style_search.py:200-211 creates a fresh classifier; HGB early stopping is disabled. The model receives only the style matrix and the current fit labels.
+- common.py:25-31 verifies the train-file hash and returns only frozen development rows. It reads the full source CSV internally but does not return the outer rows. common.py:59-78 uses consistent positional iloc indices for fit text/labels and validation text/labels/IDs. Score standardization uses fit-score mean and SD only.
+- sklearn 1.7.2 Pipeline._fit caches nonfinal fit_transform steps with transformer, X, y and parameters in the call arguments; it does not cache the final classifier. Reuse of the stateless feature matrix across style configurations is valid.
+- make_protocol.py:24-48 keeps the original outer 2,000 rows out of protocol construction. SVD/topic clustering sees all 8,000 development texts without class labels; selecting a pair of topic clusters uses only row count and label balance, before detector results. This is an explicitly constructed stress partition, not independent source-level external validation.
+
+Verified current-artifact checks:
+- Development and outer index sets are unique, disjoint, sized 8,000 and 2,000, and partition all 10,000 source row positions.
+- Each internal protocol has unique, disjoint fit/validation positions and partitions all 8,000 development rows. Topic validation contains exactly its two designated clusters; fit rows contain neither cluster.
+- The random and topic validation subsets overlap by 494 rows. Their mean AUROC is a model-selection summary, not two independent replications or 3,958 independent holdout observations.
+- All five style candidates' ten saved protocol outputs exactly match expected validation IDs and labels. Recomputed AUROCs equal results.json, and saved z scores equal the stated fit-score normalization.
+- Neither protocol has exact-text duplicates or casefolded/whitespace-normalized duplicates crossing from fit to validation. This does not rule out approximate or template duplicates.
+- Fresh extraction of all training features matches both actual cached arrays exactly, including order: random (6000,145), topic (6042,145). The current reported scores therefore do not depend on stale or misordered cached style features.
+- Synthetic tests confirm label invariance, index invariance, row-order equivariance, batch independence and finite empty-text outputs. Cache hashes distinguish label/order changes; toy classifiers fitted with inverted labels using the same cache give inverted predictions.
+- All 8,000 development texts are nonmissing. Narrow scans found no literal binary-label lines and no explicit AI/human marker lines. Six documents contain ordinary Source: citation lines (seven lines total), not target metadata. This scan is a narrow sanity check, not a comprehensive content/provenance audit.
+
+Recommended follow-up checks, prioritized:
+1. Actual-data negative control: fit the frozen HGB configuration once on permuted random-protocol fit labels, and score untouched validation labels. AUROC should be near chance. Use an independent/cache-disabled fit or unique cache. Synthetic inversion already confirms cache correctness, but actual-label permutation is the strongest inexpensive end-to-end negative control.
+2. Inspect group permutation importance and single-feature class-conditional distributions. Raw counts and rates are highly correlated; individual-feature permutation can understate the dependence. Focus on whitespace/newlines/carriage returns, non-ASCII/dashes/quotes, paragraph/line lengths, and absolute text length.
+3. Run a small predeclared nuisance-ablation stress check if those diagnostics suggest collection artifacts: remove the full whitespace/formatting feature group and separately absolute-length features, then refit using the same internal protocols. Dropping a single correlated feature is insufficient. Treat this as robustness evidence rather than an expanding search for the best validation score.
+4. Evaluate near-duplicate/template/source-family grouped splits, and report AUROC within length/genre/formatting strata. Lexical topic clusters alone do not isolate generator families or data collection sources.
+5. Compare feature-support ranges and key-feature prevalence between development and test/unlabeled text without using test labels. Large differences would limit confidence that internal AUROC transfers to the public leaderboard. This audit did not read those files.
+6. Optional text-normalization stress: preserve content while collapsing whitespace, normalizing quote/dash Unicode variants and removing Markdown syntax. A large score collapse would reveal formatting dependence; it would not itself prove target leakage.
+
+Nonblocking implementation observation: common.py does not itself assert split disjointness/ID uniqueness; this audit verified both for the current frozen protocol. If the protocol is generalized later, add those assertions. Joblib custom-transformer caches should be cleared or versioned when extraction code changes; this audit independently verified exact equality with fresh features for the current source.
+
+Verified checks (machine-readable snapshot):
+{
+  "development_outer_disjoint": true,
+  "feature_count": 145,
+  "protocols": {
+    "random": {
+      "fit_rows": 6000,
+      "validation_rows": 2000,
+      "exact_duplicate_validation_rows": 0,
+      "normalized_duplicate_validation_rows": 0
+    },
+    "topic": {
+      "fit_rows": 6042,
+      "validation_rows": 1958,
+      "exact_duplicate_validation_rows": 0,
+      "normalized_duplicate_validation_rows": 0
+    }
+  },
+  "random_topic_validation_overlap": 494,
+  "prediction_artifact_splits_checked": 10,
+  "synthetic_checks": [
+    "Label-invariant features",
+    "Index-invariant features",
+    "Row-order equivariance",
+    "Batch-independent single-row features",
+    "Finite empty-string features",
+    "joblib cache keys distinguish labels and order",
+    "Shared-cache fitted classifiers invert correctly after label inversion"
+  ],
+  "fresh_features_equal_cached_training_matrices": {
+    "random": "(6000, 145)",
+    "topic": "(6042, 145)"
+  }
+}
+
+Reviewed file SHA-256 values:
+{
+  "models/text_generalization/style_search.py": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8",
+  "models/text_generalization/common.py": "a7f4208672c891ec519fbfb66989e6411118a5c5a074c6f8ccad6e3728f1034f",
+  "models/text_generalization/make_protocol.py": "d34fd73c4ec5996b04d022c4e51cf527cc3003002a0b94c56ef664dcc685e4a1",
+  "outputs/text_generalization/protocol.json": "032f1559f04750a553fc81bb5185b1ea65fa696dc165e2e221384d011304a6bc"
+}

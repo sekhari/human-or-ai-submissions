@@ -1,0 +1,3 @@
+candidate,family,layout_auroc,layout_fit_seconds,layout_train_score_mean,layout_train_score_std,validation_group,validation_rows,fit_rows
+style_hgb15,style,0.8111555479918312,6.441341958001431,3.740116931737915,5.814680438742134,multiline_no_blank_paragraphs,2826,5174
+style_extra_leaf2,style,0.8513248808713411,7.830482375000429,7.164706297679049,10.32577056257062,multiline_no_blank_paragraphs,2826,5174

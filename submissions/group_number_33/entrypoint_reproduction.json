@@ -1,0 +1,70 @@
+{
+  "verified_on": "2026-11-11",
+  "scope": "Separate team train.py / predict.py entrypoints; selected feature source and model recipe unchanged. Generated data and models are local only.",
+  "environment": {
+    "python": "3.10.8",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "numpy": "1.26.0",
+    "pandas": "2.1.1",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.2",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.6.0"
+  },
+  "fresh_venv_dependency_install": "PASS",
+  "pip_check": "PASS",
+  "cli_and_model_unit_tests": {
+    "passed": 9,
+    "failed": 0
+  },
+  "isolated_input_integration_test": {
+    "passed": 1,
+    "validation_reads_only_train_csv": true,
+    "prediction_does_not_need_train_csv": true
+  },
+  "benchmark_training_rows": 8000,
+  "benchmark_validation_rows": 2000,
+  "train_auroc": 0.9999051874999999,
+  "validation_auroc": 0.9956834999999999,
+  "final_training_rows": 10000,
+  "prediction_comparisons": {
+    "submission.csv": {
+      "rows": 3000,
+      "ids_and_order_match": true,
+      "max_absolute_probability_difference": 1.1102230246251565e-16,
+      "tolerance": 1e-12,
+      "reference_sha256": "0c8ccb845ba21abda434f4a37ad4fae179c0ca6556183dc80f158cfe5106250c",
+      "new_sha256": "61ea71129cbd9a59cc9013b51feaaf83ea9f35b5f3890f46d6e74fb88a8bdf85"
+    },
+    "validation_predictions.csv": {
+      "rows": 2000,
+      "ids_and_order_match": true,
+      "max_absolute_probability_difference": 0.0,
+      "tolerance": 1e-12,
+      "reference_sha256": "3766cc1758dc620aed432a02889a88f11123b309a4419f7319a4b4c22031bd88",
+      "new_sha256": "3766cc1758dc620aed432a02889a88f11123b309a4419f7319a4b4c22031bd88"
+    }
+  },
+  "error_analysis": {
+    "validation_auroc": 0.9956834999999999,
+    "error_counts": {
+      "FP": 19,
+      "FN": 35,
+      "correct": 1946
+    }
+  },
+  "source_sha256": {
+    "train.py": "8a01d1acc7531448422b79483aad4703b3fc5bd10a149b3611973b9d57e73fb4",
+    "predict.py": "1dd4b66c33c19b93e8e25da6cb162263e20d6e4721a869fc138ebc481414aff2",
+    "requirements.txt": "c9789b287b3d5b01877e38b3ef414883b192d303ea9ee0a15249c885c414d5f2",
+    "test_entrypoints.py": "4f86cea706e73c2edb5752703259c15d4ad51438a3c15902fc701086d97e164f",
+    "code/models/dave_extratrees/analyze_errors.py": "4d916de2446480e6c9396b07bd85d57c387909d548a73bab325fc7f20c26534e"
+  },
+  "limitations": [
+    "Validation was reused during development; this is reproduction, not a new independent quality estimate.",
+    "Exact floating-point bytes may vary across environments; probabilities were compared with absolute tolerance 1e-12.",
+    "Optional archived experiments were not rerun as part of this entrypoint update.",
+    "Pre-existing imported Git history/artifacts still require team review against the instructor policy."
+  ]
+}

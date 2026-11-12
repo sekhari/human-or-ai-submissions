@@ -1,0 +1,29 @@
+{
+  "style_config": {
+    "name": "style_hgb31",
+    "kind": "hist_gradient_boosting",
+    "params": {
+      "max_iter": 250,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.06,
+      "min_samples_leaf": 30,
+      "l2_regularization": 5.0
+    }
+  },
+  "rounds": 1,
+  "pseudo_weight": 0.25,
+  "thresholds": [
+    0.95,
+    0.99
+  ],
+  "normalization": "Mean/std on original true-labeled protocol training scores only",
+  "additional_labels": "Teacher-generated; unlabeled.csv provides no true labels",
+  "validation_label_input_to_training_or_selection": false,
+  "outer_holdout_evaluated": false,
+  "test_data_read": false,
+  "files_sha256": {
+    "models/text_generalization/semi_supervised.py": "25012132ffc08cf39eb0ff08319eec5d9a98bc932a5ec5a410de4e089c4b1419",
+    "models/text_generalization/style_search.py": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8",
+    "outputs/text_generalization/protocol.json": "032f1559f04750a553fc81bb5185b1ea65fa696dc165e2e221384d011304a6bc"
+  }
+}

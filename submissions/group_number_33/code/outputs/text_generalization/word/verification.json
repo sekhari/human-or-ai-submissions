@@ -1,0 +1,12 @@
+{
+  "synthetic_verification": "passed",
+  "pipelines_checked": 11,
+  "checks": [
+    "NB ratio direction and exact sparse multiplication",
+    "transform does not learn from heldout inputs",
+    "vocabulary excludes heldout token",
+    "finite unseen-token predictions",
+    "fitted pickle roundtrip",
+    "sklearn clone"
+  ]
+}

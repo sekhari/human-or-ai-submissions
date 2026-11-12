@@ -1,0 +1,12 @@
+{
+  "synthetic_tests_passed": 5,
+  "configs": 2,
+  "protocol_prediction_sets_verified": 6,
+  "weight_audits_verified": 6,
+  "same_validation_ids_and_labels_as_baselines": true,
+  "raw_margin_auroc_recomputed": true,
+  "train_mean_std_z_reconstructed": true,
+  "source_and_protocol_hashes_verified": true,
+  "outer_evaluated": false,
+  "test_data_used": false
+}

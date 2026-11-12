@@ -1,0 +1,206 @@
+{
+  "train_auroc": 0.9999051874999999,
+  "validation_auroc": 0.9956834999999999,
+  "auroc_gap": 0.00422168749999996,
+  "training_rows": 8000,
+  "validation_rows": 2000,
+  "threshold": 0.5,
+  "tokenization": "\\b\\w+(?:['\u2019]\\w+)*\\b",
+  "length_bins": [
+    {
+      "bin": "Short: <150 tokens",
+      "count": 395,
+      "human": 135,
+      "ai": 260,
+      "validation_auroc": 0.98991452991453,
+      "false_positive": 13,
+      "false_negative": 8
+    },
+    {
+      "bin": "Medium: 150-299 tokens",
+      "count": 1404,
+      "human": 791,
+      "ai": 613,
+      "validation_auroc": 0.9959711930506947,
+      "false_positive": 6,
+      "false_negative": 22
+    },
+    {
+      "bin": "Long: >=300 tokens",
+      "count": 201,
+      "human": 74,
+      "ai": 127,
+      "validation_auroc": 0.9982975101085336,
+      "false_positive": 0,
+      "false_negative": 5
+    }
+  ],
+  "confusion_matrix": [
+    [
+      981,
+      19
+    ],
+    [
+      35,
+      965
+    ]
+  ],
+  "confusion_matrix_order": "Rows true label, columns predicted label: 0=human, 1=AI",
+  "error_counts": {
+    "FP": 19,
+    "FN": 35,
+    "correct": 1946
+  },
+  "error_selection": "Five highest P(AI) FP and five lowest P(AI) FN, ID ascending for ties",
+  "model_params": {
+    "n_estimators": 800,
+    "max_features": 0.8,
+    "min_samples_leaf": 2,
+    "max_depth": null,
+    "criterion": "gini",
+    "random_state": 12,
+    "n_jobs": 2,
+    "bootstrap": true,
+    "max_samples": 0.8,
+    "class_weight": "balanced_subsample"
+  },
+  "selected_errors": [
+    {
+      "id": 2304,
+      "label": 0,
+      "error_type": "FP",
+      "probability": 0.7954756722324285,
+      "token_count": 248,
+      "paragraph_count": 1.0,
+      "line_count": 2.0
+    },
+    {
+      "id": 9428,
+      "label": 0,
+      "error_type": "FP",
+      "probability": 0.7742448455856734,
+      "token_count": 79,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 653,
+      "label": 0,
+      "error_type": "FP",
+      "probability": 0.7682651663298262,
+      "token_count": 87,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 8267,
+      "label": 0,
+      "error_type": "FP",
+      "probability": 0.7543745435471965,
+      "token_count": 128,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 5567,
+      "label": 0,
+      "error_type": "FP",
+      "probability": 0.7467557240722772,
+      "token_count": 75,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 5498,
+      "label": 1,
+      "error_type": "FN",
+      "probability": 0.0008357603494903,
+      "token_count": 277,
+      "paragraph_count": 1.0,
+      "line_count": 22.0
+    },
+    {
+      "id": 2581,
+      "label": 1,
+      "error_type": "FN",
+      "probability": 0.0080779063825201,
+      "token_count": 270,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 2201,
+      "label": 1,
+      "error_type": "FN",
+      "probability": 0.0349175351854469,
+      "token_count": 138,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 5622,
+      "label": 1,
+      "error_type": "FN",
+      "probability": 0.0378690148142013,
+      "token_count": 221,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    },
+    {
+      "id": 2165,
+      "label": 1,
+      "error_type": "FN",
+      "probability": 0.0450034887669063,
+      "token_count": 172,
+      "paragraph_count": 1.0,
+      "line_count": 1.0
+    }
+  ],
+  "observed_pattern_counts": [
+    {
+      "label": 0,
+      "status": "correct",
+      "count": 981,
+      "with_blank_lines": 0,
+      "with_multiple_paragraphs": 0,
+      "with_multiple_lines": 635,
+      "with_markdown_lists": 5
+    },
+    {
+      "label": 0,
+      "status": "FP",
+      "count": 19,
+      "with_blank_lines": 0,
+      "with_multiple_paragraphs": 0,
+      "with_multiple_lines": 5,
+      "with_markdown_lists": 0
+    },
+    {
+      "label": 1,
+      "status": "correct",
+      "count": 965,
+      "with_blank_lines": 640,
+      "with_multiple_paragraphs": 640,
+      "with_multiple_lines": 694,
+      "with_markdown_lists": 171
+    },
+    {
+      "label": 1,
+      "status": "FN",
+      "count": 35,
+      "with_blank_lines": 0,
+      "with_multiple_paragraphs": 0,
+      "with_multiple_lines": 13,
+      "with_markdown_lists": 2
+    }
+  ],
+  "reference_sources_sha256": {
+    "data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "outputs/dave_extratrees/20261109T001215930409Z/metrics.json": "79071b33518e879d96e6f0c79b1a9fc62595d4b1cdfbcbd17cef242ba2f5d025",
+    "outputs/dave_extratrees/20261109T001215930409Z/validation_predictions.csv": "3766cc1758dc620aed432a02889a88f11123b309a4419f7319a4b4c22031bd88",
+    "models/dave_extratrees/recipe.json": "173e2906fdac7c4d86b3defb868aa9feeea5ac5ae21c3f7fb6758c7471f423c9",
+    "models/text_generalization/style_search.py": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8"
+  },
+  "scope": "Expected report values for the retained ET800 configuration on the historical fixed 8000/2000 development split. Validation predictions were generated by the 8000-row benchmark fit, not the separate full-10000 submission fit. The validation set was reused in development. No hidden test labels or original passages are included.",
+  "verification_note": "Validation AUROC independently checked with average-rank/tie handling. Train AUROC comes from saved benchmark metrics. Highest-confidence mistakes are illustrative cases, not a random error sample. Numeric equality is compared within 1e-12 for floating-point values."
+}

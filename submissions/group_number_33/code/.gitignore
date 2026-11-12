@@ -1,0 +1,5 @@
+data/
+venv
+/models/cnn/outputs/
+__pycache__/
+*.py[cod]

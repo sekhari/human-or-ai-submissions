@@ -1,0 +1,4 @@
+# Generated artifacts stay local except the curated new-method records below.
+/*
+!/.gitignore
+!/text_generalization/

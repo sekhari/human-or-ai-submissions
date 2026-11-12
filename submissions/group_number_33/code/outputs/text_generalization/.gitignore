@@ -1,0 +1,14 @@
+# Keep source helpers and compact experiment records, not generated predictions.
+**/*
+!**/
+!/.gitignore
+!/README.md
+!*.py
+!*.json
+!*.txt
+!scores.csv
+!blend_scores.csv
+!permutation_importance.csv
+**/_cache/
+**/__pycache__/
+.DS_Store

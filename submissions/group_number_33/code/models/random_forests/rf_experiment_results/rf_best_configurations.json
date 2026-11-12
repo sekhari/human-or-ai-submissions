@@ -1,0 +1,70 @@
+{
+  "best_word_tfidf": {
+    "analyzer": "word",
+    "ngram_range": [
+      1,
+      3
+    ],
+    "max_features": 20000,
+    "min_df": 3,
+    "max_df": 0.95,
+    "sublinear_tf": true
+  },
+  "best_character_tfidf": {
+    "analyzer": "char_wb",
+    "ngram_range": [
+      2,
+      4
+    ],
+    "max_features": 30000,
+    "min_df": 3,
+    "max_df": 0.95,
+    "sublinear_tf": true
+  },
+  "best_word_character_weights": {
+    "word": 1.0,
+    "character": 1.0
+  },
+  "selected_feature_metadata": {
+    "word_tfidf": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        3
+      ],
+      "max_features": 20000,
+      "min_df": 3,
+      "max_df": 0.95,
+      "sublinear_tf": true
+    },
+    "char_tfidf": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        2,
+        4
+      ],
+      "max_features": 30000,
+      "min_df": 3,
+      "max_df": 0.95,
+      "sublinear_tf": true
+    },
+    "feature_weights": {
+      "word": 1.0,
+      "char": 1.0,
+      "minilm": 0.5
+    },
+    "minilm_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "best_logistic_regression_C": 10,
+  "best_logistic_regression_AUROC": 0.9613830000000001,
+  "best_random_forest": {
+    "parameters": {
+      "n_estimators": 300,
+      "max_features": "sqrt",
+      "max_depth": null,
+      "min_samples_leaf": 2
+    },
+    "svd_components": 100,
+    "AUROC": 0.921
+  }
+}

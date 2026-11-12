@@ -1,0 +1,9 @@
+{
+  "synthetic_checks_passed": 4,
+  "result_candidates": 2,
+  "protocol_prediction_sets_verified": 4,
+  "teacher_baseline_max_difference": 0.0,
+  "pseudo_counts_confidences_weights_verified": true,
+  "strict_threshold_subset_verified": true,
+  "normalization_reconstruction_verified": true
+}

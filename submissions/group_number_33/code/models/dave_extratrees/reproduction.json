@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-11-09T00:14:39.953143+00:00",
+  "scope": "Fresh local Git clone of existing tracked branch, overlaid only selected package and README, plus original raw CSVs. No untracked round2/round3 source or experiment artifacts were copied.",
+  "model_params": {
+    "n_estimators": 800,
+    "max_features": 0.8,
+    "min_samples_leaf": 2,
+    "max_depth": null,
+    "criterion": "gini",
+    "random_state": 12,
+    "n_jobs": 2,
+    "bootstrap": true,
+    "max_samples": 0.8,
+    "class_weight": "balanced_subsample"
+  },
+  "feature_count": 145,
+  "source_sha256": {
+    "models/dave_extratrees/__init__.py": "aec79db75cb387d3d72da8857d635b972c74e85dc150e9aa75685a6821568b39",
+    "models/dave_extratrees/model.py": "cfef95cd8cf1549fa565189bdb7d829a42834028dbaacc99c7c116d6f61a0bb4",
+    "models/dave_extratrees/train.py": "23ff91cf820eecc07b7a29fec0cc033feedc8bb4b8af067d919358e8a5faeb1f",
+    "models/text_generalization/style_search.py": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8"
+  },
+  "recipe_sha256": "173e2906fdac7c4d86b3defb868aa9feeea5ac5ae21c3f7fb6758c7471f423c9",
+  "data_sha256": {
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d"
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 12,
+    "stratify": "label",
+    "development_indices_sha256": "7d8af13aaf3cdb28627bafe9dd461b1a1a5943cad5a40de29537bd77150d89b9",
+    "validation_indices_sha256": "023f54c9e142f974376042ff30e2824e9e6f7a034c8ef9390922a59f7853f214"
+  },
+  "versions": {
+    "python": "3.10.8",
+    "numpy": "1.26.0",
+    "pandas": "2.1.1",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.2",
+    "joblib": "1.5.2"
+  },
+  "reference_validation_auroc": 0.9956834999999999,
+  "reproduced_validation_auroc": 0.9956834999999999,
+  "benchmark_training_rows": 8000,
+  "benchmark_validation_rows": 2000,
+  "final_training_rows": 10000,
+  "prediction_comparisons": {
+    "validation": {
+      "rows": 2000,
+      "ids_and_order_identical": true,
+      "max_absolute_prediction_difference": 0.0,
+      "tolerance": 1e-12
+    },
+    "submission": {
+      "rows": 3000,
+      "ids_and_order_identical": true,
+      "max_absolute_prediction_difference": 0.0,
+      "tolerance": 1e-12
+    }
+  },
+  "reference_submission_sha256": "0c8ccb845ba21abda434f4a37ad4fae179c0ca6556183dc80f158cfe5106250c",
+  "reproduced_submission_sha256": "0c8ccb845ba21abda434f4a37ad4fae179c0ca6556183dc80f158cfe5106250c",
+  "reload_max_abs_error": 0.0,
+  "batch_max_abs_error": 2.220446049250313e-16,
+  "tests": {
+    "new_package": 5,
+    "shared_split": 5,
+    "existing_nb": 58,
+    "total": 68,
+    "status": "PASS"
+  },
+  "code_review": "No blocking findings; recipe, feature source, 145 ordered feature names, data hashes, split digests, no experimental imports, and README checked independently.",
+  "shared_code_unchanged": true,
+  "prior_experiment_sources_and_artifacts_unchanged": true,
+  "main_unchanged": true,
+  "public_score_note": "The +0.004 AUROC change is the user report for the historical retained submission; this reproduction was not uploaded to Kaggle.",
+  "numeric_note": "Floating-point tree reduction can change at machine precision; parity is checked at absolute tolerance 1e-12 rather than requiring identical serialized files."
+}

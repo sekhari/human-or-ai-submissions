@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "models_checked": 2,
+  "same_layout_partition": true,
+  "original_layout_plan_sha256_unchanged": true,
+  "checks": [
+    "validation IDs and labels",
+    "development and source indices",
+    "finite raw/z predictions",
+    "recomputed AUROC",
+    "training-only z score standardization"
+  ],
+  "new_hyperparameters": false,
+  "outer_or_test_used": false
+}

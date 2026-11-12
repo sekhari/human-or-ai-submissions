@@ -1,0 +1,4 @@
+candidate,family,layout_auroc,layout_fit_seconds,layout_train_score_mean,layout_train_score_std,validation_group,validation_rows,fit_rows
+style_hgb31,style,0.7987729748127976,7.080155208001088,3.8873436020091776,6.155686501133806,multiline_no_blank_paragraphs,2826,5174
+raw_punct_word12_lr_C4,word,0.4990129339686862,1.3109230830013985,1.7879329665226704,2.38481574558371,multiline_no_blank_paragraphs,2826,5174
+char_min_36_lr8,char,0.5075936010891764,8.827571249996254,2.1062219061003433,2.9411525904558524,multiline_no_blank_paragraphs,2826,5174

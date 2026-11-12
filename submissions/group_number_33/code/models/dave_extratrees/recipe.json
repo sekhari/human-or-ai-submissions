@@ -1,0 +1,63 @@
+{
+  "model_name": "Dave retained ExtraTrees: 145 style features, 800 bootstrap trees",
+  "model_params": {
+    "n_estimators": 800,
+    "max_features": 0.8,
+    "min_samples_leaf": 2,
+    "max_depth": null,
+    "criterion": "gini",
+    "random_state": 12,
+    "n_jobs": 2,
+    "bootstrap": true,
+    "max_samples": 0.8,
+    "class_weight": "balanced_subsample"
+  },
+  "data_sha256": {
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d"
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 12,
+    "stratify": "label",
+    "development_indices_sha256": "7d8af13aaf3cdb28627bafe9dd461b1a1a5943cad5a40de29537bd77150d89b9",
+    "validation_indices_sha256": "023f54c9e142f974376042ff30e2824e9e6f7a034c8ef9390922a59f7853f214"
+  },
+  "feature_count": 145,
+  "feature_source_sha256": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8",
+  "reference": {
+    "validation_auroc": 0.9956834999999999,
+    "submission_sha256": "0c8ccb845ba21abda434f4a37ad4fae179c0ca6556183dc80f158cfe5106250c",
+    "public_auroc_delta": 0.004,
+    "public_score_source": "User-reported improvement; exact public AUROC not supplied or independently verified.",
+    "exact_public_auroc": null,
+    "validation_scope": "Historical fixed 8000/2000 benchmark; reused during earlier work, not an untouched independent test."
+  },
+  "selection_summary": {
+    "new_fitting_configurations": 26,
+    "evaluated_recipes": 50,
+    "selection_rows": 8000,
+    "diagnostics": [
+      "internal random holdout",
+      "topic holdout",
+      "layout holdout",
+      "whitespace-collapsed random validation"
+    ],
+    "test_labels_used": false,
+    "unlabeled_data_used": false
+  },
+  "reference_diagnostics": {
+    "weights": {
+      "stability_bootstrap_balanced": 1.0
+    },
+    "components": 1,
+    "random_auroc": 0.9974170000000001,
+    "topic_auroc": 0.9945428573515432,
+    "layout_auroc": 0.8586606535057861,
+    "collapsed_auroc": 0.801354,
+    "ordinary_mean": 0.9959799286757717,
+    "three_protocol_mean": 0.9502068369524431,
+    "eligible": true
+  }
+}

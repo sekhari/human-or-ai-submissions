@@ -1,0 +1,12 @@
+[
+  {
+    "name": "group_style_hgb31_p05",
+    "power": 0.5,
+    "cap": 10.0
+  },
+  {
+    "name": "group_style_hgb31_p10",
+    "power": 1.0,
+    "cap": 10.0
+  }
+]

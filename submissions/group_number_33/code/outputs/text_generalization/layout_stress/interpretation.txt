@@ -1,0 +1,31 @@
+Post hoc layout-heldout diagnostic, frozen before its three model fits.
+
+Validation is the deterministically selected largest eligible layout group:
+multiline without blank paragraphs, 2,826 rows (2,600 human / 226 AI).
+Training is the complementary 5,174 rows (1,400 human / 3,774 AI).
+Other groups: no newlines 2,479 (1,380 human / 1,099 AI); blank paragraphs
+2,695 (20 human / 2,675 AI). The latter is ineligible for validation because
+it contains fewer than 200 human examples.
+
+Fixed-model AUROC:
+style_hgb31: 0.798772975 (fit 7.080 seconds)
+raw_punct_word12_lr_C4: 0.499012934 (fit 1.311 seconds)
+char_min_36_lr8: 0.507593601 (fit 8.828 seconds)
+
+Interpretation: all three models lose substantial discrimination under this
+layout-conditioned distribution change. Style HGB retains materially more
+ranking information than either fixed lexical model; the two lexical models
+are near chance here. These results do not support assuming that the lexical
+models are automatically more robust to formatting/source shift. The strong
+association between layout group and label makes ordinary random/topic
+results insufficient to establish transfer to another collection mixture.
+
+AUROC is not directly a function of label prevalence, but the protocol also
+changes the class-conditional source/text mixture and the training imbalance.
+This is deliberately a difficult post hoc stress diagnostic, not an unbiased
+estimate of unknown test performance. No tuning or model choice occurred
+within this diagnostic; exactly the three requested configurations were run.
+
+Verified: group assignments, source/development positions, disjoint partition,
+validation IDs and labels, finite raw/z scores, training-only z-score formula,
+and all three recomputed AUROCs. No outer or test data was used.

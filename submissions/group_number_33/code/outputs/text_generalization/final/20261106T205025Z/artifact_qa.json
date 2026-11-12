@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-06T20:51:50.448930+00:00",
+  "scope": "Independent artifact readback; no fitting and no model changes",
+  "submission_rows": 3000,
+  "submission_columns": [
+    "id",
+    "label"
+  ],
+  "submission_ids_unique": true,
+  "submission_ids_match_sample_order": true,
+  "submission_ids_match_test_set": true,
+  "probabilities_finite_and_in_0_1": true,
+  "probability_min": 9.99999999999999e-08,
+  "probability_max": 0.9999999,
+  "model_n_training_rows": 10000,
+  "classes": [
+    0,
+    1
+  ],
+  "component_name": "style_extra_leaf2",
+  "component_weight": 1.0,
+  "classifier_type": "ExtraTreesClassifier",
+  "tree_count": 400,
+  "feature_count": 145,
+  "all_tree_root_sample_counts": 10000,
+  "independent_model_vs_csv_max_abs_error": 1.1102230246251565e-16,
+  "comparison_atol": 1e-12,
+  "frozen_selection_matches_model": true,
+  "tracked_diff_against_HEAD_empty": true,
+  "submission_sha256": "ea12ee291bbd426b2c35c1e8318b3993cc9e9128a37f7dfea07c4b441cdd479a",
+  "model_sha256": "e33e0f832c51be57bfc272388d34acc06581308603d7b61a352eda500ef05a2f",
+  "metric_artifact_hashes_match": true
+}

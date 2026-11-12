@@ -1,0 +1,66 @@
+{
+  "selection_sha256": "598c7f0255d1da8ae33c7cd3d8fdb8d82b091a583b5574877d9183d419863d69",
+  "versions": {
+    "python": "3.10.8",
+    "numpy": "1.26.0",
+    "pandas": "2.1.1",
+    "scipy": "1.15.3",
+    "scikit_learn": "1.7.2",
+    "joblib": "1.5.2"
+  },
+  "source_sha256": {
+    "models/text_generalization/__init__.py": "6ac9e63baa477cfc815a2b02b61358f1c32335a719c7446103c626ed003b91cf",
+    "models/text_generalization/audit_style.py": "10729af60939ac2f9bbf48e020bd1f77ad62c1b55db2f75a6c2bf195a0664378",
+    "models/text_generalization/char_search.py": "a554fae9ba4b0945df63a26d0b53b720b10c4fa36779b901353c2f45ac2dc489",
+    "models/text_generalization/common.py": "a7f4208672c891ec519fbfb66989e6411118a5c5a074c6f8ccad6e3728f1034f",
+    "models/text_generalization/final_model.py": "2dd2b8f80bcd73481bf385abae10a2f3324bf93e7b90dc85bf93206e6c34ffa7",
+    "models/text_generalization/group_robust.py": "4bac4af6003ff949b828c26d962c455679425bd452ee65b595c0729f5478ac1b",
+    "models/text_generalization/layout_ablation.py": "40a5146419e03bf01c7862e5879be43c8f30f3194cf1f5cb1486ae1be76122c1",
+    "models/text_generalization/layout_stress.py": "3ecc14d181c3a2dd48ccc3a507d6874f1be4e1813810606ac330762ddcb51310",
+    "models/text_generalization/make_protocol.py": "d34fd73c4ec5996b04d022c4e51cf527cc3003002a0b94c56ef664dcc685e4a1",
+    "models/text_generalization/select_ensemble.py": "42fcec7288888690fa01c0ac262a52cfb493a4fec5d660bec781c7adfcb5a5d1",
+    "models/text_generalization/semi_supervised.py": "25012132ffc08cf39eb0ff08319eec5d9a98bc932a5ec5a410de4e089c4b1419",
+    "models/text_generalization/style_ablation.py": "0bfa59cde94fb5b2d75f2cc797819419829e12298e3474ac32130a1a1f449bbe",
+    "models/text_generalization/style_search.py": "a931a48788fcc1af6b5b0eb89477d7ab98585fd3879d8f87f0ddd7936cf2b3b8",
+    "models/text_generalization/train_final.py": "da0f2f24cc0ac3333ffe24107aead33e0e8fbf6de621d6c7edf90862afac32be",
+    "models/text_generalization/word_search.py": "c63fc6ac277e3a2331a5d33cc55ceeed70c8c3a718cc4b588f686d929e20131f"
+  },
+  "git_head": "346bb6f4689bff8683d115e344ba93275afe0ce1",
+  "data_sha256": {
+    "train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d"
+  },
+  "selection_protocol_scores": {
+    "weights": {
+      "style_extra_leaf2": 1.0
+    },
+    "aggregation": "probability",
+    "components": 1,
+    "random_auroc": 0.9975815000000001,
+    "topic_auroc": 0.9956822836942039,
+    "layout_auroc": 0.8513342409802587,
+    "ordinary_mean": 0.996631891847102,
+    "three_protocol_mean": 0.9481993415581543,
+    "eligible": true
+  },
+  "original_validation_scope": "Reused development benchmark; not an untouched test. Frozen recipe evaluated after selection.",
+  "final_model_training_rows": 10000,
+  "unlabeled_data_used": false,
+  "kaggle_test_labels_used": false,
+  "feature_count": 145,
+  "benchmark_fit_seconds": 13.83160791699629,
+  "original_validation_auroc": 0.995889,
+  "benchmark_training_rows": 8000,
+  "benchmark_validation_rows": 2000,
+  "final_fit_seconds": 17.680175165995024,
+  "submission_rows": 3000,
+  "submission_sha256": "ea12ee291bbd426b2c35c1e8318b3993cc9e9128a37f7dfea07c4b441cdd479a",
+  "model_sha256": "e33e0f832c51be57bfc272388d34acc06581308603d7b61a352eda500ef05a2f",
+  "probability_min": 9.99999999999999e-08,
+  "probability_max": 0.9999998999999999,
+  "probability_mean": 0.4889997103888889,
+  "reload_max_abs_error": 2.220446049250313e-16,
+  "batch_max_abs_error": 1.1102230246251565e-16,
+  "verification": "PASS: schema, IDs, probabilities, reload, batch invariance, fit row counts, frozen selection"
+}

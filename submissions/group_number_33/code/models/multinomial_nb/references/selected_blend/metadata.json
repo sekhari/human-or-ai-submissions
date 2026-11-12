@@ -1,0 +1,68 @@
+{
+  "main_config": {
+    "alpha": 1500.0,
+    "learning_rate": 1.0,
+    "n_estimators": 1600,
+    "aggregation": "equal_probability_average",
+    "random_state": 12
+  },
+  "weighted_single_config": {
+    "alpha": 0.3,
+    "prior_power": -96.0,
+    "sample_power": 1.0,
+    "ai_weight": 1.0,
+    "weight_cap": 2.0
+  },
+  "seed": 12,
+  "n_folds": 5,
+  "elapsed_seconds": 35.37353783399885,
+  "selection_metric": "Mean stratified five-fold AUROC within fixed8000 training rows",
+  "n_unique_candidates": 85,
+  "raw_candidate_rows": 92,
+  "best_candidate": {
+    "kind": "weighted",
+    "alpha": 0.3,
+    "prior_power": -96.0,
+    "sample_power": 1.0,
+    "ai_weight": 1.0,
+    "weight_cap": 2.0,
+    "blend_weight": 0.25,
+    "mean_cv_auroc": 0.9357384375,
+    "std_cv_auroc": 0.0087913296103808,
+    "fold_1_auroc": 0.927628125,
+    "fold_2_auroc": 0.9471703125000002,
+    "fold_3_auroc": 0.9360765625,
+    "fold_4_auroc": 0.9266328125,
+    "fold_5_auroc": 0.941184375,
+    "search_source": "joint_weights",
+    "main_alpha": 1500.0,
+    "main_learning_rate": 1.0,
+    "main_n_estimators": 1600
+  },
+  "selected_blend_weight": 0.25,
+  "source_artifacts": {
+    "power_extension": {
+      "candidate_results.csv": "9b9cd3cd11714e2967bfbcf6d8a72fba6d0281809c99c9af1ccd38787a78a10b",
+      "metadata.json": "c19fd0558fcebf8bf91fdfa9dc467aa4ad46ed7d2c84cc3b99969fababb536c7",
+      "explore.py": "7394ed0c25b49040d279e60e6965bcd72add97131a5cfb221c687ea07d6a1738",
+      "frozen_config.json": "a7dec1c47c21da63b26027756a01e2e196e2cfa2ad63d88c0703913d3df8f32a"
+    },
+    "joint_weights": {
+      "candidate_results.csv": "7158bdb1e8edaed132404a189d22c9010aadf44e825100dc2ba38710ff8dcae7",
+      "metadata.json": "bf385d3a3e1862338cc37325521516df73b3f3fa3ee8d731c60add8a9f56a7be",
+      "explore.py": "bbf9aef57c7ca6429ac9691be856d213c3c1b946d43b41f718053b215f12ad45",
+      "frozen_config.json": "663663eb37d6ecc8723302e7a899fa4cadcd7866039dde3567b1b6d7f24d3886"
+    },
+    "joint_stages": {
+      "candidate_results.csv": "0d76db2179088e531f8d9764d660b69993ec8f1c8a51537490f827bafd0fd727",
+      "metadata.json": "57bc1d2b67c85e00c08c4deec4e9e699b0a22f4cb9b0a0797be8c63e8be01f53",
+      "explore.py": "f635ffbba47835b7a99121980f3e2ea19c758a04989c2cf7582784fe8cd74ec1",
+      "frozen_config.json": "9e45b9b24641e84740e00ebbde3027750604ee5ef5c67ae658e44d2fe80353d5"
+    }
+  },
+  "source_folder_base": "outputs/multinomial_nb/target_094_next",
+  "outer_validation_used": false,
+  "training_rows": 8000,
+  "scope_note": "Timers cover the three refinement grids; reuse cached main predictions, with fold training-only normalization. Cache construction and rejected scoring-rule/sample-weight/stage grids are recorded separately.",
+  "packaging_note": "Historical record; any source-artifact paths describe past experiments and are not runtime dependencies."
+}

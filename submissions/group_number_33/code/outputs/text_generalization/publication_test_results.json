@@ -1,0 +1,43 @@
+{
+  "date_utc": "2026-11-07 03:44:55 UTC",
+  "status": "PASS",
+  "total_tests": 77,
+  "scope": "Existing test suites and synthetic checks only; no full-data training, code edits, or Git mutations.",
+  "commands": [
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 python3 -m unittest discover -s models/multinomial_nb/tests",
+      "count": 58,
+      "exit_status": 0,
+      "duration_seconds": 0.9,
+      "result": "PASS"
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 python3 -m unittest discover -s tests",
+      "count": 5,
+      "exit_status": 0,
+      "duration_seconds": 1.283,
+      "result": "PASS"
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 python3 outputs/text_generalization/style/verify_style.py",
+      "count": 5,
+      "exit_status": 0,
+      "duration_seconds": 1.266,
+      "result": "PASS"
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 python3 outputs/text_generalization/semi/verify_semi.py",
+      "count": 4,
+      "exit_status": 0,
+      "duration_seconds": 0.175,
+      "result": "PASS"
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 python3 outputs/text_generalization/group_robust/verify_group_robust.py",
+      "count": 5,
+      "exit_status": 0,
+      "duration_seconds": 0.819,
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "models_checked": 3,
+  "development_rows": 8000,
+  "validation_rows": 2826,
+  "fit_rows": 5174,
+  "checks": [
+    "raw layout assignments",
+    "partition disjoint and exhaustive",
+    "source indices and IDs aligned",
+    "finite predictions",
+    "recomputed AUROC",
+    "training-only score normalization"
+  ]
+}

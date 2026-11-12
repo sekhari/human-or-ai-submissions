@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "input_sha256": {
+    "preprocess.py": "042bcfc40665ca994f8eb4239ec63fdf4443aecd9e715c5c32f2a1a318bd13bf",
+    "data/train.csv": "325e345faf88fb1c4203278098c282e40319a87b4bf17e094d2f235f51d0c07e",
+    "data/test.csv": "02209fdb74607f6b5f09a43300ed74761edf76f161cf9fd579cf43fb213884cd",
+    "data/sample_submission.csv": "2fdb037826ae4a83136c393fa9d29fd74d899b2dd06d32caadbe3a56e356193d"
+  },
+  "split_seed": 12,
+  "split_csv_sha256": "d27140a3c4c87578eee71d125c27f851c5f2754e06131e1498b032a33da67fb1",
+  "train_shape": [
+    8000,
+    10000
+  ],
+  "validation_shape": [
+    2000,
+    10000
+  ],
+  "test_shape": [
+    3000,
+    10000
+  ],
+  "train_tfidf_sha256": "8b3c46f502dcb875113c0b23465e81951def0da6ccea15d00aec6a162ac9f873",
+  "validation_tfidf_sha256": "422de3ce85c2bc9efa70de58c0648da34bf850e7395dfe4f020019f28ad50c8b",
+  "csr_fingerprint_algorithm": "SHA256 of concatenated CSR shape as <i8, data as <f8, indices as <i4, indptr as <i4; in stored order",
+  "probability_fingerprint_algorithm": "SHA256 of np.round(p,10).astype(<f8).tobytes(); probabilities in validation split order or original test.csv order. Strict rounded digest, not atol tolerance.",
+  "models": {
+    "ensemble": {
+      "historical_run": "20261106T190314_213714Z",
+      "model_parameters": {
+        "alpha": 1500.0,
+        "alternate_logit_cap": null,
+        "alternate_score_mode": "probability_logit",
+        "blend_weight": 0.25,
+        "learning_rate": 1.0,
+        "n_estimators": 1600,
+        "random_state": 12
+      },
+      "validation": {
+        "auroc": 0.9397430000000001,
+        "accuracy": 0.8565,
+        "f1": 0.85334695963209,
+        "confusion_matrix": [
+          [
+            878,
+            122
+          ],
+          [
+            165,
+            835
+          ]
+        ]
+      },
+      "training": {
+        "auroc": 0.9972050625,
+        "accuracy": 0.968625,
+        "f1": 0.9681512498413907,
+        "confusion_matrix": [
+          [
+            3934,
+            66
+          ],
+          [
+            185,
+            3815
+          ]
+        ]
+      },
+      "validation_probability_sha256": "7580f762ca005c2a75dd43fe8f2c156f76b470f1f4e2746831e03805d405aee6",
+      "test_probability_sha256": "7c156449d7fd0014b3ab330381bdf301074045416f8b41248843dd17cae0be16",
+      "alternate_parameters": {
+        "alpha": 0.3,
+        "sample_power": 1.0,
+        "prior_power": -96.0,
+        "ai_weight": 1.0,
+        "weight_cap": 2.0
+      }
+    },
+    "single": {
+      "historical_run": "20261106T044603_513439Z",
+      "model_parameters": {
+        "alpha": 3.0,
+        "sample_power": -1.0,
+        "prior_power": -16.0,
+        "ai_weight": 1.0,
+        "weight_cap": 2.0
+      },
+      "validation": {
+        "auroc": 0.9000360000000001,
+        "accuracy": 0.8195,
+        "f1": 0.8060182697474476,
+        "confusion_matrix": [
+          [
+            889,
+            111
+          ],
+          [
+            250,
+            750
+          ]
+        ]
+      },
+      "training": {
+        "auroc": 0.9536900625,
+        "accuracy": 0.8825,
+        "f1": 0.8753646247679661,
+        "confusion_matrix": [
+          [
+            3759,
+            241
+          ],
+          [
+            699,
+            3301
+          ]
+        ]
+      },
+      "validation_probability_sha256": "0a3d9b2e98e24c8ea8af9df5560ec6fec0228c137142e28709550fed5305fa2a",
+      "test_probability_sha256": "04f2e4ffb3df4109537fa57483ff5c787625e403d74b01168e32c98db2f6d0b5"
+    }
+  },
+  "versions": {
+    "python": "3.10.8",
+    "numpy": "1.26.0",
+    "pandas": "2.1.1",
+    "scipy": "1.15.3",
+    "scikit_learn": "1.7.2",
+    "threadpoolctl": "3.6.0"
+  },
+  "score_context": {
+    "development_reused": true,
+    "ensemble_user_reported_public_auroc": 0.82148,
+    "public_evidence": "User-provided Kaggle screenshot; not independently downloaded",
+    "single_public_auroc": null
+  },
+  "train_labels_sha256": "1e9e716f046ab46b98f71bdc0dc325e9cdf65062fa9798cc7f32c60ad877cb15",
+  "validation_labels_sha256": "bf6736f463ed2a53cc0960c2f0f433d96d52b0f3174bd021d90a9ace4c892934"
+}

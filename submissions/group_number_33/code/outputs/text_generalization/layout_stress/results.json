@@ -1,0 +1,76 @@
+[
+  {
+    "candidate": "style_hgb31",
+    "family": "style",
+    "config": {
+      "name": "style_hgb31",
+      "kind": "hist_gradient_boosting",
+      "params": {
+        "max_iter": 250,
+        "max_leaf_nodes": 31,
+        "learning_rate": 0.06,
+        "min_samples_leaf": 30,
+        "l2_regularization": 5.0
+      }
+    },
+    "layout_auroc": 0.7987729748127976,
+    "layout_fit_seconds": 7.080155208001088,
+    "layout_train_score_mean": 3.8873436020091776,
+    "layout_train_score_std": 6.155686501133806,
+    "validation_group": "multiline_no_blank_paragraphs",
+    "validation_rows": 2826,
+    "fit_rows": 5174
+  },
+  {
+    "candidate": "raw_punct_word12_lr_C4",
+    "family": "word",
+    "config": {
+      "clean": "raw",
+      "model": "logistic",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 1.0,
+      "max_features": 100000,
+      "sublinear_tf": true,
+      "tokens": "punctuation",
+      "nb_ratio": false,
+      "name": "raw_punct_word12_lr_C4",
+      "C": 4.0
+    },
+    "layout_auroc": 0.4990129339686862,
+    "layout_fit_seconds": 1.3109230830013985,
+    "layout_train_score_mean": 1.7879329665226704,
+    "layout_train_score_std": 2.38481574558371,
+    "validation_group": "multiline_no_blank_paragraphs",
+    "validation_rows": 2826,
+    "fit_rows": 5174
+  },
+  {
+    "candidate": "char_min_36_lr8",
+    "family": "char",
+    "config": {
+      "name": "char_min_36_lr8",
+      "family": "char_tfidf",
+      "analyzer": "char",
+      "text_view": "minimal",
+      "ngram_range": [
+        3,
+        6
+      ],
+      "classifier": "logistic",
+      "C": 8,
+      "max_features": 100000,
+      "min_df": 3
+    },
+    "layout_auroc": 0.5075936010891764,
+    "layout_fit_seconds": 8.827571249996254,
+    "layout_train_score_mean": 2.1062219061003433,
+    "layout_train_score_std": 2.9411525904558524,
+    "validation_group": "multiline_no_blank_paragraphs",
+    "validation_rows": 2826,
+    "fit_rows": 5174
+  }
+]

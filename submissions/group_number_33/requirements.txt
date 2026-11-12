@@ -1,0 +1,9 @@
+# Python 3.10 (verified with 3.10.8).
+# Final ExtraTrees training, prediction, tests, and error analysis only.
+# Optional report experiments have separate requirements; see README.md.
+numpy==1.26.0
+pandas==2.1.1
+scipy==1.15.3
+scikit-learn==1.7.2
+joblib==1.5.2
+threadpoolctl==3.6.0

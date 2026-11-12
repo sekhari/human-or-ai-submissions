@@ -1,0 +1,178 @@
+[
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word12_lr_C1",
+    "C": 1.0
+  },
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word12_lr_C4",
+    "C": 4.0
+  },
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word12_lr_C16",
+    "C": 16.0
+  },
+  {
+    "clean": "shared",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "clean_word12_lr_C4",
+    "C": 4.0
+  },
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      3
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 150000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word13_lr_C4",
+    "C": 4.0
+  },
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "single",
+    "nb_ratio": false,
+    "name": "raw_single_word12_lr_C4",
+    "C": 4.0
+  },
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "punctuation",
+    "nb_ratio": false,
+    "name": "raw_punct_word12_lr_C4",
+    "C": 4.0
+  },
+  {
+    "clean": "raw",
+    "model": "linear_svc",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word12_svc_C0.1",
+    "C": 0.1
+  },
+  {
+    "clean": "raw",
+    "model": "linear_svc",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word12_svc_C1",
+    "C": 1.0
+  },
+  {
+    "clean": "raw",
+    "model": "linear_svc",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": false,
+    "name": "raw_word12_svc_C4",
+    "C": 4.0
+  },
+  {
+    "clean": "raw",
+    "model": "logistic",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 1.0,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "tokens": "default",
+    "nb_ratio": true,
+    "name": "raw_word12_nblr_C4",
+    "C": 4.0
+  }
+]
